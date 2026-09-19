@@ -1,0 +1,2 @@
+# SQLite is binary: never let git attempt a textual merge on it.
+*.db binary -diff -merge

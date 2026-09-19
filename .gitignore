@@ -1,0 +1,22 @@
+# ═══ SECRETS — never commit ═══
+.env
+config.json
+
+# ═══ machine-local bulk / caches (regenerate on their own) ═══
+# inbox/ = raw feed dump (~29MB); ledger/seen.db = dedup cache (~6MB, rebuilt by ingest)
+inbox/
+ledger/seen.db
+logs/
+__pycache__/
+*.pyc
+
+# ═══ SQLite WAL sidecars — committing a stale one corrupts the DB ═══
+*.db-wal
+*.db-shm
+*.db-journal
+
+# ═══ TRACKED ON PURPOSE (do not add back) ═══
+#   ledger/ledger.db  - the prediction record: 78 calls, 14 resolutions, lessons, trades
+#   reports/          - the report archive (26 files, 240K of markdown)
+#   data/             - timelines.json, watchlist, sector map
+#   .claude/skills/   - the four-skill reasoning layer

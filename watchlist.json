@@ -1,0 +1,1529 @@
+{
+  "_doc": "Themed watchlist. Each theme has a main index (benchmark ETF) + constituents that auto-trigger analysis on a news match. Which tickers actually burn tokens is controlled by config.json auto_trigger.auto_tickers (the tier allowlist); everything else is watch-only. Matcher flattens all themes; symbol matching auto-guards <=2-char and common-word tickers (need $SYM or (NYSE: SYM) context). aliases boost recall for company-name mentions.",
+  "themes": {
+    "robotics": {
+      "label": "Robotics / Physical AI",
+      "index": "BOTZ",
+      "index_alts": [
+        "ROBO",
+        "ARKQ"
+      ],
+      "tickers": {
+        "NVDA": {
+          "aliases": [
+            "Nvidia"
+          ],
+          "keywords": [
+            "Blackwell",
+            "GB200"
+          ]
+        },
+        "TSLA": {
+          "aliases": [
+            "Tesla"
+          ],
+          "keywords": [
+            "Optimus"
+          ]
+        },
+        "AMZN": {
+          "aliases": [
+            "Amazon"
+          ]
+        },
+        "GOOGL": {
+          "aliases": [
+            "Alphabet",
+            "Google",
+            "DeepMind"
+          ]
+        },
+        "TM": {
+          "aliases": [
+            "Toyota"
+          ]
+        },
+        "SSNLF": {
+          "aliases": [
+            "Samsung"
+          ]
+        },
+        "CAT": {
+          "aliases": [
+            "Caterpillar"
+          ]
+        },
+        "ISRG": {
+          "aliases": [
+            "Intuitive Surgical"
+          ]
+        },
+        "SIEGY": {
+          "aliases": [
+            "Siemens"
+          ]
+        },
+        "HTHIY": {
+          "aliases": [
+            "Hitachi"
+          ]
+        },
+        "ABB": {
+          "aliases": [
+            "ABB"
+          ]
+        },
+        "FANUY": {
+          "aliases": [
+            "Fanuc"
+          ]
+        },
+        "ROK": {
+          "aliases": [
+            "Rockwell Automation"
+          ]
+        },
+        "TER": {
+          "aliases": [
+            "Teradyne"
+          ]
+        },
+        "SYM": {
+          "aliases": [
+            "Symbotic"
+          ]
+        },
+        "ZBRA": {
+          "aliases": [
+            "Zebra Technologies"
+          ]
+        },
+        "KYCCF": {},
+        "SMCAY": {},
+        "YASKY": {
+          "aliases": [
+            "Yaskawa"
+          ]
+        },
+        "EMR": {
+          "aliases": [
+            "Emerson Electric"
+          ]
+        },
+        "PH": {
+          "aliases": [
+            "Parker Hannifin"
+          ]
+        },
+        "HON": {
+          "aliases": [
+            "Honeywell"
+          ]
+        },
+        "CGNX": {
+          "aliases": [
+            "Cognex"
+          ]
+        },
+        "NOVT": {
+          "aliases": [
+            "Novanta"
+          ]
+        },
+        "AMBA": {
+          "aliases": [
+            "Ambarella"
+          ]
+        },
+        "HSAI": {
+          "aliases": [
+            "Hesai"
+          ]
+        },
+        "ATS": {},
+        "RRX": {
+          "aliases": [
+            "Regal Rexnord"
+          ]
+        },
+        "GXO": {
+          "aliases": [
+            "GXO Logistics"
+          ]
+        },
+        "PRCT": {
+          "aliases": [
+            "Procept"
+          ]
+        },
+        "PATH": {
+          "aliases": [
+            "UiPath"
+          ]
+        },
+        "ONDS": {
+          "aliases": [
+            "Ondas"
+          ]
+        },
+        "OUST": {
+          "aliases": [
+            "Ouster"
+          ]
+        },
+        "SERV": {
+          "aliases": [
+            "Serve Robotics"
+          ]
+        },
+        "RCAT": {
+          "aliases": [
+            "Red Cat"
+          ]
+        },
+        "VPG": {},
+        "RR": {
+          "aliases": [
+            "Richtech"
+          ]
+        },
+        "INVZ": {
+          "aliases": [
+            "Innoviz"
+          ]
+        },
+        "NNDM": {
+          "aliases": [
+            "Nano Dimension"
+          ]
+        },
+        "PDYN": {
+          "aliases": [
+            "Palladyne"
+          ]
+        },
+        "OMCL": {
+          "aliases": [
+            "Omnicell"
+          ]
+        },
+        "EVLV": {
+          "aliases": [
+            "Evolv"
+          ]
+        },
+        "HIMX": {
+          "aliases": [
+            "Himax"
+          ]
+        },
+        "KSCP": {
+          "aliases": [
+            "Knightscope"
+          ]
+        },
+        "KITT": {},
+        "ARBE": {
+          "aliases": [
+            "Arbe"
+          ]
+        },
+        "LIDR": {
+          "aliases": [
+            "AEye"
+          ]
+        },
+        "IRBT": {
+          "aliases": [
+            "iRobot"
+          ]
+        },
+        "UAVS": {
+          "aliases": [
+            "AgEagle"
+          ]
+        },
+        "DPRO": {
+          "aliases": [
+            "Draganfly"
+          ]
+        },
+        "MVIS": {
+          "aliases": [
+            "MicroVision"
+          ]
+        },
+        "VLD": {
+          "aliases": [
+            "Velo3D"
+          ]
+        },
+        "MTEK": {}
+      }
+    },
+    "space": {
+      "label": "Space / LEO",
+      "index": "ARKX",
+      "index_alts": [
+        "UFO",
+        "ROKT"
+      ],
+      "tickers": {
+        "RTX": {
+          "aliases": [
+            "RTX",
+            "Raytheon"
+          ]
+        },
+        "RKLB": {
+          "aliases": [
+            "Rocket Lab"
+          ]
+        },
+        "ASTS": {
+          "aliases": [
+            "AST SpaceMobile"
+          ]
+        },
+        "LMT": {
+          "aliases": [
+            "Lockheed Martin",
+            "Lockheed"
+          ]
+        },
+        "NOC": {
+          "aliases": [
+            "Northrop Grumman"
+          ]
+        },
+        "BA": {
+          "aliases": [
+            "Boeing"
+          ]
+        },
+        "LHX": {
+          "aliases": [
+            "L3Harris"
+          ]
+        },
+        "LDOS": {
+          "aliases": [
+            "Leidos"
+          ]
+        },
+        "HEI": {
+          "aliases": [
+            "Heico"
+          ]
+        },
+        "TDY": {
+          "aliases": [
+            "Teledyne"
+          ]
+        },
+        "GD": {
+          "aliases": [
+            "General Dynamics"
+          ]
+        },
+        "LUNR": {
+          "aliases": [
+            "Intuitive Machines"
+          ]
+        },
+        "IRDM": {
+          "aliases": [
+            "Iridium"
+          ]
+        },
+        "VSAT": {
+          "aliases": [
+            "Viasat"
+          ]
+        },
+        "SATS": {
+          "aliases": [
+            "EchoStar"
+          ]
+        },
+        "KRMN": {
+          "aliases": [
+            "Karman"
+          ]
+        },
+        "PL": {
+          "aliases": [
+            "Planet Labs"
+          ]
+        },
+        "FLY": {
+          "aliases": [
+            "Firefly Aerospace"
+          ]
+        },
+        "MDA": {},
+        "VOYG": {
+          "aliases": [
+            "Voyager"
+          ]
+        },
+        "GSAT": {
+          "aliases": [
+            "Globalstar"
+          ]
+        },
+        "RDW": {
+          "aliases": [
+            "Redwire"
+          ]
+        },
+        "BKSY": {
+          "aliases": [
+            "BlackSky"
+          ]
+        },
+        "SPIR": {
+          "aliases": [
+            "Spire"
+          ]
+        },
+        "SATL": {
+          "aliases": [
+            "Satellogic"
+          ]
+        },
+        "KULR": {
+          "aliases": [
+            "KULR"
+          ]
+        },
+        "GILT": {
+          "aliases": [
+            "Gilat"
+          ]
+        },
+        "PKE": {},
+        "SPCE": {
+          "aliases": [
+            "Virgin Galactic"
+          ]
+        },
+        "SIDU": {
+          "aliases": [
+            "Sidus Space"
+          ]
+        },
+        "MNTS": {
+          "aliases": [
+            "Momentus"
+          ]
+        },
+        "SATX": {},
+        "CMTL": {
+          "aliases": [
+            "Comtech"
+          ]
+        },
+        "OSAT": {
+          "aliases": [
+            "Orbsat",
+            "NextPlat"
+          ]
+        }
+      }
+    },
+    "memory": {
+      "label": "Memory",
+      "index": "SMH",
+      "index_alts": [
+        "SOXX"
+      ],
+      "index_note": "no pure-play memory ETF exists; SMH/SOXX used as proxy",
+      "tickers": {
+        "MU": {
+          "aliases": [
+            "Micron"
+          ]
+        },
+        "SSNLF": {
+          "aliases": [
+            "Samsung"
+          ]
+        },
+        "HXSCL": {
+          "aliases": [
+            "SK Hynix",
+            "Hynix"
+          ]
+        },
+        "SNDK": {
+          "aliases": [
+            "SanDisk"
+          ]
+        },
+        "WDC": {
+          "aliases": [
+            "Western Digital"
+          ]
+        },
+        "STX": {
+          "aliases": [
+            "Seagate"
+          ]
+        },
+        "NTAP": {
+          "aliases": [
+            "NetApp"
+          ]
+        },
+        "PSTG": {
+          "aliases": [
+            "Pure Storage"
+          ]
+        },
+        "RMBS": {
+          "aliases": [
+            "Rambus"
+          ]
+        },
+        "LRCX": {
+          "aliases": [
+            "Lam Research"
+          ]
+        },
+        "AMAT": {
+          "aliases": [
+            "Applied Materials"
+          ]
+        },
+        "KLAC": {
+          "aliases": [
+            "KLA"
+          ]
+        },
+        "BESIY": {
+          "aliases": [
+            "BE Semiconductor",
+            "Besi"
+          ]
+        },
+        "SIMO": {
+          "aliases": [
+            "Silicon Motion"
+          ]
+        },
+        "CAMT": {
+          "aliases": [
+            "Camtek"
+          ]
+        },
+        "ONTO": {
+          "aliases": [
+            "Onto Innovation"
+          ]
+        },
+        "FORM": {
+          "aliases": [
+            "FormFactor"
+          ]
+        },
+        "UCTT": {
+          "aliases": [
+            "Ultra Clean"
+          ]
+        },
+        "AMKR": {
+          "aliases": [
+            "Amkor"
+          ]
+        },
+        "PENG": {
+          "aliases": [
+            "Penguin Solutions"
+          ]
+        },
+        "NLST": {
+          "aliases": [
+            "Netlist"
+          ]
+        },
+        "ICHR": {
+          "aliases": [
+            "Ichor"
+          ]
+        },
+        "PLAB": {
+          "aliases": [
+            "Photronics"
+          ]
+        },
+        "AEHR": {
+          "aliases": [
+            "Aehr"
+          ]
+        },
+        "NVEC": {
+          "aliases": [
+            "NVE"
+          ]
+        },
+        "SKYT": {
+          "aliases": [
+            "SkyWater"
+          ]
+        },
+        "ATOM": {
+          "aliases": [
+            "Atomera"
+          ]
+        },
+        "GSIT": {
+          "aliases": [
+            "GSI Technology"
+          ]
+        },
+        "MRAM": {
+          "aliases": [
+            "Everspin"
+          ]
+        },
+        "AXTI": {
+          "aliases": [
+            "AXT"
+          ]
+        }
+      }
+    },
+    "photonics": {
+      "label": "Photonics / Optical",
+      "index": "EUV",
+      "index_alts": [],
+      "index_note": "EUV = lithography & photonics ETF (per user); use as holdings-mining source",
+      "tickers": {
+        "MRVL": {
+          "aliases": [
+            "Marvell"
+          ]
+        },
+        "AVGO": {
+          "aliases": [
+            "Broadcom"
+          ]
+        },
+        "CSCO": {
+          "aliases": [
+            "Cisco"
+          ]
+        },
+        "LITE": {
+          "aliases": [
+            "Lumentum"
+          ]
+        },
+        "COHR": {
+          "aliases": [
+            "Coherent"
+          ]
+        },
+        "CRDO": {
+          "aliases": [
+            "Credo"
+          ]
+        },
+        "GLW": {
+          "aliases": [
+            "Corning"
+          ]
+        },
+        "MTSI": {
+          "aliases": [
+            "MACOM"
+          ]
+        },
+        "IPGP": {
+          "aliases": [
+            "IPG Photonics"
+          ]
+        },
+        "FN": {
+          "aliases": [
+            "Fabrinet"
+          ]
+        },
+        "CIEN": {
+          "aliases": [
+            "Ciena"
+          ]
+        },
+        "KEYS": {
+          "aliases": [
+            "Keysight"
+          ]
+        },
+        "ALAB": {
+          "aliases": [
+            "Astera Labs"
+          ]
+        },
+        "AAOI": {
+          "aliases": [
+            "Applied Optoelectronics"
+          ]
+        },
+        "VIAV": {
+          "aliases": [
+            "Viavi"
+          ]
+        },
+        "LASR": {
+          "aliases": [
+            "nLight"
+          ]
+        },
+        "AEVA": {
+          "aliases": [
+            "Aeva"
+          ]
+        },
+        "OLED": {
+          "aliases": [
+            "Universal Display"
+          ]
+        },
+        "POET": {
+          "aliases": [
+            "POET Technologies"
+          ]
+        },
+        "LPTH": {
+          "aliases": [
+            "LightPath"
+          ]
+        },
+        "KOPN": {
+          "aliases": [
+            "Kopin"
+          ]
+        },
+        "LWLG": {
+          "aliases": [
+            "Lightwave Logic"
+          ]
+        },
+        "SIVEF": {},
+        "OPTX": {
+          "aliases": [
+            "Syntec Optics"
+          ]
+        },
+        "DAIO": {
+          "aliases": [
+            "Data I/O"
+          ]
+        },
+        "LTRX": {
+          "aliases": [
+            "Lantronix"
+          ]
+        },
+        "IQE.L": {
+          "aliases": [
+            "IQE"
+          ]
+        }
+      }
+    },
+    "chips": {
+      "label": "Chips / Semiconductors",
+      "index": "SOXX",
+      "index_alts": [
+        "SMH"
+      ],
+      "tickers": {
+        "NVDA": {
+          "aliases": [
+            "Nvidia"
+          ]
+        },
+        "TSM": {
+          "aliases": [
+            "TSMC",
+            "Taiwan Semiconductor"
+          ]
+        },
+        "AVGO": {
+          "aliases": [
+            "Broadcom"
+          ]
+        },
+        "ASML": {
+          "aliases": [
+            "ASML"
+          ]
+        },
+        "AMD": {
+          "aliases": [
+            "AMD",
+            "Advanced Micro"
+          ]
+        },
+        "MU": {
+          "aliases": [
+            "Micron"
+          ]
+        },
+        "ARM": {
+          "aliases": [
+            "Arm Holdings"
+          ]
+        },
+        "INTC": {
+          "aliases": [
+            "Intel"
+          ]
+        },
+        "MRVL": {
+          "aliases": [
+            "Marvell"
+          ]
+        },
+        "QCOM": {
+          "aliases": [
+            "Qualcomm"
+          ]
+        },
+        "TXN": {
+          "aliases": [
+            "Texas Instruments"
+          ]
+        },
+        "ADI": {
+          "aliases": [
+            "Analog Devices"
+          ]
+        },
+        "NXPI": {
+          "aliases": [
+            "NXP"
+          ]
+        },
+        "MCHP": {
+          "aliases": [
+            "Microchip"
+          ]
+        },
+        "ON": {
+          "aliases": [
+            "onsemi",
+            "ON Semiconductor"
+          ]
+        },
+        "MPWR": {
+          "aliases": [
+            "Monolithic Power"
+          ]
+        },
+        "SNPS": {
+          "aliases": [
+            "Synopsys"
+          ]
+        },
+        "CDNS": {
+          "aliases": [
+            "Cadence"
+          ]
+        },
+        "STM": {
+          "aliases": [
+            "STMicroelectronics"
+          ]
+        },
+        "IFNNY": {
+          "aliases": [
+            "Infineon"
+          ]
+        },
+        "LSCC": {
+          "aliases": [
+            "Lattice"
+          ]
+        },
+        "ALGM": {
+          "aliases": [
+            "Allegro"
+          ]
+        },
+        "SITM": {
+          "aliases": [
+            "SiTime"
+          ]
+        },
+        "SLAB": {
+          "aliases": [
+            "Silicon Labs"
+          ]
+        },
+        "CRUS": {
+          "aliases": [
+            "Cirrus Logic"
+          ]
+        },
+        "QRVO": {
+          "aliases": [
+            "Qorvo"
+          ]
+        },
+        "SWKS": {
+          "aliases": [
+            "Skyworks"
+          ]
+        },
+        "SYNA": {
+          "aliases": [
+            "Synaptics"
+          ]
+        },
+        "ACLS": {
+          "aliases": [
+            "Axcelis"
+          ]
+        },
+        "POWI": {
+          "aliases": [
+            "Power Integrations"
+          ]
+        },
+        "SMTC": {
+          "aliases": [
+            "Semtech"
+          ]
+        },
+        "VECO": {
+          "aliases": [
+            "Veeco"
+          ]
+        },
+        "COHU": {
+          "aliases": [
+            "Cohu"
+          ]
+        },
+        "NVTS": {
+          "aliases": [
+            "Navitas"
+          ]
+        },
+        "INDI": {
+          "aliases": [
+            "indie Semiconductor"
+          ]
+        },
+        "MXL": {
+          "aliases": [
+            "MaxLinear"
+          ]
+        },
+        "MOBX": {
+          "aliases": [
+            "Mobix"
+          ]
+        },
+        "SQNS": {
+          "aliases": [
+            "Sequans"
+          ]
+        },
+        "PXLW": {
+          "aliases": [
+            "Pixelworks"
+          ]
+        },
+        "LEDS": {
+          "aliases": [
+            "SemiLEDs"
+          ]
+        },
+        "AMPG": {
+          "aliases": [
+            "Amplitech"
+          ]
+        },
+        "WOLF": {
+          "aliases": [
+            "Wolfspeed"
+          ]
+        }
+      }
+    },
+    "ai_datacenters": {
+      "label": "AI Datacenters / Neocloud / Power",
+      "index": "DTCR",
+      "index_alts": [
+        "SRVR",
+        "GRID"
+      ],
+      "tickers": {
+        "GEV": {
+          "aliases": [
+            "GE Vernova"
+          ]
+        },
+        "CRWV": {
+          "aliases": [
+            "CoreWeave"
+          ]
+        },
+        "NBIS": {
+          "aliases": [
+            "Nebius"
+          ]
+        },
+        "IREN": {
+          "aliases": [
+            "IREN",
+            "Iris Energy"
+          ]
+        },
+        "FRMI": {},
+        "GLXY": {
+          "aliases": [
+            "Galaxy Digital"
+          ]
+        },
+        "VRT": {
+          "aliases": [
+            "Vertiv"
+          ]
+        },
+        "ETN": {
+          "aliases": [
+            "Eaton"
+          ]
+        },
+        "ANET": {
+          "aliases": [
+            "Arista"
+          ]
+        },
+        "CEG": {
+          "aliases": [
+            "Constellation Energy"
+          ]
+        },
+        "VST": {
+          "aliases": [
+            "Vistra"
+          ]
+        },
+        "TLN": {
+          "aliases": [
+            "Talen"
+          ]
+        },
+        "OKLO": {
+          "aliases": [
+            "Oklo"
+          ]
+        },
+        "DLR": {
+          "aliases": [
+            "Digital Realty"
+          ]
+        },
+        "EQIX": {
+          "aliases": [
+            "Equinix"
+          ]
+        },
+        "DELL": {
+          "aliases": [
+            "Dell"
+          ]
+        },
+        "PWR": {
+          "aliases": [
+            "Quanta Services"
+          ]
+        },
+        "CLS": {
+          "aliases": [
+            "Celestica"
+          ]
+        },
+        "APLD": {
+          "aliases": [
+            "Applied Digital"
+          ]
+        },
+        "CIFR": {
+          "aliases": [
+            "Cipher Mining"
+          ]
+        },
+        "RIOT": {
+          "aliases": [
+            "Riot Platforms"
+          ]
+        },
+        "MARA": {
+          "aliases": [
+            "MARA",
+            "Marathon Digital"
+          ]
+        },
+        "CLSK": {
+          "aliases": [
+            "CleanSpark"
+          ]
+        },
+        "WULF": {
+          "aliases": [
+            "TeraWulf"
+          ]
+        },
+        "BTDR": {
+          "aliases": [
+            "Bitdeer"
+          ]
+        },
+        "HUT": {
+          "aliases": [
+            "Hut 8"
+          ]
+        },
+        "BITF": {
+          "aliases": [
+            "Bitfarms"
+          ]
+        },
+        "CORZ": {
+          "aliases": [
+            "Core Scientific"
+          ]
+        },
+        "MOD": {
+          "aliases": [
+            "Modine"
+          ]
+        },
+        "SMR": {
+          "aliases": [
+            "NuScale"
+          ]
+        },
+        "HIVE": {
+          "aliases": [
+            "HIVE Digital"
+          ]
+        },
+        "WYFI": {},
+        "NNE": {
+          "aliases": [
+            "Nano Nuclear"
+          ]
+        },
+        "POWL": {
+          "aliases": [
+            "Powell Industries"
+          ]
+        },
+        "CAN": {
+          "aliases": [
+            "Canaan"
+          ]
+        },
+        "VNET": {
+          "aliases": [
+            "VNET",
+            "21Vianet"
+          ]
+        },
+        "SLNH": {
+          "aliases": [
+            "Soluna"
+          ]
+        },
+        "DGXX": {},
+        "NUAI": {},
+        "WLAC": {},
+        "MIGI": {
+          "aliases": [
+            "Mawson"
+          ]
+        },
+        "GREE": {
+          "aliases": [
+            "Greenidge"
+          ]
+        },
+        "ABTS": {}
+      }
+    },
+    "hyperscalers": {
+      "label": "Hyperscalers / Cloud",
+      "index": "MAGS",
+      "index_alts": [
+        "QQQ",
+        "XLK"
+      ],
+      "tickers": {
+        "MSFT": {
+          "aliases": [
+            "Microsoft",
+            "Azure"
+          ]
+        },
+        "GOOGL": {
+          "aliases": [
+            "Alphabet",
+            "Google Cloud"
+          ]
+        },
+        "AMZN": {
+          "aliases": [
+            "Amazon",
+            "AWS"
+          ]
+        },
+        "META": {
+          "aliases": [
+            "Meta",
+            "Facebook"
+          ]
+        },
+        "AAPL": {
+          "aliases": [
+            "Apple"
+          ]
+        },
+        "ORCL": {
+          "aliases": [
+            "Oracle"
+          ]
+        },
+        "IBM": {
+          "aliases": [
+            "IBM"
+          ]
+        },
+        "TCEHY": {
+          "aliases": [
+            "Tencent"
+          ]
+        },
+        "BABA": {
+          "aliases": [
+            "Alibaba"
+          ]
+        },
+        "CRWV": {
+          "aliases": [
+            "CoreWeave"
+          ]
+        },
+        "NBIS": {
+          "aliases": [
+            "Nebius"
+          ]
+        },
+        "NET": {
+          "aliases": [
+            "Cloudflare"
+          ]
+        },
+        "BIDU": {
+          "aliases": [
+            "Baidu"
+          ]
+        },
+        "DOCN": {
+          "aliases": [
+            "DigitalOcean"
+          ]
+        },
+        "GDS": {
+          "aliases": [
+            "GDS Holdings"
+          ]
+        },
+        "VNET": {
+          "aliases": [
+            "21Vianet"
+          ]
+        },
+        "CORZ": {
+          "aliases": [
+            "Core Scientific"
+          ]
+        }
+      }
+    },
+    "defense": {
+      "label": "Defense",
+      "index": "ITA",
+      "index_alts": [
+        "PPA",
+        "XAR"
+      ],
+      "tickers": {
+        "PLTR": {
+          "aliases": [
+            "Palantir"
+          ]
+        },
+        "GE": {
+          "aliases": [
+            "GE Aerospace"
+          ]
+        },
+        "RTX": {
+          "aliases": [
+            "Raytheon"
+          ]
+        },
+        "LMT": {
+          "aliases": [
+            "Lockheed Martin",
+            "Lockheed"
+          ]
+        },
+        "NOC": {
+          "aliases": [
+            "Northrop Grumman"
+          ]
+        },
+        "GD": {
+          "aliases": [
+            "General Dynamics"
+          ]
+        },
+        "LHX": {
+          "aliases": [
+            "L3Harris"
+          ]
+        },
+        "BA": {
+          "aliases": [
+            "Boeing"
+          ]
+        },
+        "HWM": {
+          "aliases": [
+            "Howmet"
+          ]
+        },
+        "TDG": {
+          "aliases": [
+            "TransDigm"
+          ]
+        },
+        "HEI": {
+          "aliases": [
+            "Heico"
+          ]
+        },
+        "AXON": {
+          "aliases": [
+            "Axon"
+          ]
+        },
+        "KTOS": {
+          "aliases": [
+            "Kratos"
+          ]
+        },
+        "AVAV": {
+          "aliases": [
+            "AeroVironment"
+          ]
+        },
+        "LDOS": {
+          "aliases": [
+            "Leidos"
+          ]
+        },
+        "BAH": {
+          "aliases": [
+            "Booz Allen"
+          ]
+        },
+        "TXT": {
+          "aliases": [
+            "Textron"
+          ]
+        },
+        "RNMBY": {
+          "aliases": [
+            "Rheinmetall"
+          ]
+        },
+        "BAESY": {
+          "aliases": [
+            "BAE Systems"
+          ]
+        },
+        "SAFRY": {
+          "aliases": [
+            "Safran"
+          ]
+        },
+        "MRCY": {
+          "aliases": [
+            "Mercury Systems"
+          ]
+        },
+        "SAIC": {
+          "aliases": [
+            "SAIC"
+          ]
+        },
+        "CACI": {
+          "aliases": [
+            "CACI"
+          ]
+        },
+        "VSEC": {
+          "aliases": [
+            "VSE Corp"
+          ]
+        },
+        "MOG.A": {
+          "aliases": [
+            "Moog"
+          ]
+        },
+        "DRS": {
+          "aliases": [
+            "Leonardo DRS"
+          ]
+        },
+        "ERJ": {
+          "aliases": [
+            "Embraer"
+          ]
+        },
+        "HXL": {
+          "aliases": [
+            "Hexcel"
+          ]
+        },
+        "PSN": {
+          "aliases": [
+            "Parsons"
+          ]
+        },
+        "ONDS": {
+          "aliases": [
+            "Ondas"
+          ]
+        },
+        "CW": {
+          "aliases": [
+            "Curtiss-Wright"
+          ]
+        },
+        "RCAT": {
+          "aliases": [
+            "Red Cat"
+          ]
+        },
+        "DCO": {
+          "aliases": [
+            "Ducommun"
+          ]
+        },
+        "VVX": {
+          "aliases": [
+            "V2X"
+          ]
+        },
+        "CDRE": {
+          "aliases": [
+            "Cadre"
+          ]
+        },
+        "UMAC": {
+          "aliases": [
+            "Unusual Machines"
+          ]
+        },
+        "AIRO": {
+          "aliases": [
+            "AIRO Group"
+          ]
+        },
+        "ATRO": {
+          "aliases": [
+            "Astronics"
+          ]
+        },
+        "TATT": {},
+        "NPK": {
+          "aliases": [
+            "National Presto"
+          ]
+        },
+        "BYRN": {
+          "aliases": [
+            "Byrna"
+          ]
+        },
+        "OPXS": {
+          "aliases": [
+            "Optex"
+          ]
+        },
+        "SIF": {},
+        "AISP": {
+          "aliases": [
+            "Airship AI"
+          ]
+        },
+        "CODA": {
+          "aliases": [
+            "Coda Markets"
+          ]
+        },
+        "MIND": {
+          "aliases": [
+            "Mind Technology"
+          ]
+        },
+        "SPCB": {
+          "aliases": [
+            "SuperCom"
+          ]
+        },
+        "DPRO": {
+          "aliases": [
+            "Draganfly"
+          ]
+        }
+      }
+    },
+    "macro": {
+      "label": "Macro / Energy / Shipping (legacy watched)",
+      "index": "SPY",
+      "index_alts": [
+        "XLE",
+        "BDRY"
+      ],
+      "tickers": {
+        "XOM": {
+          "aliases": [
+            "Exxon Mobil",
+            "ExxonMobil",
+            "Exxon"
+          ]
+        },
+        "ZIM": {
+          "aliases": [
+            "ZIM Integrated"
+          ],
+          "symbol_match": false
+        }
+      }
+    }
+  },
+  "tickers": {}
+}

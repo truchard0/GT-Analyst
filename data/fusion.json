@@ -1,0 +1,214 @@
+{
+  "updated": "2026-07-14T18:16Z",
+  "note": "Fusion layer: GT-Analyst top-down (branch-weighted sector scores from data/timelines.json: contained 0.25, flip-b 0.60 (7/14 branch flip), succession 0.10, capitulation 0.05) x TradingAgents bottom-up (per-ticker debate verdicts recorded via tools/record_ta.py). Scores -1..+1. Fused = 0.5*topdown + 0.5*bottomup when both exist; agreement amplifies conviction (extremizing #5 applies ONLY because the two engines use independent evidence: macro branches vs ticker fundamentals). CONFLICT rows are the highest-information trades: one engine is wrong.",
+  "sectors": {
+    "semis_ai": {
+      "label": "Semis / AI complex",
+      "etf": "SMH",
+      "topdown": {
+        "score": -0.29,
+        "direction": "neutral \u2014 pure branch play",
+        "by_branch": {
+          "contained(0.25)": "+0.6 dovish tech tailwind (#28)",
+          "flip-b(0.60)": "-0.7 equity-duration derate (#27)",
+          "succession(0.10)": "-0.4 risk-off",
+          "capitulation(0.05)": "+0.4 full normalization"
+        },
+        "rationale": "Under Branch-B base case (0.60) the EV is now NEGATIVE -0.29 (was ~0 bimodal): the sector is the main battleground between branches. Direction resolves with the branch, not the fundamentals \u2014 7/13 live: SMH -4.2pct on the strikes day, the derate leg already twitching."
+      },
+      "bottomup": {
+        "tickers": {
+          "NVDA": {
+            "verdict": "HOLD",
+            "confidence": 0.6,
+            "score": 0.0,
+            "price_at_verdict": "203.53",
+            "summary": "PM verdict Hold (run 2, 7/13): funding-chain repricing live (SK Hynix -15pct record, Samsung -9pct, capex-doubt tape) invalidates cheap-fPE timing; beta 2.21 means the Iran branch decides direction, not filings; defined edges - add 191-196 on containment, Underweight on Branch-B confirm (Brent>85 + 2y up), invalidation <188.",
+            "recorded": "2026-07-13T20:55Z"
+          },
+          "MU": {
+            "verdict": "SELL",
+            "confidence": 0.65,
+            "score": -0.65,
+            "price_at_verdict": "937.00",
+            "summary": "Outlook test 7/13: classic cyclical-peak signature - fwd PE 6.3/PEG 0.14 is the top-of-cycle illusion (record 55.9pct margin summoned the 536B capacity war, doctrine 13 supply-pillar attack); insiders sold 45M within 2pct of ATH; SK Hynix -15pct record = weakest holder repricing; euphoric retail after -25pct drawdown. Bearish on BOTH Iran branches (unlike NVDA). Fade 980-1000 bounces; invalidation = reclaim/hold 1035.",
+            "recorded": "2026-07-13T21:09Z"
+          }
+        }
+      },
+      "fused": {
+        "score": -0.307,
+        "bottomup_mean": -0.325,
+        "badge": "CONFIRM"
+      },
+      "flag": "BEARISH-CONFIRMED: topdown flipped negative under Branch-B weights AND both debate verdicts lean short"
+    },
+    "energy": {
+      "label": "Energy",
+      "etf": "XLE",
+      "topdown": {
+        "score": 0.42,
+        "direction": "mildly bullish, huge convexity",
+        "by_branch": {
+          "contained(0.25)": "-0.4 glut deepens (#23)",
+          "flip-b(0.60)": "+0.8 supply spike (escort caps at +0.6, brent-90 +1.0)",
+          "succession(0.10)": "+0.7 chaos premium",
+          "capitulation(0.05)": "-0.6 full-glut"
+        },
+        "rationale": "The convexity long: loses small in the base case (glut), wins big on the 45pct of world-mass where things break. Own via calls/vol, not linear (contrarian #9)."
+      },
+      "bottomup": {
+        "tickers": {}
+      },
+      "fused": null,
+      "flag": "convex tail expression"
+    },
+    "defense": {
+      "label": "Defense",
+      "etf": "ITA",
+      "topdown": {
+        "score": 0.6,
+        "direction": "robust long",
+        "by_branch": {
+          "contained(0.25)": "+0.3 structural rearmament (doctrine 10.10/12.5)",
+          "flip-b(0.60)": "+0.8 geopolitical bid",
+          "succession(0.10)": "+0.7",
+          "capitulation(0.05)": "-0.5 peace-dividend bleed"
+        },
+        "rationale": "Wins on 3 of 4 branches \u2014 the only sector with a branch-robust thesis. The war-economy conversion index (doctrine 12.5) is the durable leg beneath the event risk."
+      },
+      "bottomup": {
+        "tickers": {
+          "RTX": {
+            "verdict": "BUY",
+            "confidence": 0.62,
+            "score": 0.62,
+            "price_at_verdict": "195.42",
+            "summary": "Single best swing (full market analysis 7/14): branch-robust defense long expressed through the interceptor/air-defense PRIME, not the broken attritable-drone names (KTOS -66pct/PE312) or the extended ETF. RTX = Patriot + missiles, THE capital-committed procurement supercycle (12.5); beta 0.30 low-drawdown; mid-range 195 (52w 143-214) not extended. Entry 192-196, invalidation close <188, target 210 then new highs, ~3:1 R/R. Branch-robust = doesn't need the contested Branch-B call to resolve. Fusion CONFIRM (topdown +0.60).",
+            "recorded": "2026-07-14T18:16Z"
+          }
+        }
+      },
+      "fused": {
+        "score": 0.61,
+        "bottomup_mean": 0.62,
+        "badge": "CONFIRM"
+      },
+      "flag": "branch-robust, now the strongest topdown long (+0.60)"
+    },
+    "rates_duration": {
+      "label": "Rates / Duration",
+      "etf": "TLT",
+      "topdown": {
+        "score": -0.3,
+        "direction": "dead neutral \u2014 pure branch discriminator",
+        "by_branch": {
+          "contained(0.25)": "+0.5 dovish Fed (#13/#26)",
+          "flip-b(0.60)": "-0.7 hawkish repricing",
+          "succession(0.10)": "-0.2 ambiguous (haven vs inflation)",
+          "capitulation(0.05)": "+0.3"
+        },
+        "rationale": "TLT is the branch thermometer, not a position: its direction on Iran headlines IS the market-transmission \u00a74 discriminator. 7/13: bonds fell WITH stocks \u2014 the hawkish tell."
+      },
+      "bottomup": {
+        "tickers": {}
+      },
+      "fused": null,
+      "flag": "use as signal, not trade"
+    },
+    "gold": {
+      "label": "Gold / PM",
+      "etf": "GLD",
+      "topdown": {
+        "score": -0.1,
+        "direction": "mildly bullish \u2014 but war-hawkish branch HURTS it",
+        "by_branch": {
+          "contained(0.25)": "+0.4 dovish real rates",
+          "flip-b(0.60)": "-0.4 real-rate headwind (\u00a76 \u2014 confirmed live 7/13: gold -2.6pct on a war day)",
+          "succession(0.10)": "+0.5 chaos bid",
+          "capitulation(0.05)": "-0.2"
+        },
+        "rationale": "The counterintuitive one: gold's enemy here is the hawkish war branch, not peace. The naive war-hedge role is broken by the real-rate channel \u2014 verified in today's tape."
+      },
+      "bottomup": {
+        "tickers": {}
+      },
+      "fused": null,
+      "flag": "broken war-hedge NOW NET-BEARISH under Branch-B weights (real-rate channel dominates)"
+    },
+    "shipping_tankers": {
+      "label": "Shipping / Tankers",
+      "etf": "FRO",
+      "topdown": {
+        "score": 0.26,
+        "direction": "two-sided",
+        "by_branch": {
+          "contained(0.25)": "-0.2 normalization deflates rates",
+          "flip-b(0.60)": "+0.5 war-risk premia (but stranded-transit risk cuts both ways \u2014 FRO fell -3.2pct on strike day)",
+          "succession(0.10)": "+0.4",
+          "capitulation(0.05)": "-0.6"
+        },
+        "rationale": "Corridor-specific: tanker rates love danger-but-open, hate closed-or-safe. The escort branch (naval-escort node) is their sweet spot."
+      },
+      "bottomup": {
+        "tickers": {}
+      },
+      "fused": null,
+      "flag": "corridor-dependent"
+    },
+    "volatility": {
+      "label": "Volatility",
+      "etf": "VIXY",
+      "topdown": {
+        "score": 0.47,
+        "direction": "structurally bid tail hedge",
+        "by_branch": {
+          "contained(0.25)": "-0.3 carry bleed",
+          "flip-b(0.60)": "+0.8",
+          "succession(0.10)": "+0.9 coordination-tip = gap risk",
+          "capitulation(0.05)": "-0.5"
+        },
+        "rationale": "45pct of branch mass is vol-positive and the succession tail is a GAP event (global-games tipping, not a drift) \u2014 the classic underpriced convexity per contrarian #9."
+      },
+      "bottomup": {
+        "tickers": {}
+      },
+      "fused": null,
+      "flag": "gap-risk hedge"
+    }
+  },
+  "ticker_verdicts": {
+    "NVDA": {
+      "verdict": "HOLD",
+      "confidence": 0.6,
+      "score": 0.0,
+      "price_at_verdict": "203.53",
+      "summary": "PM verdict Hold (run 2, 7/13): funding-chain repricing live (SK Hynix -15pct record, Samsung -9pct, capex-doubt tape) invalidates cheap-fPE timing; beta 2.21 means the Iran branch decides direction, not filings; defined edges - add 191-196 on containment, Underweight on Branch-B confirm (Brent>85 + 2y up), invalidation <188.",
+      "recorded": "2026-07-13T20:55Z",
+      "sector": "semis_ai"
+    },
+    "MU": {
+      "verdict": "SELL",
+      "confidence": 0.65,
+      "score": -0.65,
+      "price_at_verdict": "937.00",
+      "summary": "Outlook test 7/13: classic cyclical-peak signature - fwd PE 6.3/PEG 0.14 is the top-of-cycle illusion (record 55.9pct margin summoned the 536B capacity war, doctrine 13 supply-pillar attack); insiders sold 45M within 2pct of ATH; SK Hynix -15pct record = weakest holder repricing; euphoric retail after -25pct drawdown. Bearish on BOTH Iran branches (unlike NVDA). Fade 980-1000 bounces; invalidation = reclaim/hold 1035.",
+      "recorded": "2026-07-13T21:09Z",
+      "sector": "semis_ai"
+    },
+    "RTX": {
+      "verdict": "BUY",
+      "confidence": 0.62,
+      "score": 0.62,
+      "price_at_verdict": "195.42",
+      "summary": "Single best swing (full market analysis 7/14): branch-robust defense long expressed through the interceptor/air-defense PRIME, not the broken attritable-drone names (KTOS -66pct/PE312) or the extended ETF. RTX = Patriot + missiles, THE capital-committed procurement supercycle (12.5); beta 0.30 low-drawdown; mid-range 195 (52w 143-214) not extended. Entry 192-196, invalidation close <188, target 210 then new highs, ~3:1 R/R. Branch-robust = doesn't need the contested Branch-B call to resolve. Fusion CONFIRM (topdown +0.60).",
+      "recorded": "2026-07-14T18:16Z",
+      "sector": "defense"
+    }
+  },
+  "method": {
+    "fused_formula": "0.5*topdown_sector + 0.5*bottomup_ticker; agreement (same sign, both |>0.3|) -> CONFIRM badge and conviction boost; opposite signs -> CONFLICT badge (highest-information state: investigate before trading)",
+    "recording": "python tools/record_ta.py --ticker NVDA --verdict BUY --confidence 0.7 --summary '...' (after each /tradingagents debate)",
+    "staleness": "verdicts older than 14 days greyed out"
+  }
+}

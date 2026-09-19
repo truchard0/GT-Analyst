@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>GT-Analyst test feed</title>
+    <item>
+      <title>Nvidia announces expanded Blackwell production commitments with TSMC</title>
+      <description>Capacity expansion agreement covering 2027 output.</description>
+      <link>https://example.com/test/nvda-blackwell-1</link>
+    </item>
+    <item>
+      <title>Fed holds rates steady, cites balanced risks</title>
+      <description>FOMC statement unchanged from prior meeting.</description>
+      <link>https://example.com/test/fed-hold-1</link>
+    </item>
+    <item>
+      <title>All eyes on it for a key day in New York markets</title>
+      <description>Stopword false-positive probe: ALL IT KEY NEW ONE NOW.</description>
+      <link>https://example.com/test/stopword-probe-1</link>
+    </item>
+  </channel>
+</rss>

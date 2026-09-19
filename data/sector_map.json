@@ -1,0 +1,24 @@
+{
+  "_doc": "Sector -> tradeable expression map for market translation. Direction semantics: 'down' on rates = bond prices down / yields up. Analysis only — doctrine §14: no sizing.",
+  "energy":        { "etfs": ["XLE", "XOP", "OIH"], "tickers": ["XOM", "CVX", "SLB"], "notes": "crude/gas/services; chokepoint events transmit here first (Hormuz, Red Sea)" },
+  "defense":       { "etfs": ["ITA", "PPA", "XAR"], "tickers": ["LMT", "RTX", "NOC", "GD", "KTOS", "AVAV"], "notes": "KTOS/AVAV = attritable/drone plays (doctrine §10.3 cost-pyramid thesis)" },
+  "semis":         { "etfs": ["SMH", "SOXX"], "tickers": ["NVDA", "AMD", "TSM", "ASML", "MU", "AMAT"], "notes": "§13 scarcity-premium rule applies to memory (MU)" },
+  "shipping":      { "etfs": ["BDRY"], "tickers": ["ZIM", "MATX", "GSL", "DAC", "FRO", "STNG"], "notes": "tankers (FRO/STNG) vs containers (ZIM/MATX/GSL/DAC) vs drybulk (BDRY) respond to DIFFERENT chokepoints — match the corridor" },
+  "gold_pm":       { "etfs": ["GLD", "GDX", "SLV"], "tickers": [], "notes": "hegemonic-decay / reserve-currency debasement expression (§11.1 pillar 3)" },
+  "rates":         { "etfs": ["TLT", "IEF", "SHY"], "tickers": [], "notes": "duration proxies; direction=down means yields UP" },
+  "fx":            { "etfs": ["UUP", "FXE", "FXY"], "tickers": [], "notes": "UUP = dollar; captive-buyer currency stress per §10.8 redirection effect" },
+  "ag_inputs":     { "etfs": ["MOO", "DBA"], "tickers": ["MOS", "NTR", "CF", "ADM", "BG"], "notes": "§10.8 fertilizer cascade: phosphate/ammonia/urea -> food prices -> instability" },
+  "cyber":         { "etfs": ["CIBR", "HACK"], "tickers": [], "notes": "infrastructure-attack transmission (undersea cables §11.4)" },
+  "airlines_aero": { "etfs": ["JETS"], "tickers": [], "notes": "§11.4: civil aviation is a Pax-dependent luxury; reprices fast under conflict" },
+  "financials":    { "etfs": ["XLF", "KRE"], "tickers": [], "notes": "KRE for regime-break/duration stress (SVB pattern)" },
+  "uranium_power": { "etfs": ["URA", "URNM"], "tickers": ["CCJ", "CEG", "VST"], "notes": "resilience-over-efficiency energy security play (§11.2)" },
+  "volatility":    { "etfs": ["VIXY"], "tickers": [], "notes": "regime-break hedge expression; §5 'snap not glide'" },
+
+  "robotics":       { "index": "BOTZ", "etfs": ["BOTZ", "ROBO", "ARKQ"], "tickers": ["NVDA", "TSLA", "ISRG", "ABB", "SYM"], "notes": "physical AI / automation; main index BOTZ" },
+  "space":          { "index": "ARKX", "etfs": ["ARKX", "UFO", "ROKT"], "tickers": ["RKLB", "ASTS", "LMT", "IRDM"], "notes": "LEO / launch / satellite; main index ARKX" },
+  "memory":         { "index": "SMH", "etfs": ["SMH", "SOXX"], "tickers": ["MU", "WDC", "STX", "SNDK"], "notes": "no pure-play memory ETF; SMH proxy. §13 scarcity-premium applies" },
+  "photonics":      { "index": "EUV", "etfs": ["EUV"], "tickers": ["COHR", "LITE", "CIEN", "GLW", "AVGO"], "notes": "optical/silicon-photonics/AI interconnect; main index EUV" },
+  "chips":          { "index": "SOXX", "etfs": ["SOXX", "SMH"], "tickers": ["NVDA", "TSM", "AVGO", "AMD", "ASML"], "notes": "broad semis; alias of 'semis'; main index SOXX" },
+  "ai_datacenters": { "index": "DTCR", "etfs": ["DTCR", "SRVR", "GRID"], "tickers": ["CRWV", "NBIS", "VRT", "GEV", "VST", "CEG"], "notes": "neocloud + power + cooling; main index DTCR; power leg via GRID/uranium_power" },
+  "hyperscalers":   { "index": "MAGS", "etfs": ["MAGS", "QQQ", "XLK"], "tickers": ["MSFT", "GOOGL", "AMZN", "META", "ORCL"], "notes": "definitionally mega-cap cloud; main index MAGS" }
+}
