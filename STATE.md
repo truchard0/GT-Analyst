@@ -157,7 +157,7 @@ manager + triggers + tape) · Reports · **Timeline & Predictions** · Fusion ·
 ---
 
 ## 9. TWO-MACHINE SETUP (laptop + desktop, since 2026-09-19)
-The project is a **private git repo**. Code, doctrine, `data/timelines.json`, `reports/` and
+The project is a **private git repo**: `https://github.com/truchard0/GT-Analyst` (pushed 2026-09-19, first commit 645f994). Code, doctrine, `data/timelines.json`, `reports/` and
 **`ledger/ledger.db`** all travel. Excluded: `.env`, `config.json` (API key), `inbox/`
 (~29MB feed dump), `ledger/seen.db` (~6MB dedup cache, rebuilds itself), `logs/`.
 
