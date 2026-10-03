@@ -16,6 +16,7 @@ import os
 import pathlib
 import re
 import sqlite3
+import ssl
 import subprocess
 import sys
 import traceback
@@ -116,11 +117,29 @@ def bump_run_counter(c):
     return c.execute("SELECT v FROM run_counter WHERE k='runs'").fetchone()[0]
 
 
+def ssl_context():
+    """OS trust store PLUS ca-extra.pem. Windows hands python only the roots it has
+    already cached; schannel downloads the rest on demand, so a browser succeeds where
+    urllib dead-ends at 'unable to get local issuer certificate' (the 'ecb' feed chains
+    to Sectigo Root E46, which is not cached). This only ADDS anchors — certificate and
+    hostname verification stay fully on. A missing/corrupt bundle degrades to the OS
+    store alone rather than taking the run down."""
+    ctx = ssl.create_default_context()
+    try:
+        ctx.load_verify_locations(cafile=str(ROOT / "pipeline" / "ca-extra.pem"))
+    except Exception as e:
+        log(LOGFILE, f"ca-extra load failed, using OS trust store only: {e}")
+    return ctx
+
+
+SSL_CTX = ssl_context()
+
+
 def fetch(url, headers=None):
     if not url.startswith("http"):  # test hook: local file path
         return pathlib.Path(url).read_bytes()
     req = urllib.request.Request(url, headers=headers or {"User-Agent": "gt-analyst/1.0"})
-    return urllib.request.urlopen(req, timeout=20).read()
+    return urllib.request.urlopen(req, timeout=20, context=SSL_CTX).read()
 
 
 def parse_pub(raw_date):

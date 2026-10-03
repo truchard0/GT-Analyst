@@ -9,8 +9,11 @@ $action = New-ScheduledTaskAction -Execute $py -Argument "`"$root\pipeline\inges
 # 10-year repetition window: [TimeSpan]::MaxValue overflows the task XML on Win11
 $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) `
     -RepetitionInterval (New-TimeSpan -Minutes 5) -RepetitionDuration (New-TimeSpan -Days 3650)
+# AllowStartIfOnBatteries: the Task Scheduler default SKIPS runs on battery, which silently
+# stops the feed on a laptop. StartWhenAvailable catches up after sleep/shutdown.
 $settings = New-ScheduledTaskSettingsSet -MultipleInstances IgnoreNew `
-    -ExecutionTimeLimit (New-TimeSpan -Minutes 10) -StartWhenAvailable
+    -ExecutionTimeLimit (New-TimeSpan -Minutes 10) -StartWhenAvailable `
+    -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
 
 Register-ScheduledTask -TaskName "GT-Analyst Ingest" -Action $action -Trigger $trigger -Settings $settings -Force
 Write-Host "Registered 'GT-Analyst Ingest' (every 5 min, $py). Health: $root\logs\ingest.log"

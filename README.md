@@ -28,8 +28,22 @@ powershell -ExecutionPolicy Bypass -File tools/start_dashboard.ps1
 
 ## Daily loop
 - **Analyze:** tell Claude **"analyze inbox/latest.md"**. It triages, runs the schema, logs conviction-scored predictions, and archives the inbox.
-- **Score:** `python pipeline/ledger.py due` → `resolve <id> <1|0>` → `report` (calibration by probability bucket, conviction band, sector).
+- **Score:** `python pipeline/ledger.py due` → `resolve <id> <1|0>` → `report` (calibration by probability bucket, conviction band, sector); `void <id> --reason` closes a conditional whose trigger never fired; `report` also prints skill vs coin/base-rate and per-cluster/horizon Brier).
+- **Before logging:** `ledger.py add --dry-run ...` (wording lint) and, for any level/range call, `python tools/range_odds.py` (no-view odds).
+- **Outside view and live probabilities (2026-09-20):** every row carries a reference (`--base-rate` + `--base-class`, `--market` + `--market-src` where a liquid market exists; `ledger.py ref <id>` for open rows) and `report` scores the engine's EDGE over it with cluster-resampled intervals. Probabilities are live: `ledger.py stale` -> `revise` / `confirm`, scored time-weighted; `resolve --asof` stops the clock the day the outcome was known. Iran-cluster rows are durations, markers, levels or invariants (doctrine 16.18); `python tools/cycle_odds.py` prices durations. Background: `reports/20260920_research-improving-the-engine.md`.
 - **One-shot cycle without the scheduler:** `python pipeline/run.py` (add `--headless` to also run the analysis via `claude -p`).
+
+## Daily analyst (typed, propose-only)
+`tools\start_analyst.cmd` runs it once and schedules it twice a day (`tools\register_analyst_task.ps1 -Times "07:00"` for once). Each run takes everything ingest collected, triages **every** item, runs the full four-skill analysis headless via the Claude Code CLI, and writes:
+- `reports/daily/<stamp>.md` - the human report;
+- `proposals/<stamp>/analysis.json` - the **typed** analysis (`pipeline/schema.py`: strict dataclasses + rules R01-R27 = the output schema, conviction rubric and pre-ledger gates as code; `python -m unittest tests.test_schema` covers every rule);
+- `proposals/<stamp>/REVIEW.md` - what it proposes and which rows the rules BLOCKED.
+
+**Per-article stage - Jev.** With `TYPESAFE_API_KEY` in `.env`, TypeSafe AI's Jev model gives every article a typed verdict (triage, capital tier, shock type, lane, lean, salience, state-change, injection flag) before Claude sees anything - about a cent per 1,000 articles. It never discards alone (watchlist, primary-source, low-confidence and state-change items always pass through), and it falls back to a keyword pre-cut without a key. `python pipeline/jev.py questions` prints the question set; `python pipeline/jev.py try "<headline>"` makes one live call. Optional: `claude plugin marketplace add typesafe-ai/skills` then `claude plugin install typesafe@typesafe-ai` gives Claude Code TypeSafe's own reference skill for editing those questions.
+
+**In Claude Code:** `/jev-triage`, `/analyze-news`, `/review-proposals`.
+
+Nothing reaches the ledger until you approve: `tools\review_proposals.cmd`, or `python pipeline/analyst.py approve <stamp> --ids p1,p3` / `reject <stamp> --all`. The run cannot write the ledger itself - protected files are hashed before and restored after. Settings: `config.json -> "analyst": {"max_runs_per_day": 2, "model": "", "max_items": 120, "web": true}`. Health: `logs/analyst.log`, `python pipeline/analyst.py status`.
 
 ## Watchlist (themed, with a main index per sector)
 `watchlist.json` is organized into themes (robotics, space, memory, photonics, chips, ai_datacenters, hyperscalers, defense, macro), each with a **main index** (BOTZ, ARKX, SMH, EUV, SOXX, DTCR, MAGS, ITA, SPY). ~274 tickers. Company-name aliases boost recall; word-like tickers (ARM, NET, FLY, PATH…) only match with `$SYM` or `(NYSE: SYM)` context. The dashboard's **Watchlist** tab shows every theme, its index, and each ticker colored by tier.
