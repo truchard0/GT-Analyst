@@ -1,178 +1,201 @@
 # GT-Analyst — LIVE STATE (handoff doc)
-**Last updated: 2026-08-01.** Read this first after any context reset. It records what
-the engine IS, what it has LEARNED, and what is currently STAKED. Everything here is
-reconstructible from `ledger/ledger.db` + `data/timelines.json`, but this is the summary.
+**Last updated: 2026-10-25 (cloud relaunch).** Read this first after any context reset. It records what
+the engine IS, what it has LEARNED, and what is currently STAKED. Everything here can be rebuilt from
+`ledger/ledger.db` and `data/timelines.json`; this is the summary.
 
 ---
 
 ## 1. WHAT THE ENGINE IS
-A game-theory news-analysis prediction machine. Ingests ~38 RSS feeds + 5 JSON APIs every
-5 min (Windows Task Scheduler → `pipeline/ingest.py`), matches a watchlist, optionally
-auto-fires headless analysis, and maintains a **Brier-scored prediction ledger** plus a
-**time-lane timeline map**. Reasoning layer = four skills in `.claude/skills/`:
-`jiang-doctrine`, `formal-game-theory`, `market-transmission`, `contrarian-red-team`.
+A game-theory news-analysis prediction machine.
+- **Ingest:** about 38 RSS feeds and 5 JSON APIs, every 5 minutes (`pipeline/ingest.py`).
+- **Watchlist:** matches feed items to tickers and can auto-fire headless analysis.
+- **Bookkeeping:** a **Brier-scored prediction ledger** and a **time-lane timeline map**.
+- **Reasoning layer:** four skills in `.claude/skills/`: `jiang-doctrine`, `formal-game-theory`,
+  `market-transmission` and `contrarian-red-team`.
+- **NEW (10/25): a ceasefire-timing engine** (`pipeline/ceasefire_engine.py`). See §7b.
 
-**Key distinction to keep honest:** the engine *computes* coherence, parlays, shift
-propagation and Brier scores. The *probabilities themselves are analyst judgment* stored
-as data. It is an accountability + bookkeeping machine over expert estimates, not a solver.
-
----
-
-## 2. SCOREBOARD (as of 2026-08-04)
-- **Predictions: 78 logged · 14 resolved · 12 HIT / 2 MISS · mean Brier 0.169 · 85.7% hit-rate**
-- The projected 80% / 0.192 written on 8/1 was **right**: #72 and #63 both resolved MISS on
-  schedule (Brier 0.30 and 0.56). The 12/12 was a maturity artifact, exactly as flagged.
-- **#59 (ceasefire fails, 0.72) is the third one and is now LIKELY MISS** — resolves 8/15.
-- ⚠️ **#66 (war caps the melt-up) is AT RISK**, downgraded from "tracking HIT" on 8/4. S&P set a
-  record 7,736.52; SPY 771.28 is +1.54% over the prior 2026 high close (759.57, 6/2) and the
-  2%-above threshold that kills #66 is **SPY 774.80** — 0.45% away, 13 sessions left.
-- **Realized P&L: +7.46%, ONE closed round-trip** (RTX 195.42 → 210.00, booked at the
-  pre-registered target). MU short OPEN at entry 937 (MU 892.15 on 8/4 = **+4.78% unrealized**,
-  gave back most of its gain on a +7.55% day) → unrealized, excluded. NVDA HOLD = no trade.
-- **Forecast accuracy (Brier) ≠ trading P&L.**
-- **PORTFOLIO PROBLEM:** iran-war = **31 of 55 open (56%)** — one correlated bet dressed as 31.
-  Cap is now ~35% per cluster; read calibration per-cluster.
-- **THE BOUNDARY THE BACKTEST FOUND:** the engine is strong where the mechanism is *structural
-  and datable* (Fed reaction functions, capex cycles, positioning unwinds, calendar arithmetic)
-  and weak where the outcome is **one person's discretionary choice** (Trump strike decisions).
-  Spend conviction accordingly.
-
-
-### The flagship win
-**FOMC 7/29:** engine faded the market — HOLD at 0.75 vs the market's ~0.65 (CME had ~35%
-hike). Fed **held**; three dissents for a hike (most since 2016) but the majority sided with
-Warsh to wait for the July/Aug CPI in September — *exactly* the no-SEP + data-lag + §11
-supply-shock-look-through mechanism the engine used. #67 Brier 0.06.
-
-### The systematic failure (owned)
-**Escalation over-prediction.** #63 (US strikes Yemen by 8/4) and #59 (ceasefire fails) both
-weighted continued escalation and ignored that Iran *requested* the pause, Oman was mediating,
-and the signed 60-day window was live. Two of the same miss-shape → doctrine patch §16.12.
+**Key distinction to keep honest:** the engine *computes* coherence, parlays, shift propagation and Brier
+scores. The *probabilities themselves are analyst judgment* stored as data. It is an accountability and
+bookkeeping machine over expert estimates, not a solver.
 
 ---
 
-## 3. DOCTRINE PATCHES WRITTEN THIS CYCLE (all live in the skills)
+## 2. SCOREBOARD (as of 2026-10-25)
+- **52 resolved: 34 HIT / 18 MISS = 65.4%, mean Brier 0.238.** On 8/4 it was 0.169 on 14 resolved.
+  The old number was a maturity artifact, exactly as the 8/1 note warned.
+- **Projected, counting the at-risk #38, #16 and #36 as misses: 61.8% / Brier 0.248.**
+- **Murphy decomposition:**
+
+  | Term | Value | Read |
+  |---|---|---|
+  | Reliability | 0.025 | Calibration is OK |
+  | **Resolution** | **0.009** | **Low: the forecasts barely beat guessing the base rate.** This is the main disease. |
+
+  The next gains come from *discrimination*: fewer 0.55–0.70 hedges on calls the engine can't separate.
+- **The 10/25 sweep:** 35 calls were 14–79 days overdue, plus 3 resolved early: **22 HIT / 16 MISS, mean Brier
+  0.264.** All 38 have lessons.
+- **Both directions missed on Iran.** #59 (escalation) and #19 (de-escalation) both failed. **The boundary holds:**
+  - **Strong** where the mechanism is structural and datable: July CPI nailed exactly (#71), August CPI
+    re-acceleration (#32), the Fed's reaction (#67 and #62, mortgage +70bp), physical Hormuz flows (#73, #22),
+    the memory-cycle peak (#33).
+  - **Weak** on one decider's choices: strikes, deals, OPEC+ timing.
+- **Realized P&L: +7.46%, ONE closed round-trip** (RTX). **⚠️ The MU short record (trade #2) is STALE.**
+  - It was opened at 937, with a target of 800 and invalidation at 1035.
+  - MU *closed* at 739 on 7/29, through the target, but the 8/4 handoff still listed it as open.
+  - MU then closed above the invalidation on 9/21 (first close ≥1035).
+  - The real exit is unknown. Record it with `ledger.py trade-close 2 --exit <real price> --reason ...`, and
+    never at a hindsight price.
+- **PORTFOLIO PROBLEM persists:** iran-war is **11 of 28 open = 39%**, over the ~35% cap. New iran-war calls
+  need the red-team gate and a materially higher bar.
+
+---
+
+## 3. DOCTRINE PATCHES ON FILE
 | § | Lesson |
 |---|---|
-| **13d.2** | Base-effect identity check MANDATORY before quoting any y/y (twice-repeated miss) |
-| **13e** | Event-time vs regime-time: inside 48h of a catalyst, the catalyst governs, not the regime |
-| **13e.1** | Bifurcated tape: physical markets trade flows, equities trade narrative — both tails can fire at once |
-| **13e.2** | Single-confirmation beta discipline: n=1 betas get half-weight |
-| **16.11** | Grievance-anchored precondition building runs BACKWARD-first (2020 relitigation, not forward threat) |
-| **16.12** | **Escalation-mediation OSCILLATION**: with exhausted belligerents + live mediators + a signed deadline, war cycles — it does not climb a ladder. Track the WINDOW, not the daily strikes |
-| **16.14** | **HARD CAP 0.35 on strike-planning reports** for a reversal-prone decider — a leaked plan is a negotiating instrument, not a forecast. Escalate only on execution signals (aircraft launched, NOTAMs). Stand-down ≠ deal |
-| **16.13** | Structural-state staleness: verify a state hasn't already RESOLVED (carried "succession" live for months after Mojtaba took over 3/9) |
+| 13d.2 | Base-effect identity check MANDATORY before quoting any y/y |
+| 13e / 13e.1 / 13e.2 | Event-time vs regime-time; bifurcated tape; n=1 betas get half-weight |
+| 16.11 | Grievance-anchored precondition building runs backward-first |
+| 16.12 | Escalation-mediation OSCILLATION: track the window, not the daily strikes |
+| **16.12b (10/25)** | **Oscillation ≠ off-ramp.** A pause *without a deal* is the cheap stable state when the chokepoint is shut. Price "pause holds", "deal signed" and "strait reopens" separately. (#68) |
+| 16.13 | Structural-state staleness |
+| **16.13a (10/25)** | **Premise freshness AT LOGGING:** re-verify the load-bearing premise against its primary source and record it in the sensitivity tag. A premise <72h old and contested → conviction capped at 0.55. Five misses were stale on the day they were logged. (#19, #11, #24, #29, #28) |
+| 16.14 | HARD CAP 0.35 on strike-planning reports for a reversal-prone decider |
+| **mkt §7.1 (10/25)** | **PHYSICAL-FLOW GATE:** no oil-premium-unwind call while measured chokepoint flow is <50% of baseline and war-risk premia are >5× pre-war. Announcement flushes reverse at the next physical datapoint. (5 misses: #28, #74, #76, #23, #11) |
+| **mkt §5.1 (10/25)** | **The rate-derate law failed 0-for-4 against a live AI-capex revision engine.** A semis fade needs a capex-architecture or revision catalyst, not a rate path. (#24, #69, #70, #27) |
+| **formal §8.1 + item 25 (10/25)** | **FALSIFIER SYMMETRY:** falsifier = NOT(prediction). No rival-branch, escape-clause ("absent X", "with no new shock") or conjunctive falsifiers. A defective contract is scored on substance. `ledger.py add` now lints escape-clause wording. (#68, #11, #23, #14) |
 
 ---
 
-## 4. THE IRAN WAR — CORRECTED MODEL (the big rebuild)
-War began **2/28/2026** (US Epic Fury + Israel Roaring Lion; **Khamenei killed**).
-**Mojtaba Khamenei = Supreme Leader since 3/9 — succession RESOLVED.**
-Arc: Apr 8 ceasefire → Apr 22 blockade → **Jun 17 Islamabad Memorandum signed (14-point,
-60-day window expiring ~Aug 16)** → ~Jul 9 crumbles → Jul 11–24 round 2 (13 strike nights,
-Brent >$100, oil $132, Houthi Red Sea blockade on Saudi) → ~Jul 25+ **US pauses at Iran's
-request**, Oman mediating.
+## 4. THE IRAN WAR — STATE AT 10/25
+- **War began 2/28** (Khamenei killed). **Mojtaba has been SL since 3/9**; succession is RESOLVED. He has made no
+  verified public appearance, and the IRGC holds operational control.
+- **Arc:**
+  - 4/8 ceasefire
+  - 4/13 blockade
+  - **6/17 Islamabad Memorandum**, declared "over" by Trump on 7/8
+  - 7/11–23: 13 nights of US strikes
+  - Pauses on 7/24 and **7/30–8/29**
+  - **8/16–17:** the window lapsed with **no deal**
+  - 8/30: tit-for-tat resumed (9/1 wave, tanker-for-tanker strikes)
+  - 9/9: IAEA referral to the UNSC
+  - 9/11: the Houthis took Perim / Bab el-Mandeb
+  - October: record tanker attacks, Houthi strikes on Riyadh and near Mecca
+- **The 8/1 fork resolved to FROZEN OSCILLATION**, the 0.07 branch the engine under-priced. It was not a mediation
+  off-ramp (0.45) and not a full round-3 war.
+- **Now: the DEAL-OR-STRIKE fork.** Trump on 10/25: "no strike today… make a deal or finish them off". CENTCOM plans
+  are reportedly sequenced **after the 11/3 midterms**, and Qatar is mediating.
+  - Hormuz is near standstill: PortWatch counted **4 transits on 10/18, vs ~85/day pre-war**.
+  - **Brent (Dec) settled 116.72 on 10/23.**
+  - The Fed **hiked 9/16** to 3.75–4.00 (#26 MISS: it did not look through the oil shock).
 
-**The master clock is the Aug-16 window expiry** — everything else is oscillation inside it.
-Branches (sum 1.00): **mediation off-ramp 0.35** (was under-priced at 0.10) · window collapse
-→ round-3 0.45 · frozen oscillation 0.07 · succession residual 0.08 · capitulation 0.05.
-Market read: **the war premium is CYCLICAL, not permanent** — trade convexity into the window.
+| Branch of `iran-fork-oct`, by 11/30 | p |
+|---|---|
+| Post-midterm strike campaign (held at the §16.14 cap) | 0.35 |
+| Deal confirmed by BOTH sides | 0.15 |
+| Frozen tanker war | 0.50 |
 
 ---
 
-## 5. LIVE STAKED CALLS (the ones that matter)
+## 5. LIVE STAKED CALLS
 | # | Call | P | Horizon |
 |---|---|---|---|
-| **#68** | Iran mediation off-ramp by the 8/16 window (the bias correction) | 0.55 | 8/16 |
-| **#69** | Range: SPY 705-775 / QQQ 640-720 / SMH 480-605 | 0.60 | 9/30 |
-| **#70** | SMH underperforms SPY | 0.58 | 9/30 |
-| **#62** | 30y mortgage +25bp by 10/1 | 0.62 | 10/1 |
-| **#49** | Concrete federal election instrument by 8/16 | 0.55 | 8/16 |
-| **#59** | Ceasefire fails — **LIKELY MISS** (pause held; Hormuz talks live) | 0.72 | 8/15 |
-| **#65 / #66** | No crash tracking HIT · **war-caps-melt-up AT RISK** (SPY 774.80 line) | 0.80 / 0.60 | 8/21 |
-| **#73** | Hormuz NOT normalized commercial transit by Fri 8/7 (physics, not politics) | 0.85 | 8/7 |
-| **#77** | SMH stays below 605 this week (+14.1% in 4 sessions already) | 0.78 | 8/7 |
-| **#74** | XLE outperforms USO over 5 sessions (war-premium unwind ≠ demand event) | 0.75 | 8/11 |
-| **#78** | SPY not >774.80 on all of Wed/Thu/Fri | 0.70 | 8/7 |
-| **#76** | Pump avg <$4.00 by 8/25 — **self-downgrade** of the Aug-CPI-is-hot thesis | 0.68 | 8/25 |
-| **#75** | Payrolls conditional: ≥110k→SPY red, ≤70k→SPY green, VOID in between | 0.62 | 8/7 |
+| **#81** | FOMC HOLDS 3.75–4.00 on 10/28 | 0.82 | 10/28 |
+| **#79** | No US strike on Iranian LAND territory 10/26–11/3 (pre-midterm) | 0.70 | 11/3 |
+| **#80** | Front-month Brent settles ≥ $100 on 11/30 (physical-flow gate) | 0.70 | 11/30 |
+| #56 | Midterms held + ≥1 federal certification fight. DOJ v. Alaska (10/22) is already filed. **Tracking HIT** | 0.55 | 11/30 |
+| #38 | Jiang: US ground invasion of Iran by 12/31. **AT RISK**: the plans are strikes, not ground forces | 0.70 | 12/31 |
+| #53 | No PLA kinetic action vs Taiwan in 2026 | 0.93 | 12/31 |
+| #16 | Attributed Israeli action on Iranian territory/assets by 1/8. **AT RISK**: no strike on Iran proper since 6/8 | 0.74 | 2027-01-08 |
+| #36 | US ground troops OR a compensated cessation by 1/13. **AT RISK** | 0.45 | 2027-01-13 |
+| #35 / #10 / #1 | Frozen conflict / no durable peace. **Tracking** | 0.55 / 0.70 / 0.70 | 2027–28 |
 
-⚠️ **MIRROR RISK:** four of the six new calls are fade-the-move. After three wrong escalation
-calls the engine must not over-correct into assuming relief cannot compound. The single scenario
-that breaks #66/#77/#78 together: a signed Hormuz deal + a soft payroll in the same week.
-
-**Next catalysts:** Aug 12 CPI (THE referee — carries the Brent>100 pass-through) · Aug 13
-PPI · **Aug 16 Islamabad window** · late-Aug NVDA · Sept FOMC (the deferred hike).
-**Levels:** SMH 605 = correction over; SMH 480 = deeper de-rate; SPY 775 / 705 = the breakers.
+**Next catalysts:**
+- Israel election 10/27
+- **FOMC + MSFT/GOOGL capex 10/28.** This is the AI-architecture referee after Meta's operating income fell 37%,
+  neocloud credit stress, and SMH dropping −16.6% from its 10/6 high.
+- AMZN 10/29 · OPEC+ 11/1 · **US midterms 11/3** · jobs 11/6 · October CPI 11/10 · FOMC Dec 8–9.
 
 ---
 
 ## 6. THE MACHINE (rules that are ENFORCED, not remembered)
 Three gates. **A cycle is not complete until all pass:**
 ```
-python tools/web_coverage.py   # every open prediction wired to the map + no dead-end catalysts
+python tools/web_coverage.py    # every prediction wired to the map + no dead-end catalysts
 python pipeline/ledger.py sweep # nothing overdue-unscored, nothing resolved-without-lesson
-python tools/debug_all.py       # 8-section full system debug (syntax/db/json/coherence/routes)
+python tools/debug_all.py       # full system debug (syntax/db/json/coherence/routes)
 ```
-**Standing rules in CLAUDE.md:** timeline-web sync · the learning loop (TRACK→SCORE→DIAGNOSE→PATCH;
-a repeated miss-shape is systematic, never variance) · time-lane fields on every node
-(lane/date/checkpoint/shifts) · no dead-end catalysts.
-
-**Ledger commands:** `add`, `resolve`, `lesson`, `due`, `sweep`, `report`, `redteam`,
-`trade-open`, `trade-close`, `pnl`.
+- **Ledger commands:** `add` (now with the §8.1 escape-clause lint), `resolve`, `lesson`, `due`, `sweep`, `report`,
+  `redteam`, `trade-open`, `trade-close`, `pnl`.
+- **Cross-platform:** `ingest.py` detaches the trigger worker portably (Windows `creationflags` / POSIX
+  `start_new_session`). Before 10/25 it crashed on Linux.
 
 ---
 
 ## 7. THE DASHBOARD
-`pipeline/dashboard.py` (stdlib only). **6 tabs:** Monitor (overview + P&L + watchlist
-manager + triggers + tape) · Reports · **Timeline & Predictions** · Fusion · Ask Engine · Settings.
-
-- **Theme:** monotone dark — one neutral ramp (`#0b0b0c`→`#f4f4f6`), 3px radii, no glows.
-  Colour ONLY for state (sage=HIT, clay=MISS, amber=due).
-- **Timeline map:** time-lane DAG. X = real time (near-term gets the space: July 2026 ≈ 870px),
-  6 lanes, 48 nodes. **Edges = temporal implication "IF x THEN y"** with arrowheads, all
-  forward in time; green = happened, gold = favoured, grey = alternative, dark-dashed = ruled
-  out, amber-dashed = shift edges. Green dotted spine = actual history in occurrence order.
-  Drag to pan, ctrl+scroll/±  to zoom, PIN a node for what-if propagation.
-- **Long lists are scroll-capped** (Monitor went 47,775px → 5,397px).
-- **Ask Engine:** needs an Anthropic API key in Settings; queries with doctrine + live state
-  as context. Custom question-maps save to `data/custom_maps/`.
-- **LAN:** `powershell -File tools\start_lan.ps1` → serves on `0.0.0.0:8787`, reachable at
-  **http://192.168.4.53:8787**. Loopback-only is the default (opt in via `GT_LAN=1`).
-  ⚠️ **PENDING (needs admin, once):**
+- **Run it:** `pipeline/dashboard.py` (stdlib only), on port 8787. **6 tabs:** Monitor, Reports, **Timeline &
+  Predictions**, Fusion, Ask Engine, Settings.
+- **The timeline map:** a time-lane DAG with 63 nodes. Edges mean "IF x THEN y". Green = happened; resolved forks
+  show the counterfactual siblings.
+- **Verified 10/25:** a Playwright screenshot, 0 overlapping node pairs, all routes 200, no page errors.
+- **The catalyst board (`week_ahead`)** is reset for the week of Oct 26.
+- **LAN (Windows):** `tools/start_lan.ps1`. Still pending, and it needs admin once:
   `New-NetFirewallRule -DisplayName 'GT-Analyst 8787' -Direction Inbound -LocalPort 8787 -Protocol TCP -Action Allow -Profile Private`
+
+## 7b. CEASEFIRE-TIMING ENGINE (new 10/25)
+- **Files:**
+  - `tools/build_ceasefire_data.py`: builds the case base from PA-X v10 (483 ceasefires) and UCDP GED 26.1 plus the
+    Jan–Sep 2026 candidate release (daily fatalities). Output: **401 ceasefire cases and 1,380 war spells.**
+  - `pipeline/ceasefire_engine.py`: Kaplan-Meier, a censored log-normal AFT, a kNN reference class, an ensemble,
+    and a **day-by-day updating** model.
+- **Walk-forward backtest, 2000–2026, no look-ahead** (`reports/backtests/20261025_ceasefire-timing-engine.md`):
+  - **Return to war:** median miss 76 days vs 103 naive; C-index 0.83; 60% Brier skill on P(war within 30 days).
+  - **Day-precise only for dead-on-arrival ceasefires:** 62% within ±1 day when the collapse comes within 3 days.
+    Months-level error beyond that.
+  - **Daily model:** AUC 0.87 for war-within-7-days (0.66 baseline), but it warns of only about 1/3 of collapses,
+    with a median lead of 3 days. On the eve of collapse, the median P(tomorrow) was 4%.
+  - The **war→ceasefire direction is unreliable for interstate wars**; it missed both 2026 Iran ceasefires badly.
+- **Usage:** P(window) and ranking, never exact dates. Commands: `python pipeline/ceasefire_engine.py
+  backtest|backtest-daily|live|predict`.
+- **Next step:** add non-fatality precursors (deadlines, mediator movement, NOTAMs) from the ingest tape as daily
+  covariates.
 
 ---
 
 ## 8. HARD-WON LESSONS ABOUT PROCESS
-1. **Pre-register falsifiers before the move.** #61 looked WRONG mid-week (SMH ran to 591),
-   was flagged as at-risk *in real time* rather than rationalized, then resolved HIT.
-2. **Never claim a tool action ran without the tool result** (a phantom "logged #45" once
-   corrupted downstream state).
-3. **Check staleness of the structural state, not just headline dates.**
+1. **Pre-register falsifiers before the move.** And now: **make them the exact negation of the call** (formal §8.1).
+2. **Never claim a tool action ran without the tool result.**
+3. **Check the staleness of the structural state AND of the premise at logging time** (§16.13 / §16.13a).
 4. **Book exits at the pre-registered target, never the hindsight high.**
-5. **Verify visually, not just in the DOM** — the map "rendered fine" while being an
-   illegible overlapping pile (47 overlapping node pairs).
+5. **Verify visually, not just in the DOM.**
+6. **Never leave the ledger dormant (10/25).** 35 calls went 14–79 days unscored. The gates only work if a cycle
+   actually runs.
+7. **Verify re-indexed aggregator headlines (10/25).** Google News resurfaced Dawn's July–August "War returns to
+   Iran" liveblog with a 10/25 timestamp. Check the underlying page date before treating it as live tape.
 
 ---
 
-## 9. TWO-MACHINE SETUP (laptop + desktop, since 2026-09-19)
-The project is a **private git repo**: `https://github.com/truchard0/GT-Analyst` (pushed 2026-09-19, first commit 645f994). Code, doctrine, `data/timelines.json`, `reports/` and
-**`ledger/ledger.db`** all travel. Excluded: `.env`, `config.json` (API key), `inbox/`
-(~29MB feed dump), `ledger/seen.db` (~6MB dedup cache, rebuilds itself), `logs/`.
+## 9. MACHINES: laptop + desktop + cloud
+- **Repo:** the private git repo `https://github.com/truchard0/GT-Analyst`. The 10/25 cloud relaunch lives on the
+  branch **`claude/gracious-lamport-6wef9u`**; it is **not yet merged to `main`**.
+- **What travels:** code, doctrine, `data/` (including `data/ceasefire/*.csv`), `reports/` and
+  **`ledger/ledger.db`**.
+- **Excluded:** `.env`, `config.json`, `inbox/`, `ledger/seen.db`, `logs/`, and `data/ceasefire/raw/`
+  (~55MB of downloads, rebuilt by the builder).
 
-**⚠️ THE ONE RULE: `ledger.db` is SQLite — git CANNOT merge it.**
-If both machines commit a change to the ledger, you get a binary conflict resolvable only by
-picking one file and *losing the other machine's predictions*. So:
-1. `git pull` **before** you start a session.
-2. `git push` **when you finish** one.
-3. Never run a logging/resolving cycle on both machines at once.
+**⚠️ THE ONE RULE: `ledger.db` is SQLite, and git CANNOT merge it.** The cloud branch's ledger has 38 new
+resolutions and 3 new calls (#79–#81).
+- **Before running any cycle on a local machine:** merge or pull this branch first.
+- **If a local machine logged predictions after 9/19 and never pushed them:** reconcile by hand. Re-add those rows
+  on top of this ledger; do not overwrite it.
 
-**Per-machine setup after cloning:**
-- `cp .env.example .env` and fill in keys (RSS-only ingestion works with none).
-- Re-enter the Anthropic API key in the dashboard Settings tab — `config.json` is gitignored
-  and does NOT travel, by design.
-- `seen.db` regenerates on the first ingest run; expect one noisy cycle as it re-learns what
-  it has already seen.
-- The **Task Scheduler ingest job is machine-local** (`tools/register_task.ps1`). Run it on
-  ONE machine only, or both will write to their own diverging `seen.db`.
+The rest of the routine is unchanged:
+1. `git pull` before a session.
+2. `git push` after it.
+3. Never run cycles on two machines at once.
+
+**Cloud specifics:**
+- The Windows Task Scheduler cadence does not exist here. Each cloud session runs ingest manually
+  (`python pipeline/ingest.py`).
+- A recurring cloud schedule is possible, at most hourly.
+- The container is ephemeral: anything worth keeping must be committed and pushed.

@@ -1,20 +1,20 @@
 {
- "updated": "2026-08-04",
- "note": "Time-lane DAG. Edges are temporal implication (IF x THEN y), all forward in time. Updated 8/4 after the Hormuz-reopening repricing: #72 and #63 resolved MISS, #73-#78 logged for the 8/5-8/7 stretch. #66 (war caps the melt-up) is AT RISK.",
+ "updated": "2026-10-25",
+ "note": "Time-lane DAG. Edges are temporal implication (IF x THEN y), all forward in time. Updated 10/25 after the relaunch sweep: 38 resolutions (24 HIT / 14 MISS of the matured backlog + 3 early), the 8/1 fork resolved to frozen oscillation, the Oct deal-or-strike fork added (#79/#80), FOMC 10/28 checkpoint (#81).",
  "root": {
   "id": "now",
   "label": "NOW",
-  "sub": "2026-08-01 (Sat night) - TRUMP STANDS DOWN: energy-infrastructure campaign HELD OFF at Iran's and Gulf states' request; Trump cites 'perimeters of a deal', possibly signable this weekend. BUT Iran denies movement on a longer-term agreement = stand-down, not deal. Oscillation continues (16.12). Off-ramp now the leading branch 0.45. Islamabad window expires ~8/16. Hormuz traffic still -90pct; oil +20-22pct in July.",
+  "sub": "2026-10-25 (Sun) — DEAL-OR-STRIKE FORK: Trump 'no strike today... make a deal or finish them off'; CENTCOM plans reported for AFTER the 11/3 midterms; Qatar mediating. Since 8/30 a frozen TANKER WAR: Hormuz near standstill (PortWatch 4 transits 10/18; ~500 ships delayed), Houthis hitting Riyadh/Mecca, Brent 116.72 (10/23). Fed hiked 9/16 (3.75-4.00); FOMC 10/28; S&P -2.5% from its 10/6 record, SMH -16.6% on neocloud credit stress. Ledger relaunched: 35 overdue calls scored 10/25.",
   "status": "live"
  },
  "nodes": [
   {
    "id": "contained",
    "parent": "now",
-   "label": "Mediation off-ramp: deal/pause holds toward 8/16 window",
-   "p": 0.45,
+   "label": "✗ Mediation off-ramp did NOT happen (#68 MISS)",
+   "p": 0.0,
    "horizon": "0-2 weeks",
-   "rationale": "RE-WEIGHTED 0.35 -> 0.45 (8/1): Trump stood down the energy campaign at Iran's and the Gulf states' request, citing 'perimeters of a deal' possibly signable this weekend. The mediation pull is real and repeatedly dominant - third time it has beaten an escalation signal. RE-WEIGHTED 0.10 -> 0.35 (7/31 correction): the engine UNDER-PRICED the mediation off-ramp. Iran REQUESTED the strike pause; Oman is mediating; the signed Islamabad 60-day window is still live (expires ~8/16). Both sides are exhausted (12-day initial war + rounds since). The structural pull is BACK to the table, not up the ladder - the #63/#59 misses were escalation-over-predictions that ignored this. Off-ramp = Hormuz reopens, blockade lifts, sanctions-lift talks resume.",
+   "rationale": "RESOLVED 10/25 sweep: No deal, window lapsed, Hormuz ~95% below normal (Kpler 7/15-8/23). #68 scored on substance (formal §8.1). || RE-WEIGHTED 0.35 -> 0.45 (8/1): Trump stood down the energy campaign at Iran's and the Gulf states' request, citing 'perimeters of a deal' possibly signable this weekend. The mediation pull is real and repeatedly dominant - third time it has beaten an escalation signal. RE-WEIGHTED 0.10 -> 0.35 (7/31 correction): the engine UNDER-PRICED the mediation off-ramp. Iran REQUESTED the strike pause; Oman is mediating; the signed Islamabad 60-day window is still live (expires ~8/16). Both sides are exhausted (12-day initial war + rounds since). The structural pull is BACK to the table, not up the ladder - the #63/#59 misses were escalation-over-predictions that ignored this. Off-ramp = Hormuz reopens, blockade lifts, sanctions-lift talks resume.",
    "confluence": [
     "doctrine: exhaustion + decentralization thesis (7/9, 7/11 reports)",
     "market-transmission §7: horizon-match — transient chokepoint event defaults to reversion",
@@ -49,6 +49,10 @@
     {
      "fact": "Oil jumps as Hormuz conflict escalates with fresh strikes",
      "reported": "2026-07-13T03:51Z"
+    },
+    {
+     "fact": "No deal, window lapsed, Hormuz ~95% below normal (Kpler 7/15-8/23). #68 scored on substance (formal §8.1).",
+     "reported": "2026-10-25"
     }
    ],
    "market": "Oil-premium FADES (Brent back toward 75-85), SMH tailwind returns, the war-hedge basket unwinds. This is the branch the engine kept underweighting - price it as a real 0.35, not a tail.",
@@ -76,10 +80,10 @@
   {
    "id": "flip-b",
    "parent": "now",
-   "label": "Window collapses: round-3 escalation",
-   "p": 0.35,
+   "label": "✗ Full round-3 air war did NOT fire — escalation came as a chokepoint/tanker war",
+   "p": 0.0,
    "horizon": "0-4 weeks",
-   "rationale": "RE-WEIGHTED 0.75 -> 0.45 (7/31): still elevated but NOT dominant. Round-2 was real (Brent>100, 13 strike nights) but it RESOLVED INTO a mediation pause - confirming the oscillation, not a permanent flip. Round-3 fires if the 8/16 window collapses (no deal + Iran reneges on Hormuz OR Trump restarts). Confirm unchanged: Brent sustained >90 + strikes resume + 2y up. GATE-PASSED 0.60 -> 0.75 (7/21): the confirm condition (Brent sustained >85-90) HIT - >90 on the Kuwaiti tanker strike; US-Iran deal collapsed; 10 consecutive strike nights; TLT breaking lower = the rate leg engaging. NEW second front: Houthi naval blockade of Saudi (Red Sea) = double-chokepoint. GATE-PASSED UPDATE 0.35 -> 0.60 (2026-07-14 deep dive): the flip condition was 'flows data trumps pric",
+   "rationale": "RESOLVED 10/25 sweep: Episodic strike waves (9/1, 9/5, 9/8-9) not a sustained campaign; Brent/Red Sea legs re-parented under frozen-oscillation. || RE-WEIGHTED 0.75 -> 0.45 (7/31): still elevated but NOT dominant. Round-2 was real (Brent>100, 13 strike nights) but it RESOLVED INTO a mediation pause - confirming the oscillation, not a permanent flip. Round-3 fires if the 8/16 window collapses (no deal + Iran reneges on Hormuz OR Trump restarts). Confirm unchanged: Brent sustained >90 + strikes resume + 2y up. GATE-PASSED 0.60 -> 0.75 (7/21): the confirm condition (Brent sustained >85-90) HIT - >90 on the Kuwaiti tanker strike; US-Iran deal collapsed; 10 consecutive strike nights; TLT breaking lower = the rate leg engaging. NEW second front: Houthi naval blockade of Saudi (Red Sea) = double-chokepoint. GATE-PASSED UPDATE 0.35 -> 0.60 (2026-07-14 deep dive): the flip condition was 'flows data trumps pric",
    "confluence": [
     "market-transmission §1/§3: supply branch requires physical disruption — condition now plausibly forming",
     "formal §12.3: the closure print would be a publicity-multiplier event (moves > literal content)",
@@ -130,6 +134,10 @@
     {
      "fact": "US Treasury REIMPOSES sanctions on Iran oil exports (GL-X snapback fires) + CENTCOM strike wave on Iranian sites near the strait",
      "reported": "2026-07-08"
+    },
+    {
+     "fact": "Episodic strike waves (9/1, 9/5, 9/8-9) not a sustained campaign; Brent/Red Sea legs re-parented under frozen-oscillation.",
+     "reported": "2026-10-25"
     }
    ],
    "market": "SIGNATURE NOW LIVE: crude +9pct with gold and bonds DOWN = real-rate repricing (§6 confirmed in the tape); SMH derating underway; awaiting the 'sustained >85' confirm before full flip | RTX #44: the branch-robust defense expression (entry 192-196, target 210, invalidation <188) - wins on this branch AND most alternatives.",
@@ -163,10 +171,10 @@
   {
    "id": "succession-tip",
    "parent": "now",
-   "label": "Succession RESOLVED (Mojtaba SL); residual IRGC-fracture risk",
-   "p": 0.08,
+   "label": "✓ Succession RESOLVED (Mojtaba SL since 3/9) — IRGC operational control; residual fracture risk",
+   "p": 1.0,
    "horizon": "0-3 months",
-   "rationale": "CORRECTED 7/31 (staleness error owned): succession ALREADY HAPPENED - Khamenei killed 2/28, Mojtaba Khamenei named Supreme Leader 3/9; the regime SURVIVED the transition. The engine wrongly carried this as a live 0.10 instability branch and mis-read the 7/21 CEREMONIAL funeral (of the 2/28 death) as fresh crisis. Residual only: IRGC-faction fracture under war strain (0.08). Timeliness discipline applies to STRUCTURAL STATE, not just headline dates.",
+   "rationale": "RE-KINDED 10/25: an already-resolved structural state, not a sibling branch of the war fork (§16.13). #14 MISS (substance), #18 HIT (low visibility + IRGC power-sharing). || CORRECTED 7/31 (staleness error owned): succession ALREADY HAPPENED - Khamenei killed 2/28, Mojtaba Khamenei named Supreme Leader 3/9; the regime SURVIVED the transition. The engine wrongly carried this as a live 0.10 instability branch and mis-read the 7/21 CEREMONIAL funeral (of the 2/28 death) as fresh crisis. Residual only: IRGC-faction fracture under war strain (0.08). Timeliness discipline applies to STRUCTURAL STATE, not just headline dates.",
    "confluence": [
     "formal §12.1 threshold + §12.6 censorship read",
     "doctrine §4: theocracy failure mode = succession crisis + splintering",
@@ -185,20 +193,24 @@
     {
      "fact": "7/21 'Khamenei funeral' = delayed ceremonial funeral of the 2/28 death, NOT a fresh succession event",
      "reported": "2026-07-21"
+    },
+    {
+     "fact": "No verified public appearance by Mojtaba through 10/8; ex-IRGC chief Rezaei SNSC head (Aug); six-member decision team (Pezeshkian 9/27)",
+     "reported": "2026-09-27"
     }
    ],
    "market": "Vol spike everything-Iran; crude up hard; defense (ITA) bid; the under-priced coordination tail",
-   "kind": "branch",
+   "kind": "event",
    "lane": "iran-energy",
    "date": "2026-07-25"
   },
   {
    "id": "capitulation",
    "parent": "now",
-   "label": "Clean consolidation + proxy stand-down (deal sticks)",
-   "p": 0.05,
+   "label": "✗ Clean consolidation + proxy stand-down did NOT happen",
+   "p": 0.0,
    "horizon": "1-3 months",
-   "rationale": "The falsifying tail for the whole iran-war cluster: Mojtaba appears functioning publicly, Houthis stand down, snapback never comes, the GL-X track implements. Tell: a REAL public Mojtaba address PLUS observable proxy de-escalation (per §12.6, a staged appearance alone doesn't count).",
+   "rationale": "RESOLVED 10/25 sweep: Proxy theater escalated: Houthis took Perim/Bab el-Mandeb 9/11, Riyadh airport hit 10/10 and 10/25. || The falsifying tail for the whole iran-war cluster: Mojtaba appears functioning publicly, Houthis stand down, snapback never comes, the GL-X track implements. Tell: a REAL public Mojtaba address PLUS observable proxy de-escalation (per §12.6, a staged appearance alone doesn't count).",
    "confluence": [
     "contrarian-red-team: this node exists to keep the cluster honest — 18 rows die together if it happens"
    ],
@@ -207,7 +219,12 @@
     14,
     18
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "fact": "Proxy theater escalated: Houthis took Perim/Bab el-Mandeb 9/11, Riyadh airport hit 10/10 and 10/25.",
+     "reported": "2026-10-25"
+    }
+   ],
    "market": "Full normalization: tankers bearish (#22 false), crude glut deepens, defense premium bleeds",
    "kind": "branch",
    "lane": "iran-energy",
@@ -216,10 +233,10 @@
   {
    "id": "opec-defends",
    "parent": "contained",
-   "label": "OPEC+ pauses hikes to defend price",
-   "p": 0.58,
+   "label": "✗ OPEC+ kept hiking on 8/2 (#29 MISS); paused only 9/6 into a SQUEEZE, not a glut",
+   "p": 0.0,
    "horizon": "next OPEC+ meeting (~2-4 wks)",
-   "rationale": "Into a glut with Hormuz normalizing, continuing scheduled hikes crushes price; the cartel's revealed preference historically flips to price defense once Brent holds low-70s. Mechanism-design lens (pending gap-research): quota-setting is a repeated bargaining game where Saudi swing behavior is the commitment device.",
+   "rationale": "RESOLVED 10/25 sweep: 8/2 +188 kb/d for Sept; 9/6 and 10/4 pauses; next meeting 11/1. UAE left OPEC 5/1. || Into a glut with Hormuz normalizing, continuing scheduled hikes crushes price; the cartel's revealed preference historically flips to price defense once Brent holds low-70s. Mechanism-design lens (pending gap-research): quota-setting is a repeated bargaining game where Saudi swing behavior is the commitment device.",
    "confluence": [
     "ledger #29 (P=0.58)",
     "market-transmission: oil path sets the Branch A floor"
@@ -233,6 +250,10 @@
     {
      "fact": "OPEC+ approves further output increase as Hormuz exports recover",
      "reported": "2026-07-05"
+    },
+    {
+     "fact": "8/2 +188 kb/d for Sept; 9/6 and 10/4 pauses; next meeting 11/1. UAE left OPEC 5/1.",
+     "reported": "2026-10-25"
     }
    ],
    "market": "Brent floor ~70; XLE stabilizes; keeps disinflation mild rather than deflationary",
@@ -242,11 +263,11 @@
   },
   {
    "id": "dovish-fed",
-   "parent": "contained",
-   "label": "Fed 7/29: HAWKISH hold (hike tail now 25%)",
-   "p": 0.75,
+   "parent": "now",
+   "label": "✓ Fed 7/29: HAWKISH hold, 3 hike dissents (#67 HIT) — then HIKED 9/16 (#26 MISS)",
+   "p": 1.0,
    "horizon": "next FOMC (late Jul)",
-   "rationale": "UPDATED 7/22 for the war escalation + market repricing: CME hike odds 10.7pct(7/15)->~35pct(7/22) as oil hit 132/Brent>100 - the engine's Branch-B mechanism live in the rates market. Engine call: HOLD ~0.75 (FADES the market's ~0.65 - the Fed looks through a supply shock NOT yet in the data: June CPI/PPI soft, no SEP, 11 look-through, crisis-caution). HIKE tail now ~0.25 (up from 0.08 when oil was 83). Tone MAXIMALLY hawkish: Warsh a genuine hawk (June minutes: 'a few officials made the case'), dots up, Sept hike near-explicit. The scoreable engine-vs-market bet is the fade. Discriminator: 2y in the first 30 min + whether the statement HIKES or just threatens.",
+   "rationale": "RESOLVED 10/25 sweep: 7/29 hold 9-3 (Hammack, Kashkari, Logan for a hike); 9/16 +25bp to 3.75-4.00, 12-0. || UPDATED 7/22 for the war escalation + market repricing: CME hike odds 10.7pct(7/15)->~35pct(7/22) as oil hit 132/Brent>100 - the engine's Branch-B mechanism live in the rates market. Engine call: HOLD ~0.75 (FADES the market's ~0.65 - the Fed looks through a supply shock NOT yet in the data: June CPI/PPI soft, no SEP, 11 look-through, crisis-caution). HIKE tail now ~0.25 (up from 0.08 when oil was 83). Tone MAXIMALLY hawkish: Warsh a genuine hawk (June minutes: 'a few officials made the case'), dots up, Sept hike near-explicit. The scoreable engine-vs-market bet is the fade. Discriminator: 2y in the first 30 min + whether the statement HIKES or just threatens.",
    "confluence": [
     "12.13 reputation: early-round toughness is structurally rational",
     "market-transmission 3: supply shocks move LR expectations with a delay - pre-empt, do not look through",
@@ -262,6 +283,10 @@
     {
      "fact": "Gold first weekly rise in a month as hike bets scaled back",
      "reported": "2026-07-03"
+    },
+    {
+     "fact": "7/29 hold 9-3 (Hammack, Kashkari, Logan for a hike); 9/16 +25bp to 3.75-4.00, 12-0.",
+     "reported": "2026-09-16"
     }
    ],
    "market": "S1 hawkish-hold: 2y UP, TLT/gold DOWN, semis third blow, RTX/energy the designed winners. S3 dovish tail: growth rips, #47 aborts, engine Branch-B lean takes real damage - the honest model-check.",
@@ -291,10 +316,10 @@
   {
    "id": "tech-tailwind",
    "parent": "dovish-fed",
-   "label": "High-beta/AI complex tailwind persists",
-   "p": 0.7,
+   "label": "✓ HAPPENED for the WRONG reason — AI complex outperformed through a Fed HIKE (capex, not the dovish branch)",
+   "p": 1.0,
    "horizon": "through 2026-08-09 (#28)",
-   "rationale": "Branch A + dovish Fed = lower discount rate = long-duration equity supported. The watchlist auto-tier keeps firing on NVDA/AMD/TSM headlines — flow confirms the theme is live. Reflexivity checklist (contrarian #8) runs monthly on this node: twilight test not yet triggered.",
+   "rationale": "RESOLVED 10/25 sweep: SMH +12.7% vs SPY +2.1% 7/31->9/30 despite the 9/16 hike and a 5% 10y; then SMH -16.6% 10/6->10/23 on neocloud credit stress. || Branch A + dovish Fed = lower discount rate = long-duration equity supported. The watchlist auto-tier keeps firing on NVDA/AMD/TSM headlines — flow confirms the theme is live. Reflexivity checklist (contrarian #8) runs monthly on this node: twilight test not yet triggered.",
    "confluence": [
     "ledger #28 (P=0.70)",
     "market-transmission §5 dovish-branch factor map",
@@ -304,7 +329,12 @@
     28,
     25
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "fact": "SMH +12.7% vs SPY +2.1% 7/31->9/30 despite the 9/16 hike and a 5% 10y; then SMH -16.6% 10/6->10/23 on neocloud credit stress.",
+     "reported": "2026-10-25"
+    }
+   ],
    "market": "SMH relative winner; TSM earnings (mid-Aug) the next test (#24/#25)",
    "kind": "event",
    "lane": "markets-ai",
@@ -312,11 +342,11 @@
   },
   {
    "id": "houthi-saudi",
-   "parent": "contained",
-   "label": "Proxy theater persists — Houthi/Red Sea, now aimed at Saudi",
-   "p": 0.95,
+   "parent": "frozen-oscillation",
+   "label": "✓ HAPPENED — proxy theater aimed at Saudi (Riyadh airport, Mecca barrage 10/25)",
+   "p": 1.0,
    "horizon": "through 2026-09-06 (#15 window)",
-   "rationale": "FIRED (7/21): Houthis DECLARED a naval blockade on Saudi Arabia; Saudi crude tankers U-turned in the Red Sea. The predicted proxy-pressure-on-GCC materialized as a full second front. Even in the contained branch the war continues at proxy scale: Houthis threatened SAUDI targets over an Iran flight to Sanaa. MODEL CORRECTED per backtest (doctrine §15.1): Saudi Arabia is not a fearful bystander but a structurally DESPERATE co-belligerent (failing diversification, oil-survival stakes, theocracy-vs-monarchy) — per Jiang, MORE invested in Iranian regime change than Israel (airspace granted). That cuts both ways: Riyadh both drives escalation AND is the most exposed target. The existential rungs: an Aramco-class hit flips to flip-b via supply; a DESALINATION strike (§15.2: 60% of GCC water, $50k drone vs 10M-person city, ledger #37) is the civilizational-infrastructure rung between energy and WMD.",
+   "rationale": "RESOLVED 10/25 sweep: Houthi strikes on Saudi tankers Jul-Aug, Riyadh airport hit 10/10 (13 killed) and again 10/25; Saudi intercepts barrage near Mecca (Al Jazeera 2026-10-25T13:49Z). || FIRED (7/21): Houthis DECLARED a naval blockade on Saudi Arabia; Saudi crude tankers U-turned in the Red Sea. The predicted proxy-pressure-on-GCC materialized as a full second front. Even in the contained branch the war continues at proxy scale: Houthis threatened SAUDI targets over an Iran flight to Sanaa. MODEL CORRECTED per backtest (doctrine §15.1): Saudi Arabia is not a fearful bystander but a structurally DESPERATE co-belligerent (failing diversification, oil-survival stakes, theocracy-vs-monarchy) — per Jiang, MORE invested in Iranian regime change than Israel (airspace granted). That cuts both ways: Riyadh both drives escalation AND is the most exposed target. The existential rungs: an Aramco-class hit flips to flip-b via supply; a DESALINATION strike (§15.2: 60% of GCC water, $50k drone vs 10M-person city, ledger #37) is the civilizational-infrastructure rung between energy and WMD.",
    "confluence": [
     "ledger #15 (P=0.70, next attack within 60d)",
     "doctrine §4: proxies as pawns + fragmented command",
@@ -344,20 +374,24 @@
     {
      "fact": "Cargo vessel attacked in Red Sea amid fragile ceasefire",
      "reported": "2026-07-05"
+    },
+    {
+     "fact": "Houthi strikes on Saudi tankers Jul-Aug, Riyadh airport hit 10/10 (13 killed) and again 10/25; Saudi intercepts barrage near Mecca (Al Jazeera 2026-10-25T13:49Z).",
+     "reported": "2026-10-25"
     }
    ],
    "market": "War-risk insurance stays bid (Red Sea + now Saudi facilities); an Aramco-class hit = instant Branch-B flip via supply, watch tanker rates and Saudi CDS as tells",
    "kind": "event",
    "lane": "iran-energy",
-   "date": "2026-08-15"
+   "date": "2026-10-10"
   },
   {
    "id": "naval-escort",
-   "parent": "flip-b",
-   "label": "US toll/escort regime — controlled-strait resolution",
-   "p": 0.35,
+   "parent": "frozen-oscillation",
+   "label": "✗ Escort regime attempted (US claimed 40 escorted transits 9/1) — did NOT resolve the strait",
+   "p": 0.0,
    "horizon": "2-6 weeks after sustained disruption",
-   "rationale": "UPGRADED (7/14): Trump's announced blockade+TOLL structure IS the chokepoint-rationing play (doctrine 12.4: control-not-close) — the US is building the toll regime this node predicted. If it stabilizes transit under US terms, oil caps ~85-95 rather than running to 100+. LEDGER ALERT: an ENFORCED toll schedule fires #12's falsifier (that call bet no toll within 6 months — announced is not yet enforced). The missing fork: historically, Hormuz/Gulf shipping crises resolve into convoy/escort operations (Earnest Will 1987, Prosperity Guardian 2023) more often than into sustained closure. The US 'plan to neutralize Iran's Hormuz leverage' (7/9 tape) is the doctrinal precursor (§12.4 chokepoint-control: the hegemon needs the strait OPEN and rationed, not closed). Escort regime = disruption persists but throughput recovers → oil spike CAPS in the 80s rather than running to 100+; Branch B's inflation leg fires only partially (July/Aug CPI firm, not hot).",
+   "rationale": "RESOLVED 10/25 sweep: Kpler 5-11 ships/day vs US claim of 40 escorted transits (9/1); flows collapsed again in Oct (PortWatch 4 transits 10/18). || UPGRADED (7/14): Trump's announced blockade+TOLL structure IS the chokepoint-rationing play (doctrine 12.4: control-not-close) — the US is building the toll regime this node predicted. If it stabilizes transit under US terms, oil caps ~85-95 rather than running to 100+. LEDGER ALERT: an ENFORCED toll schedule fires #12's falsifier (that call bet no toll within 6 months — announced is not yet enforced). The missing fork: historically, Hormuz/Gulf shipping crises resolve into convoy/escort operations (Earnest Will 1987, Prosperity Guardian 2023) more often than into sustained closure. The US 'plan to neutralize Iran's Hormuz leverage' (7/9 tape) is the doctrinal precursor (§12.4 chokepoint-control: the hegemon needs the strait OPEN and rationed, not closed). Escort regime = disruption persists but throughput recovers → oil spike CAPS in the 80s rather than running to 100+; Branch B's inflation leg fires only partially (July/Aug CPI firm, not hot).",
    "confluence": [
     "doctrine §12.4 chokepoint-rationing (control-not-close is the hegemon's objective)",
     "reference class: 2 of 2 modern Gulf shipping crises resolved via escort, not closure",
@@ -370,20 +404,24 @@
     {
      "fact": "US floats plan to neutralize Iran's Hormuz leverage",
      "reported": "2026-07-09"
+    },
+    {
+     "fact": "Kpler 5-11 ships/day vs US claim of 40 escorted transits (9/1); flows collapsed again in Oct (PortWatch 4 transits 10/18).",
+     "reported": "2026-10-18"
     }
    ],
    "market": "The middle path markets misprice BOTH ways: crude caps ~$85 (fade the >$100 panic) but war-risk premia and naval-presence costs persist (defense ITA bid, tankers two-sided); CPI gets the partial pass-through, not the full re-acceleration",
    "kind": "branch",
    "lane": "iran-energy",
-   "date": "2026-08-10"
+   "date": "2026-09-01"
   },
   {
    "id": "brent-90",
-   "parent": "flip-b",
-   "label": "Brent sustains >90 — hawkish repricing fires",
-   "p": 0.65,
+   "parent": "frozen-oscillation",
+   "label": "✓ HAPPENED — Brent sustained >90 (>100 since 9/9; 116.72 on 10/23)",
+   "p": 1.0,
    "horizon": "within 4-6 weeks of flip",
-   "rationale": "A closure that holds pushes Brent through 90; long-run inflation expectations reprice (ECB WP2472 channel); front-end yields jump. This is the #27 trigger condition arming.",
+   "rationale": "RESOLVED 10/25 sweep: Brent >80 for 22 straight sessions from 8/6; >100 almost continuously since 9/9; Dec contract 116.72 on 10/23. #60 HIT, #39 partial. || A closure that holds pushes Brent through 90; long-run inflation expectations reprice (ECB WP2472 channel); front-end yields jump. This is the #27 trigger condition arming.",
    "confluence": [
     "market-transmission §3/§4",
     "formal §12.2: precise public closure print = coordination signal"
@@ -393,19 +431,24 @@
     60,
     39
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "fact": "Brent >80 for 22 straight sessions from 8/6; >100 almost continuously since 9/9; Dec contract 116.72 on 10/23. #60 HIT, #39 partial.",
+     "reported": "2026-10-23"
+    }
+   ],
    "market": "2y yield UP is the confirmation; energy over everything; drop gold/bond haven assumption (§6)",
    "kind": "branch",
    "lane": "iran-energy",
-   "date": "2026-07-21"
+   "date": "2026-09-09"
   },
   {
    "id": "highbeta-derate",
    "parent": "brent-90",
-   "label": "High-beta/AI derates vs energy (2022 analog)",
-   "p": 0.72,
+   "label": "✗ High-beta/AI did NOT derate vs energy (#27 MISS) — capex engine swamped the rate channel",
+   "p": 0.0,
    "horizon": "month following trigger",
-   "rationale": "The equity-duration law: rate-hike repricing compresses long-duration multiples hardest; rotation to energy/defense/value. The user's original 'war fears -> hike odds -> high-beta re-rating' chain — correct ONLY on this branch.",
+   "rationale": "RESOLVED 10/25 sweep: SMH +9 to +13% vs XLE -3% over the month after Brent >90 (8/31->9/30); market-transmission §5.1 amendment. || The equity-duration law: rate-hike repricing compresses long-duration multiples hardest; rotation to energy/defense/value. The user's original 'war fears -> hike odds -> high-beta re-rating' chain — correct ONLY on this branch.",
    "confluence": [
     "ledger #27 (P=0.72 conditional)",
     "market-transmission §5/§12"
@@ -413,7 +456,12 @@
    "ledger": [
     27
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "fact": "SMH +9 to +13% vs XLE -3% over the month after Brent >90 (8/31->9/30); market-transmission §5.1 amendment.",
+     "reported": "2026-10-25"
+    }
+   ],
    "market": "SMH underperforms XLE; ITA up; VIXY up; the semis watchlist flips from tailwind to casualty list",
    "kind": "event",
    "lane": "markets-ai",
@@ -423,7 +471,7 @@
    "id": "regime-survives",
    "parent": "succession-tip",
    "label": "IRGC consolidates — militarized theocracy",
-   "p": 0.8,
+   "p": 0.85,
    "horizon": "3-6 months",
    "rationale": "Even a tipping event most likely resolves into IRGC power-consolidation (praetorian absorption), not collapse — the army-owns-the-economy structure absorbs the clerical vacuum. Reference class (contrarian #3): mid-war authoritarian successions overwhelmingly produce harder, more militarized regimes, not democratization.",
    "confluence": [
@@ -435,7 +483,12 @@
     17,
     18
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "fact": "Regime intact through 10/25 (Pezeshkian at SCO 8/31-9/1; Araghchi FM)",
+     "reported": "2026-10-25"
+    }
+   ],
    "market": "Structurally MORE escalatory long-run: harder line on Hormuz leverage, nuclear reconstitution (#30) accelerates",
    "kind": "branch",
    "lane": "iran-energy",
@@ -445,7 +498,7 @@
    "id": "regime-collapse",
    "parent": "succession-tip",
    "label": "Cascade past θ* — regime falls",
-   "p": 0.2,
+   "p": 0.15,
    "horizon": "weeks after tipping signal",
    "rationale": "The true tail-of-tails (compound ~2%): elite defection cascade after a common-knowledge signal. Not a slow drift — a coordination avalanche (§12.1/§12.8). Trigger to watch: visible IRGC unit defection or open clerical split surviving censorship.",
    "confluence": [
@@ -500,10 +553,10 @@
   {
    "id": "cpi-reaccel",
    "parent": "now",
-   "label": "CPI re-accelerates (July/Aug prints) — the inflation leg",
-   "p": 0.72,
+   "label": "✓ RESOLVED HIT — CPI re-accelerated in the AUGUST print (+0.4, energy +2.1); Sept +0.6",
+   "p": 1.0,
    "horizon": "2026-08-12 and 2026-09 prints",
-   "rationale": "SPLIT CALL (8/1, #71): the JULY print (8/12) is BENIGN - the Hormuz spike hit only the last ~10 days of July so the monthly AVERAGE gas price lands near/below June's; rockets-and-feathers (2-4wk lag) defers the pass-through. The reaccel lands in the AUGUST print (Sept release) - exactly the report Warsh said the Fed would wait for. So: Aug-12 = relief, Sept = the hot one that decides the hike. [checkpoint: a scheduled print that occurs in every world — branch influence is carried by shift edges, not by parentage] If Brent sustains >85-90: crude-to-pump pass-through runs 2-4 weeks (retail already turning: 3.84 on 7/9), motor fuel is ~3.1pct of headline CPI, energy ~6.5-7pct; +10pct sustained crude adds roughly +0.4-0.5pp to headline over ~2 months, plus airfares (jet fuel) and Hormuz shipping/war-risk premia into goods with a longer lag (doctrine 10.8 second-order: fertilizer/sulfur later still). July CPI (Aug 12) catches the first half; August CPI catches the full force. On top of a +20.5pct y/y gasoline base, headline re-acceleration revives the hike debate (#26 sensitivity fires).",
+   "rationale": "RESOLVED 10/25 sweep: July benign (+0.1/+0.2, #71 HIT); Aug +0.4 headline energy +2.1 (#32 HIT); Sept +0.6 energy +5.2; Fed hiked 9/16. || SPLIT CALL (8/1, #71): the JULY print (8/12) is BENIGN - the Hormuz spike hit only the last ~10 days of July so the monthly AVERAGE gas price lands near/below June's; rockets-and-feathers (2-4wk lag) defers the pass-through. The reaccel lands in the AUGUST print (Sept release) - exactly the report Warsh said the Fed would wait for. So: Aug-12 = relief, Sept = the hot one that decides the hike. [checkpoint: a scheduled print that occurs in every world — branch influence is carried by shift edges, not by parentage] If Brent sustains >85-90: crude-to-pump pass-through runs 2-4 weeks (retail already turning: 3.84 on 7/9), motor fuel is ~3.1pct of headline CPI, energy ~6.5-7pct; +10pct sustained crude adds roughly +0.4-0.5pp to headline over ~2 months, plus airfares (jet fuel) and Hormuz shipping/war-risk premia into goods with a longer lag (doctrine 10.8 second-order: fertilizer/sulfur later still). July CPI (Aug 12) catches the first half; August CPI catches the full force. On top of a +20.5pct y/y gasoline base, headline re-acceleration revives the hike debate (#26 sensitivity fires).",
    "confluence": [
     "market-transmission §3 supply-branch inflation channel (ECB WP2472: supply shocks move long-run inflation expectations with a delay)",
     "ledger #32 conditional",
@@ -529,6 +582,10 @@
     {
      "fact": "AAA retail +20.5pct y/y (3.79 vs 3.14)",
      "reported": "2026-07-07"
+    },
+    {
+     "fact": "July benign (+0.1/+0.2, #71 HIT); Aug +0.4 headline energy +2.1 (#32 HIT); Sept +0.6 energy +5.2; Fed hiked 9/16.",
+     "reported": "2026-10-14"
     }
    ],
    "market": "Hot July/Aug CPI on this branch = the full user chain fires: hike odds up, SMH derates vs XLE (#27), gold stays pressured (§6), 2y yield is the confirm | Mortgage transmission #62: 10y + MBS spread both pushed UP - 30yr fixed +25bp+ by Oct in the base case.",
@@ -551,11 +608,11 @@
   },
   {
    "id": "frozen-conflict",
-   "parent": "contained",
-   "label": "FROZEN CONFLICT institutionalizes — neither treaty nor war",
-   "p": 0.6,
+   "parent": "frozen-oscillation",
+   "label": "FROZEN CONFLICT institutionalizing — neither treaty nor sustained war (live through 10/25)",
+   "p": 0.85,
    "horizon": "mid-2027 (ledger #35: by 2027-07-13)",
-   "rationale": "The full-arc base case: the armistice fails politely (snapback fights, nuclear-recon reporting, Israeli probes) but neither side crosses back to war-scale for 30+ days. The war becomes INFRASTRUCTURE: permanent escort/naval presence, standing war-risk premia, sanctions ratchet. Doctrine 12.4: perpetual manageable chaos in the corridor is a FEATURE of the chokepoint strategy. Formal 12.13 governs the rhythm — US tough phase, then MIXING PHASE (inconsistent enforcement, watch from mid-2027), then end-game softening into the Nov-2028 election; Iran's optimal play is obstinate waiting. Note: flip-b paths also converge here after spikes resolve (escort regime = frozen conflict with ships).",
+   "rationale": "RESOLVED 10/25 sweep: No treaty; no 30-day war-scale campaign; deal-or-strike rhetoric 10/25. #35 tracking. || The full-arc base case: the armistice fails politely (snapback fights, nuclear-recon reporting, Israeli probes) but neither side crosses back to war-scale for 30+ days. The war becomes INFRASTRUCTURE: permanent escort/naval presence, standing war-risk premia, sanctions ratchet. Doctrine 12.4: perpetual manageable chaos in the corridor is a FEATURE of the chokepoint strategy. Formal 12.13 governs the rhythm — US tough phase, then MIXING PHASE (inconsistent enforcement, watch from mid-2027), then end-game softening into the Nov-2028 election; Iran's optimal play is obstinate waiting. Note: flip-b paths also converge here after spikes resolve (escort regime = frozen conflict with ships).",
    "confluence": [
     "doctrine 11.5 constitutive conflicts exhaust rather than settle",
     "formal 12.13 Kreps-Wilson three-phase + finite-horizon unraveling",
@@ -571,12 +628,16 @@
     {
      "fact": "Trump blockade/toll proposal = early-round reputation investment, not a war decision (12.13 read)",
      "reported": "2026-07-13"
+    },
+    {
+     "fact": "No treaty; no 30-day war-scale campaign; deal-or-strike rhetoric 10/25. #35 tracking.",
+     "reported": "2026-10-25"
     }
    ],
    "market": "War-risk premia become PERMANENT: defense supercycle (ITA multi-year visibility), oil vol regime elevated both ways (sell normalization, buy panic), CPI carries a standing energy premium; the 'normalization trade' is structurally capped",
    "kind": "event",
    "lane": "iran-energy",
-   "date": "2026-10-01"
+   "date": "2026-12-31"
   },
   {
    "id": "war-round-2",
@@ -617,7 +678,7 @@
    "id": "nuclear-threshold",
    "parent": "frozen-conflict",
    "label": "Nuclear threshold/breakout — the deterrence terminal (~15%)",
-   "p": 0.28,
+   "p": 0.32,
    "horizon": "24mo (ledger #34: by 2028-07-13)",
    "rationale": "DOWNGRADED with the 2025 fact: Iran's weapons-threshold path was set back years by the Midnight Hammer destruction of its centrifuge base. A dash-to-bomb this cycle is constrained by the wrecked enrichment program (they'd be reconstituting from a deep hole under active bombardment). The risk is a CRUDE/dispersed device or a declared latent capability as deterrent signaling, not a tested warhead. Weakened-power-seeks-deterrence completes: reconstitution (#30) matures into test or declared capability. 12.13 insight: a real bomb converts Iran into a genuine commitment type — the one reputation that doesn't decay. Paradox: breakout is CALMING after the one-time shock (deterrence stasis).",
    "confluence": [
@@ -636,6 +697,10 @@
     {
      "fact": "Iran: US struck unfinished nuclear plant, warns of safety risk",
      "reported": "2026-07-21T07:44Z"
+    },
+    {
+     "fact": "IAEA Board referral to UNSC 9/9; CSIS imagery of record Pickaxe Mountain construction (~9/10)",
+     "reported": "2026-09-10"
     }
    ],
    "market": "One-time violent repricing (crude/defense/gold spike) then STASIS — fade the second week, not the first",
@@ -667,11 +732,11 @@
   },
   {
    "id": "nuclear-recon",
-   "parent": "contained",
-   "label": "Counter-reconstitution war (can't end the program)",
-   "p": 0.75,
+   "parent": "now",
+   "label": "✓ HAPPENED — counter-reconstitution: IAEA referral to UNSC 9/9 (#30 HIT)",
+   "p": 1.0,
    "horizon": "by 2026-10-11",
-   "rationale": "REFRAMED 7/21 with the 2025-destruction fact: June-2025 Midnight Hammer already MOP'd Fordow/Natanz/Isfahan and 'effectively destroyed' enrichment. So round-2 strikes hit Iran's RECONSTITUTION (dispersed labs, centrifuge production, unfinished plants - the 7/21 'unfinished plant' fits exactly). Structural consequence: you cannot bomb a program permanently, so the US is locked into perpetual counter-reconstitution strikes = 'mowing the grass'. This VALIDATES seed #1 (war continues for years) and #4 (never durably exits) - bombing buys time, not victory. #64: continued strikes this week ~0.80, but no deep-hardened strike (target likely not rebuilt to depth in 13mo).",
+   "rationale": "RESOLVED 10/25 sweep: WSJ 7/21 centrifuges into Pickaxe Mountain; IAEA cannot verify 440.9kg 60% HEU (~9/3); Board referral 9/9 (23-3-8). || REFRAMED 7/21 with the 2025-destruction fact: June-2025 Midnight Hammer already MOP'd Fordow/Natanz/Isfahan and 'effectively destroyed' enrichment. So round-2 strikes hit Iran's RECONSTITUTION (dispersed labs, centrifuge production, unfinished plants - the 7/21 'unfinished plant' fits exactly). Structural consequence: you cannot bomb a program permanently, so the US is locked into perpetual counter-reconstitution strikes = 'mowing the grass'. This VALIDATES seed #1 (war continues for years) and #4 (never durably exits) - bombing buys time, not victory. #64: continued strikes this week ~0.80, but no deep-hardened strike (target likely not rebuilt to depth in 13mo).",
    "confluence": [
     "2: calibrated nuclear-rung strikes as coercion, crown jewels already spent in 2025",
     "seed #1/#4: bombing cannot end a program -> forever-war lock-in",
@@ -691,6 +756,10 @@
     {
      "fact": "2025 Operation Midnight Hammer: 7 B-2s, 14 GBU-57 MOPs on Fordow/Natanz/Isfahan (CRS/ISIS)",
      "reported": "2025-06-21"
+    },
+    {
+     "fact": "WSJ 7/21 centrifuges into Pickaxe Mountain; IAEA cannot verify 440.9kg 60% HEU (~9/3); Board referral 9/9 (23-3-8).",
+     "reported": "2026-09-09"
     }
    ],
    "market": "Each strike-night is an oil-premium pulse but NOT a regime-ender; the counter-reconstitution frame means the war-premium is STRUCTURAL (persistent), not event-driven (mean-reverting) - the §7 horizon-match flips toward persistence. Defense procurement (RTX/PGM) the durable beneficiary.",
@@ -849,10 +918,10 @@
    "id": "semis-correction",
    "parent": "now",
    "kind": "event",
-   "p": 0.58,
-   "label": "Growth selloff: SMH <550 before reclaiming 605",
+   "p": 1.0,
+   "label": "✓ HAPPENED — SMH <550 (504.22 on 7/29) before reclaiming 605 (late Sept)",
    "horizon": "by 8/14",
-   "rationale": "#47: positioning/valuation unwind, not a demand break - every fundamental datapoint in the window was strong; the willingness-to-pay broke (13). Path tracked to the letter: 604 top -> 555.9 Fri close (zone upper edge). Bounces fail below 605 (distribution pattern). Resolution mechanism: the capex-verdict node decides whether the zone HOLDS (confirm) or BREAKS (cut -> 500-520).",
+   "rationale": "RESOLVED 10/25 sweep: SMH low 504.22 7/29; first close >605 late Sept. || #47: positioning/valuation unwind, not a demand break - every fundamental datapoint in the window was strong; the willingness-to-pay broke (13). Path tracked to the letter: 604 top -> 555.9 Fri close (zone upper edge). Bounces fail below 605 (distribution pattern). Resolution mechanism: the capex-verdict node decides whether the zone HOLDS (confirm) or BREAKS (cut -> 500-520).",
    "confluence": [
     "fusion semis -0.31 CONFIRM (topdown x both TA verdicts)",
     "13 scarcity-premium: sell-the-news on TSM record print",
@@ -878,6 +947,10 @@
     {
      "fact": "Asia contagion: SoftBank -8% tracking the rout (4-min auto-trigger catch)",
      "reported": "2026-07-17T01:07Z"
+    },
+    {
+     "fact": "SMH low 504.22 7/29; first close >605 late Sept.",
+     "reported": "2026-09-30"
     }
    ],
    "market": "Buy checklist gates the entry: capex confirm + no Branch-B rate confirm + flush + equipment split healing. NVDA add-zone 191-196 (invalidation <188). MU: fade bounces (#33, <800 target). RTX #44 the branch-robust long throughout.",
@@ -888,10 +961,10 @@
    "id": "election-instrument",
    "parent": "now",
    "kind": "event",
-   "p": 0.55,
-   "label": "Election intervention: concrete federal instrument by 8/16",
+   "p": 1.0,
+   "label": "✓ RESOLVED HIT — concrete federal election instruments within 30 days (#49)",
    "horizon": "30-day clock from 7/16 speech",
-   "rationale": "#49: does the 7/16 primetime speech (scored HIT #48, Brier 0.09) convert to a concrete post-speech infrastructure action (EO, DHS/DOJ directive, decertification move)? The chain already on tape: EAC purge (7/10, SCOTUS removal precedent) -> Pulte unilateral declassification -> primetime reveal -> SAVE-Act push. 16.11: instrument chains are capital-committed even when the speech is rhetoric. If nothing lands by 8/16, the speech was coordination theater and seed #7 does NOT advance - engine says so either way.",
+   "rationale": "RESOLVED 10/25 sweep: DHS Sec. Mullin formal letters to CA/NJ/NV/PA (7/17); SG's SCOTUS application to enforce the mail-voting EO (7/27). || #49: does the 7/16 primetime speech (scored HIT #48, Brier 0.09) convert to a concrete post-speech infrastructure action (EO, DHS/DOJ directive, decertification move)? The chain already on tape: EAC purge (7/10, SCOTUS removal precedent) -> Pulte unilateral declassification -> primetime reveal -> SAVE-Act push. 16.11: instrument chains are capital-committed even when the speech is rhetoric. If nothing lands by 8/16, the speech was coordination theater and seed #7 does NOT advance - engine says so either way.",
    "confluence": [
     "12.3 precondition tracking: purge->declassifier->reveal chain logged in real time",
     "12.1: rhetoric until instrument - SAVE Act is legislative, does not fire #49",
@@ -910,6 +983,10 @@
     {
      "fact": "Primetime address: China voter-file claims, rigged-and-stolen framing, SAVE-Act push; CNN doc review: recycled 2021 IC material, no fraudulent-vote evidence",
      "reported": "2026-07-16"
+    },
+    {
+     "fact": "DHS Sec. Mullin formal letters to CA/NJ/NV/PA (7/17); SG's SCOTUS application to enforce the mail-voting EO (7/27).",
+     "reported": "2026-07-27"
     }
    ],
    "market": "Slow-burn midterm-vol builder (VIXY, prediction markets), not an overnight mover. Re-rate seed #7 UP materially if the instrument lands.",
@@ -1055,17 +1132,22 @@
    "id": "midterms-2026",
    "parent": "election-instrument",
    "kind": "event",
-   "p": 0.55,
+   "p": 0.85,
    "label": "Midterms: held, but >=1 federal certification fight",
    "horizon": "Nov 2026",
-   "rationale": "#56: the election-security campaign (EAC purge -> declassification -> SAVE-Act) converts into at least one state-level federal intervention or certification fight. Held-on-schedule is not in doubt (0.95+); the FIGHT is the call. If the #49 instrument lands by 8/16, raise toward 0.7.",
+   "rationale": "RE-WEIGHTED 0.55 -> 0.85 (10/25): DOJ sued 10/22 to block certification of Alaska's Senate result if Peltola wins (AG Blanche defended it 10/25); DOJ v. California over mail ballots (appeals court skeptical 10/25). A federal certification fight is already filed; #56 needs only the midterms to be held on 11/3. || #56: the election-security campaign (EAC purge -> declassification -> SAVE-Act) converts into at least one state-level federal intervention or certification fight. Held-on-schedule is not in doubt (0.95+); the FIGHT is the call. If the #49 instrument lands by 8/16, raise toward 0.7.",
    "ledger": [
     56,
     49
    ],
    "market": "Midterm-vol builder (VIXY term structure Oct-Nov); prediction markets the early gauge.",
    "confluence": [],
-   "evidence": [],
+   "evidence": [
+    {
+     "fact": "DOJ v. Alaska certification suit (filed 10/22; Blanche defends, CNBC 2026-10-25T20:28Z); 9th Cir skeptical of DOJ v. California (Reuters 2026-10-25T21:02Z)",
+     "reported": "2026-10-25"
+    }
+   ],
    "lane": "us-politics",
    "date": "2026-11-03",
    "checkpoint": true
@@ -1274,14 +1356,14 @@
   },
   {
    "id": "red-sea-front",
-   "parent": "flip-b",
+   "parent": "frozen-oscillation",
    "kind": "event",
-   "p": 0.65,
+   "p": 1.0,
    "lane": "iran-energy",
-   "date": "2026-07-21",
-   "label": "Red Sea front persists: Saudi exports squeezed both ends",
+   "date": "2026-09-11",
+   "label": "✓ HAPPENED — Red Sea front: Houthis seize Perim/Bab el-Mandeb; Saudi exports squeezed",
    "horizon": "2-6 weeks",
-   "rationale": "Houthi naval blockade of Saudi (declared 7/21) persists >2 weeks: Saudi crude squeezed at BOTH exits (Hormuz war-risk east, Red Sea blockade west). East-West pipeline lands inside the blockaded Red Sea - the mitigation is itself blocked. #58: Saudi seaborne exports -20pct m/m in August at 0.55. CPC/Kazakh contagion shows the tanker war going global.",
+   "rationale": "RESOLVED 10/25 sweep: Saudi seaborne exports ~3.0 mb/d in Aug (tanker tracking, -22 to -33% m/m; #58 HIT); Houthis took Perim 9/11; East-West pipeline shut after drones. || Houthi naval blockade of Saudi (declared 7/21) persists >2 weeks: Saudi crude squeezed at BOTH exits (Hormuz war-risk east, Red Sea blockade west). East-West pipeline lands inside the blockaded Red Sea - the mitigation is itself blocked. #58: Saudi seaborne exports -20pct m/m in August at 0.55. CPC/Kazakh contagion shows the tanker war going global.",
    "confluence": [
     "10.8 dependency cascade: chokepoint pressure propagates to every route",
     "11.4: two chokepoints > 2x one chokepoint (no arbitrage path left)"
@@ -1297,6 +1379,10 @@
     {
      "fact": "CPC stops accepting Kazakh oil due to tanker attacks",
      "reported": "2026-07-21T14:48Z"
+    },
+    {
+     "fact": "Saudi seaborne exports ~3.0 mb/d in Aug (tanker tracking, -22 to -33% m/m; #58 HIT); Houthis took Perim 9/11; East-West pipeline shut after drones.",
+     "reported": "2026-09-11"
     }
    ],
    "market": "Supply-loss convexity: XLE/BNO up, tanker rates (FRO +3pct today) spike on danger premium; if BOTH routes close fully, the Goldman 120 tail activates.",
@@ -1315,7 +1401,7 @@
   },
   {
    "id": "us-houthi-response",
-   "parent": "red-sea-front",
+   "parent": "now",
    "kind": "event",
    "p": 0.0,
    "lane": "iran-energy",
@@ -1359,12 +1445,12 @@
    "id": "market-regime-q3",
    "parent": "now",
    "kind": "event",
-   "p": 0.45,
+   "p": 1.0,
    "lane": "markets-ai",
    "date": "2026-08-21",
-   "label": "Q3 regime: capped choppy grind (not melt-up, not crash)",
+   "label": "✓ RESOLVED HIT through 8/21 — capped grind, no crash (#65, #66)",
    "horizon": "next 30-60 days",
-   "rationale": "Deep-dive 7/22 distribution: capped-grind 45pct / melt-up 22pct / crash-first 18pct / pump-then-crash 15pct. Base case = two-sided range (SPY ~720-770) - the war premium (Branch-B 0.75) caps upside while stable credit (HYG) + low vol prevent an imminent crash. Fwd P/E 20.4 + dot-com-level concentration + narrow breadth (IWM lagging) are crash CONDITIONS, not a trigger. CAPEX DEPENDENCY (now wired): a cohort capex CONFIRM removes the funding-chain crash-trigger and supports the grind/melt-up side; a CUT is one of the crash-first triggers. But capex governs the SEMIS leg far more than the broad index - the index is gated primarily by the WAR premium and CREDIT, so capex is a secondary regime modulator here. The >10pct drawdown risk is a SEPTEMBER story (seasonality + Aug-12 CPI pass-through + FOMC digestion), not August. #65 no-crash-30d 0.80; #66 war-caps-meltup 0.60.",
+   "rationale": "RESOLVED 10/25 sweep: SPY 729-778 7/22-8/21. || Deep-dive 7/22 distribution: capped-grind 45pct / melt-up 22pct / crash-first 18pct / pump-then-crash 15pct. Base case = two-sided range (SPY ~720-770) - the war premium (Branch-B 0.75) caps upside while stable credit (HYG) + low vol prevent an imminent crash. Fwd P/E 20.4 + dot-com-level concentration + narrow breadth (IWM lagging) are crash CONDITIONS, not a trigger. CAPEX DEPENDENCY (now wired): a cohort capex CONFIRM removes the funding-chain crash-trigger and supports the grind/melt-up side; a CUT is one of the crash-first triggers. But capex governs the SEMIS leg far more than the broad index - the index is gated primarily by the WAR premium and CREDIT, so capex is a secondary regime modulator here. The >10pct drawdown risk is a SEPTEMBER story (seasonality + Aug-12 CPI pass-through + FOMC digestion), not August. #65 no-crash-30d 0.80; #66 war-caps-meltup 0.60.",
    "confluence": [
     "contrarian red-team: pump-then-crash is conjunction-heavy (15pct), reject the tidy arc",
     "credit-first crash doctrine: no crash without HYG/spread stress - currently absent",
@@ -1392,6 +1478,10 @@
     {
      "fact": "After-hours: GLD 374->378, USO->129.8 - war complex bidding overnight",
      "reported": "2026-07-22T02:25Z"
+    },
+    {
+     "fact": "SPY 729-778 7/22-8/21.",
+     "reported": "2026-08-21"
     }
    ],
    "market": "Barbell: energy/defense convexity for the escalation tail, semis-buy gated (#61), HYG the single dial - it breaking = the difference between grind and crash.",
@@ -1412,11 +1502,11 @@
    "id": "frozen-oscillation",
    "parent": "now",
    "kind": "branch",
-   "p": 0.07,
+   "p": 1.0,
    "lane": "iran-energy",
-   "date": "2026-09-15",
-   "label": "Frozen oscillation: strike-pause cycle grinds past 8/16 (no deal, no full war)",
-   "rationale": "The window expires with NO durable deal but NO round-3 either - the strike-pause-strike cycle just continues (the #35 frozen-conflict thesis writ large). Neither Hormuz fully reopens nor fully closes; a permanent war-risk premium sits on oil.",
+   "date": "2026-08-16",
+   "label": "✓ HAPPENED — frozen oscillation: no deal, pause 7/30–8/29, then tanker war (no full war)",
+   "rationale": "RESOLVED 10/25 sweep: No US strikes 7/30-8/29; Islamabad window lapsed 8/16-17 with no deal or extension; tit-for-tat resumed 8/30 (Larak), 9/1 wave, 'tanker for tanker' strikes 9/5, 9/8-9; record tanker attacks Oct; Trump postponed major combat. The 0.07 branch the engine under-priced (§16.12b). || The window expires with NO durable deal but NO round-3 either - the strike-pause-strike cycle just continues (the #35 frozen-conflict thesis writ large). Neither Hormuz fully reopens nor fully closes; a permanent war-risk premium sits on oil.",
    "confluence": [
     "#35 frozen-conflict; both-exhausted equilibrium",
     "16.12 oscillation without resolution"
@@ -1426,7 +1516,12 @@
     1,
     59
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "fact": "No US strikes 7/30-8/29; Islamabad window lapsed 8/16-17 with no deal or extension; tit-for-tat resumed 8/30 (Larak), 9/1 wave, 'tanker for tanker' strikes 9/5, 9/8-9; record tanker attacks Oct; Trump postponed major combat. The 0.07 branch the engine under-priced (§16.12b).",
+     "reported": "2026-10-25"
+    }
+   ],
    "market": "Persistent (not spiking) oil premium; defense structural; the war-hedge basket a permanent low-grade hold."
   },
   {
@@ -1437,7 +1532,7 @@
    "checkpoint": true,
    "lane": "iran-energy",
    "date": "2026-08-16",
-   "label": "Islamabad Memorandum 60-day window EXPIRES (~8/16)",
+   "label": "✓ Islamabad window EXPIRED 8/16–17 — no deal, no extension",
    "horizon": "8/16",
    "rationale": "THE MASTER CLOCK the engine wasn't tracking. The 14-point Islamabad Memorandum was signed 6/17, opening a 60-day window for a final deal on Hormuz administration, Iran's nuclear/missile programs, and sanctions relief. Everything since - the Jul round-2 breakdown, the current pause - is OSCILLATION INSIDE this window. ~8/16 is the real fork: DEAL (mediation off-ramp) vs COLLAPSE (round-3) vs FROZEN. 16.12: when a signed framework with a deadline exists, the DEADLINE is the fork - track the window, not the daily strikes. Coincides with #59 (8/15) and #49 (8/16).",
    "confluence": [
@@ -1458,6 +1553,10 @@
     {
      "fact": "US pauses strikes at Iran's request; Oman mediating Hormuz-reopening talks",
      "reported": "2026-07-27"
+    },
+    {
+     "fact": "Trump: 'No' to extension; Iran: MOU had no formal 60-day deadline (Iran International 8/17)",
+     "reported": "2026-08-17"
     }
    ],
    "market": "The 8/16 expiry is the single biggest oil/vol event on the war clock. Deal = oil gaps DOWN (fade the war premium); collapse = round-3 gap UP. Position the CONVEXITY into the window, not a directional bet.",
@@ -1483,12 +1582,12 @@
    "id": "price-map-q3",
    "parent": "market-regime-q3",
    "kind": "event",
-   "p": 0.6,
+   "p": 0.0,
    "lane": "markets-ai",
    "date": "2026-09-30",
-   "label": "Price map holds: SPY 705-775 / QQQ 640-720 / SMH 480-605",
+   "label": "✗ Price map broke UPSIDE — QQQ >720 on 8/4, SPY >775 on 8/13 (#69 MISS, #70 MISS)",
    "horizon": "through 9/30",
-   "rationale": "#69 range call from the 7/31 close (SPY 746.81, QQQ 687.92, SMH 540.16). The capped-grind regime bounded on BOTH sides: the war premium + rate-derate cap the upside (no durable new ATH, #66), the capex confirm + no-crash floor the downside (#65). #70: SMH underperforms SPY inside the range - semis are the weak leg (below the 596 50-day, RSI 42, margin compression from the raised capex).",
+   "rationale": "RESOLVED 10/25 sweep: SMH 540.53->609.00 (+12.7%) vs SPY 747.03->762.63 (+2.1%) 7/31->9/30. || #69 range call from the 7/31 close (SPY 746.81, QQQ 687.92, SMH 540.16). The capped-grind regime bounded on BOTH sides: the war premium + rate-derate cap the upside (no durable new ATH, #66), the capex confirm + no-crash floor the downside (#65). #70: SMH underperforms SPY inside the range - semis are the weak leg (below the 596 50-day, RSI 42, margin compression from the raised capex).",
    "confluence": [
     "#65 no crash + #66 war caps the melt-up = a bounded regime, not a trend",
     "13: capex raised but MARGINS compressed - the spend is real, the payoff is the question",
@@ -1504,6 +1603,10 @@
     {
      "fact": "SPY 746.81 (on 50-day 744.7), QQQ 687.92, SMH 540.16 (50-day 596, RSI 42)",
      "reported": "2026-07-31"
+    },
+    {
+     "fact": "SMH 540.53->609.00 (+12.7%) vs SPY 747.03->762.63 (+2.1%) 7/31->9/30.",
+     "reported": "2026-09-30"
     }
    ],
    "market": "Levels that matter: SMH 605 = correction over (upside breaker); SMH 480 = the deeper de-rate; SPY 775 = new-ATH breaker; SPY 705 = the -10pct crash line. Aug-12 CPI is the referee for which side breaks.",
@@ -1583,14 +1686,14 @@
   },
   {
    "id": "hormuz-framework-only",
-   "parent": "contained",
+   "parent": "now",
    "kind": "event",
-   "p": 0.85,
+   "p": 1.0,
    "lane": "iran-energy",
    "date": "2026-08-07",
    "horizon": "by Fri 8/7 close",
-   "label": "Hormuz: framework talk, NOT normalized traffic",
-   "rationale": "#73 P=0.85. Trump projected 'phase one' Hormuz reopening by Tue 8/4 and says talks are underway; Tehran publicly denies talks exist. Iran and Oman are reported to be progressing on a transit framework - ships enter via an Iranian-controlled route, exit via an Omani one, with security/environmental service fees. But the binding constraints are PHYSICAL and ACTUARIAL, not political: mine clearance and war-risk insurance re-rating run in weeks, not days. §16.14 corollary governs: a stand-down is not a deal, and an announced framework is not restored traffic.",
+   "label": "✓ RESOLVED HIT — Hormuz: framework talk, NOT normalized traffic (#73)",
+   "rationale": "RESOLVED 10/25 sweep: Kpler ~5 vessels/day 7/15-8/23 vs ~130 pre-war; 2 ships crossed 8/14. || #73 P=0.85. Trump projected 'phase one' Hormuz reopening by Tue 8/4 and says talks are underway; Tehran publicly denies talks exist. Iran and Oman are reported to be progressing on a transit framework - ships enter via an Iranian-controlled route, exit via an Omani one, with security/environmental service fees. But the binding constraints are PHYSICAL and ACTUARIAL, not political: mine clearance and war-risk insurance re-rating run in weeks, not days. §16.14 corollary governs: a stand-down is not a deal, and an announced framework is not restored traffic.",
    "confluence": [
     "16.14 corollary: stand-down != deal; announcement != execution",
     "11.4 chokepoint: physical reopening is mine-clearance-limited",
@@ -1617,6 +1720,10 @@
     {
      "fact": "Brent falls below $80 - first time since the round-2 escalation; USO -5.2% to 115.75",
      "reported": "2026-08-04"
+    },
+    {
+     "fact": "Kpler ~5 vessels/day 7/15-8/23 vs ~130 pre-war; 2 ships crossed 8/14.",
+     "reported": "2026-08-27"
     }
    ],
    "market": "Crude has ALREADY repriced the announcement (Brent >$100 -> <$80). The asymmetry is therefore to the upside in oil on any re-closure headline, and only modestly down on actual execution, because execution is what the tape just bought.",
@@ -1635,21 +1742,26 @@
   },
   {
    "id": "hormuz-normalized",
-   "parent": "contained",
+   "parent": "now",
    "kind": "event",
-   "p": 0.15,
+   "p": 0.0,
    "lane": "iran-energy",
    "date": "2026-08-07",
    "horizon": "by Fri 8/7 close",
-   "label": "Hormuz FULLY normalized this week (tail)",
-   "rationale": "Complement of #73. Requires a signed fee-for-passage deal plus escorted convoys moving at scale inside three sessions. Possible if Iran's public denial is domestic-audience posturing over a real private track and mine clearance is narrower than assumed.",
+   "label": "✗ Hormuz NOT normalized (tail did not fire)",
+   "rationale": "RESOLVED 10/25 sweep: See #73. || Complement of #73. Requires a signed fee-for-passage deal plus escorted convoys moving at scale inside three sessions. Possible if Iran's public denial is domestic-audience posturing over a real private track and mine clearance is narrower than assumed.",
    "confluence": [
     "12.6 reversal-prone decider can also reverse INTO a deal fast"
    ],
    "ledger": [
     73
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "fact": "See #73.",
+     "reported": "2026-10-25"
+    }
+   ],
    "market": "Brent to the $60s, XLE down hard, SMH/QQQ melt-up, #66 dies.",
    "shifts": [
     {
@@ -1663,12 +1775,12 @@
    "id": "oil-premium-unwind",
    "parent": "contained",
    "kind": "event",
-   "p": 0.75,
+   "p": 0.0,
    "lane": "iran-energy",
    "date": "2026-08-11",
    "horizon": "5 sessions from 8/4",
-   "label": "War-premium unwind: XLE outperforms USO",
-   "rationale": "#74 P=0.75. On 8/4 crude fell 5.2% (USO 122.12->115.75) while XLE fell only 0.46% and XOP 1.31% - a large, deliberate divergence. Read: the tape is treating this as a war-premium unwind, not a demand event. Cheaper crude EXPANDS refining margins (MPC/PSX/VLO), integrateds carry downstream, and equity multiples never capitalized $130 oil to begin with. The doctrine correction this encodes: chokepoint closure has HIGH adaptation elasticity - Hormuz traffic ran -90% while Brent held near $100 because Iran kept exporting, OPEC+ raised output, and convoys prioritized oil.",
+   "label": "✗ War-premium unwind did NOT happen — USO +10.2% vs XLE +4.1% (#74 MISS)",
+   "rationale": "RESOLVED 10/25 sweep: Brent 79.36 (8/4) -> 88.91 (8/11): announcement-layer flush reversed at the next physical datapoint (market-transmission §7.1). || #74 P=0.75. On 8/4 crude fell 5.2% (USO 122.12->115.75) while XLE fell only 0.46% and XOP 1.31% - a large, deliberate divergence. Read: the tape is treating this as a war-premium unwind, not a demand event. Cheaper crude EXPANDS refining margins (MPC/PSX/VLO), integrateds carry downstream, and equity multiples never capitalized $130 oil to begin with. The doctrine correction this encodes: chokepoint closure has HIGH adaptation elasticity - Hormuz traffic ran -90% while Brent held near $100 because Iran kept exporting, OPEC+ raised output, and convoys prioritized oil.",
    "confluence": [
     "13e.1 bifurcated tape: physical vs equity channels price differently",
     "11.4 amended: chokepoint price response saturates as workarounds compound"
@@ -1686,6 +1798,10 @@
     {
      "fact": "Brent below $80 on reopening optimism",
      "reported": "2026-08-04"
+    },
+    {
+     "fact": "Brent 79.36 (8/4) -> 88.91 (8/11): announcement-layer flush reversed at the next physical datapoint (market-transmission §7.1).",
+     "reported": "2026-08-11"
     }
    ],
    "market": "Long XLE / short USO expresses it cleanly. Invalidated by a genuine demand scare.",
@@ -1702,12 +1818,12 @@
    "id": "payrolls-jul",
    "parent": "dovish-fed",
    "kind": "checkpoint",
-   "p": 0.62,
+   "p": 1.0,
    "lane": "fed-macro",
    "date": "2026-08-07",
    "horizon": "Fri 8/7 08:30 ET",
-   "label": "July payrolls — good-news-is-bad-news test",
-   "rationale": "#75 P=0.62, CONDITIONAL and VOID inside 70k-110k. Consensus ~85k vs 57k prior. The Fed held on 7/29 with THREE dissents for a HIKE - the most since 2016 - and explicitly deferred to the July/August CPI. With live hike dissents on the board, labour strength transmits to hike odds rather than to earnings, so >=110k should close SPY red and <=70k should close it green. This is the engine's strongest terrain per the backtest: a datable event with a structural reaction function.",
+   "label": "✓ RESOLVED HIT — July payrolls -23k -> SPY GREEN, record close (#75)",
+   "rationale": "RESOLVED 10/25 sweep: BLS 8/7: -23k; SPY +0.61% to 773.26; S&P record 7,757.64 as hike odds fell ~55%->44%. || #75 P=0.62, CONDITIONAL and VOID inside 70k-110k. Consensus ~85k vs 57k prior. The Fed held on 7/29 with THREE dissents for a HIKE - the most since 2016 - and explicitly deferred to the July/August CPI. With live hike dissents on the board, labour strength transmits to hike odds rather than to earnings, so >=110k should close SPY red and <=70k should close it green. This is the engine's strongest terrain per the backtest: a datable event with a structural reaction function.",
    "confluence": [
     "13e event-time governs inside 48h of the catalyst",
     "11 Fed reaction function: three hike dissents make labour data hawkish-transmitting"
@@ -1725,6 +1841,10 @@
     {
      "fact": "FOMC held 7/29 with three dissents for a hike",
      "reported": "2026-07-29"
+    },
+    {
+     "fact": "BLS 8/7: -23k; SPY +0.61% to 773.26; S&P record 7,757.64 as hike odds fell ~55%->44%.",
+     "reported": "2026-08-07"
     }
    ],
    "market": "TLT is the cleanest read; SPY the scored one. A big unemployment-rate move can dominate the count.",
@@ -1745,12 +1865,12 @@
    "id": "smh-605-cap",
    "parent": "capex-raise",
    "kind": "event",
-   "p": 0.78,
+   "p": 1.0,
    "lane": "markets-ai",
    "date": "2026-08-07",
    "horizon": "by Fri 8/7 close",
-   "label": "SMH stays below 605 this week",
-   "rationale": "#77 P=0.78. SMH ran 504.22 (7/29 low close) -> 575.54 in four sessions = +14.1%, with the PHLX semi index +5.7% on 8/4 alone (Intel +10.8%, Marvell +13%, Micron +7.6%, Broadcom +6.6%). AMD then beat and raised after the bell: revenue $11.5B (+50%), data centre $6.7B (+107% y/y), Q3 guide $12.7-13.3B vs $12.5B consensus. Real, but 605 needs another +5.1% on top of a +14% four-day move, and 605 is the 50-day neighbourhood. §13e: the reflex phase of a positioning-unwind reversal runs hot then consolidates before it re-rates. Clearing 605 is an NVDA (late-Aug) job, not an AMD one.",
+   "label": "✓ RESOLVED HIT — SMH stayed below 605 that week (#77); 605 broke only in late Sept",
+   "rationale": "RESOLVED 10/25 sweep: SMH closes 8/5-8/7: 569.70/571.48/582.70. || #77 P=0.78. SMH ran 504.22 (7/29 low close) -> 575.54 in four sessions = +14.1%, with the PHLX semi index +5.7% on 8/4 alone (Intel +10.8%, Marvell +13%, Micron +7.6%, Broadcom +6.6%). AMD then beat and raised after the bell: revenue $11.5B (+50%), data centre $6.7B (+107% y/y), Q3 guide $12.7-13.3B vs $12.5B consensus. Real, but 605 needs another +5.1% on top of a +14% four-day move, and 605 is the 50-day neighbourhood. §13e: the reflex phase of a positioning-unwind reversal runs hot then consolidates before it re-rates. Clearing 605 is an NVDA (late-Aug) job, not an AMD one.",
    "confluence": [
     "13e reflex-then-consolidate in positioning unwinds",
     "51: a capex confirm alone does not durably re-rate the complex"
@@ -1774,6 +1894,10 @@
     {
      "fact": "PHLX semi index +5.7%; adv/dec on Nasdaq 3244:1099",
      "reported": "2026-08-04"
+    },
+    {
+     "fact": "SMH closes 8/5-8/7: 569.70/571.48/582.70.",
+     "reported": "2026-08-07"
     }
    ],
    "market": "605 = correction-over line; 480 = deeper de-rate. Memory (SNDK/WDC Wed pm) is the second-leg risk.",
@@ -1789,12 +1913,12 @@
    "id": "spy-breakout-fails",
    "parent": "now",
    "kind": "event",
-   "p": 0.7,
+   "p": 1.0,
    "lane": "markets-ai",
    "date": "2026-08-07",
    "horizon": "by Fri 8/7 close",
-   "label": "Record breakout does NOT hold >2% for 3 straight",
-   "rationale": "#78 P=0.70. S&P closed a record 7,736.52 on 8/4 (+1.79%); Dow 54,085.88 also a record. SPY 771.28 sits +1.54% above the prior 2026 high close of 759.57 (6/2) - so the 2%-above threshold that would kill #66 is only SPY 774.80, roughly 0.45% away. The engine's read: a record set on a geopolitical-relief impulse, three sessions ahead of a payroll print, is the configuration that consolidates. The tell is VIXY +0.35% on a +1.8% SPY day - complacency, not accumulation. NOTE the mirror risk: having been wrong predicting escalation three times, the engine must not now be wrong assuming relief cannot compound. #66 is AT RISK and is stated as such.",
+   "label": "✓ RESOLVED HIT — breakout did not hold (#78, #66)",
+   "rationale": "RESOLVED 10/25 sweep: SPY never >774.80 on 3 straight days 8/5-8/7; longest run >774.80 by 8/21 = 2 sessions. || #78 P=0.70. S&P closed a record 7,736.52 on 8/4 (+1.79%); Dow 54,085.88 also a record. SPY 771.28 sits +1.54% above the prior 2026 high close of 759.57 (6/2) - so the 2%-above threshold that would kill #66 is only SPY 774.80, roughly 0.45% away. The engine's read: a record set on a geopolitical-relief impulse, three sessions ahead of a payroll print, is the configuration that consolidates. The tell is VIXY +0.35% on a +1.8% SPY day - complacency, not accumulation. NOTE the mirror risk: having been wrong predicting escalation three times, the engine must not now be wrong assuming relief cannot compound. #66 is AT RISK and is stated as such.",
    "confluence": [
     "16.14 corollary applied to the market side: do not over-correct into resolution",
     "13e event-time: the payroll print governs the back half of the week"
@@ -1817,6 +1941,10 @@
     {
      "fact": "VIXY +0.35% on a +1.8% SPY day",
      "reported": "2026-08-04"
+    },
+    {
+     "fact": "SPY never >774.80 on 3 straight days 8/5-8/7; longest run >774.80 by 8/21 = 2 sessions.",
+     "reported": "2026-08-21"
     }
    ],
    "market": "SPY 774.80 is the line that decides #66. Above it for 5 sessions and #66 resolves against the engine.",
@@ -1832,12 +1960,12 @@
    "id": "gas-sub-4",
    "parent": "oil-premium-unwind",
    "kind": "event",
-   "p": 0.68,
+   "p": 0.0,
    "lane": "fed-macro",
    "date": "2026-08-25",
    "horizon": "by 8/25",
-   "label": "Pump avg back below $4.00 — August CPI cools",
-   "rationale": "#76 P=0.68. AAA national average was $4.095 on 8/3, above the July average of $3.943 (computed from 7 verified prints). Pump prices track crude with a ~2-3 week lag, so a >20% Brent collapse in the first week of August feeds the back half of the month. This DOWNGRADES the engine's own prior claim that the August CPI (September print) would be the hot one - stated explicitly because self-downgrades are the part that usually goes unrecorded. Rockets-and-feathers (retail margins widen on the way down) is the main brake, along with Gulf-coast hurricane season.",
+   "label": "✗ Pump avg stayed >$4.00 every day of August (#76 MISS)",
+   "rationale": "RESOLVED 10/25 sweep: AAA: first August ever above $4 every day; $4.29 on 10/25. || #76 P=0.68. AAA national average was $4.095 on 8/3, above the July average of $3.943 (computed from 7 verified prints). Pump prices track crude with a ~2-3 week lag, so a >20% Brent collapse in the first week of August feeds the back half of the month. This DOWNGRADES the engine's own prior claim that the August CPI (September print) would be the hot one - stated explicitly because self-downgrades are the part that usually goes unrecorded. Rockets-and-feathers (retail margins widen on the way down) is the main brake, along with Gulf-coast hurricane season.",
    "confluence": [
     "13d.2 base-effect identity before any y/y claim",
     "self-downgrade of the August-CPI-is-hot thesis"
@@ -1860,6 +1988,10 @@
     {
      "fact": "Brent below $80 on 8/4, down from >$100 in July",
      "reported": "2026-08-04"
+    },
+    {
+     "fact": "AAA: first August ever above $4 every day; $4.29 on 10/25.",
+     "reported": "2026-08-27"
     }
    ],
    "market": "A sub-$4 pump into the September CPI removes the main hawkish input to the deferred Sept hike.",
@@ -1870,80 +2002,266 @@
      "note": "the energy leg of the reacceleration case weakens"
     }
    ]
+  },
+  {
+   "id": "iran-fork-oct",
+   "parent": "frozen-oscillation",
+   "kind": "event",
+   "lane": "iran-energy",
+   "date": "2026-11-30",
+   "horizon": "0-5 weeks",
+   "p": 1.0,
+   "label": "Deal-or-strike fork: Trump 10/25 'make a deal or finish them off'",
+   "rationale": "Trump 10/25: 'There will not be a strike today... do I make a deal with them, or do I finish them off?' CENTCOM plans reported for AFTER the midterms; Qatari mediators in Tehran; Iran says the window is open. Doctrine §16.14 caps P(strike executes as reported) at 0.35; §16.12b says a pause-without-deal is the cheap state. #79 = no US land strike before 11/3 (0.70).",
+   "confluence": [
+    "doctrine §16.14 hard cap (reversal-prone decider)",
+    "doctrine §16.12b (pause without deal is cheap)",
+    "midterm calendar: Brent 116 / gasoline 4.29 make a pre-election spike costly",
+    "ceasefire-timing engine: P(ceasefire by 11/30 | none through day 56) ~5-11% (unreliable for interstate wars)"
+   ],
+   "ledger": [
+    79
+   ],
+   "market": "USO/BNO vol into 11/3; ITA",
+   "evidence": [
+    {
+     "fact": "Trump: 'There will not be a strike today'; deal or 'finish them off' (Al Jazeera/Times of Israel liveblogs)",
+     "reported": "2026-10-25"
+    },
+    {
+     "fact": "CENTCOM reportedly has plans for strikes after the midterm polls (Al Jazeera)",
+     "reported": "2026-10-25T11:39Z"
+    },
+    {
+     "fact": "Dawn 'War returns to Iran' headline = re-indexed Jul-Aug liveblog, not a new event (verified)",
+     "reported": "2026-10-25T19:02Z"
+    }
+   ],
+   "shifts": [
+    {
+     "target": "frozen-conflict",
+     "p_to": 0.6,
+     "date_delta": 0,
+     "note": "a confirmed deal ends the frozen state"
+    },
+    {
+     "target": "war-round-2",
+     "p_to": 0.95,
+     "date_delta": -100,
+     "note": "a post-midterm campaign pulls round 2 forward"
+    }
+   ]
+  },
+  {
+   "id": "postmidterm-campaign",
+   "parent": "iran-fork-oct",
+   "kind": "branch",
+   "lane": "iran-energy",
+   "date": "2026-11-30",
+   "horizon": "1-5 weeks",
+   "p": 0.35,
+   "label": "US strike campaign on Iranian territory (≥3 strike days) by 11/30",
+   "rationale": "The reported CENTCOM post-midterm plan. Held AT the §16.14 cap (0.35): planning reports are negotiating instruments for this decider; escalate only on execution signals (aircraft launched, NOTAMs).",
+   "confluence": [
+    "CENTCOM plans (reported)",
+    "TWZ 10/23: IAF ops + ship movements",
+    "DNI memo: Iran in 'advanced stages' of attack planning (CNBC 10/24)"
+   ],
+   "ledger": [],
+   "market": "Brent >130 tail; ITA up; SMH down",
+   "evidence": [
+    {
+     "fact": "On The Brink Of Epic Fury Round Two? (TWZ)",
+     "reported": "2026-10-23T21:19Z"
+    }
+   ]
+  },
+  {
+   "id": "deal-confirmed",
+   "parent": "iran-fork-oct",
+   "kind": "branch",
+   "lane": "iran-energy",
+   "date": "2026-11-30",
+   "horizon": "1-5 weeks",
+   "p": 0.15,
+   "label": "US-Iran deal/ceasefire confirmed by BOTH sides by 11/30",
+   "rationale": "Qatari mediation + 'Iranian leaders want a deal' (Trump) vs Iran's 'Hormuz will not return' (Araghchi 10/23-25) and a repeated stand-down-is-not-a-deal record (§16.14 corollary). The timing engine gives a ceasefire ~5-11% by 11/30 (weak for interstate wars).",
+   "confluence": [
+    "Qatar mediators in Tehran",
+    "Iran FM spox: messages still exchanged"
+   ],
+   "ledger": [],
+   "market": "Brent -15-25% on confirmation; #80 breaker",
+   "evidence": [
+    {
+     "fact": "Qatar mediators visit Tehran (Al Jazeera liveblog)",
+     "reported": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "id": "frozen-tanker-war",
+   "parent": "iran-fork-oct",
+   "kind": "branch",
+   "lane": "iran-energy",
+   "date": "2026-11-30",
+   "horizon": "1-5 weeks",
+   "p": 0.5,
+   "label": "Frozen tanker war grinds on: no campaign, no deal (Hormuz shut, Brent ≥100)",
+   "rationale": "The modal path since 8/30: episodic strikes, record tanker attacks, Hormuz near standstill, no confirmed talks. The physical-flow gate (market-transmission §7.1) keeps the premium; #80 = Brent ≥100 on 11/30 (0.70; the strike branch also keeps it above 100).",
+   "confluence": [
+    "PortWatch 4 transits 10/18",
+    "~500 vessels delayed + new tanker attack near Oman (Gulf News 10/25)",
+    "war-risk 6-9% of hull"
+   ],
+   "ledger": [
+    80
+   ],
+   "market": "BNO/USO up; tanker equities bid; SPR draws continue",
+   "evidence": [
+    {
+     "fact": "Hormuz near standstill; ~500 vessels delayed; new tanker attack (Gulf News/UKMTO)",
+     "reported": "2026-10-25T16:22Z"
+    },
+    {
+     "fact": "Dec Brent settled 116.72 (6-month high)",
+     "reported": "2026-10-23"
+    }
+   ]
+  },
+  {
+   "id": "fomc-oct",
+   "parent": "now",
+   "kind": "event",
+   "lane": "fed-macro",
+   "checkpoint": true,
+   "date": "2026-10-28",
+   "horizon": "3 days",
+   "p": 0.82,
+   "label": "FOMC 10/28: HOLD at 3.75-4.00 (engine 0.82)",
+   "rationale": "Economists see a hold and a December hike; Warsh 'I don't prejudge' cut October hike bets; no SEP. Breaker: a 9/16-style hawkish surprise into the oil shock.",
+   "confluence": [
+    "market pricing ~83-87% hold (single-source)",
+    "economist surveys",
+    "no-SEP meeting precedent (7/29 hold)"
+   ],
+   "ledger": [
+    81
+   ],
+   "market": "TLT, SPY; 2y is the tell",
+   "evidence": [
+    {
+     "fact": "U.S. Economists See Fed Holding Rates on the 28th, Hiking in December (Seoul Economic Daily)",
+     "reported": "2026-10-25T20:00Z"
+    }
+   ],
+   "shifts": [
+    {
+     "target": "fed-dec-hike",
+     "p_to": 0.9,
+     "date_delta": 0,
+     "note": "a hawkish hold with hike guidance locks December in"
+    },
+    {
+     "target": "midterms-2026",
+     "p_to": 0.85,
+     "date_delta": 0,
+     "note": "a surprise hike five days before the vote sharpens the affordability fight"
+    }
+   ]
+  },
+  {
+   "id": "fed-dec-hike",
+   "parent": "fomc-oct",
+   "kind": "event",
+   "lane": "fed-macro",
+   "date": "2026-12-09",
+   "horizon": "6 weeks",
+   "p": 0.75,
+   "label": "Fed hikes again in December (oil-driven headline, Branch B)",
+   "rationale": "Branch-B reaction function confirmed 9/16 (market-transmission §3/§11). Oct CPI (11/10) is the referee; a confirmed deal (Brent -20%) is the breaker.",
+   "confluence": [
+    "9/16 hike precedent",
+    "Sept CPI +0.6 headline",
+    "economist surveys see December"
+   ],
+   "ledger": [],
+   "market": "2y up; mortgages >7.3%; XHB down",
+   "evidence": []
   }
  ],
  "week_ahead": {
-  "label": "Catalyst board — week of Aug 3",
+  "label": "Catalyst board — week of Oct 26",
   "prints": [
    {
-    "event": "ISM Services + EIA crude inventories",
-    "when": "Wed 8/5 10:00 / 10:30 ET",
+    "event": "Israel general election",
+    "when": "Tue 10/27",
     "status": "pending",
-    "ledger": 74,
-    "estimate": "services PMI is the growth read; inventories now carry the Hormuz-normalization signal",
+    "ledger": 79,
+    "estimate": "Netanyahu has warned of Iranian attacks into the vote; an Israeli first strike is #79's named breaker",
     "consensus": "—",
     "actual": "— awaiting —",
-    "note": "First hard data on whether the crude collapse is reopening-supply or demand. AM: DIS/LLY/SHOP/UBER/PSX. PM: APP/DASH/OXY/SNDK/WDC/XYZ — SNDK+WDC are the memory read-through after Micron +7.6%."
+    "note": "Two-level game (formal §5): the coalition result shapes Israel's Iran win-set."
    },
    {
-    "event": "Jobless claims + Thu earnings block",
-    "when": "Thu 8/6 08:30 ET",
+    "event": "FOMC decision",
+    "when": "Wed 10/28 14:00 ET",
     "status": "pending",
-    "ledger": 77,
-    "estimate": "positioning day into payrolls; MCHP pm is the ANALOG/auto read — a different, weaker part of the cycle than AI",
+    "ledger": 81,
+    "estimate": "HOLD 3.75-4.00 (0.82); hawkish guidance toward December",
+    "consensus": "hold ~83-87%",
+    "actual": "— awaiting —",
+    "note": "2y is the tell. Same evening: MSFT + GOOGL capex guides."
+   },
+   {
+    "event": "MSFT + GOOGL earnings (AMC)",
+    "when": "Wed 10/28",
+    "status": "pending",
+    "ledger": null,
+    "estimate": "capex guide is the AI-architecture referee after Meta op income -37% and neocloud credit stress",
     "consensus": "—",
     "actual": "— awaiting —",
-    "note": "AM: COP/CEG/DDOG/SRE/U. PM: ABNB/LYFT/MCHP/NET/TEAM/TTD."
+    "note": "market-transmission §5.1: a capex cut/revision rollover is the catalyst a semis fade needs."
    },
    {
-    "event": "JULY PAYROLLS",
-    "when": "Fri 8/7 08:30 ET",
+    "event": "AMZN earnings",
+    "when": "Thu 10/29 17:00 ET",
     "status": "pending",
-    "ledger": 75,
-    "estimate": "consensus ~85k vs 57k prior. CONDITIONAL call: >=110k => SPY red; <=70k => SPY green; VOID in between",
-    "consensus": "~85k",
+    "ledger": null,
+    "estimate": "AWS growth + capex",
+    "consensus": "—",
     "actual": "— awaiting —",
-    "note": "The week's referee. Three live FOMC hike dissents make labour strength transmit to rate odds, not earnings."
+    "note": ""
    },
    {
-    "event": "July CPI",
-    "when": "Wed 8/12 08:30 ET",
+    "event": "OPEC+ (seven-country group)",
+    "when": "Sun 11/1",
     "status": "pending",
-    "ledger": 71,
-    "estimate": "headline +0.1 m/m (0.0-0.2), core +0.2, y/y ~3.4 — BENIGN",
+    "ledger": 80,
+    "estimate": "pause extended (Sept quotas held since 9/6)",
+    "consensus": "—",
+    "actual": "— awaiting —",
+    "note": "A surprise hike would lean against #80 at the margin; barrels stuck behind Hormuz limit it."
+   },
+   {
+    "event": "US MIDTERMS",
+    "when": "Tue 11/3",
+    "status": "pending",
+    "ledger": 79,
+    "estimate": "#79 horizon; #56 needs only the vote to be held (Alaska certification suit already filed)",
+    "consensus": "—",
+    "actual": "— awaiting —",
+    "note": "CENTCOM plans reportedly sequenced AFTER this date."
+   },
+   {
+    "event": "October jobs / October CPI",
+    "when": "Fri 11/6 · Tue 11/10",
+    "status": "pending",
+    "ledger": null,
+    "estimate": "CPI energy carries Brent >110 pass-through (calendar-month average, §13d)",
     "consensus": "TBD",
     "actual": "— awaiting —",
-    "note": "#71 unchanged: the July oil spike came too late in the month to move the July average. BUT the follow-on claim (that the AUGUST CPI would be the hot one) is now DOWNGRADED by the Brent collapse — see #76."
-   },
-   {
-    "event": "July PPI",
-    "when": "Thu 8/13 08:30 ET",
-    "status": "pending",
-    "ledger": 62,
-    "estimate": "producer-level tariff+energy pass-through; watch core services (PCE-relevant)",
-    "consensus": "TBD",
-    "actual": "— awaiting —",
-    "note": "Base-effect identity check MANDATORY before quoting y/y (§13d.2)."
-   },
-   {
-    "event": "Islamabad 60-day window EXPIRES",
-    "when": "~Sun 8/16",
-    "status": "pending",
-    "ledger": 68,
-    "estimate": "mediation off-ramp 0.55 vs round-3 collapse — now tracking toward the off-ramp",
-    "consensus": "—",
-    "actual": "— pending —",
-    "note": "The war's real fork (§16.12). Hormuz framework progress is the leading indicator; Tehran's public denial is the counter-signal."
-   },
-   {
-    "event": "Election-instrument clock",
-    "when": "by Sun 8/16",
-    "status": "pending",
-    "ledger": 49,
-    "estimate": "concrete federal election-intervention action within 30 days of the speech",
-    "consensus": "—",
-    "actual": "— pending —",
-    "note": "§16.11: precondition building runs backward-first (2020 relitigation)."
+    "note": "Base-effect identity check before any y/y (§13d.2)."
    }
   ]
  },
