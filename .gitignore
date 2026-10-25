@@ -20,3 +20,6 @@ __pycache__/
 #   reports/          - the report archive (26 files, 240K of markdown)
 #   data/             - timelines.json, watchlist, sector map
 #   .claude/skills/   - the four-skill reasoning layer
+
+# ceasefire-timing raw downloads (~45MB; rebuilt by tools/build_ceasefire_data.py)
+data/ceasefire/raw/
