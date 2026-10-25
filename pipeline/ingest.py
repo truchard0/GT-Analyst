@@ -391,11 +391,15 @@ def dispatch_trigger(batch_path, tickers):
     pyw = pathlib.Path(sys.executable)
     pythonw = pyw.parent / "pythonw.exe"
     exe = str(pythonw if pythonw.exists() else pyw)
-    flags = subprocess.DETACHED_PROCESS | subprocess.CREATE_NO_WINDOW
+    if os.name == "nt":
+        detach = {"creationflags": subprocess.DETACHED_PROCESS | subprocess.CREATE_NO_WINDOW}
+    else:  # Linux/macOS (cloud container): new session = no controlling terminal
+        detach = {"start_new_session": True}
     subprocess.Popen(
         [exe, str(ROOT / "pipeline" / "trigger.py"),
          "--batch", str(batch_path), "--tickers", ",".join(tickers)],
-        cwd=ROOT, creationflags=flags, close_fds=True)
+        cwd=ROOT, close_fds=True, stdin=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **detach)
 
 
 # ── main ────────────────────────────────────────────────────────────────

@@ -69,6 +69,11 @@ The single best predictor of **LASTING (regime-change) vs TRANSIENT (buy-the-dip
 - **Non-supply-disrupting** (Iraq 2003, Gaza 2023, Iran's 2024 attack) → oil *falls* slightly, equities **track above the average recovery path** → buy-the-dip, expect reversion in weeks-to-a-quarter.
 This is the same discipline as the Ever-Given horizon-matching lesson: match the trade's horizon to the *physical* duration of the disruption, not the headline's drama.
 
+### 7.1 THE PHYSICAL-FLOW GATE (from the 2026-10-25 resolution sweep — five misses, one shape: #28, #74, #76, #23, #11)
+The engine called the oil war-premium *unwinding* off the ANNOUNCEMENT layer: the GL X license, "Persian Gulf flows near pre-war" headlines, a Hormuz "framework," and a one-week Brent drop below $80. The MEASURED physical layer disagreed. Kpler counted about 5 vessels a day on average over 7/15–8/23, against about 130 a day pre-war (−95%). War-risk cover cost 3–10% of hull value against 0.15–0.25% pre-war. Brent went 79 → 89 in one week, settled above $100 by 9/9, and was $116.72 on 10/23. The AAA gasoline average stayed above $4 every day of August. The engine's own #73 ("physics, not politics": HIT) had the right data, and it was never carried over to the price calls.
+**RULE:** no oil-premium-UNWIND call (crude down, energy equity over crude, pump price down, "generic branch persists") while measured chokepoint flow is below ~50% of the pre-war baseline AND war-risk premia are above 5× pre-war. A price collapse on announcements alone is a positioning flush inside a physical Branch-B regime (§13e.1 bifurcated tape); expect it to REVERSE at the next physical datapoint.
+**Required input on every energy call:** the latest *independent* flow count (Kpler / Vortexa / IMF PortWatch transits) with its date. Official or political flow claims get Crawford–Sobel coarseness (formal §12.4): on 8/12 and 9/1 US claims ran 3–8× above Kpler. When flows and price disagree, flows win on a 2–4 week horizon.
+
 ---
 
 ## 8. PRICED-IN DISCOUNT

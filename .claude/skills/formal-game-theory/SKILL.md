@@ -64,6 +64,14 @@ Kahn's 44-rung ladder is the formal ancestor of doctrine §2. Operational rules:
 - Brier feedback: run `python pipeline/ledger.py report` and treat calibration drift as a model bug to diagnose, not noise (this is also Jiang's own §1.3 standard).
 - Reject your own output if any prediction lacks probability, horizon, falsifier, or sensitivity tag.
 
+### 8.1 Falsifier symmetry (from the 2026-10-25 resolution sweep — four defects, mandatory patch)
+A falsifier must be the logical NEGATION of the prediction, not the negation of a rival branch. Three defect shapes found in 35 resolutions:
+- **Rival-branch falsifier (#68):** predicted "mediation off-ramp with Hormuz functionally open"; the falsifier fired only on "sustained daily strikes AND Hormuz re-closure." The actual outcome — no deal, window lapsed, Hormuz −95%, a strike *pause* — satisfied neither, so the contract would have scored a failed thesis as a HIT.
+- **Escape-clause falsifier (#11 "with no new supply shock", #23 "absent a Hormuz re-closure"):** the clause fired — and the engine was simultaneously betting against it (#28, P=0.70 no re-closure). The clause hid the real bet.
+- **Conjunctive falsifier (#14):** falsification required installed AND publicly exercising AND uncontested — nearly impossible to fire, so the call was close to unfalsifiable.
+
+**Rules:** (1) write the prediction, then write the falsifier as NOT(prediction): every positive clause of the prediction appears in the falsifier. (2) No "absent X / unless X / with no new shock" clauses. If the call is genuinely conditional, pre-register a VOID rule (as #75 did correctly) AND ledger P(X) as its own row. (3) **Scoring precedence:** when a defective falsifier is found at resolution, score against the prediction's SUBSTANCE, not the defective contract, and name the defect in the lesson. `ledger.py add` prints a lint warning on escape-clause wording.
+
 ## 9. DOCTRINE INTERFACE (Jiang claim → formal grounding → constraint)
 
 | Doctrine concept | Formal grounding | Validity constraint |
@@ -167,6 +175,7 @@ These are post-1980 results that *change* predictions the classics (§1–11) ge
 *(Items 18–22 live in market-transmission §13b. Items 23–24 added from the 2026-07-13 eval run:)*
 23. **Contagion channel test:** any contagion/spillover prediction must NAME a demonstrable transmission channel with a rough size, and show the run-prone layer can actually run (closed capital accounts and state-directed banks can't produce Lehman mechanics — the Evergrande lesson). No sized channel → the contagion call is unledgerable noise.
 24. **Capital-committed precedence:** when information-structure lenses (§12.2/§12.3) and capital-committed evidence (doctrine §12.1) point opposite ways, capital-committed wins.
+25. **Falsifier symmetry (§8.1):** is the falsifier NOT(prediction) — no rival-branch, escape-clause, or conjunctive falsifier? Defect = hard failure of item 11.
 
 ### 12.11 Level-k / cognitive hierarchy — how deep the market actually thinks (Nagel 1995 [VERIFIED 3-0]; Camerer–Ho–Chong 2004 [extracted])
 - **Result (verified against Nagel's paper):** in the p-beauty contest the unique Nash equilibrium (zero) predicts NOBODY's first-round play — 0% chose it, only 6% below 10. Behavior is organized by finite depth-of-reasoning from a naive anchor (level-0 = 50; level-n = 50·pⁿ), with ~50% of players at **1–2 steps** and only 6–10% at step 3+. Repetition converges toward equilibrium by **re-anchoring on last period's outcome, not by deeper thinking** — modal depth stays at step 2. CH model (extracted): Poisson distribution over levels, average ≈ **1.5 steps** across many games.

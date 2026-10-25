@@ -8,6 +8,7 @@
 """
 import argparse
 import pathlib
+import re
 import sqlite3
 import sys
 from datetime import date
@@ -18,6 +19,18 @@ from common import utc_iso, utc_now
 DB = pathlib.Path(__file__).resolve().parent.parent / "ledger" / "ledger.db"
 
 DIRECTIONS = ("up", "down", "vol", "neutral")
+
+# formal §8.1 falsifier-symmetry rule (10-25 sweep: #11/#23/#68/#14). Escape clauses
+# hide the real bet; a falsifier must be NOT(prediction). Warn, don't block.
+ESCAPE_CLAUSE = re.compile(r"\b(absent|unless|barring|with no new|excluding|if no)\b", re.I)
+
+
+def falsifier_lint(prediction, falsifier):
+    hits = sorted({m.group(0).lower() for t in (prediction, falsifier)
+                   for m in ESCAPE_CLAUSE.finditer(t or "")})
+    if hits:
+        print(f"WARN formal §8.1: escape-clause wording {hits} - if conditional, pre-register a "
+              "VOID rule and ledger P(condition) as its own row; falsifier must be NOT(prediction).")
 
 
 def db():
@@ -58,6 +71,7 @@ def add(args):
         sys.exit("prob must be in [0,1]")
     if args.conviction is not None and not (0.0 <= args.conviction <= 1.0):
         sys.exit("conviction must be in [0,1]")
+    falsifier_lint(args.prediction, args.falsifier)
     c = db()
     c.execute("""INSERT INTO predictions
         (ts,event,prediction,prob,horizon,falsifier,sensitivity,

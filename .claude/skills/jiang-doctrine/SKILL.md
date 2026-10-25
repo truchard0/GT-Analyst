@@ -336,9 +336,24 @@ When a leader manufactures justification infrastructure for future action, expec
 
 ### 16.12 Escalation-Mediation Oscillation (from the 2026 Iran-war backtest - two misses corrected)
 When BOTH belligerents are exhausted AND a persistent mediation infrastructure exists (Pakistan/Oman/China) AND a signed framework with a deadline is live (the Islamabad Memorandum, 6/17, 60-day window to ~8/16), the conflict does NOT climb a linear escalation ladder - it OSCILLATES between escalation spikes and mediation returns. Each spike is a BREAKDOWN WITHIN a negotiation frame, not a rung toward total war, and is followed by a return to the table because the structural drivers pull both sides back. Rules: (1) do NOT extrapolate an escalation spike into continued escalation by default - price the mediation off-ramp explicitly (the engine's #63 US-strikes-Yemen and #59 ceasefire-fails were BOTH escalation-over-predictions that ignored Iran REQUESTING the pause + the live 60-day window + Oman already mediating); (2) MASTER-CLOCK rule: when a signed framework with a deadline exists, that DEADLINE is the real fork - everything before it is oscillation. Track the window, not the daily strikes. This corrects the section-2 ladder bias: the ladder governs a SINGLE escalation episode; the WAR is a cycle of episodes bounded by a negotiation clock.
+**16.12b Oscillation is not an off-ramp (2026-10-25 sweep, #68).** The engine read 16.12 as "price the mediation off-ramp" and put 0.55 on a deal or a pause with Hormuz open by 8/16. What happened was the branch it had priced at 0.07, frozen oscillation:
+- no US strikes from 7/30 to 8/29;
+- the window lapsed 8/16–17 with no deal and no extension;
+- Hormuz stayed about 95% below normal;
+- tit-for-tat then resumed on 8/30 as a tanker war, not a full air campaign.
+
+With the chokepoint shut, a PAUSE WITHOUT A DEAL is cheap for both sides: Iran keeps its leverage through the strait, and the US keeps the blockade. So the pause can persist while no deal comes. **Rule:** price "pause holds", "deal signed" and "chokepoint reopens" as three separate branches; never let one stand in for the others. The master clock still governs, but a deadline lapse can produce stasis rather than a fork.
 
 ### 16.13 Structural-State Staleness (own the succession error)
 Timeliness/staleness discipline applies to the STRUCTURAL STATE of the board, not just to headline timestamps. The engine carried a live 'succession-tip' branch (0.10) for months AFTER succession was resolved (Khamenei killed 2/28; Mojtaba Khamenei named Supreme Leader 3/9; regime survived), and mis-read the 7/21 CEREMONIAL funeral (of the 2/28 death) as a fresh succession crisis. Before treating any actor-state as a live variable, verify it hasn't already RESOLVED. A funeral/anniversary/commemoration of a past event is not a new event - check whether the underlying transition already happened.
+
+**16.13a Premise freshness AT LOGGING (2026-10-25 sweep — repeated across #19, #11, #24, #29, #28; mandatory patch).** Five calls were stale-premised on the day they were logged:
+- **#19** "no return to war-scale conflict" was logged 7/8, the same day Trump declared the Islamabad MOU "over." US strikes resumed 7/11 and ran 13 straight nights.
+- **#11** "GL X is bearish for crude" was logged 7/4. OFAC revoked the license via GL X1 on 7/7.
+- **#28 and #29** rested on a "normalizing-Hormuz glut" read logged 7/9–7/11. The blockade was reinstated on 7/13.
+- **#24** faded a 68% TSMC margin claim as "overshooting TSMC's own guide." TSMC's own Q2 guide was 65.5–67.5%, and it printed 67.7%.
+
+**RULE:** before ledgering, re-verify the load-bearing PREMISE against its PRIMARY source's latest state: the license text and any amendment, the company's latest guidance, or the deal's status *per both parties*. Record the check in the sensitivity tag as `premise verified: <source>, <date>`. If the premise is under 72h old and contested by one party, cap conviction at 0.55.
 
 ### 16.14 The Reversal-Prone Decider — HARD CAP on strike-planning reports (third strike, 2026-08-01)
 When the decision rests with a leader who has a documented pattern of announcing then reversing (Trump, 12.6), a credible strike-PLANNING report is NOT evidence of a strike - it is evidence of a NEGOTIATING POSTURE. The leak is often the instrument: the threat is made public precisely so it can be traded away. HARD RULE: absent a confirmed 'go' order or ordnance actually released, cap P(strike executes as reported) at 0.35, regardless of how strong the planning evidence looks (allied coordination, target lists, even market-hour sequencing). Escalate above 0.35 ONLY on capital-committed execution signals (aircraft launched, NOTAMs, carrier movement), never on reporting about intent.
