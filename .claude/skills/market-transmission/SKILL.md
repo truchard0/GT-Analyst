@@ -49,11 +49,24 @@ The **2y yield / Fed-funds futures move is the fastest transmission** and resolv
 
 ---
 
+### 4.1 PROVISIONAL (2026-10-26, forward-test before trusting): a physical closure does not need 2y confirmation
+In the 500-call stock backtest, the §4 "2y disambiguates" gate classified Oct 9 and Oct 16 as Branch A (default weight 0.25). That happened because the 2-year yield was flat to down (−1 bp and −4 bp) while Brent was rising and Hormuz was shut. In those two weeks energy beat SPY by about 7.0% and 2.8%. The rates market was torn between inflation and AI-crash risk-off.
+**Rule (provisional):** when §7.1's physical-impairment condition holds and oil's 20-day trend is up, classify SUPPLY. The 2y sign then sets the *weight* (1.0 if confirming, 0.5 if not); it is not a gate.
+**Evidence status:** only two weeks, and in-sample, so the rule is tagged for a forward test (`tools/gt_stock_backtest.py forward`). Do not raise it to doctrine until it holds out-of-sample.
+
 ## 5. THE EQUITY-DURATION DERATING LAW (the user's mechanism, formalized)
 - **ONLY on the hawkish/supply branch (Branch B)** does a rate-hike repricing **derate high-beta / long-duration / growth / unprofitable-tech stocks hardest** — their cash flows are far-dated, so a higher discount rate compresses their multiples most (equity-duration; the **2022 analog**). Rotate to **energy, defense, staples, value.**
 - **On the risk-off branch (Branch A)**, long-duration **quality can OUTPERFORM** as yields *fall* — the same "war" headline, the **opposite factor trade**.
 - Operational tell for the engine's watchlist: the AI-semis / hyperscaler / neocloud complex (high-duration equity) is a **Branch-B loser and a Branch-A relative winner.** The Iran-rate-path calls (#26/#27) are this rule in action.
 - **5.1 2026 REGIME AMENDMENT (0-for-4, mandatory patch, 2026-10-25):** the derating law FAILED live four times in the Iran-war regime: #27 (Brent >90 sustained → SMH +9 to +13% vs XLE −3% over the next month), #69, #70 (SMH +12.7% vs SPY +2.1% 7/31→9/30 *through* a hike and a 5% 10y), and #24 (fading a TSMC margin beat). When the long-duration complex has its OWN earnings-revision engine (AI capex: NVDA Q2 FY27 rev +106%, hyperscaler capex raises), discount-rate compression is swamped by numerator growth. **Rule:** apply §5 to AI-semis only when the capex/revision engine is ALSO stalling (doctrine §13 architecture attack; contrarian #7 catalyst rule). Note the October tape: SMH −16.6% 10/6→10/23 came with neocloud credit stress, Meta op income −37% and Solidigm pulling its IPO. That is a revision/financing shock, not a discount-rate one, and it is the version of the bear case the rule permits.
+- **5.2 The AI-complex leg is a coin flip without a financing input (500-call backtest, 2026-10-26).** The Branch-B "AI complex underperforms" leg went right and wrong in the Branch-B weeks:
+
+  | Week | Call | Realized AI complex vs SPY | Hit rate |
+  |---|---|---|---|
+  | 9/25–10/2 | Underperform | Memory +9.0%, photonics +9.9% | 31% |
+  | 10/2–10/9 | Underperform | −3.5% to −7.3% | 67% |
+
+  The §5.1 momentum proxy (6-month SMH excess > 0 → drop the derate) fixed the first week and broke the second; net zero. The month's largest cross-sectional move came in 10/9–10/16, when neocloud, photonics, memory and space fell 15–21% vs SPY. Its trigger was AI-*financing* stress (neocloud credit, IPO pulls), not geopolitics. **No GT rule could see it.** Doctrine §13 (architecture attack) and contrarian #8 (Minsky financing test) are the right tools, but they have no data feed. **Coverage gap, top priority:** a headline-based AI-financing stress index (neocloud debt or credit headlines, IPO withdrawals, capex-guide cuts), built like the war-escalation index. Until it exists, AI-complex calls are capped at P 0.55.
 
 ---
 

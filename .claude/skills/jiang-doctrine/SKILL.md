@@ -343,6 +343,16 @@ When BOTH belligerents are exhausted AND a persistent mediation infrastructure e
 - tit-for-tat then resumed on 8/30 as a tanker war, not a full air campaign.
 
 With the chokepoint shut, a PAUSE WITHOUT A DEAL is cheap for both sides: Iran keeps its leverage through the strait, and the US keeps the blockade. So the pause can persist while no deal comes. **Rule:** price "pause holds", "deal signed" and "chokepoint reopens" as three separate branches; never let one stand in for the others. The master clock still governs, but a deadline lapse can produce stasis rather than a fork.
+**16.12c Scope: oscillation is a KINETIC-EVENT rule, never an asset-price fade (2026-10-26, mandatory: 3rd occurrence).** The engine kept stretching 16.12 from "don't extrapolate the next strike" into "fade the market's war premium". The August misses #74 and #76 did this. So did the 500-call pre-registered stock backtest (Sep 25 – Oct 23, `reports/backtests/20261026_gt-500-stock-backtest.md`):
+
+| Rule set | Hit rate |
+|---|---|
+| The 16.12 headline-fade rule alone | 40.8% |
+| The same rule reversed | 59.2% |
+| The full engine with the fade | 43.2% |
+| The full engine without the fade | 54.0% |
+
+**RULE:** while a chokepoint is physically impaired (market-transmission §7.1), escalation spikes in the headline tape are NOT faded in asset space. 16.12 may still damp the probability of the next *kinetic* event (strike, salvo). It may never flip a sector call.
 
 ### 16.13 Structural-State Staleness (own the succession error)
 Timeliness/staleness discipline applies to the STRUCTURAL STATE of the board, not just to headline timestamps. The engine carried a live 'succession-tip' branch (0.10) for months AFTER succession was resolved (Khamenei killed 2/28; Mojtaba Khamenei named Supreme Leader 3/9; regime survived), and mis-read the 7/21 CEREMONIAL funeral (of the 2/28 death) as a fresh succession crisis. Before treating any actor-state as a live variable, verify it hasn't already RESOLVED. A funeral/anniversary/commemoration of a past event is not a new event - check whether the underlying transition already happened.

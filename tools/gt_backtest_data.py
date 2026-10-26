@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Download the point-in-time inputs for the GT stock backtest. Stdlib only.
 
-  prices    Yahoo Finance daily closes + volumes, 2025-08-01 .. 2026-10-23, for the universe
+  prices    Yahoo Finance daily closes + volumes, 2025-08-01 .. today, for the universe
             (watchlist.json + data/sector_map.json + the fixed SECTOR_LEADERS list below), SPY,
             Brent (BZ=F) and sector ETFs
   rates     US Treasury daily par yield curve (2-year), 2025-2026
   news      Google News headlines per day (Iran / Hormuz / Houthi in the title), 2026-08-26 ..
-            2026-10-16, with each item's publication time - the engine only ever sees items
+            today, with each item's publication time - the engine only ever sees items
             published before its as-of cutoff
-  earnings  Nasdaq earnings calendar for each trading day 2026-09-28 .. 2026-10-23 (report
+  earnings  Nasdaq earnings calendar for each trading day 2026-09-28 .. today+10 (report
             dates are scheduled weeks ahead, so they are as-of information)
 
 Outputs go to data/gt_backtest/ (closes.csv, volumes.csv, rates.csv, news.csv, earnings.csv).
@@ -29,7 +29,7 @@ import xml.etree.ElementTree as ET
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gt_backtest"
 UA = {"User-Agent": "Mozilla/5.0", "Accept": "application/json"}
-START, END = dt.date(2025, 8, 1), dt.date(2026, 10, 24)
+START, END = dt.date(2025, 8, 1), dt.date.today() + dt.timedelta(days=1)
 
 # Large caps for the sectors the doctrine's Branch-A/B table names (market-transmission §12)
 # but the tech-heavy watchlist barely covers. Chosen from index leaders, not from outcomes.
@@ -126,7 +126,7 @@ def fetch_news():
     q = "(intitle:Iran OR intitle:Hormuz OR intitle:Houthi OR intitle:Houthis)"
     seen, out = set(), []
     d = dt.date(2026, 8, 26)
-    while d <= dt.date(2026, 10, 16):
+    while d <= END:
         qq = f"{q} after:{(d - dt.timedelta(days=1)).isoformat()} before:{(d + dt.timedelta(days=1)).isoformat()}"
         url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(qq) + "&hl=en-US&gl=US&ceid=US:en"
         try:
@@ -157,7 +157,7 @@ def fetch_news():
 def fetch_earnings():
     rows = []
     d = dt.date(2026, 9, 28)
-    while d <= dt.date(2026, 10, 23):
+    while d <= END + dt.timedelta(days=10):   # scheduled dates for the next forward week too
         if d.weekday() < 5:
             try:
                 j = json.loads(get(f"https://api.nasdaq.com/api/calendar/earnings?date={d.isoformat()}"))

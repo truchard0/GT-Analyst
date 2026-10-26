@@ -160,6 +160,25 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
 - **Next step:** add non-fatality precursors (deadlines, mediator movement, NOTAMs) from the ingest tape as daily
   covariates.
 
+## 7c. 500-CALL STOCK BACKTEST (10/26): `reports/backtests/20261026_gt-500-stock-backtest.md`
+- **Setup:** 4 weekly cohorts (9/25–10/16) × 125 stocks, scored on beating SPY over 5 sessions. The calls were
+  **pre-registered** (commit `f78913d`) and the no-look-ahead check is asserted in code.
+- **Doctrine version:** pre-10/25.
+- **Result: 43.2% hit, Brier 0.260 (coin 0.25).** That is no better than momentum (44%).
+  - The sector map alone scored 54%.
+  - The §16.12 headline-oscillation fade applied to prices cost about 11 points; reversed, it would have hit 59%.
+- **Confidence ranked accuracy:** P ≥ 0.60 hit 63% (n = 144); P < 0.60 hit 35% (n = 356).
+- **Energy beat SPY every week (+2.3% to +7.0%).**
+- **The blind spot:** the 10/9–16 AI-complex crash (−15% to −21% vs SPY) was an AI-financing event.
+- **Patches:**
+  - jiang §16.12c (mandatory)
+  - market-transmission §4.1 (provisional)
+  - market-transmission §5.2 (AI-financing feed gap; AI calls capped at 0.55)
+  - contrarian Part C abstain-below-0.60
+- **Forward test of the v2 candidate:** `python tools/gt_stock_backtest.py forward <date> --hormuz-impaired 1|0`.
+  The 58% in-sample score counts for nothing.
+- **Watchlist hygiene:** stale tickers (ABB, ERJ→EMBJ, PSTG, …) silently drop out of every tool. Fix them.
+
 ---
 
 ## 8. HARD-WON LESSONS ABOUT PROCESS

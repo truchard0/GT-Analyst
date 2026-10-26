@@ -93,6 +93,14 @@ Log the gate verdict in the analysis (one line per step is enough). FAIL any ste
 - **Weekly (or per session):** `python pipeline/ledger.py redteam` — attack every open position with fresh tape: falsifier still observable? new contradicting evidence? sensitivity already firing? cluster-thesis check on the concentration warning.
 - **On resolutions:** `report` reads the **Murphy decomposition** — REL high = miscalibrated (probabilities drift from frequencies → fix the rubric anchors); RES low = no discrimination (forecasts hug the base rate → the engine adds nothing over the outside view). These are different diseases with different cures; never read mean Brier alone.
 - **Noise audit (#4), monthly:** re-run one already-analyzed event cold; conviction spread >0.10 → rubric anchors need tightening.
+- **Abstain zone for mechanical lenses (500-call stock backtest, 2026-10-26).** The engine's own confidence carried information, but its low-confidence calls were worse than a coin:
+
+  | Engine probability | Calls | Hit rate |
+  |---|---|---|
+  | P ≥ 0.60 | 144 | **63%** (claimed 64%, well calibrated) |
+  | P < 0.60 | 356 | **35%** (claimed 54%) |
+
+  The 0.55–0.60 bucket hit 28%. **Rule:** mechanical/screening outputs below P 0.60 are NOT predictions. Report them as "no view" and never ledger or score them as calls. Caveat: the confident calls came from only two weeks, so treat this as a provisional threshold.
 - **Method audit (RAND RR1408 caveat):** structured techniques are institutionally assumed, not proven — track whether gate-passed predictions actually out-score gate-skipped ones once ≥10 resolve. If they don't, the gate is theater; change it.
 
 ## PART D — DEGENERATION GUARDRAILS (the avoid-list)

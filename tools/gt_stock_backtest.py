@@ -35,6 +35,8 @@ RULES (model "v0", each tagged with its doctrine source)
 
     python tools/gt_stock_backtest.py predict    # writes data/gt_backtest/predictions.csv
     python tools/gt_stock_backtest.py score      # writes data/gt_backtest/scored.csv + summary
+    python tools/gt_stock_backtest.py insample-v2   # v2-candidate on the same month (in-sample only)
+    python tools/gt_stock_backtest.py forward YYYY-MM-DD --hormuz-impaired 1|0   # live v2 calls
 """
 import csv
 import datetime as dt
@@ -236,10 +238,26 @@ def momentum_terciles(data, syms, asof):
     return {s: (0 if k < n / 3 else 2 if k >= 2 * n / 3 else 1) for k, s in enumerate(ranked)}, m
 
 
+# v2-candidate (written AFTER scoring v0 - in-sample on Sep 25 - Oct 23, so its score there is not
+# evidence; it exists to be forward-tested). Physical chokepoint status is an as-of input from the
+# tape (Kpler / IMF PortWatch / UKMTO): Hormuz flow < 50% of pre-war on every date below.
+HORMUZ_IMPAIRED = {"2026-09-25": 1, "2026-10-02": 1, "2026-10-09": 1, "2026-10-16": 1, "2026-10-23": 1}
+ABSTAIN_BELOW = 0.60
+
+
+def branch_v2(data, asof):
+    """market-transmission §4.1 (provisional): with the chokepoint physically impaired, SUPPLY
+    does not need 2-year confirmation - the 2y sign sizes the weight instead of gating."""
+    br = branch(data, asof)
+    if HORMUZ_IMPAIRED.get(asof) and br["oil20"] > 0:
+        br["branch"], br["w"] = "B", (1.0 if br["y2_10bp"] >= 2 else 0.5)
+    return br
+
+
 def predict(data, syms, asof, variant="v0"):
     i = data.idx(asof)
-    end = data.cal[i + HORIZON]
-    br = branch(data, asof)
+    end = data.cal[i + HORIZON] if i + HORIZON < len(data.cal) else "pending"
+    br = branch_v2(data, asof) if variant == "v2-candidate" else branch(data, asof)
     col = {"B": 0, "A": 1, "G": 2}[br["branch"]]
     z, esc_now = news_z(data, asof)
     macro = any(asof < d <= end for d in MACRO_PRINTS)
@@ -259,11 +277,13 @@ def predict(data, syms, asof, variant="v0"):
             # §5.1: no rate-derate on the AI complex while its own revision engine runs
             if sec in AI_COMPLEX and smh_6m > 0 and r1 < 0:
                 r1 = 0.0
+        if variant == "v2-candidate":
+            r4 = 0.0   # jiang §16.12c: oscillation is a kinetic-event rule, never an asset-price fade
         if macro:                                              # R5 (macro print)
             r1 *= 0.75
             r4 *= 0.75
         score = r1 + r3 + r4
-        earn = any(asof < d <= end for d in data.earn.get(s, ()))
+        earn = end != "pending" and any(asof < d <= end for d in data.earn.get(s, ()))
         if earn:                                                # R5 (earnings)
             score *= 0.5
         tc = terc.get(s, 1)
@@ -430,6 +450,25 @@ def main():
             print(json.dumps(summarize([r for r in comp if r["variant"] == v], v)))
         k, lo, hi = cluster_bootstrap(rows)
         print(f"v0 hit-rate 95% CI over {k} week x sector clusters: [{lo}, {hi}]")
+    elif cmd == "insample-v2":
+        rows = []
+        for a in COHORTS:
+            rows += predict(data, syms, a, "v2-candidate")
+        score_rows(data, rows)
+        print("IN-SAMPLE ONLY (rules written after seeing v0's scores):")
+        print(json.dumps(summarize(rows, "v2-candidate, all calls")))
+        kept = [r for r in rows if r["p"] >= ABSTAIN_BELOW]
+        if kept:
+            print(json.dumps(summarize(kept, f"v2-candidate, P >= {ABSTAIN_BELOW} only")))
+    elif cmd == "forward":
+        asof = sys.argv[2]
+        if "--hormuz-impaired" not in sys.argv:
+            sys.exit("forward needs --hormuz-impaired 1|0 (as-of physical flow status from the tape)")
+        HORMUZ_IMPAIRED[asof] = int(sys.argv[sys.argv.index("--hormuz-impaired") + 1])
+        rows = [r for r in predict(data, syms, asof, "v2-candidate") if r["p"] >= ABSTAIN_BELOW]
+        path = D / f"forward_v2_{asof}.csv"
+        write(path, rows)
+        print(f"{len(rows)} v2 calls (P >= {ABSTAIN_BELOW}) as of {asof} close -> {path.name}")
     else:
         print(__doc__)
 
