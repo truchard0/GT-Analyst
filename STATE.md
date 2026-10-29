@@ -117,10 +117,9 @@ bookkeeping machine over expert estimates, not a solver.
 - `iran-fork-oct` is now campaign 0.35 (held at the cap) / deal 0.10 / frozen tanker war 0.55.
 
 **Next catalysts:**
-- Israel election 10/27
-- **FOMC + MSFT/GOOGL capex 10/28.** This is the AI-architecture referee after Meta's operating income fell 37%,
-  neocloud credit stress, and SMH dropping −16.6% from its 10/6 high.
-- AMZN 10/29 · OPEC+ 11/1 · **US midterms 11/3** · jobs 11/6 · October CPI 11/10 · FOMC Dec 8–9.
+- **AMZN earnings 10/29 (after the close):** the second half of the AI-capex referee.
+- OPEC+ 11/1 · **US midterms 11/3** (#79 horizon) · jobs 11/6 · **October CPI 11/10** (decides December) ·
+  FOMC Dec 8–9.
 
 ---
 
