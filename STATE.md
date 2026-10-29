@@ -247,6 +247,18 @@ The rest of the routine is unchanged:
 2. `git push` after it.
 3. Never run cycles on two machines at once.
 
+**Scheduled cloud sessions (created 10/29; each starts a fresh session, clones this branch, pushes back):**
+
+| Task | When (UTC) | Does |
+|---|---|---|
+| GT-Analyst daily scoring gate | daily 13:17 | `tools/daily_cycle.sh`; researches and resolves due calls with lessons; updates the timeline and STATE; gates; push |
+| Forward test: register cohort | 10/30 21:13 · 11/6, 11/13, 11/20 22:13 | Refresh live data; set the Hormuz flag from flow counts; register the v2 cohort; score earlier ones |
+| Forward test: final scoring | 11/27 20:13 | Final verdict in `reports/backtests/forward_v2_scorecard.md` + STATE §7d |
+
+None of these sessions holds MCP connectors (git, web search and price feeds need none).
+**Running a cycle locally while one is scheduled risks a `ledger.db` conflict.** Pull first. The daily session
+is told to stop rather than pick a side on a ledger conflict.
+
 **Cloud specifics:**
 - The Windows Task Scheduler cadence does not exist here. Each cloud session runs ingest manually
   (`python pipeline/ingest.py`).
