@@ -1,5 +1,5 @@
 # GT-Analyst — LIVE STATE (handoff doc)
-**Last updated: 2026-10-25 (cloud relaunch).** Read this first after any context reset. It records what
+**Last updated: 2026-10-29 (scorecard update; cloud relaunch 10/25).** Read this first after any context reset. It records what
 the engine IS, what it has LEARNED, and what is currently STAKED. Everything here can be rebuilt from
 `ledger/ledger.db` and `data/timelines.json`; this is the summary.
 
@@ -21,7 +21,7 @@ bookkeeping machine over expert estimates, not a solver.
 ---
 
 ## 2. SCOREBOARD (as of 2026-10-25)
-- **52 resolved: 34 HIT / 18 MISS = 65.4%, mean Brier 0.238.** On 8/4 it was 0.169 on 14 resolved.
+- **53 resolved: 35 HIT / 18 MISS = 66.0%, mean Brier 0.234** (#81 FOMC hold HIT on 10/28). On 10/25 it was 52 resolved / 0.238. On 8/4 it was 0.169 on 14 resolved.
   The old number was a maturity artifact, exactly as the 8/1 note warned.
 - **Projected, counting the at-risk #38, #16 and #36 as misses: 61.8% / Brier 0.248.**
 - **Murphy decomposition:**
@@ -100,15 +100,21 @@ bookkeeping machine over expert estimates, not a solver.
 ## 5. LIVE STAKED CALLS
 | # | Call | P | Horizon |
 |---|---|---|---|
-| **#81** | FOMC HOLDS 3.75–4.00 on 10/28 | 0.82 | 10/28 |
-| **#79** | No US strike on Iranian LAND territory 10/26–11/3 (pre-midterm) | 0.70 | 11/3 |
-| **#80** | Front-month Brent settles ≥ $100 on 11/30 (physical-flow gate) | 0.70 | 11/30 |
+| **#81** | FOMC HOLDS 3.75–4.00 on 10/28. **✓ HIT** (10–2, Cook + Hammack for a hike; no forward guidance) | 0.82 | resolved 10/28 |
+| **#79** | No US strike on Iranian LAND territory 10/26–11/3 (pre-midterm). **Tracking HIT**: none through 10/29; WSJ says the US warned Gulf states to prepare for strikes *after* the midterms | 0.70 | 11/3 |
+| **#80** | Front-month Brent settles ≥ $100 on 11/30 (physical-flow gate). **Tracking HIT**: front month 110–116 through 10/29 | 0.70 | 11/30 |
 | #56 | Midterms held + ≥1 federal certification fight. DOJ v. Alaska (10/22) is already filed. **Tracking HIT** | 0.55 | 11/30 |
 | #38 | Jiang: US ground invasion of Iran by 12/31. **AT RISK**: the plans are strikes, not ground forces | 0.70 | 12/31 |
 | #53 | No PLA kinetic action vs Taiwan in 2026 | 0.93 | 12/31 |
 | #16 | Attributed Israeli action on Iranian territory/assets by 1/8. **AT RISK**: no strike on Iran proper since 6/8 | 0.74 | 2027-01-08 |
 | #36 | US ground troops OR a compensated cessation by 1/13. **AT RISK** | 0.45 | 2027-01-13 |
 | #35 / #10 / #1 | Frozen conflict / no durable peace. **Tracking** | 0.55 / 0.70 / 0.70 | 2027–28 |
+
+**10/29 update** (`reports/20261029_scorecard-update.md`):
+- Israel's 10/27 vote was gridlock (Netanyahu bloc ~53 seats), with no Israeli first strike.
+- The FOMC held, but Warsh gave **no forward guidance**. The engine's expected "hawkish guidance" was wrong; `fed-dec-hike` is now 0.65.
+- GOOGL fell 12% after holding capex flat with negative free cash flow: a capex *plateau*, the first AI-referee signal.
+- `iran-fork-oct` is now campaign 0.35 (held at the cap) / deal 0.10 / frozen tanker war 0.55.
 
 **Next catalysts:**
 - Israel election 10/27

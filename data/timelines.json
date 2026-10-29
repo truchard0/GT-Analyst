@@ -1,10 +1,10 @@
 {
- "updated": "2026-10-25",
+ "updated": "2026-10-29",
  "note": "Time-lane DAG. Edges are temporal implication (IF x THEN y), all forward in time. Updated 10/25 after the relaunch sweep: 38 resolutions (24 HIT / 14 MISS of the matured backlog + 3 early), the 8/1 fork resolved to frozen oscillation, the Oct deal-or-strike fork added (#79/#80), FOMC 10/28 checkpoint (#81).",
  "root": {
   "id": "now",
   "label": "NOW",
-  "sub": "2026-10-25 (Sun) — DEAL-OR-STRIKE FORK: Trump 'no strike today... make a deal or finish them off'; CENTCOM plans reported for AFTER the 11/3 midterms; Qatar mediating. Since 8/30 a frozen TANKER WAR: Hormuz near standstill (PortWatch 4 transits 10/18; ~500 ships delayed), Houthis hitting Riyadh/Mecca, Brent 116.72 (10/23). Fed hiked 9/16 (3.75-4.00); FOMC 10/28; S&P -2.5% from its 10/6 record, SMH -16.6% on neocloud credit stress. Ledger relaunched: 35 overdue calls scored 10/25.",
+  "sub": "2026-10-29 (Thu) — FOMC HELD 10/28 (10-2, two hike dissents; #81 HIT). Israel 10/27 election = GRIDLOCK (Netanyahu bloc ~53). Iran: no US land strike since 10/26; WSJ — US warned Gulf states to prepare for strikes AFTER the 11/3 midterms; Qatar draft rejected by Tehran; IRGC claims tankers hit mines, 'strait closed'. Brent front 110-116. GOOGL -12% (capex held, FCF negative) — first AI-capex plateau signal. Open: #79 (11/3), #80 (11/30), #56.",
   "status": "live"
  },
  "nodes": [
@@ -1146,6 +1146,10 @@
     {
      "fact": "DOJ v. Alaska certification suit (filed 10/22; Blanche defends, CNBC 2026-10-25T20:28Z); 9th Cir skeptical of DOJ v. California (Reuters 2026-10-25T21:02Z)",
      "reported": "2026-10-25"
+    },
+    {
+     "fact": "Trump: Peltola 'should not be allowed to run', 'ELECTION FRAUD' in Alaska (Truth Social, sentiment-only); Alaska governor orders probe of Sullivan-recruitment claim (CNBC 2026-10-29T17:31Z)",
+     "reported": "2026-10-29"
     }
    ],
    "lane": "us-politics",
@@ -2061,7 +2065,7 @@
    "horizon": "1-5 weeks",
    "p": 0.35,
    "label": "US strike campaign on Iranian territory (≥3 strike days) by 11/30",
-   "rationale": "The reported CENTCOM post-midterm plan. Held AT the §16.14 cap (0.35): planning reports are negotiating instruments for this decider; escalate only on execution signals (aircraft launched, NOTAMs).",
+   "rationale": "HELD AT THE §16.14 CAP 0.35 (10/29): the WSJ reports the US warned Gulf governments to prepare for strikes AFTER the midterms (a step closer to execution than a leak, still no ordnance/NOTAMs); Gulf News: US+Israel plan 'week-long strikes'; Trump 'anything is possible'. Execution signals would lift it above the cap. || The reported CENTCOM post-midterm plan. Held AT the §16.14 cap (0.35): planning reports are negotiating instruments for this decider; escalate only on execution signals (aircraft launched, NOTAMs).",
    "confluence": [
     "CENTCOM plans (reported)",
     "TWZ 10/23: IAF ops + ship movements",
@@ -2073,6 +2077,10 @@
     {
      "fact": "On The Brink Of Epic Fury Round Two? (TWZ)",
      "reported": "2026-10-23T21:19Z"
+    },
+    {
+     "fact": "WSJ: US warned Persian Gulf governments to prepare for possible US strikes on Iran after the midterms",
+     "reported": "2026-10-28"
     }
    ]
   },
@@ -2083,9 +2091,9 @@
    "lane": "iran-energy",
    "date": "2026-11-30",
    "horizon": "1-5 weeks",
-   "p": 0.15,
+   "p": 0.1,
    "label": "US-Iran deal/ceasefire confirmed by BOTH sides by 11/30",
-   "rationale": "Qatari mediation + 'Iranian leaders want a deal' (Trump) vs Iran's 'Hormuz will not return' (Araghchi 10/23-25) and a repeated stand-down-is-not-a-deal record (§16.14 corollary). The timing engine gives a ceasefire ~5-11% by 11/30 (weak for interstate wars).",
+   "rationale": "RE-WEIGHTED 0.15 -> 0.10 (10/29): Qatar delivered a 7-day confidence-building draft in Tehran (10/25); a senior Iranian official told Reuters there is no new Qatari proposal and Doha's ideas are unacceptable; Tehran calls US terms 'complete surrender'. || Qatari mediation + 'Iranian leaders want a deal' (Trump) vs Iran's 'Hormuz will not return' (Araghchi 10/23-25) and a repeated stand-down-is-not-a-deal record (§16.14 corollary). The timing engine gives a ceasefire ~5-11% by 11/30 (weak for interstate wars).",
    "confluence": [
     "Qatar mediators in Tehran",
     "Iran FM spox: messages still exchanged"
@@ -2096,6 +2104,10 @@
     {
      "fact": "Qatar mediators visit Tehran (Al Jazeera liveblog)",
      "reported": "2026-10-25"
+    },
+    {
+     "fact": "Iran official: no new Qatari proposal; ideas unacceptable (Reuters via hngn 10/28)",
+     "reported": "2026-10-28"
     }
    ]
   },
@@ -2106,9 +2118,9 @@
    "lane": "iran-energy",
    "date": "2026-11-30",
    "horizon": "1-5 weeks",
-   "p": 0.5,
+   "p": 0.55,
    "label": "Frozen tanker war grinds on: no campaign, no deal (Hormuz shut, Brent ≥100)",
-   "rationale": "The modal path since 8/30: episodic strikes, record tanker attacks, Hormuz near standstill, no confirmed talks. The physical-flow gate (market-transmission §7.1) keeps the premium; #80 = Brent ≥100 on 11/30 (0.70; the strike branch also keeps it above 100).",
+   "rationale": "RE-WEIGHTED 0.50 -> 0.55 (10/29): the tanker war intensified - IRGC claims 2-4 tankers hit its mines near Khasab and declares the strait closed (US rejects the mine claim; UKMTO reports a vessel fire near Khasab). Brent front 110-116 all week. || The modal path since 8/30: episodic strikes, record tanker attacks, Hormuz near standstill, no confirmed talks. The physical-flow gate (market-transmission §7.1) keeps the premium; #80 = Brent ≥100 on 11/30 (0.70; the strike branch also keeps it above 100).",
    "confluence": [
     "PortWatch 4 transits 10/18",
     "~500 vessels delayed + new tanker attack near Oman (Gulf News 10/25)",
@@ -2126,6 +2138,14 @@
     {
      "fact": "Dec Brent settled 116.72 (6-month high)",
      "reported": "2026-10-23"
+    },
+    {
+     "fact": "IRGC: tankers hit mines in Hormuz, strait 'closed'; US rejects; UKMTO vessel fire near Khasab",
+     "reported": "2026-10-29T17:19Z"
+    },
+    {
+     "fact": "Brent front-month 115.81 / 113.88 / 115.32 (10/26-28), 110.56 intraday 10/29 (Dec contract expires 10/30)",
+     "reported": "2026-10-29"
     }
    ]
   },
@@ -2137,9 +2157,9 @@
    "checkpoint": true,
    "date": "2026-10-28",
    "horizon": "3 days",
-   "p": 0.82,
-   "label": "FOMC 10/28: HOLD at 3.75-4.00 (engine 0.82)",
-   "rationale": "Economists see a hold and a December hike; Warsh 'I don't prejudge' cut October hike bets; no SEP. Breaker: a 9/16-style hawkish surprise into the oil shock.",
+   "p": 1.0,
+   "label": "✓ RESOLVED HIT — FOMC 10/28 HELD 3.75-4.00 (10-2; Cook + Hammack dissent for a hike) (#81)",
+   "rationale": "RESOLVED 10/29: held 10-2 per the Fed release; two hike dissents (first governor + president pair since 1992). Warsh: 'I don't believe in forward guidance, absent exigent circumstances' -> the hold did NOT lock in December (shift edge to fed-dec-hike p_to 0.9 required hike guidance; not triggered). || Economists see a hold and a December hike; Warsh 'I don't prejudge' cut October hike bets; no SEP. Breaker: a 9/16-style hawkish surprise into the oil shock.",
    "confluence": [
     "market pricing ~83-87% hold (single-source)",
     "economist surveys",
@@ -2153,6 +2173,10 @@
     {
      "fact": "U.S. Economists See Fed Holding Rates on the 28th, Hiking in December (Seoul Economic Daily)",
      "reported": "2026-10-25T20:00Z"
+    },
+    {
+     "fact": "Fed release 10/28: maintain 3-3/4 to 4 percent; vote 10-2, Cook and Hammack preferred +25bp",
+     "reported": "2026-10-28T18:00Z"
     }
    ],
    "shifts": [
@@ -2177,9 +2201,9 @@
    "lane": "fed-macro",
    "date": "2026-12-09",
    "horizon": "6 weeks",
-   "p": 0.75,
+   "p": 0.65,
    "label": "Fed hikes again in December (oil-driven headline, Branch B)",
-   "rationale": "Branch-B reaction function confirmed 9/16 (market-transmission §3/§11). Oct CPI (11/10) is the referee; a confirmed deal (Brent -20%) is the breaker.",
+   "rationale": "RE-WEIGHTED 0.75 -> 0.65 (10/29): two hike dissents keep December live, but Warsh refused forward guidance, Bloomberg read 'no clear signal' for December, and Treasury yields fell after the hold (10y 5.05 -> 5.00). October CPI (11/10) is now the whole referee. || Branch-B reaction function confirmed 9/16 (market-transmission §3/§11). Oct CPI (11/10) is the referee; a confirmed deal (Brent -20%) is the breaker.",
    "confluence": [
     "9/16 hike precedent",
     "Sept CPI +0.6 headline",
@@ -2187,7 +2211,12 @@
    ],
    "ledger": [],
    "market": "2y up; mortgages >7.3%; XHB down",
-   "evidence": []
+   "evidence": [
+    {
+     "fact": "Hold with 2 hike dissents, no forward guidance; yields fell after (WSJ 2026-10-29T15:23Z)",
+     "reported": "2026-10-29"
+    }
+   ]
   }
  ],
  "week_ahead": {
@@ -2196,32 +2225,35 @@
    {
     "event": "Israel general election",
     "when": "Tue 10/27",
-    "status": "pending",
+    "status": "resolved",
     "ledger": 79,
     "estimate": "Netanyahu has warned of Iranian attacks into the vote; an Israeli first strike is #79's named breaker",
     "consensus": "—",
-    "actual": "— awaiting —",
-    "note": "Two-level game (formal §5): the coalition result shapes Israel's Iran win-set."
+    "actual": "Held 10/27: GRIDLOCK - Netanyahu bloc ~53 seats (61 needed), Likud 26, Eisenkot's Yashar 21; caretaker government likely",
+    "note": "Two-level game (formal §5): the coalition result shapes Israel's Iran win-set. Outcome: no Israeli first strike around the vote (#79 breaker did not fire); a caretaker PM in the loss domain is the new tail to watch (doctrine §4 / formal §7).",
+    "result": "HIT"
    },
    {
     "event": "FOMC decision",
     "when": "Wed 10/28 14:00 ET",
-    "status": "pending",
+    "status": "resolved",
     "ledger": 81,
     "estimate": "HOLD 3.75-4.00 (0.82); hawkish guidance toward December",
     "consensus": "hold ~83-87%",
-    "actual": "— awaiting —",
-    "note": "2y is the tell. Same evening: MSFT + GOOGL capex guides."
+    "actual": "HELD 3.75-4.00, 10-2 (Cook, Hammack for +25bp); no forward guidance",
+    "note": "2y is the tell. Same evening: MSFT + GOOGL capex guides.",
+    "result": "HIT"
    },
    {
     "event": "MSFT + GOOGL earnings (AMC)",
     "when": "Wed 10/28",
-    "status": "pending",
+    "status": "resolved",
     "ledger": null,
     "estimate": "capex guide is the AI-architecture referee after Meta op income -37% and neocloud credit stress",
     "consensus": "—",
-    "actual": "— awaiting —",
-    "note": "market-transmission §5.1: a capex cut/revision rollover is the catalyst a semis fade needs."
+    "actual": "Neither RAISED capex: GOOGL held 2026 at $195-205B (\"rise significantly in 2027\"), Q3 FCF -$9.07B, search soft, EPS miss -> GOOGL -12% on 10/29; MSFT -0.8%. SMH had run +7.7% into the print (10/23-10/28), -1.7% on 10/29.",
+    "note": "market-transmission §5.1: a capex cut/revision rollover is the catalyst a semis fade needs. Referee verdict: a capex PLATEAU + ROI scrutiny (doctrine §13 demand-pillar signal), not a cut - half of the catalyst a semis fade needs (§5.2).",
+    "result": "NO CALL"
    },
    {
     "event": "AMZN earnings",
