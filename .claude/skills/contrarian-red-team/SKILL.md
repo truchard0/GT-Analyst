@@ -101,6 +101,8 @@ Log the gate verdict in the analysis (one line per step is enough). FAIL any ste
   | P < 0.60 | 356 | **35%** (claimed 54%) |
 
   The 0.55–0.60 bucket hit 28%. **Rule:** mechanical/screening outputs below P 0.60 are NOT predictions. Report them as "no view" and never ledger or score them as calls. Caveat: the confident calls came from only two weeks, so treat this as a provisional threshold.
+
+  **Enforced in code (2026-10-29).** `ledger.py add` refuses `--source auto|mechanical` calls with 0.40 < P < 0.60 and warns on manual calls in that zone. `ledger.py report` prints resolution (Murphy RES) for calls logged before versus after the rule, so whether abstention raises discrimination is measured, not assumed. Baseline at the rule date: RES 0.008 over 53 resolved calls, 29% of all calls logged in the hedge zone.
 - **Method audit (RAND RR1408 caveat):** structured techniques are institutionally assumed, not proven — track whether gate-passed predictions actually out-score gate-skipped ones once ≥10 resolve. If they don't, the gate is theater; change it.
 
 ## PART D — DEGENERATION GUARDRAILS (the avoid-list)

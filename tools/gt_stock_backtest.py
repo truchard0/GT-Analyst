@@ -40,6 +40,7 @@ RULES (model "v0", each tagged with its doctrine source)
 """
 import csv
 import datetime as dt
+import hashlib
 import json
 import math
 import pathlib
@@ -55,7 +56,11 @@ N_UNIVERSE = 125
 HORIZON = 5
 NOT_STOCKS = {"SPY", "BZ=F", "XLE", "XLK", "SMH", "ITA", "XLP", "XLU", "XLF", "XLV", "XLY", "QQQ"}
 # scheduled macro prints (BLS calendar, public in advance): Sept payrolls 10/02, Sept CPI 10/14
-MACRO_PRINTS = ["2026-10-02", "2026-10-14"]
+MACRO_PRINTS = ["2026-10-02", "2026-10-14", "2026-11-06", "2026-11-10"]   # + Oct payrolls, Oct CPI
+MARKET_HOLIDAYS = {"2026-11-26", "2026-12-25"}   # NYSE closed (for resolve dates beyond the data)
+LIVE = D / "live"                 # forward-test inputs (gitignored; tools/gt_backtest_data.py --out)
+FWD = D / "forward"               # forward-test registrations and scores (committed)
+UNIVERSE_FILE = D / "universe.csv"
 
 sys.path.insert(0, str(ROOT / "tools"))
 from gt_backtest_data import SECTOR_LEADERS  # noqa: E402
@@ -129,8 +134,8 @@ DEESC = re.compile(r"\b(ceasefire|cease-fire|truce|deal|talks|negotiat|diploma|a
 
 # ── data ────────────────────────────────────────────────────────────────
 
-def load_wide(name):
-    rows = list(csv.reader(open(D / name)))
+def load_wide(name, d=D):
+    rows = list(csv.reader(open(d / name)))
     head = rows[0][1:]
     out = {s: {} for s in head}
     for r in rows[1:]:
@@ -141,14 +146,14 @@ def load_wide(name):
 
 
 class Data:
-    def __init__(self):
-        self.px = load_wide("closes.csv")
-        self.vol = load_wide("volumes.csv")
+    def __init__(self, d=D):
+        self.px = load_wide("closes.csv", d)
+        self.vol = load_wide("volumes.csv", d)
         self.cal = sorted(self.px["SPY"])  # trading calendar = SPY sessions
-        self.y2 = {r["date"]: float(r["y2"]) for r in csv.DictReader(open(D / "rates.csv")) if r["y2"]}
-        self.news = [(r["published_utc"], r["title"]) for r in csv.DictReader(open(D / "news.csv", encoding="utf-8"))]
+        self.y2 = {r["date"]: float(r["y2"]) for r in csv.DictReader(open(d / "rates.csv")) if r["y2"]}
+        self.news = [(r["published_utc"], r["title"]) for r in csv.DictReader(open(d / "news.csv", encoding="utf-8"))]
         self.earn = {}
-        for r in csv.DictReader(open(D / "earnings.csv")):
+        for r in csv.DictReader(open(d / "earnings.csv")):
             self.earn.setdefault(r["symbol"], set()).add(r["date"])
 
     def idx(self, day):
@@ -165,6 +170,26 @@ class Data:
     def ret(self, sym, d0, d1):
         a, b = self.close(sym, d0), self.close(sym, d1)
         return b / a - 1 if a and b else None
+
+
+def sessions_after(data, asof, n):
+    """the n-th session after `asof`: from the data's calendar when it reaches that far, else
+    weekdays minus MARKET_HOLIDAYS (a forward cohort's resolve date is known before its prices)"""
+    i = data.idx(asof)
+    if i + n < len(data.cal):
+        return data.cal[i + n]
+    d, k = dt.date.fromisoformat(data.cal[-1]), len(data.cal) - 1 - i
+    while k < n:
+        d += dt.timedelta(days=1)
+        if d.weekday() < 5 and d.isoformat() not in MARKET_HOLIDAYS:
+            k += 1
+    return d.isoformat()
+
+
+def frozen_universe():
+    """the backtest's 125 names, frozen so the forward test trades the same universe"""
+    with open(UNIVERSE_FILE) as f:
+        return [r["ticker"] for r in csv.DictReader(f)]
 
 
 def universe(data):
@@ -256,7 +281,7 @@ def branch_v2(data, asof):
 
 def predict(data, syms, asof, variant="v0"):
     i = data.idx(asof)
-    end = data.cal[i + HORIZON] if i + HORIZON < len(data.cal) else "pending"
+    end = sessions_after(data, asof, HORIZON)
     br = branch_v2(data, asof) if variant == "v2-candidate" else branch(data, asof)
     col = {"B": 0, "A": 1, "G": 2}[br["branch"]]
     z, esc_now = news_z(data, asof)
@@ -283,7 +308,7 @@ def predict(data, syms, asof, variant="v0"):
             r1 *= 0.75
             r4 *= 0.75
         score = r1 + r3 + r4
-        earn = end != "pending" and any(asof < d <= end for d in data.earn.get(s, ()))
+        earn = any(asof < d <= end for d in data.earn.get(s, ()))
         if earn:                                                # R5 (earnings)
             score *= 0.5
         tc = terc.get(s, 1)
@@ -425,9 +450,14 @@ def truncated(data, asof):
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
+    if cmd in ("forward", "score-forward"):
+        return forward_main(cmd)
     data = Data()
     syms = universe(data)
-    if cmd == "predict":
+    if cmd == "freeze-universe":
+        write(UNIVERSE_FILE, [{"ticker": s, "sector": sector_of(s)} for s in syms])
+        print(f"froze {len(syms)} names -> {UNIVERSE_FILE.name}")
+    elif cmd == "predict":
         rows, extra = [], []
         for a in COHORTS:
             full = predict(data, syms, a, "v0")
@@ -460,17 +490,59 @@ def main():
         kept = [r for r in rows if r["p"] >= ABSTAIN_BELOW]
         if kept:
             print(json.dumps(summarize(kept, f"v2-candidate, P >= {ABSTAIN_BELOW} only")))
-    elif cmd == "forward":
+    else:
+        print(__doc__)
+
+
+def forward_main(cmd):
+    """Out-of-sample test of the v2 candidate: one cohort per Friday close, scored a week later.
+    Inputs come from LIVE (refresh with: python tools/gt_backtest_data.py --out data/gt_backtest/live)."""
+    data = Data(LIVE)
+    syms = frozen_universe()
+    FWD.mkdir(parents=True, exist_ok=True)
+    if cmd == "forward":
         asof = sys.argv[2]
         if "--hormuz-impaired" not in sys.argv:
             sys.exit("forward needs --hormuz-impaired 1|0 (as-of physical flow status from the tape)")
-        HORMUZ_IMPAIRED[asof] = int(sys.argv[sys.argv.index("--hormuz-impaired") + 1])
-        rows = [r for r in predict(data, syms, asof, "v2-candidate") if r["p"] >= ABSTAIN_BELOW]
-        path = D / f"forward_v2_{asof}.csv"
+        if asof not in data.cal:
+            sys.exit(f"{asof} has no SPY close in {LIVE} yet - refresh the live data after the close")
+        path = FWD / f"forward_v2_{asof}.csv"
+        if path.exists():
+            sys.exit(f"{path.name} is already registered; a registration is never overwritten")
+        flag = int(sys.argv[sys.argv.index("--hormuz-impaired") + 1])
+        HORMUZ_IMPAIRED[asof] = flag
+        full = predict(data, syms, asof, "v2-candidate")
+        assert full == predict(truncated(data, asof), syms, asof, "v2-candidate"), "LOOK-AHEAD"
+        rows = [{**r, "hormuz_impaired": flag} for r in full if r["p"] >= ABSTAIN_BELOW]
+        if not rows:
+            rows = [{"asof": asof, "resolve": sessions_after(data, asof, HORIZON), "ticker": "",
+                     "call": "abstain", "p": "", "variant": "v2-candidate", "hormuz_impaired": flag}]
         write(path, rows)
-        print(f"{len(rows)} v2 calls (P >= {ABSTAIN_BELOW}) as of {asof} close -> {path.name}")
-    else:
-        print(__doc__)
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        n = sum(1 for r in rows if r["call"] != "abstain")
+        print(f"{n} v2 calls (P >= {ABSTAIN_BELOW}) as of {asof} close, resolving "
+              f"{rows[0]['resolve']} -> {path.name} sha256 {digest}")
+    elif cmd == "score-forward":
+        allrows, out = [], []
+        for path in sorted(FWD.glob("forward_v2_*.csv")):
+            rows = [r for r in csv.DictReader(open(path, encoding="utf-8")) if r["call"] != "abstain"]
+            due = [r for r in rows if r["resolve"] <= data.cal[-1]]
+            if not due:
+                print(f"{path.name}: {len(rows)} calls, resolves {rows[0]['resolve'] if rows else '-'} (pending)")
+                continue
+            score_rows(data, due)
+            allrows += due
+            s = summarize(due, path.stem)
+            print(json.dumps(s))
+            out += due
+        if allrows:
+            write(FWD / "scored_forward.csv", out)
+            total = summarize(allrows, "v2-candidate forward, all resolved cohorts")
+            print(json.dumps(total))
+            if len({r["asof"] for r in allrows}) >= 2:
+                k, lo, hi = cluster_bootstrap(allrows)
+                print(f"hit-rate 95% CI over {k} week x sector clusters: [{lo}, {hi}]")
+            print("benchmarks: coin 0.50; v2 in-sample (P >= 0.60) 0.646 - in-sample, not a target")
 
 
 if __name__ == "__main__":

@@ -12,6 +12,9 @@ Outputs (committed; small):
                                        fighting resumed (V1 = first fatal day, R25 = first day the
                                        trailing-7-day toll reaches 25) or censoring
   data/ceasefire/breakdown_daily.csv   deaths on each fatal day 1..DAILY_MAX after every ceasefire
+  data/ceasefire/mediation_daily.csv   PA-X agreements (any stage) signed on the same conflict on
+                                       day 1..DAILY_MAX after every ceasefire: the dated trace of
+                                       active mediation (non-fatality precursor, point-in-time)
                                        (feeds the day-by-day updating model)
   data/ceasefire/ceasefire_cases.csv   one row per war spell (onset / resumption): features + the
                                        DAY the next ceasefire was agreed, or censoring
@@ -25,6 +28,7 @@ import bisect
 import csv
 import datetime as dt
 import io
+import json
 import math
 import pathlib
 import re
@@ -136,8 +140,39 @@ class Series:
         return out
 
 
+ETHPRIO_FILE = RAW / "ethprio_cf.csv"           # drop the ETH/PRIO CF data here when it arrives
+ETHPRIO_MAP = OUT / "ethprio_columns.json"      # which of its columns hold id, conflict, date, type
+
+
+def ethprio_rows():
+    """ETH/PRIO Civil Conflict Ceasefire cases (Clayton et al. 2023), if the file is present. Adds the
+    unilateral and failed ceasefires PA-X omits; same-conflict dates within 3 days merge with PA-X."""
+    if not ETHPRIO_FILE.exists():
+        return []
+    cols = json.loads(ETHPRIO_MAP.read_text(encoding="utf-8"))
+    out = []
+    with open(ETHPRIO_FILE, encoding="utf-8", errors="replace") as f:
+        for r in csv.DictReader(f):
+            try:
+                cid = int(float(r[cols["conflict_id"]]))
+                if cols.get("date") and r.get(cols["date"]):
+                    d = day(r[cols["date"]])
+                else:
+                    y, m, dd = (int(float(r[c])) for c in cols["date_parts"])
+                    d = dt.date(y, m, dd)
+            except (KeyError, ValueError):
+                continue
+            uni = str(r.get(cols.get("unilateral", ""), "")).strip() in ("1", "1.0", "yes", "True")
+            out.append({"cf_id": f"ethprio-{r.get(cols['id'], len(out))}-{cid}", "conflict_id": cid,
+                        "date": d, "agtp": "Intra",
+                        "status": "Unilateral document" if uni else "Multiparty signed/agreed",
+                        "third_party": 0, "stagesub": "Ceas", "src": "ethprio"})
+    print(f"ETH/PRIO: {len(out)} ceasefires read from {ETHPRIO_FILE.name}")
+    return out
+
+
 def ceasefires():
-    rows = []
+    rows = ethprio_rows()
     with open(RAW / "pax_v10.csv", encoding="utf-8", errors="replace") as f:
         for r in csv.DictReader(f):
             if r["Stage"] != "Cea":
@@ -164,6 +199,17 @@ def ceasefires():
     return merged
 
 
+def pax_agreements():
+    """{conflict_id: sorted signing dates} for every PA-X agreement, any stage - talks that produce
+    documents are the one mediation signal with a dated historical record"""
+    out = {}
+    with open(RAW / "pax_v10.csv", encoding="utf-8", errors="replace") as f:
+        for r in csv.DictReader(f):
+            for cid in {int(float(x)) for x in re.findall(r"\d+(?:\.\d+)?", r["UcdpCon"] or "")}:
+                out.setdefault(cid, []).append(day(r["Dat"]))
+    return {k: sorted(v) for k, v in out.items()}
+
+
 def interstate_ids():
     """UCDP type_of_conflict 2 = interstate. 16905 (the 2026 Iran war) postdates term v4."""
     ids = {16905}
@@ -184,6 +230,7 @@ def build():
     daily, names = load_daily()
     series = {cid: Series(dd) for cid, dd in daily.items()}
     cfs = [c for c in ceasefires() if c["conflict_id"] in series]
+    agreements = pax_agreements()
 
     # outcomes first (needed for the "known by D" track-record features)
     for c in cfs:
@@ -224,6 +271,7 @@ def build():
             "prior_cf": len(prior), "prior_breaks": len(broke),
             "has_last": int(last_dur is not None), "l_last_dur": lg(last_dur or 0),
             "l_since_break": lg((d - last_break).days) if last_break else 0.0,
+            "l_med90": lg(sum(1 for a in agreements.get(c["conflict_id"], ()) if d - D(days=90) <= a < d)),
             "v1_day": c["v1"] if c["v1"] is not None and c["v1"] <= c["censor"] else "",
             "r25_day": c["r25"] if c["r25"] is not None and c["r25"] <= c["censor"] else "",
             "censor_day": c["censor"],
@@ -237,6 +285,14 @@ def build():
             if n:
                 daily_rows.append({"cf_id": c["cf_id"], "day": k, "deaths": n})
     write(OUT / "breakdown_daily.csv", daily_rows)
+    med_rows = []
+    for c in cfs:
+        d = c["date"]
+        for a in agreements.get(c["conflict_id"], ()):
+            k = (a - d).days
+            if 1 <= k <= DAILY_MAX:
+                med_rows.append({"cf_id": c["cf_id"], "day": k})
+    write(OUT / "mediation_daily.csv", med_rows or [{"cf_id": "", "day": ""}])
 
     # ---- war spell -> next ceasefire ----
     spells = []

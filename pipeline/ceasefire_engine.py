@@ -46,6 +46,11 @@ FEATURES = {
     "ceasefire_cases.csv": ["interstate", "after_cf", "l_d7", "l_d365", "l_age", "prior_cf"],
 }
 LOGGED = {"prior_cf", "prior_breaks"}   # counts enter as log1p
+# Non-fatality precursors (2026-10-29): mediation intensity from the PA-X agreement stream - a static
+# 90-day count at signing plus two daily features. --no-precursors reproduces the original engine.
+USE_PRECURSORS = "--no-precursors" not in __import__("sys").argv
+if USE_PRECURSORS:
+    FEATURES["breakdown_cases.csv"] = FEATURES["breakdown_cases.csv"] + ["l_med90"]
 
 
 # ── data ────────────────────────────────────────────────────────────────
@@ -304,9 +309,41 @@ def load_daily():
     return dd
 
 
-def dyn_rows(case, deaths, h, last_s=None):
+def manual_precursors():
+    """{cf_id: [{date, kind, note}]} - hand-coded deadlines, mediator moves and force posture for the
+    2026 Iran ceasefires (data/ceasefire/precursors_manual.csv); annotation only, never a feature"""
+    out = {}
+    path = DATA / "precursors_manual.csv"
+    if path.exists():
+        for r in csv.DictReader(open(path, encoding="utf-8")):
+            out.setdefault(r["cf_id"], []).append(r)
+    return out
+
+
+def load_mediation():
+    """{cf_id: {day: agreements signed that day}} - None when precursors are switched off"""
+    if not USE_PRECURSORS:
+        return None
+    md = {}
+    with open(DATA / "mediation_daily.csv", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            if r["cf_id"]:
+                md.setdefault(r["cf_id"], {})
+                md[r["cf_id"]][int(r["day"])] = md[r["cf_id"]].get(int(r["day"]), 0) + 1
+    return md
+
+
+def dyn_rows(case, deaths, h, last_s=None, med=None):
     """(s, features, y) for every day s the ceasefire is still holding at the end of day s.
-    y = 1 if fighting resumes within (s, s+h]. Rows stop once the h-day outcome is unknown."""
+    y = 1 if fighting resumes within (s, s+h]. Rows stop once the h-day outcome is unknown.
+    med = {day: agreements signed} adds the mediation precursors (only agreements signed by day s)."""
+    marr = [0] * (DYN_MAX + 2)
+    for k, n in (med or {}).items():
+        if k <= DYN_MAX + 1:
+            marr[k] = n
+    mpre = [0] * (DYN_MAX + 2)
+    for k in range(1, DYN_MAX + 2):
+        mpre[k] = mpre[k - 1] + marr[k]
     arr = [0] * (DYN_MAX + 2)
     for k, n in deaths.items():
         if k <= DYN_MAX + 1:
@@ -325,6 +362,8 @@ def dyn_rows(case, deaths, h, last_s=None):
         w = lambda a: pre[s] - pre[max(0, s - a)]
         f = [math.log1p(s), math.log1p(w(1)), math.log1p(w(3)), math.log1p(w(7)),
              math.log1p(pre[s]), math.log1p(s - last if last else s + 1), int(last > 0)]
+        if med is not None:
+            f += [math.log1p(mpre[s] - mpre[max(0, s - 30)]), int(mpre[s] - mpre[max(0, s - 7)] > 0)]
         y = int(bool(E) and T <= s + h)
         out.append((s, case["x"] + f, y))
     return out
@@ -388,6 +427,8 @@ def daily_backtest(start_year, step=2, tau=0.5):
     every day; we measure the daily hazard (h=1) and the 7-day warning (h=7)."""
     cases, _ = load("r25")
     daily = load_daily()
+    medi = load_mediation()
+    mx = (lambda cid: medi.get(cid, {})) if medi is not None else (lambda cid: None)
     res = {1: [], 7: []}
     alarms = []
     years = sorted({c["date"].year for c in cases if c["date"].year >= start_year})
@@ -401,17 +442,17 @@ def daily_backtest(start_year, step=2, tau=0.5):
         km = km_curve([c["t"] for c in tr], [c["e"] for c in tr])
         models = {}
         for h in (1, 7):
-            rows = [(x, y) for c in tr for _, x, y in dyn_rows(c, daily.get(c["id"], {}), h)]
+            rows = [(x, y) for c in tr for _, x, y in dyn_rows(c, daily.get(c["id"], {}), h, med=mx(c["id"]))]
             models[h] = Logit().fit(rows)
         for c in te:
             dd = daily.get(c["id"], {})
             for h in (1, 7):
-                for s, x, y in dyn_rows(c, dd, h):
+                for s, x, y in dyn_rows(c, dd, h, med=mx(c["id"])):
                     base = (km[s] - km[min(s + h, HMAX)]) / km[s] if km[s] > 0 else 0
                     res[h].append((models[h].prob(x), base, y))
             if c["e"] and c["t"] <= DYN_MAX:
-                p7 = {s: models[7].prob(x) for s, x, _ in dyn_rows(c, dd, 7, last_s=c["t"] - 1)}
-                p1 = {s: models[1].prob(x) for s, x, _ in dyn_rows(c, dd, 1, last_s=c["t"] - 1)}
+                p7 = {s: models[7].prob(x) for s, x, _ in dyn_rows(c, dd, 7, last_s=c["t"] - 1, med=mx(c["id"]))}
+                p1 = {s: models[1].prob(x) for s, x, _ in dyn_rows(c, dd, 1, last_s=c["t"] - 1, med=mx(c["id"]))}
                 alarms.append((c, p7, p1))
     out = {}
     for h, rr in res.items():
@@ -447,12 +488,14 @@ def trace(case_id, days):
     """Live replay of one ceasefire: the 7-day and next-day call at chosen days."""
     cases, _ = load("r25")
     daily = load_daily()
+    medi = load_mediation()
+    mx = (lambda cid: medi.get(cid, {})) if medi is not None else (lambda cid: None)
     c = next(c for c in cases if c["id"] == case_id)
     tr = censor_at(cases, c["date"])
-    m7 = Logit().fit([(x, y) for t in tr for _, x, y in dyn_rows(t, daily.get(t["id"], {}), 7)])
-    m1 = Logit().fit([(x, y) for t in tr for _, x, y in dyn_rows(t, daily.get(t["id"], {}), 1)])
+    m7 = Logit().fit([(x, y) for t in tr for _, x, y in dyn_rows(t, daily.get(t["id"], {}), 7, med=mx(t["id"]))])
+    m1 = Logit().fit([(x, y) for t in tr for _, x, y in dyn_rows(t, daily.get(t["id"], {}), 1, med=mx(t["id"]))])
     dd = daily.get(c["id"], {})
-    rows7 = {s: x for s, x, _ in dyn_rows({**c, "e": 0, "t": DYN_MAX + 7}, dd, 7)}
+    rows7 = {s: x for s, x, _ in dyn_rows({**c, "e": 0, "t": DYN_MAX + 7}, dd, 7, med=mx(c["id"]))}
     out = []
     for s in days:
         if s in rows7:
@@ -491,6 +534,9 @@ def main():
     d = sub.add_parser("backtest-daily")
     d.add_argument("--from", dest="start", type=int, default=2000)
     d.add_argument("--tau", type=float, default=0.5)
+    for sp in (b, p, d):
+        sp.add_argument("--no-precursors", action="store_true",
+                        help="drop the mediation precursors (reproduces the 10-25 engine)")
     a = ap.parse_args()
     random.seed(7)
 
@@ -518,6 +564,17 @@ def main():
             print(f"\n{cid} day-by-day ({end}) - day, date, deaths that day, P(war within 7d), P(war tomorrow):")
             for r in hot:
                 print("   ", r)
+            # precursors with no historical training data: shown beside the model, not inside it
+            for m in manual_precursors().get(cid, []):
+                print(f"    precursor {m['date']} {m['kind']}: {m['note']}")
+        log = DATA / "precursor_log.csv"
+        if log.exists():
+            rows = list(csv.DictReader(open(log, encoding="utf-8")))
+            recent = [r for r in rows if r["reported_utc"][:10] >= (dt.date.today() - dt.timedelta(days=7)).isoformat()]
+            kinds = {}
+            for r in recent:
+                kinds[r["kind"]] = kinds.get(r["kind"], 0) + 1
+            print(f"\nprecursor log, last 7 days (tools/precursor_log.py): {kinds or 'none'}")
     elif a.cmd == "backtest-daily":
         out, _ = daily_backtest(a.start, tau=a.tau)
         for k, v in out.items():

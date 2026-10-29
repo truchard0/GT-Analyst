@@ -68,7 +68,7 @@
             "Hitachi"
           ]
         },
-        "ABB": {
+        "ABBNY": {
           "aliases": [
             "ABB"
           ]
@@ -233,11 +233,6 @@
             "AEye"
           ]
         },
-        "IRBT": {
-          "aliases": [
-            "iRobot"
-          ]
-        },
         "UAVS": {
           "aliases": [
             "AgEagle"
@@ -253,9 +248,10 @@
             "MicroVision"
           ]
         },
-        "VLD": {
+        "VELO": {
           "aliases": [
-            "Velo3D"
+            "Velo3D",
+            "VLD"
           ]
         },
         "MTEK": {}
@@ -341,9 +337,10 @@
             "Viasat"
           ]
         },
-        "SATS": {
+        "ECHO": {
           "aliases": [
-            "EchoStar"
+            "EchoStar",
+            "SATS"
           ]
         },
         "KRMN": {
@@ -418,16 +415,16 @@
             "Momentus"
           ]
         },
-        "SATX": {},
         "CMTL": {
           "aliases": [
             "Comtech"
           ]
         },
-        "OSAT": {
+        "NXPL": {
           "aliases": [
             "Orbsat",
-            "NextPlat"
+            "NextPlat",
+            "OSAT"
           ]
         }
       }
@@ -450,10 +447,11 @@
             "Samsung"
           ]
         },
-        "HXSCL": {
+        "SKHY": {
           "aliases": [
             "SK Hynix",
-            "Hynix"
+            "Hynix",
+            "HXSCL"
           ]
         },
         "SNDK": {
@@ -476,9 +474,10 @@
             "NetApp"
           ]
         },
-        "PSTG": {
+        "P": {
           "aliases": [
-            "Pure Storage"
+            "Pure Storage",
+            "PSTG"
           ]
         },
         "RMBS": {
@@ -565,11 +564,6 @@
         "NVEC": {
           "aliases": [
             "NVE"
-          ]
-        },
-        "SKYT": {
-          "aliases": [
-            "SkyWater"
           ]
         },
         "ATOM": {
@@ -868,11 +862,6 @@
             "Cirrus Logic"
           ]
         },
-        "QRVO": {
-          "aliases": [
-            "Qorvo"
-          ]
-        },
         "SWKS": {
           "aliases": [
             "Skyworks"
@@ -1091,11 +1080,6 @@
             "Hut 8"
           ]
         },
-        "BITF": {
-          "aliases": [
-            "Bitfarms"
-          ]
-        },
         "CORZ": {
           "aliases": [
             "Core Scientific"
@@ -1145,17 +1129,6 @@
         },
         "DGXX": {},
         "NUAI": {},
-        "WLAC": {},
-        "MIGI": {
-          "aliases": [
-            "Mawson"
-          ]
-        },
-        "GREE": {
-          "aliases": [
-            "Greenidge"
-          ]
-        },
         "ABTS": {}
       }
     },
@@ -1397,9 +1370,10 @@
             "Leonardo DRS"
           ]
         },
-        "ERJ": {
+        "EMBJ": {
           "aliases": [
-            "Embraer"
+            "Embraer",
+            "ERJ"
           ]
         },
         "HXL": {
@@ -1525,5 +1499,22 @@
       }
     }
   },
-  "tickers": {}
+  "tickers": {},
+  "_retired": {
+    "ABB": "renamed to ABBNY (2026-10-29)",
+    "ERJ": "renamed to EMBJ (2026-10-29)",
+    "HXSCL": "renamed to SKHY (2026-10-29)",
+    "SATS": "renamed to ECHO (2026-10-29)",
+    "VLD": "renamed to VELO (2026-10-29)",
+    "PSTG": "renamed to P (2026-10-29)",
+    "OSAT": "renamed to NXPL (2026-10-29)",
+    "BITF": "no US listing found (Yahoo search, 2026-10-29)",
+    "MIGI": "no US listing found",
+    "GREE": "common delisted; only the GREEL note trades",
+    "IRBT": "no US listing found (post-bankruptcy)",
+    "SATX": "no US listing found (acquired)",
+    "SKYT": "no US listing found",
+    "WLAC": "no listing found",
+    "QRVO": "no US listing; only foreign quotes (Skyworks merger)"
+  }
 }

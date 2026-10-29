@@ -13,7 +13,8 @@
 
 Outputs go to data/gt_backtest/ (closes.csv, volumes.csv, rates.csv, news.csv, earnings.csv).
 
-    python tools/gt_backtest_data.py
+    python tools/gt_backtest_data.py                              # backtest inputs (committed)
+    python tools/gt_backtest_data.py --out data/gt_backtest/live  # forward-test inputs (gitignored)
 """
 import concurrent.futures as cf
 import csv
@@ -21,6 +22,7 @@ import datetime as dt
 import email.utils
 import json
 import pathlib
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -175,6 +177,8 @@ def fetch_earnings():
 
 
 if __name__ == "__main__":
+    if "--out" in sys.argv:   # forward runs write to data/gt_backtest/live, never over the backtest inputs
+        OUT = (ROOT / sys.argv[sys.argv.index("--out") + 1]).resolve()
     OUT.mkdir(parents=True, exist_ok=True)
     fetch_prices()
     fetch_rates()

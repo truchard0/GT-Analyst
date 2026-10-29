@@ -120,3 +120,40 @@ python pipeline/ceasefire_engine.py live                          # Iran 2026: a
 python pipeline/ceasefire_engine.py predict --case iran-2026-06-17
 ```
 Sources: PA-X v10, peaceagreements.org (`pax_data_2257_agreements_v10.csv`). UCDP GED 26.1 and candidate GED 26.0.1–9, ucdp.uu.se/downloads. UCDP Conflict Termination v4 (interstate typing).
+
+## Update, 29 October 2026: non-fatality precursors
+Three changes, each with its measured effect.
+
+**1. Mediation activity (trainable).** PA-X dates every agreement on a conflict, at every stage
+(pre-negotiation, framework, implementation). The engine now uses those as a point-in-time trace of
+active mediation:
+- a static count of agreements in the 90 days before signing;
+- two daily features: agreements in the last 30 days, and any agreement in the last 7.
+
+Of the 401 ceasefires, 271 have mediation activity in the window; 3,516 post-signing agreements are
+dated. `--no-precursors` reproduces the 25 October engine.
+
+| Walk-forward, 2000–2026 | Without precursors | With precursors |
+|---|---|---|
+| Return to war, ensemble: median miss | 76 days | 68 days |
+| Return to war, ensemble: C-index | 0.826 | 0.831 |
+| Return to war, ensemble: Brier at 30 days / 365 days | 0.093 / 0.129 | 0.094 / 0.125 |
+| Day-by-day: AUC, war within 7 days | 0.873 | 0.877 |
+| Day-by-day: Brier skill at 7 days | 9.3% | 9.8% |
+| Day-by-day: collapses warned 2+ days ahead (alarm at 0.3) | 23.4% | 24.6% |
+| Day-by-day: median P(war tomorrow) on the eve | 4.4% | 4.5% |
+
+The gain is real but marginal. Mediation documents are a slow signal; collapse is a fast decision.
+
+**2. Deadlines, flight bans, force posture (no historical record).** No public dataset dates these,
+so they cannot train coefficients. Two things now record them instead:
+- `data/ceasefire/precursors_manual.csv` hand-codes them for the 2026 Iran ceasefires, and `live`
+  prints them beside the day-by-day replay. For the 17 June memorandum, the tanker strikes (7 Jul) and
+  Trump's cancellation (8 Jul) came 4–5 days before war registered (12 Jul).
+- `tools/precursor_log.py` builds a prospective, point-in-time log from the ingest tape: flight bans,
+  force posture, mediator moves, deadlines. Each row keeps the item's reported time. Once a few
+  ceasefires have run their course under it, these become trainable.
+
+**3. ETH/PRIO.** The build tool ingests the CF dataset automatically when it is saved to
+`data/ceasefire/raw/ethprio_cf.csv` and its columns are mapped in `data/ceasefire/ethprio_columns.json`.
+The request draft is at `docs/requests/2026-10-29_ethprio-ceasefire-data-request.md`.

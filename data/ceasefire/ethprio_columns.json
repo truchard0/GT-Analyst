@@ -1,0 +1,12 @@
+{
+  "_doc": "Column names in the ETH/PRIO CF file. Fill these from its codebook when the data arrive; either 'date' (ISO) or 'date_parts' (year, month, day) is used.",
+  "id": "cf_id",
+  "conflict_id": "acd1",
+  "date": "",
+  "date_parts": [
+    "cf_effect_yr",
+    "cf_effect_month",
+    "cf_effect_day"
+  ],
+  "unilateral": "unilateral"
+}

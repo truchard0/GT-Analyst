@@ -14,7 +14,7 @@
   "uranium_power": { "etfs": ["URA", "URNM"], "tickers": ["CCJ", "CEG", "VST"], "notes": "resilience-over-efficiency energy security play (§11.2)" },
   "volatility":    { "etfs": ["VIXY"], "tickers": [], "notes": "regime-break hedge expression; §5 'snap not glide'" },
 
-  "robotics":       { "index": "BOTZ", "etfs": ["BOTZ", "ROBO", "ARKQ"], "tickers": ["NVDA", "TSLA", "ISRG", "ABB", "SYM"], "notes": "physical AI / automation; main index BOTZ" },
+  "robotics":       { "index": "BOTZ", "etfs": ["BOTZ", "ROBO", "ARKQ"], "tickers": ["NVDA", "TSLA", "ISRG", "ABBNY", "SYM"], "notes": "physical AI / automation; main index BOTZ" },
   "space":          { "index": "ARKX", "etfs": ["ARKX", "UFO", "ROKT"], "tickers": ["RKLB", "ASTS", "LMT", "IRDM"], "notes": "LEO / launch / satellite; main index ARKX" },
   "memory":         { "index": "SMH", "etfs": ["SMH", "SOXX"], "tickers": ["MU", "WDC", "STX", "SNDK"], "notes": "no pure-play memory ETF; SMH proxy. §13 scarcity-premium applies" },
   "photonics":      { "index": "EUV", "etfs": ["EUV"], "tickers": ["COHR", "LITE", "CIEN", "GLW", "AVGO"], "notes": "optical/silicon-photonics/AI interconnect; main index EUV" },

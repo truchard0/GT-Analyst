@@ -64,6 +64,18 @@ def db():
     return c
 
 
+# contrarian-red-team Part C abstention zone (2026-10-29): a probability within 0.10 of a coin
+# is "no view". Mechanical/auto calls there are refused; manual ones are warned. The report
+# tracks whether resolution (Murphy RES) rises for calls logged after the rule.
+ABSTAIN_RULE_DATE = "2026-10-29"
+HEDGE_ZONE = (0.40, 0.60)
+MECHANICAL_SOURCES = {"auto", "mechanical"}
+
+
+def in_hedge_zone(p):
+    return HEDGE_ZONE[0] < p < HEDGE_ZONE[1]
+
+
 def add(args):
     if args.direction and args.direction not in DIRECTIONS:
         sys.exit(f"direction must be one of {DIRECTIONS}")
@@ -71,6 +83,13 @@ def add(args):
         sys.exit("prob must be in [0,1]")
     if args.conviction is not None and not (0.0 <= args.conviction <= 1.0):
         sys.exit("conviction must be in [0,1]")
+    if in_hedge_zone(args.prob):
+        if args.source in MECHANICAL_SOURCES:
+            sys.exit(f"ABSTAIN (contrarian Part C): P={args.prob} is inside the no-view zone "
+                     f"{HEDGE_ZONE[0]}-{HEDGE_ZONE[1]}; a {args.source} call there is not a prediction. "
+                     "Not logged.")
+        print(f"WARN contrarian Part C: P={args.prob} is in the hedge zone {HEDGE_ZONE[0]}-"
+              f"{HEDGE_ZONE[1]} - abstain unless an independent lens moves it out.")
     falsifier_lint(args.prediction, args.falsifier)
     c = db()
     c.execute("""INSERT INTO predictions
@@ -97,6 +116,7 @@ def resolve(pid, outcome):
 
 
 LESSON_VERDICTS = ("hit-clean", "hit-wrong-reason", "partial", "miss")
+DORMANCY_DAYS = 7   # sweep fails when the ledger has seen no add/resolve/lesson for longer
 
 
 def lesson(args):
@@ -140,6 +160,15 @@ def sweep():
         print(f"RESOLVED WITHOUT LESSON ({len(unlessoned)}) - diagnose + patch (or 'none - variance'):")
         for i, out, br, pred in unlessoned:
             print(f"  #{i} outcome={'HIT' if out else 'MISS'} brier={br:.3f} :: {pred}")
+    # dormancy alarm (10-25 lesson: 35 calls went 14-79 days unscored while nothing ran)
+    last = max(x for x in c.execute(
+        "SELECT MAX(ts) FROM predictions UNION ALL SELECT MAX(resolved_ts) FROM predictions "
+        "UNION ALL SELECT MAX(ts) FROM lessons").fetchall() if x[0])[0]
+    idle = (today - date.fromisoformat(last[:10])).days
+    if idle > DORMANCY_DAYS:
+        bad = True
+        print(f"DORMANT: no ledger activity for {idle} days (last {last[:10]}). Run a cycle: "
+              "ingest, analyze, log, resolve.")
     n_lessons = c.execute("SELECT COUNT(*) FROM lessons").fetchone()[0]
     by_v = dict(c.execute("SELECT verdict,COUNT(*) FROM lessons GROUP BY verdict"))
     print(f"\nlessons on file: {n_lessons} {by_v if by_v else ''}")
@@ -245,22 +274,7 @@ def report():
     ro = c.execute("SELECT prob, outcome FROM predictions "
                    "WHERE status='resolved' AND outcome IS NOT NULL").fetchall()
     if len(ro) >= 5:
-        n = len(ro)
-        obar = sum(o for _, o in ro) / n
-        bins = {}
-        for p, o in ro:
-            bins.setdefault(round(p, 1), []).append(o)
-        rel = 0.0
-        res = 0.0
-        for k, v in bins.items():
-            nk = len(v)
-            pbar = sum(p for p, o in ro if round(p, 1) == k) / nk
-            ok = sum(v) / nk
-            rel += nk * (pbar - ok) ** 2
-            res += nk * (ok - obar) ** 2
-        rel /= n
-        res /= n
-        unc = obar * (1 - obar)
+        rel, res, unc, obar = murphy(ro)
         print("\n-- Brier decomposition (Murphy): REL - RES + UNC --")
         print(f"  reliability (calibration, lower better) = {rel:.4f}")
         print(f"  resolution  (discrimination, higher better) = {res:.4f}")
@@ -273,6 +287,40 @@ def report():
     else:
         print("\n-- Brier decomposition: needs >=5 resolved (have "
               f"{len(ro)}) --")
+
+    # ── abstention-rule tracking: does resolution rise after the rule? ────────
+    print(f"\n-- Abstention rule ({ABSTAIN_RULE_DATE}): is resolution rising? --")
+    for label, cond in (("before", "ts < ?"), ("after ", "ts >= ?")):
+        logged = c.execute(f"SELECT prob FROM predictions WHERE {cond}", (ABSTAIN_RULE_DATE,)).fetchall()
+        hedge = sum(1 for (p,) in logged if in_hedge_zone(p))
+        rr = c.execute(f"SELECT prob, outcome FROM predictions WHERE status='resolved' "
+                       f"AND outcome IS NOT NULL AND {cond}", (ABSTAIN_RULE_DATE,)).fetchall()
+        line = (f"  {label}: {len(logged)} logged, {hedge} in the hedge zone "
+                f"({hedge / len(logged):.0%})" if logged else f"  {label}: none logged")
+        if len(rr) >= 5:
+            rel, res, _, _ = murphy(rr)
+            line += f"; {len(rr)} resolved, RES={res:.4f}, REL={rel:.4f}"
+        else:
+            line += f"; {len(rr)} resolved (RES needs >=5)"
+        print(line)
+
+
+def murphy(ro):
+    """Murphy (1973) partition of the Brier score over 0.1-wide probability bins.
+    ro = [(prob, outcome)]. Returns (reliability, resolution, uncertainty, base rate)."""
+    n = len(ro)
+    obar = sum(o for _, o in ro) / n
+    bins = {}
+    for p, o in ro:
+        bins.setdefault(round(p, 1), []).append((p, o))
+    rel = res = 0.0
+    for v in bins.values():
+        nk = len(v)
+        pbar = sum(p for p, _ in v) / nk
+        ok = sum(o for _, o in v) / nk
+        rel += nk * (pbar - ok) ** 2
+        res += nk * (ok - obar) ** 2
+    return rel / n, res / n, obar * (1 - obar), obar
 
 
 def redteam():

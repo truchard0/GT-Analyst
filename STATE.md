@@ -184,6 +184,35 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
   The 58% in-sample score counts for nothing.
 - **Watchlist hygiene:** stale tickers (ABB, ERJ→EMBJ, PSTG, …) silently drop out of every tool. Fix them.
 
+## 7d. FOLLOW-ON WORK (10/29)
+- **Geopolitical report:** [The 2026 US–Iran War: A Game-Theoretic Analysis and Forecast Audit](https://claude.ai/artifact/2b2haoi6ZA6gdnoHBVBUoH).
+  - The geopolitical record is **12/19 (63%), Brier 0.236, RES 0.031**.
+  - Physical and structural calls went **9/9**; principal decisions **1/7**.
+- **Abstention enforced:** `ledger.py add` refuses `auto` or `mechanical` calls with 0.40 < P < 0.60 and warns on
+  manual ones. `report` tracks resolution before and after 10/29; the baseline is RES 0.008.
+- **Dormancy alarm:** `sweep` fails after 7 days with no ledger activity. **Fixed cadence:** `tools/daily_cycle.sh`
+  plus a daily scheduled cloud session (§9).
+- **AI-financing stress index:** `tools/ai_stress_index.py` feeds market-transmission §5.2a.
+  - It is a necessary-condition gate for any bet against the AI complex.
+  - **Not yet predictive:** over 7 weeks, gate-on weeks −0.45% vs gate-off −1.07%. The 0.55 cap stays.
+- **Ceasefire precursors:**
+  - PA-X mediation features add a marginal gain (day-by-day AUC 0.873 → 0.877; warnings 2+ days ahead 23% → 25%).
+  - Deadlines, flight bans and force posture are hand-coded for Iran 2026 (`precursors_manual.csv`) and logged
+    prospectively (`tools/precursor_log.py`).
+- **ETH/PRIO:** the request draft is `docs/requests/2026-10-29_ethprio-ceasefire-data-request.md`. **It needs
+  sending by you;** the build tool ingests the dataset when it is saved to `data/ceasefire/raw/ethprio_cf.csv`.
+- **Watchlist fixed:**
+  - Renamed: ABB→ABBNY, ERJ→EMBJ, HXSCL→SKHY, SATS→ECHO, VLD→VELO, PSTG→P (Everpure), OSAT→NXPL.
+  - Removed (no US listing): BITF, MIGI, GREE, IRBT, SATX, SKYT, WLAC, QRVO.
+  - Audit list: `_retired` in `watchlist.json`.
+- **Forward test of the stock-call candidate:**
+  - The universe is frozen (`data/gt_backtest/universe.csv`), live inputs go to `data/gt_backtest/live/`, and
+    registrations go to `data/gt_backtest/forward/` (never overwritten).
+  - Cohorts are registered after the closes of 10/30, 11/6, 11/13 and 11/20, and scored 11/27 by scheduled sessions.
+  - On a 10/23 dry run it abstained on all 125 names (2y falling → weight 0.5 → max P 0.5998). Abstaining
+    weeks count as "no calls".
+  - These calls never enter `ledger.db`.
+
 ---
 
 ## 8. HARD-WON LESSONS ABOUT PROCESS

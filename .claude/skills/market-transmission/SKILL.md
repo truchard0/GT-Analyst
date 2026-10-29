@@ -67,6 +67,11 @@ In the 500-call stock backtest, the §4 "2y disambiguates" gate classified Oct 9
   | 10/2–10/9 | Underperform | −3.5% to −7.3% | 67% |
 
   The §5.1 momentum proxy (6-month SMH excess > 0 → drop the derate) fixed the first week and broke the second; net zero. The month's largest cross-sectional move came in 10/9–10/16, when neocloud, photonics, memory and space fell 15–21% vs SPY. Its trigger was AI-*financing* stress (neocloud credit, IPO pulls), not geopolitics. **No GT rule could see it.** Doctrine §13 (architecture attack) and contrarian #8 (Minsky financing test) are the right tools, but they have no data feed. **Coverage gap, top priority:** a headline-based AI-financing stress index (neocloud debt or credit headlines, IPO withdrawals, capex-guide cuts), built like the war-escalation index. Until it exists, AI-complex calls are capped at P 0.55.
+  - **5.2a Built 2026-10-29: `tools/ai_stress_index.py`.** One date-bounded Google News query per day on AI-infrastructure subjects (3,638 headlines, 1 Aug – 29 Oct). A STRESS/RELIEF lexicon is applied, and the gate is the weekly index's z against the prior four weeks (gate on at z ≥ 1.0).
+    - **Rule:** a call that the AI complex will underperform is allowed only while the gate is on. The gate is a *necessary* condition, not a signal to act on.
+    - **Evidence so far: none.** Over 7 weeks (4 Sept – 16 Oct), gate-on weeks averaged −0.45% for SMH vs SPY the next week, and gate-off weeks −1.07%. It fired correctly before the 9–16 Oct crash (−8.6%) but also through a September rally. The lexicon was written knowing October's IPO withdrawals, so even that hit is contaminated.
+    - **Status:** the 0.55 cap stays until 8+ forward weeks show gate-on weeks underperforming gate-off weeks.
+    - **Known noise:** local data-center zoning "pauses" match the stress lexicon. They are a real constraint, but not financing stress.
 
 ---
 
