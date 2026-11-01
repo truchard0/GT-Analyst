@@ -904,7 +904,7 @@ def render_predictions(s):
              f'<tbody>{band_rows}</tbody></table></div>')
     sec_rows = "".join(
         f'<tr><td>{esc(x["sectors"])}</td><td>{x["n"]}</td>'
-        f'<td>{f"{x["brier"]:.3f}" if x["brier"] is not None else "—"}</td></tr>'
+        f'<td>{format(x["brier"], ".3f") if x["brier"] is not None else "—"}</td></tr>'
         for x in cal["sectors"]) or '<tr><td colspan="3" class="muted">none</td></tr>'
     secs = (f'<div class="panel half"><h3>by sector</h3>'
             f'<table class="data"><thead><tr><th>sectors</th><th>n</th><th>mean Brier</th></tr></thead>'
@@ -1064,7 +1064,7 @@ def render_reports(s):
 def render_tape(s):
     ib = s["inbox"]
     feed_rows = "".join(
-        f'<tr><td>{"<span class=\"fdot-bad\">●</span>" if f["degraded"] else "<span class=\"fdot-ok\">●</span>"} {esc(f["label"])}</td>'
+        f'<tr><td><span class="{"fdot-bad" if f["degraded"] else "fdot-ok"}">●</span> {esc(f["label"])}</td>'
         f'<td class="mono small muted">{esc(f["url"][:70])}</td></tr>'
         for f in s["feeds"]) or '<tr><td class="muted">feed list unavailable</td></tr>'
     heads = "".join(
@@ -1124,13 +1124,13 @@ def render_calibration(s):
             f'open <b>{st.get("open",0)}</b> · mean Brier <b>{f"{mb:.4f}" if mb is not None else "—"}</b> '
             '<span class="muted small">(0 = clairvoyant, 0.25 = coin-flip at 50%)</span></div>')
     b_rows = "".join(f'<tr><td>{esc(b["label"])}</td><td>{b["n"]}</td>'
-                     f'<td>{f"{b['brier']:.3f}" if b.get("brier") is not None else "—"}</td></tr>'
+                     f'<td>{format(b["brier"], ".3f") if b.get("brier") is not None else "—"}</td></tr>'
                      for b in cal.get("bands", [])) or '<tr><td class="muted" colspan="3">none yet</td></tr>'
     k_rows = "".join(f'<tr><td>{esc(k["label"])}</td><td>{k["n"]}</td>'
-                     f'<td>{k["predicted"]:.0%}</td><td>{f"{k['actual']:.0%}" if k.get("actual") is not None else "—"}</td></tr>'
+                     f'<td>{k["predicted"]:.0%}</td><td>{format(k["actual"], ".0%") if k.get("actual") is not None else "—"}</td></tr>'
                      for k in cal.get("buckets", [])) or '<tr><td class="muted" colspan="4">none yet</td></tr>'
     s_rows = "".join(f'<tr><td>{esc(x["sectors"])}</td><td>{x["n"]}</td>'
-                     f'<td>{f"{x['brier']:.3f}" if x.get("brier") is not None else "—"}</td></tr>'
+                     f'<td>{format(x["brier"], ".3f") if x.get("brier") is not None else "—"}</td></tr>'
                      for x in cal.get("sectors", [])[:10]) or '<tr><td class="muted" colspan="3">none yet</td></tr>'
     return ('<details class="panel" style="margin-top:12px"><summary style="cursor:pointer;font-size:13px;'
             'font-weight:600;color:#dbe2ec;text-transform:uppercase;letter-spacing:.5px">calibration report</summary>'
