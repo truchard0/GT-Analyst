@@ -211,6 +211,8 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
   - Cohorts are registered after the closes of 10/30, 11/6, 11/13 and 11/20, and scored 11/27 by scheduled sessions.
   - On a 10/23 dry run it abstained on all 125 names (2y falling → weight 0.5 → max P 0.5998). Abstaining
     weeks count as "no calls".
+  - **10/30 cohort: 0 calls** (abstained on all 125; best P 0.5875, defense outperform). Hormuz flag 1. sha256
+    `b0493a1c…`; see `reports/backtests/forward_v2_scorecard.md`, including how the lost push was recovered.
   - These calls never enter `ledger.db`.
 
 ---
@@ -256,6 +258,14 @@ The rest of the routine is unchanged:
 | Forward test: final scoring | 11/27 20:13 | Final verdict in `reports/backtests/forward_v2_scorecard.md` + STATE §7d |
 
 None of these sessions holds MCP connectors (git, web search and price feeds need none).
+
+**⚠️ PUSH ACCESS (found 11/01): the scheduled sessions cannot push.** They clone the branch, but the git proxy
+returns 403 on push because `truchard0/GT-Analyst` is not among their sources. The 10/30 cohort and the 11/01
+tape refresh were lost this way (the cohort was re-registered byte-identically on 11/01; nothing was due on
+10/30–11/01). **Fix (owner):** add the repository to each scheduled task in claude.ai. Until it is fixed, check
+each scheduled run's transcript and redo any lost work from a session that can push. The first call due is #79
+(horizon 11/03, scored by the 11/04 gate). They run Python 3.11, so every `.py` file must parse on 3.11 (fixed
+in `eaa9f61`).
 **Running a cycle locally while one is scheduled risks a `ledger.db` conflict.** Pull first. The daily session
 is told to stop rather than pick a side on a ledger conflict.
 
