@@ -106,6 +106,10 @@ bookkeeping machine over expert estimates, not a solver.
 | #56 | Midterms held + ≥1 federal certification fight. DOJ v. Alaska (10/22) is already filed. **Tracking HIT** | 0.55 | 11/30 |
 | #38 | Jiang: US ground invasion of Iran by 12/31. **AT RISK**: the plans are strikes, not ground forces | 0.70 | 12/31 |
 | #53 | No PLA kinetic action vs Taiwan in 2026 | 0.93 | 12/31 |
+| **#82** | Hormuz STILL IMPAIRED on 3/31/2027 (PortWatch 7-day avg < 40.5, half of pre-war 81) | 0.70 | 2027-03-31 |
+| **#83** | Brent front month settles ≥ $85 on 3/31/2027 (correlated with #82) | 0.70 | 2027-03-31 |
+| **#84** | Fed upper bound ≥ 4.00% on 6/30/2027 (no net easing in H1) | 0.75 | 2027-06-30 |
+| **#85** | No PLA blockade/quarantine/invasion of Taiwan through 6/30/2027 | 0.90 | 2027-06-30 |
 | #16 | Attributed Israeli action on Iranian territory/assets by 1/8. **AT RISK**: no strike on Iran proper since 6/8 | 0.74 | 2027-01-08 |
 | #36 | US ground troops OR a compensated cessation by 1/13. **AT RISK** | 0.45 | 2027-01-13 |
 | #35 / #10 / #1 | Frozen conflict / no durable peace. **Tracking** | 0.55 / 0.70 / 0.70 | 2027–28 |
@@ -216,6 +220,37 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
   - These calls never enter `ledger.db`.
 
 ---
+
+## 7e. OUTLOOK TO H1 2027 (11/02)
+- **Report:** [Iran War Outlook: Q4 2026 – H1 2027](https://claude.ai/artifact/5wiVwSz9t67oCXco46iPLF) (Claude Doc,
+  seven drawn charts and diagrams), with a repo copy in `reports/20261102_outlook-h1-2027.md` (desk records in its
+  appendix).
+- **New report style (user rule, now in CLAUDE.md):** quant-desk note, lots of visuals, no internal machinery in the
+  body.
+- **New calls:** #82 to #85 (above). Each passed the red-team gate; the gates are in the report appendix.
+  - Iran-war is now 13 of 31 open rows (42%), over the 35% guide. This is accepted for physical-state calls and
+    flagged.
+- **Re-weights on the 11/1 tape:**
+  - `iran-fork-oct` branches are now campaign 0.35, deal 0.15 and frozen 0.50.
+  - `fed-dec-hike` is now 0.50: the 2y fell 14bp while Brent hit $117.64, so this is no call.
+  - New nodes: `hormuz-impaired-q1` 0.71, `fed-h1-no-cuts` 0.75 and `taiwan-h1-2027` 0.10.
+  - The scenario tree gives P(Hormuz still impaired) of 0.71 at 3/31 and 0.61 at 6/30.
+- **Data:** IMF PortWatch daily Hormuz transits can be pulled from the ArcGIS endpoint `Daily_Chokepoints_Data`
+  (`where=portname='Strait of Hormuz'`, `outFields=*`; a named outFields list returns 400). The pre-war average
+  (Jun 2025 to Feb 2026) is 81 a day; the last 4 weeks average 3.5.
+- **Oil profiteering research (memo summarised in the report):**
+  - About $2.65bn (ABC/LSEG) to $7bn (Reuters) of well-timed bearish oil futures preceded four Iran announcements,
+    23 March to 21 April.
+  - The White House warned staff on 3/24.
+  - Bloomberg (October) reported that a CFTC referral was retracted. There are no charges and no identified traders.
+  - The documented windfall goes to producers: Exxon earned $15.4bn in Q3 and Chevron $9.9bn.
+- **ETH/PRIO ceasefire data from another source:** a public CC0 subset exists in the authors' ISQ 2021 replication
+  archive (Harvard Dataverse doi:10.7910/DVN/YMCDBG).
+  - It covers 280 ceasefires with durations in days, types and termination flags, but **no calendar dates** and
+    only 13 unilateral ceasefires. So it cannot replace the full dataset for the day-level engine.
+  - It is downloaded to `data/ceasefire/raw/ethprio_isq/`, which is gitignored. Its Kaplan–Meier breakdown by 90
+    days is 41% overall, 49% for COH-type and 14% for definitive ceasefires.
+  - The full 2,202-ceasefire file still needs the emailed request.
 
 ## 8. HARD-WON LESSONS ABOUT PROCESS
 1. **Pre-register falsifiers before the move.** And now: **make them the exact negation of the call** (formal §8.1).

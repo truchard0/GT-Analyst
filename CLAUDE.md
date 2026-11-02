@@ -73,6 +73,18 @@ UPDATE IT at the end of any cycle that: resolves a prediction, adds a doctrine p
 changes the timeline model, opens/closes a trade, or changes the dashboard. It is the one
 file that must never go stale — the three gates verify the machine, STATE.md carries the meaning.
 
+## RULE: REPORT STYLE (user instruction, 2026-11-02; applies to every report from now on)
+Reports for the user read like a quant-desk / sell-side research note:
+- Lead with the calls: a key-calls table (call, probability, resolve date, what flips it), then the sections that
+  carry them. Probabilities are stated as desk calls; 40-60% is published as "no call".
+- NEVER describe the internal machinery in the report body: no "the engine", ledger IDs, doctrine or skill section
+  numbers, gates, red-team steps or conviction tables. Those go in a clearly separate appendix of desk records (repo
+  copy) or stay in the repo, never in the user-facing doc.
+- Lots of visuals: a chart for every time series or comparison of five or more values, a drawn scenario tree for
+  branching outcomes, a diagram for mechanisms or channels, and a dated catalyst timeline. Every chart title states
+  its finding with its number.
+- Default medium: a Claude Doc with hand-drawn charts; keep a markdown copy in `reports/`.
+
 ## RULE: PORTFOLIO HYGIENE ON THE LEDGER (from the 2026-08-01 full backtest)
 The ledger is a PORTFOLIO of bets, not a list. Three checks before logging:
 1. CLUSTER CONCENTRATION - no single cluster should exceed ~35pct of open predictions. The 8/1 backtest found iran-war at 31/55 = 56pct: one correlated bet dressed up as 31 independent ones. When a cluster is over-weight, new calls in it need a materially higher bar, and the calibration report must be read PER CLUSTER, not just in aggregate.

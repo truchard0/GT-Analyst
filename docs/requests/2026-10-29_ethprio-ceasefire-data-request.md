@@ -50,3 +50,21 @@ Kind regards,
    python pipeline/ceasefire_engine.py backtest-daily --tau 0.3
    ```
    Ceasefires on the same conflict within 3 days of a PA-X agreement merge with it automatically.
+
+## Public alternative checked (2026-11-02)
+- **What exists:** the authors' replication archive for Clayton & Sticher, "The Logic of Ceasefires in Civil War" (ISQ
+  2021), is public under CC0 on Harvard Dataverse (doi:10.7910/DVN/YMCDBG). It holds a CF-based survival file
+  (`ISQ_Replication_Data_CF.tab`, Stata 118).
+- **Coverage:** 280 ceasefires in 68 conflicts. It has the type (preliminary, definitive, COH, unilateral, local),
+  durations in days, and termination flags at several GED thresholds.
+- **Limits:**
+  - There are **no calendar dates**, so it cannot be joined to the day-level GED hazard.
+  - It has only 13 unilateral and 28 local ceasefires, so the gap PA-X leaves stays open.
+- **Use:** a duration reference class. Kaplan–Meier breakdown by 30/90/180 days:
+  - all: 14% / 41% / 54%
+  - COH: 16% / 49% / 65%
+  - definitive: 3% / 14% / 19%
+- **Where it is:** downloaded to `data/ceasefire/raw/ethprio_isq/` (gitignored).
+- **Other public sources:** no copy of the full 2,202-ceasefire dataset was found on the ETH CSS page (it links only to
+  the article), in PRIO's data catalogue, or in Harvard Dataverse searches. The email request above is still the way
+  to get it.

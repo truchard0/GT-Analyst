@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-11-02",
  "note": "Time-lane DAG. Edges are temporal implication (IF x THEN y), all forward in time. Updated 10/25 after the relaunch sweep: 38 resolutions (24 HIT / 14 MISS of the matured backlog + 3 early), the 8/1 fork resolved to frozen oscillation, the Oct deal-or-strike fork added (#79/#80), FOMC 10/28 checkpoint (#81).",
  "root": {
   "id": "now",
@@ -2081,6 +2081,10 @@
     {
      "fact": "WSJ: US warned Persian Gulf governments to prepare for possible US strikes on Iran after the midterms",
      "reported": "2026-10-28"
+    },
+    {
+     "fact": "Hegseth reportedly fires the top military planner as Trump downplays Iran peace talks (CNBC); Trump and Netanyahu discuss Iran (Ynet 11/1)",
+     "reported": "2026-10-29T12:06Z"
     }
    ]
   },
@@ -2091,9 +2095,9 @@
    "lane": "iran-energy",
    "date": "2026-11-30",
    "horizon": "1-5 weeks",
-   "p": 0.1,
+   "p": 0.15,
    "label": "US-Iran deal/ceasefire confirmed by BOTH sides by 11/30",
-   "rationale": "RE-WEIGHTED 0.15 -> 0.10 (10/29): Qatar delivered a 7-day confidence-building draft in Tehran (10/25); a senior Iranian official told Reuters there is no new Qatari proposal and Doha's ideas are unacceptable; Tehran calls US terms 'complete surrender'. || Qatari mediation + 'Iranian leaders want a deal' (Trump) vs Iran's 'Hormuz will not return' (Araghchi 10/23-25) and a repeated stand-down-is-not-a-deal record (§16.14 corollary). The timing engine gives a ceasefire ~5-11% by 11/30 (weak for interstate wars).",
+   "rationale": "RE-WEIGHTED 0.10 -> 0.15 (11/02): a third day of Qatar-mediated talks in Doha; Araghchi offers to reopen Hormuz within two days if the US meets Iran's conditions (first concrete reopening offer), 'no breakthrough yet'. Still conditional, and Iran says it will not meet US officials directly. || RE-WEIGHTED 0.15 -> 0.10 (10/29): Qatar delivered a 7-day confidence-building draft in Tehran (10/25); a senior Iranian official told Reuters there is no new Qatari proposal and Doha's ideas are unacceptable; Tehran calls US terms 'complete surrender'. || Qatari mediation + 'Iranian leaders want a deal' (Trump) vs Iran's 'Hormuz will not return' (Araghchi 10/23-25) and a repeated stand-down-is-not-a-deal record (§16.14 corollary). The timing engine gives a ceasefire ~5-11% by 11/30 (weak for interstate wars).",
    "confluence": [
     "Qatar mediators in Tehran",
     "Iran FM spox: messages still exchanged"
@@ -2108,6 +2112,10 @@
     {
      "fact": "Iran official: no new Qatari proposal; ideas unacceptable (Reuters via hngn 10/28)",
      "reported": "2026-10-28"
+    },
+    {
+     "fact": "Iran-Qatar talks, third day in Doha; Araghchi two-day Hormuz reopening plan conditional on US steps, no breakthrough (CNBC/Gulf News/Al Jazeera)",
+     "reported": "2026-11-01T14:55Z"
     }
    ]
   },
@@ -2118,9 +2126,9 @@
    "lane": "iran-energy",
    "date": "2026-11-30",
    "horizon": "1-5 weeks",
-   "p": 0.55,
+   "p": 0.5,
    "label": "Frozen tanker war grinds on: no campaign, no deal (Hormuz shut, Brent ≥100)",
-   "rationale": "RE-WEIGHTED 0.50 -> 0.55 (10/29): the tanker war intensified - IRGC claims 2-4 tankers hit its mines near Khasab and declares the strait closed (US rejects the mine claim; UKMTO reports a vessel fire near Khasab). Brent front 110-116 all week. || The modal path since 8/30: episodic strikes, record tanker attacks, Hormuz near standstill, no confirmed talks. The physical-flow gate (market-transmission §7.1) keeps the premium; #80 = Brent ≥100 on 11/30 (0.70; the strike branch also keeps it above 100).",
+   "rationale": "RE-WEIGHTED 0.55 -> 0.50 (11/02): mining continues (IRGC: two tankers exploded on mines 11/1; UKMTO vessel struck; a Qatari LNG carrier hit by 'unidentified objects' 11/1, condemned by Saudi Arabia, UAE, Egypt, Arab League), but the conditional reopening offer moves weight to the deal branch. Brent front month closed at a war high 117.64 on 10/30. || RE-WEIGHTED 0.50 -> 0.55 (10/29): the tanker war intensified - IRGC claims 2-4 tankers hit its mines near Khasab and declares the strait closed (US rejects the mine claim; UKMTO reports a vessel fire near Khasab). Brent front 110-116 all week. || The modal path since 8/30: episodic strikes, record tanker attacks, Hormuz near standstill, no confirmed talks. The physical-flow gate (market-transmission §7.1) keeps the premium; #80 = Brent ≥100 on 11/30 (0.70; the strike branch also keeps it above 100).",
    "confluence": [
     "PortWatch 4 transits 10/18",
     "~500 vessels delayed + new tanker attack near Oman (Gulf News 10/25)",
@@ -2146,6 +2154,18 @@
     {
      "fact": "Brent front-month 115.81 / 113.88 / 115.32 (10/26-28), 110.56 intraday 10/29 (Dec contract expires 10/30)",
      "reported": "2026-10-29"
+    },
+    {
+     "fact": "IRGC: two tankers exploded after hitting mines in Hormuz; UKMTO reports a vessel struck",
+     "reported": "2026-11-01T21:16Z"
+    },
+    {
+     "fact": "Qatari LNG carrier struck by 'unidentified objects' in the Gulf; Saudi/UAE/Egypt/Arab League condemn (Al Jazeera)",
+     "reported": "2026-11-01T22:36Z"
+    },
+    {
+     "fact": "Brent front month settles 117.64 (war high); PortWatch 3.5 transits/day over the 4 weeks to 10/25 vs 81 pre-war",
+     "reported": "2026-10-30"
     }
    ]
   },
@@ -2201,9 +2221,9 @@
    "lane": "fed-macro",
    "date": "2026-12-09",
    "horizon": "6 weeks",
-   "p": 0.65,
+   "p": 0.5,
    "label": "Fed hikes again in December (oil-driven headline, Branch B)",
-   "rationale": "RE-WEIGHTED 0.75 -> 0.65 (10/29): two hike dissents keep December live, but Warsh refused forward guidance, Bloomberg read 'no clear signal' for December, and Treasury yields fell after the hold (10y 5.05 -> 5.00). October CPI (11/10) is now the whole referee. || Branch-B reaction function confirmed 9/16 (market-transmission §3/§11). Oct CPI (11/10) is the referee; a confirmed deal (Brent -20%) is the breaker.",
+   "rationale": "RE-WEIGHTED 0.65 -> 0.50 (11/02): the 2y fell 14bp in the week to 4.56% (10/30) while Brent made a war high and SPY fell 1.8% - the demand-destruction read (market-transmission 1/7.1) is gaining on the inflation read. A coin flip until October CPI (11/10); no call (abstain zone). || RE-WEIGHTED 0.75 -> 0.65 (10/29): two hike dissents keep December live, but Warsh refused forward guidance, Bloomberg read 'no clear signal' for December, and Treasury yields fell after the hold (10y 5.05 -> 5.00). October CPI (11/10) is now the whole referee. || Branch-B reaction function confirmed 9/16 (market-transmission §3/§11). Oct CPI (11/10) is the referee; a confirmed deal (Brent -20%) is the breaker.",
    "confluence": [
     "9/16 hike precedent",
     "Sept CPI +0.6 headline",
@@ -2215,12 +2235,103 @@
     {
      "fact": "Hold with 2 hike dissents, no forward guidance; yields fell after (WSJ 2026-10-29T15:23Z)",
      "reported": "2026-10-29"
+    },
+    {
+     "fact": "2y Treasury 4.70 -> 4.56 over 10/27-10/30 while Brent rose to 117.64 (US Treasury, ICE)",
+     "reported": "2026-10-30"
+    }
+   ]
+  },
+  {
+   "id": "hormuz-impaired-q1",
+   "parent": "iran-fork-oct",
+   "kind": "event",
+   "lane": "iran-energy",
+   "date": "2027-03-31",
+   "horizon": "5 months",
+   "p": 0.71,
+   "label": "Hormuz still impaired on 3/31/2027 (PortWatch 7-day avg < half of pre-war)",
+   "rationale": "Scenario tree from the 11/30 fork: deal 0.15 x reopen-by-Q1 0.75 + campaign 0.35 x 0.30 + frozen 0.50 x 0.15 = 0.29 reopened -> 0.71 impaired. Mines lengthen deal-to-flows by 6-10 weeks; the late-June 2026 reopening peaked at only ~30/day. By 6/30/2027 the same tree gives ~0.61 impaired.",
+   "confluence": [
+    "physical state: PortWatch 3.5/day vs 81",
+    "force posture: mines in the approaches",
+    "game structure: frozen equilibrium is cheap for both principals"
+   ],
+   "ledger": [
+    82,
+    83
+   ],
+   "market": "Brent >= 85 on 3/31 (#83); tanker rates elevated",
+   "evidence": [
+    {
+     "fact": "PortWatch weekly mean 3.3-4.1 transits/day through 10/25",
+     "reported": "2026-10-25"
+    }
+   ],
+   "shifts": [
+    {
+     "target": "fed-h1-no-cuts",
+     "p_to": 0.85,
+     "date_delta": 0,
+     "note": "a closure that persists into Q2 keeps headline inflation up and the Fed from cutting"
+    }
+   ]
+  },
+  {
+   "id": "fed-h1-no-cuts",
+   "parent": "fomc-oct",
+   "kind": "event",
+   "lane": "fed-macro",
+   "date": "2027-06-30",
+   "horizon": "8 months",
+   "p": 0.75,
+   "label": "No net Fed easing in H1 2027 (upper bound >= 4.00% on 6/30/2027)",
+   "rationale": "Cuts need a deal plus a fast oil decline; P(reopened by 6/30) ~0.39. The 2y at 4.56% still prices tightening (~70bp over mid-range). Breaker: a growth shock (2y < 4.0 with Brent high).",
+   "confluence": [
+    "2y pricing",
+    "oil scenario tree",
+    "9/16 hike precedent (Fed did not look through)"
+   ],
+   "ledger": [
+    84
+   ],
+   "market": "front end: SHY range-bound; 2y the tell",
+   "evidence": [
+    {
+     "fact": "FOMC held 3.75-4.00, 10-2 with two hike dissents",
+     "reported": "2026-10-28"
+    }
+   ]
+  },
+  {
+   "id": "taiwan-h1-2027",
+   "parent": "now",
+   "kind": "event",
+   "lane": "taiwan-china",
+   "date": "2027-06-30",
+   "horizon": "8 months",
+   "p": 0.1,
+   "label": "Taiwan: PLA kinetic action (blockade/quarantine/invasion) by mid-2027 (LOW)",
+   "rationale": "Complement of #85 (0.90 no action). The Hormuz bind deters a second chokepoint crisis now; gray-zone patrols off the east coast (11/1) do not count. Boardings of Taiwan-bound ships would be the quarantine rehearsal that moves this.",
+   "confluence": [
+    "energy bind (45-50% of China crude via Hormuz)",
+    "PLA purge cycle",
+    "no mobilisation signals"
+   ],
+   "ledger": [
+    85
+   ],
+   "market": "TSM/semis risk premium",
+   "evidence": [
+    {
+     "fact": "Taiwan says China harassing shipping with east-coast patrol (gCaptain)",
+     "reported": "2026-11-01T02:36Z"
     }
    ]
   }
  ],
  "week_ahead": {
-  "label": "Catalyst board — week of Oct 26",
+  "label": "Catalyst board — week of Nov 2",
   "prints": [
    {
     "event": "Israel general election",
@@ -2268,12 +2379,13 @@
    {
     "event": "OPEC+ (seven-country group)",
     "when": "Sun 11/1",
-    "status": "pending",
+    "status": "resolved",
     "ledger": 80,
     "estimate": "pause extended (Sept quotas held since 9/6)",
     "consensus": "—",
-    "actual": "— awaiting —",
-    "note": "A surprise hike would lean against #80 at the margin; barrels stuck behind Hormuz limit it."
+    "actual": "Held December targets steady (third month) ahead of a tougher call for 2027 (CNBC 11/1)",
+    "note": "A surprise hike would lean against #80 at the margin; barrels stuck behind Hormuz limit it.",
+    "result": "HIT"
    },
    {
     "event": "US MIDTERMS",
@@ -2283,7 +2395,7 @@
     "estimate": "#79 horizon; #56 needs only the vote to be held (Alaska certification suit already filed)",
     "consensus": "—",
     "actual": "— awaiting —",
-    "note": "CENTCOM plans reportedly sequenced AFTER this date."
+    "note": "CENTCOM plans reportedly sequenced AFTER this date. A judge dismissed DOJ's Alaska Senate suit on 11/1; DOJ vows appeal (#56)."
    },
    {
     "event": "October jobs / October CPI",
