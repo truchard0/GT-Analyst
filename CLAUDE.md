@@ -84,6 +84,11 @@ Reports for the user read like a quant-desk / sell-side research note:
   branching outcomes, a diagram for mechanisms or channels, and a dated catalyst timeline. Every chart title states
   its finding with its number.
 - Default medium: a Claude Doc with hand-drawn charts; keep a markdown copy in `reports/`.
+- ALWAYS deliver every report as BOTH a .docx and a .pdf (user instruction, 2026-11-02). Export the finished Claude
+  Doc tab with the docs `export` tool (format `docx`, then `pdf`, paper `letter`), decode the base64 to
+  `reports/exports/<YYYYMMDD>_<slug>.docx` and `.pdf`, check that the charts survived (the docx's `word/media/` count
+  equals the number of charts and diagrams), commit them, and send both files to the user. Re-export after any later
+  edit to the doc.
 
 ## RULE: PORTFOLIO HYGIENE ON THE LEDGER (from the 2026-08-01 full backtest)
 The ledger is a PORTFOLIO of bets, not a list. Three checks before logging:

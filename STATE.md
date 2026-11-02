@@ -227,6 +227,8 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
   appendix).
 - **New report style (user rule, now in CLAUDE.md):** quant-desk note, lots of visuals, no internal machinery in the
   body.
+- **Every report also ships as .docx and .pdf** (user rule, now in CLAUDE.md), in `reports/exports/`. Both the
+  11/02 outlook and the 10/29 war analysis are exported; the outlook's docx embeds all 7 charts.
 - **New calls:** #82 to #85 (above). Each passed the red-team gate; the gates are in the report appendix.
   - Iran-war is now 13 of 31 open rows (42%), over the 35% guide. This is accepted for physical-state calls and
     flagged.
