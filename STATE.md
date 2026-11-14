@@ -356,6 +356,11 @@ The rest of the routine is unchanged:
   - Separately, the 11/06 cohort run failed on the account usage limit.
 - **Fix.** The tasks now target the runner session (persistent mode), which has the repository attached like an
   interactive session. The three old tasks are disabled, not deleted, so their run history is kept.
+- **Verified 11/14.** A timed one-off task fired into the runner at 17:37 UTC. The runner pulled, refreshed the tape
+  and pushed commit `6bd7af0`: a real write, not a dry run.
+- **Caveat: never use "fire now" for these tasks.** An on-demand fire ignores the runner binding and starts a fresh
+  session with no repository, which got 403 again on 11/14. To run a task early, create a one-off timed task bound to
+  the runner a few minutes out.
 - **Watch.** The runner's context grows by one run a day and compacts automatically. If the runner is ever archived,
   create a new one with the repo as source and re-point the tasks. Never go back to fresh-session tasks for work
   that must be pushed.
