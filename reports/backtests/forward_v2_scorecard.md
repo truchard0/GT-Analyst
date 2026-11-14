@@ -31,3 +31,28 @@ new one.
 ```
 forward_v2_2026-10-30.csv: 0 calls, resolves - (pending)
 ```
+
+## 2026-11-06 (missed)
+
+The scheduled session for the 11/06 close failed at start-up (usage limit reached), so no cohort was registered. It
+cannot be registered now without look-ahead, because markets traded on 11/09–11/13. The week counts as missing,
+not as an abstention.
+
+## 2026-11-13 (as-of close 2026-11-13, resolves 2026-11-20)
+
+**Registration:** `python tools/gt_stock_backtest.py forward 2026-11-13 --hormuz-impaired 1`
+→ `0 v2 calls (P >= 0.6) as of 2026-11-13 close, resolving 2026-11-20 -> forward_v2_2026-11-13.csv sha256
+5fe62aa66c1bb957384e32603982d053e420f34c2dfab319d6adfad38607b294`
+
+The tool abstained on every name.
+
+**Provenance:** the scheduled session registered this cohort at about 22:20 UTC on 11/13, but its push was refused
+(git proxy 403), so the file was lost with its container. It was re-registered on 11/14, a Saturday, before the next
+session opened, from inputs truncated to the 11/13 close. The sha256 is **byte-identical** to the one that session
+reported.
+
+**Hormuz flag 1 (impaired):**
+- IMF PortWatch counted 2–8 transits a day from 11/01 to 11/08, against a pre-war average of 81.
+- Iran reported five tankers hitting mines on 11/13–11/14 (gCaptain, The National).
+
+**score-forward:** two cohorts, both 0 calls. The 10/30 cohort resolved on 11/06 with nothing to score.

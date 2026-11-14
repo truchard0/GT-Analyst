@@ -1,5 +1,5 @@
 # GT-Analyst — LIVE STATE (handoff doc)
-**Last updated: 2026-10-29 (scorecard update; cloud relaunch 10/25).** Read this first after any context reset. It records what
+**Last updated: 2026-11-14 (prediction rankings; #79 MISS, #56 HIT, #10 HIT early).** Read this first after any context reset. It records what
 the engine IS, what it has LEARNED, and what is currently STAKED. Everything here can be rebuilt from
 `ledger/ledger.db` and `data/timelines.json`; this is the summary.
 
@@ -20,10 +20,13 @@ bookkeeping machine over expert estimates, not a solver.
 
 ---
 
-## 2. SCOREBOARD (as of 2026-10-25)
-- **53 resolved: 35 HIT / 18 MISS = 66.0%, mean Brier 0.234** (#81 FOMC hold HIT on 10/28). On 10/25 it was 52 resolved / 0.238. On 8/4 it was 0.169 on 14 resolved.
+## 2. SCOREBOARD (as of 2026-11-14)
+- **56 resolved: 37 HIT / 19 MISS = 66.1%, mean Brier 0.236.** Changes on 11/14: #79 MISS (US struck Qeshm 11/2), #56 HIT and #10 HIT early.
+  By category: rates and inflation 9/10 (Brier 0.147), markets 12/16 (0.215), geopolitics 16/30 (0.277, worse than a coin
+  flip). Nine misses logged at 70% or more carry 37% of total error.
+- Before that: **53 resolved: 35 HIT / 18 MISS = 66.0%, mean Brier 0.234** (#81 FOMC hold HIT on 10/28). On 10/25 it was 52 resolved / 0.238. On 8/4 it was 0.169 on 14 resolved.
   The old number was a maturity artifact, exactly as the 8/1 note warned.
-- **Projected, counting the at-risk #38, #16 and #36 as misses: 61.8% / Brier 0.248.**
+- **Projected, counting the at-risk #80, #38, #16 and #36 as failing (outcome 0): 37/60 = 61.7% / Brier 0.249.**
 - **Murphy decomposition:**
 
   | Term | Value | Read |
@@ -63,6 +66,7 @@ bookkeeping machine over expert estimates, not a solver.
 | 16.14 | HARD CAP 0.35 on strike-planning reports for a reversal-prone decider |
 | **mkt §7.1 (10/25)** | **PHYSICAL-FLOW GATE:** no oil-premium-unwind call while measured chokepoint flow is <50% of baseline and war-risk premia are >5× pre-war. Announcement flushes reverse at the next physical datapoint. (5 misses: #28, #74, #76, #23, #11) |
 | **mkt §5.1 (10/25)** | **The rate-derate law failed 0-for-4 against a live AI-capex revision engine.** A semis fade needs a capex-architecture or revision catalyst, not a rate path. (#24, #69, #70, #27) |
+| **jiang 16.14a (11/14)** | **Planned campaign ≠ reactive fire.** The 0.35 cap governs a decider's PLANNED strike only. A zero-event call ("no strike of any size") over N days in a live contact zone is priced from the tactical base rate 1-(1-q)^N, carries a scale threshold, and its sensitivity names the lowest-threshold breaker. (#79) |
 | **formal §8.1 + item 25 (10/25)** | **FALSIFIER SYMMETRY:** falsifier = NOT(prediction). No rival-branch, escape-clause ("absent X", "with no new shock") or conjunctive falsifiers. A defective contract is scored on substance. `ledger.py add` now lints escape-clause wording. (#68, #11, #23, #14) |
 
 ---
@@ -101,9 +105,9 @@ bookkeeping machine over expert estimates, not a solver.
 | # | Call | P | Horizon |
 |---|---|---|---|
 | **#81** | FOMC HOLDS 3.75–4.00 on 10/28. **✓ HIT** (10–2, Cook + Hammack for a hike; no forward guidance) | 0.82 | resolved 10/28 |
-| **#79** | No US strike on Iranian LAND territory 10/26–11/3 (pre-midterm). **Tracking HIT**: none through 10/29; WSJ says the US warned Gulf states to prepare for strikes *after* the midterms | 0.70 | 11/3 |
-| **#80** | Front-month Brent settles ≥ $100 on 11/30 (physical-flow gate). **Tracking HIT**: front month 110–116 through 10/29 | 0.70 | 11/30 |
-| #56 | Midterms held + ≥1 federal certification fight. DOJ v. Alaska (10/22) is already filed. **Tracking HIT** | 0.55 | 11/30 |
+| **#79** | No US strike on Iranian LAND territory 10/26–11/3. **✗ MISS (11/14)**: US struck Qeshm radar and launchers on 11/2 after IRGC SAM fire (reactive, not the planned campaign) | 0.70 | resolved |
+| **#80** | Front-month Brent settles ≥ $100 on 11/30 (physical-flow gate). **AT RISK**: Brent 95.84 on 11/13 after two weekly declines, although the strait is still shut (desk now 0.35) | 0.70 | 11/30 |
+| #56 | Midterms held + ≥1 federal certification fight. **✓ HIT (11/14)**: held 11/3 (Democrats won both chambers), and DOJ's bid to pause Alaska's Senate election was rejected 11/1 | 0.55 | resolved |
 | #38 | Jiang: US ground invasion of Iran by 12/31. **AT RISK**: the plans are strikes, not ground forces | 0.70 | 12/31 |
 | #53 | No PLA kinetic action vs Taiwan in 2026 | 0.93 | 12/31 |
 | **#82** | Hormuz STILL IMPAIRED on 3/31/2027 (PortWatch 7-day avg < 40.5, half of pre-war 81) | 0.70 | 2027-03-31 |
@@ -112,7 +116,8 @@ bookkeeping machine over expert estimates, not a solver.
 | **#85** | No PLA blockade/quarantine/invasion of Taiwan through 6/30/2027 | 0.90 | 2027-06-30 |
 | #16 | Attributed Israeli action on Iranian territory/assets by 1/8. **AT RISK**: no strike on Iran proper since 6/8 | 0.74 | 2027-01-08 |
 | #36 | US ground troops OR a compensated cessation by 1/13. **AT RISK** | 0.45 | 2027-01-13 |
-| #35 / #10 / #1 | Frozen conflict / no durable peace. **Tracking** | 0.55 / 0.70 / 0.70 | 2027–28 |
+| #35 / #1 | Frozen conflict / no durable peace. **Tracking** (desk 0.72 / 0.80). #10 **✓ HIT early (11/14)**: 12 clean months are now impossible | 0.55 / 0.70 | 2027–28 |
+| #82–#85 | Hormuz impaired 3/31 · Brent ≥85 3/31 · Fed ≥4.00% 6/30 · no PLA action to 6/30. Desk now 0.78 / 0.62 / 0.82 / 0.92 | 0.70 / 0.70 / 0.75 / 0.90 | 2027 |
 
 **10/29 update** (`reports/20261029_scorecard-update.md`):
 - Israel's 10/27 vote was gridlock (Netanyahu bloc ~53 seats), with no Israeli first strike.
@@ -221,6 +226,28 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
 
 ---
 
+## 7f. PREDICTION RANKINGS (11/14)
+- **Report:** [Prediction Rankings: 14 November 2026](https://claude.ai/artifact/HaEZSeaML46AmZjCveQwSc) (Claude Doc).
+  - Exports: `reports/exports/20261114_prediction-rankings.{docx,pdf}`.
+  - Repo copy with the ID map: `reports/20261114_prediction-rankings.md`.
+- **Content:** all 28 open calls ranked by the current desk probability (11 expected wins, 2 coin flips, 15 likely
+  losses, mostly long-dated tail and Jiang calls), and all 56 resolved calls ranked by Brier.
+- **The tape since 11/2:**
+  - US struck Qeshm (11/2, then 11/6); Trump calls new attacks "highly unlikely" and says "no deal necessary".
+  - Vance sidelined; the blockade stays; talks stalled.
+  - Brent fell from 117.64 to 95.84.
+  - Democrats won both chambers.
+  - October CPI ran hot (core +0.3%).
+  - Eisenkot is forming an Israeli government and is against a return to war.
+- **Timeline re-weights:**
+  - `iran-fork-oct` branches: planned campaign 0.10, deal 0.05, frozen 0.85.
+  - `hormuz-impaired-q1` 0.78, `fed-h1-no-cuts` 0.82, `fed-dec-hike` 0.55, `war-economy-2027` 0.25.
+  - `midterms-2026` resolved.
+- **Forward test:**
+  - The 11/13 cohort was recovered byte-identically: sha `5fe62aa6…`, 0 calls.
+  - The 11/06 cohort is missing: the scheduled run failed on the usage limit, and it cannot be redone without
+    look-ahead.
+
 ## 7e. OUTLOOK TO H1 2027 (11/02)
 - **Report:** [Iran War Outlook: Q4 2026 – H1 2027](https://claude.ai/artifact/5wiVwSz9t67oCXco46iPLF) (Claude Doc,
   seven drawn charts and diagrams), with a repo copy in `reports/20261102_outlook-h1-2027.md` (desk records in its
@@ -303,6 +330,11 @@ tape refresh were lost this way (the cohort was re-registered byte-identically o
 each scheduled run's transcript and redo any lost work from a session that can push. The first call due is #79
 (horizon 11/03, scored by the 11/04 gate). They run Python 3.11, so every `.py` file must parse on 3.11 (fixed
 in `eaa9f61`).
+**Still broken on 11/14:**
+- The 11/14 daily gate scored #79 but could not push. Its work was redone here.
+- The 11/13 cohort was lost, then recovered byte-identically.
+- The 11/06 cohort run failed on the usage limit.
+- The owner still needs to add the repository to each scheduled task.
 **Running a cycle locally while one is scheduled risks a `ledger.db` conflict.** Pull first. The daily session
 is told to stop rather than pick a side on a ledger conflict.
 
