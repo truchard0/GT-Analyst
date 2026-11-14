@@ -226,6 +226,27 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
 
 ---
 
+## 7g. WHERE THE FORECASTS WENT WRONG, AND THE FIX (11/14)
+- **Calibration was inverted at the top.**
+  - Calls stated at 70%+ came true only 59-67% of the time.
+  - Calls stated at 50-70% came true 67-72%.
+  - Nine misses logged at 70% or more carry 37% of total error.
+- **By call type (56 resolved):**
+  - state (measured flows, tolls, regime status) 7/8, Brier 0.145;
+  - rates 9/10, 0.147;
+  - markets 12/16, 0.215;
+  - **decision** (a leader's act or non-act in a live crisis) 7/14, 0.294, no skill;
+  - **war-price** (oil level, energy vs tech) 1/6, 0.385, worse than chance.
+- **Fix, enforced in code (`pipeline/ledger.py`, contrarian-red-team Part C.2):**
+  - Every call carries `--kind`. All 84 rows were backfilled.
+  - decision and war-price calls are capped at 0.35-0.65 unless `--execution-signal` cites capital-committed
+    evidence, which allows up to 0.20-0.80.
+  - Zero-event decision contracts get a 16.14a lint.
+  - `ledger.py report` prints calibration by type every cycle.
+- **Grandfathered open calls outside the new band:** #16 (0.74), #38 (0.70), #80 (0.70), #83 (0.70). Read them as
+  capped.
+- **Operational failure:** the scheduled tasks could not push for two weeks. The cause and fix are in §9.
+
 ## 7f. PREDICTION RANKINGS (11/14)
 - **Report:** [Prediction Rankings: 14 November 2026](https://claude.ai/artifact/HaEZSeaML46AmZjCveQwSc) (Claude Doc).
   - Exports: `reports/exports/20261114_prediction-rankings.{docx,pdf}`.
@@ -313,28 +334,32 @@ The rest of the routine is unchanged:
 2. `git push` after it.
 3. Never run cycles on two machines at once.
 
-**Scheduled cloud sessions (created 10/29; each starts a fresh session, clones this branch, pushes back):**
+**Scheduled tasks (rebuilt 11/14): all fire into ONE runner session that has the repository attached.**
+- Runner session: `session_01AwChvHXzuPFbFQLR4ELyXC`, titled "GT-Analyst scheduled runner". It was created with the
+  repo as its source and this branch as its outcome branch. Its dry-run push succeeded on 11/14; the same command
+  returned 403 in a fresh scheduled session.
 
 | Task | When (UTC) | Does |
 |---|---|---|
-| GT-Analyst daily scoring gate | daily 13:17 | `tools/daily_cycle.sh`; researches and resolves due calls with lessons; updates the timeline and STATE; gates; push |
-| Forward test: register cohort | 10/30 21:13 · 11/6, 11/13, 11/20 22:13 | Refresh live data; set the Hormuz flag from flow counts; register the v2 cohort; score earlier ones |
-| Forward test: final scoring | 11/27 20:13 | Final verdict in `reports/backtests/forward_v2_scorecard.md` + STATE §7d |
+| Daily scoring gate (runner) | daily 13:17 | `tools/daily_cycle.sh`; resolves due calls with lessons; timeline + STATE; gates; commit (at least the tape data) and push |
+| Forward test: register cohort 11/20 (runner) | 11/20 22:13 | Refresh live data; Hormuz flag; register the v2 cohort; score earlier ones |
+| Forward test: final scoring (runner) | 11/27 20:13 | Final verdict in `reports/backtests/forward_v2_scorecard.md` + STATE |
 
-None of these sessions holds MCP connectors (git, web search and price feeds need none).
+**What went wrong (10/29 to 11/14), and the fix:**
+- **Cause.** The 10/29 tasks were created with `create_new_session_on_fire`. Each run started a fresh session with
+  NO repository attached ("config:no-git-repo"). The public `git clone` worked read-only, and every push got 403
+  from the git proxy. The task tool has no "sources" field, and fresh scheduled sessions cannot load `add_repo`
+  (tested 11/14).
+- **Cost.**
+  - Lost: the 10/30 and 11/13 cohorts (both recovered byte-identically), the 11/14 scoring of #79 (redone here)
+    and the tape refreshes.
+  - Separately, the 11/06 cohort run failed on the account usage limit.
+- **Fix.** The tasks now target the runner session (persistent mode), which has the repository attached like an
+  interactive session. The three old tasks are disabled, not deleted, so their run history is kept.
+- **Watch.** The runner's context grows by one run a day and compacts automatically. If the runner is ever archived,
+  create a new one with the repo as source and re-point the tasks. Never go back to fresh-session tasks for work
+  that must be pushed.
 
-**⚠️ PUSH ACCESS (found 11/01): the scheduled sessions cannot push.** They clone the branch, but the git proxy
-returns 403 on push because `truchard0/GT-Analyst` is not among their sources. The 10/30 cohort and the 11/01
-tape refresh were lost this way (the cohort was re-registered byte-identically on 11/01; nothing was due on
-10/30–11/01). **Fix (owner):** add the repository to each scheduled task in claude.ai. Until it is fixed, check
-each scheduled run's transcript and redo any lost work from a session that can push. The first call due is #79
-(horizon 11/03, scored by the 11/04 gate). They run Python 3.11, so every `.py` file must parse on 3.11 (fixed
-in `eaa9f61`).
-**Still broken on 11/14:**
-- The 11/14 daily gate scored #79 but could not push. Its work was redone here.
-- The 11/13 cohort was lost, then recovered byte-identically.
-- The 11/06 cohort run failed on the usage limit.
-- The owner still needs to add the repository to each scheduled task.
 **Running a cycle locally while one is scheduled risks a `ledger.db` conflict.** Pull first. The daily session
 is told to stop rather than pick a side on a ledger conflict.
 

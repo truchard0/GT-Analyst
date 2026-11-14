@@ -47,6 +47,8 @@ def db():
     have = {r[1] for r in c.execute("PRAGMA table_info(predictions)")}
     if "cluster" not in have:
         c.execute("ALTER TABLE predictions ADD COLUMN cluster TEXT DEFAULT ''")
+    if "kind" not in have:  # call type (2026-11-14 calibration fix), see KINDS
+        c.execute("ALTER TABLE predictions ADD COLUMN kind TEXT DEFAULT ''")
     # learning loop: every resolution must produce a lesson (diagnosis + patch).
     # REALIZED P&L: only CLOSED round-trips count. A trade needs a real entry AND a
     # real exit (pre-registered target or invalidation). Open positions are tracked
@@ -76,6 +78,44 @@ def in_hedge_zone(p):
     return HEDGE_ZONE[0] < p < HEDGE_ZONE[1]
 
 
+# Call types (2026-11-14 calibration fix, contrarian-red-team Part C.2). On the 56 calls resolved by
+# 11/14, skill depended on what a call was about, not on how confident it sounded:
+#   state      measured physical/structural state (flows, tolls, regime status)   7/8,  Brier 0.145
+#   rates      Fed decisions, CPI/PPI prints, yields                                9/10, Brier 0.147
+#   markets    equity/sector calls not driven by the war narrative                12/16, Brier 0.215
+#   decision   a principal's discrete act or non-act in a live crisis              7/14, Brier 0.294
+#   war-price  price calls driven by the war narrative (oil level, energy vs tech) 1/6,  Brier 0.385
+#   macro      conditional macro transmission                                      1/2
+#   base-rate  long-horizon status-quo calls outside a live contact zone (not yet scored)
+# Calls stated at 70%+ came true only 59-67% of the time; calls at 50-70% came true 67-72%.
+# Decision and war-price calls showed no skill (the Brier-optimal shrink toward 0.5 was total),
+# so they are CAPPED: P must stay inside CAP_BAND unless a capital-committed execution signal is
+# cited (16.14), which widens the band to SIGNAL_BAND.
+KINDS = ("state", "rates", "markets", "decision", "war-price", "macro", "base-rate")
+CAPPED_KINDS = {"decision", "war-price"}
+CAP_BAND = (0.35, 0.65)
+SIGNAL_BAND = (0.20, 0.80)
+KIND_RULE_DATE = "2026-11-14"
+ZERO_EVENT = re.compile(r"\b(no|not|never)\b[^.]{0,80}\b(any|of any size|at all)\b", re.I)
+
+
+def kind_guard(args):
+    """Refuse decision/war-price calls outside the cap band; lint zero-event contracts (16.14a)."""
+    if args.kind in CAPPED_KINDS:
+        lo, hi = SIGNAL_BAND if args.execution_signal else CAP_BAND
+        if not (lo <= args.prob <= hi):
+            sys.exit(f"CAPPED (contrarian Part C.2): a {args.kind} call must have {lo} <= P <= {hi}"
+                     + ("" if args.execution_signal else
+                        "; cite a capital-committed execution signal (--execution-signal) to widen it to "
+                        f"{SIGNAL_BAND[0]}-{SIGNAL_BAND[1]}") + ". Not logged.")
+        if args.execution_signal:
+            args.sensitivity = (args.sensitivity + " | " if args.sensitivity else "") + \
+                f"EXECUTION SIGNAL: {args.execution_signal}"
+    if args.kind == "decision" and ZERO_EVENT.search(args.prediction):
+        print("WARN jiang 16.14a: zero-event contract ('no ... of any size'). Price it from the per-day "
+              "base rate of tactical exchanges and write a scale threshold into the call.")
+
+
 def add(args):
     if args.direction and args.direction not in DIRECTIONS:
         sys.exit(f"direction must be one of {DIRECTIONS}")
@@ -90,15 +130,17 @@ def add(args):
                      "Not logged.")
         print(f"WARN contrarian Part C: P={args.prob} is in the hedge zone {HEDGE_ZONE[0]}-"
               f"{HEDGE_ZONE[1]} - abstain unless an independent lens moves it out.")
+    kind_guard(args)
     falsifier_lint(args.prediction, args.falsifier)
     c = db()
     c.execute("""INSERT INTO predictions
         (ts,event,prediction,prob,horizon,falsifier,sensitivity,
-         conviction,sectors,tickers,direction,source,cluster)
-        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+         conviction,sectors,tickers,direction,source,cluster,kind)
+        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
         (args.ts or utc_iso(), args.event, args.prediction, args.prob,
          args.horizon, args.falsifier, args.sensitivity,
-         args.conviction, args.sectors, args.tickers, args.direction, args.source, args.cluster))
+         args.conviction, args.sectors, args.tickers, args.direction, args.source, args.cluster,
+         args.kind))
     c.commit()
     print(f"logged #{c.execute('SELECT MAX(id) FROM predictions').fetchone()[0]}")
 
@@ -304,6 +346,27 @@ def report():
             line += f"; {len(rr)} resolved (RES needs >=5)"
         print(line)
 
+    # ── calibration by call type (contrarian Part C.2, 2026-11-14) ─────────────
+    print("\n-- Calibration by call type (Part C.2 caps decision and war-price calls) --")
+    rows = c.execute("SELECT COALESCE(NULLIF(kind,''),'untagged'), prob, outcome FROM predictions "
+                     "WHERE status='resolved' AND outcome IS NOT NULL").fetchall()
+    by = {}
+    for k, p, o in rows:
+        by.setdefault(k, []).append((p, o))
+    print(f"  {'type':10s} {'n':>3s} {'right':>5s} {'stated':>6s} {'real':>5s} {'Brier':>6s} {'best k':>6s}")
+    for k, v in sorted(by.items(), key=lambda kv: sum((p - o) ** 2 for p, o in kv[1]) / len(kv[1])):
+        n = len(v)
+        brier = sum((p - o) ** 2 for p, o in v) / n
+        # Brier-optimal shrink toward a coin: p' = 0.5 + k (p - 0.5); k<1 = overconfident, k>1 = timid
+        best = min(range(0, 151, 5), key=lambda kk: sum((0.5 + kk / 100 * (p - 0.5) - o) ** 2 for p, o in v))
+        print(f"  {k:10s} {n:3d} {sum(o for _, o in v):5d} {sum(p for p, _ in v) / n:6.2f} "
+              f"{sum(o for _, o in v) / n:5.2f} {brier:6.3f} {best / 100:6.2f}")
+    open_capped = c.execute("SELECT id, kind, prob FROM predictions WHERE status!='resolved' AND kind IN "
+                            "('decision','war-price') AND (prob < ? OR prob > ?)", CAP_BAND).fetchall()
+    if open_capped:
+        print("  open calls logged outside today's cap band (grandfathered, read with care): "
+              + ", ".join(f"#{i} {k} {p:.2f}" for i, k, p in open_capped))
+
 
 def murphy(ro):
     """Murphy (1973) partition of the Brier score over 0.1-wide probability bins.
@@ -379,6 +442,15 @@ def main():
                    "blank = an independent bet. Correlated calls sharing a slug count as ONE "
                    "effective bet in the independence-weighted report.")
     a.add_argument("--ts", default=None, help="override timestamp (seeding)")
+    a.add_argument("--kind", required=True, choices=KINDS,
+                   help="call type (contrarian Part C.2): decision and war-price calls are capped at "
+                        f"{CAP_BAND[0]}-{CAP_BAND[1]} unless --execution-signal is given")
+    a.add_argument("--execution-signal", default="",
+                   help="capital-committed execution evidence (aircraft launched, NOTAMs, signed order, "
+                        f"physical flow change) that widens the cap to {SIGNAL_BAND[0]}-{SIGNAL_BAND[1]}")
+    k = sub.add_parser("kind", help="set or correct a prediction's call type")
+    k.add_argument("id", type=int)
+    k.add_argument("kind", choices=KINDS)
 
     r = sub.add_parser("resolve", help="score a matured prediction")
     r.add_argument("id")
@@ -408,6 +480,13 @@ def main():
     args = ap.parse_args()
     if args.cmd == "add":
         add(args)
+    elif args.cmd == "kind":
+        c = db()
+        if not c.execute("SELECT 1 FROM predictions WHERE id=?", (args.id,)).fetchone():
+            sys.exit(f"no prediction #{args.id}")
+        c.execute("UPDATE predictions SET kind=? WHERE id=?", (args.kind, args.id))
+        c.commit()
+        print(f"#{args.id} kind={args.kind}")
     elif args.cmd == "resolve":
         resolve(args.id, args.outcome)
     elif args.cmd == "due":

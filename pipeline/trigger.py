@@ -90,7 +90,7 @@ def build_cmd(conf, batch_rel, tickers, claude_bin):
         f"if the items are rhetoric-layer noise, write a 3-line triage verdict and stop — that is a "
         f"valid, cheap output. For capital-committed events run the full output schema with "
         f"conviction breakdown, sectors, tickers, direction; log predictions with "
-        f"python pipeline/ledger.py add --source auto ...; write the report to "
+        f"python pipeline/ledger.py add --source auto --kind <call type> ...; write the report to "
         f"reports/auto/{stamp}_{slug}.md")
     return [claude_bin, "-p", prompt,
             "--allowedTools", "Read,Glob,Grep,Write,Bash(python pipeline/ledger.py *)",

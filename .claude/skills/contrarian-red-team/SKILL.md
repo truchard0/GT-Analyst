@@ -105,6 +105,23 @@ Log the gate verdict in the analysis (one line per step is enough). FAIL any ste
   **Enforced in code (2026-10-29).** `ledger.py add` refuses `--source auto|mechanical` calls with 0.40 < P < 0.60 and warns on manual calls in that zone. `ledger.py report` prints resolution (Murphy RES) for calls logged before versus after the rule, so whether abstention raises discrimination is measured, not assumed. Baseline at the rule date: RES 0.008 over 53 resolved calls, 29% of all calls logged in the hedge zone.
 - **Method audit (RAND RR1408 caveat):** structured techniques are institutionally assumed, not proven — track whether gate-passed predictions actually out-score gate-skipped ones once ≥10 resolve. If they don't, the gate is theater; change it.
 
+**C.2 Call-type caps (2026-11-14, from the 56-call scoreboard).** Skill depends on what a call is about, not on how sure it sounds. On the calls resolved by 11/14:
+| Call type | Right | Stated | Came true | Brier | Brier-optimal shrink k |
+|---|---|---|---|---|---|
+| state (measured flows, tolls, regime status) | 7/8 | 0.68 | 0.88 | 0.145 | 1.50 (timid) |
+| rates (Fed, CPI/PPI, yields) | 9/10 | 0.68 | 0.90 | 0.147 | 1.50 (timid) |
+| markets (not war-driven) | 12/16 | 0.66 | 0.75 | 0.215 | 1.05 |
+| decision (a principal's act or non-act in a live crisis) | 7/14 | 0.63 | 0.50 | 0.294 | 0.00 (no skill) |
+| war-price (oil level, energy vs tech, on the war narrative) | 1/6 | 0.63 | 0.17 | 0.385 | 0.00 (anti-skill) |
+
+Calls stated at 70%+ came true only 59-67% of the time; calls at 50-70% came true 67-72%. The confidence was in the wrong place: high on what leaders and oil would do, low on measured state and rates. RULES:
+1. Every call is tagged with its type at logging (`ledger.py add --kind`, required).
+2. **decision** and **war-price** calls are capped at 0.35-0.65. Only a capital-committed execution signal (aircraft launched, NOTAMs, a signed order, a measured physical-flow change) widens the band to 0.20-0.80 (`--execution-signal "<evidence>"`, stamped into the sensitivity). This mechanizes jiang 16.14 for every decider, not only the reversal-prone one.
+3. A war-price call must name the physical-flow state it rests on. Oil has traded the risk premium, not the flows: Brent rose to $117 while we called it down, then fell 19% to $96 with Hormuz still shut while we called it above $100.
+4. state and rates calls may be stated with the confidence the evidence supports. Their record says we have been too timid, not too bold.
+5. `ledger.py report` prints calibration by type every cycle. Revisit the caps when a capped type reaches 20 resolved calls with a positive Brier-optimal shrink.
+Enforced in code (`pipeline/ledger.py`: `KINDS`, `CAP_BAND`, `kind_guard`).
+
 ## PART D — DEGENERATION GUARDRAILS (the avoid-list)
 - **Reflexive contrarianism:** disagreement is not alpha; the cascade test (#6) or neglected-risk evidence (#9) must license the fade. No license → you're the herd's mirror image.
 - **Bias bipolarity (Chang–Berdini–Mandel–Tetlock 2018, extracted — the strongest version of the warning):** one-directional contrarian techniques predictably trigger the OPPOSITE bias — over-predicting change, base-rate neglect, time burned on frivolous contrarian arguments. **Measure the direction of the current bias before applying a corrective:** if the engine's recent misses were over-predicting change, more contrarianism makes it worse. The Brier decomposition tells you which way you're leaning; correct against THAT, not against consensus generically.
