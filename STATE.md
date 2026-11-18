@@ -1,5 +1,5 @@
 # GT-Analyst — LIVE STATE (handoff doc)
-**Last updated: 2026-11-18 (tape note: Gulf tit-for-tat, Brent 93, December hike priced, Nvidia after Huang; new calls #86, #87; see §7h).** Read this first after any context reset. It records what
+**Last updated: 2026-11-18 (practice questions on world events, written from the news and settled by the news, §7j; cloud runs off; server loop + learning loop built, §7i and §9; tape note: Gulf tit-for-tat, Brent 93, December hike priced, Nvidia after Huang; new calls #86, #87, §7h; war-driven price calls banned).** Read this first after any context reset. It records what
 the engine IS, what it has LEARNED, and what is currently STAKED. Everything here can be rebuilt from
 `ledger/ledger.db` and `data/timelines.json`; this is the summary.
 
@@ -239,6 +239,87 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
 
 ---
 
+## 7j. PRACTICE QUESTIONS ON WORLD EVENTS (11/18): `pipeline/drills.py`
+User instructions, 11/18: "a daily set of practice questions that resolve within a week and are checked
+automatically"; "not just for indexes but things that may happen intraday based on the news"; "this is not a stock
+bot, it is a prediction bot for world events, remember that".
+- **What it is:** several times a day the bot writes yes/no questions about what happens next in the news, answers
+  them, and settles them from later news, with no one watching. They are practice. They never enter the ledger, the
+  timeline or any report as calls.
+- **A news round** (every `GT_DRILL_NEWS_EVERY_MIN` minutes, default 60, any multiple of 5 from 5 to 720, around the
+  clock, only when 3 or more new reports have arrived):
+  1. **settle:** a judge reads the reports published inside each due question's window and answers yes, no or
+     unclear (unclear voids it). A yes must cite the report that settles it; the report is stored with the score;
+  2. **write:** a writer reads the last 6 hours of reports and writes `GT_DRILL_NEWS_QUESTIONS` (default 6)
+     questions: an attack, a statement or decision by a named official, a vote, a ruling, a sanction, a published
+     figure. Deadlines 30 minutes to 7 days, at least half within 8 hours. Market-price questions are refused in code;
+  3. **answer:** the analyst gives a probability for each, seeing only reports published before the round time,
+     plus its own record: score against the base rate, calibration table, last 10 settled questions.
+- **Baselines:** a coin, and the base rate (how often past questions with a deadline of hours, or of days, came
+  true). The analyst only counts if it beats the base rate.
+- **Weekly, Mondays:** Hormuz ship transits over the next 7 days (IMF PortWatch), settled by data.
+- **Market questions are OFF** (`GT_DRILL_PRICES=1` turns them on). Replayed over 13 sessions at round lengths from
+  5 to 60 minutes, every intraday index and rates question sat within 0.007 Brier of a coin, so they exercise
+  calibration only. Oil, energy and defense prices are excluded either way.
+- **Files:** open questions `logs/drills_open.json`; scored answers `data/drills/scored/<date>.csv` (with the
+  question and the settling report); scoreboard `data/drills/report.md` and `summary.json`, rebuilt daily and
+  committed. Commands: `tick`, `report`, `replay`.
+- **Live test on 11/17-11/18 headlines (test copy, real Claude):** 4 rounds wrote 24 questions, for example "Will
+  Iran launch a new missile or drone attack on US forces or a Gulf Arab state's territory within the next 24
+  hours?" (analyst 0.60). Two reached their deadline and were settled; I checked both against the reports in their
+  windows, and gave the judge a third question with a known answer:
+  - Bahrain reports damage or casualties within 4 hours: NO. Correct; reports carried sirens and an alert only.
+  - Trump remarks on the Qeshm strike within 4 hours: NO. Debatable; a WSJ headline said "Trump Signals Restraint
+    on Iran". The judge is strict, so vague questions lean NO. The writer is now told to avoid them.
+  - Known answer (Kuwait reports drone attacks within 4 hours): YES, citing the Al Jazeera report. Correct.
+- **Limits:**
+  - a question means "will a report saying X reach this bot's feed by the deadline". An event that happens but is
+    not reported in the feed in time counts as NO;
+  - the judge reads headlines and first lines, not full articles, and can be wrong;
+  - on the first rounds the writer chose many long shots (analyst answers mostly 0.04 to 0.45). It is shown its
+    hit rate each round and told to aim for 30% to 60%; whether that works is not yet seen;
+  - nothing has been scored over more than a few hours. There is no evidence yet that the analyst beats the base rate.
+- **Usage, measured:** about 6,000 input tokens and $0.12 at list price per call, on the model the CLI defaulted
+  to here. A round is 2 calls plus 1 judge call when something is due:
+
+  | Round every | Rounds a day, at most | Questions a day, at most | Calls a day, at most | List price a day, at most |
+  |---|---|---|---|---|
+  | 15 min | 96 | 576 | 288 | about $35 |
+  | 30 min | 48 | 288 | 144 | about $17 |
+  | 60 min (default) | 24 | 144 | 72 | about $9 |
+  | 120 min | 12 | 72 | 36 | about $4 |
+
+  `GT_DRILL_MODEL` picks a cheaper model. Quiet hours cost nothing: a round with fewer than 3 new reports is skipped.
+- **Not live:** it starts when the server loop starts (§9), and needs the `claude` CLI there.
+
+## 7i. THE LEARNING LOOP (11/18)
+- **Diagnosis on the 56 scored calls:**
+  - the stated probabilities could not tell hits from misses (AUC 0.47; misses were stated at 0.664 on average,
+    hits at 0.655);
+  - they scored worse (Brier 0.236) than saying the 66% base rate every time (0.224 in sample, 0.232 leave-one-out);
+  - 47 of the 56 calls were logged in July and 38 were scored in one batch on 10/25, so there was almost no feedback
+    while the calls were being made;
+  - calls with a horizon of 14 days or less did better (13/17, Brier 0.191) than longer ones (24/39, 0.256);
+  - 26 of the 56 sit in one cluster (iran-war).
+- **`pipeline/learn.py`** trains a correction on the scored record: P(call comes true | call type), shrunk toward the
+  base rate. It does not retrain the language model. Commands: `train`, `validate`, `shadow`, `scoreboard`, `nightly`,
+  `prior`.
+- **Out-of-sample result (Brier):**
+  - leave-one-out: type model 0.208, stated 0.236, base rate 0.232;
+  - leave-one-CLUSTER-out: type model 0.259, stated 0.236, coin 0.250. The type model loses on a topic it has not
+    seen.
+  - So the type lessons, including the 11/14 caps and the 11/18 ban, are lessons about this war and these topics.
+    They are not proven general rules.
+- **The model runs in SHADOW.** `data/learn/shadow.csv` logs its probability for every open call. The pre-registered
+  rule: after 20 of those calls resolve, promote it if it beats the stated probabilities by 0.01 Brier, retire it if
+  it loses by 0.01.
+- **`ledger.py add` now prints the trained prior** for the call's type next to the stated probability. It never
+  blocks.
+- **Practice questions on world events: built 11/18, see §7j.** More and faster scored answers is the main thing the
+  record lacked.
+- **Stock-call forward test closed** with 0 scored calls: no evidence either way; v2 retired
+  (`reports/backtests/forward_v2_scorecard.md`).
+
 ## 7g. WHERE THE FORECASTS WENT WRONG, AND THE FIX (11/14)
 - **Calibration was inverted at the top.**
   - Calls stated at 70%+ came true only 59-67% of the time.
@@ -378,39 +459,47 @@ The rest of the routine is unchanged:
 2. `git push` after it.
 3. Never run cycles on two machines at once.
 
-**Scheduled tasks (rebuilt 11/14): all fire into ONE runner session that has the repository attached.**
-- Runner session: `session_01AwChvHXzuPFbFQLR4ELyXC`, titled "GT-Analyst scheduled runner". It was created with the
-  repo as its source and this branch as its outcome branch. Its dry-run push succeeded on 11/14; the same command
-  returned 403 in a fresh scheduled session.
+**WHERE THE BOT RUNS (changed 11/18, user instruction: "add this to the server from the printer fork, I don't want it
+running here either").**
+- **Claude cloud: nothing scheduled.** All GT-Analyst scheduled tasks are disabled (daily scoring gate, forward-test
+  cohort and final scoring). The runner session `session_01AwChvHXzuPFbFQLR4ELyXC` is idle. Do not re-enable them
+  without the user asking.
+- **Server: `tools/server_loop.py`**, one supervised process (stdlib, Python 3.11+):
+  - every 5 minutes, on the clock: practice questions (`pipeline/drills.py tick`, §7j), then `pipeline/ingest.py`;
+  - once a day (13:17 UTC): git pull, tape data, `pipeline/learn.py nightly`, the practice scoreboard, due calls,
+    scoring, the three gates, then commit and push;
+  - scoring runs only when calls are due AND the `claude` CLI is installed on the server (one headless run, capped at
+    45 minutes). Without it, due calls are listed as `needs_scoring` in the status file and the sweep gate fails;
+  - status and heartbeat: `logs/server_status.json` (or `GT_HEARTBEAT`), rewritten before every step, with `push_ok`,
+    `unpushed`, `needs_scoring`, gate results and the last error. A refused push is retried every tick;
+  - watchlist triggers stay dry-run unless a `config.json` on that machine turns them on.
+- **Supervisor: the Printer fork's watchdog** (`Sampatel00/Printer`, commit `d81b674`, merged into the fork's `main`
+  on 11/18 by fast-forward). Runner `gtanalyst` = `tradingview/gt_analyst_runner.py`, non-critical (`storm=False`),
+  heartbeat `_gt_analyst_alive.json`. With no GT-Analyst checkout on the machine it idles; it never crash-loops.
+- **NOT LIVE YET. The owner still has to, on the server:**
+  1. `git pull` the fork's `main` (the merge is done);
+  2. clone `truchard0/GT-Analyst` next to the Printer checkout (or set `GT_ANALYST_HOME`), on branch
+     `claude/gracious-lamport-6wef9u`, with git credentials that can push;
+  3. install and log in the `claude` CLI there, if due calls are to be scored and practice questions answered
+     automatically (without it the baselines still run);
+  4. restart the watchdog, then check `python3 tools/server_loop.py --status` for `push_ok: true`.
+- **Until then nothing scores predictions.** The next call due is #80 (Brent, 11/30). An interactive session can score
+  it by hand.
+- **Tested 11/18 in an isolated copy** (local push target, stand-in Claude):
+  - a full cycle scored a due call and pushed;
+  - with no Claude, the due call was flagged and the run exited 1;
+  - the loop stops within 2 s of SIGTERM;
+  - the fork's watchdog matches the process.
+  It has not run on the real server.
 
-| Task | When (UTC) | Does |
-|---|---|---|
-| Daily scoring gate (runner) | daily 13:17 | `tools/daily_cycle.sh`; resolves due calls with lessons; timeline + STATE; gates; commit (at least the tape data) and push |
-| Forward test: register cohort 11/20 (runner) | 11/20 22:13 | Refresh live data; Hormuz flag; register the v2 cohort; score earlier ones |
-| Forward test: final scoring (runner) | 11/27 20:13 | Final verdict in `reports/backtests/forward_v2_scorecard.md` + STATE |
+**History of the cloud runs (10/29 to 11/18).** The 10/29 tasks started fresh sessions with no repository attached, so
+every push got 403 until 11/14. Lost and recovered: the 10/30 and 11/13 cohorts, and the 11/14 scoring of #79. The
+11/06 cohort run failed on the usage limit. From 11/14 to 11/17 the tasks fired into the runner session and pushed
+daily. On 11/18 the user moved everything off Claude cloud.
 
-**What went wrong (10/29 to 11/14), and the fix:**
-- **Cause.** The 10/29 tasks were created with `create_new_session_on_fire`. Each run started a fresh session with
-  NO repository attached ("config:no-git-repo"). The public `git clone` worked read-only, and every push got 403
-  from the git proxy. The task tool has no "sources" field, and fresh scheduled sessions cannot load `add_repo`
-  (tested 11/14).
-- **Cost.**
-  - Lost: the 10/30 and 11/13 cohorts (both recovered byte-identically), the 11/14 scoring of #79 (redone here)
-    and the tape refreshes.
-  - Separately, the 11/06 cohort run failed on the account usage limit.
-- **Fix.** The tasks now target the runner session (persistent mode), which has the repository attached like an
-  interactive session. The three old tasks are disabled, not deleted, so their run history is kept.
-- **Verified 11/14.** A timed one-off task fired into the runner at 17:37 UTC. The runner pulled, refreshed the tape
-  and pushed commit `6bd7af0`: a real write, not a dry run.
-- **Caveat: never use "fire now" for these tasks.** An on-demand fire ignores the runner binding and starts a fresh
-  session with no repository, which got 403 again on 11/14. To run a task early, create a one-off timed task bound to
-  the runner a few minutes out.
-- **Watch.** The runner's context grows by one run a day and compacts automatically. If the runner is ever archived,
-  create a new one with the repo as source and re-point the tasks. Never go back to fresh-session tasks for work
-  that must be pushed.
-
-**Running a cycle locally while one is scheduled risks a `ledger.db` conflict.** Pull first. The daily session
-is told to stop rather than pick a side on a ledger conflict.
+**Running a cycle anywhere else while the server loop is live risks a `ledger.db` conflict.** Pull first and push
+straight after. On a conflict the server loop aborts the merge, reports it and retries an hour later; it never picks
+a side.
 
 **Cloud specifics:**
 - The Windows Task Scheduler cadence does not exist here. Each cloud session runs ingest manually
