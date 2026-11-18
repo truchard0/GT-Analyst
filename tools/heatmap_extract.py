@@ -36,8 +36,14 @@ DEFAULT_STEP = {"NVDA": 2.5, "AVGO": 5, "MU": 5, "META": 5, "AMZN": 2.5, "SMH": 
 # Wider window where the row grid is coarse relative to spot (NVDA has only 12 grid strikes inside +-12%).
 WINDOW = {"NVDA": 0.15}
 # Event context the map cannot know about (company-confirmed or calendar facts as of the snapshot).
-EVENT_STALE = {"NVDA": "NVDA reported after the 17 Nov 2026 close; this 16:00 ET map predates the report "
-                       "and is EVENT-STALE from the release onward (show no levels from it)."}
+# {ticker: (snapshot day the note applies to, note)}: a map is stale only on the day before the event.
+EVENT_STALE = {"NVDA": ("2026-11-17", "NVDA reported after the 17 Nov 2026 close; this 16:00 ET map predates the "
+                        "report and is EVENT-STALE from the release onward (show no levels from it).")}
+
+
+def stale_note(ticker, day_dir):
+    e = EVENT_STALE.get(ticker)
+    return e[1] if e and os.path.basename(os.path.normpath(day_dir)) == e[0] else None
 BATCH_PREF = [("eod_", "16:00 ET end-of-day batch"), ("ndx_093000_", "09:30 ET open batch (ndx list)"),
               ("open_", "09:30 ET open batch")]
 
@@ -175,8 +181,8 @@ def extract(ticker, day_dir, step, win_pct, max_rows, monthly):
     notes.append("Net gamma within +-2%% of spot over the shown expiries: %+.0f (%s)." % (near, regime))
     if label != BATCH_PREF[0][1]:
         notes.append("No end-of-day map for this name: this is the open map, about 6.5 hours before the close.")
-    if ticker in EVENT_STALE:
-        notes.append(EVENT_STALE[ticker])
+    if stale_note(ticker, day_dir):
+        notes.append(stale_note(ticker, day_dir))
     out = {
         "ticker": ticker,
         "snapshot_ts": s.get("asOf"),
@@ -189,7 +195,7 @@ def extract(ticker, day_dir, step, win_pct, max_rows, monthly):
         "gamma": gamma,
         "king": king,
         "regime_pm2pct": regime,
-        "event_stale": ticker in EVENT_STALE,
+        "event_stale": bool(stale_note(ticker, day_dir)),
         "notes": notes,
     }
     return out, None

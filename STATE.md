@@ -490,6 +490,17 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
      long paragraphs, clutter); the report went from 25 flags to 5 (all deliberate comparisons). Corrections: SMH
      war-low rise 85% on closes (was 87%); the revenue chart now says consensus was beaten 3 of 5 years (old widget
      said "the last 4"). Exports 15 pages, 8 pictures. No probability changed.
+   - **Close update, 18 Nov (user: every claim current; current heatmaps; Anthropic IPO page; short-term succession
+     risk; honest positive ending; header title + @alostquant).** News fact-check to 21:00 UTC by two agents; ~17
+     corrections (remote-access rule effective 19 Nov, worldwide; Gulf lull ended 17 Nov; NVDA guarantees ~$118bn;
+     Megaspeed $12bn and CoreWeave 7-7.5% loans unsupported; House hearings 1-2 Dec). Price fix: `prices_5y.csv` held
+     interpolated 17 Nov rows (16 Nov copies) for AVGO/MU/META/AMZN/TSM/SMH; replaced with official closes and 18 Nov
+     closes added. Skylit maps now live on the server: `/home/kronos/tbot-work/tradingview/_skylit` (ssh root@45.250.25.167,
+     key tradingbot_server_ed25519; read-only copies only). `tools/heatmap_extract.py` stale flag is now per-day;
+     `tools/ai_report_charts.py --map-date` (board from any day; index tiles from the close or overnight map); new chart
+     09 (Anthropic commitments, S-1/A). `chartstyle` sets `text.parse_math=False` ("$" is currency). Report: 18 pages,
+     9 pictures. Open: re-mark proposals for the Gulf nodes after the 17 Nov flare (odds unchanged here); the IPO price
+     lands tonight after this update.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all

@@ -10,7 +10,7 @@ Every chart names its data file in its footer. Data:
   - scenario and channel odds: data/timelines.json (as applied 18 Nov 2026)
   - revenue record: data/ai_prints_backtest/results_5y.json (the five-year pre-registered test)
 The heatmap board also writes data/ai_technical/heatmap_reads_20261117.json: the per-name numbers the report quotes.
-No trades, targets or sizes are drawn. NVDA's map predates its 17 Nov report and is left out (event-stale).
+No trades, targets or sizes are drawn. A map taken before a company's report is left out (event-stale).
 """
 import argparse
 import csv
@@ -45,7 +45,7 @@ def funding_loop(out):
         tags=[("THE FUNDING LOOP", "purple")], badge=("$115.8bn", "Nvidia Q3 revenue"),
         callout="Tripwires: new AI loans priced above 10%  ·  prepayments below half of capex  ·  "
                 "chip rents more than 15% off their highs",
-        footer_right="Nebius 6-K 12 Nov 2026; Nvidia Q3 FY27 release 17 Nov, 10-Q 26 Aug; "
+        footer_right="Nebius 6-K 12 Nov 2026; Nvidia Q3 FY27 release and call 17 Nov; "
                      "research_notes/.../financing_chain.md")
     ax = cs.panel_axes(fig, rects[0], pad=(0.4, 0.3, 0.4, 0.75))
     ax.set_xlim(0, 100)
@@ -76,7 +76,7 @@ def funding_loop(out):
     node(50, 6.5, 30, 10, "Lenders", ["secured loans, converts near 70c"], "purple")
     arrow(24, 38, 34.3, 31.5, "cyan", "prepayments: over\n100% of Q3 deal capex", 20, 27.5)
     arrow(65.7, 31.5, 74, 37.5, "green", "GPU orders", 72, 30)
-    arrow(88, 38, 66, 21, "green", "$2bn stake (8.3%)\nguarantees $108.5bn (Jul)", 87, 22, ls=(0, (5, 3)))
+    arrow(88, 38, 66, 21, "green", "$2bn stake (8.3%)\nguarantees ~$118bn (25 Oct)", 87, 22, ls=(0, (5, 3)))
     arrow(50, 11.5, 50, 18, "purple", "$3.5bn secured facility", 64, 14.5, ha="left")
     cs.save(fig, out)
 
@@ -96,13 +96,13 @@ MILESTONES = [
     ("2026-01-15", "25% tariff on advanced chips", "policy"),
     ("2026-02-28", "Iran war starts; index bottoms 30 Mar", "war"),
     ("2026-06-22", "Index peaks near 669, before capex does", "demand"),
-    ("2026-08-01", "Power auction at its cap; Texas freezes approvals", "money"),
+    ("2026-07-14", "Power auction at its cap, 6.8 GW short; Texas pauses", "money"),
     ("2026-09-16", "Brent over $100, 10-year over 5%, Fed hikes", "war"),
-    ("2026-09-25", "Truce extended only to 10 Jan 2027", "policy"),
-    ("2026-10-20", "AI-credit selloff; Alphabet holds capex flat", "money"),
+    ("2026-09-23", "Truce extended only to 10 Jan 2027", "policy"),
+    ("2026-10-20", "AI-credit selloff; Alphabet cash flow negative", "money"),
     ("2026-11-03", "Democrats win Congress; local votes curb data centres", "money"),
     ("2026-11-12", "Nvidia's chief executive resigns", "money"),
-    ("2026-11-16", "Remote-access rule closes the offshore route", "policy"),
+    ("2026-11-16", "Remote-access rule announced (in force 19 Nov)", "policy"),
 ]
 CH_COL = {"policy": "cyan", "war": "orange", "money": "purple", "demand": "yellow"}
 CH_NAME = {"policy": "export rules, tariffs, truce", "war": "war, Taiwan, rates",
@@ -130,8 +130,8 @@ def milestones(out):
     fig, rects = cs.frame(
         "The chip index rose %d%% from its war low, then gave back %d%% when the bill came due"
         % (round(rise * 100), round(-off * 100)),
-        "SMH daily close, June 2022 to 17 Nov 2026, with the twenty policy, war and money events that shaped "
-        "the AI trade. Numbered dots sit on the close of each event's date.",
+        "SMH daily close, June 2022 to %s, with the twenty policy, war and money events that shaped "
+        "the AI trade. Numbered dots sit on the close of each event's date." % d[-1].strftime("%d %b %Y").lstrip("0"),
         panels=2, panel_widths=[1.75, 1], tags=[("THE CHIP INDEX", "white"), ("WHAT HAPPENED", "purple")],
         badge=(cs.fmt_pct(off * 100, 0), "SMH off its high"),
         footer_right="data/ai_prints_backtest/5y/prices_5y.csv; BIS rules 2022-25; constraints_policy.md; "
@@ -154,7 +154,7 @@ def milestones(out):
         ax.text(d[j], c[j], str(n), ha="center", va="center", fontsize=8.5, fontweight="bold", color="#0a0a0a",
                 family=MONO, zorder=6)
     for i, lab, va, dy in ((lo, "war low %d" % c[lo], "top", -16), (hi, "peak %d" % c[hi], "bottom", 14),
-                           (last, "17 Nov %d" % c[last], "top", -16)):
+                           (last, "%s %d" % (d[last].strftime("%d %b").lstrip("0"), c[last]), "top", -16)):
         ax.annotate(lab, (d[i], c[i]), xytext=(0, dy), textcoords="offset points", ha="center", va=va,
                     fontsize=12, color=P["title"], fontweight="bold", family=MONO)
     # the event list
@@ -179,13 +179,13 @@ def milestones(out):
 
 # ================================================================ 3. channels by layer
 CHANNELS = [  # (channel, prints, capex, financing, limits, price, odds or date) - odds from data/timelines.json
-    ("Export controls (16 Nov rule)", 0, 1, 1, 2, 1, "licence clock ends ~mid-Feb"),
+    ("Export controls (19 Nov rule)", 0, 1, 1, 2, 1, "licence clock ends ~17 Feb"),
     ("US-China truce and minerals", 0, 1, 0, 2, 1, "truce rolls 10 Jan: 66%"),
     ("Taiwan (if it happens)", 2, 2, 2, 2, 2, "PLA action by 30 Jun: 10%"),
-    ("Gulf war and oil", 0, 0, 1, 1, 1, "frozen to 30 Nov: 80%"),
+    ("Gulf war and oil", 0, 0, 1, 1, 1, "US campaign by 3 Jan: 18%"),
     ("Fed, yields and the dollar", 1, 1, 2, 0, 2, "9 Dec hike: 93%"),
     ("The financing chain", 1, 2, 2, 0, 2, "holds to 31 Mar: 82%"),
-    ("Power and local politics", 0, 2, 1, 2, 0, "PJM results 22 Dec"),
+    ("Power and local politics", 0, 2, 1, 2, 0, "PJM auction in December"),
     ("Chip tariffs", 0, 1, 0, 1, 0, "25% in force"),
 ]
 LAYERS = ["Revenue", "Capex", "Credit", "Limits", "Price"]
@@ -195,7 +195,7 @@ def channels(out):
     n_print = sum(1 for r in CHANNELS if r[1] == 2)
     fig, rects = cs.frame(
         "Only %s of eight forces is a main threat to this winter's revenue: Taiwan" % ("one" if n_print == 1 else n_print),
-        "Each geopolitical channel by the layer of the AI trade it hits, as of 17 Nov 2026. "
+        "Each geopolitical channel by the layer of the AI trade it hits, as of 18 Nov 2026. "
         "Big dot = main channel, small = secondary, faint ring = none.",
         tags=[("CHANNEL  X  LAYER", "purple")], badge=("1 / 8", "forces that hit revenue"),
         footer_right="data/timelines.json (odds as of 18 Nov 2026); reports/20261118_tape-note-gulf-oil-fed.md; "
@@ -233,9 +233,9 @@ NAMES = {"META": "Meta", "AMZN": "Amazon", "AVGO": "Broadcom", "TSM": "TSMC", "M
          "ORCL": "Oracle", "SMH": "Chip index"}
 
 
-def relative_strength(out):
-    rows = {r["ticker"]: r for r in csv.DictReader(open(ROOT / "data/ai_technical/stack_20261118.csv",
-                                                         encoding="utf-8"))}
+def relative_strength(out, stack="data/ai_technical/stack_20261118.csv"):
+    rows = {r["ticker"]: r for r in csv.DictReader(open(ROOT / stack, encoding="utf-8"))}
+    pdate = dt.date.fromisoformat(next(iter(rows.values()))["price_date"]).strftime("%d %b %Y").lstrip("0")
     data = [(t, float(rows[t]["rs_vs_smh_3m_pct"]), float(rows[t]["pct_vs_200d"]), float(rows[t]["pct_off_52w_high"]))
             for t in ("META", "AMZN", "AVGO", "TSM", "MU", "NVDA") if t in rows and rows[t]["rs_vs_smh_3m_pct"]]
     data.sort(key=lambda r: -r[1])
@@ -243,7 +243,8 @@ def relative_strength(out):
     fig, rects = cs.frame(
         "Over three months %s beat the chip index by %d points; %s lagged it by %d"
         % (NAMES[top[0]], round(top[1]), NAMES[bot[0]], round(-bot[1])),
-        "Return relative to SMH, three months to the 17 Nov 2026 close, percentage points. Right: distance from "
+        "Return relative to SMH, three months to the %s close, percentage points. Right: distance from " % pdate +
+        
         "the 200-day average and from the 52-week high.",
         panels=2, panel_widths=[1.7, 1], tags=[("RELATIVE STRENGTH", "white"), ("WHERE EACH SITS", "white")],
         badge=("%+.1f" % top[1], "%s vs SMH, pts" % NAMES[top[0]]),
@@ -281,7 +282,7 @@ def relative_strength(out):
 # ================================================================ 5. the heatmap board (one page)
 BOARD = ["MU", "META", "AMZN", "SMH", "AVGO", "CRWV"]
 INDEX_BOARD = [("SPXW", "SPX", "S&P 500 (SPX)", 0.025), ("QQQ", "QQQ", "Nasdaq-100 (QQQ)", 0.03)]
-FULL = {"MU": "Micron", "META": "Meta", "AMZN": "Amazon", "SMH": "Chip index (SMH)", "AVGO": "Broadcom",
+FULL = {"NVDA": "Nvidia", "MU": "Micron", "META": "Meta", "AMZN": "Amazon", "SMH": "Chip index (SMH)", "AVGO": "Broadcom",
         "CRWV": "CoreWeave"}
 
 
@@ -324,55 +325,74 @@ def read_grid(t):
 
 
 def index_grids(date="2026-11-17"):
-    """S&P 500 and Nasdaq-100 grids from our 17:30 ET overnight Skylit map (the forward-looking index map)."""
+    """S&P 500 and Nasdaq-100 grids: the 17:30 ET overnight Skylit map when it exists, else the 16:00 ET close map
+    with the same-day (expired) expiry dropped."""
     from market_update import data as D
     snap = D.load_overnight(date)
+    src = "overnight map 17:30 ET"
+    if snap is None:
+        snap = D.load_live(date, "1600")
+        src = "close map 16:00 ET"
     out = {}
     for sym, key, name, win in INDEX_BOARD:
         m = snap.get(sym)
         if m is None:
             continue
+        keep = [j for j, e in enumerate(m.expiries) if e > date][:5]
         w = np.abs(m.strikes / m.spot - 1) <= win
-        out[key] = {"ticker": key, "name": name, "spot": float(m.spot), "expiries": list(m.expiries),
-                    "strikes": [float(x) for x in m.strikes[w]], "gamma": m.matrix[w].tolist(),
-                    "snapshot_ts": snap.label, "source_batch": "Skylit overnight map 17:30 ET (%s)" % sym}
-    return out
+        out[key] = {"ticker": key, "name": name, "spot": float(m.spot), "expiries": [m.expiries[j] for j in keep],
+                    "strikes": [float(x) for x in m.strikes[w]], "gamma": m.matrix[w][:, keep].tolist(),
+                    "snapshot_ts": snap.label, "source_batch": "Skylit %s (%s)" % (src, sym)}
+    return out, src
 
 
-def heatmap_board(out, reads_out):
-    hm = json.load(open(ROOT / "data/ai_technical/heatmaps_20261117.json", encoding="utf-8"))
+def heatmap_board(out, reads_out, date="2026-11-17"):
+    tag = date.replace("-", "")
+    day = dt.date.fromisoformat(date).strftime("%d %b %Y").lstrip("0")
+    hm_path = "data/ai_technical/heatmaps_%s.json" % tag
+    hm = json.load(open(ROOT / hm_path, encoding="utf-8"))
     by = {t["ticker"]: t for t in hm["tickers"]}
-    reads = {tk: read_grid(by[tk]) for tk in BOARD if tk in by}
-    idx = index_grids()
+    stocks = [tk for tk in ["NVDA"] + BOARD if tk in by and not by[tk].get("event_stale")]
+    left_out = [FULL.get(tk, tk) for tk in ["NVDA"] + BOARD if tk in by and by[tk].get("event_stale")]
+    reads = {tk: read_grid(by[tk]) for tk in stocks}
+    idx, isrc = index_grids(date)
     by.update(idx)
     for k, v in idx.items():
         FULL[k] = v["name"]
     ireads = {k: read_grid(v) for k, v in idx.items()}
-    n_front = sum(1 for r in reads.values() if r["king"]["expiry"] == "2026-11-20")
-    fronts = sorted(r["front_share_pct"] for r in reads.values())
-    med_front = float(np.median(fronts))
+    friday = min(e for r in reads.values() for e in r["expiries"])
+    fri_lab = dt.date.fromisoformat(friday).strftime("%a %d %b").replace(" 0", " ")
+    n_front = sum(1 for r in reads.values() if r["king"]["expiry"] == friday)
+    med_front = float(np.median([r["front_share_pct"] for r in reads.values()]))
+    regs = {r["regime_pm2"] for r in ireads.values()}
+    lead = ("Both indices sit in %s gamma" % regs.pop()) if len(regs) == 1 else "The indices split"
+    open_names = [FULL[tk].split(" (")[0] for tk in stocks if "09:30" in by[tk].get("source_batch", "")]
     size = (13.6, 17.0)
     fig, rects = cs.frame(
-        "Both indices sit in long gamma; %d%% of the AI-stock maps expire on Friday" % round(med_front),
-        "Dealer gamma by strike and expiry. Indices: the 17 Nov 17:30 ET overnight map. Stocks: the 17 Nov close "
-        "(Broadcom: 09:30 ET open). Friday's expiry holds the largest stock position on %s six maps. Nvidia is left "
-        "out: its map predates its report." % ("all" if n_front == 6 else n_front),
-        panels=1, size=size, tags=None, badge=("%d%%" % round(med_front), "expires Fri 20 Nov"),
+        "%s; %d%% of the AI-stock maps expire on %s" % (lead, round(med_front), dt.date.fromisoformat(friday).strftime("%A")),
+        "Dealer gamma by strike and expiry. Indices: the %s %s. Stocks: the %s close%s. %s's expiry holds the "
+        "largest stock position on %d of %d maps.%s"
+        % (day[:-5], isrc, day[:-5], (" (%s: 09:30 ET open)" % ", ".join(open_names)) if open_names else "",
+           fri_lab.split()[0], n_front, len(stocks),
+           (" Left out: %s (map predates its report)." % ", ".join(left_out)) if left_out else ""),
+        panels=1, size=size, tags=None, badge=("%d%%" % round(med_front), "expires %s" % fri_lab),
         callout="Our record: the largest strike did not pull price (55 days, n=165)  ·  big strikes reversed price no more than any strike  ·  "
                 "gamma sign: no next-day edge (324 sessions)",
-        footer_right="data/ai_technical/heatmaps_20261117.json",
-        snapshot="17 Nov 2026 16:00-17:30 ET")
+        footer_right=hm_path,
+        snapshot="%s 16:00 ET" % day)
     fw, fh = fig.get_size_inches()
     x0, y0, W, H = rects[0]
-    cols, rows_n = 2, 5
+    order_all = [k for k in ("SPX", "QQQ") if k in idx] + stocks
+    cols = 2
+    show_share = (len(order_all) + 2) <= 10
+    rows_n = -(-(len(order_all) + 1 + (1 if show_share else 0)) // cols)
     gx, gy = 0.22 / fw, 0.22 / fh
     tw = (W - gx * (cols + 1)) / cols
     th = (H - gy * (rows_n + 1)) / rows_n
     cmap = heat_cmap()
     exp_lab = lambda e: dt.date.fromisoformat(e).strftime("%d %b").lstrip("0")
-    tiles = [(i % cols, i // cols) for i in range(10)]
+    tiles = [(i % cols, i // cols) for i in range(cols * rows_n)]
     allreads = dict(ireads, **reads)
-    order_all = [k for k in ("SPX", "QQQ") if k in idx] + BOARD
     for n, tk in enumerate(order_all):
         t, r = by[tk], allreads[tk]
         cx, cy = tiles[n]
@@ -426,16 +446,32 @@ def heatmap_board(out, reads_out):
                  "%s  ·  %s gamma" % (cs.fmt_level(spot, 2), reg), fontsize=10, family=MONO,
                  color={"long": P["green"], "short": P["red"]}.get(reg, P["subtitle"]), va="top", ha="right")
         fig.text(tx + 0.16 / fw, ty + 0.08 / fh, "%s %d%% of map  ·  king %s %s"
-                 % ("front expiry" if tk not in idx else "18 Nov expiry",
+                 % ("front expiry" if tk not in idx else "%s expiry" % exp_lab(t["expiries"][0]),
                     round(r["front_share_pct"]), "{:,.0f}".format(r["king"]["strike"]) if r["king"]["strike"] >= 1000
                     else cs.fmt_level(r["king"]["strike"]), exp_lab(r["king"]["expiry"])),
                  fontsize=8.5, color=P["muted"], family=MONO, va="bottom")
-    # tile 9: share expiring Friday
-    cx, cy = tiles[8]
+    nxt = len(order_all)
+    if show_share:
+        share_tile(fig, tiles[nxt], reads, (x0, y0, W, H), (tw, th, gx, gy), fri_lab)
+        nxt += 1
+    key_tile(fig, tiles[nxt], (x0, y0, W, H), (tw, th, gx, gy), cmap)
+    cs.save(fig, out)
+    json.dump({"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+               "source": hm_path, "index_source": isrc, "note": "shares are of total |gamma| on the "
+               "map shown; vendor units, compare within a ticker only", "reads": reads, "index_reads": ireads},
+              open(reads_out, "w", encoding="utf-8"), indent=1)
+    return {"stocks": reads, "indices": ireads}
+
+
+def share_tile(fig, tile, reads, frame_rect, geom, fri_lab):
+    fw, fh = fig.get_size_inches()
+    x0, y0, W, H = frame_rect
+    tw, th, gx, gy = geom
+    cx, cy = tile
     tx = x0 + gx + cx * (tw + gx)
     ty = y0 + H - (cy + 1) * (th + gy)
     cs._round_box(fig, tx, ty, tw, th, fc=P["canvas"], ec=P["border"], lw=1.0, r_in=0.08, z=0)
-    fig.text(tx + 0.16 / fw, ty + th - 0.2 / fh, "Share of each stock map expiring Fri 20 Nov", fontsize=12.5,
+    fig.text(tx + 0.16 / fw, ty + th - 0.2 / fh, "Share of each stock map expiring %s" % fri_lab, fontsize=12.5,
              fontweight="bold", color=P["title"], va="top")
     ax = fig.add_axes([tx + 1.25 / fw, ty + 0.3 / fh, tw - 1.8 / fw, th - 0.85 / fh])
     order = sorted(reads.values(), key=lambda r: -r["front_share_pct"])
@@ -454,8 +490,13 @@ def heatmap_board(out, reads_out):
     for y, v in zip(ys, vals):
         ax.text(v + 1.5, y, "%d%%" % round(v), va="center", fontsize=10, family=MONO, fontweight="bold",
                 color=P["title"])
-    # tile 10: how to read
-    cx, cy = tiles[9]
+
+
+def key_tile(fig, tile, frame_rect, geom, cmap):
+    fw, fh = fig.get_size_inches()
+    x0, y0, W, H = frame_rect
+    tw, th, gx, gy = geom
+    cx, cy = tile
     tx = x0 + gx + cx * (tw + gx)
     ty = y0 + H - (cy + 1) * (th + gy)
     cs._round_box(fig, tx, ty, tw, th, fc=P["canvas"], ec=P["yellow"], lw=1.2, r_in=0.08, z=0)
@@ -481,12 +522,6 @@ def heatmap_board(out, reads_out):
     for s in cax.spines.values():
         s.set_visible(False)
     cax.tick_params(length=0)
-    cs.save(fig, out)
-    json.dump({"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-               "source": "data/ai_technical/heatmaps_20261117.json", "note": "shares are of total |gamma| on the "
-               "map shown; vendor units, compare within a ticker only", "reads": reads, "index_reads": ireads},
-              open(reads_out, "w", encoding="utf-8"), indent=1)
-    return {"stocks": reads, "indices": ireads}
 
 
 # ================================================================ 6. scenarios
@@ -578,19 +613,19 @@ def revenue_record(out):
 
 # ================================================================ 8. signposts
 SIGNS = [
-    ("19 Nov", "Xi-Trump-Putin summit, Shenzhen", "chips, Iran guarantor, Taiwan", False),
+    ("19 Nov", "Xi-Trump-Putin meeting at APEC, Shenzhen; rule in force", "chips, Iran, Taiwan", False),
     ("27 Nov", "China's gallium and germanium pause lapses", "first US-China lever", False),
     ("29-30 Nov", "OPEC+ quotas; the Iran fork resolves", "Gulf path", False),
-    ("1-3 Dec", "Nvidia hearings in Congress", "export policy", False),
+    ("1-2 Dec", "Nvidia hearings in the House", "export policy", False),
     ("9 Dec", "Fed decision; Broadcom results", "hike 93%  ·  ours $35.3bn", True),
     ("~10 Dec", "TSMC November revenue", "the TSMC call", False),
     ("9-14 Dec", "Oracle fiscal Q2", "ours $21.3bn", False),
     ("15-23 Dec", "Micron fiscal Q1 (date unconfirmed)", "ours $72.1bn", False),
-    ("22 Dec", "PJM power auction results", "the power limit", False),
+    ("December", "PJM capacity auction", "the power limit", False),
     ("10 Jan", "US-China truce and rare-earth cliff", "truce rolls 66%", True),
     ("14/21 Jan", "TSMC Q4 and first 2027 capex guide", "ours $54.6bn", False),
     ("27 Jan-4 Feb", "Hyperscaler Q4 and 2027 capex guides", "the 2027 fork", True),
-    ("~mid-Feb", "Remote-access licence clock ends", "SE Asian neoclouds", False),
+    ("~17 Feb", "Remote-access licence clock ends", "SE Asian neoclouds", False),
     ("24 Feb-3 Mar", "Nvidia fiscal Q4; annual report", "ours $137.3bn  ·  guarantees", False),
     ("31 Mar", "Hormuz state; financing chain", "credit holds 82%", False),
     ("30 Jun", "Taiwan, Fed and chip-index branches resolve", "PLA action 10%", False),
@@ -624,11 +659,52 @@ def signposts(out):
     cs.save(fig, out)
 
 
+# ================================================================ 9. Anthropic's compute commitments (S-1/A)
+ANT_COMMIT = [  # (provider, low $bn, high $bn, note) - S-1/A Amendment No. 3, filed 17 Nov 2026
+    ("Google (TPUs)", 121.3, 271.3, "at least; $125-150bn more est. 2028-31"),
+    ("Nvidia GPUs via SpaceXAI", 120.5, 120.5, "up to; cancellable after early 2027"),
+    ("Amazon (Trainium)", 110.0, 110.0, "at least; May 2026 to Apr 2036"),
+    ("Microsoft", 47.2, 49.2, "Nov 2026 to Jun 2033"),
+    ("Nscale", 44.6, 44.6, "up to; depends on Nscale's own financing"),
+    ("Lambda", 41.3, 41.3, "to 2034"),
+    ("AMD (Helios)", 20.0, 20.0, "more than"),
+]
+
+
+def anthropic_commitments(out):
+    fig, rects = cs.frame(
+        "Anthropic has signed about $900bn of commitments, nearly all of it for compute",
+        "Compute commitments by provider from the IPO filing (S-1/A No. 3, 17 Nov 2026), $bn. About $452bn falls "
+        "due by 2030 and $71bn in the next twelve months, against a run-rate revenue of about $81bn.",
+        tags=[("THE BUYER AT THE TOP", "purple")], badge=("$81bn", "run-rate revenue, 31 Oct"),
+        callout="Most of the counterparties are also its investors: Amazon owns 14.7% and Google 13.7%; Google and "
+                "Nvidia each buy $10bn in the placement",
+        footer_right="Anthropic S-1/A Amendment No. 3 (sec.gov), filed 17 Nov 2026")
+    ax = cs.panel_axes(fig, rects[0], pad=(3.2, 0.4, 3.9, 0.8))
+    ys = np.arange(len(ANT_COMMIT))
+    for y, (name, lo, hi, note) in zip(ys, ANT_COMMIT):
+        ax.barh(y, lo, height=0.58, color=P["purple"] if "Nvidia" in name or name in ("Nscale", "Lambda") else P["cyan"])
+        if hi > lo:
+            ax.barh(y, hi - lo, left=lo, height=0.58, color=P["free"], edgecolor=P["cyan"], lw=1.2, ls=(0, (3, 2)))
+        ax.text((hi if hi > lo else lo) + 4, y, ("$%.0f-%.0fbn" % (lo, hi)) if hi > lo else "$%.0fbn" % lo, va="center",
+                fontsize=13, family=MONO, fontweight="bold", color=P["title"])
+        ax.text(1.02, y, note, transform=ax.get_yaxis_transform(), va="center", fontsize=10.5, color=P["subtitle"])
+    ax.set_yticks(ys)
+    ax.set_yticklabels([r[0] for r in ANT_COMMIT], fontsize=13, color=P["title"])
+    ax.set_xticks([])
+    ax.set_xlim(0, 330)
+    ax.invert_yaxis()
+    ax.text(0, 1.03, "■ cloud and chip makers' own capacity", transform=ax.transAxes, color=P["cyan"], fontsize=11, fontweight="bold")
+    ax.text(0.55, 1.03, "■ GPU capacity through chip renters", transform=ax.transAxes, color=P["purple"], fontsize=11, fontweight="bold")
+    cs.save(fig, out)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="reports/charts/20261118_ai")
     ap.add_argument("--theme", default="dark")
     ap.add_argument("--only", default="")
+    ap.add_argument("--map-date", default="2026-11-18", help="dealer-gamma map day for the heatmap board")
     a = ap.parse_args()
     cs.apply(a.theme)
     out = ROOT / a.out
@@ -638,10 +714,12 @@ def main():
         "02_milestones": lambda p: milestones(p),
         "03_channels": lambda p: channels(p),
         "04_relative_strength": lambda p: relative_strength(p),
-        "05_heatmap_board": lambda p: heatmap_board(p, ROOT / "data/ai_technical/heatmap_reads_20261117.json"),
+        "05_heatmap_board": lambda p: heatmap_board(
+            p, ROOT / ("data/ai_technical/heatmap_reads_%s.json" % a.map_date.replace("-", "")), a.map_date),
         "06_scenarios": lambda p: scenarios(p),
         "07_revenue_record": lambda p: revenue_record(p),
         "08_signposts": lambda p: signposts(p),
+        "09_anthropic_commitments": lambda p: anthropic_commitments(p),
     }
     for name, fn in jobs.items():
         if a.only and a.only not in name:

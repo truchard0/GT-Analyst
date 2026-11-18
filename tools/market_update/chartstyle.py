@@ -138,6 +138,7 @@ def apply(theme="dark"):
         "savefig.facecolor": P["canvas"],
         "legend.frameon": False,
         "axes.unicode_minus": True,
+        "text.parse_math": False,   # "$" is a currency sign in our charts, never maths
     })
     return P
 
