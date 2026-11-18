@@ -1,7 +1,7 @@
 # AI prints backtest: six months of reports, forecast blind (first run, 18 Nov 2026)
 
-**Status: revenue and next-guide results are final for the first run. Capex forecasts and the consensus benchmark
-are pending two data files (see the end).** Rules, pass lines and scorers were committed before the window data was
+**Status: revenue and next-guide results are final for the first run, including the comparison with Wall Street
+consensus. Capex forecasts are pending one data file (see the end).** Rules, pass lines and scorers were committed before the window data was
 read (`data/ai_prints_backtest/PREREG.md`, commits `99c0181` and `06329b7`). Numbers below are the first run, unedited.
 
 Sample: 29 reports published 18 May to 17 Nov 2026 by Nvidia (3), Broadcom, Micron, TSMC, AMD, Marvell, ASML, Applied
@@ -15,6 +15,24 @@ mattered, and the next-quarter guide could not be forecast to a tight range at a
 forecasts ran low, because guides stepped up faster than each company's own history. Yes/no versions of the same
 calls looked excellent (29 of 29 beat their guide), which is exactly why they are not informative.
 
+## Against Wall Street consensus (added when the consensus file landed; same 29 reports)
+| Target | Our median miss | Consensus median miss | Naive median miss | We were closer than consensus on | Within tolerance: us vs consensus |
+|---|---|---|---|---|---|
+| Reported revenue | **1.02%** | 1.91% | 2.14% | **20 of 29** | within 2%: 72% vs 52% |
+| Next-quarter guide | 5.60% | **3.69%** | 14.89% | 8 of 29 | within 5%: 34% vs 69% |
+
+- **Revenue: the mechanical model beat consensus.** Consensus sits close to the company's guide (1.91% against the
+  guide's 2.14%), and companies beat their guides by a steady margin; adding each company's own average beat captures
+  what consensus leaves out. Mean miss 2.27% against 3.17%.
+- **Next-quarter guide: consensus beat the model clearly.** Analysts carry information about the coming quarter
+  (seasonality, order books, pricing) that a company's past step-ups do not.
+- **Consensus missed the surprise quarters too.** Micron's June report: guide 33.5, consensus 35.8, our model 37.5,
+  actual 41.5. Dell's May report: guide 35.2, consensus 35.4, our model 36.1, actual 43.8. Analysts had the news and
+  were still 14% and 19% low. So reading the news is not a guaranteed fix for those quarters; a news-informed
+  forecast has to be tested against exactly these cases.
+- Consensus figures are from results-day press coverage (26 of 29 attributed to LSEG; a few unattributed or
+  conflicting, listed in the data run's summary). Treat differences of a few tenths of a point as noise.
+
 ## Numeric forecasts (the test that matters)
 | Target | Forecasts | Median miss | Within 1% | Within 2% | Within 3% | Within 5% | Naive median miss | Actual inside the 80% range | Average range |
 |---|---|---|---|---|---|---|---|---|---|
@@ -24,7 +42,7 @@ calls looked excellent (29 of 29 beat their guide), which is exactly why they ar
 Against the pass lines set in advance:
 | Line | Revenue | Next-quarter guide |
 |---|---|---|
-| Accuracy: beat the naive guide (consensus check pending) | PASS (closer on 27 of 29) | n/a (closer on 26 of 29) |
+| Accuracy: beat the naive guide, and within 0.25 points of consensus | PASS (closer than the guide on 27 of 29; better than consensus) | n/a (beat the naive figure, lost to consensus) |
 | Calibration: 80% range holds the actual 65-95% of the time | **FAIL** (62%) | pass, barely (66%) |
 | Tightness: average range within ±2% / ±4% | **FAIL** (±2.8%) | **FAIL** (±11.4%) |
 
@@ -46,9 +64,11 @@ Next-quarter guides missed by more than 10% eight times (ASML twice, Broadcom, L
 Seven of the eight were too low: the company guided a step-up its own history did not contain (Amazon guided
 Q4 at 243.5 against a 201.9 Q3; Meta 74.5 against 64.6; AMD 17.0 against 13.4).
 
-These are the quarters where outside information existed before the report (memory contract prices, AI-server
-backlog, hyperscaler capex raises, holiday-quarter seasonality). A model that reads only the company's own guide and
-beat history cannot see any of it. That is the case for the news-informed forecast described in `STATE.md` §7l.
+Outside information existed before these reports (memory contract prices, AI-server backlog, hyperscaler capex
+raises, holiday-quarter seasonality), and a model that reads only the company's own guide and beat history cannot
+see it. On guides that information helps: consensus, which has it, was much closer. On the two largest revenue
+surprises it did not help analysts either. That is what the news-informed forecast in `STATE.md` §7l has to be
+tested on.
 
 ## Yes/no rules (first design; kept for the record)
 | Rule | Result | Stated probability | Read |
@@ -68,7 +88,7 @@ beat history cannot see any of it. That is the case for the news-informed foreca
 
 ## Pending
 - `capex_history.csv` (quarterly capex and annual guides): needed for the capex number forecasts.
-- `consensus.csv` (sell-side consensus before each report): the benchmark that matters. Re-run
-  `python3 tools/ai_prints_numeric.py --rows` when both are present.
+- Re-run `python3 tools/ai_prints_numeric.py --rows` when it is present. `consensus.csv` holds a capex consensus for
+  6 of the 10 hyperscaler reports.
 - Forward numbers with ranges for the next prints (`--forward --scale 1.73` for revenue, `1.69` for guides, the
   factors that would have given 80% coverage here) have not been produced or logged.
