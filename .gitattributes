@@ -1,2 +1,7 @@
 # SQLite is binary: never let git attempt a textual merge on it.
 *.db binary -diff -merge
+
+# The mergeable text twin of ledger.db. LF only: one row per line, so a CRLF checkout cannot rewrite
+# every line and turn a clean merge into a wall of conflicts. Default text merge on purpose (NOT union):
+# union would keep both versions of a row both machines edited and leave a duplicate id.
+ledger/ledger.jsonl text eol=lf

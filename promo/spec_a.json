@@ -1,0 +1,314 @@
+[
+ {
+  "node_id": "af-afcfta-roo-completion",
+  "skip": "The node never enumerates which rules-of-origin annexes are 'outstanding' or what event counts as 'completed' (Council of Ministers adoption? Secretariat tracker?), so a stranger could not settle it without my inventing the annex list."
+ },
+ {
+  "node_id": "ags-enso-2027",
+  "skip": null,
+  "prediction": "NOAA Climate Prediction Center's ENSO Diagnostic Discussion issued in August 2027 does not have an El Nino Advisory in effect (no El Nino conditions declared).",
+  "falsifier": "False if the CPC ENSO Diagnostic Discussion issued in August 2027 (horizon 2027-08-31) states that an El Nino Advisory is in effect; resolve N/A if no August 2027 discussion is issued by 2027-08-31.",
+  "resolution_source": {
+   "publisher": "NOAA Climate Prediction Center",
+   "series": "ENSO Diagnostic Discussion (monthly), ENSO Alert System status in the August 2027 edition",
+   "convention": "The August 2027 edition's alert status counts as the 'northern summer' declaration; 'ENSO-neutral or La Nina' is stated as its exact complement, no El Nino Advisory; ENSO-neutral with an El Nino Watch counts as TRUE."
+  },
+  "base_rate": 0.9,
+  "base_class": "After a summer with CPC ONI JJA >= +0.5, the NEXT summer's JJA ONI was below +0.5 in 14 of 14 cases 1950-2025 (CPC oni.ascii.txt, my recomputation; JJA 2026 = +1.80 so the condition holds); shrunk from 14/14 for ONI-vs-Advisory mismatch",
+  "direction": "neutral",
+  "sectors": [
+   "ag_inputs"
+  ],
+  "tickers": [],
+  "diverge": "Node p 0.68 is BELOW the outside view and the node cites no datapoint for that; the dated datapoint is CPC ONI JJA 2026 = +1.80 (strong El Nino forming) which historically decays by the next summer (14/14). Flag for re-pricing, not a justification of the gap."
+ },
+ {
+  "node_id": "bank-nim-compression",
+  "skip": "No named series (FDIC industry NIM vs a large-bank earnings aggregate), and 'next two reported quarters' is inconsistent with the 2027-04-30 horizon (Q3-26 and Q4-26, or Q4-26 and Q1-27 earnings?); either reading is my invention."
+ },
+ {
+  "node_id": "bill-share-high",
+  "skip": null,
+  "prediction": "Treasury bills are above 20.0% of total marketable debt outstanding at each month-end of 2026-09-30, 2026-10-31, 2026-11-30 and 2026-12-31 in the Monthly Statement of the Public Debt.",
+  "falsifier": "False if Bills divided by Total Marketable is 20.0% or lower at any of those four month-ends; resolved on the 2026-12-31 horizon from MSPD Table 1 (total_mil_amt).",
+  "resolution_source": {
+   "publisher": "US Treasury Bureau of the Fiscal Service",
+   "series": "Monthly Statement of the Public Debt, Table 1 (Summary of Treasury Securities Outstanding): Bills / Total Marketable, total_mil_amt",
+   "convention": "Month-end values as first published in the MSPD, total (public plus intragovernmental) column; strictly above 20.0% at every one of the four dates."
+  },
+  "base_rate": 0.95,
+  "base_class": "MSPD Table 1 bills share, 304 overlapping four-month windows 2001-01..2026-08: a fall of more than 2.77pp (headroom: 22.77% on 2026-08-31 minus 20%) happened in 11 of 304",
+  "direction": "neutral",
+  "sectors": [
+   "financials"
+  ],
+  "tickers": []
+ },
+ {
+  "node_id": "brent-band-q4",
+  "skip": null,
+  "prediction": "ICE Brent front-month futures settle between $85.00 and $125.00 per barrel inclusive on every trading day from 2026-10-01 through 2026-12-31.",
+  "falsifier": "False if any ICE Brent front-month daily settlement from 2026-10-01 through 2026-12-31 is below 85.00 or above 125.00; horizon 2026-12-31.",
+  "resolution_source": {
+   "publisher": "ICE Futures Europe",
+   "series": "Brent Crude futures, continuous front-month daily settlement price",
+   "convention": "Daily SETTLEMENT (close), not intraday; front-month rolled at expiry with no back-adjustment; every trading day counts (the no-view run models closes)."
+  },
+  "base_rate": 0.39,
+  "base_class": "Recorded no-view run: python tools/range_odds.py --spot 103.87 --lo 85 --hi 125 --days 65 --vol 2.5 -> 0.39 (daily-close random walk, 2.5%/day vol, 65 Q4 sessions)",
+  "direction": "vol",
+  "sectors": [
+   "energy"
+  ],
+  "tickers": []
+ },
+ {
+  "node_id": "california-water",
+  "skip": "'Peaks below 110% of average' is undefined (percent of April 1 average vs of date-average; DWR April survey vs CDEC peak day) and I cannot ground a counted base rate for either without inventing historical values."
+ },
+ {
+  "node_id": "cn-gold-buying",
+  "skip": null,
+  "prediction": "At least 8 of the 12 monthly PBoC official-reserve releases published from 2026-10-03 through 2027-09-30 report gold holdings higher than the preceding month's release.",
+  "falsifier": "False if 7 or fewer of those 12 releases show a higher gold figure than the prior month (unchanged counts as not higher); horizon 2027-09-30; resolve N/A if fewer than 12 releases are published by 2027-09-30.",
+  "resolution_source": {
+   "publisher": "People's Bank of China / SAFE",
+   "series": "Official Reserve Assets table, gold line (fine troy ounces)",
+   "convention": "As first published each month; comparison is to the prior month's published figure; an unchanged print is not an addition."
+  },
+  "base_rate": 0.62,
+  "base_class": "PBoC reported gold additions in 29 of 35 months Nov 2022-Sep 2025 with one 6-month pause (May-Oct 2024); 15 of 24 rolling 12-month windows in that span had at least 8 additions (my recomputation from recalled monthly prints, approximate)",
+  "direction": "neutral",
+  "sectors": [
+   "gold_pm"
+  ],
+  "tickers": []
+ },
+ {
+  "node_id": "cn-lgsb-quota",
+  "skip": "The latest (2026) quota is not in the node and I could not verify it, so a base rate for 'above CNY 4 trillion' would be invented; the NPC publication date is also unstated."
+ },
+ {
+  "node_id": "cn-population-decline",
+  "skip": "No allowed sector fits: official China population change is demography, and sector_map has no demography key, so an empty sectors list cannot be promoted without inventing one.",
+  "prediction": "China's National Bureau of Statistics reports a mainland end-2026 total population lower than its end-2025 figure.",
+  "falsifier": "False if the NBS release published by 2027-01-31 shows an end-2026 population equal to or higher than the end-2025 figure; resolve N/A if NBS has not published by 2027-01-31.",
+  "resolution_source": {
+   "publisher": "National Bureau of Statistics of China",
+   "series": "Annual national economic performance release / statistical communique, total population at year end (10k persons)",
+   "convention": "First-published figures in the 2026 release versus the prior-year figure stated in that same release; mainland total excluding HK, Macao, Taiwan."
+  },
+  "base_rate": 0.9,
+  "base_class": "NBS year-end population fell in each of the 4 consecutive years 2022-2025 (4 of 4); deaths exceed births structurally",
+  "direction": "down",
+  "sectors": [],
+  "tickers": []
+ },
+ {
+  "node_id": "core-pce-band",
+  "skip": "no_view odds are 1.0, which cannot be a base_rate in (0,1) while the rule says it must equal the block; the spot (3.1%) is ASSUMED not read from tape (lesson 8); and 'every release through Q2 2027' leaves the release set undefined."
+ },
+ {
+  "node_id": "eu-defence-spending",
+  "skip": null,
+  "prediction": "At least 20 NATO members are at or above 2.0% of GDP for 2026 in NATO's Defence Expenditure of NATO Countries publication.",
+  "falsifier": "False if the latest NATO Defence Expenditure of NATO Countries publication released by 2027-06-30 lists fewer than 20 allies at or above 2.0% for 2026; resolve N/A if no publication released by 2027-06-30 contains 2026 figures.",
+  "resolution_source": {
+   "publisher": "NATO",
+   "series": "Defence Expenditure of NATO Countries, defence expenditure as % of GDP (NATO definition)",
+   "convention": "Latest publication on or before 2027-06-30 that contains 2026 figures; value as printed to one decimal; 2.0 counts."
+  },
+  "base_rate": 0.97,
+  "base_class": "NATO figures: 32 of 32 allies at or above 2% for 2025 (NATO Aug 2025 report) and 31 of 32 expected for 2026 (all but Slovenia, per ICDS summary of NATO 2026 estimates)",
+  "direction": "up",
+  "sectors": [
+   "defense"
+  ],
+  "tickers": [],
+  "diverge": "Node p 0.80 is below the outside view with no datapoint offered; dated datapoint against it: NATO 2026 estimates have 31 of 32 allies at or above 2% (reported 2026), so residual risk is publication timing and rounding only. Flag for re-pricing."
+ },
+ {
+  "node_id": "ge-france-art7-2027",
+  "skip": "scaffolding: a statutory calendar event with only vacancy/constitutional change as a way to fail; measures nothing, and 0.91 vs ~0.98 structural adds no signal."
+ },
+ {
+  "node_id": "german-fiscal",
+  "skip": "Which 'investment' (core budget Hauptgruppen 7+8 vs incl. special funds) and which 2025 baseline (Soll vs Ist) and which 2027 budget stage (cabinet draft vs enacted) are all unspecified; each is my choice, and the draft is probably already public."
+ },
+ {
+  "node_id": "glp1-supply",
+  "skip": "'No GLP-1 product' has no defined product set, and current FDA shortage-list status is not in the node, so neither the claim nor the base rate can be fixed without inventing them."
+ },
+ {
+  "node_id": "healthcare-jobs",
+  "skip": "No allowed sector fits: BLS health-care payroll leadership is labor/health, and sector_map has no labor or health key, so an empty sectors list cannot be promoted without inventing one.",
+  "prediction": "In more than half of the BLS Employment Situation releases published from 2026-10-04 through 2027-06-30, the first-print over-the-month change in Health care and social assistance employment is larger than that of every other supersector line in Table B-1, excluding its parent Private education and health services.",
+  "falsifier": "False if Health care and social assistance has the largest over-the-month gain in half or fewer of the Employment Situation releases published from 2026-10-04 through 2027-06-30 (ties count as not largest); horizon 2027-06-30.",
+  "resolution_source": {
+   "publisher": "US Bureau of Labor Statistics",
+   "series": "Employment Situation, Table B-1, seasonally adjusted over-the-month change, supersector lines (Mining and logging, Construction, Manufacturing, Trade/transportation/utilities, Information, Financial activities, Professional and business services, Leisure and hospitality, Other services, Government)",
+   "convention": "First print in each release, not later revisions; denominator is the number of releases in the window; majority means strictly more than half."
+  },
+  "base_rate": 0.15,
+  "base_class": "FRED current-vintage SA changes: HC&SA (CES6562000101) beat all 10 other supersectors in 12 of 24 months Oct 2024-Sep 2026 but only 3 of 12 in Oct 2025-Sep 2026; P(5+ of 8 months) is 0.03 at 25% per month and 0.36 at 50%, midpoint ~0.15",
+  "direction": "up",
+  "sectors": [],
+  "tickers": [],
+  "diverge": "Node p 0.78 is far above the outside view and cites no datapoint; dated contrary datapoints (FRED current vintage): Sep 2026 HC&SA +17k vs Trade/transport/utilities +18k, Aug 2026 +24k vs Government +44k, Jul 2026 +18k vs TTU +23k. Flag for re-pricing."
+ },
+ {
+  "node_id": "ig-spread-band",
+  "skip": null,
+  "prediction": "The ICE BofA US Corporate Index option-adjusted spread is below 1.60 percentage points on every daily observation from 2026-10-02 through 2026-12-31.",
+  "falsifier": "False if any daily observation of FRED series BAMLC0A0CM from 2026-10-02 through 2026-12-31 is 1.60 or higher; horizon 2026-12-31.",
+  "resolution_source": {
+   "publisher": "ICE Data Indices via FRED (St. Louis Fed)",
+   "series": "BAMLC0A0CM, ICE BofA US Corporate Index OAS (percent)",
+   "convention": "Daily values as shown on FRED at resolution; every observation counts; 1.60 itself is a miss."
+  },
+  "base_rate": 0.98,
+  "base_class": "Recorded no-view run: python tools/range_odds.py --spot 110 --hi 160 --days 70 --vol 2.0 -> 0.98 (assumed spot 110bp; the actual FRED print on 2026-10-01 is 0.86, so the true no-view is higher)",
+  "direction": "neutral",
+  "sectors": [
+   "financials"
+  ],
+  "tickers": [],
+  "diverge": "Node p 0.82 is 0.16 under the no-view with no dated catalyst in the node; dated datapoint against it: FRED BAMLC0A0CM = 0.86 on 2026-10-01, 74bp inside the 160bp line. Flag for re-pricing."
+ },
+ {
+  "node_id": "nato-2pct-count",
+  "skip": null,
+  "prediction": "At least 24 NATO members are at or above 2.0% of GDP for 2026 in NATO's Defence Expenditure of NATO Countries publication.",
+  "falsifier": "False if the latest NATO Defence Expenditure of NATO Countries publication released by 2027-06-30 lists fewer than 24 allies at or above 2.0% for 2026; resolve N/A if no publication released by 2027-06-30 contains 2026 figures.",
+  "resolution_source": {
+   "publisher": "NATO",
+   "series": "Defence Expenditure of NATO Countries, defence expenditure as % of GDP (NATO definition)",
+   "convention": "Latest publication on or before 2027-06-30 that contains 2026 figures; value as printed to one decimal; 2.0 counts."
+  },
+  "base_rate": 0.96,
+  "base_class": "NATO figures: 32 of 32 allies at or above 2% for 2025 (NATO Aug 2025 report) and 31 of 32 expected for 2026 (all but Slovenia, per ICDS summary of NATO 2026 estimates)",
+  "direction": "up",
+  "sectors": [
+   "defense"
+  ],
+  "tickers": [],
+  "diverge": "Node p 0.78 is below the outside view with no datapoint offered; dated datapoint against it: NATO 2026 estimates have 31 of 32 allies at or above 2% (reported 2026). Nested with eu-defence-spending (>=20), highly correlated. Flag for re-pricing."
+ },
+ {
+  "node_id": "nvda-dc-band",
+  "skip": null,
+  "prediction": "NVIDIA's reported Data Center revenue is higher than in the immediately preceding quarter in at least 3 of its next 4 quarterly earnings releases published after 2026-10-03.",
+  "falsifier": "False if 2 or fewer of NVIDIA's next 4 quarterly releases after 2026-10-03 show Data Center revenue above the prior quarter; horizon 2027-09-30; resolve N/A if fewer than 4 releases are published by 2027-09-30.",
+  "resolution_source": {
+   "publisher": "NVIDIA Corporation",
+   "series": "Quarterly earnings press release / CFO commentary, Data Center revenue",
+   "convention": "As first reported in each release, versus the prior-quarter figure shown in that same release; 'leading accelerator vendor' is read as NVIDIA."
+  },
+  "base_rate": 0.92,
+  "base_class": "NVIDIA Data Center revenue rose q/q in 12 of 12 quarters Q1 FY2024-Q4 FY2026 (company releases); P(3+ of 4) is 0.95 at 90% per quarter, shaded to 0.92 for cycle risk",
+  "direction": "up",
+  "sectors": [
+   "chips",
+   "ai_datacenters"
+  ],
+  "tickers": [
+   "NVDA"
+  ],
+  "diverge": "Node p 0.70 is 0.22 below the outside view; the node offers no dated datapoint (its 'supply-capped' basis argues for higher). The only downside story, an AI-capex digestion quarter, is undocumented in the node. Flag for re-pricing."
+ },
+ {
+  "node_id": "platinum-deficit",
+  "skip": null,
+  "prediction": "The World Platinum Investment Council reports a full-year 2026 platinum market deficit (demand above supply) in its Platinum Quarterly edition covering Q4 2026.",
+  "falsifier": "False if the WPIC Platinum Quarterly edition covering Q4 2026 shows a 2026 balance of zero or a surplus; horizon 2027-05-31; resolve N/A if that edition is not published by 2027-05-31.",
+  "resolution_source": {
+   "publisher": "World Platinum Investment Council",
+   "series": "Platinum Quarterly, full-year 2026 supply/demand balance",
+   "convention": "First published full-year figure (not later restatements); WPIC definition including investment demand."
+  },
+  "base_rate": 0.8,
+  "base_class": "WPIC reported full-year platinum deficits for 2023, 2024 and 2025 (3 consecutive); Laplace (3+1)/(3+2) = 0.80",
+  "direction": "up",
+  "sectors": [
+   "gold_pm"
+  ],
+  "tickers": []
+ },
+ {
+  "node_id": "refi-wall-2027",
+  "skip": "No named source: S&P, Bloomberg, SIFMA and Moody's schedules differ, and 'exceeds' is measured at an unstated date (scheduled-2027 as of Jan 2027 vs actual-2026), so a stranger cannot settle it."
+ },
+ {
+  "node_id": "refinery-closure",
+  "skip": "'A previously announced refinery closure' names no refinery; it is an any-of-many disjunction that is near-certain on one leg, so it cannot be scored."
+ },
+ {
+  "node_id": "rl-hsr-second-request-clock",
+  "skip": "A statutory-floor tautology rather than a forecast; the certification dates needed to observe a violation are mostly non-public, so no public source can settle it."
+ },
+ {
+  "node_id": "ru-asset-immobilisation-clock",
+  "skip": "STALE PREMISE: on 2025-12-12 the EU Council used TFEU Article 122 (qualified majority) to immobilise Russian central-bank assets indefinitely, removing the six-month unanimity renewal, so the claim as worded is probably already false; needs a re-premised node, not a ledger row."
+ },
+ {
+  "node_id": "shunto-2027",
+  "skip": null,
+  "prediction": "Rengo's first-tally average wage increase for the 2027 spring wage round is above 4.00%.",
+  "falsifier": "False if the first tally Rengo publishes for the 2027 shunto by 2027-03-31 shows an average increase of 4.00% or less; resolve N/A if no first tally is published by 2027-03-31.",
+  "resolution_source": {
+   "publisher": "Japanese Trade Union Confederation (Rengo)",
+   "series": "Spring wage negotiations first tally, headline weighted average wage increase rate including regular increments",
+   "convention": "First tally only (not the final tally); headline weighted-average rate as printed."
+  },
+  "base_rate": 0.65,
+  "base_class": "Rengo first tallies: 2023 3.58%, 2024 5.28%, 2025 5.46% (2 of 3 above 4%); 2014-2022 none above 3% (0 of 9); weighted to the post-2023 regime",
+  "direction": "up",
+  "sectors": [
+   "fx"
+  ],
+  "tickers": []
+ },
+ {
+  "node_id": "sofr-quarter-end",
+  "skip": null,
+  "prediction": "The NY Fed's SOFR for 2026-12-31 is at least 10 basis points above the IORB rate in effect on 2026-12-31.",
+  "falsifier": "False if SOFR for 2026-12-31 minus the IORB rate in effect on 2026-12-31 is less than 0.10 percentage points; horizon 2026-12-31.",
+  "resolution_source": {
+   "publisher": "Federal Reserve Bank of New York / Federal Reserve Board",
+   "series": "SOFR (rate for 2026-12-31) and IORB (rate in effect that day); FRED SOFR and IORB",
+   "convention": "SOFR as published by the NY Fed for that date (posted the next business day); only the year-end date 2026-12-31 counts, not other quarter-ends."
+  },
+  "base_rate": 0.25,
+  "base_class": "Last-business-day SOFR minus IORB: 2022 -10bp, 2023 -2bp, 2024 +9bp, 2025 +22bp (FRED): 1 of 4 at or above +10bp",
+  "direction": "vol",
+  "sectors": [
+   "financials"
+  ],
+  "tickers": [],
+  "diverge": "Node p 0.66 is 0.41 above the outside view with no supporting datapoint; dated contrary datapoints (FRED): SOFR minus IORB at 2026-03-31 +3bp, 2026-06-30 +3bp, 2026-09-30 0bp, i.e. quarter-ends no longer stress. Flag for re-pricing."
+ },
+ {
+  "node_id": "uk-gilt-marker",
+  "skip": "No free, named series for the benchmark 30y gilt CLOSING yield (the BoE publishes fitted curves, not closes; Bloomberg/LSEG are paywalled), and the 6.00% line sits inside the gap between conventions."
+ },
+ {
+  "node_id": "usf-fy2028-cr",
+  "skip": "No allowed sector fits: whether FY2028 starts under a continuing resolution is fiscal process, and sector_map has no fiscal key, so an empty sectors list cannot be promoted without inventing one.",
+  "prediction": "As of 2027-10-01, fewer than all 12 regular FY2028 appropriations bills have been enacted into law (a package enacting all 12, however labeled, makes this false).",
+  "falsifier": "False if all 12 regular FY2028 appropriations bills are enacted into law on or before 2027-10-01 (horizon 2027-10-01); a lapse with no CR still counts as true.",
+  "resolution_source": {
+   "publisher": "Congress.gov / Congressional Research Service",
+   "series": "Public laws enacting FY2028 regular appropriations (Appropriations Status Table)",
+   "convention": "Status as of the end of 2027-10-01; omnibus or minibus packages count as enacting the bills they contain; a CR does not."
+  },
+  "base_rate": 0.92,
+  "base_class": "CRS: all regular appropriations were enacted by Oct 1 in only 4 fiscal years since FY1977 (FY1977, FY1989, FY1995, FY1997), i.e. 46 of 50 started without them",
+  "direction": "neutral",
+  "sectors": [],
+  "tickers": []
+ },
+ {
+  "node_id": "wage-band",
+  "skip": "Same defects as core-pce-band: no_view odds 1.0 cannot be a base_rate in (0,1), spot (3.9%) is ASSUMED, and 'every release through Q2 2027' is an undefined release set."
+ }
+]

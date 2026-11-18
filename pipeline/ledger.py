@@ -22,6 +22,7 @@ Two ideas from the 2026-09-20 research review run through this file:
 """
 import argparse
 import csv
+import json
 import math
 import pathlib
 import random
@@ -47,7 +48,10 @@ STALE_DAYS = 7        # an open row nobody has revised or confirmed for this lon
 BIG_STEP = 0.15       # Atanasov et al. 2020: small frequent updates beat large infrequent ones
 NEW_COLS = (("base_rate", "REAL"), ("base_class", "TEXT DEFAULT ''"), ("market_prob", "REAL"),
             ("market_src", "TEXT DEFAULT ''"), ("ref_ts", "TEXT DEFAULT ''"),
-            ("diverge_reason", "TEXT DEFAULT ''"), ("prob0", "REAL"), ("asof", "TEXT DEFAULT ''"))
+            ("diverge_reason", "TEXT DEFAULT ''"), ("prob0", "REAL"), ("asof", "TEXT DEFAULT ''"),
+            ("level_lo", "INTEGER"), ("level_hi", "INTEGER"), ("states", "TEXT DEFAULT ''"),
+            ("act", "TEXT DEFAULT ''"), ("claims", "TEXT DEFAULT ''"), ("window_id", "TEXT DEFAULT ''"),
+            ("trigger_text", "TEXT DEFAULT ''"))     # conflict.py: how hard the fighting gets
 
 
 def _load_bars(path):
@@ -80,9 +84,13 @@ def _trade_ctx(c, bars_path="", exclude_id=None):
                  cluster=r["cluster"] or "", prob=r["prob"])
              for r in c.execute("SELECT id,direction,status,cluster,prob FROM predictions")}
     by_cluster = {}
-    for r in c.execute("SELECT cluster,COUNT(*) n FROM predictions WHERE status='open' GROUP BY cluster"):
+    # tree-promoted rows are scored scaffolding, not analyst bets: counting them would dilute the 35pct
+    # concentration cap (T05) so iran-war passed it without anything having changed
+    for r in c.execute("SELECT cluster,COUNT(*) n FROM predictions WHERE status='open' "
+                       "AND COALESCE(source,'') NOT LIKE 'tree%' GROUP BY cluster"):
         by_cluster[r["cluster"] or ""] = r["n"]
-    open_total = c.execute("SELECT COUNT(*) FROM predictions WHERE status='open'").fetchone()[0]
+    open_total = c.execute("SELECT COUNT(*) FROM predictions WHERE status='open' "
+                           "AND COALESCE(source,'') NOT LIKE 'tree%'").fetchone()[0]
     rows = c.execute("SELECT * FROM trades WHERE status='open'").fetchall()
     open_trades = tuple(_trade_of(r) for r in rows if r["id"] != exclude_id)
     stored = {r["id"]: _trade_of(r) for r in c.execute("SELECT * FROM trades")}
@@ -243,6 +251,101 @@ def ref_lint(prob, base_rate, base_class, market_prob, market_src, diverge_reaso
     return w
 
 
+def _conflict_gate(c, args):
+    """R28's other half (pipeline/conflict.py): a row in a conflict cluster declares how hard the fighting gets, and the
+    declaration is checked against the OPEN rows that did the same. Errors refuse the row unless --hedge argues for
+    holding both (lesson 7: two rows that cannot both be right are a hedge, not two insights). -> (lo, hi) or None."""
+    import conflict
+    level, cluster = getattr(args, "level", None), args.cluster
+    if not level or level == "none":
+        if cluster in conflict.SCALES and level != "none":
+            print(f"  WARN: cluster {cluster!r} has a conflict scale {conflict.SCALES[cluster]} - declare --level LO[-HI] "
+                  f"(the interval this row's event implies) or --level none if it is not about how hard the fighting gets")
+        return None
+    if cluster not in conflict.SCALES:
+        sys.exit(f"--level needs a cluster with a conflict scale ({', '.join(conflict.SCALES)}); got {cluster!r}")
+    try:
+        lo, hi = conflict.parse_level(level, cluster)
+    except ValueError as e:
+        sys.exit(str(e))
+    claims = [conflict.Claim(str(pid), float(prob), lo_, hi_, hz, cluster) for pid, prob, lo_, hi_, hz in c.execute(
+        "SELECT id,prob,level_lo,level_hi,horizon FROM predictions WHERE status='open' AND cluster=? "
+        "AND level_lo IS NOT NULL AND source NOT LIKE 'tree:%'", (cluster,))]
+    claims.append(conflict.Claim("new", args.prob, lo, hi, args.horizon, cluster))
+    asof = _ts(args.ts[:10]).date() if getattr(args, "ts", None) and _ts(args.ts[:10]) else None
+    for f in conflict.check(claims, asof):
+        if "new" not in f.ids:
+            continue
+        text = f.text.replace("#new", "this row")
+        if f.severity == "warn":
+            print("  WARN: " + text)
+        elif len((getattr(args, "hedge", "") or "").strip()) >= 20:
+            print("  HEDGE ACCEPTED: " + text + f" || {args.hedge.strip()}")
+        else:
+            sys.exit("REFUSED (R28, conflict level): " + text + ". Revise this row or an open one, or log it with "
+                     "--hedge '<why holding both is a view and not a hedge, 20+ chars>'.")
+    return lo, hi
+
+
+def _state_gate(c, args):
+    """Cross-cluster half of R28 (pipeline/conflict.py STATES): a row declares the world states its event REQUIRES
+    (--state hormuz=0-1), whatever its cluster, and is checked against every open row that declared the same state.
+    #29 (OPEC+ 'defends price into a normalizing-Hormuz glut') sat in another cluster from #22 and #73 ('Hormuz does not
+    normalize') and nothing compared them. -> {state: [lo, hi]} or {}."""
+    import conflict
+    specs = getattr(args, "state", None) or []
+    if not specs:
+        return {}
+    mine = {}
+    for sp in specs:
+        try:
+            name, lo, hi = conflict.parse_state(sp)
+        except ValueError as e:
+            sys.exit(str(e))
+        mine[name] = [lo, hi]
+    claims = []
+    for pid, prob, hz, raw in c.execute("SELECT id,prob,horizon,states FROM predictions WHERE status='open' "
+                                        "AND states IS NOT NULL AND states<>'' AND source NOT LIKE 'tree:%'"):
+        for name, (lo, hi) in json.loads(raw).items():
+            claims.append(conflict.StateClaim(str(pid), float(prob), name, lo, hi, hz))
+    claims += [conflict.StateClaim("new", args.prob, n, lo, hi, args.horizon) for n, (lo, hi) in mine.items()]
+    asof = _ts(args.ts[:10]).date() if getattr(args, "ts", None) and _ts(args.ts[:10]) else None
+    for f in conflict.check_states(claims, asof):
+        if "new" not in f.ids:
+            continue
+        text = f.text.replace("#new", "this row")
+        if len((getattr(args, "hedge", "") or "").strip()) >= 20:
+            print("  HEDGE ACCEPTED: " + text + f" || {args.hedge.strip()}")
+        else:
+            sys.exit("REFUSED (R28, world state): " + text + ". Revise this row or an open one, or log it with "
+                     "--hedge '<why holding both is a view and not a hedge, 20+ chars>'.")
+    return mine
+
+
+def _incentive_gate(args, lvl):
+    """R37 (pipeline/constraints.py): a row that declares a conflict --level must also say which act it is about, whether it
+    claims the act occurs, the decider-calendar window it sits in and the trigger that would end the restraint."""
+    import constraints
+    if not lvl:
+        return ("", "", "", "")
+    act, claims = getattr(args, "act", "") or "", getattr(args, "claims", "") or ""
+    window, trigger = getattr(args, "window", "") or "", getattr(args, "trigger", "") or ""
+    if not (act and claims and window):
+        sys.exit("REFUSED (R37): a conflict row needs --act, --claims and --window (an id from data/constraint_calendar.json, or "
+                 "'none:<why no decider's calendar bears on this row>'), plus --trigger for what would end the restraint. "
+                 "What do the deciders want in this window?")
+    asof = _ts(args.ts[:10]).date() if getattr(args, "ts", None) and _ts(args.ts[:10]) else date.today()
+    for f in constraints.check_incentive(constraints.load(), act=act, claims=claims, prob=args.prob, window=window,
+                                         trigger=trigger, horizon=args.horizon, as_of=asof):
+        if f.severity == "warn":
+            print("  WARN: " + f.text)
+        elif len((getattr(args, "hedge", "") or "").strip()) >= 20:
+            print("  HEDGE ACCEPTED: " + f.text + f" || {args.hedge.strip()}")
+        else:
+            sys.exit("REFUSED (R37): " + f.text + ". Revise the row or log it with --hedge '<why, 20+ chars>'.")
+    return (act, claims, window, trigger)
+
+
 def add(args):
     if args.direction and args.direction not in DIRECTIONS:
         sys.exit(f"direction must be one of {DIRECTIONS}")
@@ -261,18 +364,21 @@ def add(args):
         print(f"dry-run: {len(msgs)} lint warning(s); nothing logged")
         return
     c = db()
+    lvl = _conflict_gate(c, args)
+    sts = _state_gate(c, args)
+    inc = _incentive_gate(args, lvl)
     c.execute("""INSERT INTO predictions
         (ts,event,prediction,prob,horizon,falsifier,sensitivity,
          conviction,sectors,tickers,direction,source,cluster,lean,
-         base_rate,base_class,market_prob,market_src,ref_ts,diverge_reason,prob0)
-        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+         base_rate,base_class,market_prob,market_src,ref_ts,diverge_reason,prob0,level_lo,level_hi,states,act,claims,window_id,trigger_text)
+        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
         (args.ts or utc_iso(), args.event, args.prediction, args.prob,
          args.horizon, args.falsifier, args.sensitivity,
          args.conviction, args.sectors, args.tickers, args.direction, args.source, args.cluster,
          args.lean, base_rate, getattr(args, "base_class", "") or "", market,
          getattr(args, "market_src", "") or "",
          (args.ts or utc_iso()) if (base_rate is not None or market is not None) else "",
-         getattr(args, "diverge", "") or "", args.prob))
+         getattr(args, "diverge", "") or "", args.prob, lvl[0] if lvl else None, lvl[1] if lvl else None, json.dumps(sts) if sts else "", *inc))
     pid = c.execute("SELECT MAX(id) FROM predictions").fetchone()[0]
     c.execute("INSERT INTO revisions(pred_id,ts,prob,reason,kind) VALUES(?,?,?,?,'initial')",
               (pid, args.ts or utc_iso(), args.prob, "as logged"))
@@ -535,8 +641,16 @@ def cluster_interval(rows, B=4000, seed=20260920):
     return means[int(0.025 * B)], means[int(0.975 * B)], len(keys)
 
 
-def report():
+def report(pooled=False):
     c = db()
+    if not pooled:
+        # Every query below says "FROM predictions". A TEMP table of the same name shadows the real one for
+        # this connection only, so the WHOLE report is scoped to analyst rows without rewriting any query.
+        # Tree-promoted rows (source 'tree:<class>') are near-certain by construction (149 of 365 candidates
+        # sit at p>=0.88): pooled in, they would push mean Brier toward ~0.01 and read as a better forecaster
+        # when nothing about the forecaster changed. They get their own block at the end, split by class.
+        c.execute("CREATE TEMP TABLE predictions AS SELECT * FROM main.predictions "
+                  "WHERE COALESCE(source,'') NOT LIKE 'tree%'")
     n, avg = c.execute(
         "SELECT COUNT(*),AVG(brier) FROM predictions WHERE status='resolved'").fetchone()
     o = c.execute("SELECT COUNT(*) FROM predictions WHERE status='open'").fetchone()[0]
@@ -578,14 +692,17 @@ def report():
         # was recorded against.
         print("\n-- edge over the reference (market price, else base rate) --")
         refd = []
-        for pid, cl, ts, p0, oc, br, mp, rts in c.execute("""
-                SELECT id,cluster,ts,prob0,outcome,base_rate,market_prob,ref_ts FROM predictions
+        for pid, cl, ts, p0, oc, br, mp, rts, src in c.execute("""
+                SELECT id,cluster,ts,prob0,outcome,base_rate,market_prob,ref_ts,source FROM predictions
                 WHERE status='resolved' AND outcome IS NOT NULL"""):
             ref, kind = reference(br, mp)
             if ref is None or p0 is None:
                 continue
             gap_h = ((_ts(rts) or _ts(ts)) - _ts(ts)).total_seconds() / 3600 if _ts(ts) else 0
-            refd.append((cl, (ref - oc) ** 2 - (p0 - oc) ** 2, kind, gap_h > LATE_REF_HOURS, abs(p0 - ref) > DIVERGE))
+            # a tree-promoted row's reference is written AT promotion, after the node's price already existed, and
+            # its row ts equals its ref_ts, so the gap test would call it timely. It never is.
+            late = gap_h > LATE_REF_HOURS or str(src or "").startswith("tree")
+            refd.append((cl, (ref - oc) ** 2 - (p0 - oc) ** 2, kind, late, abs(p0 - ref) > DIVERGE))
         n_open_ref = c.execute("""SELECT COUNT(*) FROM predictions WHERE status='open'
                                   AND (base_rate IS NOT NULL OR market_prob IS NOT NULL)""").fetchone()[0]
         if not refd:
@@ -789,6 +906,33 @@ def report():
         print("\n-- Brier decomposition: needs >=5 resolved (have "
               f"{len(ro)}) --")
 
+    # -- tree-promoted rows: a SEPARATE stratum, read by row class, never pooled into the numbers above --
+    tree = c.execute("SELECT source,status,outcome,brier,prob0 FROM main.predictions "
+                     "WHERE COALESCE(source,'') LIKE 'tree%'").fetchall()
+    if tree:
+        print()
+        print("-- tree-promoted rows (scored scaffolding; NOT in any number above unless --all) --")
+        by = {}
+        for src, st, oc, br, p0 in tree:
+            d = by.setdefault(src, {"open": 0, "res": []})
+            if st == "open":
+                d["open"] += 1
+            elif st == "resolved" and oc is not None:
+                d["res"].append((oc, br, p0))
+        for src in sorted(by):
+            d = by[src]
+            if not d["res"]:
+                print(f"  {src:<18} open={d['open']:<3} resolved=0")
+                continue
+            m = len(d["res"]); h = sum(x[0] for x in d["res"]) / m
+            b = sum(x[1] for x in d["res"]) / m
+            flat = sum((h - x[0]) ** 2 for x in d["res"]) / m
+            print(f"  {src:<18} open={d['open']:<3} resolved={m:<3} hit={h:.0%}  Brier={b:.3f}  "
+                  f"flat-at-own-hit-rate={flat:.3f}  skill={flat - b:+.3f}")
+        print("  READ THIS BEFORE QUOTING IT: these rows were selected for being near-certain (mean stated P is "
+              "high), so a low Brier here is largely the SELECTION, not forecasting skill. The informative "
+              "number is skill vs the flat forecast, and only once a class has enough rows to have any misses.")
+
 
 def redteam():
     """Adversarial self-audit worksheet: every OPEN prediction formatted for
@@ -856,6 +1000,15 @@ def main():
         sp.add_argument("--market-src", default="", dest="market_src", help="venue, contract, spread/volume, time")
         sp.add_argument("--diverge", default="", help=f"required when |P - reference| > {DIVERGE}: what you know that it does not")
     ref_args(a)
+    a.add_argument("--level", default=None, help="conflict clusters only: the level range this row's event implies "
+                   "on the cluster's scale, e.g. 3 or 0-3 (iran-war: 0 settled .. 4 war-scale), or 'none'")
+    a.add_argument("--state", action="append", default=[], help="world state this row REQUIRES, any cluster: NAME=LO[-HI] "
+                   "(pipeline/conflict.py STATES: hormuz, brent_peak, cpi_jun/jul/aug); repeatable")
+    a.add_argument("--act", default="", help="R37, with --level: us_strike_iran | il_strike_iran | ir_attack_us_forces | ir_ship_attack")
+    a.add_argument("--claims", default="", choices=["", "occurs", "does_not_occur"], help="R37: does the row say the act occurs?")
+    a.add_argument("--window", default="", help="R37: a window id from data/constraint_calendar.json, or 'none:<reason>'")
+    a.add_argument("--trigger", default="", help="R37: what would end the restraint (or why it holds after a recent trigger)")
+    a.add_argument("--hedge", default="", help="reason for holding a row that conflict.py says cannot fit with an open row")
     a.add_argument("--dry-run", action="store_true", help="print the wording lint only; log nothing")
     a.add_argument("--ts", default=None, help="override timestamp (seeding)")
 
@@ -883,7 +1036,9 @@ def main():
     v.add_argument("--reason", required=True, help="which condition/carve-out made it unscoreable")
 
     sub.add_parser("due", help="open predictions past horizon")
-    sub.add_parser("report", help="calibration report")
+    rp = sub.add_parser("report", help="calibration report (analyst rows; tree-promoted rows shown separately)")
+    rp.add_argument("--all", action="store_true",
+                    help="POOL tree-promoted rows into every number. Near-certain rows flatter Brier; only for debugging")
     sub.add_parser("redteam", help="adversarial self-audit worksheet of open predictions")
     to = sub.add_parser("trade-open", help="record a real entry (a position actually taken)")
     to.add_argument("ticker"); to.add_argument("--pred", type=int, required=True)
@@ -1028,7 +1183,7 @@ def main():
     elif args.cmd == "lesson":
         lesson(args)
     else:
-        report()
+        report(pooled=getattr(args, "all", False))
 
 
 if __name__ == "__main__":

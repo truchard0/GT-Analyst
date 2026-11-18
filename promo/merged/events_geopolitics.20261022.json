@@ -1,0 +1,1056 @@
+{
+ "theme": "geopolitics",
+ "events": [
+  {
+   "date": "2026-10-16",
+   "fact": "Trump signed an executive order on Oct 16 waiving most Russia-related provisions of the Lindsey O. Graham Sanctioning Russia and Iran Act of 2026 (tariffs on Russian goods, tariffs on major buyers of Russian oil and gas, sanctions on foreign banks and other financial activity) two days before they were due to take effect on Oct 18; he certified the waiver as in the national interest, and it runs until he or the Secretary of State decides further action is warranted.",
+   "source": "AP (feed, 41 outlets); Scripps TNND wire and Swarajya (web)",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "supports",
+     "note": "Pressure on Russia's economy is eased by executive choice; a signed peace through 2028 stays unlikely"
+    },
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "The tree's Russia-Ukraine lane has no US-sanctions node; this is the main US policy action on Russia in the window"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Waiver is aimed at energy prices; bears on non-Iran oil supply"
+    },
+    {
+     "node": null,
+     "ledger": 83,
+     "relation": "context",
+     "note": "Waived Russia-buyer tariffs trim the upside supply-shock tail for Brent; Brent still ~113 on 10/22 per STATE.md"
+    },
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "More Russian product allowed to flow lowers the odds the diesel crack stays wide, but analysts doubt the volume is real"
+    },
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "Waiver is explicitly framed by reporters around fuel prices before the Nov 3 midterms"
+    }
+   ],
+   "note": "Law passed the Senate 86-11 (Aug) and the House 262-159 (per The Week, Sep 17); the AP piece says Trump signed it 'last month' but I did not find the exact signing date. Congressional reaction: Tillis 'beyond irresponsible', Schumer 'life support' for Russia; AP (Oct 19) reports no quick legislative counter in sight. Tariff rates in the waived provisions were not stated in the story I read."
+  },
+  {
+   "date": "2026-10-17",
+   "fact": "Secretary of State Rubio said Trump would take up to 60 days to study the economic effects of the Russia sanctions and tariffs he had waived, citing the Iran war and Houthi attacks on Saudi Arabia as pressures on energy prices and pointing to India as a major Russian-oil buyer; no final decision had been announced.",
+   "source": "Reuters (via The Star, BusinessDay, Asharq Al-Awsat)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "A 60-day review is a soft clock, not a commitment to reimpose"
+    },
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Sets the next decision point for US Russia sanctions (about mid-December by arithmetic from Oct 17)"
+    },
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "Review window straddles the Nov 3 midterms"
+    }
+   ],
+   "note": "The 60-day figure is Rubio's characterisation; the executive order itself set no end date. 'Unclear if Trump has actually made up his mind' per the Reuters summary."
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "After a call with Putin on Oct 9, Trump announced a deal for Russian diesel: 300,000 tonnes released immediately, 500,000 tonnes in November, 1 million after that, with a further 3 million tonnes possible; Treasury issued a general license within hours authorising sale and delivery of Russian-origin diesel including into the US through April 2027 (sources differ on 7 vs 17 April; one names GL 135). Zelensky called it a gift to Putin.",
+   "source": "BBC, ITV, Ukrainska Pravda",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "Added Russian diesel supply (if delivered) pressures cracks; Standard Chartered (feed, Oct 16) says it will not add new supply"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Non-Iran half of the oil story: Russia now a sanctioned-but-licensed diesel source"
+    },
+    {
+     "node": null,
+     "ledger": 83,
+     "relation": "context",
+     "note": "Bearish supply headline inside a band that still looks 10% from its ceiling"
+    },
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "US-Russia economic accommodation while the war continues"
+    },
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "Trump tied diesel prices to Republican midterm prospects in coverage"
+    }
+   ],
+   "note": "Analysts questioned whether Russia can deliver the volume; White House did not say who pays. License end date conflicts across sources."
+  },
+  {
+   "date": "2026-10-10",
+   "fact": "Trump told reporters Zelensky 'better damn well stop' Ukrainian strikes on Russian refineries, blamed them for US diesel prices, and said Ukraine should get a new president; Zelensky said Ukraine would halt refinery strikes only as part of mutual de-escalation and offered to organise elections if Putin agrees to a 60-day ceasefire.",
+   "source": "Kyiv Independent, LBC, Fox affiliates (AP)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "supports",
+     "note": "Washington leaning on Kyiv, not Moscow; no peace framework"
+    },
+    {
+     "node": null,
+     "ledger": 112,
+     "relation": "context",
+     "note": "No monitored ceasefire mandate in sight; Zelensky's offer is conditional"
+    },
+    {
+     "node": "ukraine-tranche",
+     "ledger": null,
+     "relation": "context",
+     "note": "US-Ukraine friction bears on who funds Ukraine; the EU tranche node is the European side"
+    }
+   ],
+   "note": "Feed item #100 (Reuters, Oct 16) reports Trump calling the resumption of refinery strikes a 'disgrace'; I did not independently verify that one. Ukrainian law bars elections under martial law (liga.net)."
+  },
+  {
+   "date": "2026-10-11",
+   "fact": "Trump announced on Truth Social that Russia and Ukraine had agreed to an 'energy ceasefire' effective immediately; neither government confirmed terms, and on Oct 12 Zelensky said Russian drones had hit a Kharkiv power plant, a gas-production facility and a gas station after the announcement. A similar mid-September announcement was also never confirmed by either side.",
+   "source": "Al Jazeera, BNN Bloomberg, The Star",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 112,
+     "relation": "context",
+     "note": "An announced but unconfirmed truce with no mandate or monitors; row stays far from resolution"
+    },
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "supports",
+     "note": "Second unconfirmed 'ceasefire' announcement without a signed text"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Oil fell on the headline (feed: Oct 12), then reversed"
+    }
+   ],
+   "note": "Record this as an ANNOUNCEMENT, not an in-force ceasefire (lesson #72)."
+  },
+  {
+   "date": "2026-10-18",
+   "fact": "WSJ reported that Putin proposed a Trump-Putin-Xi meeting on ending the Ukraine war, raised on the Oct 9 call and floated alongside the APEC summit in Shenzhen on Nov 18-19; a senior US official said Trump has not agreed but may be receptive, and the Kremlin called the meeting hypothetical.",
+   "source": "WSJ (via The Star, Pravda, Novaya Gazeta)",
+   "confidence": "plan-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "A summit proposal is not a peace agreement; Ukraine not represented"
+    },
+    {
+     "node": "managed-bipolarity",
+     "ledger": null,
+     "relation": "context",
+     "note": "Great-power bargaining format, weak evidence for the 2030 state"
+    },
+    {
+     "node": "fragmented-blocs",
+     "ledger": null,
+     "relation": "context",
+     "note": "Moscow reportedly told Beijing it would not object"
+    }
+   ],
+   "note": "PLAN only: nothing scheduled. See new node ev-trump-putin-meeting."
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "Russian drone strikes on Oct 1-2 closed or restricted three of Kyiv's six Dnipro road bridges (Southern Bridge shut both ways, Metro and Paton bridges restricted), BBC Ukrainian reporting these as the first strikes on the Dnipro bridges since the invasion; the Northern Bridge was hit around Oct 3 and traffic was restored by midday Oct 2. Russia's Defense Ministry said the bridges support Ukrainian troop logistics.",
+   "source": "Reuters, AP, Kyiv Independent, Euronews",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "supports",
+     "note": "Escalation of the air campaign against the capital"
+    },
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "New target set (bridges), not covered by any tree node"
+    }
+   ],
+   "note": "Reports differ on whether the Northern Bridge strike was Oct 3."
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "A Turkish-owned cargo ship carrying corn was hit by a drone and sank off the Romanian coast on Oct 5 (2 dead, 11 rescued); on Oct 6 drones sank a merchant ship off Bulgaria (reports differ on 11 vs 12 missing). A NATO military source told Reuters Russian drones hit two tankers.",
+   "source": "PBS/AP, Al Jazeera, Reuters (via web)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 40,
+     "relation": "context",
+     "note": "Hybrid attacks inside NATO-member waters; far from a state-of-war declaration"
+    },
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Black Sea shipping risk adds to the Europe energy squeeze"
+    }
+   ],
+   "note": "Attribution is contested (Romania's president named no origin). Feed items #58, #216 carry the Bulgaria story."
+  },
+  {
+   "date": "2026-10-13",
+   "fact": "On Oct 13 drones hit the Ukrainian-owned Chelsea 3 (Maltese flag) 18 nm off Bulgaria (15 crew rescued) and sank a second cargo ship; Bulgarian PM Radev said the outcome 'benefits the Russian Federation' but gave no proof of origin. On Oct 15 a drone struck the San Marino-flagged chemical tanker Wine Trader about 13 nm SE of Sulina, Romania (5 rescued, 7 missing). Romanian F-16s shot down two drones over Romanian territorial waters on a Saturday (the report is ambiguous on which).",
+   "source": "Al Jazeera, AP/PBS",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 40,
+     "relation": "context",
+     "note": "Second wave of attacks in NATO-member waters within 10 days"
+    },
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Frames the Black Sea as a live NATO-border risk"
+    }
+   ],
+   "note": "Radev also hedged that the drones were 'either Russian or Ukrainian'. Vessel names for the second Oct 13 sinking differ by outlet (HS Dignity vs Azov Concord)."
+  },
+  {
+   "date": "2026-10-06",
+   "fact": "A Liberia-flagged Aframax tanker (reported as Aframax Rio) carrying crude caught fire off Sochi after a naval-drone strike; all 23 Indian crew were rescued and India condemned the attack. Russia's Transport Ministry said naval drones hit it; Russian officials did not name the attacker, and the Ukrainian attribution comes from the feed headlines.",
+   "source": "Gulf News, Channel 4, Militarnyi",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "ru-tanker-replacement-locked",
+     "ledger": null,
+     "relation": "context",
+     "note": "Attrition on the sanctioned-trade tanker fleet"
+    },
+    {
+     "node": "in-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "23 Indian seafarers aboard; Delhi diplomatic reaction"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Russian export-route risk"
+    }
+   ],
+   "note": "One report says the ship was on Ukraine's own sanctions list since Feb 12, 2026."
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "The US Treasury removed Jorge Rodriguez, president of Venezuela's National Assembly and brother of acting president Delcy Rodriguez, from its sanctions list without giving a reason; Delcy Rodriguez herself had been delisted in April 2026.",
+   "source": "Al Jazeera, MercoPress",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "US-Venezuela normalisation track; no latam node covers it"
+    }
+   ],
+   "note": "Feed items #40, #94, #95 are this same action (one described as the 'brother of Delcy'). Wikipedia's Cuba page says US forces ousted Maduro on 3 Jan 2026; I did not verify that beyond that page."
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "The US and Denmark signed an agreement at the UN General Assembly amending the 1951 defense pact: the US may establish additional Defence Areas at Narsarsuaq and Mestersvig in Greenland, Denmark keeps sovereignty, and Denmark says Arctic security falls under NATO.",
+   "source": "ITV, OPB, Defense News",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Transatlantic security arrangement; no Europe node covers Greenland"
+    },
+    {
+     "node": "fragmented-blocs",
+     "ledger": null,
+     "relation": "context",
+     "note": "Alliance friction resolved by a deal rather than an exit"
+    }
+   ],
+   "note": "Full text unpublished; Greenlanders poll overwhelmingly against. An anonymous US official said non-NATO bases are banned."
+  },
+  {
+   "date": "2026-09-26",
+   "fact": "Beijing said China and the US agreed during Xi's Washington visit to a reciprocal tariff cut on about $30 billion of non-sensitive goods in each direction, an AI-risk dialogue (next round set for November) with an incident channel, and a trade council; Treasury Secretary Bessent said the trade truce due to expire Nov 10 would be extended by two months.",
+   "source": "Reuters, CNBC (feed); White House fact points via The Star",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "cn-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "US-China thaw affects export-controls and tariffs path"
+    },
+    {
+     "node": "cn-rare-earth-controls",
+     "ledger": null,
+     "relation": "context",
+     "note": "Truce extension lowers near-term odds of new mineral controls"
+    },
+    {
+     "node": "semicap-controls",
+     "ledger": null,
+     "relation": "context",
+     "note": "Same truce logic for chip-tool controls"
+    },
+    {
+     "node": "taiwan-watch",
+     "ledger": null,
+     "relation": "context",
+     "note": "Summit diplomacy coincides with the Taiwan arms package pause"
+    }
+   ],
+   "note": "Reuters called the summit personal diplomacy rather than a big breakthrough. Date is the Beijing readout; Xi arrived about Sep 23."
+  },
+  {
+   "date": "2026-10-12",
+   "fact": "China sanctioned Paraguay's Communications Minister Gustavo Villate and Belize's Foreign Minister Francis Fonseca, freezing assets in China and barring entry (including Hong Kong and Macau), over contacts with Taiwan; Beijing called it a warning to others, and Reuters called the measure largely symbolic.",
+   "source": "Al Jazeera, Reuters",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "taiwan-watch",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Coercion stays non-kinetic"
+    },
+    {
+     "node": null,
+     "ledger": 53,
+     "relation": "supports",
+     "note": "No PLA kinetic action; pressure via sanctions and diplomacy"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "Taiwan received its first two new-build F-16 Block 70 jets (of 66 in a roughly $8 billion programme) at Chihhang air base; Reuters-sourced reports add that Washington has yet to approve a separate $14 billion arms package that Trump paused after Chinese objections.",
+   "source": "Focus Taiwan, The Aviationist, Star-Advertiser",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "taiwan-watch",
+     "ledger": null,
+     "relation": "context",
+     "note": "Deterrence hardware arriving; low-probability kinetic row unaffected"
+    },
+    {
+     "node": "taiwan-deterred",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Capability build-up"
+    },
+    {
+     "node": null,
+     "ledger": 42,
+     "relation": "context",
+     "note": "No invasion path visible"
+    }
+   ],
+   "note": "Naming differs (F-16V vs F-16C Block 70)."
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "Four Reuters sources said major Chinese refiners were not given approval to export diesel, gasoline or jet fuel in October to markets outside Hong Kong and Macau; Singapore diesel rose about 5% in following days, and a later report (Oct 9, single source) says China will resume exports of about 3.7 million tonnes in October.",
+   "source": "Reuters (via Oman Observer, Nation Thailand); IDN Financials",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Asian product tightness"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Non-Iran supply response"
+    }
+   ],
+   "note": "Beijing first restricted fuel exports in March and eased in July, per the reports; the Oct 9 reversal is single-sourced."
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "The G7 agreed to release 100 million barrels of oil and diesel from emergency reserves over four months (per Macron, front-loaded diesel in the first 20 days), and on Oct 16 the IEA agreed to speed release of over 20 million barrels of diesel plus remaining March-release oil; an analyst called the diesel volumes an acceleration of existing commitments.",
+   "source": "AP via Star-Advertiser, Al Jazeera, Mining Weekly",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "spr-refill",
+     "ledger": null,
+     "relation": "context",
+     "note": "Emergency draws lower stock levels"
+    },
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "context",
+     "note": "Supply relief aimed at diesel, size disputed"
+    }
+   ],
+   "note": "Sources differ on how firm the European commitment was on Oct 2; the 100-million figure is a headline number."
+  },
+  {
+   "date": "2026-10-16",
+   "fact": "Oil touched $110 a barrel for the first time since May on Middle East and Russia supply fears.",
+   "source": "Reuters/AP (6 outlets in feed)",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 83,
+     "relation": "context",
+     "note": "STATE.md puts Brent at 113.2 on 10/22, about 10% under the $125 ceiling"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": null,
+     "relation": "context",
+     "note": "Same quantity as #83"
+    }
+   ],
+   "note": "Not independently verified on the web; the figure is the feed headline."
+  },
+  {
+   "date": "2026-10-15",
+   "fact": "Reuters reported the administration is weighing easing sanctions on shadow-fleet tankers so previously sanctioned vessels could carry 'legal oil' (not sanctioned Russian or Iranian oil) with Treasury authorisation, to cut record freight rates; Energy Secretary Wright confirmed it is under consideration.",
+   "source": "Reuters (via Meduza, Pravda, investingLive)",
+   "confidence": "plan-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Freight-cost relief channel"
+    },
+    {
+     "node": "ru-tanker-replacement-locked",
+     "ledger": null,
+     "relation": "context",
+     "note": "Sanctioned tanker fleet treatment"
+    }
+   ],
+   "note": "PLAN only. Reuters could not obtain Wright's full video."
+  },
+  {
+   "date": "2026-01-29",
+   "fact": "Executive Order 14380 (signed Jan 29, effective Jan 30) declared a national emergency and authorised additional tariffs on imports from countries that directly or indirectly supply oil to Cuba; the fuel blockade dates from Jan 3 when Venezuelan oil to Cuba was cut off after Maduro's removal. The US has since blocked tankers headed to Cuba. The measure is a tariff-threat plus interdiction blockade, not a declared naval blockade.",
+   "source": "Wikipedia '2026 Cuban crisis' (citing NYT)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 5,
+     "relation": "context",
+     "note": "Cuba is a Russian-staging question; this is the US pressure side"
+    },
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Latin America lane has no Cuba node"
+    }
+   ],
+   "note": "Only a Wikipedia page read, whose visible dated events end in June; treat as single-source background. It also says Mexico halted oil shipments to Cuba on Jan 27, a Russian tanker with 100,000 tonnes arrived Mar 30, and Cuba's grid collapsed nationwide Mar 16."
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "OFAC tightened Cuba sanctions: it barred indirect financial dealings with sanctioned Cuban entities (security apparatus, GAESA), revoked the 2024 general license letting US banks process certain Cuba dollar payments, withdrew authorisation for US banks to hold accounts for Cuban independent entrepreneurs, and required permission for cultural-exchange and conference trips. A Sep 3 round hit Fidel Ernesto Castro and state fuel importer Abapet.",
+   "source": "AFP (via Jamaica Observer), TASS, Report.az",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 5,
+     "relation": "context",
+     "note": "Hardening US posture on Cuba"
+    },
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Cuba/Venezuela US posture has no node"
+    }
+   ],
+   "note": "I did not check OFAC's own notice. The same source says the embargo was extended to Sep 14, 2027."
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "The US Coast Guard said it intercepted the Cuba-bound cargo ship Grace, which it said used dark-fleet tactics and carried fuel in ballast tanks and containers; a boarding team escorted it to Mexico. On Oct 12 Reuters reported the US said it seized 90 shipments of biodiesel (about $3 million) under contracts tied to sanctioned Cuban energy trader ENETEC, which Cuba denied. Havana says it has contacts with Washington but no formal negotiations, and expects the UNGA embargo vote on Oct 27-28.",
+   "source": "Reuters (via Internazionale, Star), Good Morning America",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 5,
+     "relation": "context",
+     "note": "Interdiction at sea in the Caribbean"
+    },
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "No latam node covers it"
+    }
+   ],
+   "note": "One summary gives the stop date as Sep 5 versus the Oct 2 announcement; the vote date comes from Cuban-sourced outlets."
+  },
+  {
+   "date": "2026-10-20",
+   "fact": "Feed items from The Times of India and BSS say the US allowed Canadian miner Sherritt to deliver fuel to Cuba.",
+   "source": "The Times of India, BSS (feed)",
+   "confidence": "feed-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Possible carve-out in the fuel blockade"
+    }
+   ],
+   "note": "NOT VERIFIED: web searches found no report of a US permission for Sherritt. What I found instead: Sherritt cut Moa operations in Feb, suspended direct participation in its Moa and Energas joint ventures on May 7 after a May 1 US executive order expanded sanctions, and ran out of Alberta refinery feed on June 22. Whether the Oct 20 headline is a license, a one-off delivery authorisation or something else is unknown."
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "The US designated the entire International Criminal Court on the SDN list hours after former ICC judge Navi Pillay won the Nobel Peace Prize, with a six-month initial grace period and exemptions for telecoms, software, pensions and detainee-related transactions; the court urged its 125 member states to respond. Earlier sanctions had targeted individual officials.",
+   "source": "Reuters (via ARY, Khaleej Times), Bloomberg Law",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "ru-icc-warrants-no-expiry",
+     "ledger": null,
+     "relation": "context",
+     "note": "Warrants remain legally in force; ICC finances now under US pressure"
+    }
+   ],
+   "note": "Nobel/ICC link is as reported."
+  },
+  {
+   "date": "2026-10-03",
+   "fact": "In Latvia's Oct 3 parliamentary election Andris Kulbergs' United List won first place with about 35.8% and 41 of 100 seats; Prime Minister Silina's New Unity fell to about 6.5% and 7 seats; turnout was about 51.8%. Post-election coalition not confirmed in the results I found.",
+   "source": "Wikipedia, KAS",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Baltic pro-Ukraine government continuity question"
+    },
+    {
+     "node": "ukraine-tranche",
+     "ledger": null,
+     "relation": "context",
+     "note": "Latvian coalition stance on Ukraine aid"
+    }
+   ],
+   "note": "Feed (Oct 4, 2 outlets) says the Latvian PM is on track to lead a pro-Ukraine coalition. Figures from Wikipedia and KAS differ slightly (35.8% vs 35.3%)."
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "Estonia said an August 14-15 arson at a Tallinn building used by defense firm Milrem Robotics (maker of unmanned ground vehicles used by Ukraine) was sabotage ordered by Russian special services, based on KAPO findings; Estonia summoned the Russian ambassador and said the perpetrators were caught, while the Kremlin called the claim baseless.",
+   "source": "Reuters (via The Star), Al Jazeera",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 40,
+     "relation": "context",
+     "note": "Russian hybrid action against a NATO member"
+    },
+    {
+     "node": "eu-defence-spending",
+     "ledger": null,
+     "relation": "context",
+     "note": "Security-threat narrative behind NATO spending"
+    }
+   ],
+   "note": "Estonia did not publish its evidence."
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "President Zelensky said Ukraine used the FP-7 tactical ballistic missile (Fire Point) in combat for the first time; target, location and outcome were not given, and range estimates conflict (about 200 vs 250 km).",
+   "source": "Reuters, Defense News",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Ukrainian long-range strike capacity growing"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "Trump and Zelensky met on the UNGA sidelines in New York (about 40 minutes by one account); no formal agreement was reported, Zelensky said he hoped the war ends before winter, and an energy truce was discussed.",
+   "source": "Meduza, Good Morning America, SCMP",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "No agreement from the meeting"
+    }
+   ],
+   "note": "Outlets disagree on meeting length (7 vs 40 minutes; 7 minutes was likely the open press portion)."
+  },
+  {
+   "date": "2026-09-23",
+   "fact": "Rubio said the US had invited Putin to the G20 leaders' summit in Miami in December, after meeting Lavrov at the UNGA; the Kremlin said it would consider the invitation and Bloomberg reported Putin is likely to skip. Sources give conflicting dates (Dec 14-15 vs Dec 20).",
+   "source": "Colorado Politics/Reuters, Meduza, Al Jazeera",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "Diplomatic channel, not an agreement"
+    },
+    {
+     "node": "managed-bipolarity",
+     "ledger": null,
+     "relation": "context",
+     "note": "Great-power summit track"
+    }
+   ],
+   "note": "Putin's attendance is a plan, not a fact."
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "EnergyNow carried a headline that oil gained nearly 3% after an 'abrupt end to Russia-Ukraine talks'.",
+   "source": "EnergyNow (feed)",
+   "confidence": "feed-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "Consistent with no deal"
+    },
+    {
+     "node": null,
+     "ledger": 112,
+     "relation": "context",
+     "note": "No mandate in sight"
+    }
+   ],
+   "note": "NOT VERIFIED: web search found no report of talks ending on Oct 1; another report says trilateral contacts had been stalled since February with a Kremlin 'situational pause' tied to the Iran war. Possibly a misdated or minor item."
+  },
+  {
+   "date": "2026-08-22",
+   "fact": "The US put 50% tariffs on about $20 billion of Canadian goods under Section 338 of the Tariff Act of 1930 (first time a president expressly cited it), effective Aug 22; Canada retaliated dollar for dollar from Sep 8 (C$27.6 billion of US goods), and the US announced import bans on certain Canadian goods effective Sep 29 and moves to cut Canadian firms' access to US government procurement.",
+   "source": "CRS (Sep 14), Davis Wright Tremaine, Mondaq",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "tariff-legal-challenge",
+     "ledger": null,
+     "relation": "supports",
+     "note": "A novel statutory basis now in use raises the odds of a merits ruling on tariff authority"
+    }
+   ],
+   "note": "Predates the feed window, but the feed (Sep 21, Oct 2, Oct 9) shows it still driving Canadian data. Legality is debated."
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "Trump said the South Korea trade deal includes an $8.4 billion US enhanced oil recovery project; a South Korean industry ministry official said the strategic investments are limited to those in the joint fact sheet and the oil recovery project is not among them.",
+   "source": "Reuters, Korea Times",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "jk-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "US-Korea investment friction"
+    }
+   ],
+   "note": "Feed also shows a first Korea-US finance-and-monetary '2+2' meeting on Oct 16; feed-only."
+  },
+  {
+   "date": "2026-10-12",
+   "fact": "EU gas storage was about 74% full on Oct 12, 14.9 percentage points below the five-year average for the date and the lowest for that date since GIE records began in 2011 (83.2% a year earlier); the Commission is reportedly prepared to lower the 90% fill target to 80% (unconfirmed). BofA (feed Oct 12) warned of a 30% Q4 gas-price rise.",
+   "source": "TASS from GIE data; S&P Global",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "eu-gas-storage",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "Weak start for the 2026-27 winter; row threshold is 25% on Apr 1 2027"
+    },
+    {
+     "node": null,
+     "ledger": 105,
+     "relation": "contradicts",
+     "note": "Same threshold"
+    },
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Fiscal-and-energy squeeze"
+    }
+   ],
+   "note": "Figures are TASS calculations from GIE data; I did not open AGSI itself."
+  },
+  {
+   "date": "2026-09-21",
+   "fact": "A feed item says Hungary asked the US to waive tariffs over its Russian oil purchases; Hungary's earlier one-year US exemption for Russian oil and gas was reported in November 2025.",
+   "source": "Feed (2 outlets)",
+   "confidence": "feed-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "EU member dependent on Russian energy asks for US relief"
+    }
+   ],
+   "note": "NOT VERIFIED beyond the headline: a web search found only the Nov 2025 exemption coverage. Expiry of that one-year exemption around Nov 2026 is my arithmetic, not a reported fact."
+  },
+  {
+   "date": "2026-10-17",
+   "fact": "Kpler expects India's Russian crude imports to hold at about 1.8-1.9 million bpd in October after the sanctions waiver; the waiver also benefits other buyers such as China.",
+   "source": "Swarajya, Outlook India",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "in-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Indian energy security exposure to Russian crude"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Russian crude keeps flowing"
+    }
+   ],
+   "note": "Conflict: feed item #89 (Oct 8) says Russian oil flows to India plunged to 310,000 bpd; I could not reconcile it (different measure or period). Treat the level as uncertain."
+  }
+ ],
+ "new_nodes": [
+  {
+   "id": "ev-ru-waiver-reimposed",
+   "parent": "ru-anchor",
+   "label": "At least one of the Graham-Act Russia tariffs or sanctions waived on 2026-10-16 takes effect, or the waiver is revoked, by 2026-12-31",
+   "p": 0.2,
+   "date": "2026-12-31",
+   "lane": "russia-ukraine",
+   "row_class": "direction",
+   "horizon": "10 weeks",
+   "basis": "Outside view: an open-ended, revocable executive waiver granted for fuel-price reasons tends to persist while the price pressure persists; Rubio's 60-day review frames reconsideration but sets no commitment.",
+   "rationale": "The waiver has no end date and is revocable at will by the President or Secretary of State; Rubio called it a review of up to 60 days after the Oct 16 order and cited Iran-war energy prices. Brent was about 113 on 10/22. The SOFT part is political: a Ukraine-side shock or Congressional pressure could flip it faster, and Trump has reversed himself on Russia before.",
+   "market": "Settle from Federal Register, OFAC or whitehouse.gov text; no tradable market.",
+   "evidence": [
+    {
+     "fact": "Trump waived most Russia provisions of the Graham Act via executive order on Oct 16",
+     "reported": "2026-10-17"
+    },
+    {
+     "fact": "Rubio said Trump will take up to 60 days to weigh the economic impact",
+     "reported": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "id": "ev-energy-truce-confirmed",
+   "parent": "ru-anchor",
+   "label": "Moscow and Kyiv both publicly confirm a bilateral energy-infrastructure ceasefire that is in force by 2026-12-15",
+   "p": 0.2,
+   "date": "2026-12-15",
+   "lane": "russia-ukraine",
+   "row_class": "direction",
+   "horizon": "7 weeks",
+   "basis": "Outside view: two Trump-announced energy truces (mid-September, Oct 11) were not confirmed by both sides, so a third announcement needs bilateral confirmation to count.",
+   "rationale": "Zelensky says Ukraine would stop refinery strikes only as part of mutual de-escalation, and Russia kept striking energy sites on Oct 12 after the announcement; Trump is pressing Kyiv on diesel prices before the midterms. The SOFT part is that confirmation could come cheaply as a short, loosely worded pause, and 'in force' will be argued about.",
+   "market": "Settle from Kremlin and Ukrainian presidency statements; oil fell on the Oct 11 headline.",
+   "evidence": [
+    {
+     "fact": "Trump announced an energy ceasefire on Oct 11; Zelensky said Russia struck Kharkiv energy sites on Oct 12",
+     "reported": "2026-10-12"
+    },
+    {
+     "fact": "Zelensky offered elections if Russia agrees to a 60-day ceasefire",
+     "reported": "2026-10-10"
+    }
+   ]
+  },
+  {
+   "id": "ev-trump-putin-meeting",
+   "parent": "ru-anchor",
+   "label": "Trump and Putin meet in person (any venue) by 2026-12-31",
+   "p": 0.15,
+   "date": "2026-12-31",
+   "lane": "russia-ukraine",
+   "row_class": "marker",
+   "horizon": "10 weeks",
+   "basis": "Outside view: reporting says Trump and Putin last met in person in Anchorage in August 2025, so one meeting in about 14 months implies a low rate for a 10-week window.",
+   "rationale": "Two live pathways: Putin's proposed trilateral with Xi at APEC Shenzhen (Nov 18-19) and the G20 in Miami in December, where Putin has been invited but Bloomberg says he is likely to skip. The SOFT part is that Trump has not accepted the trilateral and attendance by either leader is undeclared.",
+   "market": "Settle from Kremlin or White House readouts; no tradable market.",
+   "evidence": [
+    {
+     "fact": "WSJ: Putin proposed a trilateral with Trump and Xi; Trump has not agreed",
+     "reported": "2026-10-19"
+    },
+    {
+     "fact": "US invited Putin to the G20 summit in Miami in December",
+     "reported": "2026-09-23"
+    }
+   ]
+  },
+  {
+   "id": "ev-cuba-unga-vote",
+   "parent": "em-anchor",
+   "label": "UN General Assembly adopts the annual resolution urging an end to the US embargo on Cuba with at least 150 votes in favour",
+   "p": 0.78,
+   "date": "2026-10-28",
+   "lane": "latam-emerging",
+   "row_class": "scheduled",
+   "horizon": "6 days",
+   "basis": "Published UNGA agenda: the item is taken up every year and the Cuban foreign minister said the vote is set for Oct 27-28; last year's vote had 165 states in favour.",
+   "rationale": "The annual embargo resolution has been the standard autumn item; 165 states voted yes in 2025. The SOFT part is the 150 threshold: US lobbying and the 2026 escalation (fuel blockade, tariff threats on oil suppliers) could peel off votes or add abstentions, and the date comes from Cuban-sourced outlets.",
+   "market": "Settle from the UN press release or UN Digital Library recorded vote.",
+   "evidence": [
+    {
+     "fact": "Cuba's foreign minister said the UNGA votes on Oct 27-28; 165 members supported the resolution last year",
+     "reported": "2026-10-22"
+    }
+   ]
+  },
+  {
+   "id": "ev-black-sea-vessel-strike",
+   "parent": "ru-anchor",
+   "label": "Another merchant vessel is reported struck by a drone in Romanian or Bulgarian territorial waters or EEZ between 2026-10-23 and 2026-11-30",
+   "p": 0.69,
+   "date": "2026-11-30",
+   "lane": "russia-ukraine",
+   "row_class": "marker",
+   "horizon": "5 weeks",
+   "basis": "Outside view: four such incidents in the 11 days from Oct 5 to Oct 15 (Romania Oct 5, Bulgaria Oct 6 and 13, Romania Oct 15) put the recent rate well above one per 5 weeks.",
+   "rationale": "The pattern is a hot tempo near NATO-member coasts with both sides running drones, and Turkey says attacks are rising ahead of winter. The SOFT part is regime change: a Black Sea or energy truce, a pause after Romanian F-16 interceptions, or attribution wrangling over what counts as 'in waters' could stop reports.",
+   "market": "Settle from Romanian Naval Authority, Bulgarian government or Reuters/AP reports.",
+   "evidence": [
+    {
+     "fact": "Wine Trader tanker struck 13 nm SE of Sulina, Romania; 7 missing",
+     "reported": "2026-10-15"
+    },
+    {
+     "fact": "Second Bulgarian incident Oct 13: Chelsea 3 hit and another ship sank",
+     "reported": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "ev-eu-gas-nov1",
+   "parent": "eu-gas-storage",
+   "label": "EU aggregate gas storage on gas day 2026-11-01 is below 80% of working gas volume (GIE AGSI+)",
+   "p": 0.8,
+   "date": "2026-11-01",
+   "lane": "europe",
+   "row_class": "scheduled",
+   "horizon": "10 days",
+   "basis": "Arithmetic: storage rose from about 71.5% on Sep 29 to about 74% on Oct 12 (about 0.2 pp/day, decelerating seasonally); reaching 80% by Nov 1 needs about 0.3 pp/day for 20 days.",
+   "rationale": "AGSI+ publishes a daily value, so this is settled by a published series; the trend gap is 6 points in 20 days against a 0.2 pp/day pace. The SOFT part is that my inputs are TASS calculations from GIE data rather than AGSI itself, and a late LNG surge could speed injections.",
+   "market": "Settle from GIE AGSI+ for gas day 2026-11-01.",
+   "evidence": [
+    {
+     "fact": "EU storage about 74% full on Oct 12, 14.9 pp below five-year average",
+     "reported": "2026-10-12"
+    },
+    {
+     "fact": "EU storage 71.54% on Sep 29",
+     "reported": "2026-09-29"
+    }
+   ]
+  },
+  {
+   "id": "ev-venezuela-delisting",
+   "parent": "em-anchor",
+   "label": "OFAC removes at least one further Venezuelan person or entity from the SDN list between 2026-10-23 and 2026-12-31",
+   "p": 0.4,
+   "date": "2026-12-31",
+   "lane": "latam-emerging",
+   "row_class": "marker",
+   "horizon": "10 weeks",
+   "basis": "Outside view: two high-profile delistings in about 6.5 months (Delcy Rodriguez Apr 1, Jorge Rodriguez Oct 14) suggest a few per year, and this window is 10 weeks.",
+   "rationale": "US-Venezuela energy agreements and oil recovery are on a normalisation track (rigs arriving, foreign firms returning per feed), and Treasury gave no reason for the Oct 14 move. The SOFT part is that I only know of two delistings and may be undercounting, and a reversal of the track would stop them.",
+   "market": "Settle from OFAC Recent Actions page.",
+   "evidence": [
+    {
+     "fact": "Treasury delisted Jorge Rodriguez, National Assembly president",
+     "reported": "2026-10-14"
+    },
+    {
+     "fact": "Treasury delisted acting president Delcy Rodriguez",
+     "reported": "2026-04-01"
+    }
+   ]
+  },
+  {
+   "id": "ev-apec-shenzhen",
+   "parent": "now",
+   "label": "APEC Economic Leaders' Meeting convenes in Shenzhen on 18-19 November 2026",
+   "p": 0.92,
+   "date": "2026-11-19",
+   "lane": "world-order",
+   "row_class": "scheduled",
+   "horizon": "4 weeks",
+   "basis": "Published host schedule: China hosts APEC in 2026 and the Nov 18-19 Shenzhen dates are quoted in the Kremlin's reported summit suggestion.",
+   "rationale": "A fixed-calendar leaders' event with a named venue; it matters because the Kremlin floated a Trump-Putin-Xi meeting alongside it. The SOFT part is that I took the dates from press reports of the proposal rather than apec.org, and a postponement for security or health reasons is possible.",
+   "market": "Settle from apec.org or leader readouts.",
+   "evidence": [
+    {
+     "fact": "Kremlin suggested holding a trilateral alongside APEC in Shenzhen on Nov 18-19",
+     "reported": "2026-10-19"
+    }
+   ]
+  },
+  {
+   "id": "ev-us-china-ai-talks",
+   "parent": "cn-anchor",
+   "label": "A second round of US-China government talks on AI risks is publicly confirmed as held by 2026-11-30",
+   "p": 0.5,
+   "date": "2026-11-30",
+   "lane": "china-macro",
+   "row_class": "marker",
+   "horizon": "5 weeks",
+   "basis": "Outside view: follow-up working-level meetings named in a leader-summit readout usually happen but often slip past the first announced month.",
+   "rationale": "Beijing said the next AI round is set for November and an incident channel was agreed at Xi's Washington visit. The SOFT part is that only the Chinese readout was seen, no date or venue was given, and the Nov 10 truce expiry (extended two months per Bessent) and the Taiwan arms pause could delay it.",
+   "market": "Settle from MFA, State Department or White House readouts.",
+   "evidence": [
+    {
+     "fact": "China and US agree to an AI dialogue with the next round in November",
+     "reported": "2026-09-26"
+    }
+   ]
+  },
+  {
+   "id": "ev-taiwan-arms-14b",
+   "parent": "taiwan-watch",
+   "label": "The US formally notifies Congress of the roughly $14 billion Taiwan arms package that Trump paused, by 2026-12-31",
+   "p": 0.15,
+   "date": "2026-12-31",
+   "lane": "taiwan-china",
+   "row_class": "marker",
+   "horizon": "10 weeks",
+   "basis": "Outside view: the package has been pending for months; Trump called Taiwan arms sales a 'good negotiating chip' after the May Beijing summit and paused it after Chinese objections.",
+   "rationale": "Reuters-sourced reports on Oct 2 say Washington has not approved the package; Xi's September US visit and the trade truce extension both raise the cost of notification. The SOFT part is that a stalled summit track or a Chinese move against Taiwan could flip the decision quickly.",
+   "market": "Settle from DSCA major arms sales notifications.",
+   "evidence": [
+    {
+     "fact": "Taiwan awaits approval of the $14B package that Trump paused after Chinese objections",
+     "reported": "2026-10-02"
+    }
+   ]
+  }
+ ],
+ "suggest_reprice": [
+  {
+   "node": "eu-gas-storage",
+   "ledger": null,
+   "from": 0.72,
+   "to": 0.62,
+   "reason": "2026-10-12: EU storage ~74% full, 14.9 pp below the 5-year average and the lowest for the date since 2011 (TASS from GIE data, AGSI not opened); Commission reportedly mulling a lower fill target; row threshold is >25% on Apr 1 2027, so a record-low start raises end-of-winter risk. Moderate confidence on the size of the move."
+  },
+  {
+   "node": null,
+   "ledger": 105,
+   "from": 0.72,
+   "to": 0.62,
+   "reason": "Same as eu-gas-storage: record-low autumn fill (74% on Oct 12, -14.9 pp vs 5-yr avg) and a Hormuz-disrupted LNG market make Apr-1 >25% less safe than priced on 10/03."
+  }
+ ],
+ "gaps": "No node in the tree covers US sanctions policy on Russia, the Cuba fuel blockade, Venezuela normalisation, Black Sea attacks on NATO-member waters, Greenland or the Canada tariffs, so most events here map only as context to anchors (ru-anchor, em-anchor, eu-anchor, es-anchor); the candidate list is also about 70% oil-price rewrites of the same Russia-waiver and diesel stories. Not verified: the Oct 1 'end of Russia-Ukraine talks' headline, the Oct 20 Sherritt fuel permission (no web trace; I could not tell whether it is a license), the Oct 8 'US and Russia discuss reviving Russian gas sales to Europe' item (the headline matches a May 2025 Reuters story, so it may be a mis-dated re-crawl), the EU 22nd sanctions package outcome (ambassadors were to try on Oct 7) and the Oct 8 India Russian-flows 310k bpd figure that conflicts with Kpler's 1.8-1.9M bpd. Asia coverage is thin: Japan/India/Korea candidates were mostly equity-flow and jobs stories, and I found no verified China property, deflation or export-control event in the 240."
+}

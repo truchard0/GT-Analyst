@@ -1,0 +1,833 @@
+{
+ "theme": "us_politics_legal",
+ "events": [
+  {
+   "date": "2026-09-02",
+   "fact": "Congress enacted the FY2027 continuing resolution (H.R. 6500, P.L. 119-103), funding all 12 regular appropriations areas at FY26 levels through 2026-12-11; the Senate passed it 90-6 and the House 370-48 (House vote 2026-09-01), so no lapse on 2026-10-01.",
+   "source": "CRS (congress.gov); AACOM; ASTHO; PGPF",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "cr-dec11",
+     "ledger": null,
+     "relation": "supports",
+     "note": "This is the instrument whose 12/11 expiry the node tracks."
+    },
+    {
+     "node": "shutdown-dec",
+     "ledger": 114,
+     "relation": "contradicts",
+     "note": "Lopsided bipartisan margins argue against a contested lapse at 12/12; but no regular bill is enacted so the cliff is real."
+    },
+    {
+     "node": null,
+     "ledger": 3,
+     "relation": "context",
+     "note": "CR holds FY26 levels, so no ~$1.5T Pentagon topline can arrive before 12/11."
+    }
+   ],
+   "note": "Signing date 9/2 per CRS and PGPF; one source says 9/3 and one says 10/2 (9/2 is better supported). Not among the 240 feed candidates: the feed missed the most important fiscal fact of the window."
+  },
+  {
+   "date": "2026-09-18",
+   "fact": "Senate appropriators had no topline deal between Collins and Murray and had passed none of the 12 FY2027 bills; House Appropriations reported all 12 and the full House passed 2 or 3 (sources differ). Lawmakers return in November with about five legislative weeks before the 12/11 CR expiry.",
+   "source": "Steptoe appropriations newsletter 2026-09-18; American Action Forum",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "shutdown-dec",
+     "ledger": 114,
+     "relation": "supports",
+     "note": "No Senate topline and no Senate bill passed is the raw material for another CR or a lapse."
+    },
+    {
+     "node": "cr-dec11",
+     "ledger": null,
+     "relation": "context",
+     "note": "Clock: 12/11 expiry; a lapse would begin 12/12."
+    }
+   ],
+   "note": "Latest status found is late September; nothing dated October found."
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "President Trump signed an executive order (reported as EO 14435, Emergency Tax Relief on Diesel Fuel) at a rally in Grand Island, Nebraska easing limits on tax-free red-dyed diesel for highway use and directing Treasury to defer the federal diesel excise tax through end-2026; diesel had hit a record $6.52/gal on 9/22 and was $6.37 on 10/2 (AAA).",
+   "source": "AP (via WBTV/Hawaii News Now); CNN; Holland & Knight",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "context",
+     "note": "Policy response to a wide diesel crack; it cuts tax, not supply."
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "Diesel spike follows the Iran war; the EO does not touch crude supply."
+    }
+   ],
+   "note": "On stage Trump said anyone could buy tax-free red diesel for any reason; the White House fact sheet was narrower, and fuel-industry groups say EPA/state dye rules are not waived. The feed's 'little relief' items are opinion. EO number is from one law-firm summary."
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "The IRS announced it will not penalize on-highway use or sale of dyed diesel, retroactive to 2026-10-01 and running through 2026-12-31, suspending collection and inspection of on-road dyed fuel for that period (federal tax only).",
+   "source": "Holland & Knight; CPA Practice Advisor",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "context",
+     "note": "Relief ends 12/31 unless extended."
+    }
+   ],
+   "note": "Seen only in two secondary summaries, not the IRS notice itself."
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "G7 leaders agreed to release 100 million barrels of oil, diesel first (frontloaded within about 20 days), coordinated through the IEA over roughly four months; the diesel/crude split was not specified.",
+   "source": "Al Jazeera; AP (via NewsChannel 9)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "Stock release is a supply offset that leans toward the lower half of the 85-125 band."
+    },
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "Diesel front-loading narrows the ULSD crack if delivered; the node needs the crack above $25 on every weekly close."
+    }
+   ],
+   "note": "Energy theme belongs to another agent; recorded because it came from Trump pressure and fed the diesel EO."
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "The Supreme Court on an emergency application let DHS use its expanded SAVE voter-eligibility system (Social Security records, bulk search; 67 million registrations scanned per court filings) while the government appeals Judge Sooknanan's June ruling; use is voluntary for states and the Court left open whether the 90-day pre-election removal bar covers alleged noncitizens.",
+   "source": "AP (via KMPH/WAFB)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "A federal data tool entering state rolls five weeks before the election is a federal-intervention datapoint."
+    },
+    {
+     "node": "election-instrument",
+     "ledger": null,
+     "relation": "context",
+     "note": "Follow-on to the DHS letters/funding-condition instrument logged 7/17."
+    }
+   ],
+   "note": "Interim order, not a merits ruling."
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "Judge Sooknanan (D.D.C., Common Cause v. DOJ) vacated DOJ's nationwide voter-list maintenance policy, finding DOJ exceeded its authority and violated privacy law, and barred use of state voter files incl. running them through SAVE; DOJ appealed and on 2026-10-16 moved for a stay pending appeal (DOJ argues there is no such policy).",
+   "source": "Democracy Docket; ACLU press release",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "Live DOJ-vs-states litigation weeks before the election."
+    },
+    {
+     "node": "contested-result",
+     "ledger": null,
+     "relation": "context",
+     "note": "Raises the litigation temperature; does not itself contest a result."
+    }
+   ],
+   "note": "Separate from the SAVE order of 9/25 (different case, same judge). No ruling on the stay motion found. Matches candidate 60."
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "A federal judge in Georgia dismissed DOJ's suit for state voter-registration data, one of a run of losses (D.C. in August, Wisconsin, New York) on the ground that the 1960 Civil Rights Act and related statutes do not let DOJ compel a voter list.",
+   "source": "Democracy Docket; Hoodline; ACLU",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "DOJ is suing states for voter files; the fight is already live."
+    },
+    {
+     "node": "election-instrument",
+     "ledger": null,
+     "relation": "context",
+     "note": "DOJ voter-file suits are the litigation arm of the instrument chain."
+    }
+   ],
+   "note": "Win-loss counts conflict across outlets (Democracy Docket 0-12 in 31 suits; Hoodline 0-26); not verified against dockets. Not in the feed candidates."
+  },
+  {
+   "date": "2026-08-17",
+   "fact": "DOJ Civil Rights chief Harmeet Dhillon said DOJ plans about 1,000 monitors at polling sites for the 2026-11-03 midterms (reportedly 289 in 2022 and 714 in 2024); plaintiffs including the NAACP sued for records on legal authority, training and locations, and DOJ had not published the jurisdiction list.",
+   "source": "Bloomberg interview (via Democracy Docket; NOTUS)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "Federal presence at the polls is a DOJ intervention datapoint."
+    },
+    {
+     "node": "contested-result",
+     "ledger": null,
+     "relation": "context",
+     "note": "Raises dispute surface, not a certification outcome."
+    }
+   ],
+   "note": "Outlets disagree on whether the NAACP suit seeks to block monitors or only records (described as FOIA); the 1,000 is a plan, not a deployment. Not in the 240 candidates; added from the theme brief."
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "In a unanimous unsigned order the Supreme Court held Missouri's 2022 congressional map governs the 2026 election, rejecting the 2025 GOP map (reported as the third time it blocked it); the Missouri Supreme Court had ruled 2026-09-03 that the 2025 map was suspended by a valid referendum petition and ordered the referendum (Proposition A) onto the 2026-11-03 ballot.",
+   "source": "AP (via KAXE); Missouri Independent; STLPR",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "context",
+     "note": "Redistricting litigation, not a certification fight."
+    },
+    {
+     "node": "divided-government",
+     "ledger": null,
+     "relation": "context",
+     "note": "Removes a Republican seat-gain path in Missouri for 2026."
+    }
+   ],
+   "note": "Outlets disagree on the 'third time' count."
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Reporting counted new US House district maps in 9 states for the midterms after Trump urged mid-decade redraws; an AP-style roundup lists 10 (8 GOP-favoring: TX, MO, NC, OH, FL, TN, LA, AL; 2 Democratic: CA, UT), but Missouri reverted to its 2022 map on 2026-09-25.",
+   "source": "Feed (7 outlets); AP-style roundup (undated)",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "divided-government",
+     "ledger": null,
+     "relation": "context",
+     "note": "Map changes move the House-control prior; recorded without a view."
+    },
+    {
+     "node": "midterm-fork",
+     "ledger": null,
+     "relation": "context",
+     "note": "Sets the seat arithmetic for the 11/4 control configuration."
+    }
+   ],
+   "note": "State counts conflict (9 vs 10) and the roundup is undated."
+  },
+  {
+   "date": "2026-04-29",
+   "fact": "Louisiana v. Callais (6-3): the Supreme Court struck down Louisiana's two-majority-Black-district map and narrowed Section 2 of the Voting Rights Act; feed stories dated 2026-09-27/28 ('new hurdle for Black voters', 'weaken Black voting power across the South') are re-runs of this.",
+   "source": "Faegre Drinker; National Constitution Center; ACS",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "Background for the redraws in LA/AL."
+    }
+   ],
+   "note": "Date is the decision date, not the feed date. Tree has no node on VRA/redistricting law: a gap."
+  },
+  {
+   "date": "2026-06-29",
+   "fact": "Watson v. RNC (5-4, Barrett): the Supreme Court held federal Election Day statutes do not bar counting mail ballots postmarked by Election Day that arrive up to five days later under Mississippi law.",
+   "source": "NOTUS; AP (via WAFB/KTTC)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "context",
+     "note": "Closes one route to disqualifying late-arriving ballots."
+    }
+   ],
+   "note": "Feed item 72 ('justices appear likely to set limits on mail-in ballots', first seen 10/3) is stale or a re-run; the ruling was in June."
+  },
+  {
+   "date": "2026-06-30",
+   "fact": "Trump v. Barbara: the Supreme Court struck down the 2025 birthright-citizenship order, most sources saying 6-3 (Roberts) and one saying 5-4; feed items dated 2026-10-02 ('rejects attempt to end birthright citizenship') are re-runs of this.",
+   "source": "PBS NewsHour; Al Jazeera; HSB Law",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [],
+   "note": "A 9/28 feed item about a NEW birthright-citizenship executive order and lawsuit (candidate 189, 3 outlets) was not confirmed on the web and is left out. No tree node covers immigration litigation: a gap."
+  },
+  {
+   "date": "2026-06-29",
+   "fact": "Trump v. Cook: the Supreme Court left in place the injunction blocking Trump from removing Fed Governor Lisa Cook while litigation continues (reported 5-4); it did not decide whether the president may remove her.",
+   "source": "TheGrio; Faegre Drinker; MLex",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "voter-rotation-2027",
+     "ledger": null,
+     "relation": "context",
+     "note": "Fed-governance clock; Cook's term runs to 2038."
+    }
+   ],
+   "note": "Vote split not checked against the opinion. Preceded by the June Trump v. Slaughter decision overturning Humphrey's Executor (per the Wilcox coverage). No tree node on Fed independence."
+  },
+  {
+   "date": "2026-10-19",
+   "fact": "The Supreme Court declined to hear former NLRB member Gwynne Wilcox's challenge to her firing, leaving the lower-court ruling that Trump's removal was valid; it follows the June decision in the Slaughter case that overturned Humphrey's Executor.",
+   "source": "Reuters (via The Daily Record); Devdiscourse",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "scotus-june-rulings",
+     "ledger": null,
+     "relation": "context",
+     "note": "Removal-power doctrine now settled for independent agencies."
+    }
+   ],
+   "note": "Candidate 33 (9 outlets)."
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "The Supreme Court let the administration resume third-country deportations without a chance to show fear of harm while the case proceeds, and set merits argument in DHS v. D.V.D. (No. 26-426); the Court's calendar amended 2026-10-01 lists argument on Wed 2026-12-09.",
+   "source": "The Week; SCOTUSblog; Supreme Court argument calendar",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "scotus-june-rulings",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Argued in the December sitting, so a decision is due by end of term."
+    }
+   ],
+   "note": "Interim order, not the merits. Candidates 64, 102, 151, 191, 193 are the same event."
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "The Supreme Court agreed to hear the challenge to the administration's mandatory-detention-without-bond policy (Rhoney v. Barbosa Da Cunha); argument is expected in early 2027 with a decision by late June.",
+   "source": "CNN (via KEYT/KRDO); The Star; Daily Record",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "scotus-june-rulings",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Another major immigration case due by the end of the term."
+    },
+    {
+     "node": "labor-force-immigration",
+     "ledger": null,
+     "relation": "context",
+     "note": "Enforcement posture feeds the net-migration path."
+    }
+   ],
+   "note": "Argument date not confirmed on the Court's calendar."
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "The Supreme Court's October Term 2026 opened; first-day arguments included Suncor Energy v. Boulder County (whether localities can sue oil companies for climate damages); the Court's published sittings run Oct 5-14, Nov 2-10 and Nov 30-Dec 9.",
+   "source": "Supreme Court argument calendars; Reuters (via Express Tribune); The Hill",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "scotus-term-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "The node's event occurred; the term is open."
+    }
+   ],
+   "note": "Feed item 88 says an AR-15 case was argued on opening day; no AR-15 case was found on the Court's October calendar, so it is not recorded."
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "Feed: Trump said he regrets nominating Justices Gorsuch, Kavanaugh and Barrett; the web shows he attacked Gorsuch and Barrett without naming them at a May GOP dinner. Alito told the WSJ in August he is here for another term, and the June term-end passed with no retirement announced.",
+   "source": "Feed (5 outlets incl. USA Today, Newsmax); Washington Examiner; Reuters (April)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 41,
+     "relation": "context",
+     "note": "No vacancy opened in 2026; a 4th appointment by mid-2028 needs a 2027 or 2028 retirement."
+    }
+   ],
+   "note": "Alito 'another term' quote relayed by the Washington Examiner, not read in the original. The feed headline's exact 10/1 wording was not verified on the web."
+  },
+  {
+   "date": "2026-02-20",
+   "fact": "The Supreme Court ruled 6-3 that IEEPA does not authorize the president's global tariffs (steel/aluminum and other sector duties unaffected); Trump responded with a 10% global tariff under Section 122 effective 2026-02-24 for 150 days.",
+   "source": "PBS NewsHour; ETV Bharat; WKAR",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "tariff-legal-challenge",
+     "ledger": null,
+     "relation": "context",
+     "note": "The Supreme Court merits ruling already happened in Feb; the node asks about an appellate ruling before end-2027."
+    }
+   ],
+   "note": "Day is inferred from page timestamps (text says 'February 2026'). The feed ranks this below diesel and NCAA noise."
+  },
+  {
+   "date": "2026-05-07",
+   "fact": "The Court of International Trade ruled 2-1 that the Section 122 surcharge exceeded presidential authority but limited relief to three named importers; the Federal Circuit stayed that injunction on 2026-06-11 saying the government is likely to succeed, so CBP kept collecting.",
+   "source": "Skadden; J.M. Rodgers Tariff Watch",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "tariff-legal-challenge",
+     "ledger": null,
+     "relation": "supports",
+     "note": "An appeal on tariff authority is pending at the Federal Circuit; a stay is not a merits ruling."
+    }
+   ],
+   "note": "Outcome of the appeal after the 7/24 expiry (mootness vs refunds) not found."
+  },
+  {
+   "date": "2026-07-24",
+   "fact": "Section 122 tariffs lapsed at 12:01 a.m. on 2026-07-24 at the 150-day limit; USTR (announced 7/23) replaced them with Section 301 'forced labor' duties of 10% or 12.5% on products from 60 economies, with Section 232 sector tariffs continuing.",
+   "source": "Morgan Lewis; STR Trade; Kroll; Allianz",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "tariff-legal-challenge",
+     "ledger": null,
+     "relation": "supports",
+     "note": "The new 301 base is a fresh legal target; nothing found yet on its challenge."
+    }
+   ],
+   "note": "Effective-rate figure (12.4%) is an Allianz July projection. A feed item dated 2026-10-11 ('Trump attacks Supreme Court tariff ruling', 11 outlets) was not corroborated for October and is left out."
+  },
+  {
+   "date": "2026-04-02",
+   "fact": "Trump ordered 100% tariffs on patented drugs from firms without a most-favored-nation pricing deal (0% for those with a deal and US plants, 20% rising to 100% in four years for builders without a deal, 15% cap for EU/Japan/Korea/Switzerland), phased in after 120 days for large firms and 180 days for others.",
+   "source": "ABC News (via ADN, WTOP)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "pharma-api",
+     "ledger": null,
+     "relation": "context",
+     "note": "Tariffed patented drugs, not generic injectables; low direct overlap."
+    }
+   ],
+   "note": "Feed item 150 ('Trump slaps 100% tariff on some pharmaceutical drugs', first seen 9/29) is a re-run of the April order. 4/2 + 180 days = 9/29, so the resurfacing is likely the end of the grace period: my inference, not a source's statement."
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "CMS cancelled about 315,000 ACA marketplace enrollments covering roughly 760,000 people over alleged fraud and began verifying about 419,000 more; the White House task force put savings near $2.2 billion; KFF said it bypassed the normal rulemaking process.",
+   "source": "Healio; ADN; Local10; WTTW",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [],
+   "note": "No tree node covers ACA or insurance coverage: a gap. Some outlets say 750,000 enrollees."
+  },
+  {
+   "date": "2026-10-19",
+   "fact": "Trump signed an executive order creating a women's health division at NIH (to be set up within 90 days) and a White House task force led by Susie Wiles and HHS Secretary Kennedy, and revoking Biden's March 2024 women's health order.",
+   "source": "Al Jazeera; Euronews; CBS News",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "nih-funding",
+     "ledger": null,
+     "relation": "context",
+     "note": "Reorganisation, no money attached."
+    }
+   ],
+   "note": "About 25 feed items (candidates 5, 7, 9, 16, 51, 79, 91, 97, 104, 133-135, 163, 238, 239) are this one event."
+  },
+  {
+   "date": "2026-09-21",
+   "fact": "Feed: Trump ordered a plan for a White House board to approve NIH grants, tightening control of the roughly $48 billion budget.",
+   "source": "Feed (4 outlets)",
+   "confidence": "plan-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "nih-funding",
+     "ledger": null,
+     "relation": "context",
+     "note": "Control over grants, not enacted appropriations."
+    }
+   ],
+   "note": "A plan to produce a plan, not an action (lesson #72). The event may be a day earlier than first seen."
+  },
+  {
+   "date": "2026-08-10",
+   "fact": "Trump signed an order to overhaul childhood vaccine recommendations (11 diseases versus 18 in current CDC guidance; split MMR into three shots), which sits atop a March 2026 injunction against the January CDC schedule changes; feed pushback stories date from 10/5.",
+   "source": "Healio; AMCP; Georgetown CCF",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [],
+   "note": "Experts say CDC/ACIP must still act; effect unclear."
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Freddie Mac's 30-year mortgage rate rose to 7.40% from 7.28%, the seventh weekly rise in a row and the highest since 2023-11-16 (7.44%).",
+   "source": "AP (via YourValley.net, Florida Realtors)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "pmms-above-65",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Print is about 90 bp above the 6.50% floor; about 10 weekly prints remain."
+    },
+    {
+     "node": "hsg-lockin-gap",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Wider gap between market rate and outstanding coupons."
+    }
+   ],
+   "note": "The 9/3 print was 6.71% (Freddie Mac), so rates rose about 70 bp in five weeks."
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "The Freddie Mac 30-year average eased to 7.32% in its first pullback since late August; the prior week held at 7.4%.",
+   "source": "Feed (5 outlets)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "pmms-above-65",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Still about 80 bp above 6.50%."
+    }
+   ],
+   "note": "From feed headlines; the weekly Freddie Mac release is not in the web index yet."
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "Feed headlines say Trump signed an executive order to reduce housing costs; contemporaneous reporting the same day (Semafor, HousingWire) describes a six-section DRAFT, still unsigned, covering easier cancellation of mortgage insurance, a manufactured-housing task force, refinancing without title insurance and lower USDA/VA loan rates. Two housing orders (EO 14393 and 14394) were signed 2026-03-13.",
+   "source": "Feed (4 outlets); Semafor; HousingWire",
+   "confidence": "plan-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "hsg-lockin-gap",
+     "ledger": null,
+     "relation": "context",
+     "note": "Mortgage-cost lever, no effect on outstanding coupons."
+    },
+    {
+     "node": "pmms-above-65",
+     "ledger": null,
+     "relation": "context",
+     "note": "An order cannot lower the PMMS print directly."
+    }
+   ],
+   "note": "Signing is NOT verified; recorded as plan-only until the order text or a fact sheet is found (lesson #72)."
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Trump said on social media the US 'will not be attacking Iran at any time prior to the Midterm Elections', saying talks with Tehran continue; a third carrier, USS Theodore Roosevelt, could arrive by the end of October.",
+   "source": "AP (via Fox 19/WBTV/KTTC)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "flip-b",
+     "ledger": 38,
+     "relation": "context",
+     "note": "Pledge covers strikes before 11/3; a ground invasion by 12/31 would need a post-election pivot."
+    },
+    {
+     "node": null,
+     "ledger": 36,
+     "relation": "context",
+     "note": "No change to the ground-troops-or-indemnity fork."
+    }
+   ],
+   "note": "A political pledge, not a binding action; Trump also hinted at full-scale resumption. The Iran-lane agent should own any repricing."
+  },
+  {
+   "date": "2026-10-07",
+   "fact": "Trump said the Federal Reserve Board would like to see the country do badly.",
+   "source": "Feed (6 outlets)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [],
+   "note": "Rhetoric, no action. Tree has no node for Fed independence: a gap."
+  },
+  {
+   "date": "2026-10-12",
+   "fact": "Elon Musk gave $276 million to Republican super PACs over three months for the midterms.",
+   "source": "Feed (6 outlets)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "divided-government",
+     "ledger": null,
+     "relation": "context",
+     "note": "Spending datapoint, no view."
+    }
+   ],
+   "note": "Figure and period from the feed headline only."
+  },
+  {
+   "date": "2026-10-21",
+   "fact": "Feed: the Supreme Court declined to let the administration enforce restrictions on gender-affirming care for transgender federal inmates, leaving the lower-court block in place.",
+   "source": "Feed (about 10 outlets across candidates 53, 92, 105)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [],
+   "note": "The web confirmed only the 9/28 emergency application (Trump v. Kingdom), not the ruling."
+  }
+ ],
+ "new_nodes": [
+  {
+   "id": "ev-midterm-election-day",
+   "parent": "midterms-2026",
+   "label": "The 2026 federal general election is held on Tuesday 2026-11-03",
+   "p": 0.99,
+   "date": "2026-11-03",
+   "lane": "us-politics",
+   "row_class": "invariant",
+   "horizon": "2 weeks",
+   "basis": "Statute: 2 U.S.C. 7 fixes the Tuesday after the first Monday in November as House election day, and that day in 2026 is November 3. A calendar rule, decided independent of any view on turnout or disputes.",
+   "rationale": "The tree prices the post-election fight (midterms-2026) but has no clock row for the election itself. This row only claims voting is held on the statutory date in the states. SOFT part: a local postponement (storm, litigation) in one jurisdiction, and whether a stranger counts a Louisiana-style runoff or late-counted ballots as 'held'; the 0.99 is for the statutory date, not for the count.",
+   "market": "Midterm-vol (VIXY term structure Oct-Nov) resolves on this date.",
+   "evidence": [
+    {
+     "fact": "Missouri Prop A and the Watson v. RNC late-ballot rule both key to the 2026-11-03 date",
+     "reported": "2026-09-25"
+    },
+    {
+     "fact": "DOJ plans about 1,000 monitors at polling sites for 2026-11-03",
+     "reported": "2026-08-17"
+    }
+   ]
+  },
+  {
+   "id": "ev-dvd-argued-dec9",
+   "parent": "scotus-term-2026",
+   "label": "The Supreme Court hears oral argument in DHS v. D.V.D. (third-country removals) on 2026-12-09",
+   "p": 0.9,
+   "date": "2026-12-09",
+   "lane": "us-politics",
+   "row_class": "scheduled",
+   "horizon": "7 weeks",
+   "basis": "Published schedule: the Court's calendar for the session beginning 2026-11-30, amended 2026-10-01, lists No. 26-426 on Wednesday 2026-12-09. Calendar rows move rarely, and never by an outsider's choice.",
+   "rationale": "Prices the Court's own clock, not the verdict: the 9/29 interim order let removals resume and the Court set the merits for December. SOFT part: the Court can reschedule or remove a case from a sitting, the parties can settle or moot it, and 'on 12/09' is stricter than 'in the December sitting' (the same sitting also hears RNC v. Mi Familia Vota on 12/8, which is not priced separately to avoid restating this row).",
+   "market": "Immigration-enforcement and election-law litigation calendar; no direct market tie.",
+   "evidence": [
+    {
+     "fact": "Supreme Court let third-country deportations resume and set argument",
+     "reported": "2026-09-29"
+    },
+    {
+     "fact": "Argument calendar amended 2026-10-01 lists DHS v. D.V.D. on 2026-12-09",
+     "reported": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "ev-fy27-bills-not-all-enacted",
+   "parent": "cr-dec11",
+   "label": "At least one of the 12 regular FY2027 appropriations areas still has no full-year appropriation on 2026-12-11",
+   "p": 0.84,
+   "date": "2026-12-11",
+   "lane": "us-fiscal",
+   "row_class": "marker",
+   "horizon": "7 weeks",
+   "basis": "Calendar and capacity: as of 2026-09-18 the Senate had no topline and had passed none of the 12 bills; Congress returns in November with about five legislative weeks, and the Senate needs 60 votes to close debate. A full 12-bill package inside that window has to clear both chambers.",
+   "rationale": "Companion clock to cr-dec11 and to the lapse row (shutdown-dec), but a different event: this resolves YES if the CR is extended or a partial package passes, whether or not anything lapses. SOFT part: a lame-duck omnibus can compress months of work into days (the 12/2022 pattern) and the Senate status I found is from late September; a leadership deal after 11/3 would flip this row. Settle on congress.gov or CRS tracking.",
+   "market": "A lapse is a TGA and bill-supply event; an extension is neutral.",
+   "evidence": [
+    {
+     "fact": "CR enacted funding all 12 areas through 2026-12-11; 90-6 Senate, 370-48 House",
+     "reported": "2026-09-02"
+    },
+    {
+     "fact": "No Senate topline deal; zero Senate FY27 bills passed; House committee reported all 12",
+     "reported": "2026-09-18"
+    }
+   ]
+  },
+  {
+   "id": "ev-doj-monitor-list-published",
+   "parent": "midterms-2026",
+   "label": "DOJ publicly names the jurisdictions where it will place federal election monitors, on or before 2026-11-03",
+   "p": 0.65,
+   "date": "2026-11-03",
+   "lane": "us-politics",
+   "row_class": "marker",
+   "horizon": "2 weeks",
+   "basis": "Outside view: DOJ's Civil Rights Division sent monitors in the 2022 (about 289) and 2024 (about 714) cycles per reporting, which makes a public list the usual practice; this DOJ called the 2026 plan its largest ever and as of mid-August had published no list, and a records suit is seeking one.",
+   "rationale": "A stranger can settle it from a DOJ press release or news report naming at least one county or state. It is a disclosure row, not a bet on any election outcome. SOFT part: this DOJ may withhold locations for security reasons or disclose only afterward; 'jurisdictions' (not a headcount) is the test, and a partial list counts.",
+   "market": "Midterm-vol builder; prediction markets on election administration.",
+   "evidence": [
+    {
+     "fact": "Dhillon: DOJ plans 1,000 monitors; no jurisdiction list yet",
+     "reported": "2026-08-17"
+    },
+    {
+     "fact": "Records suit seeks authority, training and deployment locations",
+     "reported": "2026-10-01"
+    }
+   ]
+  },
+  {
+   "id": "ev-doj-scotus-voterlist-app",
+   "parent": "midterms-2026",
+   "label": "DOJ files an emergency application at the Supreme Court in the voter-list case (Common Cause v. DOJ) on or before 2026-11-03",
+   "p": 0.4,
+   "date": "2026-11-03",
+   "lane": "us-politics",
+   "row_class": "marker",
+   "horizon": "2 weeks",
+   "basis": "Outside view: in the SAVE case DOJ went to the Supreme Court four days after the D.C. Circuit refused a pause, and this administration has repeatedly filed emergency applications this year; but here the stay motion was filed in the district court on 2026-10-16 and the D.C. Circuit must rule first.",
+   "rationale": "Prices a procedural step a stranger can see on the docket, not who wins. SOFT part: it needs two prior steps (a denial of the stay below and DOJ's choice to escalate); DOJ says there is no such policy and may accept a narrow reading limited to SAVE; a district-court stay grant would make this row moot and resolve it NO.",
+   "market": "Midterm-vol builder; election-litigation headline risk.",
+   "evidence": [
+    {
+     "fact": "Sooknanan vacated DOJ voter-list maintenance policy; DOJ appealed",
+     "reported": "2026-10-09"
+    },
+    {
+     "fact": "DOJ moved for a stay pending appeal",
+     "reported": "2026-10-16"
+    }
+   ]
+  },
+  {
+   "id": "ev-dyed-diesel-relief-extended",
+   "parent": "now",
+   "label": "The IRS or Treasury extends the on-highway dyed-diesel penalty relief past 2026-12-31, announced on or before 2027-01-31",
+   "p": 0.25,
+   "date": "2027-01-31",
+   "lane": "energy-supply",
+   "row_class": "marker",
+   "horizon": "14 weeks",
+   "basis": "Outside view: IRS dyed-fuel waivers have been event-driven and short, and the current one is dated to run 2026-10-01 to 2026-12-31; Trump said the waiver is not needed for long, and the EO covers only the remainder of the year.",
+   "rationale": "Settled from an IRS notice or Treasury statement. SOFT part: extension turns on where diesel (record $6.52 on 9/22, $6.37 on 10/2) and the Hormuz situation stand in January, which this row does not forecast; the new Congress or a replacement order could also change the form of relief, and a quiet extension by notice counts.",
+   "market": "ULSD crack and trucking costs; diesel-crack-wide is the linked tree row.",
+   "evidence": [
+    {
+     "fact": "EO signed 2026-10-05 defers diesel excise tax through end-2026",
+     "reported": "2026-10-05"
+    },
+    {
+     "fact": "IRS penalty relief runs 2026-10-01 through 2026-12-31",
+     "reported": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "id": "ev-nih-womens-div-90d",
+   "parent": "hb-anchor",
+   "label": "NIH announces establishment of the women's health division within the order's 90-day deadline (by 2027-01-17)",
+   "p": 0.45,
+   "date": "2027-01-17",
+   "lane": "health-bio",
+   "row_class": "marker",
+   "horizon": "12 weeks",
+   "basis": "The 10/19 executive order sets a 90-day deadline, which falls on 2027-01-17 (a Sunday). Outside view: executive-order deadlines for new offices are often met by an announcement and often slip; NIH capacity and the order's reorganisation of existing offices make an announcement possible but not certain.",
+   "rationale": "A stranger can settle it from an NIH or HHS announcement or the Federal Register. It prices the clock, not the division's effect. SOFT part: what counts as 'established' (announcement vs formal organisational change) and the Sunday deadline, which an announcement on the following Monday would miss under a strict reading.",
+   "market": "No direct market tie; research-funding context for nih-funding.",
+   "evidence": [
+    {
+     "fact": "Trump signed an order creating an NIH women's health division within 90 days plus a White House task force",
+     "reported": "2026-10-19"
+    }
+   ]
+  },
+  {
+   "id": "ev-aca-oe-2027-window",
+   "parent": "hb-anchor",
+   "label": "HealthCare.gov open enrollment for 2027 coverage opens 2026-11-01 and closes 2026-12-15",
+   "p": 0.9,
+   "date": "2026-12-15",
+   "lane": "health-bio",
+   "row_class": "scheduled",
+   "horizon": "8 weeks",
+   "basis": "Published schedule: the federal Marketplace Integrity and Affordability rule shortens open enrollment on the HealthCare.gov platform to November 1 through December 15 for 2027 coverage; this is a regulatory calendar CMS publishes.",
+   "rationale": "Settled from CMS or HealthCare.gov dates. SOFT part: state-run exchanges have different, later deadlines (sources conflict on some states, and one guide reports a court block on standardizing state deadlines, unconfirmed), so the row is limited to the federal platform; a CMS extension or a court order could also change it.",
+   "market": "No direct market tie; context for the 9/22 removal of about 760,000 enrollees.",
+   "evidence": [
+    {
+     "fact": "CMS cancelled about 315,000 enrollments covering roughly 760,000 people",
+     "reported": "2026-09-22"
+    },
+    {
+     "fact": "Federal open-enrollment window reported as 2026-11-01 to 2026-12-15",
+     "reported": "2026-10-22"
+    }
+   ]
+  }
+ ],
+ "suggest_reprice": [
+  {
+   "node": "shutdown-dec",
+   "ledger": 114,
+   "from": 0.35,
+   "to": 0.25,
+   "reason": "2026-09-02: CR passed 90-6 / 370-48; the node's own basis cites a base rate of roughly a fifth of CR deadlines and prices above it with no dated datapoint. Counter-weight: Senate had no topline as of 2026-09-18. Hand estimate, not a tool run."
+  },
+  {
+   "node": null,
+   "ledger": 56,
+   "from": 0.9,
+   "to": 0.97,
+   "reason": "2026-09-20 tracking already logged HIT; since then DOJ lost 10/9 vacatur fight, appealed 10/16, dismissals in GA 10/1 and elsewhere, SCOTUS SAVE order 9/25 and ~1,000 monitors planned: the row's 'DOJ/DHS involvement' test is already met."
+  },
+  {
+   "node": "midterms-2026",
+   "ledger": null,
+   "from": 0.55,
+   "to": 0.8,
+   "reason": "The node's own rationale defines the fight as #56's 'state-level federal intervention or certification fight', which is priced 0.9 in the ledger and already tracked as HIT; the two rows disagree by 0.35. If the label is read strictly (a post-election certification fight only), keep 0.55 and fix the label instead."
+  },
+  {
+   "node": "pmms-above-65",
+   "ledger": null,
+   "from": 0.82,
+   "to": 0.92,
+   "reason": "2026-10-08 Freddie Mac 7.40% and 2026-10-22 7.32% (feed): about 80-90 bp above the 6.50% floor with about 10 weekly prints left; a sub-6.50 print needs a fall larger than any weekly-print path seen since the 7-week rise began. Hand estimate; the Iran/Hormuz tail (a deal) is the risk."
+  }
+ ],
+ "gaps": "The tree has no node for Supreme Court emergency-docket litigation, immigration enforcement (third-country removals, mandatory detention, birthright citizenship), the Voting Rights Act/redistricting landscape (Callais, new maps in 9-10 states), Fed independence (Cook, Slaughter) or ACA coverage removals; those events map to context at best. Tariff authority is the biggest unverified storyline: I confirmed the 2026-02-20 IEEPA ruling, the CIT and Federal Circuit steps on Section 122 and the 7/24 switch to Section 301, but not the current Federal Circuit status or any challenge to the new 301 tariffs, so tariff-legal-challenge (0.42) may be mispriced and I did not suggest a change. The 2026-10-22 housing executive order is unverified (the feed says signed; same-day Semafor/HousingWire say draft), and several feed items are re-runs of older events (birthright 6/30, Callais 4/29, pharma tariff 4/2, vaccine EO 8/10, Watson 6/29), so first-seen dates mislead; the feed also carries about 81 NCAA/Ohio items plus mosquito and AI-renaming orders that matter to nothing in the tree. Midterm outcomes (control, certification) are deliberately unpriced beyond the clock rows, and I could not find October Senate appropriations or Federal Circuit docket news because the web index lags."
+}

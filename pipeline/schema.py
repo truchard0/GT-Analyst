@@ -205,6 +205,39 @@ class Contradiction:
 
 
 @dataclass(frozen=True)
+class LevelClaim:
+    """R28, conflict-level half (pipeline/conflict.py): the interval of a cluster's conflict scale that this row's event
+    IMPLIES - 'L in [lo, hi]', L being the highest level reached inside the row's window. The direction-based half of R28
+    cannot see two 'vol' rows disagree; this can."""
+    lo: int
+    hi: int
+
+
+@dataclass(frozen=True)
+class WorldState:
+    """R28, cross-cluster half (pipeline/conflict.py STATES): a world state this row's event REQUIRES, whatever its
+    cluster - 'hormuz' 0-1 means transits stay impaired. Two rows that need disjoint values of one state cannot both be
+    right, and #29 (OPEC+ glut) never met #22 (Hormuz does not normalize) because they sat in different clusters."""
+    state: str
+    lo: int
+    hi: int
+
+
+@dataclass(frozen=True)
+class Incentive:
+    """R37 (pipeline/constraints.py): the decider-incentive reading of a conflict row. Strikes are held off for political and
+    economic reasons (midterms, Netanyahu's campaign, pump prices, Gulf requests); a row about the fighting must say which ACT
+    it is about, whether it claims the act OCCURS or does NOT occur, the calendar WINDOW it sits in (an id from
+    data/constraint_calendar.json, or 'none: <reason>'), and the TRIGGER that would end the restraint. #59 priced the
+    military leg and never asked what the deciders wanted in the window."""
+    act: str
+    claims: str
+    window: str
+    trigger: str = ""
+    note: str = ""
+
+
+@dataclass(frozen=True)
 class Independence:
     """R34 - this row shares an asset and a direction with another live row. #70 (SMH<SPY) and
     #27 (SMH<XLE) were one semis bet logged twice, and they tracked MISS together."""
@@ -308,6 +341,9 @@ class Prediction:
     meeting: Optional[MeetingScope] = None                    # R35
     self_downgrade: Optional[SelfDowngrade] = None            # R31
     contradicts: list[Contradiction] = field(default_factory=list)   # R28
+    conflict_level: Optional[LevelClaim] = None                      # R28 (conflict clusters)
+    states: list[WorldState] = field(default_factory=list)           # R28 (any cluster)
+    incentive: Optional[Incentive] = None                            # R37 (conflict clusters)
     independence: list[Independence] = field(default_factory=list)   # R34
 
 
@@ -525,7 +561,15 @@ RULES: dict[str, str] = {
            "P more than 0.10 outside it needs a dated capital-committed catalyst",
     # ── v3, 2026-09-21. Every rule below is a specific resolved loss, made unrepeatable. ──
     "R28": "the book may not contradict itself silently: a row opposing an OPEN row on the same asset, or another "
-           "row in the same batch, must declare it in contradicts[] with a hedge_reason (#26 vs #32; lesson 7)",
+           "row in the same batch, must declare it in contradicts[] with a hedge_reason (#26 vs #32; lesson 7); "
+           "rows in a conflict cluster (iran-war) also declare conflict_level {lo,hi} and two that cannot both hold "
+           "over how hard the fighting gets (pipeline/conflict.py) need the same hedge_reason; rows in ANY cluster declare "
+           "the world states they require (states[]: hormuz, brent_peak, cpi_*) and disjoint claims about one state must fit under 1",
+    "R37": "a row about how hard the fighting gets declares incentive{act, claims, window, trigger}: the act it is about, whether it "
+           "claims the act occurs or not, the decider-calendar window it sits in (data/constraint_calendar.json) and the "
+           "trigger that would end the restraint; claiming a strike at P>0.5 inside a known suppress window with no trigger on "
+           "file, or claiming calm at P>0.5 the week after a trigger, is refused (#59 priced the military leg; #19/#28 the day "
+           "after Iran hit vessels)",
     "R29": "a two-ticker row declares both legs' realized vol; ratio > 1.5x means it is a LEVERED DIRECTION bet on "
            "the high-vol leg, not a spread - P <= 0.55 and the direction must be the high-vol leg's (#74, 13h)",
     "R30": "every row names its resolution source: publisher, series and the reading convention, fixed BEFORE the "
@@ -555,6 +599,9 @@ class OpenRow:
     tickers: tuple[str, ...]
     cluster: str
     horizon: str
+    level_lo: Optional[int] = None         # conflict.py: the level interval the row declared, if any
+    level_hi: Optional[int] = None
+    states: tuple = ()                     # ((state, lo, hi), ...) declared world states
 
 
 @dataclass
@@ -573,6 +620,7 @@ class Context:
     # v3: the rules that check the book against ITSELF need to see the book
     open_rows: dict[int, OpenRow] = field(default_factory=dict)
     book_base_rate: float = 0.745           # the book's own realised hit rate (9/20 research)
+    as_of: Optional[datetime.date] = None   # R37 evaluates the calendar as of this date (default: today)
 
 
 @dataclass
@@ -1066,6 +1114,66 @@ def check(doc: BatchAnalysis, ctx: Context, lint: typing.Callable[[str, str, flo
                                    f"horizon: this is one bet logged twice unless independence is argued "
                                    f"(#70 and #27 were one SMH bet and missed together)")
 
+            # R28, conflict-level half: the check the direction rule cannot make for 'vol' rows
+            import conflict as _cf
+            if p.cluster in _cf.SCALES:
+                if p.conflict_level is None:
+                    warn("R28", pw, f"cluster {p.cluster!r} has a conflict scale {_cf.SCALES[p.cluster]}: declare "
+                                    f"conflict_level {{lo, hi}} (the interval this row's event implies) so the book can "
+                                    f"check it against its own open rows")
+                else:
+                    lvl = p.conflict_level
+                    if not 0 <= lvl.lo <= lvl.hi <= len(_cf.SCALES[p.cluster]) - 1:
+                        err("R28", pw, f"conflict_level {lvl.lo}-{lvl.hi} is off the {p.cluster} scale 0-"
+                                       f"{len(_cf.SCALES[p.cluster]) - 1}")
+                    else:
+                        claims = [_cf.Claim(str(oid), o.prob, o.level_lo, o.level_hi, o.horizon, o.cluster)
+                                  for oid, o in ctx.open_rows.items()
+                                  if o.cluster == p.cluster and o.level_lo is not None]
+                        claims.append(_cf.Claim("new", p.prob, lvl.lo, lvl.hi, p.horizon, p.cluster))
+                        for f in _cf.check(claims):
+                            if "new" not in f.ids:
+                                continue
+                            others = {int(i) for i in f.ids if i != "new"}
+                            text = f.text.replace("#new", "this row")
+                            if f.severity == "warn":
+                                warn("R28", pw, text)
+                            elif not others <= declared_contra:
+                                err("R28", pw, text + " - declare it in contradicts[] with a hedge_reason, or revise one")
+
+            # R37: the deciders' calendar
+            if p.conflict_level is not None and p.cluster in _cf.SCALES:
+                import constraints as _ct
+                if p.incentive is None:
+                    err("R37", pw, "a row about how hard the fighting gets must declare incentive{act, claims, window, trigger}: "
+                                   "what do the deciders want in this window, and what would end their restraint?")
+                else:
+                    inc = p.incentive
+                    for f in _ct.check_incentive(_ct.load(), act=inc.act, claims=inc.claims, prob=p.prob, window=inc.window,
+                                                 trigger=inc.trigger, horizon=p.horizon, note=inc.note,
+                                                 as_of=ctx.as_of or datetime.date.today()):
+                        (err if f.severity == "error" else warn)("R37", pw, f.text)
+
+            # R28, cross-cluster half: world states any row may claim, whatever its cluster
+            if p.states:
+                bad_state = False
+                for ws in p.states:
+                    top = len(_cf.STATES[ws.state]) - 1 if ws.state in _cf.STATES else -1
+                    if not 0 <= ws.lo <= ws.hi <= top:
+                        err("R28", pw, f"states: {ws.state} {ws.lo}-{ws.hi} is off the scale (known: {sorted(_cf.STATES)})")
+                        bad_state = True
+                if not bad_state:
+                    sclaims = [_cf.StateClaim(str(oid), o.prob, n_, lo_, hi_, o.horizon)
+                               for oid, o in ctx.open_rows.items() for (n_, lo_, hi_) in o.states]
+                    sclaims += [_cf.StateClaim("new", p.prob, ws.state, ws.lo, ws.hi, p.horizon) for ws in p.states]
+                    for f in _cf.check_states(sclaims):
+                        if "new" not in f.ids:
+                            continue
+                        others = {int(i) for i in f.ids if i != "new"}
+                        if not others <= declared_contra:
+                            err("R28", pw, f.text.replace("#new", "this row") + " - declare it in contradicts[] with a "
+                                                                              "hedge_reason, or revise one")
+
             batch_rows.append((pw, p))
 
     if len(same_dir_leg_rows) > 1:
@@ -1089,6 +1197,19 @@ def check(doc: BatchAnalysis, ctx: Context, lint: typing.Callable[[str, str, flo
             elif pa.direction == pb.direction and pa.direction in ("up", "down"):
                 err("R34", f"{wa} vs {wb}", f"both rows are the same direction on {sorted(shared)} over "
                                             f"overlapping horizons - one bet, logged twice (#70/#27)")
+
+    # R28 conflict-level half, within the batch: two new rows in one sitting that cannot both be right
+    import conflict as _cf
+    lv = [(pw, p) for pw, p in batch_rows if p.conflict_level is not None and p.cluster in _cf.SCALES
+          and 0 <= p.conflict_level.lo <= p.conflict_level.hi <= len(_cf.SCALES[p.cluster]) - 1]
+    for cluster in {p.cluster for _, p in lv}:
+        names = {str(i): pw for i, (pw, p) in enumerate(lv) if p.cluster == cluster}
+        claims = [_cf.Claim(str(i), p.prob, p.conflict_level.lo, p.conflict_level.hi, p.horizon, cluster)
+                  for i, (pw, p) in enumerate(lv) if p.cluster == cluster]
+        for f in _cf.check(claims):
+            where = " vs ".join(names[i] for i in f.ids)
+            text = f.text.replace("#", "row ")
+            (err if f.severity == "error" else warn)("R28", where, "the same batch: " + text)
 
     # R21
     for i, r in enumerate(doc.suggested_resolutions):

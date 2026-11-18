@@ -1,0 +1,53 @@
+{
+  "_note": "Coded 2026-10-23 from the English Wikipedia 'Timeline of the 2026 Iran war' (read in full, text through 22 Oct) plus the engine's own tree (round 3 dates). The coding was done AFTER the outcomes were known, so the series is a reconstruction, not a forecast input. Ambiguous days are listed in `uncertain` and the backtest reports a strict variant.",
+  "strike_ranges": [
+    ["2026-02-28", "2026-04-07", "opening campaign, continuous"],
+    ["2026-05-07", "2026-05-07", "US strikes Bandar Abbas and Qeshm after attacks on destroyers"],
+    ["2026-05-25", "2026-05-25", "CENTCOM 'self-defense' strikes, ceasefire said to remain (location not stated)"],
+    ["2026-05-27", "2026-05-27", "US strike on a southern base"],
+    ["2026-06-07", "2026-06-07", "Israeli strikes on Iran, exchange ended after Trump's request"],
+    ["2026-06-09", "2026-06-10", "retaliatory strikes; 49 Tomahawks on 6/10"],
+    ["2026-06-26", "2026-06-27", "US hits missile/drone/minelayer sites after alleged ship attacks"],
+    ["2026-07-08", "2026-07-23", "round 2: 80+ targets 7/8, 140 on 7/12, strikes nightly to the 13th night 7/23"],
+    ["2026-07-29", "2026-07-29", "retaliatory strikes after a foiled attack on Jordan"],
+    ["2026-08-30", "2026-09-09", "round 3: Larak launchers 8/30, ~100 IRGC targets 9/1, tankers/boats through 9/9 (engine's own dating)"]
+  ],
+  "uncertain": ["2026-04-08", "2026-05-25", "2026-06-11..2026-06-16", "2026-09-03..2026-09-09 (sea targets rather than land)"],
+  "dovish": [
+    ["2026-03-23", "Trump postpones power-plant strikes five days citing 'productive' talks"],
+    ["2026-04-07", "two-week ceasefire agreed in exchange for reopening Hormuz"],
+    ["2026-04-21", "Trump extends the truce at Pakistan's request"],
+    ["2026-05-06", "Trump pauses Project Freedom citing 'great progress'"],
+    ["2026-06-07", "Israel-Iran exchange ended after Trump's request"],
+    ["2026-06-17", "Islamabad Memorandum signed"],
+    ["2026-06-28", "US and Iran agree to halt exchanges"],
+    ["2026-07-25", "pause in strikes; Waltz: room for diplomacy"],
+    ["2026-08-02", "Trump says he and Israel called off a planned attack at Iran's request"],
+    ["2026-08-25", "Rubio: major combat not expected 'for the time being'"],
+    ["2026-09-14", "Trump says he is willing to negotiate"],
+    ["2026-09-27", "Trump expects talks to resume that week"],
+    ["2026-10-05", "Trump 'always open' to direct talks"],
+    ["2026-10-08", "Trump: no attack on Iran before the midterms"],
+    ["2026-10-22", "Trump postpones major combat operations to avoid energy-price fallout"]
+  ],
+  "triggers": [
+    ["2026-05-07", "Iranian attacks on US destroyers"],
+    ["2026-06-09", "US Apache lost to a Shahed collision; retaliation"],
+    ["2026-06-10", "Iranian strikes on US bases"],
+    ["2026-06-11", "Iran declares Hormuz closed, fires at US sites in Kuwait, Bahrain, Jordan"],
+    ["2026-06-28", "Iran fires at Ali Al Salem and the Fifth Fleet HQ"],
+    ["2026-07-07", "Iranian missiles hit commercial vessels; MOU declared over 7/8"],
+    ["2026-07-17", "Iranian missiles on Muwaffaq Salti; two US soldiers killed 7/17-18"],
+    ["2026-07-29", "foiled Iranian attack on Jordan"],
+    ["2026-08-31", "Iranian attack on US soldiers in Jordan"],
+    ["2026-09-09", "Iranian ballistic missiles at US sites in Jordan"]
+  ],
+  "context": [
+    ["2026-07-10", "Knesset dissolved: Israeli election fixed for 2026-10-27"],
+    ["2026-10-14", "Iranian officials tell Reuters the tanker strikes aim to keep energy prices high and pressure Trump before the midterms"],
+    ["2026-10-21", "FT: Netanyahu wanted a multi-day offensive the weekend of 10/10 before Israel's election; Trump opposed escalation before the midterms; NYT: post-midterm strike plans"],
+    ["2026-10-22", "US/Israeli forces have finalized plans for a possible three-day strike on nuclear facilities; Trump hints at post-election escalation"]
+  ],
+  "midterms": "2026-11-03",
+  "israel_vote": "2026-10-27"
+}

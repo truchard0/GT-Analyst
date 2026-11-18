@@ -684,6 +684,25 @@ def _telegram_configured():
     return tok and cid
 
 
+def _data_version():
+    """Cheap fingerprint of everything the page shows, so the browser reloads only when something changed."""
+    import hashlib
+    files = [LEDGER, ROOT / "data" / "timelines.json", ROOT / "data" / "events.json", ROOT / "inbox" / "latest.md",
+             ROOT / "watchlist.json", ROOT / "config.json"]
+    for d in ("logs", "jobs"):
+        dd = ROOT / d
+        if dd.is_dir():
+            files += [f for f in dd.iterdir() if f.is_file()][:60]
+    h = hashlib.md5()
+    for f in files:
+        try:
+            st = f.stat()
+            h.update(f"{f.name}:{st.st_mtime_ns}:{st.st_size}".encode())
+        except OSError:
+            pass
+    return h.hexdigest()[:16]
+
+
 def gather_state():
     runs, issues = parse_ingest_log()
     _wl_raw = load_json(ROOT / "watchlist.json", {})
@@ -1270,8 +1289,12 @@ def render_timelines(s):
             '<button class="btn" onclick="tlGenMap(this)">generate custom timeline</button>'
             '<span id="cm-status" class="muted small">master map</span></div>'
             '<div id="cm-saved" class="chips small" style="margin-top:8px"></div></div>'
-            '<div class="tl-layout">'
+            '<div class="tl-layout"><div>'
+            '<div class="tl-viewbar"><span class="muted small">view</span>'
+            '<button class="chip tl-vb active" data-v="map" onclick="tlView(\'map\')">Map</button>'
+            '<button class="chip tl-vb" data-v="cal" onclick="tlView(\'cal\')">Calendar</button></div>'
             '<div class="tl-canvas-wrap"><div class="tl-zoombar"><button class="btn-mini" onclick="tlZoom(-1)">&minus;</button><span id="tl-zoomlbl" class="small muted">100%</span><button class="btn-mini" onclick="tlZoom(1)">+</button><button class="btn-mini" onclick="tlZoom(0)">reset</button><span class="muted small" style="margin-left:6px">ctrl+scroll zooms</span></div><div id="tl-zoomer"><div id="tl-canvas" class="tl-canvas"></div></div></div>'
+            '<div id="tl-cal" class="tl-cal" style="display:none"></div></div>'
             '<div id="tl-detail" class="tl-detail"><div class="muted center">← click a node<br><br>'
             'Time runs left→right; lanes are arcs. ◆ diamonds = scheduled certainties every world passes '
             'through. Click a node, then PIN it to see what its outcome shifts (amber = moved).</div></div></div>'
@@ -1499,6 +1522,40 @@ table.data tr:last-child td{border-bottom:none}
 @media(max-width:900px){.tl-layout{grid-template-columns:1fr}}
 .tl-canvas-wrap{background:#0d1119;border:1px solid #1e2633;border-radius:3px;overflow:auto;max-height:78vh}
 .tl-canvas-wrap{cursor:grab}.tl-canvas-wrap.grabbing{cursor:grabbing;user-select:none}
+.tl-viewbar{display:flex;gap:6px;align-items:center;margin-bottom:6px}
+.tl-cal{background:#0d1119;border:1px solid #1e2633;border-radius:3px;padding:10px;max-height:78vh;overflow:auto}
+.cal-ctl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.cal-ttl{font-size:15px;color:var(--ink-hi);font-weight:600;min-width:140px}
+.cal-dow7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.cal-dowc{font-size:9.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--ink-faint);padding:4px 6px}
+.cal-wk{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));row-gap:2px;border-top:1px solid var(--line-soft);padding-bottom:4px;
+ background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(100%/7 - 1px),var(--line-soft) calc(100%/7 - 1px),var(--line-soft) calc(100%/7))}
+.cal-dc{grid-row:1;padding:2px 5px;font-size:10.5px;color:var(--ink-dim);cursor:pointer;min-height:16px}
+.cal-dc.out{color:var(--ink-faint)}.cal-dc.today{color:var(--ink-hi);font-weight:700}
+.cal-ghosts{grid-column:1/-1;grid-row:2;position:relative}
+.cal-gl{position:absolute;height:2px;border-radius:2px;background:var(--ink-faint);opacity:.4;cursor:pointer}
+.cal-bar:empty{min-height:5px;height:5px;padding:0;margin-top:5px}
+.cal-bar{display:flex;align-items:baseline;min-width:0;margin:0 2px;text-align:left;background:#1b2130;border:1px solid var(--line);border-left:2px solid var(--ink-faint);color:var(--ink);font:inherit;font-size:10.5px;line-height:1.3;padding:1px 5px;border-radius:3px;overflow:hidden;white-space:nowrap;cursor:pointer}
+.cal-bar:hover{border-color:var(--ink-dim)}
+.cal-bar b{font-variant-numeric:tabular-nums;color:var(--ink-hi);margin-right:4px;flex:none}
+.cal-lb{overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1 1 auto}
+.cal-bar.cl{border-top-left-radius:0;border-bottom-left-radius:0;margin-left:0;border-left-style:dashed}
+.cal-bar.cr{border-top-right-radius:0;border-bottom-right-radius:0;margin-right:0;border-right:1px dashed var(--ink-dim)}
+.cal-bar.led{background:#241f33;border-left-color:var(--violet)}
+.cal-bar.hit{background:#17261e;border-color:#2b4636;border-left-color:var(--ok)}
+.cal-bar.miss{background:#2a1c1c;border-color:#523333;border-left-color:var(--bad)}
+.cal-bar.nh .cal-lb{text-decoration:line-through;text-decoration-color:var(--ink-faint)}
+.cal-v{font-style:normal;font-size:9px;letter-spacing:.5px;margin-left:5px;color:var(--ink-dim);flex:none}
+.cal-bar.hit .cal-v{color:var(--ok)}.cal-bar.miss .cal-v{color:var(--bad)}
+.cal-more{grid-column:1/-1;font-size:10px;color:var(--ink-dim);cursor:pointer;background:none;border:0;text-align:left;padding:0 6px}
+.cal-key{font-size:10.5px;color:var(--ink-dim);margin-top:8px;line-height:1.5}
+.cal-bar,.cal-dc,.cal-ghosts{position:relative;z-index:1}
+.cal-band{background:rgba(120,150,210,.16);border-left:1px solid rgba(150,180,240,.55);border-right:1px solid rgba(150,180,240,.55);pointer-events:none;z-index:0}
+.cal-bar.sel{outline:1px solid var(--ink-hi);box-shadow:0 0 0 2px rgba(150,180,240,.4);opacity:1!important}
+.cal-gl.sel{height:4px;opacity:1;background:#9db4e8}
+.tl-cal.hassel .cal-bar:not(.sel){opacity:.35!important}
+.tl-cal.hassel .cal-gl:not(.sel){opacity:.15}
+.cal-sel{font-size:11px;color:var(--ink-hi);background:#1b2536;border:1px solid #2c3d5a;border-radius:3px;padding:2px 6px}
 .tl-zoombar{position:sticky;top:6px;left:6px;z-index:6;display:inline-flex;gap:5px;align-items:center;background:#0f141dcc;border:1px solid #1e2633;border-radius:2px;padding:4px 8px;margin:6px}
 #tl-zoomer{position:relative;overflow:hidden}
 .lane-label{position:absolute;left:6px;font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:#6b7688;background:#0d1119;padding:1px 5px;z-index:3}
@@ -1649,7 +1706,7 @@ a.jslink:hover{border-bottom-style:solid}
 <span class="hstat mono">__GEN__</span></header>
 <nav>__NAV__</nav>
 <main>__SECTIONS__</main>
-<script>window.__TL__=__TLDATA__;window.__PREDS=__PREDS__;window.__L2N=__L2N__;window.__NSTATE=__NSTATE__;window.__TODAY="__TODAY__";</script>
+<script>window.__TL__=__TLDATA__;window.__PREDS=__PREDS__;window.__L2N=__L2N__;window.__NSTATE=__NSTATE__;window.__NRES=__NRES__;window.__VER="__VER__";window.__TODAY="__TODAY__";</script>
 <script>
 var tabs=["monitor","reports","timelines","fusion","ask","settings"];
 function wlEdit(action,sym){fetch("/api/watchlist",{method:"POST",headers:{"Content-Type":"application/json"},
@@ -1818,9 +1875,13 @@ function sendAsk(){
 
 var saved=localStorage.getItem("gt-tab");show(tabs.indexOf(saved)>=0?saved:"monitor");
 window.__lastR=Date.now();
-setInterval(function(){var ar=document.getElementById("ar");
- var ms=1000*parseInt(localStorage.getItem("gt-refresh-s")||"30",10);
- if(ar&&ar.checked&&!window.__paused&&Date.now()-window.__lastR>=ms){window.__lastR=Date.now();location.reload();}},5000);
+function gtCheck(){var ar=document.getElementById("ar");
+ if(!ar||!ar.checked||window.__paused||document.hidden)return;
+ fetch("/api/version",{cache:"no-store"}).then(function(r){return r.json();}).then(function(j){
+  if(j&&j.v&&j.v!==window.__VER&&!window.__paused&&!document.hidden)location.reload();}).catch(function(){});}
+setInterval(function(){var ms=1000*parseInt(localStorage.getItem("gt-refresh-s")||"30",10);
+ if(Date.now()-window.__lastR>=ms){window.__lastR=Date.now();gtCheck();}},5000);
+document.addEventListener("visibilitychange",function(){if(!document.hidden)gtCheck();});
 
 // ── Time-lane map (A+B+D hybrid): time = x, lanes = arcs, checkpoints = diamonds ──
 var TL=window.__TL__||{nodes:[]};
@@ -1831,6 +1892,9 @@ function fmtD(d){if(!d)return'';var p=String(d).split('-');
  var M=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
  return p.length>2?(M[+p[1]]+' '+(+p[2])+(p[0]!=='2026'?" '"+p[0].slice(2):'')):d;}
 function plClass(p){return p>=0.55?"pl-hi":p>=0.3?"pl-md":p>=0.12?"pl-lo":"pl-tail";}
+// a scheduled or structural FACT (the term opens, the meeting is held, a lane anchor) is not a call: never shown as a probability, never graded
+function isFact(n){var R=(window.__NRES||{})[n.id]||n.resolved;if(R&&R.verdict==="FACT")return true;
+ return (n.row_class==="invariant"||n.row_class==="scheduled")&&n.p>=0.95;}
 // space allocated where the NODES are: the active near-term needs room for cards.
 var ANCH=[["2026-07-01",110],["2026-08-01",980],["2026-09-01",1420],["2026-11-01",1720],
           ["2027-01-01",1900],["2027-07-01",2130],["2028-01-01",2320],["2029-01-01",2520],
@@ -1948,7 +2012,7 @@ function laneBuild(){
   html+='<div class="'+cls+'" id="tln-'+n.id+'" data-nid="'+n.id+'" title="'+tlEsc(n.label)+'" '
    +'style="left:'+n.__x+'px;top:'+n.__y+'px">'
    +((_vs2==="hit")?'<span class="vchk">&#10003;</span>':(_vs2==="miss")?'<span class="vx">&#10007;</span>':'')
-   +((n.p>=0.995)?'<span class="tl-pb pl-sure" title="occurs in every world">ALL</span>':
+   +((n.p>=0.995||isFact(n))?'<span class="tl-pb pl-sure" title="a scheduled or structural fact, or true in every world: not a call">'+(isFact(n)?"FACT":"ALL")+'</span>':
      '<span class="tl-pb '+plClass(n.p)+'" title="'+(n.kind==="branch"?"share of its fork (siblings sum to 100)":"probability given its parent")+'">'+Math.round(n.p*100)+'</span>')
    +(n.checkpoint||n.kind==="checkpoint"?'<span class="cpd">&#9670;</span>':'')
    +'<span class="tl-lb">'+tlEsc(n.label)+'</span>'
@@ -1999,6 +2063,11 @@ function tlDetail(id){
   +'<div class="body">'+tlEsc(sem)+'</div>'
   +'<div class="body"><b>unconditional (parlay from NOW): '+(parlay*100).toFixed(1)+'%</b> = '
   +chain.slice().reverse().map(function(x){return Math.round((x.p==null?1:x.p)*100)+'%';}).join(' × ')+'</div>';
+ var RES=(window.__NRES||{})[id]||n.resolved||null;
+ if(RES){probBlock='<div class="sect">resolved</div><div class="body"><b style="color:'+(RES.verdict==="HIT"?"var(--ok)":RES.verdict==="MISS"?"var(--bad)":"var(--ink-dim)")+'">'+tlEsc(RES.verdict==="UNFORECAST"?"NOT FORECAST":RES.verdict)+'</b> &middot; '
+  +(RES.happened?"it HAPPENED":"it did NOT happen")+(RES.verdict==="UNFORECAST"?' &middot; written after the fact; the engine had this world at ':' &middot; the engine called ')+Math.round((RES.called==null?n.p:RES.called)*100)+'%'+(RES.called_from?' ('+tlEsc(RES.called_from)+')':'')
+  +(RES.judgement?' &middot; <i>judgement call</i>':'')+'</div><div class="body muted">'+tlEsc(RES.basis||"")+'</div>'+probBlock;}
+ if(isFact(n)){probBlock='<div class="sect">a fact, not a call</div><div class="body">'+(RES&&RES.verdict==="FACT"?"It OCCURRED. ":"")+'A scheduled or structural calendar fact. It is tracked so the tree has anchors in time; it carries no probability and is never graded as a hit or a miss.'+(RES&&RES.basis?'</div><div class="body muted">'+tlEsc(RES.basis):'')+'</div>';}
  var kids={};(CUR.nodes||[]).forEach(function(x){if(x.parent)(kids[x.parent]=kids[x.parent]||[]).push(x.id);});
  var descRows=[],stack=[[id,1]];
  while(stack.length){var cur=stack.pop();(kids[cur[0]]||[]).forEach(function(cid){
@@ -2006,9 +2075,9 @@ function tlDetail(id){
   var rp=cur[1]*(c.p==null?1:c.p);descRows.push({n:c,rp:rp});stack.push([cid,rp]);});}
  descRows.sort(function(a,b){return String(a.n.date||"").localeCompare(String(b.n.date||""));});
  // COUNTERFACTUAL: for a RESOLVED node, show the sibling branches that did NOT happen
- var _st=(window.__NSTATE||{})[id];
+ var _st=RES?(RES.happened?"hit":"miss"):(window.__NSTATE||{})[id];
  var cfBlock="";
- if(_st){
+ if(_st&&!isFact(n)){
   var sibs=(CUR.nodes||[]).filter(function(x){return x.parent===n.parent&&x.id!==id&&x.kind===n.kind;});
   var head=(_st==="hit")?'this path HAPPENED &#10003; — the roads not taken'
         :(_st==="miss")?'this path did NOT happen &#10007; — what the engine had as alternatives'
@@ -2045,7 +2114,7 @@ function tlDetail(id){
    +(s.p_to!=null?("p→"+Math.round(s.p_to*100)+"%"):"")+(s.date_delta?(" · "+(s.date_delta<0?"earlier ":"later ")+Math.abs(s.date_delta)+"d"):"")
    +(s.note?(" — "+tlEsc(s.note)):"")+\'</div>\';}).join("");
  d.innerHTML=\'<h4>\'+tlEsc(n.label)+\'</h4>\'
-  +\'<div class="tl-p" style="font-size:13px"><span class="tl-parlay \'+plClass(n.p)+\'">\'+Math.round(n.p*100)+\'%</span>\'
+  +\'<div class="tl-p" style="font-size:13px"><span class="tl-parlay \'+plClass(n.p)+\'">\'+(isFact(n)?"FACT":Math.round(n.p*100)+"%")+\'</span>\'
   +\'<span class="tl-cond">\'+tlEsc(n.kind||"")+\' · \'+tlEsc((n.date||"").slice(0,10))+\' · \'+tlEsc(n.horizon||"")+\'</span></div>\'
   +probBlock
   +cfBlock
@@ -2063,6 +2132,123 @@ function tlDetail(id){
 function tlPin(id){PIN=(PIN===id)?null:id;laneBuild();tlDetail(id);}
 function tlJump(id){show("timelines");var el=document.getElementById("tln-"+id);
  if(!el)return;el.scrollIntoView({behavior:"smooth",block:"center",inline:"center"});tlDetail(id);}
+// ── calendar view: every node as the WINDOW of time it can happen in; open ledger horizons are single days ──
+var CAL={y:0,m:0,lane:"",cert:false,led:true,lng:true,exp:{},sel:null};
+var CAL_M=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function calPad(n){return (n<10?"0":"")+n;}
+function calDate(s){var a=String(s).slice(0,10).split("-");return new Date(Date.UTC(+a[0],+a[1]-1,+a[2]));}
+function calIso(d){return d.getUTCFullYear()+"-"+calPad(d.getUTCMonth()+1)+"-"+calPad(d.getUTCDate());}
+function calAdd(iso,k){var d=calDate(iso);d.setUTCDate(d.getUTCDate()+k);return calIso(d);}
+function calDiff(a,b){return Math.round((calDate(b)-calDate(a))/86400000);}
+function calInit(){var t=String(window.__TODAY||"").split("-");
+ CAL.y=+t[0]||new Date().getFullYear();CAL.m=(+t[1]||new Date().getMonth()+1)-1;}
+function tlView(v){window.__tlview=v;try{localStorage.setItem("gt-tlview",v);}catch(e){}
+ var w=document.querySelector(".tl-canvas-wrap"),c=document.getElementById("tl-cal");if(!w||!c)return;
+ w.style.display=(v==="cal")?"none":"";c.style.display=(v==="cal")?"":"none";
+ document.querySelectorAll(".tl-vb").forEach(function(b){b.classList.toggle("active",b.dataset.v===v);});
+ if(v==="cal"){if(!CAL.y){calInit();calLoad();}calBuild();}}
+function calMove(d){CAL.m+=d;while(CAL.m<0){CAL.m+=12;CAL.y--;}while(CAL.m>11){CAL.m-=12;CAL.y++;}calBuild();}
+function calJump(v){var a=String(v).split("-");CAL.y=+a[0];CAL.m=+a[1]-1;calBuild();}
+function calToday(){calInit();calBuild();}
+function calHorizon(h){var m=/^\\s*(\\d+(?:\\.\\d+)?)\\s*(day|week|month|quarter|year)/i.exec(h||"");if(!m)return 0;
+ return Math.round(+m[1]*{day:1,week:7,month:30,quarter:91,year:365}[m[2].toLowerCase()]);}
+// the window a node can happen in: an explicit 'between A and B' in its label, else [creation, date] from its horizon;
+// scheduled / invariant / checkpoint nodes are single days; a live window is only the time that is LEFT.
+function calWin(n){var end=String(n.date).slice(0,10),today=String(window.__TODAY||""),lab=n.label||"",start=end;
+ var pt=(n.row_class==="scheduled"||n.row_class==="invariant"||n.kind==="checkpoint");
+ var m=/between\\s+(\\d{1,2})\\/(\\d{1,2})\\s+and\\s+(\\d{1,2})\\/(\\d{1,2})/i.exec(lab),m2=/between\\s+(\\d{4}-\\d{2}-\\d{2})\\s+and\\s+(\\d{4}-\\d{2}-\\d{2})/i.exec(lab);
+ if(m2){start=m2[1];pt=false;}
+ else if(m){start=end.slice(0,4)+"-"+calPad(+m[1])+"-"+calPad(+m[2]);pt=false;}
+ else if(!pt){var d=calHorizon(n.horizon);if(d>0)start=calAdd(end,-d);}
+ var cm=/(\\d{4}-\\d{2}-\\d{2})/.exec(String(n.source||""));var created=cm?cm[1]:"2026-07-01";
+ if(start<created)start=created;
+ if(end>=today&&start<today)start=today;
+ if(start>end)start=end;
+ return {s:start,e:end,pt:start===end};}
+function calItems(){var out=[],ST=(window.__NSTATE||{}),RS=(window.__NRES||{});
+ (CUR.nodes||[]).forEach(function(n){if(!n.date)return;if(CAL.lane&&n.lane!==CAL.lane)return;
+  var r=RS[n.id]||n.resolved||null;
+  if(!CAL.cert&&/-anchor$/.test(n.id))return;
+  if(!CAL.cert&&(isFact(n)||(!r&&n.p>=0.95)))return;
+  var w=calWin(n);
+  out.push({k:"n",id:n.id,lb:n.label||n.id,p:n.p,s:w.s,e:w.e,pt:w.pt,lane:n.lane||"",
+   st:(r&&r.verdict!=="FACT")?String(r.verdict).toLowerCase():(r?"":(ST[n.id]||"")),hp:r?r.happened:null,v:(r&&r.verdict!=="FACT")?r.verdict:"",fact:isFact(n)});});
+ if(CAL.led&&!CAL.lane&&CUR===TL){(window.__PREDS||[]).forEach(function(p){
+  if(p.status!=="open"||!p.horizon||String(p.source||"").indexOf("tree")===0)return;
+  var d=String(p.horizon).slice(0,10);
+  out.push({k:"l",id:p.id,lb:p.prediction||("#"+p.id),p:p.prob,s:d,e:d,pt:true,lane:p.cluster||"ledger",st:"",hp:null,v:""});});}
+ return out;}
+function calBar(i,g,row){var cls="cal-bar"+(CAL.sel===i.k+":"+i.id?" sel":"")+(i.k==="l"?" led":"")+(i.st==="hit"||i.st==="miss"?" "+i.st:"")+(i.hp===false?" nh":"")
+  +(g.cl?" cl":"")+(g.cr?" cr":"")+(g.kind==="end"?" end":"");
+ var pc=(i.fact?"fact":(i.p==null?"":Math.round(i.p*100)+"%")),lb=(i.k==="l"?"#"+i.id+" ":"")+i.lb;
+ var op=(i.v||i.k==="l"||i.fact)?1:(0.55+0.45*(i.p==null?1:i.p));
+ var tip=lb+" \\u00b7 "+((i.pt||g.kind==="end")?"on "+i.e:"can happen "+i.s+" to "+i.e)+(i.v?" \\u00b7 "+i.v+" ("+(i.hp?"it happened":"it did not happen")+")":"");
+ return '<button class="'+cls+'" style="grid-column:'+(g.a+1)+' / '+(g.b+2)+';grid-row:'+(row+3)+';opacity:'+op.toFixed(2)+'" title="'+tlEsc(tip)
+  +'" onclick="calPick(\\''+i.k+"','"+tlEsc(String(i.id))+'\\')">'
+  +(g.nl?'':'<b>'+pc+'</b><span class="cal-lb">'+tlEsc(lb.slice(0,90))+'</span>'+(i.v?'<i class="cal-v">'+i.v+'</i>':''))+'</button>';}
+function calPick(k,id){var key=k+":"+id;CAL.sel=(CAL.sel===key)?null:key;calBuild();
+ if(CAL.sel){if(k==="l"){ledGoto(+id);}else{tlDetail(id);}}}
+function calDay(key){var d=document.getElementById("tl-detail");if(!d)return;
+ var its=calItems().filter(function(i){return i.s<=key&&key<=i.e;});
+ d.innerHTML='<div class="sect">'+tlEsc(fmtD(key))+' &middot; '+its.length+' item'+(its.length===1?"":"s")+' possible this day</div>'
+  +(its.length?its.map(function(i){return '<div class="body">'+calBar(i,{a:0,b:6,kind:i.pt?"pt":"win"},0)
+   +'<div class="muted small">'+tlEsc(i.k==="l"?"open ledger row - horizon":(i.lane+" \\u00b7 "+(i.pt?"on "+i.e:i.s+" to "+i.e)))+'</div></div>';}).join("")
+   :'<div class="muted center">nothing can happen on this date</div>');}
+function calWeek(items,ws,cur,today,gs){var we=calAdd(ws,6),segs=[],gh=[],bands=[];
+ items.forEach(function(i){if(i.e<ws||i.s>we)return;
+  var long=!i.pt&&calDiff(i.s,i.e)>45,isSel=(CAL.sel===i.k+":"+i.id);
+  if(isSel)bands.push({a:Math.max(0,calDiff(ws,i.s)),b:Math.min(6,calDiff(ws,i.e))});
+  if(long){if(CAL.lng)gh.push({i:i,sel:isSel,a:Math.max(0,calDiff(ws,i.s)),b:Math.min(6,calDiff(ws,i.e))});
+   if(i.e>=ws&&i.e<=we){var c=calDiff(ws,i.e);segs.push({i:i,sel:isSel,a:c,b:c,kind:"end"});}return;}
+  segs.push({i:i,sel:isSel,a:Math.max(0,calDiff(ws,i.s)),b:Math.min(6,calDiff(ws,i.e)),kind:i.pt?"pt":"win",cl:i.s<ws,cr:i.e>we,nl:(i.s<ws&&ws!==gs)});});
+ segs.sort(function(x,y){return ((y.sel?1:0)-(x.sel?1:0))||(x.kind==="win"?0:1)-(y.kind==="win"?0:1)||(x.a-y.a)||((y.b-y.a)-(x.b-x.a))||((y.i.p||0)-(x.i.p||0));});
+ var rows=[];segs.forEach(function(g){var r=0;for(;;r++){rows[r]=rows[r]||[];
+  if(!rows[r].some(function(o){return !(g.b<o.a||g.a>o.b);}))break;}rows[r].push(g);g.r=r;});
+ var max=CAL.exp[ws]?999:6,hidden=0,html='<div class="cal-wk">';
+ for(var d=0;d<7;d++){var day=calAdd(ws,d),inm=day.slice(0,7)===cur;
+  html+='<div class="cal-dc'+(inm?"":" out")+(day===today?" today":"")+'" style="grid-column:'+(d+1)+'" onclick="calDay(\\''+day+'\\')">'
+   +(+day.slice(8)===1?CAL_M[+day.slice(5,7)-1].slice(0,3)+" ":"")+(+day.slice(8))+'</div>';}
+ gh.sort(function(x,y){return (y.sel?1:0)-(x.sel?1:0);});
+ var ng=Math.min(gh.length,4);
+ html+='<div class="cal-ghosts" style="height:'+(ng?ng*5+2:0)+'px">'+gh.slice(0,4).map(function(g,k){
+  return '<div class="cal-gl'+(g.sel?" sel":"")+'" style="top:'+(k*5)+'px;left:'+(g.a/7*100)+'%;width:'+((g.b-g.a+1)/7*100)+'%" title="'
+   +tlEsc((g.i.lb||"")+" \\u00b7 window "+g.i.s+" to "+g.i.e)+'" onclick="calPick(\\''+g.i.k+"','"+tlEsc(String(g.i.id))+'\\')"></div>';}).join("")+'</div>';
+ segs.forEach(function(g){if(g.r>=max){hidden++;return;}html+=calBar(g.i,g,g.r);});
+ if(hidden)html+='<button class="cal-more" style="grid-row:'+(max+3)+'" onclick="CAL.exp[\\''+ws+'\\']=true;calBuild()">+'+hidden+' more this week</button>';
+ var nrow=2+Math.min(rows.length,max)+(hidden?1:0);
+ bands.forEach(function(b){html+='<div class="cal-band" style="grid-column:'+(b.a+1)+' / '+(b.b+2)+';grid-row:1 / span '+nrow+'"></div>';});
+ return html+'</div>';}
+function calBuild(){var el=document.getElementById("tl-cal");if(!el)return;if(!CAL.y)calInit();
+ var items=calItems(),mc={},lanes={},today=String(window.__TODAY||"");
+ var selItem=items.filter(function(i){return CAL.sel===i.k+":"+i.id;})[0];
+ var selInfo=selItem?'<span class="cal-sel">highlighted: '+tlEsc((selItem.k==="l"?"#"+selItem.id+" ":"")+selItem.lb.slice(0,60))+' &middot; window '+selItem.s+' to '+selItem.e+' <button class="btn-mini" onclick="CAL.sel=null;calBuild()">clear</button></span>':"";
+ items.forEach(function(i){var a=i.e.slice(0,7);mc[a]=(mc[a]||0)+1;});
+ (CUR.nodes||[]).forEach(function(n){lanes[n.lane||"main"]=1;});
+ var cur=CAL.y+"-"+calPad(CAL.m+1);if(!mc[cur])mc[cur]=0;
+ var opts=Object.keys(mc).sort().map(function(k){var a=k.split("-");
+  return '<option value="'+k+'"'+(k===cur?" selected":"")+'>'+CAL_M[+a[1]-1].slice(0,3)+" "+a[0]+" ("+mc[k]+")</option>";}).join("");
+ var lopts='<option value="">all lanes</option>'+Object.keys(lanes).sort().map(function(l){
+  return '<option value="'+tlEsc(l)+'"'+(l===CAL.lane?" selected":"")+'>'+tlEsc(l)+"</option>";}).join("");
+ var html='<div class="cal-ctl"><button class="btn-mini" onclick="calMove(-1)">&lsaquo;</button>'
+  +'<span class="cal-ttl">'+CAL_M[CAL.m]+" "+CAL.y+'</span><button class="btn-mini" onclick="calMove(1)">&rsaquo;</button>'
+  +'<button class="btn-mini" onclick="calToday()">today</button>'
+  +'<select class="inp" style="max-width:150px;flex:none" onchange="calJump(this.value)">'+opts+'</select>'
+  +'<select class="inp" style="max-width:160px;flex:none" onchange="CAL.lane=this.value;calBuild()">'+lopts+'</select>'
+  +'<label class="muted small"><input type="checkbox" '+(CAL.cert?"checked":"")+' onchange="CAL.cert=this.checked;calBuild()"> certainties &amp; anchors</label>'
+  +'<label class="muted small"><input type="checkbox" '+(CAL.lng?"checked":"")+' onchange="CAL.lng=this.checked;calBuild()"> long-window lines</label>'
+  +'<label class="muted small"><input type="checkbox" '+(CAL.led?"checked":"")+' onchange="CAL.led=this.checked;calBuild()"> ledger horizons</label>'+selInfo+'</div>';
+ var m1=cur+"-01",gs=calAdd(m1,-calDate(m1).getUTCDay()),dim=new Date(Date.UTC(CAL.y,CAL.m+1,0)).getUTCDate();
+ var last=cur+"-"+calPad(dim),ge=calAdd(last,6-calDate(last).getUTCDay());
+ html+='<div class="cal-dow7">'+["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(function(d){return '<div class="cal-dowc">'+d+"</div>";}).join("")+'</div>';
+ for(var ws=gs;ws<=ge;ws=calAdd(ws,7))html+=calWeek(items,ws,cur,today,gs);
+ html+='<div class="cal-key">a bar spans the days the event can happen; the right end is its deadline &middot; <b>%</b> = the probability it happens inside that window (fainter = less likely) &middot; thin grey lines = windows longer than 45 days, drawn on the days they cover with the deadline as a bar &middot; scored: <span style="color:var(--ok)">green = HIT</span>, <span style="color:var(--bad)">red = MISS</span> (the engine\\u2019s call was right / wrong), <s>struck through</s> = it did not happen &middot; violet = open ledger row horizon &middot; click a bar for the reasoning, a date for everything possible that day</div>';
+ var st0=el.scrollTop;el.classList.toggle("hassel",!!CAL.sel);el.innerHTML=html;el.scrollTop=st0;
+ try{localStorage.setItem("gt-cal",JSON.stringify({y:CAL.y,m:CAL.m,sel:CAL.sel,lane:CAL.lane}));}catch(e){}}
+function calLoad(){try{var o=JSON.parse(localStorage.getItem("gt-cal")||"null");
+  if(o&&o.y>2000&&o.m>=0&&o.m<12){CAL.y=o.y;CAL.m=o.m;CAL.sel=o.sel||null;CAL.lane=o.lane||"";}}catch(e){}}
+var _laneBuildOrig=laneBuild;
+laneBuild=function(){_laneBuildOrig.apply(this,arguments);if(window.__tlview==="cal")calBuild();};
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&CAL.sel){CAL.sel=null;if(window.__tlview==="cal")calBuild();}});
 // ── custom question maps ────────────────────────────────────────────────
 function tlLoadMaster(){CUR=TL;PIN=null;laneBuild();
  document.getElementById("cm-status").textContent="master map";}
@@ -2156,6 +2342,7 @@ function ledGoto(id){show("timelines");
 document.addEventListener("click",function(ev){
  var l=ev.target.closest(".led-link");if(l){ev.preventDefault();ledGoto(parseInt(l.dataset.lid,10));}});
 laneBuild();tlListMaps();ledRender();
+try{if(localStorage.getItem("gt-tlview")==="cal")tlView("cal");}catch(e){}
 
 </script></body></html>"""
 
@@ -2293,10 +2480,18 @@ def build_page(s):
         outs = [_res[i] for i in nd.get("ledger", []) if i in _res]
         if outs:
             node_state[nd["id"]] = "hit" if all(outs) else ("miss" if not any(outs) else "mixed")
+    # a node dated in the past is a HIT or a MISS (tools/resolve_past_nodes.py); that verdict outranks the ledger-derived state
+    nres = {nd["id"]: nd["resolved"] for nd in (s.get("timelines") or {}).get("nodes", []) if nd.get("resolved")}
+    for _nid, _r in nres.items():
+        if _r.get("verdict") in ("HIT", "MISS"):          # FACT and UNFORECAST nodes are not graded, so they carry no state colour
+            node_state[_nid] = str(_r["verdict"]).lower()
+        else:
+            node_state.pop(_nid, None)
+    nres_json = json.dumps(nres).replace("</", "<\\/")
     nstate_json = json.dumps(node_state)
     return (PAGE.replace("__NAV__", nav).replace("__SECTIONS__", sections)
             .replace("__TLDATA__", tl_json)
-            .replace("__PREDS__", preds_json).replace("__L2N__", l2n_json).replace("__NSTATE__", nstate_json)
+            .replace("__PREDS__", preds_json).replace("__L2N__", l2n_json).replace("__NSTATE__", nstate_json).replace("__NRES__", nres_json).replace("__VER__", _data_version())
             .replace("__TODAY__", date.today().isoformat())
             .replace("__LAST__", esc(st["last_ingest"]))
             .replace("__FEEDS__", f'{st["feeds_ok"]}/{st["feeds_total"]}')
@@ -2324,6 +2519,8 @@ class Handler(BaseHTTPRequestHandler):
                 self._send(build_page(gather_state()))
             elif u.path == "/favicon.ico":
                 self._send(b"", "image/x-icon", 204)
+            elif u.path == "/api/version":
+                self._send(json.dumps({"v": _data_version()}), "application/json")
             elif u.path == "/api/state":
                 self._send(json.dumps(gather_state(), default=str), "application/json")
             elif u.path == "/api/engine":

@@ -304,6 +304,79 @@ class Rules(unittest.TestCase):
                                          "hedge_reason": "they cannot both pay; #32 is the one with the arithmetic and this row is being cut"}]
         self.assertNotIn("R28", self.mutate(declared, c))
 
+    def test_R28_conflict_level_two_vol_rows_that_cannot_both_hold(self):
+        """#19 and #16 were both direction 'vol', so the up-vs-down rule could not see them. Open #16 says a strike on
+        Iranian soil (level 3-4) at 0.95; a new row saying war-scale does NOT happen (0-3) at 0.90 leaves 0.10 for a
+        campaign, and 3 of this war's 7 strike episodes became campaigns."""
+        c = ctx(open_rows={16: schema.OpenRow(16, "Israel strikes Iranian territory", 0.95, "vol", ("ITA",),
+                                              "iran-war", HZ, level_lo=3, level_hi=4)},
+                open_ledger_ids={11, 62, 16})
+        def new(d):
+            self.iran(d, prob=0.90, row_class="marker")
+            self.P(d)["conflict_level"] = {"lo": 0, "hi": 3}
+        self.assertIn("R28", self.mutate(new, c))
+        def declared(d):
+            new(d)
+            self.P(d)["contradicts"] = [{"ledger_id": 16, "nature": "a strike on Iranian soil does not have to become a campaign",
+                                         "hedge_reason": "the two cannot both pay; #16 is the one with the Israeli-readiness reporting"}]
+        self.assertNotIn("R28", self.mutate(declared, c))
+
+    def test_R28_conflict_level_a_compatible_row_passes(self):
+        c = ctx(open_rows={16: schema.OpenRow(16, "Israel strikes Iranian territory", 0.52, "vol", ("ITA",),
+                                              "iran-war", HZ, level_lo=3, level_hi=4)},
+                open_ledger_ids={11, 62, 16})
+        def new(d):
+            self.iran(d, prob=0.70, row_class="marker")
+            self.P(d)["conflict_level"] = {"lo": 0, "hi": 3}
+        self.assertNotIn("R28", self.mutate(new, c))
+
+    def test_R28_conflict_level_off_the_scale_is_an_error(self):
+        def new(d):
+            self.iran(d, row_class="marker")
+            self.P(d)["conflict_level"] = {"lo": 3, "hi": 9}
+        self.assertIn("R28", self.mutate(new))
+
+    def test_R28_world_states_cross_cluster(self):
+        """#29 (OPEC+ glut, needs Hormuz normal) vs open #22 (Hormuz does not normalize): different clusters."""
+        c = ctx(open_rows={22: schema.OpenRow(22, "Hormuz does not fully normalize", 0.68, "vol", ("FRO",),
+                                              "iran-war", HZ, states=(("hormuz", 0, 1),))},
+                open_ledger_ids={11, 62, 22})
+        def new(d):
+            self.P(d).update(cluster="opec-policy", prob=0.58, row_class="marker")
+            self.P(d)["states"] = [{"state": "hormuz", "lo": 2, "hi": 2}]
+        self.assertIn("R28", self.mutate(new, c))
+        def declared(d):
+            new(d)
+            self.P(d)["contradicts"] = [{"ledger_id": 22, "nature": "a glut can come from demand loss",
+                                         "hedge_reason": "they cannot both pay; #22 has the transit data behind it"}]
+        self.assertNotIn("R28", self.mutate(declared, c))
+        def compatible(d):
+            new(d); self.P(d)["states"] = [{"state": "hormuz", "lo": 1, "hi": 2}]
+        self.assertNotIn("R28", self.mutate(compatible, c))
+
+    def test_R37_a_conflict_row_must_read_the_deciders_calendar(self):
+        """#72 priced a strike inside no window and #19 priced calm the day after Iran hit vessels: both skipped the question
+        'what do the deciders want in this window, and what would end their restraint?'"""
+        import datetime as _d
+        def new(d, **inc):
+            self.iran(d, prob=0.70, row_class="marker", lean="de-escalation")
+            self.P(d)["conflict_level"] = {"lo": 0, "hi": 3}
+            if inc is not None:
+                self.P(d)["incentive"] = inc
+        c = ctx(as_of=_d.date(2026, 7, 8))
+        self.assertIn("R37", self.mutate(lambda d: (self.iran(d, prob=0.70, row_class="marker", lean="de-escalation"),
+                                                    self.P(d).__setitem__("conflict_level", {"lo": 0, "hi": 3})), c))
+        calm = dict(act="us_strike_iran", claims="does_not_occur", window="us-mou-jun", trigger="")
+        self.assertIn("R37", self.mutate(lambda d: new(d, **calm), c))                       # a trigger fired 7/7
+        held = dict(calm, trigger="the MOU window stays in force and the trigger was a shipping attack, not a US-force attack")
+        self.assertNotIn("R37", self.mutate(lambda d: new(d, **held), c))
+        c2 = ctx(as_of=_d.date(2026, 10, 23))
+        strike = dict(act="us_strike_iran", claims="occurs", window="us-pledge-midterms", trigger="")
+        def inside(d):
+            new(d, **strike); self.P(d).update(prob=0.60, horizon="2026-11-03", lean="escalation")
+            self.P(d)["conflict_level"] = {"lo": 3, "hi": 4}
+        self.assertIn("R37", self.mutate(inside, c2))
+
     def test_R28_not_both_sides_in_one_batch(self):
         def f(d):
             p2 = copy.deepcopy(self.P(d))
@@ -406,7 +479,7 @@ class Rules(unittest.TestCase):
         self.assertIn("R36", found)
 
     def test_every_rule_is_documented(self):
-        self.assertEqual(sorted(schema.RULES), [f"R{i:02d}" for i in range(1, 37)])
+        self.assertEqual(sorted(schema.RULES), [f"R{i:02d}" for i in range(1, 38)])
 
 
 if __name__ == "__main__":

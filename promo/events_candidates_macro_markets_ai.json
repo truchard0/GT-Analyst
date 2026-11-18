@@ -1,0 +1,5210 @@
+[
+ {
+  "headline": "US adds disappointing 29,000 jobs and unemployment ticks up to 4.2% in September",
+  "first": "2026-10-02T12:36Z",
+  "last": "2026-10-05T04:49Z",
+  "n_items": 34,
+  "outlets": [
+   "AP News",
+   "BNN Bloomberg",
+   "Bakersfield.com",
+   "Boston Herald",
+   "Boulder Daily Camera",
+   "DRGNews",
+   "Daily Local",
+   "Delco Times"
+  ],
+  "n_outlets": 31,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "US adds disappointing 29,000 jobs and unemployment ticks up to 4.2% in September",
+   "US adds disappointing 29,000 jobs and unemployment ticks up to 4.2% in September | National News | 2news.com",
+   "US adds disappointing 29,000 jobs and unemployment ticks up to 4.2% in September - News-Herald"
+  ]
+ },
+ {
+  "headline": "Final jobs report before midterms delivers disappointment",
+  "first": "2026-10-02T19:59Z",
+  "last": "2026-10-03T08:08Z",
+  "n_items": 32,
+  "outlets": [
+   "13wham.com",
+   "KATV",
+   "KFOX",
+   "KRXI",
+   "The National Desk",
+   "WBFF",
+   "WBMA",
+   "WCIV"
+  ],
+  "n_outlets": 28,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Final jobs report before midterms delivers disappointment"
+  ]
+ },
+ {
+  "headline": "America In Focus: unemployment rate climbs, mortgage rate hits nearly 3 year high",
+  "first": "2026-10-03T14:10Z",
+  "last": "2026-10-05T13:39Z",
+  "n_items": 20,
+  "outlets": [
+   "Bozeman Daily Chronicle",
+   "CT Insider",
+   "GreenevilleSun.com",
+   "KTVN",
+   "Midland Daily News",
+   "NewsNation",
+   "Newsday",
+   "SFGATE"
+  ],
+  "n_outlets": 19,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "America In Focus: unemployment rate climbs, mortgage rate hits nearly 3 year high",
+   "America In Focus: Unemployment rate climbs, mortgage rate hits nearly 3 year high",
+   "America In Focus: Unemployment rate climbs, mortgage rate hits nearly 3 year high | National News | 2news.com"
+  ]
+ },
+ {
+  "headline": "Unemployment benefit claims dipped slightly last week as layoffs remain low",
+  "first": "2026-10-08T12:41Z",
+  "last": "2026-10-09T05:06Z",
+  "n_items": 20,
+  "outlets": [
+   "Audacy",
+   "Boston Herald",
+   "Bozeman Daily Chronicle",
+   "Chattanooga Times Free Press",
+   "Daily Freeman",
+   "Jamaica Gleaner",
+   "NewsNation",
+   "Newsday"
+  ],
+  "n_outlets": 17,
+  "feeds": [
+   "bls-gnews",
+   "law-signed-gnews"
+  ],
+  "variants": [
+   "Unemployment benefit claims dipped slightly last week as layoffs remain low",
+   "Unemployment benefit claims dipped slightly last week as layoffs remain low - Scranton Times-Tribune",
+   "Unemployment benefit claims dipped slightly last week as lay-offs remain low"
+  ]
+ },
+ {
+  "headline": "Canada sheds 68,000 jobs, unemployment rate up to 6.5% in September",
+  "first": "2026-10-09T09:26Z",
+  "last": "2026-10-15T10:35Z",
+  "n_items": 20,
+  "outlets": [
+   "BNN Bloomberg",
+   "CTV News",
+   "Castanet",
+   "DARPAN Magazine",
+   "Investment Executive",
+   "Medicine Hat News",
+   "National Newswatch",
+   "OrilliaMatters.com"
+  ],
+  "n_outlets": 17,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Canada sheds 68,000 jobs, unemployment rate up to 6.5% in September",
+   "Canada sheds 68,000 jobs, unemployment rate up to 6.5% in September - Niagara-on-the-Lake Local"
+  ]
+ },
+ {
+  "headline": "Claims for unemployment benefits drop to 197,000, the lowest since mid-July as layoffs remain rare",
+  "first": "2026-09-24T12:38Z",
+  "last": "2026-09-27T09:17Z",
+  "n_items": 17,
+  "outlets": [
+   "Borneo Bulletin",
+   "Boston Herald",
+   "Bozeman Daily Chronicle",
+   "Breaking News, Latest News and Videos",
+   "CT Insider",
+   "KPAX News",
+   "News4JAX",
+   "Newsday"
+  ],
+  "n_outlets": 16,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Claims for unemployment benefits drop to 197,000, the lowest since mid-July as layoffs remain rare",
+   "Claims for unemployment benefits drop to 197,000, the lowest since mid-July as layoffs remain rare - ABC News",
+   "Claims for unemployment benefits drop to 197,000, lowest since mid-July as layoffs remain rare - The Tribune-Democrat"
+  ]
+ },
+ {
+  "headline": "US stocks rise near their record after the latest jobs report eases worries about inflation",
+  "first": "2026-10-02T17:23Z",
+  "last": "2026-10-09T20:13Z",
+  "n_items": 16,
+  "outlets": [
+   "BNN Bloomberg",
+   "Bozeman Daily Chronicle",
+   "Daily Local",
+   "Greeley Tribune",
+   "KIRO 7 News Seattle",
+   "KRCG",
+   "Republican Herald",
+   "Shoreline Media Group"
+  ],
+  "n_outlets": 16,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "US stocks rise near their record after the latest jobs report eases worries about inflation",
+   "US stocks rise near their record after latest jobs report eases worries about inflation",
+   "U.S. stocks rise near their record after the latest jobs report eases worries about inflation"
+  ]
+ },
+ {
+  "headline": "U.S. unemployment claims dip to 197,000, lowest since mid-July",
+  "first": "2026-10-01T12:38Z",
+  "last": "2026-10-02T04:00Z",
+  "n_items": 14,
+  "outlets": [
+   "Boston Herald",
+   "Bozeman Daily Chronicle",
+   "Breaking News, Latest News and Videos",
+   "CT Insider",
+   "Chattanooga Times Free Press",
+   "Investment Executive",
+   "MySA",
+   "New Haven Register"
+  ],
+  "n_outlets": 14,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "U.S. unemployment claims dip to 197,000, lowest since mid-July",
+   "US unemployment claims dip to 197,000, lowest since mid-July",
+   "U.S. unemployment claims dip to 197,000, lowest since mid-July - ABC News"
+  ]
+ },
+ {
+  "headline": "Asian shares mixed after global bond sell-off deepens and ahead of US jobs data",
+  "first": "2026-10-02T04:53Z",
+  "last": "2026-10-02T18:09Z",
+  "n_items": 14,
+  "outlets": [
+   "Athens, GA",
+   "Bay to Bay News",
+   "DT Next",
+   "Daily Excelsior",
+   "News4JAX",
+   "Newsday",
+   "The Edwardsville Intelligencer",
+   "The New Indian Express"
+  ],
+  "n_outlets": 14,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Asian shares mixed after global bond sell-off deepens and ahead of US jobs data",
+   "Asian shares mixed after global bond sell-off deepens and ahead of US jobs data - WGAU Radio",
+   "Asian shares mixed after global bond sell-off deepens ahead of US jobs data"
+  ]
+ },
+ {
+  "headline": "Dollar retreats from 18-month high despite hot CPI as Fed officials temper hike bets",
+  "first": "2026-10-15T01:49Z",
+  "last": "2026-10-15T08:19Z",
+  "n_items": 16,
+  "outlets": [
+   "Bradenton Herald",
+   "Business Recorder",
+   "BusinessToday Malaysia",
+   "CNBC",
+   "Investify",
+   "Jordan News",
+   "Reuters",
+   "SRN News"
+  ],
+  "n_outlets": 13,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Dollar retreats from 18-month high despite hot CPI as Fed officials temper hike bets",
+   "Dollar retreats from 18-month high despite hot CPI as Fed officials temper hike bets - Columbus Ledger-Enquirer",
+   "Dollar Retreats From 18-Month High Despite Hot US Inflation"
+  ]
+ },
+ {
+  "headline": "US job growth slows sharply in September; unemployment rate rises to 4.2%",
+  "first": "2026-10-02T12:38Z",
+  "last": "2026-10-04T16:20Z",
+  "n_items": 13,
+  "outlets": [
+   "AOL.com",
+   "Biloxi Sun Herald",
+   "Idaho Statesman",
+   "KSL.com",
+   "Modesto Bee",
+   "Reuters",
+   "South China Morning Post",
+   "StreetInsider"
+  ],
+  "n_outlets": 13,
+  "feeds": [
+   "bls-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "US job growth slows sharply in September; unemployment rate rises to 4.2%",
+   "US job growth slows sharply in September, unemployment rises",
+   "Job growth slows sharply in September; unemployment rate rises to 4.2%"
+  ]
+ },
+ {
+  "headline": "Black unemployment just rose at its fastest pace since Covid",
+  "first": "2026-10-02T17:52Z",
+  "last": "2026-10-05T10:14Z",
+  "n_items": 14,
+  "outlets": [
+   "CNN",
+   "KDRV NewsWatch 12",
+   "KEZI",
+   "KION Central Coast",
+   "KQ2",
+   "KTEN",
+   "KVIA",
+   "LocalNews8.com"
+  ],
+  "n_outlets": 12,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Black unemployment just rose at its fastest pace since Covid",
+   "Black unemployment just rose at its fastest pace since Covid - News Channel 3-12"
+  ]
+ },
+ {
+  "headline": "10-year Treasury yield hits highest level since 2007 as market prices in another Fed rate hike",
+  "first": "2026-09-23T15:27Z",
+  "last": "2026-10-07T23:16Z",
+  "n_items": 13,
+  "outlets": [
+   "AOL.com",
+   "Reuters",
+   "SSBCrack",
+   "Seoul Economic Daily",
+   "SuaraGarut.ID",
+   "The Edge Malaysia",
+   "The Edge Singapore",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 12,
+  "feeds": [
+   "cnbc-top",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "10-year Treasury yield hits highest level since 2007 as market prices in another Fed rate hike",
+   "US 10-Year Treasury Yield Hits Highest Level Since 2007",
+   "U.S. 10-Year Treasury Yield Hits Highest Level Since 2007"
+  ]
+ },
+ {
+  "headline": "Asian shares track Wall Street higher, Treasury yields near multi-decade highs",
+  "first": "2026-10-06T01:48Z",
+  "last": "2026-10-06T05:37Z",
+  "n_items": 13,
+  "outlets": [
+   "Business Standard",
+   "KSLM Radio",
+   "Raleigh News & Observer",
+   "Reuters",
+   "SRN News",
+   "The Mighty 790 KFGO",
+   "WHTC",
+   "WKZO"
+  ],
+  "n_outlets": 12,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asian shares track Wall Street higher, Treasury yields near multi-decade highs",
+   "Asian shares track Wall Street higher, Treasury yields near decades high",
+   "Asian shares track Wall Street higher; Treasury yields near multi-decade highs"
+  ]
+ },
+ {
+  "headline": "Unemployment ticks up to 4.2% as US adds disappointing 29,000 jobs in September",
+  "first": "2026-10-02T12:08Z",
+  "last": "2026-10-02T13:31Z",
+  "n_items": 12,
+  "outlets": [
+   "ABC15 Arizona",
+   "FOX 17 West Michigan News",
+   "KGUN 9",
+   "KMTV 3 News Now Omaha",
+   "KPAX News",
+   "KSHB 41 Kansas City",
+   "KXLF.com",
+   "Scripps News"
+  ],
+  "n_outlets": 11,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Unemployment ticks up to 4.2% as US adds disappointing 29,000 jobs in September"
+  ]
+ },
+ {
+  "headline": "Wall Street week ahead: consumer confidence, inflation, employment updates",
+  "first": "2026-09-26T08:00Z",
+  "last": "2026-09-27T08:08Z",
+  "n_items": 11,
+  "outlets": [
+   "Bozeman Daily Chronicle",
+   "Breaking News, Latest News and Videos",
+   "Greater Milwaukee Today",
+   "Newsday",
+   "Seattlepi.com",
+   "The Edwardsville Intelligencer",
+   "The Washington Post",
+   "WRAL"
+  ],
+  "n_outlets": 11,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Wall Street week ahead: consumer confidence, inflation, employment updates",
+   "Wall Street week ahead: consumer confidence, inflation, employment updates - ABC News"
+  ]
+ },
+ {
+  "headline": "Mixed economic signals emerge as inflation steadies but hiring slows before midterms",
+  "first": "2026-10-07T19:10Z",
+  "last": "2026-10-07T19:30Z",
+  "n_items": 11,
+  "outlets": [
+   "KABB",
+   "KATU",
+   "KDNL",
+   "KGAN",
+   "KMPH Fox 26",
+   "WCIV",
+   "WCYB",
+   "WKEF"
+  ],
+  "n_outlets": 11,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Mixed economic signals emerge as inflation steadies but hiring slows before midterms"
+  ]
+ },
+ {
+  "headline": "Asian stocks climb as strong earnings buoy Wall Street",
+  "first": "2026-10-21T02:10Z",
+  "last": "2026-10-21T08:15Z",
+  "n_items": 12,
+  "outlets": [
+   "Investing.com",
+   "Reuters",
+   "Revoi.in",
+   "The Mighty 790 KFGO",
+   "The Straits Times",
+   "WDEZ",
+   "WKZO",
+   "WTVB"
+  ],
+  "n_outlets": 10,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asian stocks climb as strong earnings buoy Wall Street",
+   "Asian stocks climb as strong earnings buoy Wall Street By Reuters",
+   "Asian stocks climb as strong earnings buoy Wall Street - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Gold's lustre dims as Treasury yields surge, markets bet on higher Fed rates",
+  "first": "2026-09-28T17:44Z",
+  "last": "2026-09-29T07:03Z",
+  "n_items": 10,
+  "outlets": [
+   "Engineering News",
+   "Reuters",
+   "Rock Hill Herald",
+   "Sun Herald",
+   "The Mighty 790 KFGO",
+   "WSAU",
+   "WTVB",
+   "macro-gnews"
+  ],
+  "n_outlets": 10,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Gold's lustre dims as Treasury yields surge, markets bet on higher Fed rates",
+   "Gold’s lustre dims as Treasury yields surge, markets bet on higher Fed rates",
+   "Gold's lustre dims as Treasury yields surge, markets bet on higher Fed rates - Tri-City Herald"
+  ]
+ },
+ {
+  "headline": "US private payrolls growth picks up in September, ADP says",
+  "first": "2026-09-30T12:29Z",
+  "last": "2026-09-30T14:19Z",
+  "n_items": 10,
+  "outlets": [
+   "1470 & 100.3 WMBD",
+   "93.3 The Drive",
+   "95 KQDS",
+   "News & Observer",
+   "Reuters",
+   "The Edge Malaysia",
+   "The Mighty 790 KFGO",
+   "WKZO"
+  ],
+  "n_outlets": 10,
+  "feeds": [
+   "bls-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "US private payrolls growth picks up in September, ADP says",
+   "US private payrolls growth picks up in September, ADP says - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Asian bonds record biggest monthly foreign outflow since March 2020",
+  "first": "2026-10-16T07:27Z",
+  "last": "2026-10-16T16:04Z",
+  "n_items": 11,
+  "outlets": [
+   "Bangkok Post",
+   "Charlotte Observer",
+   "Investing.com Canada",
+   "KLSE Screener",
+   "Reuters",
+   "Rock Hill Herald",
+   "San Luis Obispo Tribune",
+   "The Edge Malaysia"
+  ],
+  "n_outlets": 9,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asian bonds record biggest monthly foreign outflow since March 2020",
+   "Asian bonds record biggest monthly foreign outflow since March 2020 By Reuters"
+  ]
+ },
+ {
+  "headline": "Asian stocks weather bond storm, oil retreats slightly",
+  "first": "2026-09-25T02:19Z",
+  "last": "2026-09-25T08:47Z",
+  "n_items": 9,
+  "outlets": [
+   "Investing.com",
+   "Investing.com Australia",
+   "KLSE Screener",
+   "Profit by Pakistan Today",
+   "The Business Times",
+   "The Mighty 790 KFGO",
+   "WTVB",
+   "asahi.com"
+  ],
+  "n_outlets": 9,
+  "feeds": [
+   "crude-gnews",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asian stocks weather bond storm, oil retreats slightly",
+   "Asian stocks weather bond storm, oil retreats slightly By Reuters"
+  ]
+ },
+ {
+  "headline": "A reprieve from rising oil prices helps steady the US stock and bond markets",
+  "first": "2026-09-25T13:24Z",
+  "last": "2026-09-25T14:48Z",
+  "n_items": 9,
+  "outlets": [
+   "BNN Bloomberg",
+   "Boston Herald",
+   "Houston Chronicle",
+   "San Francisco Chronicle",
+   "The Washington Post",
+   "WPXI",
+   "WWAYTV3",
+   "bastillepost.com"
+  ],
+  "n_outlets": 9,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "A reprieve from rising oil prices helps steady the US stock and bond markets",
+   "A reprieve from rising oil prices helps steady the U.S. stock and bond markets",
+   "A reprieve from rising oil prices helps steady the US stock and bond markets - San Antonio Express-News"
+  ]
+ },
+ {
+  "headline": "Dollar firms as US-Iran tensions lift oil, hawkish Fed bets build",
+  "first": "2026-09-28T01:35Z",
+  "last": "2026-09-28T03:38Z",
+  "n_items": 9,
+  "outlets": [
+   "101 WIXX",
+   "Business Recorder",
+   "Free Malaysia Today",
+   "Reuters",
+   "SRN News",
+   "StreetInsider",
+   "The Mighty 790 KFGO",
+   "The State"
+  ],
+  "n_outlets": 9,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Dollar firms as US-Iran tensions lift oil, hawkish Fed bets build",
+   "Dollar firms as US-Iran tensions lift oil"
+  ]
+ },
+ {
+  "headline": "Stocks slip on Wall Street as rising Treasury yields pressure the market",
+  "first": "2026-09-29T16:29Z",
+  "last": "2026-09-30T00:51Z",
+  "n_items": 9,
+  "outlets": [
+   "Bozeman Daily Chronicle",
+   "CTPost",
+   "New Haven Register",
+   "Stamford Advocate",
+   "The Globe and Mail",
+   "The Pilot News",
+   "crude-gnews",
+   "newstimes.com"
+  ],
+  "n_outlets": 9,
+  "feeds": [
+   "crude-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Stocks slip on Wall Street as rising Treasury yields pressure the market",
+   "Stocks slip on Wall Street as rising Treasury yields pressure the market - San Antonio Express-News"
+  ]
+ },
+ {
+  "headline": "Americans are still spending. Friday’s jobs report will show if that can last",
+  "first": "2026-10-01T13:34Z",
+  "last": "2026-10-01T15:51Z",
+  "n_items": 9,
+  "outlets": [
+   "ABC17NEWS",
+   "CNN",
+   "KQ2",
+   "LocalNews8.com",
+   "WQOW",
+   "WXOW",
+   "bls-gnews",
+   "cnn.com"
+  ],
+  "n_outlets": 9,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Americans are still spending. Friday’s jobs report will show if that can last - News Channel 3-12",
+   "Americans are still spending. Friday’s jobs report will show if that can last"
+  ]
+ },
+ {
+  "headline": "US job growth expected to slow in September; unemployment rate likely steady",
+  "first": "2026-10-02T04:01Z",
+  "last": "2026-10-02T06:11Z",
+  "n_items": 9,
+  "outlets": [
+   "1470 & 100.3 WMBD",
+   "Investing.com",
+   "Reuters",
+   "Tacoma News Tribune",
+   "WKZO",
+   "Y100 WNCY",
+   "Yahoo Finance Singapore",
+   "kfgo.com"
+  ],
+  "n_outlets": 9,
+  "feeds": [
+   "bls-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "US job growth expected to slow in September; unemployment rate likely steady",
+   "US job growth expected to slow in September; unemployment rate likely steady By Reuters"
+  ]
+ },
+ {
+  "headline": "US employers added a disappointing 29,000 jobs in September and the unemployment rate ticked up to 4.2%",
+  "first": "2026-10-02T12:31Z",
+  "last": "2026-10-02T12:31Z",
+  "n_items": 9,
+  "outlets": [
+   "Barchart.com",
+   "Ottumwa Courier",
+   "The Verde Independent",
+   "Voice of Alexandria",
+   "Yahoo Finance",
+   "dailyunion.com",
+   "kare11.com",
+   "kens5.com"
+  ],
+  "n_outlets": 9,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "US employers added a disappointing 29,000 jobs in September and the unemployment rate ticked up to 4.2%"
+  ]
+ },
+ {
+  "headline": "Dollar on back foot as US yields, crude prices dip; Aussie buoyed by hawkish RBA",
+  "first": "2026-10-21T01:20Z",
+  "last": "2026-10-21T04:26Z",
+  "n_items": 9,
+  "outlets": [
+   "102.7 WBOW",
+   "Business Recorder",
+   "CNBC",
+   "Reuters",
+   "The Economic Times",
+   "WDEZ",
+   "WHTC",
+   "WTVB"
+  ],
+  "n_outlets": 9,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Dollar on back foot as US yields, crude prices dip; Aussie buoyed by hawkish RBA",
+   "Dollar on back foot as U.S. yields, crude prices dip; Aussie buoyed by hawkish RBA"
+  ]
+ },
+ {
+  "headline": "Stock Market Today: S&P 500, Dow Rise as Oil Falls and AI Stocks Rebound",
+  "first": "2026-09-21T14:17Z",
+  "last": "2026-10-22T12:37Z",
+  "n_items": 23,
+  "outlets": [
+   "AOL.com",
+   "Benzinga",
+   "CNBC TV18",
+   "Coinpaper",
+   "CryptoRank",
+   "NDTV Profit",
+   "The Sunday Guardian",
+   "TradingView"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Stock Market Today: S&P 500, Dow Rise as Oil Falls and AI Stocks Rebound",
+   "Stock Market Today: S&P 500, Dow Jones Futures Fall as Rising Yields and Trump’s Hormuz Deal Rejection Spook Investors—LLY, PEP, JEF in Focus",
+   "Stock Market Today: Dow, S&P 500 and Nasdaq Fall, Oil and Yields Surge"
+  ]
+ },
+ {
+  "headline": "Global bond selloff rolls on, US 30-year yield at highest since 2004",
+  "first": "2026-09-24T23:30Z",
+  "last": "2026-09-25T18:24Z",
+  "n_items": 10,
+  "outlets": [
+   "Investing.com",
+   "Investing.com South Africa",
+   "RTE.ie",
+   "The Edge Malaysia",
+   "The Journal Record",
+   "The Standard (HK)",
+   "The Star",
+   "The Straits Times"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Global bond selloff rolls on, US 30-year yield at highest since 2004",
+   "Global bond selloff rolls on, US 30-year yield at highest since 2004 By Reuters"
+  ]
+ },
+ {
+  "headline": "Wall Street closes in on a winning September following an encouraging update on inflation",
+  "first": "2026-09-30T14:59Z",
+  "last": "2026-09-30T19:12Z",
+  "n_items": 10,
+  "outlets": [
+   "Big Rapids Pioneer",
+   "Greenwich Time",
+   "Lowell Sun",
+   "Midland Daily News",
+   "RiverBender.com",
+   "bnnbloomberg.ca",
+   "macro-gnews",
+   "timesherald.com"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Wall Street closes in on a winning September following an encouraging update on inflation",
+   "Wall Street closes in on a winning September following an encouraging update on inflation - San Antonio Express-News",
+   "Wall Street closes in on a winning September following an encouraging update on inflation - Newsradio WGAN |"
+  ]
+ },
+ {
+  "headline": "Dollar set for weekly gains as yields surge, Fed bets build",
+  "first": "2026-09-25T02:11Z",
+  "last": "2026-09-25T03:23Z",
+  "n_items": 9,
+  "outlets": [
+   "AOL.com",
+   "Business Recorder",
+   "CNBC",
+   "Free Malaysia Today",
+   "NST Online",
+   "The Economic Times",
+   "klsescreener.com",
+   "reuters.com"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Dollar set for weekly gains as yields surge, Fed bets build",
+   "Dollar set for weekly gains as yields surge"
+  ]
+ },
+ {
+  "headline": "Wall St futures gain as yields, oil prices ease ahead of jobs report",
+  "first": "2026-10-02T09:35Z",
+  "last": "2026-10-02T10:02Z",
+  "n_items": 9,
+  "outlets": [
+   "Biloxi Sun Herald",
+   "Investing.com",
+   "Reuters",
+   "The Lufkin Daily News",
+   "The Mighty 790 KFGO",
+   "WKZO",
+   "WTVB",
+   "bls-gnews"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Wall St futures gain as yields, oil prices ease ahead of jobs report",
+   "Wall St futures gain as yields, oil prices ease ahead of jobs report - KELO-AM",
+   "Wall St futures gain as yields, oil prices ease ahead of jobs report - Columbus Ledger-Enquirer"
+  ]
+ },
+ {
+  "headline": "Global equity funds draw inflows for fourth week as Treasury yields ease",
+  "first": "2026-10-16T10:03Z",
+  "last": "2026-10-16T18:02Z",
+  "n_items": 9,
+  "outlets": [
+   "Idaho Statesman",
+   "Macon Telegraph",
+   "Reuters",
+   "SRN News",
+   "StreetInsider",
+   "The Financial Express",
+   "The State",
+   "macro-gnews"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Global equity funds draw inflows for fourth week as Treasury yields ease",
+   "Global equity funds draw inflows for fourth week as Treasury yields ease - Fort Worth Star-Telegram",
+   "Global equity funds draw inflows for fourth week"
+  ]
+ },
+ {
+  "headline": "Stocks advance after Bessent says talks with China were successful before Trump-Xi meeting",
+  "first": "2026-09-21T05:19Z",
+  "last": "2026-09-21T11:27Z",
+  "n_items": 8,
+  "outlets": [
+   "BNN Bloomberg",
+   "News4JAX",
+   "The Edwardsville Intelligencer",
+   "WPLG Local 10",
+   "WWAYTV3",
+   "abcnews.com",
+   "breitbart.com",
+   "wsbradio.com"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Stocks advance after Bessent says talks with China were successful before Trump-Xi meeting"
+  ]
+ },
+ {
+  "headline": "Nevada has lots of new jobs. Why is unemployment still so high?",
+  "first": "2026-09-21T09:00Z",
+  "last": "2026-09-30T13:49Z",
+  "n_items": 8,
+  "outlets": [
+   "CDC Gaming",
+   "Lincoln County Record",
+   "Mesa Valleys Progress",
+   "Mohave Valley News",
+   "Northern Nevada Business Weekly",
+   "The Ely Times",
+   "The Eureka Sentinel",
+   "The Nevada Independent"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Nevada has lots of new jobs. Why is unemployment still so high?"
+  ]
+ },
+ {
+  "headline": "Financial stocks fall with AI and flattening yield curve in focus",
+  "first": "2026-09-22T20:49Z",
+  "last": "2026-09-23T02:39Z",
+  "n_items": 8,
+  "outlets": [
+   "Kitco",
+   "Livemint",
+   "Metrobank Wealth Insights",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "WTVB",
+   "macro-gnews",
+   "wdez.com"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Financial stocks fall with AI and flattening yield curve in focus",
+   "Financial stocks fall with AI and flattening yield curve in focus - WNWN-FM"
+  ]
+ },
+ {
+  "headline": "The forces driving bond yields higher may be here to stay",
+  "first": "2026-10-01T16:32Z",
+  "last": "2026-10-01T22:34Z",
+  "n_items": 8,
+  "outlets": [
+   "KBAK",
+   "KEYE",
+   "WKEF",
+   "WLOS",
+   "WTOV",
+   "abcnews4.com",
+   "kunptv.com",
+   "macro-gnews"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "The forces driving bond yields higher may be here to stay",
+   "The forces driving bond yields higher may be here to stay - WEAR-TV"
+  ]
+ },
+ {
+  "headline": "Rising oil prices, falling technology stocks and reversing bond yields shake Wall Street",
+  "first": "2026-10-08T19:52Z",
+  "last": "2026-10-08T23:53Z",
+  "n_items": 8,
+  "outlets": [
+   "CTPost",
+   "Daily Local",
+   "Norwalk Hour",
+   "Sun Sentinel",
+   "Toledo Blade",
+   "WHEC.com",
+   "Yahoo! Finance Canada",
+   "crude-gnews"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Rising oil prices, falling technology stocks and reversing bond yields shake Wall Street",
+   "Rising oil prices, falling technology stocks and reversing bond yields keep Wall Street unsettled",
+   "Rising oil prices, falling technology stocks and reversing bond yields keep Wall Street unsettled - Pittsburgh Post-Gazette"
+  ]
+ },
+ {
+  "headline": "Analysis-US yield surge triggers mortgage hedging, adds to bond market pressure",
+  "first": "2026-10-12T14:51Z",
+  "last": "2026-10-13T01:07Z",
+  "n_items": 8,
+  "outlets": [
+   "101 WIXX",
+   "Bradenton Herald",
+   "Investing.com",
+   "KSLM Radio",
+   "SRN News",
+   "WSAU",
+   "hi99.com",
+   "macro-gnews"
+  ],
+  "n_outlets": 8,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Analysis-US yield surge triggers mortgage hedging, adds to bond market pressure - KELO-AM",
+   "Analysis-US yield surge triggers mortgage hedging, adds to bond market pressure",
+   "Analysis-US yield surge triggers mortgage hedging, adds to bond market pressure By Reuters"
+  ]
+ },
+ {
+  "headline": "US 10-year Treasury yield hits 24-year high above 5.30%",
+  "first": "2026-09-30T18:47Z",
+  "last": "2026-10-07T22:53Z",
+  "n_items": 14,
+  "outlets": [
+   "CME Group",
+   "Invezz",
+   "NDTV Profit",
+   "Seoul Economic Daily",
+   "VINnews",
+   "Yeni Şafak English",
+   "financialexpress.com"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "US 10-year Treasury yield hits 24-year high above 5.30%",
+   "US 10-year Treasury yield hits 24-year high on inflation fears",
+   "10-year Treasury yield hits 24-year high as US economy grows faster than expected"
+  ]
+ },
+ {
+  "headline": "Jobs report, inflation data to test US rate path, economic strength",
+  "first": "2026-09-25T10:00Z",
+  "last": "2026-09-27T10:05Z",
+  "n_items": 9,
+  "outlets": [
+   "Investing.com",
+   "NST Online",
+   "Newsmax",
+   "TradingView",
+   "cedarnews.net",
+   "klsescreener.com",
+   "tradingview.com"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Jobs report, inflation data to test US rate path, economic strength",
+   "Jobs Report, Inflation Data to Test Rate Path, Economy",
+   "Jobs report, inflation data to test US rate path, economic strength By Reuters"
+  ]
+ },
+ {
+  "headline": "Stocks wobble as bonds slump to monthly loss",
+  "first": "2026-09-29T02:08Z",
+  "last": "2026-09-29T05:39Z",
+  "n_items": 9,
+  "outlets": [
+   "Reuters",
+   "The Financial Express",
+   "The Mighty 790 KFGO",
+   "The Straits Times",
+   "WKZO",
+   "Y100 WNCY",
+   "brecorder.com"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Stocks wobble as bonds slump to monthly loss"
+  ]
+ },
+ {
+  "headline": "Lower US Treasury yield view persists despite biggest quarterly surge since 1994: Reuters poll",
+  "first": "2026-10-07T12:11Z",
+  "last": "2026-10-07T17:13Z",
+  "n_items": 9,
+  "outlets": [
+   "KWSN",
+   "Miami Herald",
+   "Reuters",
+   "San Luis Obispo Tribune",
+   "Tacoma News Tribune",
+   "WKZO",
+   "macro-gnews"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Lower US Treasury yield view persists despite biggest quarterly surge since 1994: Reuters poll - Merced Sun-Star",
+   "Lower US Treasury yield view persists despite biggest quarterly surge since 1994",
+   "Lower US Treasury yield view persists despite biggest quarterly surge since 1994: Reuters poll"
+  ]
+ },
+ {
+  "headline": "Rupee rises 20 paise to 94.79 against US dollar in early trade",
+  "first": "2026-10-16T04:40Z",
+  "last": "2026-10-16T05:49Z",
+  "n_items": 9,
+  "outlets": [
+   "Awaz The Voice",
+   "Business Standard",
+   "DT Next",
+   "Livemint",
+   "The Economic Times",
+   "The Hindu",
+   "bfsi.economictimes.indiatimes.com"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Rupee rises 20 paise to 94.79 against US dollar in early trade",
+   "Rupee rises 20 paise to 94.79 against US dollar during early trade",
+   "Rupee rises 20 paise to 94.79 against U.S. dollar in early trade"
+  ]
+ },
+ {
+  "headline": "NY Fed's Perli says monetary policy toolkit working very well",
+  "first": "2026-09-22T20:25Z",
+  "last": "2026-09-23T12:46Z",
+  "n_items": 8,
+  "outlets": [
+   "Devdiscourse",
+   "Insurance Journal",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "WKZO",
+   "hi99.com",
+   "macro-gnews"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "NY Fed's Perli says monetary policy toolkit working very well",
+   "NY Fed's Perli says monetary policy toolkit working very well - Tri-City Herald",
+   "NY Fed’s Perli says monetary policy toolkit working very well"
+  ]
+ },
+ {
+  "headline": "US stocks fall as 10-year Treasury yield hits highest since 2007",
+  "first": "2026-09-23T14:55Z",
+  "last": "2026-09-24T17:20Z",
+  "n_items": 8,
+  "outlets": [
+   "Analytics Insight",
+   "CNA",
+   "GV Wire",
+   "Idaho Business Review",
+   "Livemint",
+   "The Lufkin Daily News",
+   "hindustantimes.com"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "US stocks fall as 10-year Treasury yield hits highest since 2007",
+   "US Stocks Fall as 10-Year Treasury Yield Hits Highest Since 2007",
+   "US stocks fall as 10-year treasury yield hits highest since 2007"
+  ]
+ },
+ {
+  "headline": "Stock markets climb worldwide after oil prices and bond yields give back some of last week’s jumps - Pittsburgh Post-Gazette",
+  "first": "2026-09-21T13:37Z",
+  "last": "2026-09-21T14:38Z",
+  "n_items": 7,
+  "outlets": [
+   "Boston Herald",
+   "Hartford Courant",
+   "Sun Sentinel",
+   "The Morning Call",
+   "WWAYTV3",
+   "antigojournal.com",
+   "macro-gnews"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "crude-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Stock markets climb worldwide after oil prices and bond yields give back some of last week’s jumps - Pittsburgh Post-Gazette",
+   "Stock markets climb worldwide after oil prices and bond yields give back some of last week's jumps"
+  ]
+ },
+ {
+  "headline": "Interactive: AI could push 11 million Americans into new careers by 2035",
+  "first": "2026-09-29T20:36Z",
+  "last": "2026-10-01T00:02Z",
+  "n_items": 7,
+  "outlets": [
+   "KGUN 9",
+   "KMTV 3 News Now Omaha",
+   "KZTV10",
+   "Scripps News",
+   "WCPO 9 Cincinnati",
+   "kkco11news.com",
+   "ktnv.com"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Interactive: AI could push 11 million Americans into new careers by 2035"
+  ]
+ },
+ {
+  "headline": "Stocks and bonds are holding relatively steady after a potentially encouraging update on inflation",
+  "first": "2026-09-30T12:11Z",
+  "last": "2026-09-30T13:54Z",
+  "n_items": 7,
+  "outlets": [
+   "BNN Bloomberg",
+   "CP24",
+   "KOB 4",
+   "Press Telegram",
+   "The Globe and Mail",
+   "macro-gnews",
+   "seattlepi.com"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Stocks and bonds are holding relatively steady after a potentially encouraging update on inflation",
+   "Stocks and bonds are holding relatively steady after a potentially encouraging update on inflation - Jacksonville Journal-Courier"
+  ]
+ },
+ {
+  "headline": "Bonds teeter after US Treasuries' worst quarter since 1994",
+  "first": "2026-10-01T06:24Z",
+  "last": "2026-10-01T09:32Z",
+  "n_items": 7,
+  "outlets": [
+   "101 WIXX",
+   "AOL.com",
+   "KSLM Radio",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "Yahoo Finance Singapore",
+   "macro-gnews"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Bonds teeter after US Treasuries' worst quarter since 1994",
+   "Bonds teeter after US Treasuries’ worst quarter since 1994",
+   "Bonds teeter after US Treasuries’ worst quarter since 1994 - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Bond market bust: The 10-year Treasury yield hit its highest level since 2002",
+  "first": "2026-10-01T10:22Z",
+  "last": "2026-10-01T10:49Z",
+  "n_items": 7,
+  "outlets": [
+   "ABC17NEWS",
+   "CNN",
+   "Channel 3000",
+   "KDRV NewsWatch 12",
+   "KIMT",
+   "KWWL",
+   "news8000.com"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Bond market bust: The 10-year Treasury yield hit its highest level since 2002"
+  ]
+ },
+ {
+  "headline": "The US economy added just 29,000 jobs last month and the unemployment rate ticked up to 4.2%",
+  "first": "2026-10-02T09:00Z",
+  "last": "2026-10-02T21:24Z",
+  "n_items": 7,
+  "outlets": [
+   "CNN",
+   "Channel 3000",
+   "KQ2",
+   "KRDO",
+   "KTEN",
+   "WKOW",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "The US economy added just 29,000 jobs last month and the unemployment rate ticked up to 4.2%"
+  ]
+ },
+ {
+  "headline": "What will Washington do next if US bond yields keep rising?",
+  "first": "2026-10-05T10:16Z",
+  "last": "2026-10-05T23:01Z",
+  "n_items": 7,
+  "outlets": [
+   "BNN Bloomberg",
+   "Bilyonaryo Business",
+   "Investing.com",
+   "Kitco",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "WTVB"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "What will Washington do next if US bond yields keep rising?",
+   "What will Washington do next if U.S. bond yields keep rising?",
+   "What will Washington do next if US bond yields keep rising? By Reuters"
+  ]
+ },
+ {
+  "headline": "AI-centered US stock bull market nears four-year anniversary",
+  "first": "2026-10-09T10:02Z",
+  "last": "2026-10-09T14:50Z",
+  "n_items": 7,
+  "outlets": [
+   "102.7 WBOW",
+   "Bradenton Herald",
+   "Reuters",
+   "The Globe and Mail",
+   "WKZO",
+   "WTVB",
+   "macro-gnews"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "AI-centered US stock bull market nears four-year anniversary",
+   "AI-centered US stock bull market nears four-year anniversary - KELO-AM",
+   "AI-centered U.S. stock bull market nears four-year mark"
+  ]
+ },
+ {
+  "headline": "Trump's Fed ex-nominee Shelton to advise Bessent, Treasury says",
+  "first": "2026-10-09T12:30Z",
+  "last": "2026-10-09T14:03Z",
+  "n_items": 7,
+  "outlets": [
+   "AOL.com",
+   "Kitco",
+   "Raleigh News & Observer",
+   "Reuters",
+   "WTVB",
+   "Yahoo Finance",
+   "macro-gnews"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Trump's Fed ex-nominee Shelton to advise Bessent, Treasury says",
+   "Trump’s Fed ex-nominee Shelton to advise Bessent, Treasury says - KELO-AM",
+   "Trump’s Fed ex-nominee Shelton to advise Bessent, Treasury says"
+  ]
+ },
+ {
+  "headline": "Asia shares edge up as chip selloff eases; US CPI awaited",
+  "first": "2026-10-14T01:53Z",
+  "last": "2026-10-14T04:08Z",
+  "n_items": 7,
+  "outlets": [
+   "Business Recorder",
+   "DD India",
+   "Reuters",
+   "StreetInsider",
+   "WKZO",
+   "Y100 WNCY",
+   "macro-gnews"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "crude-gnews",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asia shares edge up as chip selloff eases; US CPI awaited",
+   "Asia shares edge up as chip selloff eases; US CPI awaited - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Asian markets sell off as AI trades crumble after hot US CPI data",
+  "first": "2026-10-15T00:51Z",
+  "last": "2026-10-17T18:43Z",
+  "n_items": 7,
+  "outlets": [
+   "Business Recorder",
+   "DD News",
+   "Free Malaysia Today",
+   "Reuters",
+   "StreetInsider",
+   "The Mighty 790 KFGO",
+   "WTVB"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "crude-gnews",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asian markets sell off as AI trades crumble after hot US CPI data"
+  ]
+ },
+ {
+  "headline": "US equity funds draw renewed inflows as Treasury yields ease",
+  "first": "2026-10-16T12:28Z",
+  "last": "2026-10-16T13:12Z",
+  "n_items": 7,
+  "outlets": [
+   "Hilton Head Island Packet",
+   "Reuters",
+   "Rock Hill Herald",
+   "StreetInsider",
+   "The Mighty 790 KFGO",
+   "Wichita Eagle",
+   "macro-gnews"
+  ],
+  "n_outlets": 7,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "US equity funds draw renewed inflows as Treasury yields ease",
+   "US equity funds draw renewed inflows as Treasury yields ease - KELO-AM"
+  ]
+ },
+ {
+  "headline": "US Stock Market Today: S&P 500 Futures Gain 0.63%, Nasdaq Futures Rise 1.09% as Oil Prices Fall, Treasury Yields Ease & AI Stocks Rally; Check What Investors Should Know",
+  "first": "2026-09-21T13:04Z",
+  "last": "2026-10-12T13:44Z",
+  "n_items": 14,
+  "outlets": [
+   "24/7 Wall St.",
+   "The Sunday Guardian",
+   "TradingView",
+   "Yahoo Finance",
+   "finance.yahoo.com",
+   "simplywall.st"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews",
+   "crude-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "US Stock Market Today: S&P 500 Futures Gain 0.63%, Nasdaq Futures Rise 1.09% as Oil Prices Fall, Treasury Yields Ease & AI Stocks Rally; Check What Investors Should Know",
+   "US Stock Market Today: S&P 500 Futures Climb On Higher-For-Longer Rate Jitters",
+   "Stock Market Today: S&P 500 Futures Gain, Nasdaq 100 Slips as Trump Administration Targets Iranian Airlines — LEN, GRML, ACN in Focus"
+  ]
+ },
+ {
+  "headline": "A shaky day for oil prices and the bond market leaves US stocks not far from where they started",
+  "first": "2026-09-24T20:21Z",
+  "last": "2026-09-25T00:33Z",
+  "n_items": 9,
+  "outlets": [
+   "Odessa American",
+   "The Globe and Mail",
+   "The Washington Post",
+   "WHEC.com",
+   "crude-gnews",
+   "theglobeandmail.com"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "A shaky day for oil prices and the bond market leaves US stocks not far from where they started",
+   "A shaky day for oil prices and the bond market leaves US stocks not far from where they started - San Antonio Express-News"
+  ]
+ },
+ {
+  "headline": "Wall Street ends down as oil prices, Treasury yields rise",
+  "first": "2026-09-23T20:03Z",
+  "last": "2026-09-27T08:12Z",
+  "n_items": 8,
+  "outlets": [
+   "Reuters",
+   "StreetInsider",
+   "Texas' Oldest Newspaper",
+   "The Detroit News",
+   "The Straits Times",
+   "Virginia Business"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Wall Street ends down as oil prices, Treasury yields rise",
+   "Wall Street ends down as oil prices, Treasury yields rise - The Daily News"
+  ]
+ },
+ {
+  "headline": "Bessent Urges Fed to Keep ‘Open Mind’ on US Inflation Outlook",
+  "first": "2026-09-27T16:19Z",
+  "last": "2026-09-27T21:36Z",
+  "n_items": 8,
+  "outlets": [
+   "Bloomberg",
+   "Seeking Alpha",
+   "Yahoo! Finance Canada",
+   "investingLive",
+   "macro-gnews",
+   "tradingview.com"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Bessent Urges Fed to Keep ‘Open Mind’ on US Inflation Outlook",
+   "Bessent urges Fed to keep ‘open mind’ on rates as AI boosts productivity",
+   "Bessent Urges Fed to Keep ‘Open Mind’ on U.S. Inflation Outlook - The Spokesman-Review"
+  ]
+ },
+ {
+  "headline": "Asian shares decline under pressure from rising bond yields and surging oil prices",
+  "first": "2026-10-08T05:17Z",
+  "last": "2026-10-08T07:43Z",
+  "n_items": 8,
+  "outlets": [
+   "Bozeman Daily Chronicle",
+   "Daily Excelsior",
+   "Newswav",
+   "The Washington Post",
+   "WRAL",
+   "macro-gnews"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Asian shares decline under pressure from rising bond yields and surging oil prices",
+   "Asian shares decline under pressure from rising bond yields and surging oil prices - WSB-TV",
+   "Asian shares decline under pressure from rising bond yields and surging oil prices - Jacksonville Journal-Courier"
+  ]
+ },
+ {
+  "headline": "Rupee rises 13 paise to 95.65 against US dollar in early trade",
+  "first": "2026-09-22T04:41Z",
+  "last": "2026-09-22T07:38Z",
+  "n_items": 7,
+  "outlets": [
+   "DT Next",
+   "The Economic Times",
+   "The Hindu",
+   "The New Indian Express",
+   "TradingView",
+   "cfo.economictimes.indiatimes.com"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Rupee rises 13 paise to 95.65 against US dollar in early trade",
+   "Rupee rises 13 paise to 95.65 against U.S. dollar in early trade"
+  ]
+ },
+ {
+  "headline": "10-year Treasury yield hits 5.1% for first time in 19 years",
+  "first": "2026-09-23T18:31Z",
+  "last": "2026-09-24T01:24Z",
+  "n_items": 7,
+  "outlets": [
+   "ABC17NEWS",
+   "KQ2",
+   "KXLY.com",
+   "WKOW",
+   "WQOW",
+   "macro-gnews"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "10-year Treasury yield hits 5.1% for first time in 19 years - News Channel 3-12",
+   "10-year Treasury yield hits 5.1% for first time in 19 years"
+  ]
+ },
+ {
+  "headline": "Equities end slightly lower as bond yields hold near multi-decade highs",
+  "first": "2026-09-29T19:11Z",
+  "last": "2026-09-30T02:02Z",
+  "n_items": 7,
+  "outlets": [
+   "NST Online",
+   "San Luis Obispo Tribune",
+   "Tacoma News Tribune",
+   "The Business Times",
+   "The Edge Malaysia",
+   "The Straits Times"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Equities end slightly lower as bond yields hold near multi-decade highs",
+   "US equities end slightly lower as bond yields hold near multi-decade highs"
+  ]
+ },
+ {
+  "headline": "US hiring slows and unemployment ticks higher with a month remaining before Americans head to polls",
+  "first": "2026-10-02T13:39Z",
+  "last": "2026-10-04T13:27Z",
+  "n_items": 7,
+  "outlets": [
+   "FOX40",
+   "KTVN",
+   "Times Leader",
+   "WCCB Charlotte",
+   "WPXI",
+   "huntingdondailynews.com"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "US hiring slows and unemployment ticks higher with a month remaining before Americans head to polls"
+  ]
+ },
+ {
+  "headline": "Dollar holds firm as French fiscal woes keep euro on back foot",
+  "first": "2026-10-05T01:53Z",
+  "last": "2026-10-05T02:59Z",
+  "n_items": 7,
+  "outlets": [
+   "Business Recorder",
+   "Reuters",
+   "Tacoma News Tribune",
+   "The Economic Times",
+   "The Mighty 790 KFGO",
+   "WTAQ"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews",
+   "maritime-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Dollar holds firm as French fiscal woes keep euro on back foot"
+  ]
+ },
+ {
+  "headline": "Gold rises on softer dollar, easing yields; Fed outlook in focus",
+  "first": "2026-10-09T01:58Z",
+  "last": "2026-10-09T03:57Z",
+  "n_items": 7,
+  "outlets": [
+   "Business Recorder",
+   "CNBC",
+   "Dunya News",
+   "KLSE Screener",
+   "NST Online",
+   "Reuters"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Gold rises on softer dollar, easing yields; Fed outlook in focus"
+  ]
+ },
+ {
+  "headline": "UK jobs market shows some recovery signs as Bank of England mulls rate hike",
+  "first": "2026-10-20T06:24Z",
+  "last": "2026-10-20T11:07Z",
+  "n_items": 7,
+  "outlets": [
+   "101 WIXX",
+   "RTE.ie",
+   "The Business Times",
+   "The Edge Malaysia",
+   "WHTC",
+   "WSAU"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "UK jobs market shows some recovery signs as BOE mulls rate hike",
+   "UK jobs market shows some recovery signs as Bank of England mulls rate hike",
+   "UK jobs market shows some recovery signs as BoE mulls rate hike"
+  ]
+ },
+ {
+  "headline": "Federal Reserve rate hike reflects new world of sticky inflation and faster growth",
+  "first": "2026-09-21T01:31Z",
+  "last": "2026-09-23T05:06Z",
+  "n_items": 6,
+  "outlets": [
+   "Anchorage Daily News",
+   "Decatur Daily",
+   "Jamaica Gleaner",
+   "Kentucky Today",
+   "NewsNation",
+   "abccolumbia.com"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Federal Reserve rate hike reflects new world of sticky inflation and faster growth"
+  ]
+ },
+ {
+  "headline": "Equities dip as bond yields hold near multi-decade highs",
+  "first": "2026-09-29T19:32Z",
+  "last": "2026-09-29T19:57Z",
+  "n_items": 6,
+  "outlets": [
+   "Fresno Bee",
+   "The Mighty 790 KFGO",
+   "WHTC",
+   "WKZO",
+   "WTVB",
+   "macro-gnews"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Equities dip as bond yields hold near multi-decade highs",
+   "Equities dip as bond yields hold near multi-decade highs - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Asian stocks dip, bonds in focus after torrid September",
+  "first": "2026-10-01T01:56Z",
+  "last": "2026-10-01T03:08Z",
+  "n_items": 6,
+  "outlets": [
+   "Business Recorder",
+   "Free Malaysia Today",
+   "Reuters",
+   "WTAQ",
+   "Y100 WNCY",
+   "macro-gnews"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "crude-gnews",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asian stocks dip, bonds in focus after torrid September",
+   "Asian stocks dip, bonds in focus after torrid September - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Asian shares fall after wild swings in bonds, FX before US jobs data",
+  "first": "2026-10-02T02:10Z",
+  "last": "2026-10-02T07:51Z",
+  "n_items": 6,
+  "outlets": [
+   "DD News",
+   "Reuters",
+   "Tacoma News Tribune",
+   "Y100 WNCY",
+   "bls-gnews",
+   "ddindia.co.in"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asian shares fall after wild swings in bonds, FX before US jobs data",
+   "Asian shares fall after wild swings in bonds, FX; US jobs data looms",
+   "Asian shares fall after wild swings in bonds, FX; US jobs data looms - star-telegram.com"
+  ]
+ },
+ {
+  "headline": "U.S. economy adds 29K jobs, unemployment 4.2% in September",
+  "first": "2026-10-02T12:31Z",
+  "last": "2026-10-02T22:10Z",
+  "n_items": 6,
+  "outlets": [
+   "AOL.com",
+   "Carolina Coast Online",
+   "Dailyfly News",
+   "Heartlander News",
+   "The Center Square",
+   "blackchronicle.com"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "U.S. economy adds 29K jobs, unemployment 4.2% in September"
+  ]
+ },
+ {
+  "headline": "September Jobs Report Misses Expectations",
+  "first": "2026-10-02T12:52Z",
+  "last": "2026-10-02T21:39Z",
+  "n_items": 6,
+  "outlets": [
+   "KFBK News Radio",
+   "KOA 850 AM & 94.1 FM",
+   "Majic 95.9",
+   "Newsradio 600 KOGO",
+   "The Hill",
+   "iHeart"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "September Jobs Report Misses Expectations",
+   "September jobs report misses expectations"
+  ]
+ },
+ {
+  "headline": "Fed grows more hawkish on inflation but sees room to wait on rate hikes",
+  "first": "2026-10-08T17:18Z",
+  "last": "2026-10-08T21:56Z",
+  "n_items": 6,
+  "outlets": [
+   "KRCR",
+   "KSNV",
+   "WACH.com",
+   "WCTI",
+   "WSTM",
+   "WSYX"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Fed grows more hawkish on inflation but sees room to wait on rate hikes"
+  ]
+ },
+ {
+  "headline": "Tech stocks struggle on AI spending worries, elevated yields",
+  "first": "2026-10-09T01:56Z",
+  "last": "2026-10-09T03:39Z",
+  "n_items": 6,
+  "outlets": [
+   "Biloxi Sun Herald",
+   "Free Malaysia Today",
+   "KLSE Screener",
+   "Reuters",
+   "The State",
+   "The Straits Times"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "chokepoint-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Tech stocks struggle on AI spending worries, elevated yields"
+  ]
+ },
+ {
+  "headline": "Canada loses 68,000 jobs as unemployment rate rises to 6.5%",
+  "first": "2026-10-09T13:18Z",
+  "last": "2026-10-09T16:32Z",
+  "n_items": 6,
+  "outlets": [
+   "Barrie 360",
+   "KamloopsBCNow",
+   "KelownaNow",
+   "VictoriaNow",
+   "Your Quad Counties",
+   "Your Sunset Country"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Canada loses 68,000 jobs as unemployment rate rises to 6.5%",
+   "Canada loses 68,000 jobs as unemployment rate climbs"
+  ]
+ },
+ {
+  "headline": "September job losses pour cold water on Bank of Canada rate hike chatter",
+  "first": "2026-10-09T17:39Z",
+  "last": "2026-10-10T00:38Z",
+  "n_items": 6,
+  "outlets": [
+   "CFJC Today Kamloops",
+   "Castanet",
+   "EverythingGP",
+   "Medicine Hat News",
+   "Winnipeg Sun",
+   "meadowlakeNOW"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "September job losses pour cold water on Bank of Canada rate hike chatter"
+  ]
+ },
+ {
+  "headline": "China creates 10.52 million jobs, plans new AI and services employment measures",
+  "first": "2026-10-10T07:17Z",
+  "last": "2026-10-10T08:04Z",
+  "n_items": 6,
+  "outlets": [
+   "Investing.com",
+   "Investing.com India",
+   "Investing.com Nigeria",
+   "Yahoo Finance Australia",
+   "Yahoo Finance Singapore",
+   "Yahoo Finance UK"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "China creates 10.52 million jobs, plans new AI and services employment measures"
+  ]
+ },
+ {
+  "headline": "Crude oil, inflation data among top factors to drive stock market next week",
+  "first": "2026-10-11T05:24Z",
+  "last": "2026-10-12T03:21Z",
+  "n_items": 6,
+  "outlets": [
+   "Investment Guru India",
+   "Social News XYZ",
+   "The Hans India",
+   "Zee News",
+   "tennews.in",
+   "www.thehawk.in"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Crude oil, inflation data among top factors to drive stock market next week",
+   "Crude oil, inflation data among top factors to drive stock market this week"
+  ]
+ },
+ {
+  "headline": "US stocks hover near their latest record in mixed trading on Wall Street",
+  "first": "2026-10-12T14:11Z",
+  "last": "2026-10-12T22:49Z",
+  "n_items": 6,
+  "outlets": [
+   "Hartford Courant",
+   "Orlando Sentinel",
+   "RiverBender.com",
+   "WHEC.com",
+   "Yahoo! Finance Canada",
+   "crude-gnews"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews",
+   "crude-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "US stocks hover near their latest record in mixed trading on Wall Street",
+   "US stocks hover near their latest record in early trading on Wall Street",
+   "US stocks hover near their latest record in mixed trading on Wall Street - Scranton Times-Tribune"
+  ]
+ },
+ {
+  "headline": "US Treasury yields yet to peak as Fed may tighten further, PIMCO's Ivascyn says",
+  "first": "2026-10-13T15:44Z",
+  "last": "2026-10-13T16:50Z",
+  "n_items": 6,
+  "outlets": [
+   "101 WIXX",
+   "AOL.com",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "WTAQ",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "US Treasury yields yet to peak as Fed may tighten further, PIMCO's Ivascyn says",
+   "US Treasury yields yet to peak as Fed may tighten further, PIMCO’s Ivascyn says"
+  ]
+ },
+ {
+  "headline": "DWP confirms Universal Credit jobs boost for people 16 to 24 including £3,000 payment",
+  "first": "2026-10-16T08:40Z",
+  "last": "2026-10-16T08:41Z",
+  "n_items": 6,
+  "outlets": [
+   "Cambridge News",
+   "Lancs Live",
+   "North Wales Live",
+   "Surrey Live",
+   "Teesside Live",
+   "Wales Online"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "DWP confirms Universal Credit jobs boost for people 16 to 24 including £3,000 payment"
+  ]
+ },
+ {
+  "headline": "Brookings paper offers broad plan to shrink Fed balance sheet",
+  "first": "2026-10-21T13:16Z",
+  "last": "2026-10-21T20:19Z",
+  "n_items": 6,
+  "outlets": [
+   "93.3 The Drive",
+   "Central Oregon Daily",
+   "Kitco",
+   "Reuters",
+   "The Edge Malaysia",
+   "The Mighty 790 KFGO"
+  ],
+  "n_outlets": 6,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Brookings paper offers broad plan to shrink Fed balance sheet"
+  ]
+ },
+ {
+  "headline": "Dow, S&P 500, Nasdaq Futures Rise As Investors Look Past Iran Tensions, Focus On Earnings: AVGO, SNOW, DELL, HPE Stocks In Focus",
+  "first": "2026-09-24T22:26Z",
+  "last": "2026-10-18T07:05Z",
+  "n_items": 16,
+  "outlets": [
+   "Asianet Newsable",
+   "Stocktwits",
+   "TradingView",
+   "Yahoo Finance",
+   "finance.yahoo.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Dow, S&P 500, Nasdaq Futures Rise As Investors Look Past Iran Tensions, Focus On Earnings: AVGO, SNOW, DELL, HPE Stocks In Focus",
+   "Dow, S&P 500, Nasdaq Futures Rise Despite Soaring Treasury Yields As Markets Eye Jobs Report: MU, NKE, IBRX, CEG Stocks In Focus",
+   "Dow, S&P 500, Nasdaq Futures Rise Ahead Of Key Jobs Report: NKE, NFLX, BABA, XRPN Stocks In Focus"
+  ]
+ },
+ {
+  "headline": "Asian shares are higher as easing worries over inflation reduce odds for another Fed rate hike",
+  "first": "2026-10-05T04:15Z",
+  "last": "2026-10-05T18:10Z",
+  "n_items": 11,
+  "outlets": [
+   "Bay to Bay News",
+   "DT Next",
+   "The Globe and Mail",
+   "myMotherLode.com",
+   "theglobeandmail.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Asian shares are higher as easing worries over inflation reduce odds for another Fed rate hike",
+   "Asian shares higher as easing worries over inflation reduce odds for another Fed rate hike"
+  ]
+ },
+ {
+  "headline": "Kotek issues executive order establishing AI procurement safeguards for Oregon government",
+  "first": "2026-09-23T23:05Z",
+  "last": "2026-09-24T04:41Z",
+  "n_items": 9,
+  "outlets": [
+   "KATU",
+   "KCBY",
+   "KMTR",
+   "KPIC",
+   "KVAL"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "law-signed-gnews"
+  ],
+  "variants": [
+   "Kotek issues executive order establishing AI procurement safeguards for Oregon government"
+  ]
+ },
+ {
+  "headline": "Bangladesh faces stagflation challenge as inflation remains high: Report",
+  "first": "2026-10-11T08:12Z",
+  "last": "2026-10-11T23:45Z",
+  "n_items": 8,
+  "outlets": [
+   "Chicago",
+   "Lokmat Times",
+   "Social News XYZ",
+   "The Hans India",
+   "tennews.in"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Bangladesh faces stagflation challenge as inflation remains high: Report",
+   "Bangladesh faces stagflation challenge as inflation remains high: Report - India Tribune"
+  ]
+ },
+ {
+  "headline": "Russell 2000 breaks 200-day average as CPI risk looms",
+  "first": "2026-10-14T01:56Z",
+  "last": "2026-10-14T07:19Z",
+  "n_items": 8,
+  "outlets": [
+   "FOREX.com",
+   "Investing.com",
+   "Investing.com Canada",
+   "Investing.com India",
+   "StoneX"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Russell 2000 breaks 200-day average as CPI risk looms",
+   "Russell 2000 Breaks 200-Day Average as CPI Risk Looms"
+  ]
+ },
+ {
+  "headline": "Stock markets turn volatile as oil prices, rising bond yields weigh on sentiments",
+  "first": "2026-09-25T04:35Z",
+  "last": "2026-09-25T05:14Z",
+  "n_items": 7,
+  "outlets": [
+   "DT Next",
+   "ETV Bharat",
+   "The Hindu",
+   "The New Indian Express",
+   "dtnext.in"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Stock markets turn volatile as oil prices, rising bond yields weigh on sentiments",
+   "Stock Markets Turn Volatile As Oil Prices, Rising Bond Yields Weigh On Sentiments"
+  ]
+ },
+ {
+  "headline": "Stocks fall as higher oil prices, Treasury yields weigh",
+  "first": "2026-09-28T20:00Z",
+  "last": "2026-09-29T04:18Z",
+  "n_items": 7,
+  "outlets": [
+   "Reuters",
+   "The Business Times",
+   "The Lufkin Daily News",
+   "news.rthk.hk",
+   "newsmax.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Stocks Fall as Higher Oil Prices, Treasury Yields Weigh",
+   "Stocks fall as higher oil prices, Treasury yields weigh",
+   "US stocks fall as higher oil prices, Treasury yields weigh"
+  ]
+ },
+ {
+  "headline": "Elon Musk to rename SpaceX AI arm SpaceXSI after Trump order replacing AI with SI",
+  "first": "2026-10-05T00:00Z",
+  "last": "2026-10-05T08:03Z",
+  "n_items": 7,
+  "outlets": [
+   "ANI News",
+   "Devdiscourse",
+   "ETV Bharat",
+   "The Tribune",
+   "law-signed-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "law-signed-gnews"
+  ],
+  "variants": [
+   "Elon Musk to rename SpaceX AI arm SpaceXSI after Trump order replacing AI with SI",
+   "Elon Musk to rename SpaceX AI arm SpaceXSI after Trump's directive - business-standard.com",
+   "Elon Musk To Rename SpaceX's AI Arm As SpaceXSI After Trump Orders Replacing AI With SI"
+  ]
+ },
+ {
+  "headline": "Fed minutes show some officials want to prepare for market stress",
+  "first": "2026-10-07T20:13Z",
+  "last": "2026-10-08T03:17Z",
+  "n_items": 7,
+  "outlets": [
+   "Reuters",
+   "StreetInsider",
+   "The Economic Times",
+   "Wichita Eagle",
+   "Yahoo! Finance Canada"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Fed minutes show some officials want to prepare for market stress"
+  ]
+ },
+ {
+  "headline": "Nasdaq notches record-high close, AI optimism reignites and Treasury yields retreat",
+  "first": "2026-09-21T21:30Z",
+  "last": "2026-09-22T09:55Z",
+  "n_items": 6,
+  "outlets": [
+   "Reuters",
+   "The Standard (HK)",
+   "The Straits Times",
+   "Virginia Business",
+   "reuters.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Nasdaq notches record-high close, AI optimism reignites and Treasury yields retreat",
+   "Nasdaq notches record-high close, AI optimism reignites and US Treasury yields retreat",
+   "Nasdaq notches record-high close on AI optimism; yields retreat"
+  ]
+ },
+ {
+  "headline": "Wall St Week Ahead-Jobs report, inflation data to test US rate path, economic strength",
+  "first": "2026-09-25T10:00Z",
+  "last": "2026-09-27T16:08Z",
+  "n_items": 6,
+  "outlets": [
+   "Livemint",
+   "London South East",
+   "Malaya Business Insight",
+   "Reuters",
+   "marketscreener.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Wall St Week Ahead-Jobs report, inflation data to test US rate path, economic strength",
+   "Wall St Week Ahead Jobs report, inflation data to test US rate path, economic strength",
+   "WALL ST WEEK AHEAD: JOBS REPORT, INFLATION DATA TO TEST US RATE PATH, ECONOMIC STRENGTH"
+  ]
+ },
+ {
+  "headline": "Dollar keeps climbing as oil, US yields stay high; jobs data looms",
+  "first": "2026-09-29T08:43Z",
+  "last": "2026-09-30T00:49Z",
+  "n_items": 6,
+  "outlets": [
+   "Business Recorder",
+   "The Business Standard",
+   "The Business Times",
+   "heraldonline.com",
+   "صحيفة مال"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Dollar keeps climbing as oil, US yields stay high; jobs data looms",
+   "US dollar keeps climbing as oil, US yields stay high",
+   "Dollar keeps climbing as oil, US yields stay high"
+  ]
+ },
+ {
+  "headline": "US 30-year Treasury yield rises to highest level since 2002",
+  "first": "2026-09-29T17:24Z",
+  "last": "2026-09-30T02:59Z",
+  "n_items": 6,
+  "outlets": [
+   "Moneycontrol.com",
+   "The Business Times",
+   "The Edge Malaysia",
+   "The Edge Singapore",
+   "The Straits Times"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "US 30-year Treasury yield rises to highest level since 2002",
+   "US 30-year Treasury yield rises to highest since 2002 on deepening debt market sell-off",
+   "US 30-year Treasury yield rises to highest since 2002"
+  ]
+ },
+ {
+  "headline": "U.S. Treasury Yields Hit 24-Year High as Major Indexes Close Lower; Philadelphia Semiconductor Index Bucks the Trend",
+  "first": "2026-09-29T22:55Z",
+  "last": "2026-10-13T23:35Z",
+  "n_items": 6,
+  "outlets": [
+   "Aaj English TV",
+   "BigGo Finance",
+   "bloomingbit",
+   "finance.biggo.com",
+   "moneywise.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "U.S. Treasury Yields Hit 24-Year High as Major Indexes Close Lower; Philadelphia Semiconductor Index Bucks the Trend",
+   "US Treasury yields hit 24-year high as global bond selloff deepens",
+   "Treasury yields hit 24-year high of 5.34%"
+  ]
+ },
+ {
+  "headline": "US Fed minutes signal another rate hike by year-end as inflation stays high",
+  "first": "2026-10-07T18:53Z",
+  "last": "2026-10-08T05:30Z",
+  "n_items": 6,
+  "outlets": [
+   "ANI News",
+   "Big News Network.com",
+   "The Economic Times",
+   "The Tribune",
+   "Times of Oman"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "US Fed minutes signal another rate hike by year-end as inflation stays high",
+   "US Fed minutes signal another rate hike likely by year-end amid persistent inflation"
+  ]
+ },
+ {
+  "headline": "US inflation expectations are well anchored, Fed's Waller says",
+  "first": "2026-10-13T10:57Z",
+  "last": "2026-10-13T11:37Z",
+  "n_items": 6,
+  "outlets": [
+   "AOL.com",
+   "Hilton Head Island Packet",
+   "Kansas City Star",
+   "Reuters",
+   "macro-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "US inflation expectations are well anchored, Fed’s Waller says - KELO-AM",
+   "US inflation expectations are well anchored, Fed's Waller says - Tri-City Herald",
+   "US inflation expectations are well anchored, Fed's Waller says"
+  ]
+ },
+ {
+  "headline": "RBI accepts no bids in treasury bill auction, 10-Year bond yield climbs to 7.44%",
+  "first": "2026-10-21T10:27Z",
+  "last": "2026-10-21T12:04Z",
+  "n_items": 6,
+  "outlets": [
+   "ANI News",
+   "Big News Network.com",
+   "India's News.Net",
+   "The Tribune",
+   "prameyanews.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "RBI accepts no bids in treasury bill auction, 10-Year bond yield climbs to 7.44%"
+  ]
+ },
+ {
+  "headline": "Ringgit opens higher vs US dollar, major currencies",
+  "first": "2026-10-22T00:27Z",
+  "last": "2026-10-22T01:49Z",
+  "n_items": 6,
+  "outlets": [
+   "Free Malaysia Today",
+   "KLSE Screener",
+   "NST Online",
+   "The Malaysian Reserve",
+   "The Star"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Ringgit opens higher vs US dollar, major currencies"
+  ]
+ },
+ {
+  "headline": "Treasury curve flattens as easing oil input costs and UN diplomacy offer respite By Investing.com",
+  "first": "2026-09-22T12:32Z",
+  "last": "2026-09-22T12:58Z",
+  "n_items": 5,
+  "outlets": [
+   "Investing.com",
+   "Investing.com Australia",
+   "Investing.com Canada",
+   "Investing.com Nigeria",
+   "Investing.com South Africa"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Treasury curve flattens as easing oil input costs and UN diplomacy offer respite",
+   "Treasury curve flattens as easing oil input costs and UN diplomacy offer respite By Investing.com"
+  ]
+ },
+ {
+  "headline": "Fed's discount window supports market liquidity, Jefferson says",
+  "first": "2026-09-22T14:21Z",
+  "last": "2026-09-22T16:09Z",
+  "n_items": 5,
+  "outlets": [
+   "Fresno Bee",
+   "Hilton Head Island Packet",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "WDEZ"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Fed's discount window supports market liquidity, Jefferson says",
+   "Fed’s discount window supports market liquidity, Jefferson says"
+  ]
+ },
+ {
+  "headline": "Pritzker establishes AI Cabinet to assess risks, protect Illinoisans",
+  "first": "2026-09-22T14:50Z",
+  "last": "2026-09-22T19:14Z",
+  "n_items": 5,
+  "outlets": [
+   "AOL.ca",
+   "Eyewitness News (WEHT/WTVW)",
+   "MyWabashValley.com",
+   "OurQuadCities",
+   "Yahoo"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "law-signed-gnews"
+  ],
+  "variants": [
+   "Pritzker establishes AI Cabinet to assess risks, protect Illinoisans",
+   "Pritzker establishes AI Cabinet to assess risks, protect Illinois residents"
+  ]
+ },
+ {
+  "headline": "Bond yields surge as Wall Street fears more potential Federal Reserve rate hikes",
+  "first": "2026-09-23T16:12Z",
+  "last": "2026-09-23T17:20Z",
+  "n_items": 5,
+  "outlets": [
+   "MarketWatch",
+   "Moomoo",
+   "marketwatch",
+   "moomoo.com",
+   "富途牛牛"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews",
+   "marketwatch"
+  ],
+  "variants": [
+   "Bond yields surge as Wall Street fears more potential Federal Reserve rate hikes",
+   "Bond Yields Surge as Wall Street Fears More Potential Federal Reserve Rate Hikes"
+  ]
+ },
+ {
+  "headline": "Japan's 10-year bond yield hits 30-year high after US Treasury selloff",
+  "first": "2026-09-24T01:01Z",
+  "last": "2026-09-24T07:05Z",
+  "n_items": 5,
+  "outlets": [
+   "Business Recorder",
+   "BusinessToday Malaysia",
+   "Reuters",
+   "The Standard (HK)",
+   "cnbc-top"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "cnbc-top",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Japan's 10-year bond yield hits 30-year high after US Treasury selloff",
+   "Japan's 10-year bond yield hits 30-year high following sell-off in Treasurys",
+   "Japan’s 10 Year Bond Yield Hits 30 Year High After US Treasury Selloff"
+  ]
+ },
+ {
+  "headline": "Sterling today: Pound steadies as stretched dollar rally meets Treasury yield peak",
+  "first": "2026-09-24T07:47Z",
+  "last": "2026-09-24T07:52Z",
+  "n_items": 5,
+  "outlets": [
+   "Investing.com",
+   "Investing.com Canada",
+   "Investing.com India",
+   "Investing.com Nigeria",
+   "Investing.com UK"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Sterling today: Pound steadies as stretched dollar rally meets Treasury yield peak"
+  ]
+ },
+ {
+  "headline": "U.S. Treasury Yields Hit Multi-Decade Highs Amid Fresh Selloff",
+  "first": "2026-09-24T09:47Z",
+  "last": "2026-10-04T17:19Z",
+  "n_items": 5,
+  "outlets": [
+   "SuaraGarut.ID",
+   "roundtable.io",
+   "thestreet.com",
+   "tokenpost.com",
+   "Межа. Новини України."
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "U.S. Treasury Yields Hit Multi-Decade Highs Amid Fresh Selloff",
+   "U.S. Treasury yields hit multi-decade highs, sending Bitcoin lower",
+   "US Treasury Yields Hit Multi-Decade Highs as Mortgage Rates Top 7%"
+  ]
+ },
+ {
+  "headline": "Bursa Malaysia ends lower on rising oil prices, elevated bond yields",
+  "first": "2026-09-24T09:51Z",
+  "last": "2026-09-24T23:18Z",
+  "n_items": 5,
+  "outlets": [
+   "Bernama",
+   "BernamaBiz",
+   "NST Online",
+   "The Malaysian Reserve",
+   "klsescreener.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Bursa Malaysia ends lower on rising oil prices, elevated bond yields",
+   "Bursa Malaysia Ends Lower On Rising Oil Prices, Elevated Bond Yields"
+  ]
+ },
+ {
+  "headline": "Global equity funds snap two-week outflow as AI optimism returns",
+  "first": "2026-09-25T11:18Z",
+  "last": "2026-09-25T13:35Z",
+  "n_items": 5,
+  "outlets": [
+   "BNN Bloomberg",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "WTVB",
+   "macro-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Global equity funds snap two-week outflow as AI optimism returns",
+   "Global equity funds snap two-week outflow as AI optimism returns - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Dallas Fed manufacturing index and Treasury bill auctions due Monday",
+  "first": "2026-09-25T18:03Z",
+  "last": "2026-09-25T18:24Z",
+  "n_items": 5,
+  "outlets": [
+   "Investing.com Australia",
+   "Investing.com Canada",
+   "Investing.com India",
+   "Investing.com Nigeria",
+   "Investing.com South Africa"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Dallas Fed manufacturing index and Treasury bill auctions due Monday",
+   "Dallas Fed manufacturing index and Treasury bill auctions due Monday By Investing.com"
+  ]
+ },
+ {
+  "headline": "Why Snowflake (SNOW) Stock Is Falling Today",
+  "first": "2026-09-28T14:10Z",
+  "last": "2026-09-28T22:14Z",
+  "n_items": 5,
+  "outlets": [
+   "FinancialContent",
+   "StockStory",
+   "The Globe and Mail",
+   "TradingView",
+   "Yahoo Finance Australia"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Why Snowflake (SNOW) Stock Is Falling Today"
+  ]
+ },
+ {
+  "headline": "US stocks drop after oil prices and bond yields crank higher",
+  "first": "2026-09-28T17:02Z",
+  "last": "2026-10-03T18:38Z",
+  "n_items": 5,
+  "outlets": [
+   "Breaking News, Latest News and Videos",
+   "Qatar Tribune",
+   "San Gabriel Valley Tribune",
+   "WHEC.com",
+   "ca.finance.yahoo.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "chokepoint-gnews",
+   "crude-gnews"
+  ],
+  "variants": [
+   "US stocks drop after oil prices and bond yields crank higher",
+   "US stocks drop as oil prices and bond yields climb",
+   "US stocks drop after oil prices and bond yields crank higher - ABC News"
+  ]
+ },
+ {
+  "headline": "AI may force 11 million workers in the US into new jobs, McKinsey says",
+  "first": "2026-09-29T05:24Z",
+  "last": "2026-09-30T06:22Z",
+  "n_items": 5,
+  "outlets": [
+   "Business Standard",
+   "ETHRWorld.com",
+   "The Economic Times",
+   "businesstimes.com.sg",
+   "hr.economictimes.indiatimes.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "AI may force 11 million workers in the US into new jobs, McKinsey says",
+   "AI may force 11 million workers into new jobs by 2035, says McKinsey",
+   "AI may force 11 million workers into new jobs: McKinsey & Co."
+  ]
+ },
+ {
+  "headline": "How major US stock indexes fared Tuesday 9/29/2026",
+  "first": "2026-09-29T20:25Z",
+  "last": "2026-10-20T21:20Z",
+  "n_items": 5,
+  "outlets": [
+   "10TV",
+   "KVUE",
+   "kare11.com",
+   "kens5.com",
+   "myMotherLode.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "How major US stock indexes fared Tuesday 9/29/2026",
+   "How major US stock indexes fared Tuesday 10/20/2026"
+  ]
+ },
+ {
+  "headline": "Dollar set for September rise, mainly at euro's expense",
+  "first": "2026-09-30T01:31Z",
+  "last": "2026-09-30T01:59Z",
+  "n_items": 5,
+  "outlets": [
+   "93.3 The Drive",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "WKZO",
+   "bls-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Dollar set for September rise, mainly at euro's expense",
+   "Dollar set for September rise, mainly at euro’s expense - KELO-AM",
+   "Dollar set for September rise, mainly at euro’s expense"
+  ]
+ },
+ {
+  "headline": "Rupee slumps 37 paise to close at 96.31 against US dollar",
+  "first": "2026-10-01T10:38Z",
+  "last": "2026-10-02T00:34Z",
+  "n_items": 5,
+  "outlets": [
+   "The Hindu",
+   "The New Indian Express",
+   "The Shillong Times",
+   "cnbctv18.com",
+   "deccanherald.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Rupee slumps 37 paise to close at 96.31 against US dollar",
+   "Rupee slumps 37 paise to close at 96.31 against U.S. dollar",
+   "Rupee slumps 37 paise to close at 96.31 against USD"
+  ]
+ },
+ {
+  "headline": "Tech stocks support Wall Street as pressure from rising bond yields rattles markets worldwide",
+  "first": "2026-10-01T13:41Z",
+  "last": "2026-10-01T14:49Z",
+  "n_items": 5,
+  "outlets": [
+   "BNN Bloomberg",
+   "Orlando Sentinel",
+   "Santa Cruz Sentinel",
+   "breitbart.com",
+   "crude-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Tech stocks support Wall Street as pressure from rising bond yields rattles markets worldwide - Scranton Times-Tribune",
+   "Tech stocks support Wall Street as pressure from rising bond yields rattles markets worldwide"
+  ]
+ },
+ {
+  "headline": "Rates Fall Sharply Ahead Of The September Jobs Report - TalkMarkets",
+  "first": "2026-10-01T22:15Z",
+  "last": "2026-10-02T08:07Z",
+  "n_items": 5,
+  "outlets": [
+   "Investing.com",
+   "Investing.com India",
+   "Investing.com Nigeria",
+   "Investing.com UK",
+   "t.co"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Rates Fall Sharply Ahead Of The September Jobs Report - TalkMarkets",
+   "Rates Fall Sharply Ahead of the September Jobs Report"
+  ]
+ },
+ {
+  "headline": "September jobs report shows 29k jobs added, unemployment at 4.2%",
+  "first": "2026-10-02T12:39Z",
+  "last": "2026-10-02T12:39Z",
+  "n_items": 5,
+  "outlets": [
+   "AOL.com",
+   "Central Oregon Daily",
+   "Detroit Free Press",
+   "USA Today",
+   "Yahoo Finance Singapore"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "September jobs report shows 29k jobs added, unemployment at 4.2%"
+  ]
+ },
+ {
+  "headline": "Instant View: Soft September jobs report sends markets higher - KELO-AM",
+  "first": "2026-10-02T13:06Z",
+  "last": "2026-10-05T01:07Z",
+  "n_items": 5,
+  "outlets": [
+   "93.3 The Drive",
+   "Metrobank Wealth Insights",
+   "SRN News",
+   "WTAQ",
+   "macro-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Instant View: Soft September jobs report sends markets higher - KELO-AM",
+   "Instant View: Soft September jobs report sends markets higher",
+   "INSTANT VIEW-Soft September jobs report sends markets higher"
+  ]
+ },
+ {
+  "headline": "US stocks rise toward their record after the latest jobs report calms the rattled bond market",
+  "first": "2026-10-02T13:33Z",
+  "last": "2026-10-02T13:47Z",
+  "n_items": 5,
+  "outlets": [
+   "Boston Herald",
+   "Sun Sentinel",
+   "The Morning Call",
+   "The Northern Virginia Daily",
+   "reflector.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "US stocks rise toward their record after the latest jobs report calms the rattled bond market"
+  ]
+ },
+ {
+  "headline": "U.S. Economy Shows Slower Hiring as Mortgage Rates and Inflation Stay High",
+  "first": "2026-10-04T08:03Z",
+  "last": "2026-10-04T19:01Z",
+  "n_items": 5,
+  "outlets": [
+   "790 KABC",
+   "WMAL",
+   "bls-gnews",
+   "kmjnow.com",
+   "wgowam.com"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "U.S. Economy Shows Slower Hiring as Mortgage Rates and Inflation Stay High",
+   "U.S. Economy Shows Slower Hiring as Mortgage Rates and Inflation Stay High - KKOH-AM"
+  ]
+ },
+ {
+  "headline": "Wall St futures dip as tech stocks take a breather",
+  "first": "2026-10-05T10:46Z",
+  "last": "2026-10-05T13:04Z",
+  "n_items": 5,
+  "outlets": [
+   "Bradenton Herald",
+   "Kitco",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "Wichita Eagle"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Wall St futures dip as tech stocks take a breather"
+  ]
+ },
+ {
+  "headline": "President Trump Demands 'Super Intelligence' Term For AI",
+  "first": "2026-10-08T20:46Z",
+  "last": "2026-10-08T20:58Z",
+  "n_items": 5,
+  "outlets": [
+   "KFBK News Radio",
+   "KFI AM 640",
+   "Newsradio WOOD 1300 and 106.9 FM",
+   "WGY",
+   "iHeart"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "law-signed-gnews"
+  ],
+  "variants": [
+   "President Trump Demands 'Super Intelligence' Term For AI"
+  ]
+ },
+ {
+  "headline": "In the news today: Quebec data centre hearing, food inflation, jobs data due",
+  "first": "2026-10-09T08:20Z",
+  "last": "2026-10-09T12:50Z",
+  "n_items": 5,
+  "outlets": [
+   "CFJC Today Kamloops",
+   "CHAT News Today",
+   "EverythingGP",
+   "Lethbridge News Now",
+   "larongeNOW"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "In the news today: Quebec data centre hearing, food inflation, jobs data due"
+  ]
+ },
+ {
+  "headline": "B.C. loses more than 20,000 jobs in September as unemployment rate stays steady",
+  "first": "2026-10-09T20:33Z",
+  "last": "2026-10-10T02:51Z",
+  "n_items": 5,
+  "outlets": [
+   "My Coast Now",
+   "My Cowichan Valley Now",
+   "My East Kootenay Now",
+   "My Nelson Now",
+   "My Powell River Now"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "B.C. loses more than 20,000 jobs in September as unemployment rate stays steady"
+  ]
+ },
+ {
+  "headline": "How will Trump Accounts work? A Treasury official lays out the new program",
+  "first": "2026-10-09T23:45Z",
+  "last": "2026-10-10T00:11Z",
+  "n_items": 5,
+  "outlets": [
+   "KSBY News",
+   "KXLH News Helena",
+   "KZTV10",
+   "LEX 18 News",
+   "Scripps News"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "How will Trump Accounts work? A Treasury official lays out the new program"
+  ]
+ },
+ {
+  "headline": "Bonds At 5%: Is The 10-Year Treasury Finally A Buy?",
+  "first": "2026-10-12T09:38Z",
+  "last": "2026-10-12T17:03Z",
+  "n_items": 5,
+  "outlets": [
+   "Investing.com Australia",
+   "Investing.com Canada",
+   "Investing.com India",
+   "Real Investment Advice",
+   "Seeking Alpha"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Bonds At 5%: Is The 10-Year Treasury Finally A Buy?",
+   "Bonds at 5%: Is The 10-Year Treasury Finally a Buy?"
+  ]
+ },
+ {
+  "headline": "US Treasury yield peak still ahead as Fed likely to tighten again, PIMCO's Ivascyn says",
+  "first": "2026-10-13T16:28Z",
+  "last": "2026-10-13T20:37Z",
+  "n_items": 5,
+  "outlets": [
+   "1470 & 100.3 WMBD",
+   "Kitco",
+   "The Globe and Mail",
+   "The Lufkin Daily News",
+   "macro-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "U.S. Treasury yield peak still ahead as Fed likely to tighten again, PIMCO’s Ivascyn says",
+   "US Treasury yield peak still ahead as Fed likely to tighten again, PIMCO's Ivascyn says",
+   "US Treasury yield peak still ahead as Fed likely to tighten again, PIMCO’s Ivascyn says"
+  ]
+ },
+ {
+  "headline": "US consumer inflation hotter than expected as midterms loom",
+  "first": "2026-10-14T14:15Z",
+  "last": "2026-10-18T15:34Z",
+  "n_items": 5,
+  "outlets": [
+   "Aaj English TV",
+   "Borneo Bulletin",
+   "Breitbart News",
+   "The Daily Star",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "US consumer inflation hotter than expected as midterms loom",
+   "Consumer inflation hotter than expected as midterms loom"
+  ]
+ },
+ {
+  "headline": "India's September unemployment rate at 5 %",
+  "first": "2026-10-15T11:19Z",
+  "last": "2026-10-15T11:35Z",
+  "n_items": 5,
+  "outlets": [
+   "Central Oregon Daily",
+   "Macon Telegraph",
+   "Modesto Bee",
+   "Reuters",
+   "The Lufkin Daily News"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "India's September unemployment rate at 5 %"
+  ]
+ },
+ {
+  "headline": "Euro gets much-needed reprieve as AI wobbles rock the dollar",
+  "first": "2026-10-16T01:20Z",
+  "last": "2026-10-16T02:28Z",
+  "n_items": 5,
+  "outlets": [
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "WTVB",
+   "bls-gnews",
+   "inkl"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Euro gets much-needed reprieve as AI wobbles rock the dollar",
+   "Euro gets much-needed reprieve as AI wobbles rock the dollar - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Illinois unemployment drops to 4.6% as jobs decline",
+  "first": "2026-10-16T19:48Z",
+  "last": "2026-10-17T07:45Z",
+  "n_items": 5,
+  "outlets": [
+   "Alton Telegraph",
+   "Huron Daily Tribune",
+   "Manistee News Advocate",
+   "The Edwardsville Intelligencer",
+   "bls-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Illinois unemployment drops to 4.6% as jobs decline",
+   "Illinois unemployment drops to 4.6% as jobs decline - Jacksonville Journal-Courier"
+  ]
+ },
+ {
+  "headline": "Asian stocks skid, Wall Street and bonds aided by oil slip",
+  "first": "2026-10-19T00:38Z",
+  "last": "2026-10-19T05:26Z",
+  "n_items": 5,
+  "outlets": [
+   "Charlotte Observer",
+   "Reuters",
+   "Sun Herald",
+   "The Financial Express",
+   "chokepoint-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "chokepoint-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asian stocks skid, Wall Street and bonds aided by oil slip",
+   "Asian stocks skid, Wall Street and bonds aided by oil slip - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Why Western Digital (WDC) Stock Is Up Today",
+  "first": "2026-10-19T14:30Z",
+  "last": "2026-10-19T21:12Z",
+  "n_items": 5,
+  "outlets": [
+   "FinancialContent",
+   "StockStory",
+   "The Globe and Mail",
+   "TradingView",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Why Western Digital (WDC) Stock Is Up Today"
+  ]
+ },
+ {
+  "headline": "AGNC Q3 2026 slides: book value falls 17% amid bond market stress",
+  "first": "2026-10-20T13:46Z",
+  "last": "2026-10-20T16:26Z",
+  "n_items": 5,
+  "outlets": [
+   "Investing.com",
+   "Investing.com Canada",
+   "Investing.com India",
+   "Investing.com South Africa",
+   "Investing.com UK"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "AGNC Q3 2026 slides: book value falls 17% amid bond market stress",
+   "AGNC Q3 2026 slides: book value falls 17% amid bond market stress By Investing.com"
+  ]
+ },
+ {
+  "headline": "AI stocks tumble and drag down markets worldwide as oil prices climb",
+  "first": "2026-10-22T13:43Z",
+  "last": "2026-10-22T14:58Z",
+  "n_items": 5,
+  "outlets": [
+   "Castanet",
+   "Castanet Kamloops",
+   "Hartford Courant",
+   "The Morning Call",
+   "crude-gnews"
+  ],
+  "n_outlets": 5,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "AI stocks tumble and drag down markets worldwide as oil prices climb",
+   "AI stocks tumble and drag down markets worldwide as oil prices climb - The Virginian-Pilot"
+  ]
+ },
+ {
+  "headline": "US stocks swing as the bond market, oil prices keep up the pressure",
+  "first": "2026-09-24T17:10Z",
+  "last": "2026-09-24T19:06Z",
+  "n_items": 6,
+  "outlets": [
+   "BNN Bloomberg",
+   "Boston Herald",
+   "The Globe and Mail",
+   "courant.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "U.S. stocks swing as the bond market, oil prices keep up the pressure",
+   "US stocks swing as the bond market, oil prices keep up the pressure"
+  ]
+ },
+ {
+  "headline": "Oil jump sends 30-year yields to two-decade high",
+  "first": "2026-09-24T21:07Z",
+  "last": "2026-09-25T02:01Z",
+  "n_items": 6,
+  "outlets": [
+   "Bilyonaryo Business",
+   "Livemint",
+   "The Straits Times",
+   "boereport.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Oil jump sends 30-year yields to two-decade high"
+  ]
+ },
+ {
+  "headline": "America.gov launches as Trump's new AI shortcut to federal services",
+  "first": "2026-09-29T14:23Z",
+  "last": "2026-09-29T15:24Z",
+  "n_items": 6,
+  "outlets": [
+   "KRCR",
+   "National News Desk",
+   "WRGB",
+   "fox23.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "law-signed-gnews"
+  ],
+  "variants": [
+   "America.gov launches as Trump's new AI shortcut to federal services"
+  ]
+ },
+ {
+  "headline": "US equities rebound to close higher as surging Treasury yields recede",
+  "first": "2026-10-01T21:21Z",
+  "last": "2026-10-02T04:31Z",
+  "n_items": 6,
+  "outlets": [
+   "Reuters",
+   "The Straits Times",
+   "Virginia Business",
+   "klsescreener.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "US equities rebound to close higher as surging Treasury yields recede",
+   "Equities rebound to close higher as surging Treasury yields recede"
+  ]
+ },
+ {
+  "headline": "Jobs report to show whether hiring stayed resilient in September - ABC News",
+  "first": "2026-10-02T09:14Z",
+  "last": "2026-10-03T04:48Z",
+  "n_items": 6,
+  "outlets": [
+   "Breaking News, Latest News and Videos",
+   "Everett Post",
+   "Rural Radio Network",
+   "weisradio.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Jobs report to show whether hiring stayed resilient in September - ABC News",
+   "Jobs report to show whether hiring stayed resilient in September - WEIS | Local & Area News, Sports, & Weather",
+   "Jobs report to show whether hiring stayed resilient in September"
+  ]
+ },
+ {
+  "headline": "Market participants favor Treasury parking some cash in repo market",
+  "first": "2026-09-22T20:29Z",
+  "last": "2026-09-22T22:32Z",
+  "n_items": 5,
+  "outlets": [
+   "101 WIXX",
+   "Reuters",
+   "Yahoo! Finance Canada",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Market participants favor Treasury parking some cash in repo market",
+   "Market participants favor Treasury parking some cash in repo market - KELO-AM",
+   "Market participants favor Treasury parking some cash in repo market - Fort Worth Star-Telegram"
+  ]
+ },
+ {
+  "headline": "Global bond rout rolls on, pushes 30-year U.S. Treasury yields to highest since 2004",
+  "first": "2026-09-24T10:35Z",
+  "last": "2026-09-24T13:43Z",
+  "n_items": 5,
+  "outlets": [
+   "KLSE Screener",
+   "NST Online",
+   "The Mighty 790 KFGO",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Global bond rout rolls on, pushes 30-year U.S. Treasury yields to highest since 2004",
+   "Global bond rout rolls on, pushes 30-year US Treasury yields to highest since 2004",
+   "Global bond rout rolls on, pushes 30-year U.S. Treasury yields to highest since 2004 - WNWN-FM"
+  ]
+ },
+ {
+  "headline": "U.S. 30-year Treasury yield hits highest since 2004",
+  "first": "2026-09-24T18:00Z",
+  "last": "2026-09-29T15:20Z",
+  "n_items": 5,
+  "outlets": [
+   "Business Standard",
+   "Financial Times",
+   "The Times of India",
+   "qz.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "U.S. 30-year Treasury yield hits highest since 2004",
+   "US 30-year Treasury yield hits highest since 2004 as global selloff deepens",
+   "US 30-year Treasury yield hits highest level since 2004 as bond selloff deepens"
+  ]
+ },
+ {
+  "headline": "S&P 500, Dow, Nasdaq End Week Higher On Chipmaker Strength, Easing Oil Amid Signs Of Easing US-Iran Conflict — META, COST, MSFT, CRWD, SKHY In Focus",
+  "first": "2026-09-25T22:51Z",
+  "last": "2026-10-03T04:21Z",
+  "n_items": 5,
+  "outlets": [
+   "Asianet Newsable",
+   "Stocktwits",
+   "TradingView",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews",
+   "crude-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "S&P 500, Dow, Nasdaq End Week Higher On Chipmaker Strength, Easing Oil Amid Signs Of Easing US-Iran Conflict — META, COST, MSFT, CRWD, SKHY In Focus",
+   "S&P 500, Nasdaq, Dow End Week Higher As Weak Jobs Report Cools Rate Hike Bets — NVDA, BA, SPCX, RIVN, APLD In Focus"
+  ]
+ },
+ {
+  "headline": "Crude oil, global yields, FII flows among key factors to drive stock market next week",
+  "first": "2026-09-27T06:03Z",
+  "last": "2026-09-27T10:00Z",
+  "n_items": 5,
+  "outlets": [
+   "DT Next",
+   "Social News XYZ",
+   "The Hans India",
+   "bfsi.economictimes.indiatimes.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Crude oil, global yields, FII flows among key factors to drive stock market next week"
+  ]
+ },
+ {
+  "headline": "Most US stocks fall after the bond market cranks the pressure even higher",
+  "first": "2026-09-30T20:25Z",
+  "last": "2026-10-01T04:49Z",
+  "n_items": 5,
+  "outlets": [
+   "AOL.com",
+   "MySA",
+   "Rocky Mount Telegram",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Most US stocks fall after the bond market cranks the pressure even higher",
+   "Most US stocks fall after the bond market cranks the pressure higher",
+   "Most U.S. stocks fall after the bond market cranks the pressure even higher - Pittsburgh Post-Gazette"
+  ]
+ },
+ {
+  "headline": "California Gov. Gavin Newsom signs laws to protect workers from AI risks - ABC News",
+  "first": "2026-09-30T23:36Z",
+  "last": "2026-10-01T22:21Z",
+  "n_items": 5,
+  "outlets": [
+   "Breaking News, Latest News and Videos",
+   "Gulf News",
+   "The Washington Post",
+   "WRAL"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "law-signed-gnews"
+  ],
+  "variants": [
+   "California Gov. Gavin Newsom signs laws to protect workers from AI risks",
+   "California Gov. Gavin Newsom signs laws to protect workers from AI risks - ABC News"
+  ]
+ },
+ {
+  "headline": "Reaction roundup: Experts, analysts weigh in on September jobs report",
+  "first": "2026-10-02T16:40Z",
+  "last": "2026-10-14T16:19Z",
+  "n_items": 5,
+  "outlets": [
+   "Investing.com",
+   "Investing.com India",
+   "Yahoo Finance",
+   "Yahoo Finance Australia"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Reaction roundup: Experts, analysts weigh in on September jobs report",
+   "Reaction roundup: Experts, analysts weigh in on September CPI report",
+   "Reaction roundup: Experts, analysts weigh in on September CPI report By Investing.com"
+  ]
+ },
+ {
+  "headline": "Thinking About Buying 10-Year Treasury Notes Yielding 5.3% Instead of Dividend Stocks Like Coca-Cola? Consider These 3 Factors First.",
+  "first": "2026-10-03T15:15Z",
+  "last": "2026-10-03T16:02Z",
+  "n_items": 5,
+  "outlets": [
+   "AOL.com",
+   "The Globe and Mail",
+   "The Motley Fool",
+   "theglobeandmail.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Thinking About Buying 10-Year Treasury Notes Yielding 5.3% Instead of Dividend Stocks Like Coca-Cola? Consider These 3 Factors First."
+  ]
+ },
+ {
+  "headline": "US futures edge lower under sustained pressure from bond markets",
+  "first": "2026-10-05T11:59Z",
+  "last": "2026-10-05T13:11Z",
+  "n_items": 5,
+  "outlets": [
+   "BNN Bloomberg",
+   "The Citizens' Voice",
+   "The Globe and Mail",
+   "mcall.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "US futures edge lower under sustained pressure from bond markets",
+   "U.S. futures edge lower under sustained pressure from bond markets"
+  ]
+ },
+ {
+  "headline": "Canadian dollar hits 18-month low as France worries boost greenback",
+  "first": "2026-10-05T19:30Z",
+  "last": "2026-10-11T23:45Z",
+  "n_items": 5,
+  "outlets": [
+   "Business Recorder",
+   "Kitco",
+   "Reuters",
+   "The Globe and Mail"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Canadian dollar hits 18-month low as France worries boost greenback",
+   "Canadian dollar hits 18-month low as jobs data clips rate hike bets",
+   "Canadian dollar hits 18-month low"
+  ]
+ },
+ {
+  "headline": "Gold inches lower as firmer dollar, higher yields weigh",
+  "first": "2026-10-06T02:15Z",
+  "last": "2026-10-06T08:01Z",
+  "n_items": 5,
+  "outlets": [
+   "Ammon News",
+   "CNBC",
+   "NST Online",
+   "Reuters"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Gold inches lower as firmer dollar, higher yields weigh"
+  ]
+ },
+ {
+  "headline": "HSBC plans job cuts across UK wealth business in AI push, FT reports",
+  "first": "2026-10-07T04:17Z",
+  "last": "2026-10-07T07:10Z",
+  "n_items": 5,
+  "outlets": [
+   "Business Standard",
+   "Khaleej Times",
+   "Reuters",
+   "The Business Times"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "HSBC plans job cuts across UK wealth business in AI push, FT reports",
+   "HSBC plans job cuts across UK wealth business in AI push: report",
+   "HSBC plans job cuts across UK wealth management business in AI push"
+  ]
+ },
+ {
+  "headline": "Wall Street posts weekly gains with earnings, inflation data on tap",
+  "first": "2026-10-09T20:37Z",
+  "last": "2026-10-10T04:20Z",
+  "n_items": 5,
+  "outlets": [
+   "Moneycontrol.com",
+   "The Straits Times",
+   "TradingView",
+   "Virginia Business"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Wall Street posts weekly gains with earnings, inflation data on tap"
+  ]
+ },
+ {
+  "headline": "Expectations of Another Fed Rate Hike This Month Are Shifting Dramatically",
+  "first": "2026-10-10T16:05Z",
+  "last": "2026-10-10T16:45Z",
+  "n_items": 5,
+  "outlets": [
+   "AOL.com",
+   "The Globe and Mail",
+   "The Motley Fool",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Expectations of Another Fed Rate Hike This Month Are Shifting Dramatically"
+  ]
+ },
+ {
+  "headline": "Trump's Grid Security Order Could Backfire on America's AI Boom",
+  "first": "2026-10-12T18:00Z",
+  "last": "2026-10-13T11:21Z",
+  "n_items": 5,
+  "outlets": [
+   "Baystreet.ca",
+   "Energy News Beat",
+   "OilPrice.com",
+   "oilprice"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews",
+   "law-signed-gnews",
+   "oilprice"
+  ],
+  "variants": [
+   "Trump's Grid Security Order Could Backfire on America's AI Boom",
+   "Trump's Grid Security Order Could Backfire on America's AI Boom - Crude Oil Prices Today",
+   "Trump’s Grid Security Order Could Backfire on America’s AI Boom"
+  ]
+ },
+ {
+  "headline": "Higher yields revive the case for a new-look 60/40 portfolio",
+  "first": "2026-10-13T13:28Z",
+  "last": "2026-10-14T09:13Z",
+  "n_items": 5,
+  "outlets": [
+   "Reuters",
+   "The Edge Malaysia",
+   "The Mighty 790 KFGO",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Higher yields revive the case for a new-look 60/40 portfolio",
+   "Higher yields revive the case for a new-look 60/40 portfolio - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Inflation surpassed worker paychecks for third straight month",
+  "first": "2026-10-14T11:37Z",
+  "last": "2026-10-14T13:45Z",
+  "n_items": 5,
+  "outlets": [
+   "Detroit Free Press",
+   "IndyStar",
+   "USA Today",
+   "azcentral.com and The Arizona Republic"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Inflation surpassed worker paychecks for third straight month"
+  ]
+ },
+ {
+  "headline": "Asian shares tumble, oil rises as markets await AI sector results",
+  "first": "2026-10-20T02:09Z",
+  "last": "2026-10-20T04:27Z",
+  "n_items": 5,
+  "outlets": [
+   "Business Recorder",
+   "Reuters",
+   "The Straits Times",
+   "Y100 WNCY"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews",
+   "law-signed-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Asian shares tumble, oil rises as markets await AI sector results"
+  ]
+ },
+ {
+  "headline": "Canadian stocks reverse course to trade higher as oil falls, Macklem in focus",
+  "first": "2026-09-21T17:37Z",
+  "last": "2026-09-21T18:00Z",
+  "n_items": 4,
+  "outlets": [
+   "Investing.com",
+   "Investing.com Australia",
+   "Investing.com Canada",
+   "Investing.com India"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Canadian stocks reverse course to trade higher as oil falls, Macklem in focus"
+  ]
+ },
+ {
+  "headline": "Labour pains: jobs market too hot for inflation fight",
+  "first": "2026-09-22T06:20Z",
+  "last": "2026-09-23T01:01Z",
+  "n_items": 4,
+  "outlets": [
+   "Australian Conveyancer",
+   "Michael West Media",
+   "aapnews.aap.com.au",
+   "inkl"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Labour pains: jobs market too hot for inflation fight"
+  ]
+ },
+ {
+  "headline": "Wall St futures pause after AI rally, focus on Mideast tensions",
+  "first": "2026-09-22T10:19Z",
+  "last": "2026-09-22T10:52Z",
+  "n_items": 4,
+  "outlets": [
+   "Bradenton Herald",
+   "Reuters",
+   "macro-gnews",
+   "whtc.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Wall St futures pause after AI rally, focus on Mideast tensions",
+   "Wall St futures pause after AI rally, focus on Mideast tensions - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Pritzker establishes AI cabinet amid calls for greater regulation",
+  "first": "2026-09-22T18:40Z",
+  "last": "2026-09-22T19:23Z",
+  "n_items": 4,
+  "outlets": [
+   "93.3 The Drive",
+   "Capitol News Illinois",
+   "WQAD",
+   "southernillinoisnow.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "law-signed-gnews"
+  ],
+  "variants": [
+   "Pritzker establishes AI cabinet amid calls for greater regulation"
+  ]
+ },
+ {
+  "headline": "Scott Bessent sends signal on Kevin Warsh Fed rate hike",
+  "first": "2026-09-22T23:47Z",
+  "last": "2026-09-23T02:47Z",
+  "n_items": 4,
+  "outlets": [
+   "Currently.com",
+   "Macon Telegraph",
+   "Modesto Bee",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Scott Bessent sends signal on Kevin Warsh Fed rate hike",
+   "Scott Bessent sends signal on Kevin Warsh Fed rate hike - Belleville News-Democrat"
+  ]
+ },
+ {
+  "headline": "Five-year US Treasury yield tops 5% for first time since 2007",
+  "first": "2026-09-23T17:25Z",
+  "last": "2026-09-23T17:56Z",
+  "n_items": 4,
+  "outlets": [
+   "Investing.com",
+   "Investing.com Nigeria",
+   "Yahoo Finance Singapore",
+   "uk.finance.yahoo.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Five-year US Treasury yield tops 5% for first time since 2007"
+  ]
+ },
+ {
+  "headline": "Analysis-As 5% Treasury yields lose shock value, investors start worrying about 6%",
+  "first": "2026-09-23T17:26Z",
+  "last": "2026-09-23T22:10Z",
+  "n_items": 4,
+  "outlets": [
+   "StreetInsider",
+   "WKZO",
+   "WTVB",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Analysis-As 5% Treasury yields lose shock value, investors start worrying about 6%",
+   "Analysis-As 5% Treasury yields lose shock value, investors start worrying about 6% - KELO-AM"
+  ]
+ },
+ {
+  "headline": "As 5% Treasury yields lose shock value, investors start worrying about 6%",
+  "first": "2026-09-23T17:27Z",
+  "last": "2026-09-24T05:03Z",
+  "n_items": 4,
+  "outlets": [
+   "AOL.com",
+   "BNN Bloomberg",
+   "Forth.News",
+   "Reuters"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "As 5% Treasury yields lose shock value, investors start worrying about 6%",
+   "As 5% U.S. Treasury yields lose shock value, investors start worrying about 6%"
+  ]
+ },
+ {
+  "headline": "US Treasury yields surge to multi-year highs on oil spike, strong PMIs; Wall Street tumbles",
+  "first": "2026-09-24T05:10Z",
+  "last": "2026-09-24T10:16Z",
+  "n_items": 4,
+  "outlets": [
+   "ANI News",
+   "Big News Network.com",
+   "India's News.Net",
+   "The Tribune"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "US Treasury yields surge to multi-year highs on oil spike, strong PMIs; Wall Street tumbles"
+  ]
+ },
+ {
+  "headline": "Gold Is Going Quiet Just as Oil and Fed Risks Turn Louder",
+  "first": "2026-09-24T15:52Z",
+  "last": "2026-09-24T16:17Z",
+  "n_items": 4,
+  "outlets": [
+   "Investing.com",
+   "Investing.com Canada",
+   "Investing.com India",
+   "Investing.com Nigeria"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Gold Is Going Quiet Just as Oil and Fed Risks Turn Louder"
+  ]
+ },
+ {
+  "headline": "Dollar holds firm as US-Iran tensions lift oil, hawkish Fed bets build",
+  "first": "2026-09-28T04:04Z",
+  "last": "2026-09-28T19:34Z",
+  "n_items": 4,
+  "outlets": [
+   "DZRH News",
+   "The Business Standard",
+   "WKZO",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Dollar holds firm as US-Iran tensions lift oil, hawkish Fed bets build",
+   "Dollar holds firm as US-Iran tensions lift oil, hawkish Fed bets build - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Dollar holds near two-month peak as yields rise, Fed data looms - KELO-AM",
+  "first": "2026-09-29T02:28Z",
+  "last": "2026-09-29T02:55Z",
+  "n_items": 4,
+  "outlets": [
+   "Business Recorder",
+   "Free Malaysia Today",
+   "The Mighty 790 KFGO",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Dollar holds near two-month peak as yields rise, Fed data looms",
+   "Dollar holds near two-month peak as yields rise, Fed data looms - KELO-AM"
+  ]
+ },
+ {
+  "headline": "U.S. Treasury yields hold while Aussie yields retreat after 2011-era peak run up",
+  "first": "2026-09-29T07:44Z",
+  "last": "2026-09-29T08:01Z",
+  "n_items": 4,
+  "outlets": [
+   "Investing.com",
+   "Investing.com Australia",
+   "Investing.com South Africa",
+   "Investing.com UK"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "U.S. Treasury yields hold while Aussie yields retreat after 2011-era peak run up",
+   "U.S. Treasury yields hold while Aussie yields retreat after 2011-era peak run up By Investing.com"
+  ]
+ },
+ {
+  "headline": "Rupee settles on flat note, up 2 paise at 95.95 against US dollar",
+  "first": "2026-09-29T10:57Z",
+  "last": "2026-09-29T23:53Z",
+  "n_items": 4,
+  "outlets": [
+   "Deccan Herald",
+   "Metro Vaartha",
+   "The New Indian Express",
+   "english.metrovaartha.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Rupee settles on flat note, up 2 paise at 95.95 against US dollar"
+  ]
+ },
+ {
+  "headline": "Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable",
+  "first": "2026-09-29T14:59Z",
+  "last": "2026-09-29T15:26Z",
+  "n_items": 4,
+  "outlets": [
+   "ABC Columbia",
+   "Boston Herald",
+   "Newsday",
+   "San Francisco Chronicle"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable"
+  ]
+ },
+ {
+  "headline": "Bonds set for bruising September but stocks little fazed",
+  "first": "2026-09-30T05:37Z",
+  "last": "2026-09-30T05:57Z",
+  "n_items": 4,
+  "outlets": [
+   "1470 & 100.3 WMBD",
+   "NST Online",
+   "klsescreener.com",
+   "nst.com.my"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Bonds set for bruising September but stocks little fazed"
+  ]
+ },
+ {
+  "headline": "Wall Street holds steadier following a potentially encouraging update on inflation",
+  "first": "2026-09-30T14:25Z",
+  "last": "2026-09-30T14:37Z",
+  "n_items": 4,
+  "outlets": [
+   "Boston Herald",
+   "Orlando Sentinel",
+   "The Globe and Mail",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Wall Street holds steadier following a potentially encouraging update on inflation",
+   "Wall Street holds steadier following a potentially encouraging update on inflation - San Diego Union-Tribune"
+  ]
+ },
+ {
+  "headline": "NFP Preview: Can the Jobs Report Overcome the Bond Market Meltdown Too?",
+  "first": "2026-10-01T16:15Z",
+  "last": "2026-10-07T16:49Z",
+  "n_items": 4,
+  "outlets": [
+   "FOREX.com",
+   "Investing.com",
+   "Investing.com India",
+   "stonex.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "NFP Preview: Can the Jobs Report Overcome the Bond Market Meltdown Too?",
+   "NFP Preview: Can the Jobs Report Overcome the Bond Market Meltdown?"
+  ]
+ },
+ {
+  "headline": "Fed's Logan calls for '50 bps or more' in rate hikes",
+  "first": "2026-10-01T23:33Z",
+  "last": "2026-10-02T19:19Z",
+  "n_items": 4,
+  "outlets": [
+   "Kitco",
+   "Reuters",
+   "WTVB",
+   "klsescreener.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Fed's Logan calls for '50 bps or more' in rate hikes",
+   "Fed’s Logan calls for ’50 bps or more’ in rate hikes"
+  ]
+ },
+ {
+  "headline": "European shares rebound ahead of euro zone inflation data, US jobs report",
+  "first": "2026-10-02T08:59Z",
+  "last": "2026-10-02T09:11Z",
+  "n_items": 4,
+  "outlets": [
+   "Devdiscourse",
+   "Miami Herald",
+   "The Lufkin Daily News",
+   "devdiscourse.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "European shares rebound ahead of euro zone inflation data, US jobs report"
+  ]
+ },
+ {
+  "headline": "US equity funds post second weekly inflow as AI optimism tempers yield concerns",
+  "first": "2026-10-02T11:31Z",
+  "last": "2026-10-02T11:57Z",
+  "n_items": 4,
+  "outlets": [
+   "1470 & 100.3 WMBD",
+   "AOL.com",
+   "Reuters",
+   "WSAU"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "US equity funds post second weekly inflow as AI optimism tempers yield concerns"
+  ]
+ },
+ {
+  "headline": "Jobs report shows 29,000 jobs were added in September",
+  "first": "2026-10-02T11:57Z",
+  "last": "2026-10-02T16:56Z",
+  "n_items": 4,
+  "outlets": [
+   "AOL.com",
+   "NewsNation",
+   "Yahoo Finance",
+   "newsnationnow.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Jobs report shows 29,000 jobs were added in September"
+  ]
+ },
+ {
+  "headline": "US Adds Just 29,000 Jobs in September: Why Are Bitcoin and Gold Jumping?",
+  "first": "2026-10-02T12:44Z",
+  "last": "2026-10-09T04:00Z",
+  "n_items": 4,
+  "outlets": [
+   "Barchart.com",
+   "BeInCrypto",
+   "Outsource Accelerator",
+   "Quiver Quantitative"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "US Adds Just 29,000 Jobs in September: Why Are Bitcoin and Gold Jumping?",
+   "U.S. Adds Just 29,000 Jobs in September as Unemployment Rises to 4.2%",
+   "U.S. adds just 29,000 jobs in September as unemployment holds at 4.2%"
+  ]
+ },
+ {
+  "headline": "US hiring slows and unemployment ticks higher in September, a month before Americans head to polls",
+  "first": "2026-10-02T14:15Z",
+  "last": "2026-10-02T14:30Z",
+  "n_items": 4,
+  "outlets": [
+   "KTVN",
+   "The Killeen Daily Herald",
+   "WRAL",
+   "bls-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "US hiring slows and unemployment ticks higher in September, a month before Americans head to polls",
+   "US hiring slows and unemployment ticks higher in September, a month before Americans head to polls - San Diego Union-Tribune"
+  ]
+ },
+ {
+  "headline": "Final jobs report released before midterms: What does it mean for your wallet?",
+  "first": "2026-10-02T21:38Z",
+  "last": "2026-10-02T21:43Z",
+  "n_items": 4,
+  "outlets": [
+   "KOAT",
+   "WESH",
+   "WYFF",
+   "bls-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Final jobs report released before midterms: What does it mean for your wallet?",
+   "Final jobs report released before midterms: What does it mean for your wallet? - WBAL-TV"
+  ]
+ },
+ {
+  "headline": "Gold Rebounds 1.62 Percent After Recent Pressure; Indian Equities Remain Subdued Amid Elevated Yields: Aetram Group",
+  "first": "2026-10-03T06:16Z",
+  "last": "2026-10-03T08:30Z",
+  "n_items": 4,
+  "outlets": [
+   "Loktej English",
+   "PNN Digital",
+   "Press Trust of India",
+   "TheWire.in"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Gold Rebounds 1.62 Percent After Recent Pressure; Indian Equities Remain Subdued Amid Elevated Yields: Aetram Group"
+  ]
+ },
+ {
+  "headline": "Morning Bid: The euro has a France problem - KELO-AM",
+  "first": "2026-10-05T04:51Z",
+  "last": "2026-10-05T09:26Z",
+  "n_items": 4,
+  "outlets": [
+   "KSLM Radio",
+   "The Mighty 790 KFGO",
+   "WTVB",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Morning Bid: The euro has a France problem - KELO-AM",
+   "Morning Bid: The euro has a France problem"
+  ]
+ },
+ {
+  "headline": "Tokyo shares are higher as easing worries over inflation reduce odds for another Fed rate hike",
+  "first": "2026-10-05T06:50Z",
+  "last": "2026-10-05T10:00Z",
+  "n_items": 4,
+  "outlets": [
+   "Manila Bulletin",
+   "The Globe and Mail",
+   "WRAL",
+   "breitbart.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Tokyo shares are higher as easing worries over inflation reduce odds for another Fed rate hike"
+  ]
+ },
+ {
+  "headline": "U.S. Treasury Yields Hit 24-Year Highs as Bond Market Stress Builds",
+  "first": "2026-10-06T05:22Z",
+  "last": "2026-10-07T16:13Z",
+  "n_items": 4,
+  "outlets": [
+   "Hokanews",
+   "TradingView",
+   "WSJ",
+   "www.tmgm.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "U.S. Treasury Yields Hit 24-Year Highs as Bond Market Stress Builds",
+   "U.S. Treasury Yields Hit New 24-Year Highs and French Bonds Underperform",
+   "Treasury Yields Hit 24-Year Highs Ahead Of $39B 10-Year Note Sale — Danske Reportedly Sees Risk Of 6% As Pressure Builds"
+  ]
+ },
+ {
+  "headline": "U.S. stock futures steady after tech rally lifts S&P 500, Nasdaq to records",
+  "first": "2026-10-07T00:44Z",
+  "last": "2026-10-07T00:46Z",
+  "n_items": 4,
+  "outlets": [
+   "Yahoo Finance",
+   "Yahoo Finance Australia",
+   "Yahoo Finance Singapore",
+   "Yahoo Finance UK"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "U.S. stock futures steady after tech rally lifts S&P 500, Nasdaq to records"
+  ]
+ },
+ {
+  "headline": "US 30-year bond yield hits fresh 24-year high",
+  "first": "2026-10-07T10:00Z",
+  "last": "2026-10-07T13:24Z",
+  "n_items": 4,
+  "outlets": [
+   "AOL.com",
+   "Firstpost",
+   "Newsmax",
+   "Reuters"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "US 30-year bond yield hits fresh 24-year high",
+   "US 30-year bond yield hits fresh 24-year high as global bond selloff resumes",
+   "US 30-Year Bond Yield Hits Fresh 24-Year High"
+  ]
+ },
+ {
+  "headline": "Wall St futures slip as yields and oil rebound; Fed minutes in focus",
+  "first": "2026-10-07T10:36Z",
+  "last": "2026-10-07T11:10Z",
+  "n_items": 4,
+  "outlets": [
+   "Modesto Bee",
+   "Reuters",
+   "The Mighty 790 KFGO",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Wall St futures slip as yields and oil rebound; Fed minutes in focus"
+  ]
+ },
+ {
+  "headline": "US 30-year Treasury yield hits fresh 24-year high ahead of Fed minutes",
+  "first": "2026-10-07T13:58Z",
+  "last": "2026-10-07T14:52Z",
+  "n_items": 4,
+  "outlets": [
+   "ANI News",
+   "Big News Network.com",
+   "The Tribune",
+   "Zee Business"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "US 30-year Treasury yield hits fresh 24-year high ahead of Fed minutes",
+   "US 30-year Treasury yield hits fresh 24-year high at 5.70% ahead of Fed minutes"
+  ]
+ },
+ {
+  "headline": "Fed Hike Odds Drop to 18%, Cuts at 0%: What a Hold Means for Bitcoin",
+  "first": "2026-10-08T03:45Z",
+  "last": "2026-10-08T05:16Z",
+  "n_items": 4,
+  "outlets": [
+   "BeInCrypto",
+   "Bitget",
+   "CryptoRank",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Fed Hike Odds Drop to 18%, Cuts at 0%: What a Hold Means for Bitcoin"
+  ]
+ },
+ {
+  "headline": "Wall St futures slide as rising oil, yields dampen mood",
+  "first": "2026-10-08T10:55Z",
+  "last": "2026-10-08T11:25Z",
+  "n_items": 4,
+  "outlets": [
+   "Reuters",
+   "WTVB",
+   "Y100 WNCY",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "Wall St futures slide as rising oil, yields dampen mood",
+   "Wall St futures slide as rising oil, yields dampen mood - KELO-AM"
+  ]
+ },
+ {
+  "headline": "Morning Bid: Wall Street winces at bond squeeze",
+  "first": "2026-10-08T11:27Z",
+  "last": "2026-10-08T11:34Z",
+  "n_items": 4,
+  "outlets": [
+   "The Mighty 790 KFGO",
+   "WKZO",
+   "WTAQ",
+   "WTVB"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Morning Bid: Wall Street winces at bond squeeze"
+  ]
+ },
+ {
+  "headline": "New York Federal Reserve says inflation on everyday items is because of tariffs",
+  "first": "2026-10-09T16:24Z",
+  "last": "2026-10-09T20:10Z",
+  "n_items": 4,
+  "outlets": [
+   "WHP Harrisburg",
+   "WLOS",
+   "WLUK",
+   "WTOV"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "New York Federal Reserve says inflation on everyday items is because of tariffs"
+  ]
+ },
+ {
+  "headline": "China to launch initiative to boost employment amid AI advances",
+  "first": "2026-10-10T10:19Z",
+  "last": "2026-10-12T07:53Z",
+  "n_items": 4,
+  "outlets": [
+   "China.org.cn",
+   "State Council Information Office",
+   "Xinhua",
+   "昆明信息港"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "China to launch initiative to boost employment amid AI advances",
+   "China to launch initiative to boost employment amid AI advances_InKunming"
+  ]
+ },
+ {
+  "headline": "Q2 earnings, inflation data, oil prices to guide stock markets this week: Analysts",
+  "first": "2026-10-11T09:27Z",
+  "last": "2026-10-11T12:00Z",
+  "n_items": 4,
+  "outlets": [
+   "Business Standard",
+   "Moneycontrol.com",
+   "OrissaPOST",
+   "TradingView"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Q2 earnings, inflation data, oil prices to guide stock markets this week: Analysts",
+   "Q2 earnings, inflation data, oil prices may drive stock markets this week"
+  ]
+ },
+ {
+  "headline": "Fed's Waller Says Higher Treasury Yields Are 'Doing A Little Bit Of The Work' Of Tighter Monetary Policy",
+  "first": "2026-10-13T10:35Z",
+  "last": "2026-10-13T12:00Z",
+  "n_items": 4,
+  "outlets": [
+   "Asianet Newsable",
+   "Menafn",
+   "Stocktwits",
+   "TradingView"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Fed's Waller Says Higher Treasury Yields Are 'Doing A Little Bit Of The Work' Of Tighter Monetary Policy"
+  ]
+ },
+ {
+  "headline": "Trading Day: Earnings season debuts to mixed reviews",
+  "first": "2026-10-13T21:23Z",
+  "last": "2026-10-14T01:12Z",
+  "n_items": 4,
+  "outlets": [
+   "Macon Telegraph",
+   "The Mighty 790 KFGO",
+   "WKZO",
+   "WTVB"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Trading Day: Earnings season debuts to mixed reviews"
+  ]
+ },
+ {
+  "headline": "Stock markets close lower amid elevated crude oil, rising inflation",
+  "first": "2026-10-14T11:18Z",
+  "last": "2026-10-15T07:55Z",
+  "n_items": 4,
+  "outlets": [
+   "DT Next",
+   "Deccan Herald",
+   "Nagaland Post",
+   "The Hindu"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Stock markets close lower amid elevated crude oil, rising inflation",
+   "Stock markets close lower amid elevated crude oil"
+  ]
+ },
+ {
+  "headline": "Cognex, Insight Enterprises, and SAIC Stocks Trade Down, What You Need To Know",
+  "first": "2026-10-14T17:15Z",
+  "last": "2026-10-14T18:07Z",
+  "n_items": 4,
+  "outlets": [
+   "FinancialContent",
+   "StockStory",
+   "The Globe and Mail",
+   "TradingView"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Cognex, Insight Enterprises, and SAIC Stocks Trade Down, What You Need To Know"
+  ]
+ },
+ {
+  "headline": "Evercore, FirstCash, Blackstone, and Atlanticus Holdings Stocks Trade Down, What You Need To Know",
+  "first": "2026-10-14T17:16Z",
+  "last": "2026-10-14T20:44Z",
+  "n_items": 4,
+  "outlets": [
+   "FinancialContent",
+   "StockStory",
+   "TradingView",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Evercore, FirstCash, Blackstone, and Atlanticus Holdings Stocks Trade Down, What You Need To Know"
+  ]
+ },
+ {
+  "headline": "Oregon's unemployment rate unchanged",
+  "first": "2026-10-14T17:30Z",
+  "last": "2026-10-14T19:32Z",
+  "n_items": 4,
+  "outlets": [
+   "Cottage Grove Sentinel",
+   "The Coos Bay World",
+   "The News Guard",
+   "newportnewstimes.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Oregon's unemployment rate unchanged"
+  ]
+ },
+ {
+  "headline": "Australia loses 39,300 jobs unexpectedly, easing bets on another RBA rate hike",
+  "first": "2026-10-15T01:04Z",
+  "last": "2026-10-15T01:32Z",
+  "n_items": 4,
+  "outlets": [
+   "Investing.com Australia",
+   "Investing.com India",
+   "Yahoo Finance",
+   "Yahoo Finance Australia"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Australia loses 39,300 jobs unexpectedly, easing bets on another RBA rate hike"
+  ]
+ },
+ {
+  "headline": "Dollar Eases From 18-Month High as Treasury Yields Fall",
+  "first": "2026-10-15T05:32Z",
+  "last": "2026-10-15T12:08Z",
+  "n_items": 4,
+  "outlets": [
+   "Qatar news agency",
+   "The Business Times",
+   "Yahoo Finance",
+   "macro-gnews"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Dollar Eases From 18-Month High as Treasury Yields Fall",
+   "Dollar Eases From 18-Month High as Treasury Yields Fall - Fana News -",
+   "Dollar eases from 18-month high as Treasury yields fall; Fed hike bets ease"
+  ]
+ },
+ {
+  "headline": "Nasdaq slides to near one-month low as AI rout deepens",
+  "first": "2026-10-15T12:29Z",
+  "last": "2026-10-15T15:05Z",
+  "n_items": 4,
+  "outlets": [
+   "Business Recorder",
+   "Kitco",
+   "The Detroit News",
+   "The Edge Malaysia"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Nasdaq slides to near one-month low as AI rout deepens"
+  ]
+ },
+ {
+  "headline": "New Jersey adds 14,900 jobs in September as unemployment rate drops to 4.2%",
+  "first": "2026-10-16T11:12Z",
+  "last": "2026-10-19T19:08Z",
+  "n_items": 4,
+  "outlets": [
+   "Connecticut",
+   "NJBIZ",
+   "New Jersey",
+   "WRNJ Radio"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "New Jersey adds 14,900 jobs in September as unemployment rate drops to 4.2%",
+   "New Jersey adds 14,900 jobs in September as unemployment falls to 4.2% - News12",
+   "New Jersey adds 14,900 jobs in September as unemployment falls to 4.2%"
+  ]
+ },
+ {
+  "headline": "Mass. gained jobs in September but unemployment rate held at 4.3%",
+  "first": "2026-10-16T18:27Z",
+  "last": "2026-10-16T19:37Z",
+  "n_items": 4,
+  "outlets": [
+   "AOL.com",
+   "State Affairs Pro",
+   "State House News Service",
+   "WWLP"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Mass. gained jobs in September but unemployment rate held at 4.3%"
+  ]
+ },
+ {
+  "headline": "Iowa's Unemployment Rate Is Steady, But Worker Numbers Are Down",
+  "first": "2026-10-19T12:57Z",
+  "last": "2026-10-19T12:57Z",
+  "n_items": 4,
+  "outlets": [
+   "97X",
+   "AM 950 KOEL",
+   "B100",
+   "KHAK"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Iowa's Unemployment Rate Is Steady, But Worker Numbers Are Down"
+  ]
+ },
+ {
+  "headline": "Why Intel (INTC) Stock Is Up Today",
+  "first": "2026-10-19T14:25Z",
+  "last": "2026-10-19T20:40Z",
+  "n_items": 4,
+  "outlets": [
+   "FinancialContent",
+   "StockStory",
+   "TradingView",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Why Intel (INTC) Stock Is Up Today"
+  ]
+ },
+ {
+  "headline": "US stocks rebound with AI earnings test ahead; French markets tumble",
+  "first": "2026-10-19T16:52Z",
+  "last": "2026-10-20T12:40Z",
+  "n_items": 4,
+  "outlets": [
+   "American Journal of Transportation",
+   "KONTAN",
+   "Moneycontrol.com",
+   "شبكة تواصل الإخبارية"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "US stocks rebound with AI earnings test ahead; French markets tumble",
+   "US Stocks Rebound with AI Earnings Test Ahead, Euro Falls on France Unrest",
+   "US stocks rebound with AI earnings test ahead, euro falls on France unrest"
+  ]
+ },
+ {
+  "headline": "Gold tumbles below $4,150 amid elevated US Treasury yields",
+  "first": "2026-10-19T23:23Z",
+  "last": "2026-10-20T00:41Z",
+  "n_items": 4,
+  "outlets": [
+   "FXStreet",
+   "Mitrade",
+   "www.tmgm.com",
+   "شبكة تواصل الإخبارية"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Gold tumbles below $4,150 amid elevated US Treasury yields",
+   "Gold tumbles below $4,150 amid elevated US Treasury yields | FXStreet"
+  ]
+ },
+ {
+  "headline": "SC ruling on Yes Bank's AT1 bonds to impact capital ratio, profitability: Moody's",
+  "first": "2026-10-20T03:35Z",
+  "last": "2026-10-20T08:05Z",
+  "n_items": 4,
+  "outlets": [
+   "Big News Network.com",
+   "bfsi.economictimes.indiatimes.com",
+   "https://www.indiagazette.com/",
+   "www.irishsun.com"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "scotus-gnews"
+  ],
+  "variants": [
+   "SC ruling on Yes Bank's AT1 bonds to impact capital ratio, profitability: Moody's"
+  ]
+ },
+ {
+  "headline": "IEA ready to go if further oil stocks release needed, chief says",
+  "first": "2026-10-20T10:35Z",
+  "last": "2026-10-20T13:52Z",
+  "n_items": 4,
+  "outlets": [
+   "Reuters",
+   "The Standard (HK)",
+   "marketscreener.com",
+   "شبكة تواصل الإخبارية"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "crude-gnews",
+   "reuters-via-gnews"
+  ],
+  "variants": [
+   "IEA Ready to Go if Further Oil Stocks Release Needed, Chief Says",
+   "IEA ready to go if further oil stocks release needed, chief says"
+  ]
+ },
+ {
+  "headline": "Short-end U.S. yields edge up as investors digest French unrest By Investing.com",
+  "first": "2026-10-20T12:10Z",
+  "last": "2026-10-20T13:52Z",
+  "n_items": 4,
+  "outlets": [
+   "Investing.com",
+   "Investing.com Australia",
+   "Investing.com Canada",
+   "Investing.com South Africa"
+  ],
+  "n_outlets": 4,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Short-end U.S. yields edge up as investors digest French unrest By Investing.com"
+  ]
+ },
+ {
+  "headline": "Why is US Stock Market Up Today? Dow Jones Gains 300 Points, S&P 500 Gains 1.03%, Nasdaq Rises 1.59% as Oil Drop, Treasury Yields Falls & Fed Rate Hike Wall Street — Check What Investors Should Know",
+  "first": "2026-09-21T15:42Z",
+  "last": "2026-10-22T16:18Z",
+  "n_items": 25,
+  "outlets": [
+   "The Economic Times",
+   "The Sunday Guardian",
+   "sundayguardianlive.com"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "crude-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Why is US Stock Market Up Today? Dow Jones Gains 300 Points, S&P 500 Gains 1.03%, Nasdaq Rises 1.59% as Oil Drop, Treasury Yields Falls & Fed Rate Hike Wall Street — Check What Investors Should Know",
+   "Why is US Stock Market Down Today? Dow Jones Falls 400 Points, S&P 500 Drops 0.47%, Nasdaq Slips 0.66% as Oil Drop, Treasury Yields Tops & Fed Rate Hike Wall Street — Check What Investors Should Know",
+   "Why is US Stock Market Up Today? Dow Jones Slips 0.05%, S&P 500 Gains 0.58%, Nasdaq Rises 1.06% as Oil Surges, Treasury Yields Hit & Fed Rate Hike Wall Street — Check What Investors Should Know"
+  ]
+ },
+ {
+  "headline": "AUD/USD Eyes Volatility Amid Middle East, Jobs, US CPI Crossfire",
+  "first": "2026-10-11T20:49Z",
+  "last": "2026-10-12T02:33Z",
+  "n_items": 9,
+  "outlets": [
+   "FOREX.com",
+   "Forex Factory",
+   "StoneX"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "bls-gnews",
+   "crude-gnews"
+  ],
+  "variants": [
+   "AUD/USD Eyes Volatility Amid Middle East, Jobs, US CPI Crossfire"
+  ]
+ },
+ {
+  "headline": "Why Rebecca Patterson says we're now in a 'new yield regime'",
+  "first": "2026-09-26T11:36Z",
+  "last": "2026-09-26T18:34Z",
+  "n_items": 8,
+  "outlets": [
+   "Invezz",
+   "invezz.com",
+   "t.co"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Why Rebecca Patterson says we're now in a 'new yield regime'",
+   "Why Rebecca Patterson Says We're Now In A 'New Yield Regime' - TalkMarkets"
+  ]
+ },
+ {
+  "headline": "Jobs report shows US unexpectedly lost jobs in February",
+  "first": "2026-10-05T22:22Z",
+  "last": "2026-10-20T14:25Z",
+  "n_items": 8,
+  "outlets": [
+   "ABC7 Bay Area",
+   "ABC7 Los Angeles",
+   "ABC7 San Francisco"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "Jobs report shows US unexpectedly lost jobs in February",
+   "Jobs report shows US unexpectedly lost jobs in July"
+  ]
+ },
+ {
+  "headline": "Stock Market Today: S&P 500, Nasdaq 100 Futures Gain as Trump Issues Fresh Warning to Iran — MRVL, AAPL, ACN in Focus",
+  "first": "2026-09-21T10:02Z",
+  "last": "2026-10-21T12:27Z",
+  "n_items": 7,
+  "outlets": [
+   "Coinpaper",
+   "CryptoRank",
+   "TradingView"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "crude-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Stock Market Today: S&P 500, Nasdaq 100 Futures Gain as Trump Issues Fresh Warning to Iran — MRVL, AAPL, ACN in Focus",
+   "Stock Market Today: S&P 500 and Nasdaq Fall as Treasury Yields Hit 24-Year High",
+   "Stock Market Today: S&P 500, Nasdaq 100 Futures Fall As Chip Stock Sell-Off Intensifies — SKHY, TSM, RKLB in Focus"
+  ]
+ },
+ {
+  "headline": "5 Things to Know Before the Stock Market Opens on Tuesday",
+  "first": "2026-09-22T12:13Z",
+  "last": "2026-10-15T12:12Z",
+  "n_items": 6,
+  "outlets": [
+   "AOL.com",
+   "Investopedia",
+   "investopedia.com"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "5 Things to Know Before the Stock Market Opens on Tuesday",
+   "5 Things to Know Before the Stock Market Opens on Monday",
+   "5 Things to Know Before the Stock Market Opens on Wednesday"
+  ]
+ },
+ {
+  "headline": "Wall Street’s week ahead: Jobs report, inflation data to test U.S. rate path, economic strength",
+  "first": "2026-09-25T10:04Z",
+  "last": "2026-09-30T22:07Z",
+  "n_items": 6,
+  "outlets": [
+   "Business Recorder",
+   "The Economic Times",
+   "The Globe and Mail"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "bls-gnews",
+   "macro-gnews"
+  ],
+  "variants": [
+   "Wall Street’s week ahead: Jobs report, inflation data to test U.S. rate path, economic strength",
+   "Wall Street Week Ahead: Jobs report, inflation data to test US rate path, economic strength",
+   "Wall Street Week Ahead: Jobs report, inflation data to test US rate path"
+  ]
+ },
+ {
+  "headline": "Stocktwits Weekly Spread: What Shaped Treasury Yields And The Dollar This Week",
+  "first": "2026-10-10T00:18Z",
+  "last": "2026-10-17T01:30Z",
+  "n_items": 6,
+  "outlets": [
+   "Asianet Newsable",
+   "Stocktwits",
+   "TradingView"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Stocktwits Weekly Spread: What Shaped Treasury Yields And The Dollar This Week"
+  ]
+ },
+ {
+  "headline": "Costco Wholesale Stock Loses to 10-Year U.S. Treasury Notes on Yield. Here's Why It Wins on Everything Else.",
+  "first": "2026-10-12T19:23Z",
+  "last": "2026-10-12T19:40Z",
+  "n_items": 6,
+  "outlets": [
+   "Currently.com",
+   "The Globe and Mail",
+   "The Motley Fool"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Costco Wholesale Stock Loses to 10-Year U.S. Treasury Notes on Yield. Here's Why It Wins on Everything Else."
+  ]
+ },
+ {
+  "headline": "Better Oil Stock: Chevron (CVX) vs. ExxonMobil (XOM)",
+  "first": "2026-10-19T18:58Z",
+  "last": "2026-10-19T19:34Z",
+  "n_items": 6,
+  "outlets": [
+   "AOL.com",
+   "The Globe and Mail",
+   "The Motley Fool"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Better Oil Stock: Chevron (CVX) vs. ExxonMobil (XOM)"
+  ]
+ },
+ {
+  "headline": "State’s unemployment ranks grow as more people join labor force - Honolulu Star-Advertiser",
+  "first": "2026-09-21T10:15Z",
+  "last": "2026-09-26T10:03Z",
+  "n_items": 5,
+  "outlets": [
+   "The Garden Island",
+   "West Hawaii Today",
+   "bls-gnews"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "bls-gnews"
+  ],
+  "variants": [
+   "State’s unemployment ranks grow as more people join labor force - Honolulu Star-Advertiser",
+   "State’s unemployment ranks grow as more people join labor force",
+   "State’s unemployment ranks grow as more people join labor force - Hawaii Tribune-Herald"
+  ]
+ },
+ {
+  "headline": "Rupee rises 20 paise to close at 95.58 against U.S. dollar",
+  "first": "2026-09-22T11:09Z",
+  "last": "2026-09-22T12:13Z",
+  "n_items": 5,
+  "outlets": [
+   "DT Next",
+   "Daily Excelsior",
+   "The Hindu"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Rupee rises 20 paise to close at 95.58 against US dollar",
+   "Rupee rises 20 paise to close at 95.58 against U.S. dollar"
+  ]
+ },
+ {
+  "headline": "Barclays Says US 30-Year Yield Can Reach 6% in Productivity Boom",
+  "first": "2026-09-29T15:28Z",
+  "last": "2026-09-29T15:28Z",
+  "n_items": 5,
+  "outlets": [
+   "Bloomberg.com",
+   "Yahoo Finance UK",
+   "finance.yahoo.com"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "Barclays Says US 30-Year Yield Can Reach 6% in Productivity Boom"
+  ]
+ },
+ {
+  "headline": "Rupee settles marginally up 3 paise at 95.94 against US dollar",
+  "first": "2026-09-29T16:13Z",
+  "last": "2026-09-29T22:56Z",
+  "n_items": 5,
+  "outlets": [
+   "Daily Excelsior",
+   "Dailyhunt",
+   "dailyexcelsior.com"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "Rupee settles marginally up 3 paise at 95.94 against US dollar"
+  ]
+ },
+ {
+  "headline": "US futures edge dragged lower as oil prices and Treasury yields climb",
+  "first": "2026-09-30T12:03Z",
+  "last": "2026-10-03T19:16Z",
+  "n_items": 5,
+  "outlets": [
+   "Newsday",
+   "The Globe and Mail",
+   "abcnews.com"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "macro-gnews"
+  ],
+  "variants": [
+   "US futures edge dragged lower as oil prices and Treasury yields climb"
+  ]
+ },
+ {
+  "headline": "3 Dividend Stocks That Didn't Need $100 Oil to Keep Raising Their Payouts",
+  "first": "2026-10-02T20:24Z",
+  "last": "2026-10-02T21:06Z",
+  "n_items": 5,
+  "outlets": [
+   "The Globe and Mail",
+   "The Motley Fool",
+   "Yahoo Finance"
+  ],
+  "n_outlets": 3,
+  "feeds": [
+   "crude-gnews"
+  ],
+  "variants": [
+   "3 Dividend Stocks That Didn't Need $100 Oil to Keep Raising Their Payouts"
+  ]
+ }
+]

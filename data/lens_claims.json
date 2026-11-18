@@ -1,0 +1,22 @@
+{
+  "_note": "Which resolved Iran rows are about an ACT in data/constraint_calendar.json, and what each says about it. Read from each row's own wording (the claim, not the outcome). Rows about markets, Hormuz flow, domestic Iranian politics, the IAEA, or the Houthis make no claim about these four acts and are left out on purpose; tools/lens_reread.py lists them as 'outside the lens'.",
+  "rows": {
+    "10": {"act": "us_strike_iran", "claims": "occurs", "short": "MOU does not yield durable peace; kinetic exchange resumes (12 months)"},
+    "15": {"act": "ir_ship_attack", "claims": "occurs", "short": "another significant maritime or proxy attack despite the ceasefire (60d)"},
+    "19": {"act": "us_strike_iran", "claims": "does_not_occur", "short": "no return to war-scale conflict (60d)"},
+    "21": {"act": "il_strike_iran", "claims": "occurs", "short": "an Israeli kinetic or covert action vs Iran or an Iran-linked target (60d)"},
+    "28": {"act": "ir_ship_attack", "claims": "does_not_occur", "short": "no Hormuz re-closure for 30 days (oil-down branch)"},
+    "59": {"act": "us_strike_iran", "claims": "occurs", "short": "the 10-day ceasefire attempt fails: no 10 strike-free days before 8/15"},
+    "64": {"act": "us_strike_iran", "claims": "occurs", "short": "US strikes another Iran nuclear-associated site this week"},
+    "68": {"act": "us_strike_iran", "claims": "does_not_occur", "short": "mediation off-ramp: no sustained resumption of daily US strikes through 8/16"},
+    "72": {"act": "us_strike_iran", "claims": "occurs", "short": "US/Israel strike Iranian energy infrastructure before 8/3"}
+  },
+  "outside_the_lens": {
+    "20": "Iranian vengeance action (not one of the four acts)",
+    "22": "Hormuz flow state", "73": "Hormuz flow state", "79": "Hormuz flow state", "58": "Saudi export volumes",
+    "26": "Fed", "27": "SMH vs XLE conditional", "29": "OPEC+ policy (rests on a Hormuz-normalizing premise the lens contradicts)",
+    "31": "CPI", "32": "CPI", "39": "Brent plus a food-emergency leg", "60": "Brent level",
+    "63": "US strikes on the Houthis plus an escort framework (Houthi dynamics are not in the calendar)",
+    "14": "Iranian succession", "17": "regime survival", "18": "Mojtaba visibility", "30": "IAEA reporting", "37": "GCC desalination plot"
+  }
+}

@@ -18,7 +18,94 @@ as data. It is an accountability + bookkeeping machine over expert estimates, no
 
 ---
 
-## 2. SCOREBOARD (as of 2026-10-02)
+## 2. SCOREBOARD (as of 2026-10-22)
+- **10/22 SCORING: 53 resolved · 39 HIT / 14 MISS · 74% · Brier 0.2205 · 24 analyst rows open** (35 tree-promoted rows
+  open and separate; none has matured). Three rows scored, all HITs:
+  **#30 HIT (hit-wrong-reason)** — the user agreed the reading on 10/22: construction/activity at Pickaxe Mountain counts as
+  reconstitution reporting (CSIS 9/9, Grossi 9/10-11), scored as-of 9/11, Brier 0.2304. WRONG REASON because the row's frame
+  (post-war deterrence rebuild straining a US-brokered deal) was already false — the deal expired 8/16 and the war resumed.
+  PROCESS FAILURE: 'credible' was flagged unscoped on 9/22 and the reading was settled 11 days AFTER the horizon (the #59 shape).
+  **#79 HIT** (Brier 0.0400) — PortWatch 4 transits on 10/4 vs a pre-crisis baseline of 85/day (~5%); Kpler 7-20+ commodity
+  vessels/day; 10/21 reports 4-5/day. The 9/22 "may reopen within 7 days" report did NOT convert: that is the FIFTH reopening
+  signal with no durable reopening (a second "Iran sets conditions for reopening within 7 days" headline ran 10/21).
+  The row named no source, so it was scored on PortWatch with Kpler as corroboration. **#14 HIT** (Brier 0.1444) — no verified
+  public appearance by Mojtaba Khamenei since 3/9; the final-week (10/1-10/8) confirmation is BY ABSENCE, so a missed appearance
+  is possible.
+- **Skill vs own hit rate is now -0.134** (was -0.118): three HITs raised the hit rate to 74% without lowering Brier enough to
+  matter — the probabilities still carry no information beyond "we are usually right". CI 0.156..0.255, still not separable
+  from a coin.
+- **Open level rows checked for early death (10/22): all alive.** Brent (#83) settled 100.20..113.32 since 10/5 — only ~10%
+  under its $125 ceiling, so it is the one to watch; now registered in data/autoresolve.json so `tools/tripwire.py` checks it
+  every run. IG OAS 0.88 vs <1.60, HY OAS 3.27 vs <5.00, DFII10 2.77 vs >1.50, U-3 4.2 vs 3.8..5.2: alive, FRED-backed so
+  checked by hand (the tripwire taps yfinance only).
+- **10/22 CURRENT EVENTS (verified from the tape + feed, not just headlines):** Brent 113.2 (+4.0% on the day, +10.7% since 10/02, highest
+  since May); WTI 99.4; **SMH 521 (-6.4% today, -17.4% since 10/02)**, QQQ -3.1% today / -6.3%, SPY only -1.0% since 10/02; VIX 19.6
+  (+17%); 10y 4.95 (-3.8% today); gold -2.7%. Drivers reported: Meta's AI-funding plan (non-voting shares; size of the drop disputed:
+  CNBC ~8% vs Reuters ~2%), Nvidia's CEO on capital scarcity, CoreWeave credit worries, plus 18 Hormuz attacks in two weeks and Iranian
+  state TV claiming 7 tankers burning (unconfirmed). Fed: hold expected 10/28 (CME hike odds ~17-22% per two reports), Sept payrolls
+  +29k reported weak. Iran "U.S. war drags on", Iran ruled out talks until conditions met (10/22). **For the book:** (a) #83 Brent is now
+  ~10% under its $125 ceiling on a 4%/day tape; (b) the tree's `capex-debt-funded` branch (0.38) is exactly what the AI-financing
+  headlines are testing - REPRICED 10/22 0.38 -> 0.45 (and its sibling 0.62 -> 0.55) after fixing the fork, which was not exhaustive (equity issuance fell in neither branch); facts on the Meta issuance are disputed so the step is small; (c) the semis derate that #70/#27 forecast arrived
+  ~3 weeks AFTER their windows closed - scored MISS correctly, but it is one more sign the macro call and the asset map can be right and
+  wrong on timing, so do not read it as vindication; (d) `fomc-oct`'s 0.60 second-hike node should be re-checked against the hold pricing.
+- **10/22 EVENT TRACKING BUILT (the user's point: events were happening and nothing tracked them).** Measured first: the feed
+  captured **84,487 items since 9/21; the tree held 3 news-type evidence entries** (all hand-added). Root cause: the daily
+  analyst was never set up (no .env, no CLI), so nothing digested the feed. Built: `tools/event_harvest.py` (collapses
+  syndication into 55,318 stories, ranked by independent OUTLETS - a measure of how widely a story ran, NOT how much it matters),
+  `tools/events_merge.py` (validates events against real node/row ids, writes `data/events.json`, attaches dated evidence,
+  validates proposed nodes with the tree's own rules, NEVER changes a probability, labels plans "PLAN, NOT EXECUTED"; 7 tests).
+  Four curation passes (iran/energy, macro/markets/AI, geopolitics, US politics/legal) -> **133 events (100 verified on the
+  web, 17 multi-outlet, 9 plan-only, 7 feed-only), 226 evidence entries on 106 nodes, 30 new `ev-` nodes**. Tree now **504 nodes**;
+  news-type evidence dated October went 3 -> 200. Only 7 events had no home - most of the gap was missing EVIDENCE on existing
+  nodes, not missing nodes. NOT automated: re-run `event_harvest.py` then a curation pass then `events_merge.py` by hand
+  (or set up the analyst). All suggestions stay in `data/events_reprice_suggestions.json` (17, 11 of them applied below).
+- **10/22 REPRICINGS FROM THE EVENT PASS (applied only where a verified datapoint or the tape supported it):** #103 10y>4.00
+  0.80->**0.95** (3.2 sigma at measured vol; the 10/3 note that 0.80 was too low went unacted for 19 days) - #96 France deficit
+  0.78->0.90 (govt forecast 5.4% vs 4.5%) - #105 EU storage 0.72->0.62 (14.9pp under 5y avg) - #114 shutdown 0.35->0.30 -
+  #56 0.90->0.94 - nodes fomc-oct 0.60->0.68, us-strikes-resume 0.35->0.08 (window passed), iran-six-conditions 0.25->0.12,
+  pmms-above-65 0.82->0.90. Nodes synced to their rows (brent-band-q4, natgas-storage had drifted from #83/#98 - lesson 7).
+  **DECLINED:** a further +0.10 on `capex-debt-funded` (strong claims about an Alphabet equity plan / Meta bond sit only in
+  the reason text, not in the verified events); both Iran pause nodes (the pause is undefined - do IRGC tanker attacks and Houthi
+  strikes on Riyadh break it?); `midterms-2026` (stricter claim than #56: a federal CERTIFICATION fight).
+- **OPEN QUESTIONS FOR THE USER:** (1) #12 - does informal fee collection from select vessels count as an "enforced standing toll"?
+  (2) define the Iran "fire pause". (3) `opec-nov-meeting` / `opec-quota-unchanged` are dated 11/30 but Reuters says the OPEC+
+  core group meets 11/1 - a possible mis-date from my 10/02 buildout. (4) Several feed items are RE-RUNS of old stories (a
+  4/2026 Saudi pipeline attack resurfaced 10/16; a May-2025 Russia-gas headline), so first-seen dates mislead.
+- **10/22 NEWS ANALYST = THE MYSTERY MACHINE'S (user instruction: "you have the same news analyst as the mystery machine, use theirs").**
+  GT-Analyst's own analyst (pipeline/analyst.py, headless Claude CLI) was never set up. The Trading Bot already runs one:
+  `tradingview/mystery_machine.py` (runner `mystery`) scores headlines with a LOCAL Ollama model (qwen3:14b, up on :11434),
+  groups them into STORIES with developments, and rates each development's importance / market direction with a reason.
+  `tools/mystery_events.py` consumes `tradingview/_skylit/news_ai/stories_month.json` + `stories_live.json` READ-ONLY (a test
+  fails if it ever writes into their directory - mutation-checked) and writes `promo/events_mystery.json`, which
+  `tools/events_merge.py` folds into the event log (confidence `mystery-ai`). It does NOT call their Ollama (their live scorer
+  shares that GPU). 5 tests.
+  **WHAT I MEASURED BEFORE TRUSTING IT:** their importance means "moves the stock market today" - Stifel upgrades, earnings
+  previews, retail commentary and market WRAPS all score high; only about a third of 14 sampled imp>=0.5 stories bore on this tree.
+  So the adapter adds what they lack: macro/geo families only, a topic->lane router (word-boundary regexes - a `` mangled
+  into a backspace by this shell silently zeroed the first version), no wraps / routine prints, and per-day pick of the best
+  ON-TOPIC head. It surfaces real events the web-curation passes missed (the 9/23 White House 90-day DIESEL EXPORT BAN plan;
+  Fed speakers Barr "further hikes likely needed", Williams, Hammack, Perli). **Node matching was ~50% wrong** (Fed-speaker
+  events attached to `fed-chair-term-2030`), so NOTHING is attached to nodes automatically: events are logged with
+  `candidate_nodes` for review. Result for 9/22-9/28: 21 events logged (154 total in data/events.json), 0 node evidence added.
+  **LIMITS:** their month backfill (`--backfill-ai 2026-09-22 2026-10-21`, running in WSL) had reached only 9/28 of 30 days
+  (894 of ~5.5k headlines; ~2.3 s/headline) - re-run `python tools/mystery_events.py --since 2026-09-29 --write` then
+  `python tools/events_merge.py --write` when it finishes. Not scheduled: a standing task is the user's call.
+- **10/22 NO BACKGROUND WATCHER - PULL ON DEMAND ONLY (user: "only pull this data when i ask a new question so save compute").**
+  A one-shot watcher (`tools/run_when_mystery_done.py`) was started and then STOPPED the same day; it is not running and nothing
+  polls anything. The Mystery Machine news adapter and the event merge are run BY HAND when the user asks:
+  `python tools/mystery_events.py --since <date> --write` then `python tools/events_merge.py --write`. Their month backfill
+  (`--backfill-ai 2026-09-22 2026-10-21`) was at day 9 of 30 (9/30) when checked - re-check with
+  `python tools/run_when_mystery_done.py --check` (read-only, one call) before running the adapter. Do NOT schedule it or leave a
+  loop running without being asked.
+- **10/22 merger bug fixed:** `events_merge.py` overwrote `events_reprice_suggestions.json` each run and a later merge with no
+  suggestions erased 17. It now preserves them; the record was rebuilt from promo/merged/ with a `status` on each (13 applied,
+  4 declined, 0 undecided). Merged agent files are archived in promo/merged/ so the merger reads only new input.
+
+- **Still unresolved/overdue:** none past a horizon. 10 rows are due a re-look (oldest 29 days late: #56 #38 #53 #12 #16 #36
+  #80 #35 #5 #1). Known report bug: "stale 62/27" counts tree rows in the numerator.
+
+*(10/02 entries follow for the record.)*
+### 2c. SCOREBOARD (as of 2026-10-02)
 - **10/02 SCORING CYCLE: 50 resolved · 36 HIT / 14 MISS · 72% · Brier 0.2254 · 27 open.** Three rows
   matured and were scored against primary series (yfinance adjusted closes; FRED MORTGAGE30US):
   **#70 MISS** (SMH +12.67% vs SPY +2.34% — outperformed by 10.3pp, Brier 0.2831) · **#27 MISS**
@@ -404,3 +491,58 @@ picking one file and *losing the other machine's predictions*. So:
   it has already seen.
 - The **Task Scheduler ingest job is machine-local** (`tools/register_task.ps1`). Run it on
   ONE machine only, or both will write to their own diverging `seen.db`.
+
+- **10/22 rulings:** #12 RESOLVED HIT (user's FINAL ruling, reversing an earlier same-day answer: informal select-vessel fee collection does NOT count as an enforced standing toll). Resolved early on 10/22 (horizon 2027-01-04): a formal schedule appearing later does not reopen it. See current figures from `ledger.py report`.
+  OPEC+ date FIXED: next meeting is 11/01 (OPEC press release 10/04, Reuters), nodes opec-nov-meeting / opec-quota-unchanged moved from 11/30 (also in buildout_2026_09_21.py). Whether a separate full ministerial falls in late Nov/Dec is UNCONFIRMED.
+  VOLUME != IMPORTANCE: event_harvest 'salience' renamed 'coverage' (orders the reading queue only); mystery_events no longer admits a story because it has >=5 headlines; significance comes only from the model's/curator's judgment.
+
+- **10/22 ELECTIONS BUILD + LESSON 9 (user: "you should have gotten iran escalation around the midterms").** The tree had it (ev-post-midterm-us-strikes 0.35, us-strikes-resume 0.08 pre-vote) - the PLAN did not, because it was written from the web without opening the tree. Built `tools/buildout_d_elections.py` (+14 nodes: Israel certification/tasking/Knesset swearing-in/Netanyahu-PM-on-12/1/no-government-by-12/1/no-bloc-61/pardon; US no-approps-pre-vote, Congress 1/3; FOMC 10/28 statement; Iran pre-vote US no-strike 0.84, Israel pre-vote strike 0.07, energy-infra strike 0.28, pledge extension 0.12) and 5 reprices (midterm fork 0.55/0.30/0.15 -> 0.80/0.12/0.08 on forecaster refs; ev-post-midterm-us-strikes 0.35 -> 0.45 on execution signals + cycle_odds 0.69-0.78 pause-ends band; knesset vote 0.95). #16 revised 0.45 -> 0.52. Tree 518 nodes. NOT promoted to ledger rows: each promotion needs a verified resolution source and base-rate counts and several here rest on recollection (coalition lags) - verify first.
+  `tools/window_plan.py` (+4 tests): prints what the book already says about a window, uncovered forward-dated statements, and focal-date x conflict coupling holes. Run it BEFORE any dated plan (doctrine 16.19). First live run: 6 holes after 12/1 (APEC 11/19, FOMC 12/9, CR 12/11, ECB 12/17, BoJ 12/19) - none has an Iran-coupled node. R28 still cannot see vol-vs-vol conflicts (all Iran rows are direction 'vol'); extension (a conflict-level field) NOT built, awaiting the user.
+  CHECKPOINTS (run only when asked): 10/28 Israeli result + FOMC; 11/4 US House call + certified Israeli results; ~11/18 president tasks + Knesset sworn; 12/1-12/11 formation, Georgia runoff (verify), CR deadline.
+
+- **10/22 CONFLICT CHECK BUILT (user: "fix the conflict check").** `pipeline/conflict.py` + R28's second half. A conflict cluster (iran-war) has a
+  level scale 0 settled / 1 pause / 2 incidents / 3 strikes on Iranian soil / 4 war-scale; each row declares the interval its event IMPLIES
+  (`ledger.py add --level 3-4`, `--level none` to opt out, `--hedge` to hold two rows that cannot both hold; schema `conflict_level {lo,hi}`).
+  Two checks: FEASIBILITY (one distribution must give both rows P(L in I) >= p; disjoint claims must sum under 1, nested windows are monotone) and
+  ESCALATION (a likely strike on Iranian soil vs a likely 'no war-scale': this war's strike episodes became campaigns 3 of 3, Wilson lower bound
+  0.53 errors, point estimate 0.80 warns; longer windows are scaled to the shorter at a constant hazard). Columns level_lo/level_hi added;
+  #16 backfilled [3,4], #38 [4,4]. 13 new tests (conflict 10, ledger gate 5, schema 3).
+  **HONEST RESULT: the 2026-07-08 batch (#19 vs #15/#16/#20/#21) is NOT formally incoherent** - `python pipeline/conflict.py --demo` finds 0 conflicts. #19's loss
+  was a dead premise (16.16: Iran hit three vessels on 7/7), and no row that day asserted a strike inside #19's 60-day window (#16 ran to 1/8). The earlier
+  claim that this check 'would have caught #19' was wrong; what it closes is the vol-vs-vol blind spot for FUTURE rows.
+
+- **10/22 CALENDAR VIEW (user: "show the map also in calendar format").** Timeline tab now has a Map | Calendar toggle (`pipeline/dashboard.py`: `tlView`, `calBuild`; choice kept in localStorage `gt-tlview`). Same data as the map: tree nodes by date (probability chip, green/red/amber edge = scored hit/miss/mixed or happened) plus open analyst-row horizons in violet; month nav + jump list with counts, lane filter, 'show certainties (p>=95%)' (hidden by default) and 'ledger horizons' toggles; click a chip for the node's reasoning (or the ledger row), click a date for the full day. Dashboard server restarted to load it. Assumed 'the desk' = this GT-Analyst dashboard.
+
+- **10/23 PAST NODES ARE HITS OR MISSES + CALENDAR WINDOWS + REFRESH FIX (user).** (1) `tools/resolve_past_nodes.py`: all 67 past-dated nodes now carry `resolved {happened, verdict, called, basis}`;
+  verdict = was the CALL right (HIT iff (p>0.5)==happened); p is NOT overwritten, so branch sums still audit. 25 lane anchors = structural HIT; 42 events = 28 HIT / 14 MISS.
+  Judgement calls (review): `--report` lists them (succession-tip, tech-tailwind, fire-pause-sept, frozen-oscillation [overlaps flip-b], frozen-conflict [PROVISIONAL], pause-outlasts-oct12 [depends on how
+  'pause' is defined]). tripwire.py section [4] flags any new past-dated node without a verdict; `resolve_past_nodes.py --check` lists it, `--write` applies decisions in its TABLE (it refuses to guess).
+  (2) Calendar view now draws each node as the WINDOW it can happen in (label 'between A and B', else [creation, deadline] from `horizon`; scheduled/invariant/checkpoint = a day; live windows start today; >45 days = grey
+  line + deadline bar), % = probability of happening in that window, green/red = HIT/MISS, strike-through = did not happen. (3) Auto-refresh no longer reloads the 1.5 MB page every 30s: it asks /api/version and
+  reloads only if data changed AND the tab is visible. Server runs as a detached hidden python (not tied to a chat); restart = kill the :8787 listener and `python pipeline/dashboard.py 8787`.
+
+
+- **10/23 verdict fixes (user questions).** (a) fire-pause-sept read 'MISS - the engine called 100%': the node was written after the pause began, so the call graded is the 40% the engine had on the frozen-oscillation branch it realised; every pre-pinned node now stores `called` + `called_from` (ledger row first-stated P, inverted for complements) and the verdict is re-derived by the one rule (`resolve_past_nodes.py --recall`). (b) highbeta-derate flipped MISS -> HIT BY USER RULING (needed more time: 8/31->10/22 SMH -5.98% vs XLE +6.27%); ledger #27 STAYS MISS on its own 'over the following month' wording (scored to 9/30, SMH +9.41% vs XLE -3.27%), so node and row differ on purpose. Lesson: a node that says 'month following trigger' should carry an explicit end date, or the timing miss and the thesis miss look the same.
+- **10/23 UNFORECAST verdict (user: 'do it').** Nodes written AFTER the event they record (round-3, fire-pause-sept) are no longer graded: verdict `UNFORECAST`, shown as 'NOT FORECAST - written after the fact; the engine had this world at 40%'. Non-anchor nodes now 29 HIT / 11 MISS / 2 UNFORECAST.
+
+- **10/23 CROSS-CLUSTER CHECK BUILT + REPLAYED (user: "build cross cluster check, see what would have been removed").** `pipeline/conflict.py` gained named WORLD STATES (hormuz, brent_peak, cpi_jun/jul/aug) that rows from ANY cluster claim intervals of (`ledger.py add --state hormuz=0-1`; schema `states[]`; column `states`); disjoint claims about one state (horizons within 45d) must sum under 1 or the later row is refused unless `--hedge`. `data/state_labels.json` = 22 rows labelled from their own text (stated vs `inferred`). `python tools/retro_conflicts.py [--exclude-void]` replays the book: the gates would have refused 6 rows - #29 MISS, #39 MISS, #59 MISS, #38 open (vs #35, same day), #60 HIT, #64 HIT; 54 -> 49 resolved, outcome-true 74.1% -> 77.6%, first-stated Brier 0.2212 -> 0.2119. The gate refuses the LATER row and in 3 of the pairs the kept row was the miss: removal is not the value, the forced choice is. NOT caught: #26/#32, #76/#32, #72/#68 (disjunction or posture, no shared state); #29 vs #22 rests on an INFERRED label. 13 new tests (216 total).
+
+- **10/23 two user rulings after the cross-cluster replay.** (1) #59 RESOLVED HIT (was MISS): the ceasefire did fail and was never shown to hold; IRGC tanker hits on 8/8 and 8/14 COUNT as Iranian strikes, so 10 strike-free days did not occur before 8/15. Book now 54 resolved, 41 hit (76%), Brier 0.2109. (2) The replay's remedy was wrong, not its flag: refusing the LATER row removed #60/#64 (right calls made after the conflict reignited). `tools/retro_conflicts.py` now runs policy B - when the open row's premise was already dead on the new row's date (`premise_dead` in data/state_labels.json: #19, #23, #28, all dead by 7/9) the STALE row is retired and the new one stands; only a flag against a LIVE row refuses. Under B the gates remove #19, #23-as-void, #28, #29, #38-vs-#35, and keep every hit.
+
+- **10/23 PAUSE - REWORK REQUESTED (user: "pause and rework everything").** #59 put BACK to MISS (the 10 strike-free days 8/2-8/14 DID happen; my same-day flip to HIT is withdrawn; book 54 resolved, 40 hit). THE USER'S THESIS, to become engine logic: strikes are held off for POLITICAL and ECONOMIC reasons (US midterms 11/3, Israeli campaign 10/27, pump prices, Gulf requests - Trump stood down the 8/1 campaign at Iran's and the Gulf's request); a strike-free window is therefore PREDICTABLE from the deciders' calendar; shocks and price jumps come only after a cooling-down period (the 10/22 reports: US/Israel strike plans for after the vote). The engine priced the military leg and never asked what the deciders wanted in the window. Candidate rework (NOT built, awaiting go): (1) doctrine 16.20 decider-incentive layer; (2) data/constraint_calendar.json of dated suppress/permit windows per decider with the public fact behind each; (3) a rule that every escalation/ceasefire row cites the window it sits in; (4) a time-varying hazard (cycle_odds x window multiplier) pre-registered forward; (5) re-read every Iran miss through it. Evidence so far (N=3, suggestive only): pauses ran 20d, 32d, 43d+ and began 139, 94, 54 days before the vote.
+
+- **10/23 WAR BACKTEST (user: "see what happened in the war and what the engine would have predicted... predictions before learning, then learn off what you predicted wrong").** `data/war_timeline.json` (strike days, dovish acts, Iranian triggers, from the Wikipedia timeline) + `tools/war_backtest.py` (rules hashed ae94053c before scoring). Result in doctrine 16.20: decider-incentive priors do NOT beat persistence over the whole war (0.280 vs 0.268), win only in the political stretch; every miss is a dovish week that broke on an IRAN trigger; a refit on early weeks overfit (held-out 0.291 vs 0.223). Coding caveat: 6/11-6/16 strike days are uncoded (the 6/10 'Y=0' may be a coding gap). Forward v1 numbers (0.02-0.07 pre-vote, 0.23 post-vote) rest on an untested pledge multiplier (n=1): do NOT replace the tree's 0.84 / 0.45 with them. NOT built: the constraint calendar, the rule that escalation rows cite their window + trigger, the re-read of every Iran miss. Awaiting the user's call on scope.
+
+- **10/23 REWORK BUILT - all 3 (user: "all 3").** (1) `data/constraint_calendar.json` + `pipeline/constraints.py`: 10 decider windows (US pause/MOU/stand-down/pledge/energy-price, Israel campaign, post-vote release, Iran pre-vote pressure) with public fact + `known_from` + what ends them, 10 triggers. (2) RULE R37 (schema `incentive{act,claims,window,trigger}`; `ledger.py add --act --claims --window --trigger`, required with `--level`): refuses a strike call >0.5 inside a known suppress window with no live trigger, and a calm call >0.5 within 7 days of a trigger; a later stand-down supersedes an earlier trigger. Open #16/#35 backfilled. (3) `python tools/lens_reread.py`: 9 Iran rows about the four acts, calendar had a lean on 8, right on 6 (rows right on 4); R37 refuses #19, #28, #72 (misses) and #68 (a hit). NOT caught: #59 (needs a campaign-duration/stand-down hazard: rounds 39d, 16d, 11d) and #63/#29/#39 (outside the four acts). 18 new tests (234). Caveat: the calendar and triggers were coded AFTER the outcomes were known - this shows what the lens would have asked, not a clean forecast score.
+
+- **10/23 MARKET OUTLOOK (user: "full market prediction for the coming months... using aid from the skylit data").** `reports/20261023_market_outlook.md`: where we are (SPY 759.97, -2.5% off the 10/6 high; QQQ -7.3%; SMH -21%; VIX 19.5; 10y 4.99; Brent 111.7), the dated calendar to January, three scenarios (A restraint holds 0.50 / B limited post-vote strike 0.28 / C sustained campaign 0.22) built from the tree and the war's own event reactions (strikes: Brent +22% to +38% in 10 sessions, SPY -2.5% to 0%; stand-downs: SPY +1% to +8%), no-view ranges, and 14 frozen claims registered in prereg/REGISTRY.jsonl. SKYLIT: saved overnight maps (10/23) give SPY net gamma -702M, flip 754.1, negative King 755 (-367M), SPXW flip 7495, QQQ flip 689; two tests on 734 sessions of Skylit's daily SPX gamma summary found NO significant multi-month vol or direction signal (gamma size vs next-20d vol Spearman -0.14, CI [-0.29, 0.00]). No Skylit credits spent; the Dec/Jan monthly-book maps are not stored locally (hist stops 9/30, live keeps 5 expiries) - a pull needs the user's OK with a credit count. Scripts in the session scratchpad only.
+
+- **10/23 AUDIT OF THE OUTLOOK + EARLIER WORK ("double check your work") - 3 errors found and fixed.** (1) `pipeline/conflict.py` ESCALATION was (3, 3) - 'every strike episode became a campaign' - because the four one-off retaliations (5/7, 5/25-27, 6/7-10, 6/26-27) were left out; counting episodes in data/war_timeline.json gives **3 of 7** (Wilson lower bound 0.29, point 0.44, not 0.53 / 0.80). The check therefore flagged #59 vs #19 and #64 vs #19 wrongly: RETRACTED. Retro replay now: policy A removes #29, #38, #39, #60; policy B retires #23 (void) and #28 and refuses #29 and #38 (#19, #59, #64 are no longer flagged). The tests that leaned on 3-of-3 were retuned (235 pass). Round lengths corrected to 39, 16 (22 with the 7/29 strike) and 11 days. (2) The outlook's scenario centres (A 785 / B 767 / C 720) implied a year-end median of 771 and P(above today) 0.63, contradicting its own text and claim 1; re-centred to 775 / 760 / 715 with spreads 35-40 (median 760, 5-95% 681-826, P(above) 0.50). (3) Claim 11 compared a 754.1 barrier with a no-view figure computed for 750; recomputed on a closing basis (0.56-0.70) and set to 0.62; claims 2-4 now name the basis of their references. Re-registered as `market-outlook-20261023-r2` (REGISTRY is append-only; the first entry stays, superseded). VERIFIED CLEAN: all 16 book probabilities the report cites match the tree; the market table recomputed from raw closes; Skylit levels re-read from the saved files; trading-day counts (10/20/47/66).
+
+- **10/23 FACTS ARE NOT CALLS + CALENDAR HIGHLIGHT (user, two messages).** (1) The Supreme Court term opening was shown as 'HIT - the engine called 99%'. User: these are factual events, nothing like this should be a call. Rule in `tools/resolve_past_nodes.py::is_fact` and the dashboard (`isFact`): a lane anchor, a node of class invariant/scheduled at p >= 0.95 (term opens, meeting held, election day), and the Islamabad window expiry are CALENDAR FACTS - verdict `FACT`, shown as 'FACT' instead of a percentage and as 'a fact, not a call', no counterfactual block, no hit/miss colour, hidden from the calendar unless 'certainties & anchors' is ticked. Past nodes now: 27 HIT / 11 MISS / 2 UNFORECAST / 27 FACT (25 anchors + scotus-term-2026 + islamabad-window). OPEN QUESTION for the user: the 35 tree-promoted LEDGER rows (source tree:invariant / tree:scheduled) are scored scaffolding, already excluded from the headline Brier/hit rate; should the pure-fact ones be dropped from scoring entirely? (2) Calendar: click a bar and its whole window is highlighted - a band over every day it can happen, the bar outlined, the thin line for long windows brightened, everything else dimmed, a 'highlighted: ... window A to B [clear]' bar (click it again, 'clear' or Esc to drop it). Month, lane and the highlighted item survive page refreshes (localStorage gt-cal).
+
+- **10/23 DROP (user: "DROP" on dropping calendar-fact ledger rows).** Read all 35 tree-promoted ledger rows (and scanned every ledger row for an "is held / convenes / opens / published" claim): NONE is a pure calendar fact - each asserts a value, threshold, comparison or decision (T-bill share > 20%, NATO members >= 2%, Swiss Re > $100B, SLOOS net tightening, Baker Hughes > 400 ...), at 0.22-0.95. So nothing was voided; the only near-fact is #56 ("midterms are HELD on schedule, but a certification fight occurs", 0.94), whose held-on-schedule leg is a fact but whose second leg is a real call. GUARD ADDED: promote_nodes.py now refuses to promote any calendar-fact node (is_fact) to a scored row; test added (236 pass). OPEN: if the user meant the 19 invariant/scheduled-class rows (0.50-0.95 value claims), say so - they are already excluded from the headline.
+
+- **10/24 SCHEDULED STAYS, PREDETERMINED GOES (user: "anything scheduled should be there just not anything predetermined").** Of the 19 invariant/scheduled tree rows, two were already decided when logged: **#85 and #87** (>=20 / >=24 NATO allies at 2% of GDP for 2026) - NATO published the 2026 estimates (31 of 32 allies at 2%+) on 7/7, before the 10/3 promotion; both VOIDED with that reason. The other 17 rest on figures not yet public (month-ends, year-end totals, 2027 releases) and stay scored. #80 (no NPT withdrawal effective by 1/1) became decidable once no Article X notice could take effect, but no source after May confirms the absence of a notice, so it stays open to its 1/1 horizon. GUARD: promote_nodes.py now requires `first_publication` (the date the deciding figure is first public) and refuses one on or before today; doctrine 16.22; 237 tests pass.
+
+- **10/25 DEEP RESEARCH + CORRECTIONS + DESK DATA (user: "full analysis ... tell as story about the geopolitical game", then "use heatmaps data", "apply corrections", "we have a lot more in the trading bot file").** Report: `reports/Stock market geopolitical game.md` (8 researcher notes in `research_notes/Stock market geopolitical game/`). Corrections applied by `tools/corrections_20261025.py` (backups `.bak-20261025T111026Z`): ECB 10/29 hike 0.30->0.05, ECB Dec hold 0.55->0.45, BoJ Dec hike 0.45->0.50 (+ledger #104), OPEC+ quotas unchanged 11/1 0.55->0.70, Fed hiked by 12/9 0.68->0.72; opec-nov-meeting relabelled (core group, UAE out since 5/1); new scheduled node opec-ministerial-nov29; ev-busan-truce-rolled reworded to "extended beyond 1/10/2027"; constraint_calendar re-sourced (us-energy-price-oct now `inferred`; Reuters 10/20 -> WaPo 10/18). Outlook section 11 appended; prereg claims untouched. **BRENT CONTRACT ROLL (lesson):** BZ=F rolled to January Brent on 10/23 (111.70) while December, the ICE front month to 10/30, settled 116.72; the "stale print" read was wrong. `tools/tripwire.py` now honours `front_months` in data/autoresolve.json (#83 reads BZZ26.NYM to 10/30; tests/test_tripwire.py). #83 confirmed 0.25. Desk data (no credits, cached files only): Skylit heatmaps per expiry (SPY net -702M, King 755, flip 754.09; NDX Nov King 29,675 neg, Dec 30,000 pos growing, new Feb 27,000 neg on 10/22), Skylit vol curves (NDXP inverted 27.8/25.0/21.9, SPXW upward 19.6/20.5/21.2), Tempest 500 (84% backwardation, median IV pct 70), Alpaca skew 154 names (AI-edge names -20..-56% 1m vs SPY -1%). Readers: `python tools/desk_heatmaps.py now|monthly` and `python tools/desk_positioning.py` (read Trading Bot cached files only).
