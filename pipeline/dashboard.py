@@ -1288,7 +1288,7 @@ def render_timelines(s):
             '<span id="cm-status" class="muted small">master map</span></div>'
             '<div id="cm-saved" class="chips small" style="margin-top:8px"></div></div>'
             '<div class="tl-layout">'
-            '<div class="tl-canvas-wrap"><div class="tl-zoombar"><button class="btn-mini" onclick="tlZoom(-1)">&minus;</button><span id="tl-zoomlbl" class="small muted">100%</span><button class="btn-mini" onclick="tlZoom(1)">+</button><button class="btn-mini" onclick="tlZoom(0)">reset</button><span class="muted small" style="margin-left:6px">ctrl+scroll zooms</span></div><div id="tl-zoomer"><div id="tl-canvas" class="tl-canvas"></div></div></div>'
+            '<div class="tl-canvas-wrap"><div class="tl-zoombar"><button class="btn-mini" onclick="tlFull()" title="full screen (Esc to leave)">&#x26F6;</button><button class="btn-mini" onclick="tlZoom(-1)">&minus;</button><span id="tl-zoomlbl" class="small muted">100%</span><button class="btn-mini" onclick="tlZoom(1)">+</button><button class="btn-mini" onclick="tlZoom(0)">reset</button><span class="muted small" style="margin-left:6px">ctrl+scroll zooms</span></div><div id="tl-zoomer"><div id="tl-canvas" class="tl-canvas"></div></div></div>'
             '<div id="tl-detail" class="tl-detail"><div class="muted center">← click a node<br><br>'
             'Time runs left→right; lanes are arcs. ◆ diamonds = scheduled certainties every world passes '
             'through. Click a node, then PIN it to see what its outcome shifts (amber = moved).</div></div></div>'
@@ -1513,6 +1513,10 @@ table.data tr:last-child td{border-bottom:none}
 .hl-match{background:#3a3218;color:#bfa367;font-size:10px;font-weight:700;border-radius:4px;padding:1px 6px;margin-left:5px}
 .fdot-ok{color:var(--ok)}.fdot-bad{color:#c8837c}
 .tl-layout{display:grid;grid-template-columns:1fr 340px;gap:12px}
+.tl-layout:fullscreen,.tl-layout.tl-max{background:var(--bg);padding:10px;height:100vh;width:100vw;box-sizing:border-box}
+.tl-layout.tl-max{position:fixed;inset:0;z-index:999}
+.tl-layout:fullscreen .tl-canvas-wrap,.tl-layout.tl-max .tl-canvas-wrap{max-height:calc(100vh - 20px)}
+.tl-layout:fullscreen .tl-detail,.tl-layout.tl-max .tl-detail{max-height:calc(100vh - 20px);overflow:auto}
 @media(max-width:900px){.tl-layout{grid-template-columns:1fr}}
 .tl-canvas-wrap{background:#0d1119;border:1px solid #1e2633;border-radius:3px;overflow:auto;max-height:78vh}
 .tl-canvas-wrap{cursor:grab}.tl-canvas-wrap.grabbing{cursor:grabbing;user-select:none}
@@ -1989,6 +1993,7 @@ function tlZoomApply(){var cv=document.getElementById("tl-canvas"),zr=document.g
  cv.style.transform="scale("+Z+")";cv.style.transformOrigin="0 0";
  zr.style.width=Math.round(W*Z)+"px";zr.style.height=Math.round(H*Z)+"px";
  var lb=document.getElementById("tl-zoomlbl");if(lb)lb.textContent=Math.round(Z*100)+"%";}
+function tlFull(){var el=document.querySelector(".tl-layout");if(!el)return;if(document.fullscreenElement){document.exitFullscreen();}else if(el.requestFullscreen){el.requestFullscreen();}else{el.classList.toggle("tl-max");}}
 function tlZoom(d){window.__Z=(d===0)?1:Math.max(0.4,Math.min(2.5,window.__Z*(d>0?1.2:1/1.2)));tlZoomApply();}
 (function(){var w=document.querySelector(".tl-canvas-wrap");if(!w)return;
  w.addEventListener("wheel",function(ev){if(ev.ctrlKey){ev.preventDefault();tlZoom(ev.deltaY<0?1:-1);}},{passive:false});
