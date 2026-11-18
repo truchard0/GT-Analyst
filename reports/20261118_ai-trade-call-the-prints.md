@@ -73,7 +73,7 @@ The case against is cash. Free cash flow was negative at Alphabet and Meta in th
 
 Our capex numbers are less precise than our revenue numbers. Quarterly capex missed by a median 9.5% in the backtest, the same as consensus, so the next-quarter capex ranges are wide:
 
-| Company, quarter | Last quarter | Point | 80% range |
+| Company, quarter | Last quarter | Our number | 80% range |
 | --- | --- | --- | --- |
 | Oracle, Sep-Nov 2026 | 28.5 | 30.5 | 16.4-44.7 |
 | Microsoft, Oct-Dec 2026 | 45.2 | 50.3 | 38.8-61.8 |

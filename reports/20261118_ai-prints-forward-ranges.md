@@ -13,11 +13,13 @@ leave-one-out, those widths held 79% of actuals. Capex keeps its pre-registered 
 | Next-quarter guide | 5.6% | 3.7% | Consensus better; ranges wide by construction |
 | Quarterly capex | 9.5% | 9.7% | Same as consensus; ranges too wide to use |
 
-Every row below is a ledger call at 80%: the actual lands inside the range. Dates other than Broadcom's are estimates;
+**The number to quote is "Our number"**, the middle of the range (user instruction, 17 Nov PT: "pick an exact
+number"). It is scored on its miss; the range is the honest uncertainty around it. Every row is also a ledger call at
+80% that the actual lands inside the range. Dates other than Broadcom's are estimates;
 if a company has not reported by the ledger horizon, the horizon moves and the call is not scored early.
 
 ## Revenue (US$ bn)
-| Company, quarter | Report date | Own guide midpoint | Point | 80% range | P |
+| Company, quarter | Report date | Own guide midpoint | Our number | 80% range | P |
 |---|---|---|---|---|---|
 | Broadcom FQ4 2026 | 9 Dec (confirmed) | 34.80 | 35.33 | 34.28 - 36.39 | 80% |
 | Oracle FQ2 2027 | 9-14 Dec | 21.20 | 21.33 | 20.88 - 21.78 | 80% |
@@ -28,7 +30,7 @@ if a company has not reported by the ledger horizon, the horizon moves and the c
 | Nvidia FQ4 2027 | 24 Feb - 3 Mar | 130.00 | 137.29 | 133.64 - 140.95 | 80% |
 
 ## Next-quarter revenue guide midpoint (US$ bn)
-| Company, guide given with | Point | 80% range | P |
+| Company, guide given with | Our number | 80% range | P |
 |---|---|---|---|
 | Broadcom FQ4 2026 | 41.52 | 31.48 - 51.57 | 80% |
 | Oracle FQ2 2027 | 22.70 | 20.15 - 25.26 | 80% |
@@ -39,7 +41,7 @@ if a company has not reported by the ledger horizon, the horizon moves and the c
 | Nvidia FQ4 2027 | 154.61 | 148.69 - 160.53 | 80% |
 
 ## Quarterly capex (US$ bn, each company's own definition)
-| Company, quarter | Last quarter | Point | 80% range | P |
+| Company, quarter | Last quarter | Our number | 80% range | P |
 |---|---|---|---|---|
 | Oracle FQ2 2027 | 28.50 | 30.53 | 16.35 - 44.71 | 80% |
 | Microsoft FQ2 2027 (incl. finance leases) | 45.20 | 50.32 | 38.84 - 61.79 | 80% |
