@@ -1,6 +1,6 @@
-# The Path of the AI Boom: Full Report
+# The Path of the AI Boom
 
-18 Nov 2026 · GT-Analyst desk
+*@alostquant*
 
 **Bottom line:** the AI build isn't running out of buyers. It is running into limits: permits, power, the price of money, and the uneasy peace between Washington and Beijing. Demand at the top is still accelerating, so this winter's revenue reports should mostly land. The danger sits in 2027. It has three ways in: credit for the smaller builders, the US-China truce that expires on 10 January, and a small chance of trouble over Taiwan. Our base case, at about 41%, is a slower 2027, not a broken one.
 
@@ -21,37 +21,6 @@ Everyone watched the first story. The second is the kind that now decides the tr
 | Nvidia FQ4 2027 | 24 Feb-3 Mar | $130.0bn | **$137.3bn** | $137.3bn | 90% |
 
 Our number is the company's guidance plus its average beat over its last four reports, fixed on 18 November and scored as it stands. The desk view is where the full analysis lands. These are revenue calls, not share-price calls; the scenario odds later in the report are context. A † marks a figure that rests on secondary sources.
-
-## Start here: both companies beat, and only the borrower was punished
-
-Two earnings reports, five days apart, tell the story of this cycle.
-
-Nebius rents out Nvidia's chips to AI labs. On 12 November it beat forecasts, with revenue up almost sevenfold on a year earlier. It also said it would spend $40-45bn on data centres next year, more than three times the revenue it expects. By the next morning its shares had lost about a fifth.†
-
-Nvidia reported on the 17th. Revenue doubled to $115.8bn, 7% above its own forecast. The shares barely moved.
-
-The difference was not demand. Both companies are selling everything they can deliver. The difference is who pays for the building. Nvidia's customers are among the richest companies on earth. Nebius has to borrow, or persuade its customers to pay up front.
-
-So far the customers are paying. Prepayments covered more than all of Nebius's new spending on its third-quarter deals, which is the most reassuring number in either report. It is also why we watch three tripwires more closely than any earnings beat.
-
-![Buyers now fund the build: prepayments covered all of Nebius's new capex](charts/20261118_ai/01_funding_loop.png)
-
-## Nvidia without Huang: a smaller lender, not a smaller order book
-
-Jensen Huang resigned as Nvidia's chief executive on 12 November. Colette Kress, the finance chief, is running the company in the meantime, and the board says it will not bring him back. Nvidia has given no reason; press reports tie the exit to a counter-intelligence inquiry, which we cannot verify.
-
-The exit changes less than the share price suggests. Customers are not buying less. Vera Rubin, the next chip, is shipping, the current-quarter guide is $130bn, and next year's growth outlook went up to about 75%. Our $137.3bn number stands.
-
-What changes is how much of its balance sheet Nvidia will lend. Under Huang it had guaranteed about $108.5bn of customer commitments by July, close to a full quarter of revenue. A successor, least of all an interim chief who is also the finance chief, is unlikely to add to that. The cost falls on the chip renters, which lose their cheapest backstop.
-
-| What changes | What would show it | When |
-| --- | --- | --- |
-| Lending to customers | Guarantee lines stop growing (35%) | Annual report, late Feb to early Mar |
-| Funding for chip renters | More prepayments and secured loans; wider bond spreads | December to March |
-| Washington and Beijing | Compliance first; congressional hearings 1-3 Dec | December; new Congress in January |
-| Who leads | A permanent chief from the search; GTC on 15-18 Mar is the first without him | By March |
-
-The shares already price a large change: they sit 35% below the October record, at about 11 times forward earnings. If the annual report shows the guarantees still growing, the board has kept Huang's lending policy and the risk to the chip renters falls. If a successor cuts existing commitments, which no one has suggested, the risk moves from Nvidia's revenue to its customers', and our 2027 base case weakens.
 
 ## How we got here: denial, then deals, then the bill
 
@@ -83,33 +52,36 @@ The striking thing about November is how little of the geopolitics touches this 
 - **The Gulf reaches AI only through the Fed.** The tanker war is frozen and Brent is about $93, but strikes on 2 and 15 November make the weeks to 3 January the riskiest left. We expect the Fed to raise rates on 9 December (93%).
 - **Taiwan is the single point of failure.** No shots, but the largest exercise since December 2025. Most of our 10% chance of action by mid-2027 is a quarantine or limited gray-zone fire, not an invasion.
 
-## Where the stocks sit: Meta 39 points ahead, Nvidia 35% off its high
+## The money: both companies beat, and only the borrower was punished
 
-Prices move before revenue does. At the 17 November close the chip index sat 31% below its June high. Nvidia was the weakest of the group, 35% off its own. Amazon was the only name above its 50-day and 200-day averages. Over three months the market paid for the companies that use AI and for the custom-chip and foundry suppliers, and marked down Nvidia and Micron.
+Of the three ways into 2027, credit opens first. Two earnings reports, five days apart, show why.
 
-![Over three months Meta beat the chip index by 39 points; Nvidia lagged it by 13](charts/20261118_ai/04_relative_strength.png)
+Nebius rents out Nvidia's chips to AI labs. On 12 November it beat forecasts, with revenue up almost sevenfold on a year earlier. It also said it would spend $40-45bn on data centres next year, more than three times the revenue it expects. By the next morning its shares had lost about a fifth.†
 
-### The positioning map: most of the cushion expires on Friday
+Nvidia reported on the 17th. Revenue doubled to $115.8bn, 7% above its own forecast. The shares barely moved.
 
-Options dealers, the banks on the other side of most options trades, hedge as prices move. When they are long gamma near the price, their hedging leans against moves: they sell into rallies and buy into dips. When they are short gamma, their hedging goes with the move. The next page maps that for the two main US indices and six AI names on the evening of 17 November.
+The difference was not demand. Both companies are selling everything they can deliver. The difference is who pays for the building. Nvidia's customers are among the richest companies on earth. Nebius has to borrow, or persuade its customers to pay up front.
 
-![Both indices sit in long gamma; 61% of the AI-stock maps expire on Friday](charts/20261118_ai/05_heatmap_board.png)
+So far the customers are paying. Prepayments covered more than all of Nebius's new spending on its third-quarter deals, which is the most reassuring number in either report. It is also why we watch three tripwires more closely than any earnings beat.
 
-Five things stand out.
+![Buyers now fund the build: prepayments covered all of Nebius's new capex](charts/20261118_ai/01_funding_loop.png)
 
-**The indices are better cushioned than the stocks.** Dealers are long gamma near the price on both the S&P 500 and the Nasdaq-100. Half of the S&P's map, including its largest position at 7,310, sat in the 18 November expiry, which lapsed at that day's close; the nearest short strike, at 7,350, is just above the price. On the Nasdaq-100 the largest position is long, at 650 on the QQQ in Friday's expiry. It sits 1.5% below the price, with a short strike the same distance above.
+## Nvidia without Huang: a smaller lender, not a smaller order book
 
-**Most of the AI stocks' cushion expires on Friday.** Between 52% and 64% of each stock map sits in the 20 November monthly expiry, and on all six maps the single largest position is there. After Friday the maps thin out, so whatever damping dealers supply today will be much weaker going into the December reports.
+Jensen Huang resigned as Nvidia's chief executive on 12 November. Colette Kress, the finance chief, is running the company in the meantime, and the board says it will not bring him back. Nvidia has given no reason; press reports tie the exit to a counter-intelligence inquiry, which we cannot verify.
 
-**Amazon is the most cushioned, CoreWeave the least.** Amazon's largest position, at $260 just above the price, is long gamma, and the strikes within 5% of the price net to about half the map, all on the long side. CoreWeave is the mirror image: dealers are short gamma right at $50, where it closed. The company most exposed to AI credit is also the one where hedging is most likely to add to a move rather than damp it, in either direction.
+The exit changes less than the share price suggests. Customers are not buying less. Vera Rubin, the next chip, is shipping, the current-quarter guide is $130bn, and next year's growth outlook went up to about 75%. Our $137.3bn number stands.
 
-**Meta and Micron have short pockets just above the price.** Meta is cushioned just below its price, but its largest position, 2.6% higher at $635, is short gamma. Micron is roughly neutral at its price, with a short pocket at $750, 5% above. Those are the strikes where dealer hedging would switch from leaning against a move to going with it.
+What changes is how much of its balance sheet Nvidia will lend. Under Huang it had guaranteed about $108.5bn of customer commitments by July, close to a full quarter of revenue. A successor, least of all an interim chief who is also the finance chief, is unlikely to add to that. The cost falls on the chip renters, which lose their cheapest backstop.
 
-**Broadcom's biggest pocket sits just outside what its options price.** Dealers are long gamma at $335-340, around the price, going into the 9 December report, and the options market prices a move of about 8.9% on the day. The largest position on the map, a short strike at $300, is 10.7% below, just beyond that range. The chip index looks similar: cushioned at its price of about $460, with a short pocket just below and its largest long strike 8% above.
+| What changes | What would show it | When |
+| --- | --- | --- |
+| Lending to customers | Guarantee lines stop growing (35%) | Annual report, late Feb to early Mar |
+| Funding for chip renters | More prepayments and secured loans; wider bond spreads | December to March |
+| Washington and Beijing | Compliance first; congressional hearings 1-3 Dec | December; new Congress in January |
+| Who leads | A permanent chief from the search; GTC on 15-18 Mar is the first without him | By March |
 
-A caution that our own testing demands. Over 55 days of intraday index maps, the largest strike did not pull prices toward it. Big strikes reversed price no more often than any other strike. And across 324 sessions, whether dealers were long or short told us nothing about the next day's direction. Single names over weeks have never been tested. Read the maps as a picture of where hedging sits, not as targets; price direction stays a no-call.
-
-Nvidia is left off because its map predates its report, and Oracle and TSMC have no maps in our data. Oracle's options price a move of about 12.6% on its December report.
+The shares already price a large change: they sit 35% below the October record, at about 11 times forward earnings. If the annual report shows the guarantees still growing, the board has kept Huang's lending policy and the risk to the chip renters falls. If a successor cuts existing commitments, which no one has suggested, the risk moves from Nvidia's revenue to its customers', and our 2027 base case weakens.
 
 ## What we see ahead: about 41% on a slower 2027, 10% on the tail that breaks it
 
@@ -138,6 +110,34 @@ In that world the likeliest 2027 is slower growth, with capex up less than 25%, 
 | Taiwan action | 10% to 30 Jun 2027 | Drills turn into boarding or turning back ships | December drills |
 
 **The strongest case against us.** Rents for top chips are up about 58% in a year, a large memory maker says it is sold out through 2029, and the leading foundry sees no slowdown. On that evidence 2027 could be another 30%+ year, and our slowdown would be the miss. That is why it is a one-in-two path inside the base case, not a call.
+
+## What the market is pricing: Meta 39 points ahead, Nvidia 35% off its high
+
+Prices move before revenue does, and they have already started to split the trade. At the 17 November close the chip index sat 31% below its June high. Nvidia was the weakest of the group, 35% off its own. Amazon was the only name above its 50-day and 200-day averages. Over three months the market paid for the companies that use AI and for the custom-chip and foundry suppliers, and marked down Nvidia and Micron.
+
+![Over three months Meta beat the chip index by 39 points; Nvidia lagged it by 13](charts/20261118_ai/04_relative_strength.png)
+
+### The positioning map: most of the cushion expires on Friday
+
+Options dealers, the banks on the other side of most options trades, hedge as prices move. When they are long gamma near the price, their hedging leans against moves: they sell into rallies and buy into dips. When they are short gamma, their hedging goes with the move. The next page maps that for the two main US indices and six AI names on the evening of 17 November.
+
+![Both indices sit in long gamma; 61% of the AI-stock maps expire on Friday](charts/20261118_ai/05_heatmap_board.png)
+
+Five things stand out.
+
+**The indices are better cushioned than the stocks.** Dealers are long gamma near the price on both the S&P 500 and the Nasdaq-100. Half of the S&P's map, including its largest position at 7,310, sat in the 18 November expiry, which lapsed at that day's close; the nearest short strike, at 7,350, is just above the price. On the Nasdaq-100 the largest position is long, at 650 on the QQQ in Friday's expiry. It sits 1.5% below the price, with a short strike the same distance above.
+
+**Most of the AI stocks' cushion expires on Friday.** Between 52% and 64% of each stock map sits in the 20 November monthly expiry, and on all six maps the single largest position is there. After Friday the maps thin out, so whatever damping dealers supply today will be much weaker going into the December reports.
+
+**Amazon is the most cushioned, CoreWeave the least.** Amazon's largest position, at $260 just above the price, is long gamma, and the strikes within 5% of the price net to about half the map, all on the long side. CoreWeave is the mirror image: dealers are short gamma right at $50, where it closed. The company most exposed to AI credit is also the one where hedging is most likely to add to a move rather than damp it, in either direction.
+
+**Meta and Micron have short pockets just above the price.** Meta is cushioned just below its price, but its largest position, 2.6% higher at $635, is short gamma. Micron is roughly neutral at its price, with a short pocket at $750, 5% above. Those are the strikes where dealer hedging would switch from leaning against a move to going with it.
+
+**Broadcom's biggest pocket sits just outside what its options price.** Dealers are long gamma at $335-340, around the price, going into the 9 December report, and the options market prices a move of about 8.9% on the day. The largest position on the map, a short strike at $300, is 10.7% below, just beyond that range. The chip index looks similar: cushioned at its price of about $460, with a short pocket just below and its largest long strike 8% above.
+
+A caution that our own testing demands. Over 55 days of intraday index maps, the largest strike did not pull prices toward it. Big strikes reversed price no more often than any other strike. And across 324 sessions, whether dealers were long or short told us nothing about the next day's direction. Single names over weeks have never been tested. Read the maps as a picture of where hedging sits, not as targets; price direction stays a no-call.
+
+Nvidia is left off because its map predates its report, and Oracle and TSMC have no maps in our data. Oracle's options price a move of about 12.6% on its December report.
 
 ## The revenue numbers: a 1.5% median miss over five years
 
@@ -199,3 +199,4 @@ Every chart names its data file. Repo data: `data/ai_prints_backtest/`, `data/ai
 - **Revision 5, 18 Nov PT (user: I want to see the heatmaps).** Added three dealer-gamma heatmap widgets (MU+META, AMZN+SMH, CRWV+AVGO; NVDA held out as event-stale) from `data/ai_technical/heatmaps_20261117.json` (`tools/heatmap_extract.py`, Skylit 17 Nov maps only). Earlier: section "Where the stocks sit": relative-strength chart and a positioning table from `data/ai_technical/levels_20261118.csv` (Skylit dealer-gamma maps at the 17 Nov 16:00 ET close; AVGO 09:30 map; no maps for ORCL or TSM; NVDA map predates its report) and `data/ai_technical/stack_20261118.csv` (`tools/technical_stack.py`). No Unusual Whales data. Walls are approximations (largest positive dealer-gamma strike below/above spot). Measured record stated in the body: largest-strike pin null (55 days), big-strike reversal 70-73% vs 72-76% any strike, lockbox 0/9, gamma sign no next-day separation (324 sessions), vanna 12/42 vs 12.6 chance; single names over weeks untested. Micron's report date now 15-23 Dec (unconfirmed; a screener shows 23 Dec). Skill: `.claude/skills/technical-stack/`.
 
 - **Revision 6, 18 Nov PT (user: rebuild the charts in the dark house style with our own flair; more depth on the heatmaps; condense; heatmaps all on one page, major indices included; the prose must read like a professional long-form writer).** All ten Claude widgets replaced by eight house-style PNGs from `tools/ai_report_charts.py` (signal stripe, headline badge, mono numerals added to `tools/market_update/chartstyle.py`). The three heatmap widgets became one page: S&P 500 (SPXW) and Nasdaq-100 (QQQ) from the 17 Nov 17:30 ET overnight map plus MU, META, AMZN, SMH, AVGO, CRWV from the 17 Nov close (AVGO 09:30); per-name reads in `data/ai_technical/heatmap_reads_20261117.json` (front-expiry share, net gamma within 2% and 5%, largest cell, largest long rows above/below, largest short row). Cut the Nvidia-Nebius table, the Huang table to four rows, and the positioning table (the RS chart and the board carry it). Corrections: the chip-index rise from the war low is 85% on closes (was 87%); the revenue chart title now says consensus was beaten in 3 of 5 years (the old widget said 'the last 4'; Y3 was 2.12% vs 2.07%); channel odds updated to the applied map (Gulf frozen 80%, financing 82%). No probability changed. Writing: `.claude/skills/report-writing/SKILL.md` gains Part B (prose craft) and a self-edit pass. Exports: 15 pages, 8 pictures; the board sits alone on page 9.
+- **Revision 7, 18 Nov PT (user: reorganize for flow; header shows only the title and @alostquant).** New order: key calls, how we got here, where we are, the money (was 'Start here', now opens 'Of the three ways into 2027, credit opens first'), Nvidia without Huang, what we see ahead, what the market is pricing (with the positioning map), the revenue record, signposts, conclusion. Title 'The Path of the AI Boom' (tab renamed; the doc's own title in the claude.ai gallery can only be renamed by hand on the web), byline @alostquant, date chip and name removed. No numbers changed. 15 pages, 8 pictures; the board alone on page 11.
