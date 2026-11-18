@@ -71,7 +71,7 @@ In every boom with usable dates, equities peaked before or in the same year as c
 - Meta, Microsoft and Alphabet were each set to spend 21-35% of revenue on capex (consensus NTM, Sept 2025), above AT&T at the height of the telecom bubble and above the average global utility; Magnificent-7 capex rose from 4% to 15% of revenue since 2012. [F] — [Sparkline Capital](https://blog.sparklinecapital.com/wp-content/uploads/2025/10/sparkline-ai-capex.pdf)
 
 ### Inferences
-- Ordering rule supported by five of five dated episodes: equity peak comes first, capex peak second, capex decline third. The lag from equity peak to the first annual capex decline was about 9-21 months in telecom (March 2000 to calendar 2001) and about 24 months in UK rail. Capex data is therefore a lagging confirmation, not a leading sell signal.
+- Ordering rule supported by all four episodes with usable dates (UK rail, US telecom, 2018-19 and 2022-23 cloud digestions; shale, 1870s rail and mining lack verified equity dates): equity peak comes first, capex peak second, capex decline third. The lag from equity peak to the first annual capex decline was about 9-21 months in telecom (March 2000 to calendar 2001) and about 24 months in UK rail. Capex data is therefore a lagging confirmation, not a leading sell signal.
 - The depth of the capex decline scales with external financing. Debt- and equity-market-funded builders (CLECs, long-haul, 1870s railroads, shale, miners) cut 50-80%; cash-funded hyperscalers in 2019 and 2023 cut by low single digits or paused. The current cycle's shift from cash funding toward debt (section 5) moves it along that axis.
 - Peak carrier intensity of 30-40% of revenue is the same range as Meta (44%) and Microsoft (39%) in 2025 (section 4), so intensity alone is already at telecom-peak levels; what differs is the funding source and customer credit quality.
 - Demand shortfall against forecast, not a rate shock, started the telecom turn; financing closure then converted a slowdown into a collapse. In 1873, shale and mining the trigger was the financing or price channel directly.
@@ -159,7 +159,7 @@ A 20%+ SOX drawdown has occurred about once every three years since 2004, with a
 - Creative Strategies (Feb 2026): three preconditions for a memory peak — trough inventory, peak y/y pricing, stock-price inflection — were not all met at that date. [S] — [Creative Strategies](https://creativestrategies.com/research/memorys-200b-inflection/)
 
 ### Inferences
-- Base rate for a 20%+ SOX drawdown in any given year is roughly 30% (seven in 22 years, plus the open 2026 episode). Six of seven recovered to a new high within 14 months of the trough; the exception was the one tied to a systemic credit event.
+- Base rate for a new 20%+ SOX drawdown starting in any given year is roughly one in three (seven completed in 22 years, plus the open 2026 episode). Six of seven recovered to a new high within 14 months of the trough; the exception was the one tied to a systemic credit event.
 - Distinguishing a correction from a cycle top: in 2006, 2015, 2018 and 2024-25 industry revenue growth re-accelerated within two to three quarters; in 2000, 2007 and 2021-22 an inventory or credit problem was already visible. The discriminating variables are inventories and customer financing, not the price decline itself.
 - Memory gives the earliest reading: equity peak, then spot price peak, then contract price peak, then inventory rebuild, then margin peak. Very low valuation multiples at the top (4-5x forward earnings in 2018) are a peak marker for memory, not a value signal.
 - The Truist finding and the Micron 2018 record conflict on sign. A defensible reading is that memory and commodity semis lead their fundamentals while the broad index has lagged the growth peak; the framework should treat the growth-rate peak as opening a risk window of roughly minus two to plus one quarter, not as a point signal.
@@ -277,7 +277,7 @@ Tech has risen through most hiking cycles: of five cycles since 1994, the Nasdaq
 | Cycle | Fed action | Tech performance | Source flag |
 |---|---|---|---|
 | 1994 | Six hikes, 3.0% to 5.5% within the year | Nasdaq Composite -3.2% to -3.7% for 1994; Nasdaq-100 +1.5% | [S][2nd] |
-| 1999-2000 | Hikes into May 2000 | Nasdaq-100 +59% during the hiking cycle; collapse came after hikes ended | [S][2nd] |
+| 1999-2000 | Hiking cycle of 1999-2000 (dates not sourced) | Nasdaq-100 +59% during the hiking cycle; collapse came after hikes ended | [S][2nd] |
 | 2004-06 | 1.0% to 5.25% | Nasdaq +26.9% (measured June 2004 to September 2007, a longer window than the hikes) | [S] |
 | 2015-18 | Nine hikes | Nasdaq-100 -14% within two months of the first hike, recovered by July 2016, ended over a third above its pre-tightening level | [S][2nd] |
 | 2022 | 0.25/0.50/0.75-point hikes | Nasdaq about -33% in 2022; growth stocks down over 30% vs value -7.5%; SOX -35.8%; Nvidia -51% | [S] |
@@ -287,11 +287,11 @@ Tech has risen through most hiking cycles: of five cycles since 1994, the Nasdaq
 - 2004-07 figure and the statement that the median Nasdaq gain across the five hiking cycles before 2022 was 26.9%. — [CME Group](https://www.cmegroup.com/openmarkets/equity-index/2022/How-Rising-Rates-Could-Influence-Tech-Earnings.html)
 - 2022: Nasdaq -33%. [2nd] — [Matthew Carr Substack](https://matthewcarr.substack.com/p/four-words-five-decades-of-guidance); growth vs value. — [Lincoln Daily News/Reuters, 28 Dec 2022](https://archives.lincolndailynews.com/2022/Dec/28/NEWS/business_e.shtml); SOX and Nvidia. — [24/7 Wall St](https://247wallst.com/investing/2026/05/12/chip-stocks-are-bleeding-today-the-2018-and-2022-selloffs-tell-you-exactly-what-comes-next/)
 - Real yields: ten-year real yields rose to -0.98% in early January 2022 as the nominal hit 1.65%, with strategists flagging expensive growth as most exposed; but the Nasdaq-100 also fell 4.1% on a September 2022 day when the ten-year was stable. [S] — [BNN Bloomberg](https://www.bnnbloomberg.ca/great-stock-rotation-has-legs-wall-street-pros-say-1.1703361); [Fortune](https://fortune.com/2022/08/28/tech-stocks-face-fresh-rates-storm-wall-street/)
-- SOX peak-to-trough in the 2022 cycle was -46.5% over 9.6 months (27 Dec 2021 to 14 Oct 2022), the trough coming five months before the last 2023 hikes. [F][2nd] — [QuantFlowLab](https://quantflowlab.com/?p=936)
+- SOX peak-to-trough in the 2022 cycle was -46.5% over 9.6 months (27 Dec 2021 to 14 Oct 2022); the trough came while the Fed was still hiking. [F][2nd] — [QuantFlowLab](https://quantflowlab.com/?p=936)
 
 ### Inferences
 - Hikes alone have a poor record as a sell signal for tech: four of five cycles were flat to strongly positive. The discriminating conditions in 2022 were starting valuation and the speed of the move in real yields, not the fact of tightening.
-- 1999-2000 is the relevant analogue for a capex boom under tightening: tech gained 59% while the Fed hiked, and the peak came about two months before the final hike. Tightening coincided with the last and steepest leg, then with the financing closure that hit telecom customers.
+- 1999-2000 is the relevant analogue for a capex boom under tightening: tech gained 59% while the Fed hiked, and the collapse followed the end of the hikes (the Nasdaq peak of 10 March 2000 preceding a final hike in May 2000 is from memory — unverified). Tightening coincided with the last and steepest leg, then with the financing closure that hit telecom customers.
 - For semis specifically, the rate-driven 2022 drawdown (-46.5%) was deeper than the two digestion-driven ones (-26% in 2018, -25% in 2015-16), so a rates shock on top of a capex deceleration would stack two historically separate drivers.
 
 ### Gaps
