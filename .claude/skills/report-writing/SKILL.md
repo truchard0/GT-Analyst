@@ -177,6 +177,12 @@ Say a thing once, plainly. Put uncertainty in the odds, not in adjectives. No ex
 The second draft is about 20% shorter than the first. Cut the sentence that restates the previous one, the
 qualifier no reader would miss, and the number the chart already shows.
 
+### B11. Sound like a person (user, 18 Nov 2026: "humanize the text")
+Write the way a sharp analyst talks to a client: contractions ("isn't", "we'd", "that's"), plain verbs ("came in",
+"lost out to", "talk its customers into"), and the occasional direct "you". Cut machine tells: "It is not X; it is Y"
+set-ups, triplets in every sentence, a bold label on every paragraph, colons used for drama, and openers like
+"Bottom line:". Keep bold lead-ins only where a reader scans a list of parallel points.
+
 ### Before and after (from the AI report)
 
 - **Before:** "Two reports five days apart show the whole cycle: demand still accelerating at the top, delivery and
