@@ -406,7 +406,7 @@ longer writes `ledger/ledger.db`. Unfinished work, in the order to pick it up:
    range), not just booleans."
    - Rules and pass lines: `data/ai_prints_backtest/PREREG.md` (V1 boolean rules, then V2 numeric), committed before
      any window data was read (`99c0181`, `06329b7`). Scorers: `tools/ai_prints_numeric.py` (V2) and
-     `tools/ai_prints_backtest.py` (V1). Both were self-tested on synthetic data only. **No real score has been run.**
+     `tools/ai_prints_backtest.py` (V1). Both were self-tested on synthetic data only. **First real run done 11/18 for revenue and the next guide: `reports/backtests/20261118_ai-prints-backtest.md`** (29 reports: revenue median miss 1.02% against 2.14% for the naive guide, but only 62% inside the 80% range and ranges wider than the ±2% line; next-quarter guide median miss 5.6%, biased 4.8% low, ranges ±11%: not tight. Yes/no rules: 29 of 29 beat their guide; the stock rose the next session after only 11 of 28 beats). Capex forecasts and the consensus benchmark are not yet run.
    - Data files in `data/ai_prints_backtest/` (status is in the last commit message of this section):
      `prices.csv` (daily closes, 17 tickers), `prints_suppliers.csv` (window, 11 suppliers), `prints_buyers.csv`
      (window: AMZN, META, ORCL), `capex.csv` (window capex guide changes), `prints_history_a.csv` and

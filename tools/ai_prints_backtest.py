@@ -39,7 +39,12 @@ def score(outcomes, p):
 
 
 def main():
-    prints = [r for r in rows("prints.csv") if WINDOW[0] <= r["report_date"] <= WINDOW[1]]
+    allp = rows("prints.csv") + rows("prints_suppliers.csv") + rows("prints_buyers.csv")   # data arrived in two files
+    for r in allp:                                         # midpoints may be blank when only a range was given
+        for m, lo, hi in (("guide_mid", "guide_low", "guide_high"), ("next_guide_mid", "next_guide_low", "next_guide_high")):
+            if f(r.get(m)) is None and f(r.get(lo)) is not None and f(r.get(hi)) is not None:
+                r[m] = (f(r[lo]) + f(r[hi])) / 2
+    prints = [r for r in allp if WINDOW[0] <= r["report_date"] <= WINDOW[1]]
     capex = [r for r in rows("capex.csv") if WINDOW[0] <= r["report_date"] <= WINDOW[1]]
     px = {}
     for r in rows("prices.csv"):
