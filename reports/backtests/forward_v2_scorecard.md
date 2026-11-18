@@ -56,3 +56,20 @@ reported.
 - Iran reported five tankers hitting mines on 11/13–11/14 (gCaptain, The National).
 
 **score-forward:** two cohorts, both 0 calls. The 10/30 cohort resolved on 11/06 with nothing to score.
+
+## Final (test closed 2026-11-18)
+
+The forward test is closed early, with no scored calls.
+
+| Week (as-of close) | Outcome |
+|---|---|
+| 2026-10-30 | Registered, 0 calls (abstained on all 125 names) |
+| 2026-11-06 | Missing: the scheduled run failed on the account usage limit |
+| 2026-11-13 | Registered, 0 calls (abstained on all 125 names) |
+| 2026-11-20 | Cancelled: war-driven sector calls were banned on 11/18, and the v2 rules mostly make them |
+
+- **Scored calls: 0.** There is no hit rate, Brier score or interval to report.
+- **Verdict:** no out-of-sample evidence either way. The corrections were neither confirmed nor refuted. The 64.6%
+  in-sample figure still counts for nothing.
+- **Doctrine status:** market-transmission §4.1 stays provisional. Nothing is promoted.
+- **The v2 candidate is retired.** It is not a failed test; its calls are of a type the desk no longer makes.

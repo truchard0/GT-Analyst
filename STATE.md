@@ -1,5 +1,5 @@
 # GT-Analyst — LIVE STATE (handoff doc)
-**Last updated: 2026-11-14 (prediction rankings; #79 MISS, #56 HIT, #10 HIT early).** Read this first after any context reset. It records what
+**Last updated: 2026-11-18 (cloud runs off; server loop + learning loop built; war-driven price calls banned).** Read this first after any context reset. It records what
 the engine IS, what it has LEARNED, and what is currently STAKED. Everything here can be rebuilt from
 `ledger/ledger.db` and `data/timelines.json`; this is the summary.
 
@@ -226,6 +226,34 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
 
 ---
 
+## 7h. THE LEARNING LOOP (11/18)
+- **Diagnosis on the 56 scored calls:**
+  - the stated probabilities could not tell hits from misses (AUC 0.47; misses were stated at 0.664 on average,
+    hits at 0.655);
+  - they scored worse (Brier 0.236) than saying the 66% base rate every time (0.224 in sample, 0.232 leave-one-out);
+  - 47 of the 56 calls were logged in July and 38 were scored in one batch on 10/25, so there was almost no feedback
+    while the calls were being made;
+  - calls with a horizon of 14 days or less did better (13/17, Brier 0.191) than longer ones (24/39, 0.256);
+  - 26 of the 56 sit in one cluster (iran-war).
+- **`pipeline/learn.py`** trains a correction on the scored record: P(call comes true | call type), shrunk toward the
+  base rate. It does not retrain the language model. Commands: `train`, `validate`, `shadow`, `scoreboard`, `nightly`,
+  `prior`.
+- **Out-of-sample result (Brier):**
+  - leave-one-out: type model 0.208, stated 0.236, base rate 0.232;
+  - leave-one-CLUSTER-out: type model 0.259, stated 0.236, coin 0.250. The type model loses on a topic it has not
+    seen.
+  - So the type lessons, including the 11/14 caps and the 11/18 ban, are lessons about this war and these topics.
+    They are not proven general rules.
+- **The model runs in SHADOW.** `data/learn/shadow.csv` logs its probability for every open call. The pre-registered
+  rule: after 20 of those calls resolve, promote it if it beats the stated probabilities by 0.01 Brier, retire it if
+  it loses by 0.01.
+- **`ledger.py add` now prints the trained prior** for the call's type next to the stated probability. It never
+  blocks.
+- **Not built (needs a decision, costs Claude usage):** a daily set of short-horizon, auto-resolving practice
+  questions. More and faster scored calls is the main thing the record lacks.
+- **Stock-call forward test closed** with 0 scored calls: no evidence either way; v2 retired
+  (`reports/backtests/forward_v2_scorecard.md`).
+
 ## 7g. WHERE THE FORECASTS WENT WRONG, AND THE FIX (11/14)
 - **Calibration was inverted at the top.**
   - Calls stated at 70%+ came true only 59-67% of the time.
@@ -345,39 +373,46 @@ The rest of the routine is unchanged:
 2. `git push` after it.
 3. Never run cycles on two machines at once.
 
-**Scheduled tasks (rebuilt 11/14): all fire into ONE runner session that has the repository attached.**
-- Runner session: `session_01AwChvHXzuPFbFQLR4ELyXC`, titled "GT-Analyst scheduled runner". It was created with the
-  repo as its source and this branch as its outcome branch. Its dry-run push succeeded on 11/14; the same command
-  returned 403 in a fresh scheduled session.
+**WHERE THE BOT RUNS (changed 11/18, user instruction: "add this to the server from the printer fork, I don't want it
+running here either").**
+- **Claude cloud: nothing scheduled.** All GT-Analyst scheduled tasks are disabled (daily scoring gate, forward-test
+  cohort and final scoring). The runner session `session_01AwChvHXzuPFbFQLR4ELyXC` is idle. Do not re-enable them
+  without the user asking.
+- **Server: `tools/server_loop.py`**, one supervised process (stdlib, Python 3.11+):
+  - every 5 minutes: `pipeline/ingest.py`;
+  - once a day (13:17 UTC): git pull, tape data, `pipeline/learn.py nightly`, due calls, scoring, the three gates,
+    then commit and push;
+  - scoring runs only when calls are due AND the `claude` CLI is installed on the server (one headless run, capped at
+    45 minutes). Without it, due calls are listed as `needs_scoring` in the status file and the sweep gate fails;
+  - status and heartbeat: `logs/server_status.json` (or `GT_HEARTBEAT`), rewritten before every step, with `push_ok`,
+    `unpushed`, `needs_scoring`, gate results and the last error. A refused push is retried every tick;
+  - watchlist triggers stay dry-run unless a `config.json` on that machine turns them on.
+- **Supervisor: the Printer fork's watchdog** (`Sampatel00/Printer`, branch `claude/gt-analyst-runner`, commit
+  `d81b674`, NOT merged). Runner `gtanalyst` = `tradingview/gt_analyst_runner.py`, non-critical (`storm=False`),
+  heartbeat `_gt_analyst_alive.json`. With no GT-Analyst checkout on the machine it idles; it never crash-loops.
+- **NOT LIVE YET. The owner still has to, on the server:**
+  1. merge `claude/gt-analyst-runner` into the fork's main and pull it;
+  2. clone `truchard0/GT-Analyst` next to the Printer checkout (or set `GT_ANALYST_HOME`), on branch
+     `claude/gracious-lamport-6wef9u`, with git credentials that can push;
+  3. install and log in the `claude` CLI there, if due calls are to be scored automatically;
+  4. restart the watchdog, then check `python3 tools/server_loop.py --status` for `push_ok: true`.
+- **Until then nothing scores predictions.** The next call due is #80 (Brent, 11/30). An interactive session can score
+  it by hand.
+- **Tested 11/18 in an isolated copy** (local push target, stand-in Claude):
+  - a full cycle scored a due call and pushed;
+  - with no Claude, the due call was flagged and the run exited 1;
+  - the loop stops within 2 s of SIGTERM;
+  - the fork's watchdog matches the process.
+  It has not run on the real server.
 
-| Task | When (UTC) | Does |
-|---|---|---|
-| Daily scoring gate (runner) | daily 13:17 | `tools/daily_cycle.sh`; resolves due calls with lessons; timeline + STATE; gates; commit (at least the tape data) and push |
-| Forward test: register cohort 11/20 (runner) | 11/20 22:13 | Refresh live data; Hormuz flag; register the v2 cohort; score earlier ones |
-| Forward test: final scoring (runner) | 11/27 20:13 | Final verdict in `reports/backtests/forward_v2_scorecard.md` + STATE |
+**History of the cloud runs (10/29 to 11/18).** The 10/29 tasks started fresh sessions with no repository attached, so
+every push got 403 until 11/14. Lost and recovered: the 10/30 and 11/13 cohorts, and the 11/14 scoring of #79. The
+11/06 cohort run failed on the usage limit. From 11/14 to 11/17 the tasks fired into the runner session and pushed
+daily. On 11/18 the user moved everything off Claude cloud.
 
-**What went wrong (10/29 to 11/14), and the fix:**
-- **Cause.** The 10/29 tasks were created with `create_new_session_on_fire`. Each run started a fresh session with
-  NO repository attached ("config:no-git-repo"). The public `git clone` worked read-only, and every push got 403
-  from the git proxy. The task tool has no "sources" field, and fresh scheduled sessions cannot load `add_repo`
-  (tested 11/14).
-- **Cost.**
-  - Lost: the 10/30 and 11/13 cohorts (both recovered byte-identically), the 11/14 scoring of #79 (redone here)
-    and the tape refreshes.
-  - Separately, the 11/06 cohort run failed on the account usage limit.
-- **Fix.** The tasks now target the runner session (persistent mode), which has the repository attached like an
-  interactive session. The three old tasks are disabled, not deleted, so their run history is kept.
-- **Verified 11/14.** A timed one-off task fired into the runner at 17:37 UTC. The runner pulled, refreshed the tape
-  and pushed commit `6bd7af0`: a real write, not a dry run.
-- **Caveat: never use "fire now" for these tasks.** An on-demand fire ignores the runner binding and starts a fresh
-  session with no repository, which got 403 again on 11/14. To run a task early, create a one-off timed task bound to
-  the runner a few minutes out.
-- **Watch.** The runner's context grows by one run a day and compacts automatically. If the runner is ever archived,
-  create a new one with the repo as source and re-point the tasks. Never go back to fresh-session tasks for work
-  that must be pushed.
-
-**Running a cycle locally while one is scheduled risks a `ledger.db` conflict.** Pull first. The daily session
-is told to stop rather than pick a side on a ledger conflict.
+**Running a cycle anywhere else while the server loop is live risks a `ledger.db` conflict.** Pull first and push
+straight after. On a conflict the server loop aborts the merge, reports it and retries an hour later; it never picks
+a side.
 
 **Cloud specifics:**
 - The Windows Task Scheduler cadence does not exist here. Each cloud session runs ingest manually

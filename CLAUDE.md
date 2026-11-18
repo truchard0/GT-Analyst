@@ -48,7 +48,11 @@ These contain ONLY watchlist-matched items (each annotated with its match kind: 
 - Write the report to `reports/auto/<timestamp>_<tickers>.md`.
 
 ## Cadence
-The scheduled task runs `python pipeline/ingest.py` every 5 minutes (dedup vs `ledger/seen.db`, appends to `inbox/latest.md`, dispatches watchlist triggers). Manual loop: **"analyze inbox/latest.md"** → log → resolve due predictions → calibration report (`python pipeline/ledger.py report`).
+The scheduled task runs `python pipeline/ingest.py` every 5 minutes (dedup vs `ledger/seen.db`, appends to `inbox/latest.md`, dispatches watchlist triggers).
+- **On the server (since 2026-11-18):** `python3 tools/server_loop.py` is the whole bot as one supervised process.
+  It runs ingest every 5 minutes and one daily cycle: pull, tape data, `pipeline/learn.py nightly`, due calls, scoring,
+  gates, commit and push. The Printer fork's watchdog keeps it alive (runner `gtanalyst`).
+- **Nothing is scheduled in Claude cloud.** Do not create scheduled tasks for this repo unless the user asks. Manual loop: **"analyze inbox/latest.md"** → log → resolve due predictions → calibration report (`python pipeline/ledger.py report`).
 
 ## RULE: TIMELINE-WEB SYNC (mandatory, every cycle)
 Every `ledger.py add` MUST be wired into data/timelines.json in the same session: append the new #ID to an existing node's ledger[] list, or create a node (kind='branch' if mutually exclusive with siblings - siblings must sum to ~1.0; kind='event' if conditional - hang independent-of-Iran theses off 'now'). Exempt: doctrine seeds (source='jiang-seed') and long-horizon structural calls (clusters in tools/web_coverage.py EXEMPT lists). VERIFY with: `python tools/web_coverage.py` - it exits 1 listing any unwired open prediction; a cycle is not complete until it exits 0. When a prediction RESOLVES, update its node too (status/evidence/p). The week_ahead block in timelines.json holds dated catalysts (prints, FOMC, earnings) with the engine's call + pending/resolved state - keep it current as events score.

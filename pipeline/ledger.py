@@ -152,6 +152,13 @@ def add(args):
         print(f"WARN contrarian Part C: P={args.prob} is in the hedge zone {HEDGE_ZONE[0]}-"
               f"{HEDGE_ZONE[1]} - abstain unless an independent lens moves it out.")
     kind_guard(args)
+    try:                                   # the trained prior for this call type (pipeline/learn.py); never blocks
+        import learn
+        line = learn.prior_line(args.kind, args.prob)
+        if line:
+            print(line)
+    except Exception:
+        pass
     falsifier_lint(args.prediction, args.falsifier)
     c = db()
     c.execute("""INSERT INTO predictions
