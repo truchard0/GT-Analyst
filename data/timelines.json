@@ -1183,7 +1183,27 @@
       ],
       "market": "TSM: geopolitical discount widens on gray-zone headlines but the 2026 kinetic tail is thin - the discount is a risk-premium trade, not an imminent-war trade. Watch-signals that would move p: PLA exercise tempo/duration, Chinese SPR fill rate, Qatar LNG re-routing, and any Beijing shift from pressing Tehran to backing it.",
       "lane": "taiwan-china",
-      "date": "2026-12-15"
+      "date": "2026-12-15",
+      "shifts": [
+        {
+          "target": "ai-winter",
+          "p_to": 0.55,
+          "date_delta": 0,
+          "note": "PLA kinetic action (blockade/quarantine/invasion) cuts TSMC advanced-node and CoWoS output, the single point every accelerator print runs through (cowos-bottleneck 0.78); added 17 Nov PT so the Taiwan tail is wired into the AI lane; 2027 capex cannot be delivered"
+        },
+        {
+          "target": "ai-h1-second-leg",
+          "p_to": 0.7,
+          "date_delta": 0,
+          "note": "PLA kinetic action (blockade/quarantine/invasion) cuts TSMC advanced-node and CoWoS output, the single point every accelerator print runs through (cowos-bottleneck 0.78); added 17 Nov PT so the Taiwan tail is wired into the AI lane; generic risk-off plus supply loss"
+        },
+        {
+          "target": "nvda-dc-band",
+          "p_to": 0.3,
+          "date_delta": 0,
+          "note": "PLA kinetic action (blockade/quarantine/invasion) cuts TSMC advanced-node and CoWoS output, the single point every accelerator print runs through (cowos-bottleneck 0.78); added 17 Nov PT so the Taiwan tail is wired into the AI lane; shipments fall with wafer supply"
+        }
+      ]
     },
     {
       "id": "war-economy-2027",
@@ -2731,6 +2751,26 @@
         {
           "fact": "Taiwan says China harassing shipping with east-coast patrol (gCaptain)",
           "reported": "2026-11-01T02:36Z"
+        }
+      ],
+      "shifts": [
+        {
+          "target": "ai-winter",
+          "p_to": 0.55,
+          "date_delta": 0,
+          "note": "PLA kinetic action (blockade/quarantine/invasion) cuts TSMC advanced-node and CoWoS output, the single point every accelerator print runs through (cowos-bottleneck 0.78); added 17 Nov PT so the Taiwan tail is wired into the AI lane; 2027 capex cannot be delivered"
+        },
+        {
+          "target": "ai-h1-second-leg",
+          "p_to": 0.7,
+          "date_delta": 0,
+          "note": "PLA kinetic action (blockade/quarantine/invasion) cuts TSMC advanced-node and CoWoS output, the single point every accelerator print runs through (cowos-bottleneck 0.78); added 17 Nov PT so the Taiwan tail is wired into the AI lane; generic risk-off plus supply loss"
+        },
+        {
+          "target": "nvda-dc-band",
+          "p_to": 0.3,
+          "date_delta": 0,
+          "note": "PLA kinetic action (blockade/quarantine/invasion) cuts TSMC advanced-node and CoWoS output, the single point every accelerator print runs through (cowos-bottleneck 0.78); added 17 Nov PT so the Taiwan tail is wired into the AI lane; shipments fall with wafer supply"
         }
       ]
     },

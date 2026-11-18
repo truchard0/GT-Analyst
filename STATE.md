@@ -449,6 +449,16 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
    - **Timeline map brought to the present:** 61 past-dated nodes resolved with basis and source
      (`data/timeline_resolutions_20261117.json`), 1 re-dated to 1 Dec, 1 unknown; dashboard now honours a node's own
      `resolved.happened` when no ledger row has resolved. Report catalyst timelines start 12 Nov.
+   - **Full AI report made a full breakdown (user, 17 Nov PT: geopolitics, how we got here, what the engine sees; "only
+     like 2 pages of it should be this revenue stuff").** 13 pages, 7 visuals: key calls (revenue), Nvidia/Nebius, how we
+     got here (2022-2026 chronology chart), where we are (channel-by-layer chart), the financing sections, what we see
+     ahead (scenario chart: base ~44%, truce lapse 34%, Gulf settlement 22% by Q1, flare-up 10-13%, Taiwan 10%), the
+     revenue section with the backtest chart, signposts to 30 Jun 2027. Map wiring fix: `taiwan-watch` and
+     `taiwan-h1-2027` now shift `ai-winter` to 0.55, `ai-h1-second-leg` to 0.70, `nvda-dc-band` to 0.30 (no node p
+     changed). **Map inconsistencies found, not fixed (user decides):** STATE quotes the 2027 fork 0.42/0.40/0.18 vs the
+     map's 0.40/0.40/0.20; resolved `capex-verdict` still carries p 0.72, so the dashboard compound understates the fork;
+     the `hormuz-impaired-q1 -> fed-h1-no-cuts` edge (0.85) sits below that node's 0.90; `war-round-2` 0.90 conflicts
+     with the frozen-tanker-war branch 0.85; US-China truce nodes still have no edges into the AI lane.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all

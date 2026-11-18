@@ -2,7 +2,21 @@
 
 Nov 18, 2026 · GT-Analyst desk
 
-We now predict one thing in the AI trade: each company's next reported revenue, as one exact number. It is the layer the evidence says can be named. Over five years and 117 reports, our number missed by a median 1.5%, against 2.4% for taking the company's guide as given and 2.0% for consensus. Next-quarter guides, capex and share prices are harder: consensus beat us on guides every year, capex missed by about 12%, and price direction is a no-call. They appear below only as context for the revenue numbers. Figures marked † rest on secondary sources.
+The AI trade is no longer only an earnings story. Since 2022 four forces outside the companies have set its path: US export controls and China's counter-levers, Taiwan as the single point of failure, the Iran war working through oil and rates, and the politics of power. On 17 November demand is still accelerating at the top (Nvidia $115.8bn, a $130bn guide), but the trade is now decided further down the chain, in financing, power and policy. Our scenario map puts about 44% on the base world (Gulf frozen, Fed hiking, US-China truce rolled, no Taiwan action), in which 2027 brings a slower build rather than a break. The largest geopolitical risk to AI is a lapse of the truce on 10 January (34%); the tail is Taiwan (10% by mid-2027), which would move a 2027 decline in AI capex from 20% to 55%. The only calls we publish are revenue numbers; the scenario odds are context. Figures marked † rest on secondary sources.
+
+## Key calls
+
+| Company, quarter | Report | Company guide | **Our number** | Desk view | Chance at or above the guide |
+| --- | --- | --- | --- | --- | --- |
+| Broadcom FQ4 2026 | 9 Dec | $34.8bn | **$35.3bn** | about $35.1bn | 94% |
+| Oracle FQ2 2027 | 9-14 Dec | $21.2bn | **$21.3bn** | about $21.2bn | 62% |
+| Micron FQ1 2027 | about 15 Dec | $61.5bn | **$72.1bn** | about $64.5bn | 88% |
+| TSMC Q4 2026 | 14 or 21 Jan | $53.3bn | **$54.6bn** | about $53.5bn | 65% |
+| Meta Q4 2026 | about 27 Jan | $74.5bn | **$76.8bn** | $76.8bn | 93% |
+| Amazon Q4 2026 | about 4 Feb | $243.5bn | **$248.6bn** | about $248.0bn | 95% |
+| Nvidia FQ4 2027 | 24 Feb-3 Mar | $130.0bn | **$137.3bn** | $137.3bn | 90% |
+
+Our number is the guide midpoint plus the company's average beat over its last four reports, fixed on 18 November and scored as it stands; the desk view is where the full analysis would put it. Threshold calls: Micron at or above $61.5bn, 86%; TSMC at or above $53.3bn, 90%, under review until November revenue (about 10 December); Nvidia at or above $130.0bn, 90%. These are revenue figures, not share-price calls.
 
 ## Start here: what Nvidia and Nebius just told us
 
@@ -22,19 +36,33 @@ Two reports five days apart show the whole cycle: demand still accelerating at t
 
 The buyers at the top now carry the funding, so their access to capital, and the first 2027 capex guides in late January, are the next links. A pullback in Nvidia's support lines would reach Nvidia's own orders.
 
-## Key calls
+## How we got here: three phases of geopolitics
 
-| Company, quarter | Report | Company guide midpoint | **Our number** | 80% range | Threshold call |
-| --- | --- | --- | --- | --- | --- |
-| Broadcom FQ4 2026 | 9 Dec | $34.8bn | **$35.3bn** | 34.3-36.4 |  |
-| Oracle FQ2 2027 | 9-14 Dec | $21.2bn | **$21.3bn** | 20.9-21.8 |  |
-| Micron FQ1 2027 | \~15 Dec | $61.5bn | **$72.1bn** | 56.3-87.9 | at or above $61.5bn: 86% |
-| TSMC Q4 2026 | 14 or 21 Jan | $53.3bn | **$54.6bn** | 53.6-55.6 | at or above $53.3bn: 90%, under review |
-| Meta Q4 2026 | \~27 Jan | $74.5bn | **$76.8bn** | 75.2-78.3 |  |
-| Amazon Q4 2026 | \~4 Feb | $243.5bn | **$248.6bn** | 244.2-252.9 |  |
-| Nvidia FQ4 2027 | 24 Feb-3 Mar | $130.0bn | **$137.3bn** | 133.6-140.9 | at or above $130.0bn: 90% |
+The AI trade began as a demand story and became a geopolitical one in three phases.
 
-Our number is the company's guide midpoint plus its average beat over its last four reports; the range is the width that held 80% of actuals in the backtest. Dates after Broadcom's are estimates. These are revenue figures, not share-price calls.
+**2022-2024: denial.** The US chose to lead the AI race by cutting China off. Export rules in October 2022, October 2023 and December 2024 closed off the leading chips, then the cut-down versions made for China, then high-bandwidth memory and more chip tools, while the CHIPS Act paid to bring fabs home. Demand was never the limit; policy decided who could buy.
+
+**2025: deals.** The country-by-country diffusion rule lasted four months. Access became something to trade: Gulf states bought into the build†, China put its rare earths under licence, and the Busan truce of 30 October capped tariffs and froze China's mineral curbs. The gaps leaked: one broker, Megaspeed, arranged about $12bn of restricted Nvidia chips for Chinese firms by mid-2025.
+
+**2026: war, rates and the bill.** The Iran war (from 28 February) sent the chip index to its low of about 360 on 30 March; it then rose about 87% to a June peak, before capex peaked, as in past booms. The September round pushed Brent above $100 and the 10-year above 5%, and the Fed hiked on 16 September, yet the chip index rose 16% in the next three weeks: the spending beat the rate channel. What bit was financing: the October selloff, Alphabet holding capex flat with negative free cash flow, and no high-yield data-centre deal since September. November then turned politics against the build: Democrats won Congress while 46 of 47 local measures limited data centres, Nvidia's chief executive resigned amid the Megaspeed probe, and the 16 November rule closed the offshore compute route.
+
+&#91;embedded content: Geopolitical milestones for the AI trade, 2022 to 16 Nov 2026 · research\_notes/AI trade forecasting framework/constraints\_policy.md, research\_notes/Stock market geopolitical game/us\_china\_tech\_taiwan.md, STATE.md, data/timelines.json; 2022-2025 export rounds from the US Commerce Department (BIS) rules\]
+
+Policy decided who could buy until 2025. In 2026 the war reached AI only through rates, and the real damage came through financing and politics.
+
+## Where we are now: cost, timing and credit, not demand
+
+&#91;embedded content: Channel-by-layer map, 17 Nov 2026 · data/timelines.json odds; reports/20261118\_tape-note-gulf-oil-fed.md; constraints\_policy.md\]
+
+No geopolitical channel touches this winter's revenue much; they act on what the build costs, when sites come online, and who can fund them.
+
+- **Export controls.** The 16 November rule requires a licence for any data centre that gives China-headquartered firms more than 12 million TPP of compute (about 750 H100s). It adds licence requirements for Indonesia, Malaysia, Singapore, Thailand and Brazil and exempts US operators; existing sites have 90 days, to about mid-February. Nvidia's China data-centre revenue is already near zero, so the hit lands on Southeast Asian neoclouds' orders and funding, after March. Hearings run 1-10 December.
+- **The US-China cliff.** China's pause on gallium, germanium and antimony curbs lapses on 27 November. The rare-earth pause, the US affiliates-rule pause and the port fees all run to 9-10 January. China makes about two-thirds of the world's optical transceivers. We put a roll-over of the truce at 66%.
+- **Taiwan.** No kinetic action, but the largest exercise since December 2025 and a 2026 high of 49 aircraft on 2 November; a $14bn arms package is frozen. Taiwan holds 10-11 days of gas, which makes about 48% of its power, and Qatar, a main source of its LNG and helium, lost 17% of its LNG export capacity to Iranian strikes. We put PLA action at 6% for 2026 and 10% by 30 June 2027.
+- **The Gulf.** The tanker war is frozen (85% to 30 November) and Brent was $93.14 on 17 November, 21% below its 30 October high. The war has no route into AI revenue; its route was rates, and oil has stopped driving the Fed.
+- **The Fed and the dollar.** The policy rate has been 3.75-4.00% since 16 September. We put a December hike at 93% and no net easing in the first half at 90%; the 10-year has closed above 5% for 27 sessions and the dollar is at a 19-month high. The driver is core inflation (+0.3% a month for three months), not oil.
+- **Power and local politics.** The PJM capacity auction cleared at its cap, 6.8 GW short; Texas froze approvals on a 474 GW queue, and the governor-elect (sworn in 19 January) will keep the freeze; New York has a statewide moratorium. Estimates of 2027 capacity slipping run from 2.3 GW to about 15 GW.
+- **Gulf sovereign AI.** Saudi Arabia's Humain (up to 600,000 Nvidia chips over three years†) and Stargate UAE (1 GW†) are new buyers; Qatar and the UAE signed the US-led San Francisco Declaration on 15 November while under fire.
 
 ## History's two laws put financing ahead of demand
 
@@ -56,60 +84,39 @@ So a falling SMH does not mean the next revenue prints will miss, and rising rev
 
 The four big buyers still have balance sheets; the neoclouds and single-tenant vehicles do not. For revenue this matters through one channel: when the weakest buyers lose access to credit, their orders slip first, and those orders sit inside Nvidia's, Micron's and Oracle's numbers. No trigger has fired yet: no AI borrower has missed a payment, and prepayments from the big buyers are filling the gap.
 
-## The evidence for and against each call
+## What we see ahead: a slower 2027, not a geopolitical break
 
-&#91;embedded content: data/ai\_prints\_backtest/forward\_20261118.json · registered 18 Nov 2026 before any of these reports\]
+Our scenario map holds each future as a branch with its own odds and links between them. Read together, they say geopolitics is more likely to slow the AI build than to break it in the next twelve months. The base world (tanker war frozen, the Fed hiking on 9 December and not easing in the first half, the US-China truce rolled past 10 January, no PLA action on Taiwan) carries about 44%. In it, the 2027 capex fork (40% another year of 30%+ growth, 40% a slowdown to under 25%, 20% a decline) tilts toward the slowdown, at 47%, because a hiking Fed with a 10-year above 5% raises the bar for debt-funded building. The financing chain (no CoreWeave default, Oracle still investment grade) holds to 31 March at 80%.
 
-Our number is mechanical and was registered before any of these reports, so it is scored as it stands. We then read each print through the full analysis: who decides it, what each side wants, and what the live tape (the Fed, the dollar, the Gulf, export rules, DRAM pricing, the financing chain) does to it this quarter. The desk view is where that analysis would put the number if it were not registered.
+&#91;embedded content: Scenario odds, 17 Nov 2026 · data/timelines.json (products of conditional odds along each path; across lanes assumed independent)\]
 
-| Company | Our number | Desk view | Risk to our number | Chance at or above our number | Chance at or above the guide | What would change it |
+**The biggest geopolitical risk is the truce, not the war.** A lapse on 10 January (34%) brings back China's mineral levers, starting with gallium on 27 November, just as the remote-access licences bite in mid-February. Both land on build cost and on the Southeast Asian neoclouds, the weakest borrowers, rather than on the big buyers' orders, so they show first in financing and in the 2027 capex guides, not in this winter's revenue. **The Gulf matters only through the Fed.** A flare-up (10-13%) reaches AI only if oil pushes core inflation up again, and in November oil and the Fed path came apart; a settlement (5% by 30 November, 22% that the strait is more than half open by 31 March) helps Taiwan's energy bill and the Gulf's own AI builds, little else. **Taiwan is the tail.** PLA action (10% by 30 June 2027) would move a 2027 decline in AI capex from 20% to 55%, the chip index ending June below 400 from 25% to 70%, and Nvidia's data-centre revenue rising in three of four quarters from 70% to 30%: TSMC's advanced packaging is the point every print runs through.
+
+| Scenario | Odds | Revenue prints | Capex plans | Financing | Supply and policy | First signpost |
 | --- | --- | --- | --- | --- | --- | --- |
-| Broadcom | $35.3bn | \~$35.1bn | leans below | 25% | 94% | Marvell's custom-chip read, 1 Dec |
-| Oracle | $21.3bn | \~$21.2bn | leans below | 40% | 62% | capacity delays; the strong dollar |
-| Micron | $72.1bn | **\~$64.5bn** | strongly below | 7% | 88% | DRAM contract prices for the quarter |
-| TSMC | $54.6bn | \~$53.5bn | leans below | 20% | 65% | November revenue, \~10 Dec |
-| Meta | $76.8bn | $76.8bn | balanced | 52% | 93% | holiday ad spend; the dollar |
-| Amazon | $248.6bn | \~$248.0bn | slightly below | 42% | 95% | Cyber Week sales, 1-2 Dec |
-| Nvidia | $137.3bn | $137.3bn | balanced | 50% | 90% | site delays; neocloud financing |
+| Base | about 44% | Intact; the strong dollar trims Meta, Amazon, Oracle | Slowdown 47% | Strain on debt-funded builders | Power and the export clock bind | 9 Dec Fed; late-Jan capex guides |
+| Truce lapses | 34% | Small (Nvidia's guide has no China) | Costs and schedules rise | Neoclouds hit first | Minerals, transceivers | 27 Nov gallium; 10 Jan cliff |
+| Gulf settlement | 5%, 22% by Q1 | None | Slight easing | Slight easing | Taiwan energy eases; Gulf builds resume | 19 Nov Shenzhen; 31 Mar Hormuz |
+| Gulf flare-up | 10-13% | None | Only via the Fed | Via rates, if core inflation rises | Taiwan LNG and helium | 29-30 Nov Iran fork |
+| Taiwan | 10% | Every accelerator print exposed | Decline 55% | Financing shock | The extreme case | December drills; Taipower review |
 
-**Micron is the one we would move.** Its beats have shrunk with each step down in contract DRAM price gains (about +80%, then +40%, then about +20% expected this quarter per [TrendForce](https://www.trendforce.com/news/2026/10/20/news-dram-prices-seen-rising-20-qoq-in-4q26-despite-slower-gains-ai-demand)), and long-term contracts cap prices, so the four-quarter average beat overstates this quarter. This matches the backtest, where Micron was the one name our rule did worse on than the company's own guide.
+For context only, since price direction is a no-call: the map holds the chip index on 30 June 2027 at 35% above 520, 40% between 400 and 520, and 25% below 400.
 
-**TSMC leans below for a measurable reason.** October was 34.6% of the guide midpoint, against about 37% in the past two years, when November and December ran 8-12% below October:
+## The revenue numbers: why we name them and where they lean
 
-| Year | October as % of the Q4 guide midpoint | November-December vs October | Q4 vs midpoint |
-| --- | --- | --- | --- |
-| 2024 | 37.1% | -11.8% | +1.4% |
-| 2025 | 36.6% | -7.7% | +2.8% |
-| 2026 | 34.6% | due \~10 Dec and \~10 Jan | due 14 or 21 Jan |
-
-Holding October's level just reaches the midpoint; our number needs November and December to rise above it. We keep the 90% midpoint call under review until November revenue is out.
-
-**Broadcom, Oracle and Amazon lean slightly below** because their usual beats are smaller than the four-quarter averages behind our numbers (Broadcom's median beat is 0.8% over 17 reports), and the dollar's rise since the September and October guides trims Oracle's and Amazon's overseas revenue. **Meta and Nvidia are balanced.** For Nvidia, a guide implying weekly sales growth of only about 4% after a 20% jump, set by a new interim chief executive with reason to leave room, points above; supply limits, site delays and $32bn of commitments that depend on smaller cloud builders getting financed point below.
-
-## Five years of backtesting: what naming the number would have done
-
-We ran the same rule, unchanged, over every report from Nvidia, Broadcom, Micron, TSMC, Amazon and Meta from November 2021 to November 2026: 117 reports across a full cycle, each number using only the company's earlier reports. The rules were committed before the older data was gathered, and all 108 added rows come from the companies' own filings.
+We name only revenue because it is the layer that can be named. Over five years and 117 reports (Nvidia, Broadcom, Micron, TSMC, Amazon, Meta), our number missed by a median 1.5%, against 2.4% for the company's own guide and 2.0% for consensus on the same reports. It is weaker when companies guide down: then they cleared their own midpoint 74% of the time, against 97% in up-cycles. Two names lean below this quarter. Micron's beats have shrunk with each step down in DRAM contract price gains (about +80%, +40%, then about +20% expected), and it was the one name where our rule did worse than the guide. TSMC's October was 34.6% of its Q4 midpoint against about 37% in the past two years, so the 90% midpoint call stays under review until November revenue.
 
 &#91;embedded content: data/ai\_prints\_backtest/results\_5y.json · tools/ai\_prints\_5y.py; rules data/ai\_prints\_backtest/PREREG\_5Y.md (committed before the data was gathered)\]
 
-| Five years, revenue | Our number | Consensus | Guide as given |
-| --- | --- | --- | --- |
-| Median miss, 117 reports | **1.52%** |  | 2.41% |
-| Median miss, the 77 reports with a consensus | **1.37%** | 1.95% |  |
-| Within 2% / within 5% of the actual | 61% / 86% |  |  |
-| Up-cycle (90) / down-cycle (27) median miss | 1.34% / 1.87% | 1.99% / 0.80% | 2.68% / 2.12% |
+## Dated signposts to 30 June 2027
 
-**Where it is weaker.** In the 27 quarters where a company guided the next quarter down, our number still beat the guide but consensus was far better, and companies cleared their own midpoint only 74% of the time against 97% in the up-cycle. By company, Broadcom was the easiest to name (0.6% median miss), Amazon and Meta about 1%, TSMC 1.6%, Nvidia 2.2% against 4.9% for consensus, and Micron the hardest at 5.2%, worse than its own guide (3.9%). The 80% ranges fitted on the last six months held 85% of actuals in the earlier four and a half years. A beat says little about the shares: they rose the next day after 55% of beats.
-
-## Dated catalysts to 30 June 2027
-
-&#91;embedded content: research\_notes/AI trade forecasting framework/catalyst\_calendar\_consensus.md · 11 dated catalysts\]
+&#91;embedded content: Geopolitical and revenue signposts, 19 Nov 2026 to 30 Jun 2027 · data/timelines.json; research\_notes/AI trade forecasting framework/catalyst\_calendar\_consensus.md\]
 
 ## Conclusion
 
-Across the seven, we expect about six to clear their own guide and only two or three to reach our exact numbers; the most likely misses against the guide are Oracle and TSMC. The wider board touches this quarter's revenue less than it touches the share prices. The Fed and a 10-year yield above 5% work mainly through financing costs, which hit next year's orders rather than this quarter's; their one direct effect is the stronger dollar trimming Meta, Amazon and Oracle. The Gulf war has no route into these revenues; oil is down 21% from its 30 October high. The 16 November export rule and the Shenzhen summit matter little before March: Broadcom's quarter had closed, Nvidia's guide already excludes China, and the licensing clock runs past Nvidia's quarter-end. The live risks are slowing DRAM price gains for Micron and data-center capacity slipping between quarters for Nvidia and Oracle.
+Demand for AI is still intact at the top: Nvidia's $115.8bn quarter and $130bn guide. What has changed since 2022 is where the trade can break. Geopolitics now acts on cost, timing and credit: export rules that pushed the build offshore and have now closed that route, a US-China truce that expires on 10 January with China's mineral levers attached, power and local politics that slow the sites, and a war whose only route into AI is a Fed that is still hiking. We read that as a slower 2027 (slowdown 47%) rather than a break, with Taiwan as the one tail that changes everything. For this winter's revenue we expect about six of seven companies to clear their own guide and two or three to reach our numbers; Micron and TSMC lean below.
 
-What would change the view, in date order: Marvell on 1 December, Cyber Week sales on 1-2 December, TSMC's November revenue around 10 December, and Nvidia's next quarterly filing, whose customer-support lines show whether the financing chain is still being extended.
+What would change the view, in date order: the Shenzhen summit (19 November), gallium (27 November), the Iran fork and OPEC+ (29-30 November), the Nvidia hearings (1-3 December), the Fed and Broadcom (9 December), TSMC's November revenue (about 10 December), the truce cliff (10 January), the first 2027 capex guides (late January) and the end of the remote-access clock (mid-February).
 
 This report states direction and mechanism only. It is analysis, not investment advice, and it gives no position sizes.
 
@@ -122,6 +129,8 @@ Repo data (every chart names its file): `data/ai_prints_backtest/` (prints, cons
 - Official and academic: [IMF GFSR, Oct 2026, ch. 1](https://www.imf.org/-/media/files/publications/gfsr/2026/october/english/ch1.pdf); [Doms, FRBSF, on telecom capex](https://www.frbsf.org/wp-content/uploads/er19-34bk.pdf); [Greenwood, Shleifer and You, NBER w23191](https://www.nber.org/system/files/working_papers/w23191/w23191.pdf); [Synergy Research on 2019 capex](https://www.srgresearch.com/articles/hyperscale-operator-capex-takes-a-breather-in-q1-down-2-from-2018)
 - Secondary († in the text): [QuantFlowLab drawdown table](https://quantflowlab.com/?p=936); [YieldTheory capex tracker](https://www.yieldtheory.app/research/hyperscaler-capex-2027-forecast); [Startup Fortune on the BofA survey](https://startupfortune.com/fund-managers-cut-tech-the-most-since-2006-but-they-still-own-it/); [Blockspace on Nebius](https://blockspace.media/insight/nebius-cuts-2026-revenue-outlook/); [Serrari Group on AI junk bonds](https://serrarigroup.com/ai-data-center-junk-bonds-hit-37bn-as-credit-risks-rise/)
 
+Geopolitics: US Commerce Department (BIS) export rules of 7 Oct 2022, 17 Oct 2023, 2 Dec 2024 and 13 Jan 2025 and the CHIPS and Science Act (9 Aug 2022), public record; the 2025-2026 record and current state from `research_notes/AI trade forecasting framework/constraints_policy.md`, `research_notes/Stock market geopolitical game/us_china_tech_taiwan.md`, `reports/20261118_tape-note-gulf-oil-fed.md`, `STATE.md` and the scenario odds in `data/timelines.json`.
+
 ---
 
 # APPENDIX: DESK RECORDS (repo copy only)
@@ -129,3 +138,5 @@ Repo data (every chart names its file): `data/ai_prints_backtest/` (prints, cons
 - Engine pass with players, game structure, formal checklist, conviction tables and red-team gates per company: reports/desk/20261118_engine-read-revenue.md. Desk views are views; the registered numbers (data/ai_prints_backtest/forward_20261118.json) are unchanged.
 - Revenue ledger rows: #136-#142 (range calls) and #124, #127, #132 (thresholds). Guide, capex, credit and SMH rows (#123, #125, #126, #128-#131, #133-#135, #143-#154) are no longer published but stay open and are scored honestly.
 - 5-year backtest: reports/backtests/20261118_ai-prints-5y-backtest.md.
+
+- **Revision, 17 Nov PT (user: "a full breakdown of where we are, how we got here geopolitically and what the engine sees for the future of the AI trade"; "only like 2 pages of it should be this revenue stuff").** Added three sections (how we got here, where we are now, what we see ahead) with four new charts; the revenue material is now the key-calls table and one section with the backtest chart (about 2 of 13 pages). Scenario odds are timeline-map conditionals, not ledger calls: base 0.85 x 0.93 x 0.93 x 0.66 x 0.90 = 0.44 (across lanes assumed independent); truce lapse 1 - 0.66; Gulf flare-up 0.10 by 30 Nov, 0.45 x 0.28 = 0.126 by 31 Dec; strait reopening 1 - 0.78; Taiwan `taiwan-h1-2027` 0.10. Map change: `taiwan-watch` and `taiwan-h1-2027` had no shift edges into the AI lane (a wiring gap under the time-lane rule); added edges to `ai-winter` 0.55, `ai-h1-second-leg` 0.70 and `nvda-dc-band` 0.30. No node probability changed. Research brief: shared notes `ai_geopolitics_brief.md`. Repo gap: the 2022-2024 export rounds and the Jan 2025 diffusion rule were not in the repo; dated from the public BIS record. Exports: 13 pages, 7 pictures.
