@@ -1022,22 +1022,38 @@ def render_jobs(s):
     return f'<div class="panel"><h3>jobs</h3>{"".join(rows)}</div>'
 
 
-def render_reports(s):
+def render_news_actions(s):
+    """Monitor tab: pull the tape and turn the inbox into a report (was on the old Reports tab)."""
     busy = ' disabled title="an analysis is already running"' if s.get("analyzing") else ""
-    actions = (
-        '<div class="panel actions"><h3>make a new report</h3>'
+    return (
+        '<div class="panel actions"><h3>news → report</h3>'
         '<div class="act-row">'
         '<button class="btn btn-ghost" onclick="act(this,\'/action/ingest\')">⟳ Pull fresh news</button>'
         f'<button class="btn btn-primary" onclick="act(this,\'/action/analyze\')"{busy}>▶ Analyze inbox → report</button>'
         '</div>'
+        '<div class="muted small">Pulling news is free. Analysis runs headless Claude and <b>uses tokens</b> '
+        '(one at a time). The finished report opens from the job line, in the <b>Ask Engine</b> tab.</div></div>'
+        + render_jobs(s))
+
+
+def render_focus(s):
+    """Ask Engine tab: a focused question that produces a full report (was on the old Reports tab)."""
+    busy = ' disabled title="an analysis is already running"' if s.get("analyzing") else ""
+    return (
+        '<div class="panel actions"><h3>focused analysis → report</h3>'
         '<div class="act-row">'
         '<input id="focus" class="inp" placeholder="Focused analysis, e.g. look at the Iran news and predict what comes next">'
         '<select id="model" class="inp sel"><option value="sonnet">sonnet</option>'
         '<option value="opus">opus</option><option value="haiku">haiku</option></select>'
         f'<button class="btn btn-primary" onclick="actFocus(this)"{busy}>▶ Run focused analysis</button>'
         '</div>'
-        '<div class="muted small">Analysis runs headless Claude and <b>uses tokens</b> (one at a time). '
-        'Ingestion is free. New reports appear below when done.</div></div>')
+        '<div class="muted small">Runs headless Claude and <b>uses tokens</b> (one at a time). '
+        'The new report appears in the library below when done.</div></div>'
+        + render_jobs(s))
+
+
+def render_report_library(s):
+    """Ask Engine tab: the report list and reader (was the body of the old Reports tab)."""
     groups, last_day = [], None
     for r in s["reports"]:
         if r.get("day") != last_day:
@@ -1049,16 +1065,16 @@ def render_reports(s):
             f'<span class="rep-tag rt-{r["tag"]}">{r["tag"]}</span>'
             f'<div class="rep-t">{esc(r["title"])}</div>'
             f'<div class="rep-m mono small">{esc(r["path"].split("/")[-1])} · {r["size_kb"]} KB</div></div>')
-    listing = "".join(groups) or '<div class="muted">No reports yet — run an analysis above.</div>'
+    listing = "".join(groups) or '<div class="muted">No reports yet. Run an analysis above.</div>'
     controls = ('<div class="rep-controls">'
                 '<input id="rep-search" class="inp" placeholder="search reports…" oninput="filterReports()">'
                 '<div class="chips"><button class="chip active" data-f="all" onclick="repFilter(this)">all</button>'
                 '<button class="chip" data-f="manual" onclick="repFilter(this)">manual</button>'
                 '<button class="chip" data-f="auto" onclick="repFilter(this)">auto</button></div></div>')
-    return (actions + render_jobs(s)
-            + f'<div class="rep-layout"><div class="rep-col">{controls}'
+    return (f'<div class="panel" id="rep-lib"><h3>report library <span class="muted small">{len(s["reports"])}</span></h3>'
+            f'<div class="rep-layout"><div class="rep-col">{controls}'
             f'<div class="rep-list">{listing}</div></div>'
-            f'<div class="rep-view" id="report-view"><div class="muted center">← select a report</div></div></div>')
+            f'<div class="rep-view" id="report-view"><div class="muted center">← select a report</div></div></div></div>')
 
 
 def render_tape(s):
@@ -1190,7 +1206,8 @@ def render_pnl(s):
 
 
 def render_monitor(s):
-    return (render_overview(s) + render_pnl(s) + wl_manager(s) + render_watchlist(s) + render_tape(s))
+    return (render_overview(s) + render_pnl(s) + wl_manager(s) + render_watchlist(s)
+            + render_news_actions(s) + render_tape(s))
 
 
 def render_timelines(s):
@@ -1651,7 +1668,7 @@ a.jslink:hover{border-bottom-style:solid}
 <main>__SECTIONS__</main>
 <script>window.__TL__=__TLDATA__;window.__PREDS=__PREDS__;window.__L2N=__L2N__;window.__NSTATE=__NSTATE__;window.__TODAY="__TODAY__";</script>
 <script>
-var tabs=["monitor","reports","timelines","fusion","ask","settings"];
+var tabs=["monitor","timelines","fusion","ask","settings"];
 function wlEdit(action,sym){fetch("/api/watchlist",{method:"POST",headers:{"Content-Type":"application/json"},
  body:JSON.stringify({action:action,ticker:sym})}).then(function(r){return r.json()})
  .then(function(j){if(j.ok)location.reload();else alert(j.error||"failed");});}
@@ -1677,15 +1694,16 @@ function openReport(path){window.__paused=true;
    e.classList.toggle("sel",e.dataset.path===path)});
  fetch("/report?path="+encodeURIComponent(path))
   .then(function(r){return r.text()}).then(function(h){
-   document.getElementById("report-view").innerHTML=h;});}
+   document.getElementById("report-view").innerHTML=h;
+   var lib=document.getElementById("rep-lib");if(lib&&lib.scrollIntoView)lib.scrollIntoView({block:"start"});});}
 function bindReports(){
  document.querySelectorAll(".rep-item").forEach(function(el){
   el.onclick=function(){openReport(el.dataset.path)};});
  document.querySelectorAll(".joblink").forEach(function(el){
-  el.onclick=function(ev){ev.preventDefault();show("reports");openReport(el.dataset.path)};});}
+  el.onclick=function(ev){ev.preventDefault();show("ask");openReport(el.dataset.path)};});}
 function filterReports(){
  var q=(document.getElementById("rep-search").value||"").toLowerCase();
- var f=(document.querySelector(".chip.active")||{}).dataset;f=f?f.f:"all";
+ var f=(document.querySelector(".rep-controls .chip.active")||{}).dataset;f=(f&&f.f)||"all";
  document.querySelectorAll(".rep-item").forEach(function(el){
   var ok=(f==="all"||el.dataset.tag===f)&&el.dataset.title.indexOf(q)>=0;
   el.style.display=ok?"":"none";});
@@ -1693,7 +1711,7 @@ function filterReports(){
   var n=d.nextElementSibling,any=false;
   while(n&&n.classList.contains("rep-item")){if(n.style.display!=="none")any=true;n=n.nextElementSibling;}
   d.style.display=any?"":"none";});}
-function repFilter(btn){document.querySelectorAll(".chip").forEach(function(c){c.classList.remove("active")});
+function repFilter(btn){document.querySelectorAll(".rep-controls .chip").forEach(function(c){c.classList.remove("active")});
  btn.classList.add("active");filterReports();}
 function act(btn,url){window.__paused=true;if(btn){btn.disabled=true;btn.textContent="… started";}
  fetch(url,{method:"POST"}).then(function(r){return r.json()}).then(function(){
@@ -1721,7 +1739,7 @@ function runOutlook(btn,tickers,batch){
  fetch("/action/outlook",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},
   body:"tickers="+encodeURIComponent(tickers||"")+"&batch="+encodeURIComponent(batch||"")})
   .then(function(r){return r.json()}).then(function(j){
-   btn.textContent=j.ok?"✓ running — see Jobs (Reports tab)":"✗ "+(j.error||"failed");
+   btn.textContent=j.ok?"✓ running — see jobs (Monitor tab)":"✗ "+(j.error||"failed");
    if(j.ok)setTimeout(function(){window.__paused=false;},4000);})
   .catch(function(){btn.textContent="✗ failed";btn.disabled=false;});}
 // ── Settings ─────────────────────────────────────────────────────────
@@ -2258,19 +2276,19 @@ def render_ask(s):
         '<textarea id="ask-in" rows="1" placeholder="Ask GT-Analyst…  (Enter to send, Shift+Enter for newline)" '
         'oninput="askGrow(this)" onkeydown="askKey(event)"></textarea>'
         '<button class="btn" onclick="sendAsk()">Send</button>'
-        '</div></div></div>')
+        '</div></div></div>'
+        + render_focus(s) + render_report_library(s))
 
 
 def build_page(s):
     st = s["stats"]
     nav = "".join(
         f'<button id="n-{k}" onclick="show(\'{k}\')">{lbl}</button>'
-        for k, lbl in [("monitor", "Monitor"), ("reports", "Reports"),
+        for k, lbl in [("monitor", "Monitor"),
                        ("timelines", "Timeline &amp; Predictions"), ("fusion", "Fusion"),
                        ("ask", "Ask Engine"), ("settings", "Settings")])
     sections = "".join([
         f'<section id="s-monitor">{render_monitor(s)}</section>',
-        f'<section id="s-reports">{render_reports(s)}</section>',
         f'<section id="s-timelines">{render_timelines(s)}</section>',
         f'<section id="s-fusion">{render_fusion(s)}</section>',
         f'<section id="s-ask">{render_ask(s)}</section>',

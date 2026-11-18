@@ -160,8 +160,12 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
 ---
 
 ## 7. THE DASHBOARD
-- **Run it:** `pipeline/dashboard.py` (stdlib only), on port 8787. **6 tabs:** Monitor, Reports, **Timeline &
+- **Run it:** `pipeline/dashboard.py` (stdlib only), on port 8787. **5 tabs:** Monitor, **Timeline &
   Predictions**, Fusion, Ask Engine, Settings.
+- **The Reports tab is gone (11/18, user request).** Its pieces moved: "Pull fresh news" and "Analyze inbox → report"
+  plus the jobs list sit on Monitor above the tape panels; the focused-analysis box and the report library (search,
+  manual/auto filter, reader) sit on Ask Engine under the chat. Job "open report" links jump to Ask Engine. Verified in
+  a browser: 5 nav buttons, 26 reports listed, open/filter/search work, no page errors.
 - **The timeline map:** a time-lane DAG with 63 nodes. Edges mean "IF x THEN y". Green = happened; resolved forks
   show the counterfactual siblings.
 - **Verified 10/25:** a Playwright screenshot, 0 overlapping node pairs, all routes 200, no page errors.
