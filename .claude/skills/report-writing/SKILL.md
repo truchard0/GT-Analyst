@@ -124,6 +124,76 @@ someone's "lens". State mechanisms in our own words and cite primary sources (fi
 - **Example:** "9 Dec, Fed: we expect a hike (93%); holding would ease funding for the debt-funded builders. Late
   January, capex guides: any of the four guiding below 2026 raises our decline odds."
 
+## Part B: prose craft - how it reads like professional long-form writing
+
+The techniques above make a report correct and checkable. They do not make it read well. The first drafts of the
+November AI report failed here: every sentence carried three numbers, a parenthesis and a semicolon; paragraphs were
+lists in disguise; sections stopped instead of landing. A reader finished informed and exhausted. This part fixes that.
+
+### B1. One spine
+The report answers one question, stated or implied in the opening (for the AI report: "is the build breaking, and
+what would break it?"). Every section moves that answer forward, and the headings alone, read in order, tell the
+story. If a section does not move the answer, cut it or move it to the appendix.
+
+### B2. Scene first, idea second
+Open each section on something that happened, with a date and an actor, then name the principle it shows. "Nebius beat
+forecasts and lost a fifth of its value by morning" comes before "markets punish builders who borrow".
+
+### B3. Numbers ration
+One number per sentence; two only when they are being compared. A number the reader does not need to change their
+mind goes in a table or a chart, not the prose. Round in prose ("about a fifth", "nearly twice"); keep the exact
+figure for the table.
+
+### B4. Rhythm
+Average 15-20 words a sentence; none above 35. Follow a long sentence with a short one when the point needs to land.
+"The shares barely moved." "The difference was not demand." Short sentences are where the argument turns.
+
+### B5. Transitions carry the logic
+Each paragraph's first sentence links to the last one: it contrasts, explains, or consequences it ("So far the
+customers are paying." "What changes is how much Nvidia will lend."). A reader who reads only first sentences gets the
+argument in order.
+
+### B6. Clutter out
+- At most one parenthesis per paragraph, and only for odds or a figure; asides become their own sentence or go.
+- No semicolon chains, slashes or stacked qualifiers ("about roughly", "potentially could").
+- No throat-clearing: "Note that", "It is worth noting", "Importantly", "In terms of".
+- No daggers, footnote marks or source strings mid-sentence beyond the one secondary-source mark.
+- Jargon only after a one-line plain definition, given in passing: "options dealers, the banks on the other side of
+  most options trades, ...".
+
+### B7. Land every section
+The last sentence of a section says what it means for the call or the reader. Not a summary of the section: the
+consequence. "That is why it is a one-in-two path inside the base case, not a call."
+
+### B8. Contrast, sparingly
+A paired contrast is the strongest device in this kind of writing ("Everyone watched the first story. The second is
+the kind that now decides the trade."). Use it once per section at most; used twice it becomes a tic.
+
+### B9. Confident, not loud
+Say a thing once, plainly. Put uncertainty in the odds, not in adjectives. No exclamation, no "massive", no "huge".
+
+### B10. Cut a fifth
+The second draft is about 20% shorter than the first. Cut the sentence that restates the previous one, the
+qualifier no reader would miss, and the number the chart already shows.
+
+### Before and after (from the AI report)
+
+- **Before:** "Two reports five days apart show the whole cycle: demand still accelerating at the top, delivery and
+  funding strained at the bottom. Both beat; only the one that borrows was punished." Then a nine-cell table.
+- **After:** "Two earnings reports, five days apart, tell the story of this cycle. ... The difference was not demand.
+  Both companies are selling everything they can deliver. The difference is who pays for the building."
+
+The second version gives the reader the scene, then the turn, then the idea, with one number at a time.
+
+### Self-edit pass (run before every publish)
+
+1. Read the headings alone. Do they tell the story in order?
+2. Read the first sentence of each paragraph alone. Is that the argument?
+3. Run `python tools/prose_lint.py <report.md>` and fix every flag: sentences over 35 words, more than two numbers
+   in a sentence, more than one parenthesis in a paragraph, paragraphs over 90 words, throat-clearing phrases.
+4. Check each section's last line: does it land a consequence?
+5. Read the bottom line and the conclusion aloud. If either needs a breath mid-sentence, split it.
+
 ## Words and numbers must agree
 
 | Odds | Say |

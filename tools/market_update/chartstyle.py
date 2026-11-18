@@ -103,6 +103,7 @@ P = dict(DARK)  # the active palette (mutated by apply())
 THEME = {"name": "dark"}
 
 FONT = "DejaVu Sans"
+MONO = "DejaVu Sans Mono"   # house flair: every number we draw on a chart is set in the mono face
 SIZES = {"title": 24, "subtitle": 13.5, "tag": 12, "label": 13, "small": 11, "tiny": 9.5, "callout": 14,
          "footer": 10.5, "level": 15}
 DPI = 200            # 15 in x 200 dpi = 3000 px: the 2x export
@@ -204,10 +205,13 @@ def _round_box(fig, x, y, w, h, fc, ec, lw=1.0, r_in=0.06, z=0, ls="-"):
 
 
 def frame(title, subtitle, panels=1, tags=None, callout=None, footer_right="", snapshot="",
-          size=DEFAULT_SIZE, panel_gap_in=0.28, panel_widths=None):
-    """Draw the common frame and return (fig, [panel rects in figure fractions (x, y, w, h)])."""
+          size=DEFAULT_SIZE, panel_gap_in=0.28, panel_widths=None, badge=None):
+    """Draw the common frame and return (fig, [panel rects in figure fractions (x, y, w, h)]).
+
+    badge = (number, caption): the house flair, a headline-number pill top right (e.g. ("41%", "base case")).
+    Every frame also carries the signal stripe, a thin cyan / purple / yellow rule across the top edge."""
     fig = plt.figure(figsize=size, dpi=DPI)
-    avail = size[0] - 2 * 0.32
+    avail = size[0] - 2 * 0.32 - (badge_width_in(fig, badge) + 0.45 if badge else 0)
     title_size = SIZES["title"]
     while title_size > 17 and text_width_in(fig, title, title_size, "bold") > avail:
         title_size -= 1
@@ -241,7 +245,40 @@ def frame(title, subtitle, panels=1, tags=None, callout=None, footer_right="", s
     if callout:
         callout_box(fig, callout, L)
     footer(fig, snapshot, footer_right, L)
+    signal_stripe(fig)
+    if badge:
+        draw_badge(fig, badge, L)
     return fig, rects
+
+
+# ---------------------------------------------------------------- house flair
+def signal_stripe(fig, h_in=0.055):
+    """A thin three-colour rule across the top edge: cyan (positioning), purple (derived), yellow (our record)."""
+    fw, fh = fig.get_size_inches()
+    h = h_in / fh
+    for x0, w, col in ((0, 0.5, "cyan"), (0.5, 0.3, "purple"), (0.8, 0.2, "yellow")):
+        fig.add_artist(plt.Rectangle((x0, 1 - h), w, h, transform=fig.transFigure, facecolor=P[col],
+                                     edgecolor="none", zorder=10))
+
+
+def badge_width_in(fig, badge):
+    big, cap = badge
+    return max(text_width_in(fig, big, 30, "bold"), text_width_in(fig, " ".join(cap.upper()), 8.5)) + 0.5
+
+
+def draw_badge(fig, badge, L):
+    """Headline-number pill, top right: the one number the chart exists to show, in the mono face."""
+    big, cap = badge
+    fw, fh = fig.get_size_inches()
+    w_in = badge_width_in(fig, badge)
+    h_in = 0.92
+    x = 1 - L.mx - w_in / fw
+    y = 1 - (0.22 + h_in) / fh
+    _round_box(fig, x, y, w_in / fw, h_in / fh, fc=P["callout_fill"], ec=P["yellow"], lw=1.4, r_in=0.12, z=3)
+    fig.text(x + w_in / fw / 2, y + 0.58 / fh, big, fontsize=30, fontweight="bold", color=P["yellow"],
+             family=MONO, ha="center", va="center", zorder=4)
+    fig.text(x + w_in / fw / 2, y + 0.17 / fh, " ".join(cap.upper()), fontsize=8.5, color=P["subtitle"],
+             ha="center", va="center", zorder=4)
 
 
 def add_tag(fig, rect, text, colour="cyan"):
@@ -297,8 +334,8 @@ def callout_box(fig, text, L=None):
 
 def footer(fig, snapshot, right, L=None):
     L = L or fig._gt_layout
-    left = "GT-Analyst · data: Skylit maps %s · not investment advice" % snapshot if snapshot else \
-        "GT-Analyst · not investment advice"
+    left = "G T · A N A L Y S T   ·   data: Skylit maps %s · not investment advice" % snapshot if snapshot else \
+        "G T · A N A L Y S T   ·   not investment advice"
     fig.text(L.mx, L.footer_y, left, fontsize=SIZES["footer"], color=P["muted"], ha="left", va="bottom")
     if right:
         fig.text(1 - L.mx, L.footer_y, right, fontsize=SIZES["footer"], color=P["muted"], ha="right", va="bottom")

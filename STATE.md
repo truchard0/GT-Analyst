@@ -479,6 +479,17 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
      happens), Taiwan split under taiwan-h1-2027 (quarantine 0.45 / gray-zone 0.40 / invasion 0.15 conditional, i.e.
      4.5 / 4 / 1.5%) + taiwan-2028 0.15, us-iran-campaign-jan3 0.18 (ground op 0.22 of it), iran-ends-by-purchase 0.20,
      lab-dec-runrate checkpoint (mid-Jan), cn-retaliation-remote-rule 0.15. No ledger rows added. Gates all clear.
+   - **AI report rebuilt (user, 18 Nov PT: dark house style "with your own flair"; more heatmap depth; condense;
+     heatmaps on one page with the major indices; prose at professional long-form standard).** All ten doc widgets
+     replaced by eight PNGs from `tools/ai_report_charts.py`. House flair added to `tools/market_update/chartstyle.py`
+     for every chart: signal stripe (cyan/purple/yellow top rule), headline-number badge, mono numerals, spaced
+     wordmark. One-page heatmap board: SPX + QQQ (17 Nov 17:30 ET overnight map) and MU, META, AMZN, SMH, AVGO, CRWV
+     (17 Nov close; AVGO 09:30); reads in `data/ai_technical/heatmap_reads_20261117.json`. Text rewritten and cut
+     (Nebius table, positioning table, Huang table to 4 rows). Writing: `report-writing` skill Part B (ten prose-craft
+     rules + self-edit pass) and `tools/prose_lint.py` (flags long sentences, number-crowded sentences, parentheses,
+     long paragraphs, clutter); the report went from 25 flags to 5 (all deliberate comparisons). Corrections: SMH
+     war-low rise 85% on closes (was 87%); the revenue chart now says consensus was beaten 3 of 5 years (old widget
+     said "the last 4"). Exports 15 pages, 8 pictures. No probability changed.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all

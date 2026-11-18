@@ -1,0 +1,289 @@
+{
+ "generated": "2026-11-18T20:09:10+00:00",
+ "source": "data/ai_technical/heatmaps_20261117.json",
+ "note": "shares are of total |gamma| on the map shown; vendor units, compare within a ticker only",
+ "reads": {
+  "MU": {
+   "ticker": "MU",
+   "spot": 713.52,
+   "snapshot": "2026-11-17T20:59:59Z",
+   "batch": "16:00 ET end-of-day batch",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "front_share_pct": 63.91484024859449,
+   "net_pm2_share_pct": -0.05516730050706295,
+   "net_pm5_share_pct": -13.716466016819773,
+   "regime_pm2": "flat",
+   "king": {
+    "strike": 750.0,
+    "expiry": "2026-11-20",
+    "value": -1442805.2,
+    "pct_from_spot": 5.112680793810975
+   },
+   "largest_long_row_above": [
+    735.0,
+    89195.69999999998
+   ],
+   "largest_long_row_below": [
+    700.0,
+    347703.70000000007
+   ],
+   "largest_short_row": [
+    750.0,
+    -1220825.1
+   ]
+  },
+  "META": {
+   "ticker": "META",
+   "spot": 619.0,
+   "snapshot": "2026-11-17T20:59:59Z",
+   "batch": "16:00 ET end-of-day batch",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "front_share_pct": 61.58202149866309,
+   "net_pm2_share_pct": 10.282201032262908,
+   "net_pm5_share_pct": -9.764002681563575,
+   "regime_pm2": "long",
+   "king": {
+    "strike": 635.0,
+    "expiry": "2026-11-20",
+    "value": -1861733.3,
+    "pct_from_spot": 2.5848142164781818
+   },
+   "largest_long_row_above": [
+    620.0,
+    1586377.4
+   ],
+   "largest_long_row_below": [
+    615.0,
+    1488515.7
+   ],
+   "largest_short_row": [
+    635.0,
+    -1848825.4000000001
+   ]
+  },
+  "AMZN": {
+   "ticker": "AMZN",
+   "spot": 257.75,
+   "snapshot": "2026-11-17T20:59:59Z",
+   "batch": "16:00 ET end-of-day batch",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "front_share_pct": 51.994381078091656,
+   "net_pm2_share_pct": 23.507905014884773,
+   "net_pm5_share_pct": 52.095235682688354,
+   "regime_pm2": "long",
+   "king": {
+    "strike": 260.0,
+    "expiry": "2026-11-20",
+    "value": 10605279.6,
+    "pct_from_spot": 0.8729388942773975
+   },
+   "largest_long_row_above": [
+    260.0,
+    14954718.399999999
+   ],
+   "largest_long_row_below": [
+    250.0,
+    9092080.5
+   ],
+   "largest_short_row": [
+    280.0,
+    -1869782.9
+   ]
+  },
+  "SMH": {
+   "ticker": "SMH",
+   "spot": 461.34,
+   "snapshot": "2026-11-17T21:01:21Z",
+   "batch": "16:00 ET end-of-day batch",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "front_share_pct": 57.31040038055168,
+   "net_pm2_share_pct": 9.944413324040307,
+   "net_pm5_share_pct": -10.36873733814619,
+   "regime_pm2": "long",
+   "king": {
+    "strike": 500.0,
+    "expiry": "2026-11-20",
+    "value": 4533396.4,
+    "pct_from_spot": 8.379936706116965
+   },
+   "largest_long_row_above": [
+    500.0,
+    4487906.300000001
+   ],
+   "largest_long_row_below": [
+    460.0,
+    1834283.4
+   ],
+   "largest_short_row": [
+    450.0,
+    -2961074.6999999997
+   ]
+  },
+  "AVGO": {
+   "ticker": "AVGO",
+   "spot": 335.88,
+   "snapshot": "2026-11-17T14:30:01Z",
+   "batch": "09:30 ET open batch (ndx list)",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "front_share_pct": 62.37616082030761,
+   "net_pm2_share_pct": 12.275346001362673,
+   "net_pm5_share_pct": 14.939934616497267,
+   "regime_pm2": "long",
+   "king": {
+    "strike": 300.0,
+    "expiry": "2026-11-20",
+    "value": -2290663.4,
+    "pct_from_spot": -10.682386566630942
+   },
+   "largest_long_row_above": [
+    340.0,
+    867155.4
+   ],
+   "largest_long_row_below": [
+    335.0,
+    2357204.1
+   ],
+   "largest_short_row": [
+    300.0,
+    -2405131.9
+   ]
+  },
+  "CRWV": {
+   "ticker": "CRWV",
+   "spot": 50.11,
+   "snapshot": "2026-11-17T20:59:59Z",
+   "batch": "16:00 ET end-of-day batch",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "front_share_pct": 60.84721071200077,
+   "net_pm2_share_pct": -29.88807167173384,
+   "net_pm5_share_pct": -36.5270013106393,
+   "regime_pm2": "short",
+   "king": {
+    "strike": 50.0,
+    "expiry": "2026-11-20",
+    "value": -2109466.2,
+    "pct_from_spot": -0.21951706246258196
+   },
+   "largest_long_row_above": [
+    55.0,
+    1427906.4
+   ],
+   "largest_long_row_below": [
+    49.0,
+    416446.5
+   ],
+   "largest_short_row": [
+    50.0,
+    -3967785.2
+   ]
+  }
+ },
+ "index_reads": {
+  "SPX": {
+   "ticker": "SPX",
+   "spot": 7340.53,
+   "snapshot": "17 Nov 2026 17:30 ET",
+   "batch": "Skylit overnight map 17:30 ET (SPXW)",
+   "expiries": [
+    "2026-11-18",
+    "2026-11-19",
+    "2026-11-20",
+    "2026-11-23",
+    "2026-11-24"
+   ],
+   "front_share_pct": 50.07060258975514,
+   "net_pm2_share_pct": 8.043107838131256,
+   "net_pm5_share_pct": 16.475746656320744,
+   "regime_pm2": "long",
+   "king": {
+    "strike": 7310.0,
+    "expiry": "2026-11-18",
+    "value": 8222273.54861921,
+    "pct_from_spot": -0.41591002284575573
+   },
+   "largest_long_row_above": [
+    7520.0,
+    7154217.303160924
+   ],
+   "largest_long_row_below": [
+    7310.0,
+    7439625.017387402
+   ],
+   "largest_short_row": [
+    7350.0,
+    -8059031.360834832
+   ]
+  },
+  "QQQ": {
+   "ticker": "QQQ",
+   "spot": 660.06,
+   "snapshot": "17 Nov 2026 17:30 ET",
+   "batch": "Skylit overnight map 17:30 ET (QQQ)",
+   "expiries": [
+    "2026-11-18",
+    "2026-11-19",
+    "2026-11-20",
+    "2026-11-23",
+    "2026-11-24"
+   ],
+   "front_share_pct": 20.821846029007858,
+   "net_pm2_share_pct": 14.02210110309102,
+   "net_pm5_share_pct": 23.282167060082674,
+   "regime_pm2": "long",
+   "king": {
+    "strike": 650.0,
+    "expiry": "2026-11-20",
+    "value": 26981644.77813471,
+    "pct_from_spot": -1.5241038693452058
+   },
+   "largest_long_row_above": [
+    679.0,
+    14401740.631192235
+   ],
+   "largest_long_row_below": [
+    650.0,
+    25495473.152422998
+   ],
+   "largest_short_row": [
+    670.0,
+    -12788705.26044421
+   ]
+  }
+ }
+}
