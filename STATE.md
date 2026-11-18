@@ -429,6 +429,20 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
    lines PASS. Caveats: about half the gain is a bias fix learned on the same reports; little comes from headlines;
    consensus still better on the mean (4.1% vs 5.4%) and on Micron/AMD/ASML; no gain on revenue; 80% ranges held 71%.
    Not wired into anything. Next: run it forward before the December reports.
+6. **Later the same night (user requests):**
+   - **Exact numbers:** reports now lead with one number per print (the middle of its 80% range); ranges are small print.
+   - **Full AI report:** [The Path of the AI Boom: Full Report](https://claude.ai/artifact/PFbtnVdXvgzd9FEStCJK1F), opens
+     with the Nvidia (17 Nov) and Nebius (12 Nov, 6-K letter) reports; 8 visuals; exports
+     `reports/exports/20261118_ai-boom-full-report.{docx,pdf}`, markdown `reports/20261118_ai-boom-full-report.md`.
+   - **5-year backtest** (`reports/backtests/20261118_ai-prints-5y-backtest.md`; PREREG `0022eca` before data): NVDA,
+     AVGO, MU, TSM, AMZN, META, 117 reports Nov 2021-Nov 2026. Revenue median miss 1.52% vs 2.41% naive and 1.95%
+     consensus (ours closer 4 years of 5); next guide 6.45% vs consensus 2.90% (consensus won all 5 years); capex
+     11.9% vs 12.7% naive. Down-cycle (27 reports): own-midpoint beat rate 74% (97% up-cycle) and consensus far better.
+     Forward range refit held 85-86% out of sample. **Proposed, not applied (user decides):** cap print calls at 0.75 when
+     the company guided the current quarter below the prior actual.
+   - **Timeline map brought to the present:** 61 past-dated nodes resolved with basis and source
+     (`data/timeline_resolutions_20261117.json`), 1 re-dated to 1 Dec, 1 unknown; dashboard now honours a node's own
+     `resolved.happened` when no ledger row has resolved. Report catalyst timelines start 12 Nov.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all
