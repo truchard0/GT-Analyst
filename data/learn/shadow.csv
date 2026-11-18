@@ -27,3 +27,5 @@ logged_utc,pred_id,kind,cluster,stated,model,blend,model_version
 2026-11-18T01:29:02Z,83,war-price,iran-war,0.7000,0.3313,0.5157,n56-b83a1a35
 2026-11-18T01:29:02Z,84,rates,fed-path,0.7500,0.8448,0.7974,n56-b83a1a35
 2026-11-18T01:29:02Z,85,base-rate,taiwan,0.9000,0.6607,0.7804,n56-b83a1a35
+2026-11-18T01:32:32Z,86,rates,fed-path,0.9200,0.8448,0.8824,n56-b83a1a35
+2026-11-18T01:32:32Z,87,base-rate,iran-war,0.7200,0.6607,0.6904,n56-b83a1a35
