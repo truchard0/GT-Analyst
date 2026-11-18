@@ -35,3 +35,52 @@ predictable" premise fails in this sample.
 - **Six months is one regime** (an up-cycle with rising guides). It says nothing about a downturn, when guides get cut.
 - Beating the midpoint of one's own guide is partly an artefact of conservative guidance. The test measures whether
   that habit held, not whether the business was forecastable from outside.
+
+---
+
+# V2 (same day, before any window data was read): NUMERIC forecasts in a tight range
+
+**User instruction, 18 Nov 2026:** "you have to predict these numbers (in a tight range) not just have booleans."
+The boolean rules above stay and are still scored, but the test that matters is this one. Committed before the
+window data files were opened; the data-gathering runs were still in progress.
+
+## Data
+- **Window (scored):** reports published 18 May 2026 to 17 Nov 2026, same companies as above.
+- **History (never scored, only feeds the model):** each company's reports published 18 May 2025 to 17 May 2026.
+- Each forecast for report t uses only reports published before t (walk-forward). In-window reports become history
+  for later in-window reports.
+
+## The model (mechanical; no judgment per company)
+For company c and report t, from its earlier reports k:
+- `beat_k = actual_k / guide_mid_k - 1`
+- `step_k = next_guide_mid_k / actual_k - 1` (the guide given at report k for the following quarter, against quarter k's actual)
+- `b` = mean of the last up to 4 beats before t; `g` = mean of the last up to 4 steps before t. With fewer than 2
+  observations for the company, use the pooled mean over all companies' reports published before t.
+
+| Target | Point forecast | 80% range (half-width) |
+|---|---|---|
+| **N1 reported revenue** | `guide_mid_t x (1 + b)` | `max(0.5%, 1.28 x sd(last <=4 beats))` |
+| **N2 next-quarter guide midpoint** | `N1 point x (1 + g)` (the actual is not known before the report, so the forecast chains) | `max(1.0%, 1.28 x sqrt(sd(beats)^2 + sd(steps)^2))` |
+| **N3 reported quarterly capex** (MSFT, GOOGL, AMZN, META, ORCL) | average of (a) momentum: `capex_{t-1} x (1 + mean q/q growth, last <=4 quarters)` and (b) guide-implied: `(annual guide midpoint in force before the report - capex already reported that year) / quarters left`; momentum alone when (b) cannot be computed | `max(3.0%, 1.28 x sd(last <=4 q/q growth rates))` |
+| **N4 new annual capex guide midpoint** (where numeric, same guide year) | `prior midpoint x (1 + mean revision at the company's last <=4 reports)` | `max(2.0%, 1.28 x sd(revisions))` |
+
+sd is the sample standard deviation; with fewer than 2 observations use the pooled sd. The first guide for a new
+year (no prior midpoint for that year) is excluded from N4 and listed.
+
+## Scoring
+Per target: median and mean absolute % error; share of forecasts within 1%, 2%, 3% and 5% of the actual; how often
+the actual fell inside the 80% range (coverage); mean half-width. Against two baselines:
+- **B0 naive:** the guide midpoint as given (N1); the current-quarter guide midpoint unchanged (N2); last quarter's
+  capex (N3); the prior annual guide unchanged (N4).
+- **B1 sell-side consensus** before the report, where it could be collected (N1, and N2 where a guide consensus exists).
+
+## Pass / fail lines (set now)
+1. **Accuracy:** N1 median absolute error below B0's, and no more than 0.25 percentage points worse than consensus.
+2. **Calibration:** coverage of the 80% ranges between 65% and 95% for each target with 10 or more forecasts.
+3. **Tightness:** mean half-width at or below 2% (N1), 4% (N2), 8% (N3), 5% (N4).
+A target that misses a line is reported as a miss. Range widths may be re-fitted afterwards for the FORWARD calls
+only; the backtest numbers are reported as first run.
+
+## Still true
+The row-by-row forecasts are blind; the model design is not out-of-sample (it was written on 18 Nov 2026 by an
+analyst who had seen a few of the outcomes). One six-month up-cycle. The forward numeric calls are the clean test.
