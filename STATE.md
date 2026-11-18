@@ -363,25 +363,25 @@ bot, it is a prediction bot for world events, remember that".
 - **Research behind it:** six strands in `research_notes/AI trade forecasting framework/` (history and base rates, demand
   and capex, financing chain, constraints and policy, valuation and positioning, catalyst calendar). Source quality is
   mixed; laws marked [S] in the skill rest on secondary sources and get half weight until checked.
-- **Thirteen calls logged (#88–#100), all wired:**
+- **Thirteen calls logged (#123–#135), all wired.** They were first logged as #88–#100 and renumbered the same hour, because the server's import of 35 PC-only predictions had taken #88–#122:
 
   | # | Call | P | Horizon |
   |---|---|---|---|
-  | 88 | Broadcom guides fiscal Q1 AI semiconductor revenue above its Q4 actual | 0.82 | 12/11 |
-  | 89 | Micron fiscal Q1 revenue ≥ $61.5B | 0.86 | 12/22 |
-  | 90 | Micron fiscal Q2 guide midpoint above Q1 actual | 0.72 | 12/22 |
-  | 91 | TrendForce 1Q27 DRAM contract prices up q/q | 0.72 | 1/31/27 |
-  | 92 | TSMC Q4 revenue ≥ $53.3B | 0.90 | 1/22/27 |
-  | 93 | TSMC 2027 capex guide midpoint ≥ $68B | 0.70 | 1/22/27 |
-  | 94 | Microsoft December-quarter capex > $50B | 0.87 | 2/5/27 |
-  | 95 | None of the four hyperscalers guides 2027 capex below 2026 | 0.88 | 2/12/27 |
-  | 96 | Alphabet 2027 capex guide midpoint ≥ $240B | 0.70 | 2/12/27 |
-  | 97 | Nvidia fiscal Q4 revenue ≥ $130.0B | 0.90 | 3/10/27 |
-  | 98 | CoreWeave: no missed payment, distressed exchange or bankruptcy | 0.92 | 3/31/27 |
-  | 99 | Oracle not rated junk by any of the three agencies | 0.85 | 3/31/27 |
-  | 100 | SMH closes below 671.83 (its 2026 high) on 6/30/27 | 0.90 | 6/30/27 |
+  | 123 | Broadcom guides fiscal Q1 AI semiconductor revenue above its Q4 actual | 0.82 | 12/11 |
+  | 124 | Micron fiscal Q1 revenue ≥ $61.5B | 0.86 | 12/22 |
+  | 125 | Micron fiscal Q2 guide midpoint above Q1 actual | 0.72 | 12/22 |
+  | 126 | TrendForce 1Q27 DRAM contract prices up q/q | 0.72 | 1/31/27 |
+  | 127 | TSMC Q4 revenue ≥ $53.3B | 0.90 | 1/22/27 |
+  | 128 | TSMC 2027 capex guide midpoint ≥ $68B | 0.70 | 1/22/27 |
+  | 129 | Microsoft December-quarter capex > $50B | 0.87 | 2/5/27 |
+  | 130 | None of the four hyperscalers guides 2027 capex below 2026 | 0.88 | 2/12/27 |
+  | 131 | Alphabet 2027 capex guide midpoint ≥ $240B | 0.70 | 2/12/27 |
+  | 132 | Nvidia fiscal Q4 revenue ≥ $130.0B | 0.90 | 3/10/27 |
+  | 133 | CoreWeave: no missed payment, distressed exchange or bankruptcy | 0.92 | 3/31/27 |
+  | 134 | Oracle not rated junk by any of the three agencies | 0.85 | 3/31/27 |
+  | 135 | SMH closes below 671.83 (its 2026 high) on 6/30/27 | 0.90 | 6/30/27 |
 
-  Report dates for #89, #92–#97 are pattern estimates: each row carries a void rule (extend the horizon, never score early).
+  Report dates for #124, #127–#132 are pattern estimates: each row carries a void rule (extend the horizon, never score early).
 - **Not ledgered, on the map as scenario odds:** `ai-trade-h1-2027` on the SMH close of 30 June 2027: repair (≥ 520) 0.35,
   range (400–520) 0.40, second leg (< 400) 0.25. Moved by the indicator board in the skill's §4.
 - **No call, by rule:** AI price direction; the Anthropic listing (the analyst is an Anthropic model); government
@@ -391,7 +391,7 @@ bot, it is a prediction bot for world events, remember that".
 - **Correction carried into the records:** Nvidia's "$530B" is total commitments plus guarantees; guarantees alone are
   $108.5B (July 10-Q), about $118B in October per press. The 11/18 tape note said "$530bn of guarantees"; fix its doc and
   exports with the AI-trade report.
-- **Portfolio after logging:** 43 open; iran-war 12 (28%, back under the cap), ai-prints 6, ai-capex 6, ai-financing 2.
+- **Portfolio after logging:** see the per-cluster count in `ledger.py report` (the PC import added 34 open rows the same day); iran-war is back under the 35% cap; ai-prints 6, ai-capex 6, ai-financing 2.
   The AI clusters share one demand bet: read them together when a miss comes from demand.
 - **Forward test:** the skill's §8 sets the kill criteria per layer once 10 calls in a layer have resolved.
 

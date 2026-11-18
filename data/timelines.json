@@ -2585,7 +2585,7 @@
    "horizon": "7.5 months",
    "p": 1.0,
    "ledger": [
-    100
+    135
    ],
    "label": "AI trade to mid-2027: repair / range / second leg (SMH close on 30 Jun 2027)",
    "rationale": "Built 11/18 from the ai-trade framework. SMH closed 460.10 on 11/17, 31.5% below its 22 June high, five months into a drawdown already at the median depth of past semis drawdowns (seven of 20%+ since 2004: median -35%, 9 months to trough, 5 months trough to new high). Past booms say equities peak before capex, so rising guides do not mark a floor. Direction inside the range is a no-call; the branches are moved by the financing gauges (CoreWeave and Oracle CDS, the high-yield data-center primary market, 2027 capex guides). Only ledgered call: no new high by 30 June (0.90).",
@@ -2675,8 +2675,8 @@
    "horizon": "4.5 months",
    "p": 0.8,
    "ledger": [
-    98,
-    99
+    133,
+    134
    ],
    "label": "AI financing chain holds to 31 Mar 2027 (no CoreWeave default, Oracle stays investment grade)",
    "rationale": "The framework treats financing, not demand, as the first failure point: capex-cut depth in past booms scaled with external funding. Stressed but functioning: CoreWeave CDS ~1,113bp with funding moved to secured loans and prepayments; Oracle at BBB-/Baa2(neg)/BBB after selling $10B of stock; no high-yield data-center deal since late September; Nvidia guarantees ~$108.5-118B with the CEO who built that role gone. p is the joint odds of both ledgered calls (0.92 x 0.85, positively correlated).",
@@ -2731,7 +2731,7 @@
    "horizon": "scheduled",
    "p": 1.0,
    "ledger": [
-    88
+    123
    ],
    "label": "Broadcom fiscal Q4 report (9 Dec, same day as the FOMC): AI semiconductor guide",
    "rationale": "Confirmed date. Bar: AI semiconductor revenue ~$21.7B for the quarter and a fiscal Q1 guide above it (0.82). The custom-chip read on hyperscaler 2027 plans, three weeks before any hyperscaler speaks.",
@@ -2763,9 +2763,9 @@
    "horizon": "scheduled",
    "p": 1.0,
    "ledger": [
-    89,
-    90,
-    91
+    124,
+    125,
+    126
    ],
    "label": "Micron fiscal Q1 report (~15 Dec) and 1Q27 DRAM contract pricing: the memory-cycle test",
    "rationale": "Memory equities have already fallen 31-55% from their peaks, and equities lead memory fundamentals by one to two quarters. The print should still be strong (revenue at or above $61.5B, 0.86); the test is the guide (sequential growth, 0.72) and 1Q27 contract prices (still rising, 0.72).",
@@ -2797,8 +2797,8 @@
    "horizon": "scheduled",
    "p": 1.0,
    "ledger": [
-    92,
-    93
+    127,
+    128
    ],
    "label": "TSMC Q4 2026 results and first 2027 capex guide (14 or 21 Jan)",
    "rationale": "Revenue at or above the $53.3B guide midpoint is close to settled by monthly data (0.90). The forward item is 2027 capex: midpoint at or above $68B (0.70) against $60-64B in 2026 and equipment makers guiding 2027 wafer-fab spending up 30% or more.",
@@ -2830,9 +2830,9 @@
    "horizon": "scheduled",
    "p": 1.0,
    "ledger": [
-    94,
-    95,
-    96
+    129,
+    130,
+    131
    ],
    "label": "Hyperscaler Q4 2026 reports (late Jan - early Feb): the first 2027 capex guides",
    "rationale": "The catalyst the whole trade waits on. None has given a 2027 number; the four are guiding ~$730B for 2026 (+77%). Calls: none guides 2027 below 2026 (0.88, against a fund-manager survey in which 52% expect a cut within six months); Alphabet midpoint at or above $240B (0.70); Microsoft December-quarter capex above $50B (0.87).",
@@ -2881,7 +2881,7 @@
    "horizon": "scheduled",
    "p": 1.0,
    "ledger": [
-    97
+    132
    ],
    "label": "Nvidia fiscal Q4 2027 report (late Feb - early Mar, unannounced): first full quarter without Huang",
    "rationale": "Revenue at or above the $130.0B guide midpoint (0.90). The item to read is not the revenue: it is the customer-support lines in the 10-Q (guarantees ~$108.5B in July, ~$118B in October per press). Flat or lower means Nvidia is withdrawing as guarantor.",
@@ -3080,7 +3080,7 @@
     "event": "Broadcom fiscal Q4 (AI semiconductor guide)",
     "when": "Wed 12/9 AMC",
     "status": "pending",
-    "ledger": 88,
+    "ledger": 123,
     "estimate": "fiscal Q1 AI semiconductor guide above the Q4 actual (0.82)",
     "consensus": "guide: revenue ~$34.8B, AI semis ~$21.7B",
     "actual": "",
@@ -3090,7 +3090,7 @@
     "event": "Micron fiscal Q1 (memory-cycle test)",
     "when": "~Tue 12/15 (expected)",
     "status": "pending",
-    "ledger": 89,
+    "ledger": 124,
     "estimate": "revenue >= $61.5B (0.86); fiscal Q2 guide above Q1 (0.72)",
     "consensus": "guide $61.5B +/- $1.5B",
     "actual": "",
@@ -3100,7 +3100,7 @@
     "event": "TSMC Q4 2026 + 2027 capex guide",
     "when": "Thu 1/14 or 1/21 (expected)",
     "status": "pending",
-    "ledger": 92,
+    "ledger": 127,
     "estimate": "revenue >= $53.3B (0.90); 2027 capex midpoint >= $68B (0.70)",
     "consensus": "guide $52.3-54.3B; 2026 capex $60-64B",
     "actual": "",
@@ -3110,7 +3110,7 @@
     "event": "Hyperscaler Q4 reports: first 2027 capex guides",
     "when": "late Jan - early Feb 2027",
     "status": "pending",
-    "ledger": 95,
+    "ledger": 130,
     "estimate": "none of the four guides below 2026 (0.88); Alphabet midpoint >= $240B (0.70); Microsoft Dec-quarter capex > $50B (0.87)",
     "consensus": "five-company 2027 ~$1.1T (stale four-company figure $934.5B from Aug)",
     "actual": "",
@@ -3120,7 +3120,7 @@
     "event": "Nvidia fiscal Q4 2027",
     "when": "late Feb - early Mar 2027 (unannounced)",
     "status": "pending",
-    "ledger": 97,
+    "ledger": 132,
     "estimate": "revenue >= $130.0B (0.90); read the guarantee lines in the 10-Q",
     "consensus": "guide $130.0B +/- 3%",
     "actual": "",
