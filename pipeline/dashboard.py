@@ -1368,10 +1368,10 @@ PAGE = """<!doctype html><html><head><meta charset="utf-8">
 *{box-sizing:border-box}
 :root{
  /* monotone: a single neutral ramp. Colour is reserved for STATE (hit/miss/due) only. */
- --bg:#0b0b0c; --surface:#131315; --surface-2:#19191c; --line:#26262a; --line-soft:#1c1c1f;
+ --bg:#07090b; --surface:#0b0e11; --surface-2:#11151a; --line:#1c2227; --line-soft:#141a1f;
  --ink:#cfcfd3; --ink-hi:#f4f4f6; --ink-dim:#87878e; --ink-faint:#5a5a61;
- --accent:#e6e6e9; --accent-dim:#2e2e34; --ok:#7fbf95; --warn:#bfa367; --bad:#c8837c; --violet:#9c92b8;
- --r:3px; --r-sm:2px;
+ --accent:#39d0a0; --accent-dim:#12352b; --ok:#39d0a0; --warn:#e3b341; --bad:#f0616d; --violet:#9c92b8;
+ --r:2px; --r-sm:2px;
 }
 body{margin:0;background:var(--bg);color:var(--ink);
  font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
