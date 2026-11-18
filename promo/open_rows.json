@@ -1,0 +1,415 @@
+[
+{
+"id": 1,
+"p": 0.7,
+"horizon": "2028-04-21",
+"source": "jiang-seed",
+"text": "US-Iran war continues for years despite ceasefires/talks; no durable peace treaty"
+},
+{
+"id": 2,
+"p": 0.08,
+"horizon": "2027-06-30",
+"source": "jiang-seed",
+"text": "US introduces a national draft after automatic registration begins"
+},
+{
+"id": 3,
+"p": 0.12,
+"horizon": "2027-01-31",
+"source": "jiang-seed",
+"text": "Pentagon budget reaches ~$1.5T next fiscal year"
+},
+{
+"id": 4,
+"p": 0.28,
+"horizon": "2036-04-21",
+"source": "jiang-seed",
+"text": "US never durably exits Iran conflict but is eventually forced back to hemisphere"
+},
+{
+"id": 5,
+"p": 0.1,
+"horizon": "2027-12-31",
+"source": "jiang-seed",
+"text": "Russian naval attrition challenge at chokepoints, staging via Cuba"
+},
+{
+"id": 6,
+"p": 0.25,
+"horizon": "2028-12-31",
+"source": "jiang-seed",
+"text": "Most nations bandwagon against the US over time (alliance exits, UN-vote realignment)"
+},
+{
+"id": 7,
+"p": 0.3,
+"horizon": "2028-11-30",
+"source": "jiang-seed",
+"text": "Third-term attempt or overt election manipulation occurs"
+},
+{
+"id": 8,
+"p": 0.6,
+"horizon": "2029-06-30",
+"source": "jiang-seed",
+"text": "Democrats continue the chokepoint-control strategy if they win in 2028"
+},
+{
+"id": 12,
+"p": 0.5,
+"horizon": "2027-01-04",
+"source": "manual",
+"text": "No enforced standing Hormuz transit toll is in effect within 6 months (strategic ambiguity as bargaining, not commitment)"
+},
+{
+"id": 16,
+"p": 0.45,
+"horizon": "2027-01-08",
+"source": "manual",
+"text": "Israel conducts an attributed unilateral kinetic or major covert action against Iranian territory/assets within 6 months, straining the US-brokered deal"
+},
+{
+"id": 34,
+"p": 0.35,
+"horizon": "2028-07-13",
+"source": "manual",
+"text": "Iran conducts a nuclear weapons test OR formally declares weapons capability within 24 months"
+},
+{
+"id": 35,
+"p": 0.55,
+"horizon": "2027-07-13",
+"source": "manual",
+"text": "By 2027-07-13 the war institutionalizes as FROZEN CONFLICT: no ratified US-Iran treaty AND no war-scale resumption sustained beyond 30 consecutive days"
+},
+{
+"id": 36,
+"p": 0.3,
+"horizon": "2027-01-13",
+"source": "jiang-seed",
+"text": "Within 6 months: US commits ground combat troops to Iran OR a compensated cessation deal (indemnity-style payment/sanctions-relief package to Iran) is concluded"
+},
+{
+"id": 38,
+"p": 0.12,
+"horizon": "2026-12-31",
+"source": "jiang-seed",
+"text": "JIANG CALL: US launches a ground invasion of Iran by 2026-12-31"
+},
+{
+"id": 40,
+"p": 0.55,
+"horizon": "2028-12-31",
+"source": "jiang-seed",
+"text": "JIANG CALL: by 2028-12-31 a major European NATO state begins military conscription expansion explicitly tied to the Russia conflict OR NATO-Russia direct state-of-war dec"
+},
+{
+"id": 41,
+"p": 0.42,
+"horizon": "2028-07-13",
+"source": "jiang-seed",
+"text": "JIANG CALL: Trump appoints a 4th SCOTUS justice by 2028-07-13"
+},
+{
+"id": 42,
+"p": 0.85,
+"horizon": "2028-12-31",
+"source": "jiang-seed",
+"text": "JIANG CALL: No Chinese military invasion of Taiwan through 2028-12-31"
+},
+{
+"id": 43,
+"p": 0.75,
+"horizon": "2028-12-31",
+"source": "jiang-seed",
+"text": "JIANG CALL: No durable Russia-Ukraine peace agreement (signed and holding 6+ months) through 2028-12-31"
+},
+{
+"id": 53,
+"p": 0.93,
+"horizon": "2026-12-31",
+"source": "manual",
+"text": "NO PLA kinetic action against Taiwan (invasion, blockade, or quarantine) through 2026-12-31; China instead PRESSES DE-ESCALATION on Iran (diplomatic push to reopen Hormuz"
+},
+{
+"id": 54,
+"p": 0.45,
+"horizon": "2027-12-31",
+"source": "manual",
+"text": "2027 aggregate hyperscaler capex GROWS but DECELERATES to under +25pct y/y (digestion year: ROI scrutiny wins the margin debate, no decline)"
+},
+{
+"id": 55,
+"p": 0.25,
+"horizon": "2028-12-31",
+"source": "manual",
+"text": "AI WINTER: aggregate hyperscaler capex DECLINES y/y in 2028 (the overbuild writedown scenario)"
+},
+{
+"id": 56,
+"p": 0.9,
+"horizon": "2026-11-30",
+"source": "manual",
+"text": "Midterms are HELD on schedule, but at least one state-level federal intervention or certification fight occurs (DOJ/DHS involvement, decertification attempt, or federaliz"
+},
+{
+"id": 57,
+"p": 0.3,
+"horizon": "2030-12-31",
+"source": "manual",
+"text": "PLA attempts a BLOCKADE or QUARANTINE of Taiwan (not necessarily invasion) at some point in 2028-2030"
+},
+{
+"id": 80,
+"p": 0.96,
+"horizon": "2027-01-01",
+"source": "manual",
+"text": "No Iranian withdrawal from the Non-Proliferation Treaty takes legal effect on or before 2027-01-01"
+},
+{
+"id": 81,
+"p": 0.68,
+"horizon": "2027-08-31",
+"source": "tree:scheduled",
+"text": "NOAA Climate Prediction Center's ENSO Diagnostic Discussion issued in August 2027 does not have an El Nino Advisory in effect (no El Nino conditions declared)."
+},
+{
+"id": 82,
+"p": 0.85,
+"horizon": "2026-12-31",
+"source": "tree:invariant",
+"text": "Treasury bills are above 20.0% of total marketable debt outstanding at each month-end of 2026-09-30, 2026-10-31, 2026-11-30 and 2026-12-31 in the Monthly Statement of the"
+},
+{
+"id": 83,
+"p": 0.25,
+"horizon": "2026-12-31",
+"source": "tree:level",
+"text": "ICE Brent front-month futures settle between $85.00 and $125.00 per barrel inclusive on every trading day from 2026-10-01 through 2026-12-31."
+},
+{
+"id": 84,
+"p": 0.7,
+"horizon": "2027-09-30",
+"source": "tree:marker",
+"text": "At least 8 of the 12 monthly PBoC official-reserve releases published from 2026-10-03 through 2027-09-30 report gold holdings higher than the preceding month's release."
+},
+{
+"id": 85,
+"p": 0.8,
+"horizon": "2027-06-30",
+"source": "tree:invariant",
+"text": "At least 20 NATO members are at or above 2.0% of GDP for 2026 in NATO's Defence Expenditure of NATO Countries publication."
+},
+{
+"id": 86,
+"p": 0.82,
+"horizon": "2026-12-31",
+"source": "tree:level",
+"text": "The ICE BofA US Corporate Index option-adjusted spread is below 1.60 percentage points on every daily observation from 2026-10-02 through 2026-12-31."
+},
+{
+"id": 87,
+"p": 0.78,
+"horizon": "2027-06-30",
+"source": "tree:invariant",
+"text": "At least 24 NATO members are at or above 2.0% of GDP for 2026 in NATO's Defence Expenditure of NATO Countries publication."
+},
+{
+"id": 88,
+"p": 0.7,
+"horizon": "2027-09-30",
+"source": "tree:scheduled",
+"text": "NVIDIA's reported Data Center revenue is higher than in the immediately preceding quarter in at least 3 of its next 4 quarterly earnings releases published after 2026-10-"
+},
+{
+"id": 89,
+"p": 0.74,
+"horizon": "2027-05-31",
+"source": "tree:invariant",
+"text": "The World Platinum Investment Council reports a full-year 2026 platinum market deficit (demand above supply) in its Platinum Quarterly edition covering Q4 2026."
+},
+{
+"id": 90,
+"p": 0.66,
+"horizon": "2027-03-31",
+"source": "tree:scheduled",
+"text": "Rengo's first-tally average wage increase for the 2027 spring wage round is above 4.00%."
+},
+{
+"id": 91,
+"p": 0.66,
+"horizon": "2026-12-31",
+"source": "tree:marker",
+"text": "The NY Fed's SOFR for 2026-12-31 is at least 10 basis points above the IORB rate in effect on 2026-12-31."
+},
+{
+"id": 92,
+"p": 0.55,
+"horizon": "2027-06-30",
+"source": "tree:direction",
+"text": "The Selic target rate set by Copom and in force on 2027-06-30 is lower than the Selic target rate in force on 2026-10-03."
+},
+{
+"id": 93,
+"p": 0.82,
+"horizon": "2027-06-30",
+"source": "tree:invariant",
+"text": "Trepp's monthly CMBS office delinquency rate is above 10.00% in every monthly report covering reference months September 2026 through May 2027."
+},
+{
+"id": 94,
+"p": 0.82,
+"horizon": "2026-12-31",
+"source": "tree:duration",
+"text": "The FRED series T10Y2Y (10-year minus 2-year Treasury constant maturity yield) is greater than 0.00 percentage points on every business day with a published value from 20"
+},
+{
+"id": 95,
+"p": 0.88,
+"horizon": "2027-02-28",
+"source": "tree:invariant",
+"text": "The sum of year-end 2026 total backlog reported by LMT, RTX, NOC, GD and LHX in their FY2026 earnings releases exceeds the largest sum of year-end total backlog reported "
+},
+{
+"id": 96,
+"p": 0.78,
+"horizon": "2027-03-31",
+"source": "tree:scheduled",
+"text": "INSEE's first published estimate of France's 2026 general-government deficit (due late March 2027) is greater than 4.5% of GDP."
+},
+{
+"id": 97,
+"p": 0.72,
+"horizon": "2027-06-30",
+"source": "tree:scheduled",
+"text": "At least 5 of the 8 monthly MOTIR releases covering reference months October 2026 through May 2027 report semiconductor exports in USD above the same month a year earlier"
+},
+{
+"id": 98,
+"p": 0.5,
+"horizon": "2026-11-30",
+"source": "tree:scheduled",
+"text": "EIA's Weekly Natural Gas Storage Report for the week ending 2026-11-27 shows Lower 48 working gas in storage above its five-year average."
+},
+{
+"id": 99,
+"p": 0.78,
+"horizon": "2027-09-30",
+"source": "tree:invariant",
+"text": "The highest hourly Lower 48 electricity demand in the EIA Hourly Electric Grid Monitor (EIA-930) between 2027-06-01 and 2027-09-30 exceeds the highest hourly Lower 48 dem"
+},
+{
+"id": 100,
+"p": 0.76,
+"horizon": "2027-06-30",
+"source": "tree:level",
+"text": "The FRED series DFII10 (10-year Treasury inflation-indexed constant maturity yield) is above 1.50 percent on every business day with a published value from 2026-10-05 thr"
+},
+{
+"id": 101,
+"p": 0.76,
+"horizon": "2027-05-31",
+"source": "tree:invariant",
+"text": "The Silver Institute's World Silver Survey 2027 reports a total silver market balance deficit (supply below demand) for calendar year 2026."
+},
+{
+"id": 102,
+"p": 0.58,
+"horizon": "2026-11-02",
+"source": "tree:scheduled",
+"text": "The net percentage of domestic banks tightening standards for commercial and industrial loans to large and middle-market firms in the October 2026 Senior Loan Officer Opi"
+},
+{
+"id": 103,
+"p": 0.8,
+"horizon": "2026-12-31",
+"source": "tree:level",
+"text": "The FRED series DGS10 (10-year Treasury constant maturity yield) is greater than 4.00 percent on 2026-12-31."
+},
+{
+"id": 104,
+"p": 0.45,
+"horizon": "2026-12-19",
+"source": "tree:direction",
+"text": "At the conclusion of its 17-18 December 2026 Monetary Policy Meeting, the Bank of Japan sets its uncollateralized overnight call rate target higher than the level in effe"
+},
+{
+"id": 105,
+"p": 0.72,
+"horizon": "2027-04-30",
+"source": "tree:scheduled",
+"text": "The EU aggregate gas storage fill reported by GIE AGSI+ for gas day 2027-04-01 is above 25.0 percent of working gas volume."
+},
+{
+"id": 106,
+"p": 0.8,
+"horizon": "2026-12-31",
+"source": "tree:level",
+"text": "The ICE BofA US High Yield Index option-adjusted spread stays below 5.00 percentage points on every daily observation dated 2026-10-05 through 2026-12-31."
+},
+{
+"id": 107,
+"p": 0.72,
+"horizon": "2027-04-30",
+"source": "tree:invariant",
+"text": "Swiss Re Institute's estimate of global insured losses from natural catastrophes in calendar year 2026 is above USD 100 billion."
+},
+{
+"id": 108,
+"p": 0.82,
+"horizon": "2027-06-30",
+"source": "tree:level",
+"text": "The 10-year BTP-Bund yield spread closes below 250 basis points on every trading day from 2026-10-05 through 2027-06-30."
+},
+{
+"id": 109,
+"p": 0.84,
+"horizon": "2027-04-30",
+"source": "tree:invariant",
+"text": "Japan's FY2027 initial budget for the Ministry of Defense is enacted by 2027-04-30 with a headline total above the FY2026 initial Ministry of Defense headline total in no"
+},
+{
+"id": 110,
+"p": 0.72,
+"horizon": "2027-01-31",
+"source": "tree:invariant",
+"text": "Full-year 2026 US municipal bond issuance reported by The Bond Buyer from LSEG data exceeds the full-year total of every earlier calendar year in that series."
+},
+{
+"id": 111,
+"p": 0.55,
+"horizon": "2027-06-30",
+"source": "tree:direction",
+"text": "The People's Bank of China announces a cut to the general required reserve ratio for commercial banks at least once between 2026-10-05 and 2027-06-30."
+},
+{
+"id": 112,
+"p": 0.22,
+"horizon": "2027-06-30",
+"source": "tree:marker",
+"text": "A formal mandating instrument (UN Security Council resolution, OSCE Permanent Council decision, treaty annex) establishing a mission to monitor a Russia-Ukraine ceasefire"
+},
+{
+"id": 113,
+"p": 0.8,
+"horizon": "2027-03-31",
+"source": "tree:duration",
+"text": "The Baker Hughes weekly US oil rig count is above 400 on every weekly release dated 2026-10-09 through 2027-03-31."
+},
+{
+"id": 114,
+"p": 0.35,
+"horizon": "2026-12-31",
+"source": "tree:direction",
+"text": "A lapse in federal appropriations affecting at least one federal agency begins on a date from 2026-10-05 through 2026-12-31 and lasts at least 24 consecutive hours."
+},
+{
+"id": 115,
+"p": 0.8,
+"horizon": "2027-06-30",
+"source": "tree:level",
+"text": "The BLS headline seasonally adjusted U-3 unemployment rate is between 3.8 and 5.2 percent inclusive on every monthly Employment Situation release published from 2026-10-0"
+}
+]

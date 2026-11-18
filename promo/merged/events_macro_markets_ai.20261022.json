@@ -1,0 +1,300 @@
+{
+ "theme": "macro_markets_ai",
+ "events": [
+  {"date": "2026-09-15", "fact": "The US 10-year Treasury yield crossed 5% (5.02% on 9/15, highest since July 2007 per Trading Economics), then kept rising: 5.04% on 9/23, about 5.25% on 9/28; feed headlines carry 'above 5.30%' (9/30-10/7) and a Reuters Asia-bonds piece cites a 24.5-year high of 5.3645%; by 10/16 it was about 5.12% and STATE.md has 4.95% on 10/22.", "source": "Trading Economics / Reuters (via feed)", "confidence": "verified-web", "significance": 5,
+   "bears_on": [
+    {"node": "tens-above-4", "ledger": 103, "relation": "supports", "note": "10y ~4.95 on 10/22 leaves ~95bp of cushion over the 4.00 line for 12/31"},
+    {"node": null, "ledger": 100, "relation": "supports", "note": "DFII10 is far above the 1.50 floor (STATE: 2.77)"},
+    {"node": "real-rate-band", "ledger": null, "relation": "supports", "note": "real yields high, TIPS floor 1.50 not near"},
+    {"node": "rc-anchor", "ledger": null, "relation": "supports", "note": "post-hike funding regime: term premium and long end repricing"},
+    {"node": "ten-year-band-2028", "ledger": null, "relation": "context", "note": "peak 5.25-5.36 is far inside the 3-8 band"},
+    {"node": null, "ledger": 94, "relation": "context", "note": "curve flattening was a 9/22 headline; level of 2s10s not captured here"}
+   ],
+   "note": "Peak is disputed: web found 5.25% (Trading Economics 9/28) and no 5.3% source except the Reuters Asia-bond article (5.3645%). Record the peak as 5.25-5.36%."},
+
+  {"date": "2026-09-16", "fact": "The Fed raised its target range 25bp to 3.75-4.00% under Chair Kevin Warsh, the first hike in about three years; sources call the decision unanimous (all 19 participants backed it; the 12-0 voter count was not directly confirmed), and the projections signalled more: 16 of 18 officials saw at least one more 25bp hike in 2026 per one account (other accounts count differently).", "source": "MUFG Research / Kiplinger / Man Group", "confidence": "verified-web", "significance": 5,
+   "bears_on": [
+    {"node": "fomc-sept-hike", "ledger": null, "relation": "supports", "note": "this is the recorded event; node already HAPPENED"},
+    {"node": "fomc-oct", "ledger": null, "relation": "context", "note": "dots imply further hikes; timing left open"},
+    {"node": "rc-anchor", "ledger": null, "relation": "supports", "note": "post-hike funding regime"},
+    {"node": "dec-dots-2027", "ledger": null, "relation": "context", "note": "December SEP will show whether 2027 hikes are in the median"}
+   ],
+   "note": "Dot-count details conflict between sources (16/18 one more hike; 12 one more + 4 two more + 2 none; another says 9 of 18). Do not cite a count."},
+
+  {"date": "2026-09-22", "fact": "Treasury Secretary Bessent publicly backed Fed Chair Warsh's rate hike (reported 9/22; 9/27 he urged the Fed to keep an 'open mind' on the inflation outlook), at odds with President Trump's stated wish for rates of '1% or less'.", "source": "Reuters / IDN Financials (via feed)", "confidence": "feed-only", "significance": 3,
+   "bears_on": [
+    {"node": "fomc-oct", "ledger": null, "relation": "context", "note": "removes the Treasury-vs-Fed political veto on further hikes; not a forecast of the 10/28 vote"}
+   ],
+   "note": "Web search returned only a headline ('Scott Bessent backs Kevin Warsh on Fed rate hike') plus a Man Group note on Trump's 1% remark; quotes not independently read."},
+
+  {"date": "2026-09-23", "fact": "Bessent announced that the US and China agreed to extend the Busan trade truce from its 11/10/2026 expiry to 1/10/2027 (two months, short of the six months markets hoped for) ahead of Xi's Washington summit with Trump; a larger package by January was floated; early reports said Beijing had not confirmed, and rare-earth deliveries and $17bn of other farm purchases are reported lagging.", "source": "Reuters (via The Star / Hellenic Shipping News / The Standard)", "confidence": "verified-web", "significance": 4,
+   "bears_on": [
+    {"node": "cn-anchor", "ledger": null, "relation": "context", "note": "trade-truce backdrop to China's deflation-and-transfer problem"},
+    {"node": "cn-rare-earth-controls", "ledger": null, "relation": "context", "note": "rare-earth delivery dispute is the live friction"},
+    {"node": "taiwan-watch", "ledger": null, "relation": "context", "note": "de-escalation channel that the PLA-no-kinetic rows (#53) lean on"}
+   ],
+   "note": "No existing node tracks the truce expiry; proposed home is a new node (ev-busan-truce-rolled). STATE.md and the 9/21 feed (Bessent: talks with China 'successful', 8 outlets) show the lead-up (Bessent-He Lifeng meeting 9/20 in New York)."},
+
+  {"date": "2026-09-24", "fact": "A global bond rout pushed the US 30-year Treasury yield to its highest since 2004 on 9/24, to its highest since 2002 on 9/29, and to a 'fresh 24-year high' on 10/7; Japan's 10-year yield hit a 30-year high on 9/24.", "source": "Reuters (via feed)", "confidence": "multi-outlet", "significance": 4,
+   "bears_on": [
+    {"node": "rc-anchor", "ledger": null, "relation": "supports", "note": "long-end repricing is the regime this anchor describes"},
+    {"node": "usf-net-interest-nominal", "ledger": null, "relation": "supports", "note": "higher yields raise future net interest outlays"},
+    {"node": "usf-avg-rate-rises", "ledger": null, "relation": "supports", "note": "average rate on debt keeps climbing as debt rolls at 5%+"},
+    {"node": "jgb-band", "ledger": null, "relation": "context", "note": "JGB 10y at a 30-year high; level not captured, band is 0.5-3.0%"}
+   ],
+   "note": "Feed gives rankings (highest since 2004/2002), not the exact 30y level."},
+
+  {"date": "2026-09-24", "fact": "US initial jobless claims fell to 197,000, the lowest since mid-July (week reported 9/24, repeated 10/1), with layoffs described as rare.", "source": "AP (via 16 outlets)", "confidence": "multi-outlet", "significance": 2,
+   "bears_on": [
+    {"node": "u3-band", "ledger": 115, "relation": "supports", "note": "low layoffs, U-3 4.2 stays inside 3.8-5.2"}
+   ],
+   "note": "Contrasts with the 29k payroll print; low-hire, low-fire pattern."},
+
+  {"date": "2026-09-29", "fact": "Trump signed Executive Order 14434 ('Inaugurating the Era of Super Intelligence') telling agencies to use 'SI' instead of 'AI' in official communications; the science adviser has 60 days to propose legislative language for a federal definition, and a 'Super Intelligence Force' was announced 10/4.", "source": "White House / WJLA (AP) / Akin Gump", "confidence": "verified-web", "significance": 2,
+   "bears_on": [
+    {"node": "rl-anchor", "ledger": null, "relation": "context", "note": "regulation-by-executive-order, with a statutory definition still only proposed"}
+   ],
+   "note": "Mostly rebranding: SI initially means the existing statutory AI definition and no penalty on private users. One outlet's claim that the order calls AI users 'the enemy' could not be verified and is not recorded. New node ev-si-statute-none proposed."},
+
+  {"date": "2026-09-30", "fact": "California Governor Newsom signed a package of AI workplace laws: no disciplinary or termination decisions based solely on AI, disclosure when AI causes a mass layoff, a ban on inferring emotional state from biometrics, and workplace-surveillance limits; one report puts one bill's effective date at 7/1/2027.", "source": "California Governor's office / KSAT / KQED", "confidence": "verified-web", "significance": 2,
+   "bears_on": [
+    {"node": "ld-anchor", "ledger": null, "relation": "context", "note": "labour-supply-side regulation of AI use"}
+   ],
+   "note": "The 7/1/2027 effective date is from one source and may apply to a single bill."},
+
+  {"date": "2026-09-30", "fact": "August PCE inflation cooled: core PCE +0.2% m/m and 3.0% y/y versus 0.3% and 3.3% expected, partly because annual revisions cut July core PCE from 3.3% to 3.0%.", "source": "Fox Business (numbers); feed headlines 'encouraging update on inflation'", "confidence": "multi-outlet", "significance": 3,
+   "bears_on": [
+    {"node": "core-pce-band", "ledger": null, "relation": "supports", "note": "3.0% core PCE is inside the 2.5-4.0% band"},
+    {"node": "cpi-reaccel", "ledger": null, "relation": "context", "note": "the PCE cooling preceded the hotter September CPI"}
+   ],
+   "note": "Date comes from the feed (10 outlets on 9/30); the web article confirmed the numbers but I did not confirm the release date, so confidence is held at multi-outlet."},
+
+  {"date": "2026-10-01", "fact": "Dallas Fed President Logan said the policy rate probably needs to rise 50bp or more from 3.75-4.00%; after her remarks fed funds futures cut the odds of an October hike to 28% from 70% earlier that week, as she noted higher term premiums could do part of the tightening.", "source": "Reuters / Kitco / FXStreet", "confidence": "verified-web", "significance": 3,
+   "bears_on": [
+    {"node": "fomc-oct", "ledger": null, "relation": "supports", "note": "a voting-cycle hawk wants 50bp+, consistent with a second hike by December"},
+    {"node": "dec-dots-2027", "ledger": null, "relation": "context", "note": "terminal rate debate"}
+   ],
+   "note": "Same week Kashkari had no strong view and Bowman saw no urgent need for more moves (Newsquawk)."},
+
+  {"date": "2026-10-01", "fact": "Treasuries had their worst quarter since 1994 in Q3 2026; a Reuters poll on 10/7 still saw yields lower ahead.", "source": "Reuters (via 7 outlets)", "confidence": "multi-outlet", "significance": 4,
+   "bears_on": [
+    {"node": "rc-anchor", "ledger": null, "relation": "supports", "note": "scale of the repricing"},
+    {"node": "ten-year-band-2028", "ledger": null, "relation": "context", "note": "far inside band"}
+   ],
+   "note": ""},
+
+  {"date": "2026-10-01", "fact": "France presented its 2027 budget (EUR 43bn of new measures, EUR 54bn including earlier ones, aiming at a 5% deficit in 2027) as the 10-year OAT yield rose above 4.9% to near 5%, the highest since 2002, and the CAC 40 fell 1.6% to its lowest since March; the government now expects a 2026 deficit of 5.4% of GDP versus 5.1% last year, and the OAT-Bund spread peaked around 150-160bp (another source says 127-128bp).", "source": "TD Economics / Euronews / Allianz Trade / roic.ai", "confidence": "verified-web", "significance": 4,
+   "bears_on": [
+    {"node": "france-deficit", "ledger": 96, "relation": "supports", "note": "government's own 5.4% forecast is 90bp above the 4.5% line (row #96 and node france-deficit)"},
+    {"node": "italy-spread", "ledger": 108, "relation": "context", "note": "analysts describe the stress as France-specific with little contagion; BTP-Bund not shown in sources"},
+    {"node": "eu-anchor", "ledger": null, "relation": "supports", "note": "fiscal squeeze in action"},
+    {"node": "eu-fiscal-rules", "ledger": null, "relation": "context", "note": "Eurogroup/ECB asked France to pass the budget first; no rule flexibility invoked"}
+   ],
+   "note": "Peak yield and spread figures vary by source and timestamp. Web also carried undated reports of Prime Minister Lecornu offering the government's resignation; I could not date it and have not recorded it. The 2027 budget debate began 10/13; outcome unknown."},
+
+  {"date": "2026-10-01", "fact": "Freddie Mac's 30-year mortgage rate averaged 7.28% in the 10/1 weekly print (per STATE.md's FRED check), which feed headlines (19 outlets) call nearly a 3-year high.", "source": "Freddie Mac PMMS via FRED; AP (feed)", "confidence": "multi-outlet", "significance": 3,
+   "bears_on": [
+    {"node": "pmms-above-65", "ledger": null, "relation": "supports", "note": "7.28 is 78bp above the 6.50 floor"},
+    {"node": "hsg-lockin-gap", "ledger": null, "relation": "context", "note": "lock-in widens as market rate rises"},
+    {"node": "hsg-wac-under-6", "ledger": null, "relation": "context", "note": "outstanding coupons stay far below new-issue rates"}
+   ],
+   "note": "The 7.28 figure comes from STATE.md (#62 resolution), not from my web search."},
+
+  {"date": "2026-10-02", "fact": "US employers added just 29,000 jobs in September versus roughly 84-90k expected, unemployment rose to 4.2% from 4.1%, and BLS revised July to -10,000 (from +21,000) and August to +133,000 (from +162,000); health care led gains, government shed jobs.", "source": "BLS (via UPI, AP, Reuters)", "confidence": "verified-web", "significance": 5,
+   "bears_on": [
+    {"node": "payrolls-oct", "ledger": null, "relation": "context", "note": "next print 11/6; low-hire baseline: 3-month average roughly 50k"},
+    {"node": "u3-band", "ledger": 115, "relation": "supports", "note": "4.2% is inside 3.8-5.2%"},
+    {"node": "healthcare-jobs", "ledger": null, "relation": "supports", "note": "health care led September gains"},
+    {"node": "fomc-oct", "ledger": null, "relation": "contradicts", "note": "weak data cut hike odds; a Dec hike remains the market view"},
+    {"node": "participation-drag", "ledger": null, "relation": "context", "note": "labour supply constrained while hiring slows"}
+   ],
+   "note": "Black unemployment 'rose at its fastest pace since Covid' (feed, 11 outlets) not independently checked. Candidate headlines call it the last jobs report before the midterms."},
+
+  {"date": "2026-10-01", "fact": "The Rupee closed 10/1 at 96.31 per US dollar after slipping 37 paise (feed; 95.65 on 9/22 and 94.79 on 10/16); on 10/21 the RBI accepted no bids in a treasury bill auction as the 10-year bond yield rose to 7.44%.", "source": "PTI / Reuters (via feed)", "confidence": "feed-only", "significance": 2,
+   "bears_on": [
+    {"node": "em-anchor", "ledger": null, "relation": "context", "note": "external-funding clock for emerging markets; no India node tracks the rupee or RBI auctions"}
+   ],
+   "note": "Single-source feed headlines; not web-verified. Gap: India/EM funding stress has no concrete rows."},
+
+  {"date": "2026-10-07", "fact": "The September FOMC minutes (released 10/7) showed most officials saw another hike as likely appropriate by year-end without committing to a November or December date; some officials wanted to prepare for market stress; CME odds of an October hike were about 17% afterwards.", "source": "Reuters / BabyPips / Wealth Professional / roic.ai", "confidence": "verified-web", "significance": 4,
+   "bears_on": [
+    {"node": "fomc-oct", "ledger": null, "relation": "supports", "note": "hike by year-end signalled; October itself disfavoured"},
+    {"node": "dec-dots-2027", "ledger": null, "relation": "context", "note": "directional signal for the December SEP"},
+    {"node": "fomc-dec-2026", "ledger": null, "relation": "context", "note": "December is the likelier hike date"},
+    {"node": "qt-end-marker", "ledger": null, "relation": "context", "note": "market-stress preparation language; no QT date named"}
+   ],
+   "note": "Participant counts for further hikes differ between accounts; October odds range 17-25% by source."},
+
+  {"date": "2026-10-07", "fact": "Spot gold hit a two-month low near $4,096 on higher yields and a stronger dollar even as China's central bank reported its 23rd straight monthly addition to gold reserves for September; gold recovered to about $4,177 on 10/9 and feed headlines have it below $4,150 again on 10/19.", "source": "Reuters / KuCoin News / Azernews", "confidence": "verified-web", "significance": 3,
+   "bears_on": [
+    {"node": "cn-gold-buying", "ledger": 84, "relation": "supports", "note": "first of the 12 monthly releases in the #84 window shows higher holdings"},
+    {"node": "gold-level", "ledger": null, "relation": "context", "note": "~$4,100-4,200 is far above the 2,800 floor"},
+    {"node": "gold-band-2027", "ledger": null, "relation": "context", "note": "inside the 3000-5500 band; more than 10% below the August peak"}
+   ],
+   "note": "The 10/19 break below 4,150 is feed-only; web search did not find a dated source."},
+
+  {"date": "2026-10-07", "fact": "The S&P 500 and Nasdaq closed at records on 10/6-10/7 on a tech rally (feed headline 'tech rally lifts S&P 500, Nasdaq to records'; 10/12 'US stocks hover near their latest record'; Nasdaq also closed at a record 9/21), before the AI selloff began 10/14.", "source": "Reuters / AP (via feed)", "confidence": "feed-only", "significance": 3,
+   "bears_on": [
+    {"node": "market-regime-q3", "ledger": null, "relation": "context", "note": "records in early October vs the capped-grind call"},
+    {"node": "tech-tailwind", "ledger": null, "relation": "context", "note": "AI/high-beta bid persisted into early October"}
+   ],
+   "note": "Index levels not captured; relies on feed headlines."},
+
+  {"date": "2026-10-09", "fact": "Bessent hired Judy Shelton, Trump's former Fed board nominee (rejected by the Senate 50-47 in 2020), as a Treasury counselor focused on currency policy and China; the post needs no Senate confirmation and she has no monetary-policy vote.", "source": "Reuters / American Banker / National Mortgage News", "confidence": "verified-web", "significance": 2,
+   "bears_on": [],
+   "note": "Reported alongside concerns about her views on Fed independence and the gold standard. Bears on no node; low significance for the tree."},
+
+  {"date": "2026-10-09", "fact": "Canada lost 68,000 jobs in September (after -42,000 in August) and unemployment rose to 6.5%, against expectations of a gain of about 9,000.", "source": "Statistics Canada via CTV / Canadian Press", "confidence": "verified-web", "significance": 2,
+   "bears_on": [],
+   "note": "No Canada node exists; the Bank of Canada decision and Canadian data are a coverage gap."},
+
+  {"date": "2026-10-13", "fact": "Fed Governor Waller said higher long-term Treasury yields are 'doing a little bit of the work' of tighter policy by restraining rate-sensitive demand, and attributed the yield surge to growth and AI investment rather than inflation.", "source": "Bloomberg (via National Mortgage News / American Banker)", "confidence": "verified-web", "significance": 3,
+   "bears_on": [
+    {"node": "fomc-oct", "ledger": null, "relation": "contradicts", "note": "yields substituting for hikes lowers the need for an October move"},
+    {"node": "real-rate-band", "ledger": 100, "relation": "context", "note": "Fed officials treating high real yields as a feature, not a problem"},
+    {"node": "dec-dots-2027", "ledger": null, "relation": "context", "note": "Logan said the same on term premia"}
+   ],
+   "note": "He is not signalling a pause."},
+
+  {"date": "2026-10-14", "fact": "September CPI rose 0.6% m/m and 3.7% y/y versus 3.6% expected (August 3.4%); core CPI rose 0.3% m/m and 2.6% y/y versus 2.5% expected (August 2.4%); gasoline jumped 9.1% in the month and energy is up 20.4% y/y; feed also says inflation outran wages for a third straight month.", "source": "BLS (via investingLive, FT Portfolios, Reuters)", "confidence": "verified-web", "significance": 5,
+   "bears_on": [
+    {"node": "cpi-reaccel", "ledger": null, "relation": "supports", "note": "inflation re-accelerated on energy"},
+    {"node": "cpi-oct-print", "ledger": null, "relation": "context", "note": "next print 11/12; energy base effects"},
+    {"node": "core-pce-band", "ledger": null, "relation": "supports", "note": "core inflation 2.6% CPI sits inside the PCE band"},
+    {"node": "wage-band", "ledger": null, "relation": "context", "note": "real earnings negative; wage level itself not captured"},
+    {"node": "fomc-oct", "ledger": null, "relation": "supports", "note": "raises the December hike case"}
+   ],
+   "note": "Core inflation at 2.6% y/y is far below the headline: the Fed's hawkishness is about energy second-round effects."},
+
+  {"date": "2026-10-14", "fact": "AI and chip stocks sold off after the hot CPI: the S&P 500 and Nasdaq had their biggest one-day drops since July on 10/14; on 10/15 Nvidia fell 3.3%, Micron 5% and AMD 6.4%, the chip index was on track for a more-than-14% slide in seven sessions, and the Nasdaq fell a further 2.1% to a one-month low on 10/16; TSMC reported record Q3 profit (+68.7% y/y) and guided Q4 revenue of $52.3-54.3bn but its shares still fell.", "source": "Reuters / Kitco / Sharecast / TSMC release", "confidence": "verified-web", "significance": 4,
+   "bears_on": [
+    {"node": "highbeta-derate", "ledger": null, "relation": "supports", "note": "the derate finally arrived, about a month after the node's 9/15 date (STATE: #27 scored MISS)"},
+    {"node": "semis-correction", "ledger": null, "relation": "context", "note": "SMH 521, -17.4% since 10/2 per STATE"},
+    {"node": "ai-capex-funding", "ledger": null, "relation": "context", "note": "rate-hike fears hit heavily indebted AI builders first"},
+    {"node": "nvda-dc-band", "ledger": 88, "relation": "context", "note": "demand print unaffected; stock reaction is financing/rates"},
+    {"node": "korea-exports", "ledger": 97, "relation": "context", "note": "semis demand intact per TSMC; row #97 unaffected"}
+   ],
+   "note": "One search summary reported a 'cautious TSMC 2027 outlook'; a second search found only a beat-and-raise with no 2027 caution, so that is not recorded. The macro call and the asset map can be right and wrong on timing (STATE 10/22)."},
+
+  {"date": "2026-10-14", "fact": "CoreWeave's credit stress hit: shares fell about 13-15% on 10/14, its 5-year CDS reached a record of about 1,195bp on 10/15, yields on its 9.625% 2032 notes rose to 15.06% from 13.42% at the start of October, Oracle fell about 10% on 10/14 and Nebius and Iren each fell more than 10%; CoreWeave fell again on 10/16 (6.9% to 11%, reports differ) and its CEO called the reaction irrational, saying backlog more than covers debt.", "source": "Barron's / roic.ai / KuCoin News / investingLive", "confidence": "verified-web", "significance": 4,
+   "bears_on": [
+    {"node": "capex-debt-funded", "ledger": null, "relation": "supports", "note": "AI capex increasingly external-funded and the debt market is now pricing it"},
+    {"node": "capex-cashflow-funded", "ledger": null, "relation": "contradicts", "note": "sibling branch"},
+    {"node": "ai-revenue-gap", "ledger": null, "relation": "context", "note": "financing stress is the revenue-gap channel"},
+    {"node": "hy-spread-band", "ledger": 106, "relation": "context", "note": "CoreWeave bonds trade like distressed debt but broad HY OAS 3.27 vs 5.00 limit, STATE 10/22"},
+    {"node": "ig-spread-band", "ledger": 86, "relation": "context", "note": "IG OAS 0.88 vs 1.60 limit; contagion not visible in the index"}
+   ],
+   "note": "Daily moves differ by source (13% vs 15% on 10/14; 6.9% vs 11.2% on 10/16)."},
+
+  {"date": "2026-10-16", "fact": "Warsh, speaking at the IMF meetings in Bangkok after the hot CPI, declined to preview the 10/28 meeting and said inflation had not changed his assessment, taking October hike odds from 28% to below 15%; markets price about 85% for a hold in October and about 77% for a hike by December per Trading Economics, and Goldman expects a pause in October with a final hike in December; the dollar had retreated from an 18-month high on 10/15 as officials tempered hike bets.", "source": "investingLive / Trading Economics / Reuters (via feed)", "confidence": "verified-web", "significance": 4,
+   "bears_on": [
+    {"node": "fomc-oct", "ledger": null, "relation": "supports", "note": "second hike by 12/9 priced near 77%+; the October move itself is not"},
+    {"node": "fomc-dec-2026", "ledger": null, "relation": "context", "note": "December meeting carries the SEP and the hike"},
+    {"node": "eur-level", "ledger": null, "relation": "context", "note": "dollar at an 18-month high / euro at multi-month lows; EURUSD level not captured"}
+   ],
+   "note": "Warsh speech date is inferred from the 10/16 'Friday' references (10-year 5.12%); pricing moves daily."},
+
+  {"date": "2026-10-16", "fact": "Foreign investors pulled a net $8.21bn from bonds in India, Indonesia, Malaysia, South Korea and Thailand in September, the largest monthly outflow since March 2020, plus about $23.5bn from regional equities (South Korea bonds about $6.3bn), as higher US yields and renewed Fed tightening hit emerging-market debt.", "source": "Reuters (via The Star, 9 outlets)", "confidence": "verified-web", "significance": 3,
+   "bears_on": [
+    {"node": "em-anchor", "ledger": null, "relation": "supports", "note": "external-funding squeeze is the node's thesis"},
+    {"node": "jk-anchor", "ledger": null, "relation": "context", "note": "South Korea was the largest single seller of bonds"}
+   ],
+   "note": "One search summary mislabelled this as a 2023 story; the article's own details (24.5-year high of 5.36% in the 10-year, Fed 'raised last month') fit 2026."},
+
+  {"date": "2026-10-20", "fact": "AGNC's tangible book value per share fell 16.9% in Q3 to $7.13 from $8.58, with an economic return on equity of -12.7% and leverage up to 7.9x, as mortgage bonds lagged Treasuries when rates rose.", "source": "AGNC 8-K / Finviz", "confidence": "verified-web", "significance": 3,
+   "bears_on": [
+    {"node": "rc-anchor", "ledger": null, "relation": "supports", "note": "rate shock now visible in levered rate-sensitive balance sheets"},
+    {"node": "pmms-above-65", "ledger": null, "relation": "context", "note": "mortgage spread widening alongside high mortgage rates"},
+    {"node": "bank-nim-compression", "ledger": null, "relation": "context", "note": "bank earnings next test"}
+   ],
+   "note": ""},
+
+  {"date": "2026-10-20", "fact": "The IEA chief said the agency is ready to act if a further release of oil stocks is needed (Reuters, 10/20); earlier in 2026 members released about 290 million barrels from the March 11 decision, leaving more than 1 billion barrels in reserves per an August report.", "source": "Reuters (via feed); roic.ai (August)", "confidence": "feed-only", "significance": 2,
+   "bears_on": [
+    {"node": "brent-band-q4", "ledger": 83, "relation": "context", "note": "a release cap could trim the $125 ceiling risk; Brent settled 113.17 on 10/22"},
+    {"node": "spr-refill", "ledger": null, "relation": "context", "note": "emergency stock drawdown precedent"}
+   ],
+   "note": "No web source found dated 10/20; the 10/20 statement rests on four feed items. The 290 million barrel figure is an August report, not the 10/20 item."},
+
+  {"date": "2026-10-21", "fact": "A Brookings paper reported on 10/21 lays out a broad plan to shrink the Fed's balance sheet; it is a think-tank proposal, not Fed action.", "source": "Reuters (via feed)", "confidence": "plan-only", "significance": 2,
+   "bears_on": [
+    {"node": "qt-taper-marker", "ledger": null, "relation": "context", "note": "debate about balance-sheet size, no policy change"},
+    {"node": "qt-end-marker", "ledger": null, "relation": "context", "note": "same"},
+    {"node": "qt-balance-sheet-2029", "ledger": null, "relation": "context", "note": "same"}
+   ],
+   "note": "Web search found only a March 2026 Brookings paper by Duffie on the same topic; I could not find the 10/21 item itself. PLAN, not ACTION (lesson 72)."},
+
+  {"date": "2026-10-22", "fact": "AI stocks tumbled and dragged global markets down while Brent rose 4% to settle at $113.17 and WTI to about $99.47: the Nasdaq fell nearly 3% per CNBC (S&P 500 -0.8% per AP, -1.4% per CNBC), Nvidia fell 4.3%, CoreWeave 9.6% on debt worries, GE Vernova and Bloom Energy more than 11%, and South Korea's Kospi 3.5%.", "source": "AP / CNBC / Global News", "confidence": "verified-web", "significance": 5,
+   "bears_on": [
+    {"node": "highbeta-derate", "ledger": null, "relation": "supports", "note": "derate extending; timing late vs the node window"},
+    {"node": "brent-band-q4", "ledger": 83, "relation": "supports", "note": "Brent 113 is ~12 under the $125 ceiling; the ceiling leg is the live one"},
+    {"node": "ai-power-contracts", "ledger": null, "relation": "context", "note": "power-for-AI names sold off sharply"},
+    {"node": "capex-debt-funded", "ledger": null, "relation": "supports", "note": "financing worries are the stated driver"}
+   ],
+   "note": "S&P and Nasdaq declines differ by outlet (timing within the day). STATE.md also cites a Meta non-voting-share funding plan and Nvidia CEO capital-scarcity remarks as drivers: I found no source for a non-voting-share plan; the only Meta financing reports found are June (FT: weighing a stock offering, Meta called it speculation, shares -5.5%). Not recorded as an event."},
+
+  {"date": "2026-09-10", "fact": "The ECB raised its deposit rate to 2.50% on 9/10, its second hike of 2026; on 9/28 Lagarde urged a 'measured' response and said the energy shock is too large to look through, eurozone inflation was 3.2% in August, and futures put the chance of another hike on 10/29 at roughly 28-29% after the September decision (a 9/24 snapshot said 60%).", "source": "Admiral Markets / FXStreet / Cryptobriefing", "confidence": "verified-web", "significance": 4,
+   "bears_on": [
+    {"node": "eu-anchor", "ledger": null, "relation": "supports", "note": "fiscal-and-energy squeeze with a hiking ECB"},
+    {"node": "ecb-hold", "ledger": null, "relation": "contradicts", "note": "node asks for a December hold at 0.55 while the ECB is in an active hiking cycle"}
+   ],
+   "note": "The 2.50% level and the hike count come from a broker preview and one FXStreet item; I could not read the ECB release itself. Another search page listed a stale 2.00% rate (2025). No node tracks the 10/29 meeting; proposed as new node ev-ecb-oct29-hike."}
+ ],
+
+ "new_nodes": [
+  {"id": "ev-fomc-oct28-hike", "parent": "fomc-oct", "label": "The FOMC raises the target range at its 10/27-28 meeting", "p": 0.15, "date": "2026-10-28", "lane": "fed-macro", "row_class": "direction", "horizon": "6 days",
+   "basis": "Outside view = market pricing: CME FedWatch about 17% on 10/7-10/8, and hike odds fell from 28% to under 15% after Warsh's 10/16 remarks (Trading Economics: about 85% hold); no Fed meeting since 1990 has hiked against 85% futures pricing seven days out without prior guidance.",
+   "rationale": "Settles from the FOMC statement on 10/28. September CPI was hot (core 0.3% m/m versus 0.2% expected) and Logan wants 50bp or more, but payrolls were only 29k, Waller says higher long yields are already doing part of the tightening, and Warsh deliberately gave no guidance. SOFT parts: the Warsh no-signal reading and the 15% market figure are 6 days old; an AI-equity rout or energy spike could move odds either way before the meeting.",
+   "market": "Fed funds futures / CME FedWatch probability of a 25bp hike on 10/28 (about 15%).",
+   "evidence": [
+    {"fact": "Warsh at the IMF meetings declined to preview 10/28 and said hot CPI had not changed his assessment; October hike odds fell from 28% to below 15%.", "reported": "2026-10-16"},
+    {"fact": "September FOMC minutes: most officials see another hike as likely appropriate by year-end without committing to a date; CME October hike odds about 17%.", "reported": "2026-10-07"},
+    {"fact": "Sept payrolls +29k, unemployment 4.2%; Sept CPI 3.7% y/y, core 2.6%.", "reported": "2026-10-14"}
+   ]},
+  {"id": "ev-ecb-oct29-hike", "parent": "eu-anchor", "label": "The ECB raises its deposit rate at the 10/29 Governing Council meeting", "p": 0.3, "date": "2026-10-29", "lane": "europe", "row_class": "direction", "horizon": "7 days",
+   "basis": "Outside view = futures pricing after the 9/10 hike: roughly 28-29% for another 25bp on 10/29 (a 9/24 snapshot said 60%), with Standard Chartered on 10/2 seeing limited October hike odds and Lagarde on 9/28 urging a measured pace.",
+   "rationale": "Settles from the ECB press release on 10/29 (deposit rate 2.50% after the 9/10 hike). Energy-driven inflation (3.2% in August, September flash forecast 3.6%) and a hiking Fed argue for another move, while Lagarde's 'measured' framing, French bond stress and weakening euro-area growth argue for a pause. SOFT parts: the 28-29% pricing is 3+ weeks old and I found no October refresh; the 2.50% policy rate comes from a broker preview and one FXStreet item, not the ECB.",
+   "market": "Euro OIS / ESTR futures probability of a 25bp hike on 10/29.",
+   "evidence": [
+    {"fact": "ECB deposit rate 2.50% after a 9/10 hike (second of 2026); next decision 10/29.", "reported": "2026-09-24"},
+    {"fact": "Lagarde urged a measured response and said the energy shock is too large to look through; no sign yet of energy costs feeding wages.", "reported": "2026-09-28"},
+    {"fact": "10-year OAT yield near 5%, highest since 2002, as France presents its 2027 budget.", "reported": "2026-10-01"}
+   ]},
+  {"id": "ev-busan-truce-rolled", "parent": "cn-anchor", "label": "The US-China Busan trade truce is rolled again or replaced by a broader deal on or before 2027-01-10 (no lapse)", "p": 0.66, "date": "2027-01-10", "lane": "china-macro", "row_class": "marker", "horizon": "11 weeks",
+   "basis": "Outside view: every earlier deadline in this truce has been rolled or replaced rather than allowed to lapse (the 2025 90-day extension, the Busan one-year truce, and the 9/23/2026 two-month extension from 11/10 to 1/10).",
+   "rationale": "Settles from a Treasury, USTR or MOFCOM announcement on or before 1/10/2027 that extends the truce or sets a replacement package, with no gap in which the suspended measures resume. SOFT parts: China had not confirmed the 1/10 date in early reports; rare-earth deliveries and $17bn of other farm purchases are lagging; midterm politics on 11/3 and the November export-control dispute could cause a lapse. The 3-for-3 record is a short history.",
+   "market": "Tariff-sensitive FX/commodity pricing is not the settlement; settle from official announcements.",
+   "evidence": [
+    {"fact": "Bessent: the Busan truce extended from 11/10/2026 to 1/10/2027; a larger package by January is possible or the deal can simply roll; China had not confirmed.", "reported": "2026-09-23"},
+    {"fact": "US officials said rare-earth deliveries by China are lagging; China is meeting its soybean purchases but lagging on $17bn of other farm goods.", "reported": "2026-09-24"}
+   ]},
+  {"id": "ev-si-statute-none", "parent": "rl-anchor", "label": "No federal statute defining 'Super Intelligence' or replacing 'artificial intelligence' in federal law is enacted by 12/31/2026", "p": 0.94, "date": "2026-12-31", "lane": "regulation-legal", "row_class": "invariant", "horizon": "10 weeks",
+   "basis": "Legislative calendar and arithmetic: EO 14434 (9/29) gives the president's science adviser 60 days (to about 11/28) only to PROPOSE statutory language; enactment needs both chambers and a signature in a lame-duck window after the 11/3 midterms, with the government-funding continuing resolution expiring 12/11 consuming floor time, and the EO itself says SI initially means the existing statutory definition of AI.",
+   "rationale": "Settles from congress.gov: no enacted public law with such a definition by 12/31/2026. The mechanism is calendar arithmetic, not a forecast of anyone's choice. SOFT parts: a short definitional rider on a must-pass year-end vehicle (a CR or omnibus) is the one way this fails, and I did not search bill text; enactment of any FY27 NDAA is not expected before 3/2027 per ndaa-fy27.",
+   "market": "Congress.gov public-law listings for the 119th Congress.",
+   "evidence": [
+    {"fact": "EO 14434 'Inaugurating the Era of Super Intelligence': agencies to use 'SI' in official communications; science adviser has 60 days to propose legislative language for a federal definition.", "reported": "2026-09-29"},
+    {"fact": "Trump announced a 'Super Intelligence Force' to coordinate federal AI policy.", "reported": "2026-10-04"}
+   ]},
+  {"id": "ev-hyperscaler-ext-financing", "parent": "capex-debt-funded", "label": "At least one of Alphabet, Amazon, Meta, Microsoft or Oracle announces or prices a new external financing of at least $10bn (bond, convertible or equity) between 10/23 and 12/31", "p": 0.65, "date": "2026-12-31", "lane": "markets-ai", "row_class": "marker", "horizon": "10 weeks",
+   "basis": "Outside view: 2026 has already produced reported large raises to fund AI capex, namely a reported Alphabet equity plan of about $85bn, a $27bn Meta bond tied to a Louisiana data center joint venture with Blue Owl, and Meta weighing a stock offering (June), against guided 2026 capex of $125-145bn at Meta and $190bn at Microsoft.",
+   "rationale": "Settles from company press releases or SEC prospectus filings (424B) dated 10/23-12/31. Issuance has been repeated this year, but the near-term window is uncertain: CoreWeave's 2032 notes yield 15% and Oracle fell about 10% on 10/14, so the bond window may narrow for lower-rated names while investment-grade names can still issue. SOFT parts: the $10bn threshold and the five-name list are mine; whether Oracle counts as 'hyperscaler' is a judgment; I did not verify Q3 earnings dates or guidance, which could come in this window and be the trigger.",
+   "market": "Primary-market issuance calendars (Bloomberg/LSEG) and SEC EDGAR.",
+   "evidence": [
+    {"fact": "FT-reported plan: Meta weighing a stock offering of tens of billions to fund AI capex (Meta called it speculative); the report followed Alphabet's plan to raise about $85bn in equity.", "reported": "2026-06-05"},
+    {"fact": "CoreWeave 2032 notes yield 15.06% (from 13.42% on 10/1), 5y CDS record about 1,195bp; Oracle -10% on 10/14.", "reported": "2026-10-15"}
+   ]}
+ ],
+
+ "suggest_reprice": [
+  {"node": "fomc-oct", "ledger": null, "from": 0.60, "to": 0.72, "reason": "10/16: Trading Economics prices about 85% hold on 10/28 but about 77% hike by December and Goldman expects a December hike, so 'second hike by the 12/8-9 meeting' is nearer 0.75; trimmed for the 29k payroll print and Waller/Logan saying long yields do part of the work. Label also mixes the 10/28 date with a by-December definition: fix the label before scoring."},
+  {"node": "france-deficit", "ledger": null, "from": 0.78, "to": 0.90, "reason": "10/1-10/8: the French government's own 2026 deficit forecast is 5.4% of GDP (5.1% in 2025), 90bp above the 4.5% line; first INSEE print due late March 2027 normally lands within a few tenths of the plan."},
+  {"node": null, "ledger": 96, "from": 0.78, "to": 0.90, "reason": "Same as france-deficit: government expects 5.4% for 2026 vs the 4.5% threshold (TD Economics, early October)."},
+  {"node": "tens-above-4", "ledger": null, "from": 0.80, "to": 0.90, "reason": "10/22: 10y about 4.95% (STATE.md) leaves 95bp of cushion over 4.00 for 12/31; at roughly 8bp/day over 50 sessions that is a bit under 2 standard deviations (assumed vol, re-derive from the tape before applying)."},
+  {"node": null, "ledger": 103, "from": 0.80, "to": 0.90, "reason": "Same row as tens-above-4 (DGS10 above 4.00 on 12/31): 95bp cushion at 10/22."},
+  {"node": "capex-debt-funded", "ledger": null, "from": 0.45, "to": 0.55, "reason": "10/14-10/22: CoreWeave 5y CDS record about 1,195bp and notes at 15%, Oracle -10% on 10/14, and Alphabet's reported ~$85bn equity plan and Meta's $27bn bond already show external financing at scale; move sibling capex-cashflow-funded 0.55 -> 0.45 so the fork sums to 1. Branch definition ('material shift') may already be met."},
+  {"node": "brent-band-q4", "ledger": null, "from": 0.35, "to": 0.25, "reason": "10/22: Brent settled $113.17, about $12 under the $125 ceiling on a ~4%/day tape; node (0.35) and row #83 (0.25) state the same claim and disagree (lesson 7)."}
+ ],
+
+ "gaps": "Biggest unmapped storylines: (1) France's budget fight and government stability after 10/13 (undated reports of a Lecornu resignation offer, budget vote, the OAT-Bund spread path) have no node beyond france-deficit and italy-spread, and I could not date or confirm the political reports; (2) emerging-market and Asia funding stress (rupee near 96, record Asian bond outflows, RBI no-bid T-bill auction, Kospi -3.5%) and non-US central banks (RBA, BoC, BoE, BoJ, which are hiking or debating hikes) have only anchor nodes. I could not verify STATE.md's cited Meta non-voting-share AI-funding plan or Nvidia CEO capital-scarcity remarks (the only Meta financing reports I found are from June), and several feed items (IEA 10/20, Brookings 10/21, gold below $4,150 on 10/19, the 10/6-10/7 records) rest on feed headlines only. The candidate list is dominated by jobs and yield syndication, so Q3 earnings season, bank results, the Treasury refunding (11/4) and US-China summit follow-through are under-represented."
+}

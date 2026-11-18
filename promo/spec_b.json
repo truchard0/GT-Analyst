@@ -1,0 +1,319 @@
+[
+ {
+  "node_id": "af-imf-review-conditionality",
+  "skip": "Scaffolding: an institutional-design invariant with no dated event, country or numeric threshold; nothing observable could make it false in the horizon without inventing a specific review, so a stranger could not resolve it from a named series."
+ },
+ {
+  "node_id": "auto-chip-inventory",
+  "skip": "Unbounded scope (any automaker worldwide, any headline, 'attributed to') with no named source, and the premise looks wrong: 2025-26 reporting describes an ongoing Nexperia and DRAM shortage hitting automakers, contradicting the node's 'mature-node surplus' basis; I cannot state an honest outside-view count and the #30 ambiguity (what counts as a halt) is exactly the failure this row would repeat."
+ },
+ {
+  "node_id": "brazil-selic",
+  "skip": null,
+  "prediction": "The Selic target rate set by Copom and in force on 2027-06-30 is lower than the Selic target rate in force on 2026-10-03.",
+  "falsifier": "Banco Central do Brasil series 432 shows the target in force on 2027-06-30 equal to or higher than the target in force on 2026-10-03 (horizon 2027-06-30); ties resolve false.",
+  "resolution_source": {
+   "publisher": "Banco Central do Brasil",
+   "series": "Meta Selic definida pelo Copom (SGS series 432)",
+   "convention": "Compare the target rate in force on the two dates as published by BCB; strictly lower is required, equal is a miss. Intermediate Copom moves do not matter."
+  },
+  "base_rate": 0.45,
+  "base_class": "Copom-era Selic path Oct 2016-Jun 2025 (BCB SGS 432): 5 monotone cycles, 3 easing (2016-18, 2019-20, 2023-24) and 2 tightening (2021-22, 2024-25) plus long holds; strictly-lower after 9 months is one of three outcomes (lower/equal/higher), judged 0.45 from that mix.",
+  "direction": "down",
+  "sectors": [
+   "fx"
+  ],
+  "tickers": [],
+  "diverge": "Gap to the reference is 0.10; no dated datapoint available: the BCB API was unreachable while drafting, so the current Selic level and easing/tightening phase were not verified; p carries only the node R13 cap logic."
+ },
+ {
+  "node_id": "cn-fiscal-deficit",
+  "skip": "No allowed sector fits: China's deficit-to-GDP target is fiscal, and sector_map has no fiscal key, so an empty sectors list cannot be promoted without inventing one.",
+  "prediction": "The deficit-to-GDP ratio target stated in China's 2027 Government Work Report, delivered at the opening of the 2027 NPC session, is 3.5% or higher.",
+  "falsifier": "The report states a deficit ratio below 3.5% (for example 'around 3%'); resolved on the report delivered at the NPC session expected to open on 2027-03-05 (horizon 2027-03-05); resolve N/A if no report is delivered by 2027-03-31.",
+  "resolution_source": {
+   "publisher": "State Council of China / NPC (Government Work Report, English text via Xinhua)",
+   "series": "Headline 'deficit-to-GDP ratio' target in the Government Work Report",
+   "convention": "Use the single headline ratio in the delivered report ('around 4%' counts as 4.0). Not the draft budget's total deficit including special bonds, and not later revisions."
+  },
+  "base_rate": 0.38,
+  "base_class": "China Government Work Report deficit-ratio targets 2019-2026: at or above 3.5% in 3 of 8 years (2020 3.6, 2025 4.0, 2026 4.0; other years 2.8-3.2).",
+  "direction": "up",
+  "sectors": [],
+  "tickers": [],
+  "diverge": "2026-03-05: the 2026 Government Work Report kept the ratio at around 4% (5.89tn yuan) for a second straight year, so falling below 3.5% in 2027 would require reversing two consecutive 4.0% targets."
+ },
+ {
+  "node_id": "cn-yuan-band",
+  "skip": "Premise already broken: FRED DEXCHUS (Fed H.10) was 6.7110 on 2026-09-25, below the 6.80 floor (the node assumed spot 7.15), and the daily fix tracks spot within a percent or two, so the 'every fixing' claim is near-certainly false at the first fixing; the recorded no-view 0.98 is invalid (re-run at spot 6.72 gives 0.00) and the rule forcing base_rate=odds would plant a known-wrong reference."
+ },
+ {
+  "node_id": "colorado-tier",
+  "skip": "Not a forecast: the 2027 operating condition is set by the August 24-Month Study, and Reclamation's 2026-08-21 study already states a shortage condition governs Lake Mead in calendar 2027 under the 2027-2028 operating guidelines, so the answer was public before the row was logged and the 2007 guidelines the node cites have expired."
+ },
+ {
+  "node_id": "cre-office-stress",
+  "skip": null,
+  "prediction": "Trepp's monthly CMBS office delinquency rate is above 10.00% in every monthly report covering reference months September 2026 through May 2027.",
+  "falsifier": "Any Trepp monthly CMBS Delinquency Report published between 2026-10-05 and 2027-06-30 shows an office delinquency rate of 10.00% or lower (horizon 2027-06-30); the June 2027 report, released after that date, is not counted.",
+  "resolution_source": {
+   "publisher": "Trepp",
+   "series": "CMBS Delinquency Report, office property-type delinquency rate",
+   "convention": "First-published figure in each month's report; a later restatement does not count. Nine reports (Sep 2026-May 2027); Trepp releases land about the 22nd-28th of the following month."
+  },
+  "base_rate": 0.85,
+  "base_class": "Trepp office delinquency rate Jan-Aug 2026: 8 of 8 monthly prints above 10% (range 11.20% to 12.34%, Aug 2026 = 12.00%); largest one-month fall was 1.14pp (Jan to Feb 2026), so failing needs a cumulative fall of more than 2.0pp inside 9 reports.",
+  "direction": "up",
+  "sectors": [
+   "financials"
+  ],
+  "tickers": []
+ },
+ {
+  "node_id": "crop-insurance",
+  "skip": "I cannot state an honest outside-view count without inventing figures (only crop year 2022 at a record $19.1bn is verified), and the basis is wrong that this is retrospective arithmetic: the 2026 crop-year indemnity total is still a harvest and price outcome in progress, with no recorded threshold relationship to history."
+ },
+ {
+  "node_id": "curve-positive",
+  "skip": null,
+  "prediction": "The FRED series T10Y2Y (10-year minus 2-year Treasury constant maturity yield) is greater than 0.00 percentage points on every business day with a published value from 2026-10-05 through 2026-12-31.",
+  "falsifier": "Any T10Y2Y value of 0.00 or lower on a business day between 2026-10-05 and 2026-12-31 (horizon 2026-12-31).",
+  "resolution_source": {
+   "publisher": "Federal Reserve Board H.15 via FRED",
+   "series": "T10Y2Y (10-Year Treasury Constant Maturity Minus 2-Year Treasury Constant Maturity)",
+   "convention": "Every published daily value counts; one non-positive value falsifies; holidays with no value are skipped; exactly 0.00 is not positive."
+  },
+  "base_rate": 0.9,
+  "base_class": "cycle_odds no-view band, node command 'python tools/cycle_odds.py --current 180 --days 100 --prior-median 720' (ends_lo=ends_hi=0.10 so survival 0.90; spell age and median are ASSUMED in the node); FRED T10Y2Y read +0.45 on 2026-10-02.",
+  "direction": "neutral",
+  "sectors": [
+   "financials"
+  ],
+  "tickers": []
+ },
+ {
+  "node_id": "dec-dots-2027",
+  "skip": "Not independent: the node itself says this is the SEP expression of the STATE.md 'second hike by 12/9' 0.60 view (lesson 7), so scoring both double-counts one thesis; I also have no verified September 2026 SEP datapoint to justify the gap from the hiking-year outside view (5 of 6 hiking-year Decembers had next-year median at least 25bp above current-year median)."
+ },
+ {
+  "node_id": "defense-backlog",
+  "skip": null,
+  "prediction": "The sum of year-end 2026 total backlog reported by LMT, RTX, NOC, GD and LHX in their FY2026 earnings releases exceeds the largest sum of year-end total backlog reported by the same five companies for any fiscal year from 2019 through 2025.",
+  "falsifier": "The FY2026 combined year-end backlog of those five companies, as reported in releases published by 2027-02-28, is at or below the largest combined year-end figure for FY2019-FY2025 (horizon 2027-02-28); resolve N/A if any of the five has not published FY2026 results by that date.",
+  "resolution_source": {
+   "publisher": "Company FY2026 earnings releases / 10-K (Lockheed Martin, RTX, Northrop Grumman, General Dynamics, L3Harris)",
+   "series": "Reported total backlog (funded plus unfunded) at fiscal year-end",
+   "convention": "As-reported total backlog; use restated comparatives in the FY2026 releases if a company restated. RTX includes commercial aerospace backlog. Boeing is not in the set; the five are named here, not 'top five'."
+  },
+  "base_rate": 0.8,
+  "base_class": "Combined year-end total backlog of LMT, RTX, NOC, GD, LHX rose year over year in each of FY2022, FY2023, FY2024 (3 of 3, company annual reports); Laplace estimate (3+1)/(3+2)=0.80.",
+  "direction": "up",
+  "sectors": [
+   "defense"
+  ],
+  "tickers": [
+   "LMT",
+   "RTX",
+   "NOC",
+   "GD",
+   "LHX"
+  ]
+ },
+ {
+  "node_id": "diesel-crack-wide",
+  "skip": "The crack benchmark is unstated (ULSD minus Brent versus WTI differ by the Brent-WTI spread) and the node records no current level, so I cannot tell which convention the $25 was set against; choosing one would invent the claim, and a weekly-close start date is also missing."
+ },
+ {
+  "node_id": "eur-level",
+  "skip": "Recorded no-view 0.83 rests on an ASSUMED spot of 1.08; FRED DEXUSEU was 1.1400 on 2026-09-25 (1.1373 on 09-24), only 5.3% below the 1.20 cap. Re-run: python tools/range_odds.py --spot 1.14 --lo 0.95 --hi 1.20 --days 192 --vol 0.45 gives 0.61 versus p=0.84, so the base_rate=odds rule would plant a known-wrong 0.83 reference; re-run the no-view on real spot and re-price before promoting."
+ },
+ {
+  "node_id": "france-deficit",
+  "skip": null,
+  "prediction": "INSEE's first published estimate of France's 2026 general-government deficit (due late March 2027) is greater than 4.5% of GDP.",
+  "falsifier": "INSEE's first published estimate of the 2026 deficit is 4.5% of GDP or lower (horizon 2027-03-31); a first estimate published after 2027-03-31 still resolves it if published by 2027-04-30, else resolve N/A.",
+  "resolution_source": {
+   "publisher": "INSEE (Comptes nationaux des administrations publiques, annual first results)",
+   "series": "General-government net lending/borrowing, % of GDP, first published estimate for 2026",
+   "convention": "First published INSEE figure, to one decimal; 4.6 or more is true, 4.5 is false. Not the later Eurostat notification and not later revisions."
+  },
+  "base_rate": 0.46,
+  "base_class": "INSEE general-government deficit 2013-2025: above 4.5% of GDP in 6 of 13 years (2020-2025; 2013-2019 all between 2.3% and 4.1%).",
+  "direction": "up",
+  "sectors": [
+   "financials"
+  ],
+  "tickers": [],
+  "diverge": "2025 outturn was 5.1% of GDP after 5.8% in 2024, and the French government's September 2026 projection for 2026 is 5.4%, i.e. 0.9pp above the threshold."
+ },
+ {
+  "node_id": "ge-kenya-2027",
+  "skip": "Scaffolding: a constitutionally fixed election date (second Tuesday of August, 2027-08-10) at p=0.9 is a calendar item whose only failure path is a constitutional amendment or postponement; it measures nothing about the engine and the node's 0.9 looks low against that structure."
+ },
+ {
+  "node_id": "in-roll-revision-cycle",
+  "skip": "Unscoreable and scaffolding: 'continues on its published cycle' names no stage, date, count or threshold, and the node itself carves out discretionary special revisions, so a stranger could not say what observation falsifies it."
+ },
+ {
+  "node_id": "jolts-openings",
+  "skip": "No allowed sector fits: JOLTS job openings is a labor series, and sector_map has no labor key, so an empty sectors list cannot be promoted without inventing one.",
+  "prediction": "Every JOLTS release published by BLS between 2026-10-05 and 2027-06-30 reports total nonfarm job openings (seasonally adjusted level) below 8,000 thousand for its reference month.",
+  "falsifier": "Any first-published JOLTS total nonfarm job openings level of 8,000 thousand or higher in a release dated between 2026-10-05 and 2027-06-30 (horizon 2027-06-30); later revisions of earlier months do not count.",
+  "resolution_source": {
+   "publisher": "U.S. Bureau of Labor Statistics",
+   "series": "JOLTS total nonfarm job openings, seasonally adjusted level (FRED JTSJOL)",
+   "convention": "First print of the reference month in each release, not the revised value on FRED later. A skipped or delayed release is not counted."
+  },
+  "base_rate": 0.76,
+  "base_class": "Node no_view command: python tools/range_odds.py --spot 7.2 --hi 8.0 --days 9 --vol 3.5 -> 0.76 (inputs ASSUMED in the node; re-run at the FRED JTSJOL Aug 2026 print of 7,079 gives 0.82; the series has not exceeded 7,585 since Jan 2025).",
+  "direction": "down",
+  "sectors": [],
+  "tickers": []
+ },
+ {
+  "node_id": "korea-exports",
+  "skip": null,
+  "prediction": "At least 5 of the 8 monthly MOTIR releases covering reference months October 2026 through May 2027 report semiconductor exports in USD above the same month a year earlier.",
+  "falsifier": "Four or fewer of those 8 monthly releases show positive year-on-year growth in semiconductor exports (horizon 2027-06-30); June 2027 data, released after that date, is excluded; resolve N/A if a release is missing.",
+  "resolution_source": {
+   "publisher": "Korea Ministry of Trade, Industry and Resources (MOTIR, formerly MOTIE)",
+   "series": "Monthly exports by major item: semiconductors, USD, year on year",
+   "convention": "First-published monthly release (full-month figure, not the 10- or 20-day partial prints); month-on-month level does not matter, only sign of y/y growth."
+  },
+  "base_rate": 0.85,
+  "base_class": "Small-n reference class: MOTIR semiconductor exports were up year on year in every 2026 month I verified (Mar +151.4%, Jun +199.5%, Aug +209%, 3 of 3) with 3 straight months above $40bn; memory up-cycles run several quarters; judged 0.85 with wide uncertainty.",
+  "direction": "up",
+  "sectors": [
+   "semis",
+   "memory",
+   "chips"
+  ],
+  "tickers": [],
+  "diverge": "MOTIR: Aug 2026 semiconductor exports were $46.65bn (+209% y/y) and Jun 2026 $44.82bn (+199.5%); a majority-negative y/y run requires monthly exports to fall below year-earlier levels that already include the Mar 2026 $32.83bn print, i.e. a collapse of 30%+ from the Aug level."
+ },
+ {
+  "node_id": "natgas-storage",
+  "skip": null,
+  "prediction": "EIA's Weekly Natural Gas Storage Report for the week ending 2026-11-27 shows Lower 48 working gas in storage above its five-year average.",
+  "falsifier": "The EIA report for the week ending 2026-11-27 shows Lower 48 working gas at or below the five-year average (zero or negative difference) (horizon 2026-11-30, report released the following week).",
+  "resolution_source": {
+   "publisher": "U.S. Energy Information Administration",
+   "series": "Weekly Natural Gas Storage Report, Lower 48 working gas vs five-year average",
+   "convention": "First-published report for the week ending 2026-11-27, using EIA's own five-year-average column; later revisions do not count."
+  },
+  "base_rate": 0.5,
+  "base_class": "Structural: a five-year-average benchmark is exceeded about 1 year in 2 by construction (symmetric reference); not recounted by year here.",
+  "direction": "neutral",
+  "sectors": [
+   "energy"
+  ],
+  "tickers": [],
+  "diverge": "EIA: working gas was 3,415 Bcf on 2026-09-25, 79 Bcf above the five-year average (and above it in every September 2026 report: +4.8%, +3.7%, +95 Bcf, +79 Bcf)."
+ },
+ {
+  "node_id": "power-demand-record",
+  "skip": null,
+  "prediction": "The highest hourly Lower 48 electricity demand in the EIA Hourly Electric Grid Monitor (EIA-930) between 2027-06-01 and 2027-09-30 exceeds the highest hourly Lower 48 demand recorded on any earlier date.",
+  "falsifier": "The 2027-06-01 to 2027-09-30 maximum hourly Lower 48 demand is at or below the earlier all-time maximum (horizon 2027-09-30), using EIA-930 data as shown on 2027-10-15.",
+  "resolution_source": {
+   "publisher": "U.S. Energy Information Administration",
+   "series": "Hourly Electric Grid Monitor (EIA-930), Lower 48 demand, hourly",
+   "convention": "Hourly demand as displayed by EIA on 2027-10-15 (EIA-930 is revised); compare the 2027 summer maximum to the maximum of all earlier data including the 2026 summer."
+  },
+  "base_rate": 0.55,
+  "base_class": "EIA-930 Lower 48 hourly peak: new all-time record in 2 of the last 2 summers (July 2025 on two days, last week of July 2026 on two days, per EIA); an i.i.d. weather benchmark would give about 1 in 12 for the 12th summer of data (2016-2027), lifted by trend load growth; judged 0.55.",
+  "direction": "up",
+  "sectors": [
+   "ai_datacenters",
+   "uranium_power"
+  ],
+  "tickers": [],
+  "diverge": "2026-07-22: ERCOT set a record 91.1 GW, 6% above its 2023 peak of 85.5 GW, and Lower 48 demand exceeded prior peaks on two days in the last week of July 2026 (EIA); contracted datacenter load adds a trend that an i.i.d. weather benchmark ignores."
+ },
+ {
+  "node_id": "qt-end-marker",
+  "skip": "Stale premise: the row assumes runoff is ongoing, but FRED WALCL shows the Fed balance sheet growing (6,580,462 on 2025-11-12 to 6,747,378 on 2026-07-22), consistent with runoff having ended on 2025-12-01 and reserve-management purchases since; a new announcement of an end date would be moot, so the claim as worded is ill-posed and p=0.45 is not about anything live."
+ },
+ {
+  "node_id": "real-rate-band",
+  "skip": null,
+  "prediction": "The FRED series DFII10 (10-year Treasury inflation-indexed constant maturity yield) is above 1.50 percent on every business day with a published value from 2026-10-05 through 2027-06-30.",
+  "falsifier": "Any DFII10 value of 1.50 or lower on a business day between 2026-10-05 and 2027-06-30 (horizon 2027-06-30).",
+  "resolution_source": {
+   "publisher": "Federal Reserve Board H.15 via FRED",
+   "series": "DFII10 (Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Inflation-Indexed)",
+   "convention": "Every published daily value counts as the close; one value at or below 1.50 falsifies; holidays skipped; first-published values."
+  },
+  "base_rate": 0.96,
+  "base_class": "Node no_view command: python tools/range_odds.py --spot 2.30 --lo 1.50 --days 192 --vol 1.5 -> 0.96 (spot ASSUMED in the node; re-run at the real 2.88 gives 1.00).",
+  "direction": "neutral",
+  "sectors": [
+   "financials"
+  ],
+  "tickers": [],
+  "diverge": "NO JUSTIFICATION FOR A LOWER P FOUND: DFII10 was 2.88% on 2026-10-01 (FRED), 138bp above the 1.50 line, versus the node's assumed 2.30; this datapoint supports the higher reference, so p=0.76 looks stale and should be re-priced by the caller."
+ },
+ {
+  "node_id": "reserves-ample",
+  "skip": "Recorded no-view 0.98 rests on an ASSUMED $3.10T; FRED WRESBAL was 2,948,090 ($mn, i.e. $2.948T) on 2026-09-30 and fell from 3.014T to 2.930T the prior week; re-run python tools/range_odds.py --spot 2948 --lo 2800 --days 14 --vol 1.2 gives 0.81 (0.62 at 2%/week vol). The base_rate=odds rule would plant a known-wrong 0.98 reference; re-run the no-view on the real print and re-add."
+ },
+ {
+  "node_id": "rl-aiact-delay-marker",
+  "skip": "Stale premise: the Digital Omnibus on AI (Regulation (EU) 2026/1744) was already published in the Official Journal on 2026-07-24, deferring high-risk obligations to 2027-12-02 and 2028-08-02; 'before the next tranche applies' no longer identifies a tranche or an unpublished act, so a further delaying regulation inside the horizon is a different and much lower-probability event than p=0.42 priced."
+ },
+ {
+  "node_id": "silver-deficit-run",
+  "skip": null,
+  "prediction": "The Silver Institute's World Silver Survey 2027 reports a total silver market balance deficit (supply below demand) for calendar year 2026.",
+  "falsifier": "The World Silver Survey 2027 reports a market balance of zero or a surplus for 2026 (horizon 2027-05-31); resolve N/A if the survey is not published by 2027-05-31.",
+  "resolution_source": {
+   "publisher": "The Silver Institute (data by Metals Focus)",
+   "series": "World Silver Survey 2027, World Silver Supply and Demand table, Market Balance for 2026",
+   "convention": "First-published 2026 figure in the 2027 survey; later revisions ignored. A deficit of any size above 0 Moz counts."
+  },
+  "base_rate": 0.85,
+  "base_class": "Silver Institute World Silver Survey market balance: deficit in 5 consecutive years 2021-2025 (5 of 5; 2025 deficit 40.3 Moz in WSS 2026); Laplace (5+1)/(5+2)=0.86, rounded to 0.85.",
+  "direction": "up",
+  "sectors": [
+   "gold_pm"
+  ],
+  "tickers": []
+ },
+ {
+  "node_id": "sloos-tightening",
+  "skip": null,
+  "prediction": "The net percentage of domestic banks tightening standards for commercial and industrial loans to large and middle-market firms in the October 2026 Senior Loan Officer Opinion Survey is greater than 0.",
+  "falsifier": "The net percentage (FRED DRTSCILM) in that survey is 0.0 or negative (horizon 2026-11-02, the release date recorded in the node); resolve N/A if the survey is not released by 2026-11-30.",
+  "resolution_source": {
+   "publisher": "Federal Reserve Board",
+   "series": "Senior Loan Officer Opinion Survey, C&I standards, large and middle-market firms, net percentage tightening (FRED DRTSCILM)",
+   "convention": "Headline net percentage as first published in that survey; the small-firm series is not used; exactly 0.0 is a miss."
+  },
+  "base_rate": 0.49,
+  "base_class": "FRED DRTSCILM, 1990Q2-2026Q3: net tightening above 0 in 71 of 146 surveys (49%); latest (July 2026) read 0.0 after five positive readings of 5.3 to 18.5.",
+  "direction": "up",
+  "sectors": [
+   "financials"
+  ],
+  "tickers": []
+ },
+ {
+  "node_id": "tens-above-4",
+  "skip": null,
+  "prediction": "The FRED series DGS10 (10-year Treasury constant maturity yield) is greater than 4.00 percent on 2026-12-31.",
+  "falsifier": "The DGS10 value for 2026-12-31, the last trading day of 2026, is 4.00 or lower (horizon 2026-12-31).",
+  "resolution_source": {
+   "publisher": "Federal Reserve Board H.15 via FRED",
+   "series": "DGS10 (Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity)",
+   "convention": "Single observation for 2026-12-31, first-published value. Only that date matters, not the path."
+  },
+  "base_rate": 0.97,
+  "base_class": "Node no_view command: python tools/range_odds.py --spot 4.90 --lo 4.00 --days 1 --vol 10.5 -> 0.97 (spot ASSUMED in the node; re-run at the real 5.24 with 9%/quarter vol is still 1.00).",
+  "direction": "up",
+  "sectors": [
+   "financials"
+  ],
+  "tickers": [],
+  "diverge": "NO JUSTIFICATION FOR A LOWER P FOUND: DGS10 was 5.24% on 2026-10-01 (FRED), 124bp above the 4.00 line and above the node's assumed 4.90; this datapoint supports the higher reference, so p=0.80 looks stale and should be re-priced by the caller."
+ }
+]
