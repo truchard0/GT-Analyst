@@ -14318,7 +14318,16 @@
       "row_class": "scheduled",
       "basis": "The group's meeting calendar is published a year ahead; meetings occur essentially without exception, occasionally by video or moved by days.",
       "source": "corrections-2026-10-25",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "shifts": [
+        {
+          "target": "fed-h1-no-cuts",
+          "p_to": 0.88,
+          "date_delta": 0,
+          "note": "rates channel only: higher 2027 quotas into a forecast surplus ease headline inflation and marginally lower the odds of no cuts by June [edge copied 2026-11-17 from opec-nov29, the live node for the same 11/29 meeting]"
+        }
+      ],
+      "same_event_as": "opec-nov29"
     }
   ],
   "week_ahead": {
