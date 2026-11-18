@@ -740,3 +740,16 @@ a side.
   (`python pipeline/ingest.py`).
 - A recurring cloud schedule is possible, at most hourly.
 - The container is ephemeral: anything worth keeping must be committed and pushed.
+
+## 7n. 18 Nov 2026 PT: gamma-map skill and the first multi-week positioning read
+- **New skill `.claude/skills/gamma-maps/SKILL.md`** (user: read the Skylit material "in a very very deep way, PhD
+  level", risk clearly stated). Built from three research passes saved in `research_notes/gamma_maps/`: A the vendor
+  method as taught (7 transcripts, doctrine files, 96-video synthesis; contradictions C1-C18), B our measured record (~80
+  rules, n and controls; nearly all core claims null or failed; morning band the one lead), C the academic literature
+  graded A-D (second-moment effects supported and small; no support for direction, walls, flip, vanna rallies; sign
+  convention wrong on average for single names). Risk section comes first; permitted uses are descriptive only.
+- **First positioning read** (`tools/gamma_weeks.py`, `data/ai_technical/gamma_weeks_20261118.json`, charts in
+  `reports/charts/20261118_positioning/`; Claude Doc https://claude.ai/artifact/7HSyxrjVTo2QpBmokw5wof; exports
+  `reports/exports/20261118_dealer-positioning-weeks.{pdf,docx}`). Kept separate from the AI report, which leaves
+  positioning out until the user asks. Findings: 42-89% of each map expires Fri 20 Nov; after it QQQ long -> short,
+  AMZN and CRWV flat -> long, NVDA stays short. Index maps cover only ~1 week (server `close_maps` stopped 20 Oct).

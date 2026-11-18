@@ -1,0 +1,401 @@
+{
+ "date": "2026-11-18",
+ "reads": {
+  "SPXW": {
+   "name": "SPXW",
+   "spot": 7323.63,
+   "batch": "Skylit overnight map 17:30 ET",
+   "snapshot": "18 Nov 2026 17:30 ET",
+   "expiries": [
+    "2026-11-19",
+    "2026-11-20",
+    "2026-11-23",
+    "2026-11-24",
+    "2026-11-25"
+   ],
+   "share_by_expiry_pct": [
+    28.313323824793486,
+    48.70091437739546,
+    10.532641839442919,
+    7.376416993210869,
+    5.076702965157257
+   ],
+   "share_through_roll_pct": 77.01423820218895,
+   "roll": "2026-11-20",
+   "regime_now": "long",
+   "net_pm2_now_pct": 7.778075989378697,
+   "regime_after_roll": "long",
+   "net_pm2_after_roll_pct": 9.38046229411186,
+   "king_now": {
+    "strike": 7450.0,
+    "expiry": "2026-11-20",
+    "value": 4885193.425788313,
+    "pct_from_spot": 1.725510436764277
+   },
+   "king_after_roll": {
+    "strike": 7250.0,
+    "expiry": "2026-11-23",
+    "value": 1678129.6905904708,
+    "pct_from_spot": -1.0053757494575821
+   },
+   "king_last_expiry": {
+    "strike": 7300.0,
+    "expiry": "2026-11-25",
+    "value": 1268397.0342130717,
+    "pct_from_spot": -0.3226542029021173
+   }
+  },
+  "QQQ": {
+   "name": "QQQ",
+   "spot": 659.15,
+   "batch": "Skylit overnight map 17:30 ET",
+   "snapshot": "18 Nov 2026 17:30 ET",
+   "expiries": [
+    "2026-11-19",
+    "2026-11-20",
+    "2026-11-23",
+    "2026-11-24",
+    "2026-11-25"
+   ],
+   "share_by_expiry_pct": [
+    18.960034341439496,
+    69.8019687180839,
+    4.4671445365554,
+    4.480272717043967,
+    2.2905796868772232
+   ],
+   "share_through_roll_pct": 88.7620030595234,
+   "roll": "2026-11-20",
+   "regime_now": "long",
+   "net_pm2_now_pct": 22.600029659328598,
+   "regime_after_roll": "short",
+   "net_pm2_after_roll_pct": -14.910750225217932,
+   "king_now": {
+    "strike": 650.0,
+    "expiry": "2026-11-20",
+    "value": 28890036.151892453,
+    "pct_from_spot": -1.3881514071152234
+   },
+   "king_after_roll": {
+    "strike": 660.0,
+    "expiry": "2026-11-24",
+    "value": -6041563.520638401,
+    "pct_from_spot": 0.12895395585224012
+   },
+   "king_last_expiry": {
+    "strike": 670.0,
+    "expiry": "2026-11-25",
+    "value": 1620864.7194664401,
+    "pct_from_spot": 1.6460593188196926
+   }
+  },
+  "NVDA": {
+   "name": "NVDA",
+   "spot": 151.14,
+   "batch": "16:00 ET end-of-day batch",
+   "snapshot": "2026-11-18T21:00:00Z",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "share_by_expiry_pct": [
+    45.07462079667597,
+    15.678917172973858,
+    8.74847920435752,
+    1.8133819942025282,
+    28.68460083179012
+   ],
+   "share_through_roll_pct": 45.07462079667597,
+   "roll": "2026-11-20",
+   "regime_now": "short",
+   "net_pm2_now_pct": -17.85015761337241,
+   "regime_after_roll": "short",
+   "net_pm2_after_roll_pct": -6.017873399418302,
+   "king_now": {
+    "strike": 150.0,
+    "expiry": "2026-11-20",
+    "value": -14254718.0,
+    "pct_from_spot": -0.7542675664946263
+   },
+   "king_after_roll": {
+    "strike": 170.0,
+    "expiry": "2026-12-18",
+    "value": 10243643.8,
+    "pct_from_spot": 12.478496757972746
+   },
+   "king_last_expiry": {
+    "strike": 170.0,
+    "expiry": "2026-12-18",
+    "value": 10243643.8,
+    "pct_from_spot": 12.478496757972746
+   }
+  },
+  "AVGO": {
+   "name": "AVGO",
+   "spot": 348.88,
+   "batch": "09:30 ET open batch (ndx list)",
+   "snapshot": "2026-11-18T14:30:01Z",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "share_by_expiry_pct": [
+    56.72246286170751,
+    9.820635246120911,
+    15.458180572511058,
+    5.638943548317603,
+    12.359777771342923
+   ],
+   "share_through_roll_pct": 56.72246286170751,
+   "roll": "2026-11-20",
+   "regime_now": "short",
+   "net_pm2_now_pct": -12.424903175587994,
+   "regime_after_roll": "short",
+   "net_pm2_after_roll_pct": -5.247690152387823,
+   "king_now": {
+    "strike": 355.0,
+    "expiry": "2026-11-20",
+    "value": -1619868.5,
+    "pct_from_spot": 1.754184819995408
+   },
+   "king_after_roll": {
+    "strike": 335.0,
+    "expiry": "2026-12-04",
+    "value": 1553488.0,
+    "pct_from_spot": -3.978445310708556
+   },
+   "king_last_expiry": {
+    "strike": 390.0,
+    "expiry": "2026-12-18",
+    "value": 618538.4,
+    "pct_from_spot": 11.786287548727348
+   }
+  },
+  "MU": {
+   "name": "MU",
+   "spot": 703.75,
+   "batch": "16:00 ET end-of-day batch",
+   "snapshot": "2026-11-18T20:59:59Z",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "share_by_expiry_pct": [
+    71.59128058592086,
+    8.16508619979678,
+    5.746216142457102,
+    2.864699457664577,
+    11.63271761416069
+   ],
+   "share_through_roll_pct": 71.59128058592086,
+   "roll": "2026-11-20",
+   "regime_now": "flat",
+   "net_pm2_now_pct": -0.9300756008390852,
+   "regime_after_roll": "flat",
+   "net_pm2_after_roll_pct": 2.4290017447855257,
+   "king_now": {
+    "strike": 750.0,
+    "expiry": "2026-11-20",
+    "value": -1653412.6,
+    "pct_from_spot": 6.571936056838368
+   },
+   "king_after_roll": {
+    "strike": 700.0,
+    "expiry": "2026-12-18",
+    "value": -243485.7,
+    "pct_from_spot": -0.5328596802841923
+   },
+   "king_last_expiry": {
+    "strike": 700.0,
+    "expiry": "2026-12-18",
+    "value": -243485.7,
+    "pct_from_spot": -0.5328596802841923
+   }
+  },
+  "META": {
+   "name": "META",
+   "spot": 615.62,
+   "batch": "16:00 ET end-of-day batch",
+   "snapshot": "2026-11-18T20:59:59Z",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "share_by_expiry_pct": [
+    64.59310560112209,
+    6.442748226555811,
+    3.0214641742833677,
+    1.4741072992815043,
+    24.468574698757244
+   ],
+   "share_through_roll_pct": 64.59310560112209,
+   "roll": "2026-11-20",
+   "regime_now": "long",
+   "net_pm2_now_pct": 13.291660043683542,
+   "regime_after_roll": "long",
+   "net_pm2_after_roll_pct": 12.122089409481696,
+   "king_now": {
+    "strike": 635.0,
+    "expiry": "2026-11-20",
+    "value": -2215107.8,
+    "pct_from_spot": 3.1480458724537863
+   },
+   "king_after_roll": {
+    "strike": 670.0,
+    "expiry": "2026-12-18",
+    "value": 907917.4,
+    "pct_from_spot": 8.83337123550243
+   },
+   "king_last_expiry": {
+    "strike": 670.0,
+    "expiry": "2026-12-18",
+    "value": 907917.4,
+    "pct_from_spot": 8.83337123550243
+   }
+  },
+  "AMZN": {
+   "name": "AMZN",
+   "spot": 267.81,
+   "batch": "16:00 ET end-of-day batch",
+   "snapshot": "2026-11-18T20:59:59Z",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "share_by_expiry_pct": [
+    42.19660517287331,
+    18.437177548253345,
+    5.524089997589305,
+    1.6126415871681927,
+    32.22948569411583
+   ],
+   "share_through_roll_pct": 42.19660517287331,
+   "roll": "2026-11-20",
+   "regime_now": "flat",
+   "net_pm2_now_pct": 2.579571845329189,
+   "regime_after_roll": "long",
+   "net_pm2_after_roll_pct": 14.356061312168404,
+   "king_now": {
+    "strike": 260.0,
+    "expiry": "2026-11-20",
+    "value": 9750998.1,
+    "pct_from_spot": -2.916246592733651
+   },
+   "king_after_roll": {
+    "strike": 270.0,
+    "expiry": "2026-11-27",
+    "value": 8483785.7,
+    "pct_from_spot": 0.8177439229304362
+   },
+   "king_last_expiry": {
+    "strike": 295.0,
+    "expiry": "2026-12-18",
+    "value": 7826148.3,
+    "pct_from_spot": 10.15272021209066
+   }
+  },
+  "SMH": {
+   "name": "SMH",
+   "spot": 459.43,
+   "batch": "16:00 ET end-of-day batch",
+   "snapshot": "2026-11-18T21:01:33Z",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "share_by_expiry_pct": [
+    58.88767189735354,
+    6.4190600155779,
+    7.615290891847051,
+    2.1921882750407224,
+    24.885788920180808
+   ],
+   "share_through_roll_pct": 58.88767189735354,
+   "roll": "2026-11-20",
+   "regime_now": "long",
+   "net_pm2_now_pct": 15.197144846404328,
+   "regime_after_roll": "long",
+   "net_pm2_after_roll_pct": 7.612543738272169,
+   "king_now": {
+    "strike": 500.0,
+    "expiry": "2026-11-20",
+    "value": 5076265.6,
+    "pct_from_spot": 8.830507367825359
+   },
+   "king_after_roll": {
+    "strike": 450.0,
+    "expiry": "2026-12-18",
+    "value": -3035832.9,
+    "pct_from_spot": -2.0525433689571826
+   },
+   "king_last_expiry": {
+    "strike": 450.0,
+    "expiry": "2026-12-18",
+    "value": -3035832.9,
+    "pct_from_spot": -2.0525433689571826
+   }
+  },
+  "CRWV": {
+   "name": "CRWV",
+   "spot": 47.73,
+   "batch": "16:00 ET end-of-day batch",
+   "snapshot": "2026-11-18T20:59:59Z",
+   "expiries": [
+    "2026-11-20",
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "share_by_expiry_pct": [
+    71.33316985665724,
+    6.010899686194331,
+    4.992754196659492,
+    2.0916545648613734,
+    15.571521695627574
+   ],
+   "share_through_roll_pct": 71.33316985665724,
+   "roll": "2026-11-20",
+   "regime_now": "flat",
+   "net_pm2_now_pct": 0.17622076137628506,
+   "regime_after_roll": "long",
+   "net_pm2_after_roll_pct": 3.292388141582172,
+   "king_now": {
+    "strike": 44.0,
+    "expiry": "2026-11-20",
+    "value": 5292954.4,
+    "pct_from_spot": -7.814791535721765
+   },
+   "king_after_roll": {
+    "strike": 50.0,
+    "expiry": "2026-12-18",
+    "value": -2243179.7,
+    "pct_from_spot": 4.755918709407081
+   },
+   "king_last_expiry": {
+    "strike": 50.0,
+    "expiry": "2026-12-18",
+    "value": -2243179.7,
+    "pct_from_spot": 4.755918709407081
+   }
+  }
+ }
+}
