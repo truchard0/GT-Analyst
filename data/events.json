@@ -1,0 +1,3727 @@
+{
+ "updated": "2026-10-22T22:07:26Z",
+ "n": 154,
+ "events": [
+  {
+   "date": "2026-01-29",
+   "fact": "Executive Order 14380 (signed Jan 29, effective Jan 30) declared a national emergency and authorised additional tariffs on imports from countries that directly or indirectly supply oil to Cuba; the fuel blockade dates from Jan 3 when Venezuelan oil to Cuba was cut off after Maduro's removal. The US has since blocked tankers headed to Cuba. The measure is a tariff-threat plus interdiction blockade, not a declared naval blockade.",
+   "source": "Wikipedia '2026 Cuban crisis' (citing NYT)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 5,
+     "relation": "context",
+     "note": "Cuba is a Russian-staging question; this is the US pressure side"
+    },
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Latin America lane has no Cuba node"
+    }
+   ],
+   "note": "Only a Wikipedia page read, whose visible dated events end in June; treat as single-source background. It also says Mexico halted oil shipments to Cuba on Jan 27, a Russian tanker with 100,000 tonnes arrived Mar 30, and Cuba's grid collapsed nationwide Mar 16.",
+   "theme": "geopolitics",
+   "id": "evt-20260129-9adb17"
+  },
+  {
+   "date": "2026-02-20",
+   "fact": "The Supreme Court ruled 6-3 that IEEPA does not authorize the president's global tariffs (steel/aluminum and other sector duties unaffected); Trump responded with a 10% global tariff under Section 122 effective 2026-02-24 for 150 days.",
+   "source": "PBS NewsHour; ETV Bharat; WKAR",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "tariff-legal-challenge",
+     "ledger": null,
+     "relation": "context",
+     "note": "The Supreme Court merits ruling already happened in Feb; the node asks about an appellate ruling before end-2027."
+    }
+   ],
+   "note": "Day is inferred from page timestamps (text says 'February 2026'). The feed ranks this below diesel and NCAA noise.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260220-c69b1a"
+  },
+  {
+   "date": "2026-04-02",
+   "fact": "Trump ordered 100% tariffs on patented drugs from firms without a most-favored-nation pricing deal (0% for those with a deal and US plants, 20% rising to 100% in four years for builders without a deal, 15% cap for EU/Japan/Korea/Switzerland), phased in after 120 days for large firms and 180 days for others.",
+   "source": "ABC News (via ADN, WTOP)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "pharma-api",
+     "ledger": null,
+     "relation": "context",
+     "note": "Tariffed patented drugs, not generic injectables; low direct overlap."
+    }
+   ],
+   "note": "Feed item 150 ('Trump slaps 100% tariff on some pharmaceutical drugs', first seen 9/29) is a re-run of the April order. 4/2 + 180 days = 9/29, so the resurfacing is likely the end of the grace period: my inference, not a source's statement.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260402-57512e"
+  },
+  {
+   "date": "2026-04-29",
+   "fact": "Louisiana v. Callais (6-3): the Supreme Court struck down Louisiana's two-majority-Black-district map and narrowed Section 2 of the Voting Rights Act; feed stories dated 2026-09-27/28 ('new hurdle for Black voters', 'weaken Black voting power across the South') are re-runs of this.",
+   "source": "Faegre Drinker; National Constitution Center; ACS",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "Background for the redraws in LA/AL."
+    }
+   ],
+   "note": "Date is the decision date, not the feed date. Tree has no node on VRA/redistricting law: a gap.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260429-aad00e"
+  },
+  {
+   "date": "2026-05-07",
+   "fact": "The Court of International Trade ruled 2-1 that the Section 122 surcharge exceeded presidential authority but limited relief to three named importers; the Federal Circuit stayed that injunction on 2026-06-11 saying the government is likely to succeed, so CBP kept collecting.",
+   "source": "Skadden; J.M. Rodgers Tariff Watch",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "tariff-legal-challenge",
+     "ledger": null,
+     "relation": "supports",
+     "note": "An appeal on tariff authority is pending at the Federal Circuit; a stay is not a merits ruling."
+    }
+   ],
+   "note": "Outcome of the appeal after the 7/24 expiry (mootness vs refunds) not found.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260507-b4685a"
+  },
+  {
+   "date": "2026-06-29",
+   "fact": "Watson v. RNC (5-4, Barrett): the Supreme Court held federal Election Day statutes do not bar counting mail ballots postmarked by Election Day that arrive up to five days later under Mississippi law.",
+   "source": "NOTUS; AP (via WAFB/KTTC)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "context",
+     "note": "Closes one route to disqualifying late-arriving ballots."
+    }
+   ],
+   "note": "Feed item 72 ('justices appear likely to set limits on mail-in ballots', first seen 10/3) is stale or a re-run; the ruling was in June.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260629-29e6e3"
+  },
+  {
+   "date": "2026-06-29",
+   "fact": "Trump v. Cook: the Supreme Court left in place the injunction blocking Trump from removing Fed Governor Lisa Cook while litigation continues (reported 5-4); it did not decide whether the president may remove her.",
+   "source": "TheGrio; Faegre Drinker; MLex",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "voter-rotation-2027",
+     "ledger": null,
+     "relation": "context",
+     "note": "Fed-governance clock; Cook's term runs to 2038."
+    }
+   ],
+   "note": "Vote split not checked against the opinion. Preceded by the June Trump v. Slaughter decision overturning Humphrey's Executor (per the Wilcox coverage). No tree node on Fed independence.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260629-e9070d"
+  },
+  {
+   "date": "2026-06-30",
+   "fact": "Trump v. Barbara: the Supreme Court struck down the 2025 birthright-citizenship order, most sources saying 6-3 (Roberts) and one saying 5-4; feed items dated 2026-10-02 ('rejects attempt to end birthright citizenship') are re-runs of this.",
+   "source": "PBS NewsHour; Al Jazeera; HSB Law",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [],
+   "note": "A 9/28 feed item about a NEW birthright-citizenship executive order and lawsuit (candidate 189, 3 outlets) was not confirmed on the web and is left out. No tree node covers immigration litigation: a gap.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260630-8c1459"
+  },
+  {
+   "date": "2026-07-24",
+   "fact": "Section 122 tariffs lapsed at 12:01 a.m. on 2026-07-24 at the 150-day limit; USTR (announced 7/23) replaced them with Section 301 'forced labor' duties of 10% or 12.5% on products from 60 economies, with Section 232 sector tariffs continuing.",
+   "source": "Morgan Lewis; STR Trade; Kroll; Allianz",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "tariff-legal-challenge",
+     "ledger": null,
+     "relation": "supports",
+     "note": "The new 301 base is a fresh legal target; nothing found yet on its challenge."
+    }
+   ],
+   "note": "Effective-rate figure (12.4%) is an Allianz July projection. A feed item dated 2026-10-11 ('Trump attacks Supreme Court tariff ruling', 11 outlets) was not corroborated for October and is left out.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260724-9147a5"
+  },
+  {
+   "date": "2026-08-10",
+   "fact": "Trump signed an order to overhaul childhood vaccine recommendations (11 diseases versus 18 in current CDC guidance; split MMR into three shots), which sits atop a March 2026 injunction against the January CDC schedule changes; feed pushback stories date from 10/5.",
+   "source": "Healio; AMCP; Georgetown CCF",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [],
+   "note": "Experts say CDC/ACIP must still act; effect unclear.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260810-a32b6d"
+  },
+  {
+   "date": "2026-08-17",
+   "fact": "DOJ Civil Rights chief Harmeet Dhillon said DOJ plans about 1,000 monitors at polling sites for the 2026-11-03 midterms (reportedly 289 in 2022 and 714 in 2024); plaintiffs including the NAACP sued for records on legal authority, training and locations, and DOJ had not published the jurisdiction list.",
+   "source": "Bloomberg interview (via Democracy Docket; NOTUS)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "Federal presence at the polls is a DOJ intervention datapoint."
+    },
+    {
+     "node": "contested-result",
+     "ledger": null,
+     "relation": "context",
+     "note": "Raises dispute surface, not a certification outcome."
+    }
+   ],
+   "note": "Outlets disagree on whether the NAACP suit seeks to block monitors or only records (described as FOIA); the 1,000 is a plan, not a deployment. Not in the 240 candidates; added from the theme brief.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260817-3d7ad4"
+  },
+  {
+   "date": "2026-08-22",
+   "fact": "The US put 50% tariffs on about $20 billion of Canadian goods under Section 338 of the Tariff Act of 1930 (first time a president expressly cited it), effective Aug 22; Canada retaliated dollar for dollar from Sep 8 (C$27.6 billion of US goods), and the US announced import bans on certain Canadian goods effective Sep 29 and moves to cut Canadian firms' access to US government procurement.",
+   "source": "CRS (Sep 14), Davis Wright Tremaine, Mondaq",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "tariff-legal-challenge",
+     "ledger": null,
+     "relation": "supports",
+     "note": "A novel statutory basis now in use raises the odds of a merits ruling on tariff authority"
+    }
+   ],
+   "note": "Predates the feed window, but the feed (Sep 21, Oct 2, Oct 9) shows it still driving Canadian data. Legality is debated.",
+   "theme": "geopolitics",
+   "id": "evt-20260822-c3f880"
+  },
+  {
+   "date": "2026-09-02",
+   "fact": "Congress enacted the FY2027 continuing resolution (H.R. 6500, P.L. 119-103), funding all 12 regular appropriations areas at FY26 levels through 2026-12-11; the Senate passed it 90-6 and the House 370-48 (House vote 2026-09-01), so no lapse on 2026-10-01.",
+   "source": "CRS (congress.gov); AACOM; ASTHO; PGPF",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "cr-dec11",
+     "ledger": null,
+     "relation": "supports",
+     "note": "This is the instrument whose 12/11 expiry the node tracks."
+    },
+    {
+     "node": "shutdown-dec",
+     "ledger": 114,
+     "relation": "contradicts",
+     "note": "Lopsided bipartisan margins argue against a contested lapse at 12/12; but no regular bill is enacted so the cliff is real."
+    },
+    {
+     "node": null,
+     "ledger": 3,
+     "relation": "context",
+     "note": "CR holds FY26 levels, so no ~$1.5T Pentagon topline can arrive before 12/11."
+    }
+   ],
+   "note": "Signing date 9/2 per CRS and PGPF; one source says 9/3 and one says 10/2 (9/2 is better supported). Not among the 240 feed candidates: the feed missed the most important fiscal fact of the window.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260902-ea320a"
+  },
+  {
+   "date": "2026-09-10",
+   "fact": "The ECB raised its deposit rate to 2.50% on 9/10, its second hike of 2026; on 9/28 Lagarde urged a 'measured' response and said the energy shock is too large to look through, eurozone inflation was 3.2% in August, and futures put the chance of another hike on 10/29 at roughly 28-29% after the September decision (a 9/24 snapshot said 60%).",
+   "source": "Admiral Markets / FXStreet / Cryptobriefing",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "fiscal-and-energy squeeze with a hiking ECB"
+    },
+    {
+     "node": "ecb-hold",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "node asks for a December hold at 0.55 while the ECB is in an active hiking cycle"
+    }
+   ],
+   "note": "The 2.50% level and the hike count come from a broker preview and one FXStreet item; I could not read the ECB release itself. Another search page listed a stale 2.00% rate (2025). No node tracks the 10/29 meeting; proposed as new node ev-ecb-oct29-hike.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260910-8a09fa"
+  },
+  {
+   "date": "2026-09-15",
+   "fact": "The US 10-year Treasury yield crossed 5% (5.02% on 9/15, highest since July 2007 per Trading Economics), then kept rising: 5.04% on 9/23, about 5.25% on 9/28; feed headlines carry 'above 5.30%' (9/30-10/7) and a Reuters Asia-bonds piece cites a 24.5-year high of 5.3645%; by 10/16 it was about 5.12% and STATE.md has 4.95% on 10/22.",
+   "source": "Trading Economics / Reuters (via feed)",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "tens-above-4",
+     "ledger": 103,
+     "relation": "supports",
+     "note": "10y ~4.95 on 10/22 leaves ~95bp of cushion over the 4.00 line for 12/31"
+    },
+    {
+     "node": null,
+     "ledger": 100,
+     "relation": "supports",
+     "note": "DFII10 is far above the 1.50 floor (STATE: 2.77)"
+    },
+    {
+     "node": "real-rate-band",
+     "ledger": null,
+     "relation": "supports",
+     "note": "real yields high, TIPS floor 1.50 not near"
+    },
+    {
+     "node": "rc-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "post-hike funding regime: term premium and long end repricing"
+    },
+    {
+     "node": "ten-year-band-2028",
+     "ledger": null,
+     "relation": "context",
+     "note": "peak 5.25-5.36 is far inside the 3-8 band"
+    },
+    {
+     "node": null,
+     "ledger": 94,
+     "relation": "context",
+     "note": "curve flattening was a 9/22 headline; level of 2s10s not captured here"
+    }
+   ],
+   "note": "Peak is disputed: web found 5.25% (Trading Economics 9/28) and no 5.3% source except the Reuters Asia-bond article (5.3645%). Record the peak as 5.25-5.36%.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260915-748f01"
+  },
+  {
+   "date": "2026-09-16",
+   "fact": "The Fed raised its target range 25bp to 3.75-4.00% under Chair Kevin Warsh, the first hike in about three years; sources call the decision unanimous (all 19 participants backed it; the 12-0 voter count was not directly confirmed), and the projections signalled more: 16 of 18 officials saw at least one more 25bp hike in 2026 per one account (other accounts count differently).",
+   "source": "MUFG Research / Kiplinger / Man Group",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "fomc-sept-hike",
+     "ledger": null,
+     "relation": "supports",
+     "note": "this is the recorded event; node already HAPPENED"
+    },
+    {
+     "node": "fomc-oct",
+     "ledger": null,
+     "relation": "context",
+     "note": "dots imply further hikes; timing left open"
+    },
+    {
+     "node": "rc-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "post-hike funding regime"
+    },
+    {
+     "node": "dec-dots-2027",
+     "ledger": null,
+     "relation": "context",
+     "note": "December SEP will show whether 2027 hikes are in the median"
+    }
+   ],
+   "note": "Dot-count details conflict between sources (16/18 one more hike; 12 one more + 4 two more + 2 none; another says 9 of 18). Do not cite a count.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260916-cd502f"
+  },
+  {
+   "date": "2026-09-18",
+   "fact": "Senate appropriators had no topline deal between Collins and Murray and had passed none of the 12 FY2027 bills; House Appropriations reported all 12 and the full House passed 2 or 3 (sources differ). Lawmakers return in November with about five legislative weeks before the 12/11 CR expiry.",
+   "source": "Steptoe appropriations newsletter 2026-09-18; American Action Forum",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "shutdown-dec",
+     "ledger": 114,
+     "relation": "supports",
+     "note": "No Senate topline and no Senate bill passed is the raw material for another CR or a lapse."
+    },
+    {
+     "node": "cr-dec11",
+     "ledger": null,
+     "relation": "context",
+     "note": "Clock: 12/11 expiry; a lapse would begin 12/12."
+    }
+   ],
+   "note": "Latest status found is late September; nothing dated October found.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260918-e5b183"
+  },
+  {
+   "date": "2026-09-21",
+   "fact": "Feed: Trump ordered a plan for a White House board to approve NIH grants, tightening control of the roughly $48 billion budget.",
+   "source": "Feed (4 outlets)",
+   "confidence": "plan-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "nih-funding",
+     "ledger": null,
+     "relation": "context",
+     "note": "Control over grants, not enacted appropriations."
+    }
+   ],
+   "note": "A plan to produce a plan, not an action (lesson #72). The event may be a day earlier than first seen.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260921-80300d"
+  },
+  {
+   "date": "2026-09-21",
+   "fact": "A feed item says Hungary asked the US to waive tariffs over its Russian oil purchases; Hungary's earlier one-year US exemption for Russian oil and gas was reported in November 2025.",
+   "source": "Feed (2 outlets)",
+   "confidence": "feed-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "EU member dependent on Russian energy asks for US relief"
+    }
+   ],
+   "note": "NOT VERIFIED beyond the headline: a web search found only the Nov 2025 exemption coverage. Expiry of that one-year exemption around Nov 2026 is my arithmetic, not a reported fact.",
+   "theme": "geopolitics",
+   "id": "evt-20260921-fe069c"
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "Treasury Secretary Bessent publicly backed Fed Chair Warsh's rate hike (reported 9/22; 9/27 he urged the Fed to keep an 'open mind' on the inflation outlook), at odds with President Trump's stated wish for rates of '1% or less'.",
+   "source": "Reuters / IDN Financials (via feed)",
+   "confidence": "feed-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "fomc-oct",
+     "ledger": null,
+     "relation": "context",
+     "note": "removes the Treasury-vs-Fed political veto on further hikes; not a forecast of the 10/28 vote"
+    }
+   ],
+   "note": "Web search returned only a headline ('Scott Bessent backs Kevin Warsh on Fed rate hike') plus a Man Group note on Trump's 1% remark; quotes not independently read.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260922-21f6ac"
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "CMS cancelled about 315,000 ACA marketplace enrollments covering roughly 760,000 people over alleged fraud and began verifying about 419,000 more; the White House task force put savings near $2.2 billion; KFF said it bypassed the normal rulemaking process.",
+   "source": "Healio; ADN; Local10; WTTW",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [],
+   "note": "No tree node covers ACA or insurance coverage: a gap. Some outlets say 750,000 enrollees.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260922-59e3cc"
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "The US and Denmark signed an agreement at the UN General Assembly amending the 1951 defense pact: the US may establish additional Defence Areas at Narsarsuaq and Mestersvig in Greenland, Denmark keeps sovereignty, and Denmark says Arctic security falls under NATO.",
+   "source": "ITV, OPB, Defense News",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Transatlantic security arrangement; no Europe node covers Greenland"
+    },
+    {
+     "node": "fragmented-blocs",
+     "ledger": null,
+     "relation": "context",
+     "note": "Alliance friction resolved by a deal rather than an exit"
+    }
+   ],
+   "note": "Full text unpublished; Greenlanders poll overwhelmingly against. An anonymous US official said non-NATO bases are banned.",
+   "theme": "geopolitics",
+   "id": "evt-20260922-6a5fdd"
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "Trump and Zelensky met on the UNGA sidelines in New York (about 40 minutes by one account); no formal agreement was reported, Zelensky said he hoped the war ends before winter, and an energy truce was discussed.",
+   "source": "Meduza, Good Morning America, SCMP",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "No agreement from the meeting"
+    }
+   ],
+   "note": "Outlets disagree on meeting length (7 vs 40 minutes; 7 minutes was likely the open press portion).",
+   "theme": "geopolitics",
+   "id": "evt-20260922-83feb9"
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "Saudi Arabia restarted the East-West oil pipeline (shut after a 9/10-9/13 drone attack on its pumping stations, which Riyadh blamed on Iraqi militias) and Yanbu loadings resumed at a low initial rate; Argus put flows near 5.5 mb/d by 10/1 against ~7 mb/d nameplate, Reuters said full resumption could take weeks.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "red-sea-front",
+     "ledger": null,
+     "relation": "context",
+     "note": "the node says the pipeline lands inside the blockaded Red Sea; Yanbu is now the main bypass and the target of Houthi/Iraqi-militia fire"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "the non-Iran half of the supply story: Saudi bypass capacity is what keeps Gulf exports near pre-war levels"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "restart helped Brent dip below $100 on 9/22 and 10/3; the re-attack risk is the upper-band tail"
+    }
+   ],
+   "note": "Shutdown date differs by source (9/11 vs 9/13). Same pipeline was hit in April per a different Reuters story (SPA, 4/9); that April story was re-surfaced in the feed on 10/16 and is NOT a new October attack.",
+   "theme": "iran_energy",
+   "id": "evt-20260922-8d2234"
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "NY Fed's Perli Says Fed's Reserve Management Purchases Are Not On Pre-Set Course; Central Clearing Of Fed Repo Operations Would Have Benefits; Monetary Policy T",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market +0; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed commentary on reserve management: market-neutral.",
+   "theme": "mystery",
+   "id": "evt-20260922-c913df"
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "Ukraine's Zelenskiy Says He Asked Trump For Winter Package Of Patriot Missiles; Says Ukraine Needs Patriot Licenses And Security Guarantees",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ru-anchor",
+     "shared_words": [
+      "russia",
+      "ukraine",
+      "war"
+     ],
+     "idf_sum": 15.8
+    },
+    {
+     "node": "ru-unsc-veto-arithmetic",
+     "shared_words": [
+      "security",
+      "ukraine"
+     ],
+     "idf_sum": 10.8
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'Russia-Ukraine war' (macro_other, 11 headlines; lanes russia-ukraine). Model's reason: Escalation in Russia-Ukraine war raises geopolitical risk.",
+   "theme": "mystery",
+   "id": "evt-20260922-d9ce46"
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "France was reported to be mulling a new UN Security Council resolution on Hormuz, according to diplomats.",
+   "source": "Reuters (feed)",
+   "confidence": "plan-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": null,
+     "relation": "context",
+     "note": "no node tracks UNSC action on Hormuz; see new node ev-unsc-hormuz-resolution"
+    }
+   ],
+   "note": "Reported intention only; no text or vote found.",
+   "theme": "iran_energy",
+   "id": "evt-20260922-e6e2a8"
+  },
+  {
+   "date": "2026-09-23",
+   "fact": "'White House preparing plan for 90-day diesel exports ban'",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'US diesel export ban debate' (policy, 12 headlines; lanes energy-supply). Model's reason: Potential energy policy shift; risk-off sentiment.",
+   "theme": "mystery",
+   "id": "evt-20260923-3c9f11"
+  },
+  {
+   "date": "2026-09-23",
+   "fact": "Rubio said the US had invited Putin to the G20 leaders' summit in Miami in December, after meeting Lavrov at the UNGA; the Kremlin said it would consider the invitation and Bloomberg reported Putin is likely to skip. Sources give conflicting dates (Dec 14-15 vs Dec 20).",
+   "source": "Colorado Politics/Reuters, Meduza, Al Jazeera",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "Diplomatic channel, not an agreement"
+    },
+    {
+     "node": "managed-bipolarity",
+     "ledger": null,
+     "relation": "context",
+     "note": "Great-power summit track"
+    }
+   ],
+   "note": "Putin's attendance is a plan, not a fact.",
+   "theme": "geopolitics",
+   "id": "evt-20260923-6078d5"
+  },
+  {
+   "date": "2026-09-23",
+   "fact": "Fed's Barr Says Further Rate Hikes Likely Needed To Ensure Timely Return To 2% Inflation",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed official signals more hikes; inflation focus drags indexes.",
+   "theme": "mystery",
+   "id": "evt-20260923-abb5d8"
+  },
+  {
+   "date": "2026-09-23",
+   "fact": "Zelenskyy Urges Trump to Bring Putin to Trilateral Peace Talks — Says Ukraine Is Ready ‘Anytime’ as Kremlin Calls Summit a ‘Waste of Time’",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ru-anchor",
+     "shared_words": [
+      "russia",
+      "ukraine",
+      "war"
+     ],
+     "idf_sum": 15.8
+    },
+    {
+     "node": "ev-trump-putin-meeting",
+     "shared_words": [
+      "putin",
+      "trump"
+     ],
+     "idf_sum": 12.7
+    }
+   ],
+   "note": "AI importance 0.70, market +0; story 'Russia-Ukraine war' (macro_other, 11 headlines; lanes russia-ukraine). Model's reason: Peace talks discussion; no immediate market impact.",
+   "theme": "mystery",
+   "id": "evt-20260923-dafee2"
+  },
+  {
+   "date": "2026-09-23",
+   "fact": "Bessent announced that the US and China agreed to extend the Busan trade truce from its 11/10/2026 expiry to 1/10/2027 (two months, short of the six months markets hoped for) ahead of Xi's Washington summit with Trump; a larger package by January was floated; early reports said Beijing had not confirmed, and rare-earth deliveries and $17bn of other farm purchases are reported lagging.",
+   "source": "Reuters (via The Star / Hellenic Shipping News / The Standard)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "cn-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "trade-truce backdrop to China's deflation-and-transfer problem"
+    },
+    {
+     "node": "cn-rare-earth-controls",
+     "ledger": null,
+     "relation": "context",
+     "note": "rare-earth delivery dispute is the live friction"
+    },
+    {
+     "node": "taiwan-watch",
+     "ledger": null,
+     "relation": "context",
+     "note": "de-escalation channel that the PLA-no-kinetic rows (#53) lean on"
+    }
+   ],
+   "note": "No existing node tracks the truce expiry; proposed home is a new node (ev-busan-truce-rolled). STATE.md and the 9/21 feed (Bessent: talks with China 'successful', 8 outlets) show the lead-up (Bessent-He Lifeng meeting 9/20 in New York).",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260923-f2f5c7"
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "Reports that the US and Iran were discussing a phased deal to reopen Hormuz and end the US blockade pulled crude lower (oil down ~2% on 9/25), but nothing was agreed and Trump rejected Iran's formal proposal two days later.",
+   "source": "MarketScreener / Reuters-syndicated oil wraps",
+   "confidence": "plan-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "iran-six-conditions",
+     "ledger": null,
+     "relation": "context",
+     "note": "a talks headline that did not convert; the sixth-plus reopening signal with no durable reopening"
+    },
+    {
+     "node": "hormuz-framework-only",
+     "ledger": null,
+     "relation": "context",
+     "note": "announced framework is not restored traffic (16.14 corollary)"
+    }
+   ],
+   "note": "Single feed headline for the phased-deal wording; the oil move is multi-outlet.",
+   "theme": "iran_energy",
+   "id": "evt-20260924-4a820d"
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "Zelenskyy Warns Russia of Retaliation This Winter if Energy Truce Fails: ‘We Will Have No Choice but to Make It Painful’",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ru-anchor",
+     "shared_words": [
+      "russia",
+      "ukraine",
+      "war"
+     ],
+     "idf_sum": 15.8
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'Russia-Ukraine war' (macro_other, 11 headlines; lanes russia-ukraine). Model's reason: War escalation risk; energy truce uncertainty impacts risk-on sentiment.",
+   "theme": "mystery",
+   "id": "evt-20260924-65786f"
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "US initial jobless claims fell to 197,000, the lowest since mid-July (week reported 9/24, repeated 10/1), with layoffs described as rare.",
+   "source": "AP (via 16 outlets)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "u3-band",
+     "ledger": 115,
+     "relation": "supports",
+     "note": "low layoffs, U-3 4.2 stays inside 3.8-5.2"
+    }
+   ],
+   "note": "Contrasts with the 29k payroll print; low-hire, low-fire pattern.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260924-7aa9e5"
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "Oil Groups Join Chris Wright to Oppose Diesel Export Ban, Urge Trump Not to Weaken US Influence: Warn it Could Raise Fuel Costs, Hurt American Refiners",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'US diesel export ban debate' (policy, 12 headlines; lanes energy-supply). Model's reason: Diesel export ban could impact oil prices and refiners: risk-off.",
+   "theme": "mystery",
+   "id": "evt-20260924-9ece4e"
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "Trump’s Midterm Losses Could Be Wall Street’s Gain: Billionaire Kenneth Fisher Calls Gridlock a ‘Powerful Positive’, Sees a Potential 19.8% Rally",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market +1; story 'US midterm election impact' (policy, 3 headlines; lanes us-politics). Model's reason: Political gridlock seen as positive for markets; potential rally.",
+   "theme": "mystery",
+   "id": "evt-20260924-b57c0a"
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "A global bond rout pushed the US 30-year Treasury yield to its highest since 2004 on 9/24, to its highest since 2002 on 9/29, and to a 'fresh 24-year high' on 10/7; Japan's 10-year yield hit a 30-year high on 9/24.",
+   "source": "Reuters (via feed)",
+   "confidence": "multi-outlet",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "rc-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "long-end repricing is the regime this anchor describes"
+    },
+    {
+     "node": "usf-net-interest-nominal",
+     "ledger": null,
+     "relation": "supports",
+     "note": "higher yields raise future net interest outlays"
+    },
+    {
+     "node": "usf-avg-rate-rises",
+     "ledger": null,
+     "relation": "supports",
+     "note": "average rate on debt keeps climbing as debt rolls at 5%+"
+    },
+    {
+     "node": "jgb-band",
+     "ledger": null,
+     "relation": "context",
+     "note": "JGB 10y at a 30-year high; level not captured, band is 0.5-3.0%"
+    }
+   ],
+   "note": "Feed gives rankings (highest since 2004/2002), not the exact 30y level.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260924-dc3aff"
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "US-China Trade Truce Gets a Boost: Trump Trade Chief Greer Says Reached Deal on Farm Goods, Medical Devices: 'Lot More Details' on Monday",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ev-busan-truce-rolled",
+     "shared_words": [
+      "china",
+      "deal",
+      "trade",
+      "truce"
+     ],
+     "idf_sum": 23.1
+    },
+    {
+     "node": "cn-export-share",
+     "shared_words": [
+      "china",
+      "goods"
+     ],
+     "idf_sum": 11.7
+    }
+   ],
+   "note": "AI importance 0.70, market +1; story 'US-China trade relations' (policy, 37 headlines; lanes china-macro, rates-credit). Model's reason: Positive trade development boosts risk-on sentiment.",
+   "theme": "mystery",
+   "id": "evt-20260925-02e169"
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "Bond Market Warning Grows; Pay Attention To Japan; Oil Hopium Fades",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Bond market warning' (macro_other, 1 headlines; lanes energy-supply, rates-credit, japan-korea). Model's reason: Bond market concerns and oil worries signal risk-off.",
+   "theme": "mystery",
+   "id": "evt-20260925-384c15"
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "The Supreme Court on an emergency application let DHS use its expanded SAVE voter-eligibility system (Social Security records, bulk search; 67 million registrations scanned per court filings) while the government appeals Judge Sooknanan's June ruling; use is voluntary for states and the Court left open whether the 90-day pre-election removal bar covers alleged noncitizens.",
+   "source": "AP (via KMPH/WAFB)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "A federal data tool entering state rolls five weeks before the election is a federal-intervention datapoint."
+    },
+    {
+     "node": "election-instrument",
+     "ledger": null,
+     "relation": "context",
+     "note": "Follow-on to the DHS letters/funding-condition instrument logged 7/17."
+    }
+   ],
+   "note": "Interim order, not a merits ruling.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260925-692d06"
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "NY Fed President Williams, Speaking At Even At Oxford, Said Persistent Supply Shocks Can't Be Ignored; US Labor Market Not A Source Of Inflationary Pressure",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market +0; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed official comments on supply shocks and inflation.",
+   "theme": "mystery",
+   "id": "evt-20260925-6d61c8"
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "Fed's Hammack Says The Biggest Risk With Inflation Is The Formation Of An Inflationary Mindset; Public Has Been Dealing With Above Target Inflation For Extended",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed inflation and policy challenges' (fed, 16 headlines; lanes fed-macro). Model's reason: Fed official warns on inflation expectations: risk-off.",
+   "theme": "mystery",
+   "id": "evt-20260925-79dd3e"
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "In a unanimous unsigned order the Supreme Court held Missouri's 2022 congressional map governs the 2026 election, rejecting the 2025 GOP map (reported as the third time it blocked it); the Missouri Supreme Court had ruled 2026-09-03 that the 2025 map was suspended by a valid referendum petition and ordered the referendum (Proposition A) onto the 2026-11-03 ballot.",
+   "source": "AP (via KAXE); Missouri Independent; STLPR",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "context",
+     "note": "Redistricting litigation, not a certification fight."
+    },
+    {
+     "node": "divided-government",
+     "ledger": null,
+     "relation": "context",
+     "note": "Removes a Republican seat-gain path in Missouri for 2026."
+    }
+   ],
+   "note": "Outlets disagree on the 'third time' count.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260925-ab7ee9"
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "Energy Secretary Chris Wright Urges Oil Industry To Voluntarily Cut Diesel Exports As Prices Stay Near Record High: ‘You Gotta Put Americans First’",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "es-anchor",
+     "shared_words": [
+      "energy",
+      "oil"
+     ],
+     "idf_sum": 11.0
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'US diesel export ban debate' (policy, 12 headlines; lanes energy-supply). Model's reason: Diesel prices near record highs may trigger risk-off sentiment.",
+   "theme": "mystery",
+   "id": "evt-20260925-f86f82"
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "The UN Security Council issued a joint statement condemning continued Houthi attacks on Saudi Arabia, including on civilian and energy infrastructure, demanding an end to the escalation and affirming Saudi Arabia's right to self-defence; a further statement citing the 10/10-11 Riyadh airport strikes was reported 10/22 (not independently confirmed).",
+   "source": "QNA / Asharq Al-Awsat",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "proxy theatre aimed at Saudi persists and is now internationally recognised"
+    },
+    {
+     "node": null,
+     "ledger": null,
+     "relation": "context",
+     "note": "press statements only; no resolution has been found"
+    }
+   ],
+   "note": "Press/presidential-style statements, not a binding resolution.",
+   "theme": "iran_energy",
+   "id": "evt-20260925-fbf732"
+  },
+  {
+   "date": "2026-09-26",
+   "fact": "President Trump publicly rejected an Iranian offer, relayed through Qatar, to reopen Hormuz and resume nuclear talks within seven days if the US lifted its naval blockade, waived Iranian oil sanctions and observed a ceasefire including Lebanon; the Wall Street Journal reported he privately expects to resume bombing after the November midterms. Oil rose on 9/28.",
+   "source": "AP / Wall Street Journal",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "iran-six-conditions",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "the bribe-for-cessation branch was explicitly refused on 9/26"
+    },
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "no deal, no full war: the stalemate branch"
+    },
+    {
+     "node": "us-strikes-resume",
+     "ledger": null,
+     "relation": "context",
+     "note": "WSJ: strikes expected after, not before, the midterms"
+    },
+    {
+     "node": null,
+     "ledger": 36,
+     "relation": "contradicts",
+     "note": "a compensated-cessation leg was refused; ground-troop leg not raised"
+    },
+    {
+     "node": null,
+     "ledger": 35,
+     "relation": "supports",
+     "note": "no ratified treaty while the pause continues"
+    }
+   ],
+   "note": "AP datelines are 9/26 (a Saturday); some feed headlines carry 9/27-9/28.",
+   "theme": "iran_energy",
+   "id": "evt-20260926-04cfba"
+  },
+  {
+   "date": "2026-09-26",
+   "fact": "Beijing said China and the US agreed during Xi's Washington visit to a reciprocal tariff cut on about $30 billion of non-sensitive goods in each direction, an AI-risk dialogue (next round set for November) with an incident channel, and a trade council; Treasury Secretary Bessent said the trade truce due to expire Nov 10 would be extended by two months.",
+   "source": "Reuters, CNBC (feed); White House fact points via The Star",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "cn-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "US-China thaw affects export-controls and tariffs path"
+    },
+    {
+     "node": "cn-rare-earth-controls",
+     "ledger": null,
+     "relation": "context",
+     "note": "Truce extension lowers near-term odds of new mineral controls"
+    },
+    {
+     "node": "semicap-controls",
+     "ledger": null,
+     "relation": "context",
+     "note": "Same truce logic for chip-tool controls"
+    },
+    {
+     "node": "taiwan-watch",
+     "ledger": null,
+     "relation": "context",
+     "note": "Summit diplomacy coincides with the Taiwan arms package pause"
+    }
+   ],
+   "note": "Reuters called the summit personal diplomacy rather than a big breakthrough. Date is the Beijing readout; Xi arrived about Sep 23.",
+   "theme": "geopolitics",
+   "id": "evt-20260926-dd9dcc"
+  },
+  {
+   "date": "2026-09-26",
+   "fact": "Gold Is Up 17%, But the Fed Just Changed the Game for GLD and IAU",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed hawkishness pressures gold ETFs amid rate sensitivity.",
+   "theme": "mystery",
+   "id": "evt-20260926-f7ae93"
+  },
+  {
+   "date": "2026-09-27",
+   "fact": "Trump, Xi Jinping Agree to $30 Billion Tariff Deal, Back ‘More Favorable Tariff Treatment’ for US-China Goods",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ev-busan-truce-rolled",
+     "shared_words": [
+      "china",
+      "deal",
+      "trade"
+     ],
+     "idf_sum": 16.6
+    },
+    {
+     "node": "cn-export-share",
+     "shared_words": [
+      "china",
+      "goods"
+     ],
+     "idf_sum": 11.7
+    }
+   ],
+   "note": "AI importance 0.70, market +1; story 'US-China trade relations' (policy, 37 headlines; lanes china-macro, rates-credit). Model's reason: Tariff deal reduces trade tensions; risk-on sentiment.",
+   "theme": "mystery",
+   "id": "evt-20260927-bff0ce"
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Fed Hike Bets Hit 70%: Gold Just Lost The Argument to a 5.2% Treasury",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "dovish-fed",
+     "shared_words": [
+      "fed",
+      "hike"
+     ],
+     "idf_sum": 11.3
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'Fed rate hike bets surge' (fed, 1 headlines; lanes fed-macro, rates-credit). Model's reason: Rising rate odds pressure gold and bonds: risk-off.",
+   "theme": "mystery",
+   "id": "evt-20260928-0986bd"
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Fed’s New Financial Vulnerability Gauge Flashes Warning at 65th Percentile — Expert Says Risks Are ‘Notable’ But ‘Not Yet Elevated’",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed financial vulnerability index' (fed, 1 headlines; lanes fed-macro). Model's reason: Fed signals financial risks: risk-off sentiment.",
+   "theme": "mystery",
+   "id": "evt-20260928-10e57b"
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Scott Bessent Says Kevin Warsh Is 'Well Aware' of AI Productivity Gains: Fed Should Keep an 'Open Mind' on Interest Rates",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market +0; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed commentary on rates and AI; potential policy impact.",
+   "theme": "mystery",
+   "id": "evt-20260928-1e51c1"
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Reporting counted new US House district maps in 9 states for the midterms after Trump urged mid-decade redraws; an AP-style roundup lists 10 (8 GOP-favoring: TX, MO, NC, OH, FL, TN, LA, AL; 2 Democratic: CA, UT), but Missouri reverted to its 2022 map on 2026-09-25.",
+   "source": "Feed (7 outlets); AP-style roundup (undated)",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "divided-government",
+     "ledger": null,
+     "relation": "context",
+     "note": "Map changes move the House-control prior; recorded without a view."
+    },
+    {
+     "node": "midterm-fork",
+     "ledger": null,
+     "relation": "context",
+     "note": "Sets the seat arithmetic for the 11/4 control configuration."
+    }
+   ],
+   "note": "State counts conflict (9 vs 10) and the roundup is undated.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260928-28cba4"
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Fiscal Watchdog Warns US Is ‘Entering a Debt Spiral’ as Treasury Rates Hit 5% — Ed Yardeni Flags Bond Vigilante Risk If Fed 'Fails to Subdue Inflation'",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed inflation and policy challenges' (fed, 16 headlines; lanes fed-macro). Model's reason: Debt spiral warning raises inflation and Fed policy concerns.",
+   "theme": "mystery",
+   "id": "evt-20260928-3c6491"
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Bitcoin Falls to $83,000 as Gold Plunges 3% on Fresh Oil Price Surge",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Oil price surge and market risk-off' (oil, 2 headlines; lanes energy-supply). Model's reason: Oil surge triggers risk-off; impacts crypto and gold.",
+   "theme": "mystery",
+   "id": "evt-20260928-52a72c"
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "ASML Has a China Warning for Trump: Too Much Pressure Could Create a Competitor",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ev-busan-truce-rolled",
+     "shared_words": [
+      "china",
+      "trade"
+     ],
+     "idf_sum": 11.0
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'US-China trade relations' (policy, 37 headlines; lanes china-macro, rates-credit). Model's reason: US-China trade tensions risk accelerating chip competition.",
+   "theme": "mystery",
+   "id": "evt-20260928-541244"
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "Estonia said an August 14-15 arson at a Tallinn building used by defense firm Milrem Robotics (maker of unmanned ground vehicles used by Ukraine) was sabotage ordered by Russian special services, based on KAPO findings; Estonia summoned the Russian ambassador and said the perpetrators were caught, while the Kremlin called the claim baseless.",
+   "source": "Reuters (via The Star), Al Jazeera",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 40,
+     "relation": "context",
+     "note": "Russian hybrid action against a NATO member"
+    },
+    {
+     "node": "eu-defence-spending",
+     "ledger": null,
+     "relation": "context",
+     "note": "Security-threat narrative behind NATO spending"
+    }
+   ],
+   "note": "Estonia did not publish its evidence.",
+   "theme": "geopolitics",
+   "id": "evt-20260929-0ab8a5"
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "Iraq began receiving US-origin gasoline by truck from Syria's Baniyas port under a three-month Iraq-Syria deal (Qatari-owned UCC buying, Syria taking transit fees), covering a shortfall of roughly 5 million litres/day against ~35 million litres/day of consumption.",
+   "source": "AP",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "overland bypass of Hormuz for refined products; no node tracks overland rerouting"
+    }
+   ],
+   "note": "Enab Baladi says the Syrian route for crude predates this; gasoline start date is 9/29 per AP and Rudaw.",
+   "theme": "iran_energy",
+   "id": "evt-20260929-1a00a1"
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "Three tankers were reported hit by projectiles in or near the Strait of Hormuz on Tuesday 9/29 (Marisks/UKMTO), the start of the late-September/October surge in shipping attacks; the UAE condemned the killing of tanker crew in the same days.",
+   "source": "UKMTO / Marisks via Reuters",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "kinetic activity at sea without a return to the strike-night pattern"
+    },
+    {
+     "node": "pause-outlasts-oct12",
+     "ledger": null,
+     "relation": "context",
+     "note": "whether IRGC tanker strikes count as breaking the 'fire pause' is undefined in the node"
+    }
+   ],
+   "note": "Date inferred from the feed saying 'Tuesday' with first report 9/30; confirm the exact day before using it as a trigger.",
+   "theme": "iran_energy",
+   "id": "evt-20260929-1c3450"
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "The Supreme Court let the administration resume third-country deportations without a chance to show fear of harm while the case proceeds, and set merits argument in DHS v. D.V.D. (No. 26-426); the Court's calendar amended 2026-10-01 lists argument on Wed 2026-12-09.",
+   "source": "The Week; SCOTUSblog; Supreme Court argument calendar",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "scotus-june-rulings",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Argued in the December sitting, so a decision is due by end of term."
+    }
+   ],
+   "note": "Interim order, not the merits. Candidates 64, 102, 151, 191, 193 are the same event.",
+   "theme": "us_politics_legal",
+   "id": "evt-20260929-533348"
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "Trump signed Executive Order 14434 ('Inaugurating the Era of Super Intelligence') telling agencies to use 'SI' instead of 'AI' in official communications; the science adviser has 60 days to propose legislative language for a federal definition, and a 'Super Intelligence Force' was announced 10/4.",
+   "source": "White House / WJLA (AP) / Akin Gump",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "rl-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "regulation-by-executive-order, with a statutory definition still only proposed"
+    }
+   ],
+   "note": "Mostly rebranding: SI initially means the existing statutory AI definition and no penalty on private users. One outlet's claim that the order calls AI users 'the enemy' could not be verified and is not recorded. New node ev-si-statute-none proposed.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260929-8fad5d"
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "Qatar said US and Iranian officials had separately spoken to its mediators and it hoped shuttle diplomacy could produce a breakthrough, while Trump denied reports he had offered sanctions relief or frozen funds for nuclear concessions; on 9/30 Iran was reported to be reviewing a US ceasefire counterproposal as three tankers were reported hit in Hormuz.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "iran-six-conditions",
+     "ledger": null,
+     "relation": "context",
+     "note": "the Qatar channel is alive but the US publicly denies the concession it was meant to carry"
+    },
+    {
+     "node": null,
+     "ledger": 36,
+     "relation": "context",
+     "note": "Trump's denial cuts against the indemnity-style leg"
+    }
+   ],
+   "note": "The 9/30 counterproposal item is feed-only (11 outlets, no terms disclosed).",
+   "theme": "iran_energy",
+   "id": "evt-20260929-a8ec4f"
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "OFAC tightened Cuba sanctions: it barred indirect financial dealings with sanctioned Cuban entities (security apparatus, GAESA), revoked the 2024 general license letting US banks process certain Cuba dollar payments, withdrew authorisation for US banks to hold accounts for Cuban independent entrepreneurs, and required permission for cultural-exchange and conference trips. A Sep 3 round hit Fidel Ernesto Castro and state fuel importer Abapet.",
+   "source": "AFP (via Jamaica Observer), TASS, Report.az",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 5,
+     "relation": "context",
+     "note": "Hardening US posture on Cuba"
+    },
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Cuba/Venezuela US posture has no node"
+    }
+   ],
+   "note": "I did not check OFAC's own notice. The same source says the embargo was extended to Sep 14, 2027.",
+   "theme": "geopolitics",
+   "id": "evt-20260929-d97f1e"
+  },
+  {
+   "date": "2026-09-30",
+   "fact": "August PCE inflation cooled: core PCE +0.2% m/m and 3.0% y/y versus 0.3% and 3.3% expected, partly because annual revisions cut July core PCE from 3.3% to 3.0%.",
+   "source": "Fox Business (numbers); feed headlines 'encouraging update on inflation'",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "core-pce-band",
+     "ledger": null,
+     "relation": "supports",
+     "note": "3.0% core PCE is inside the 2.5-4.0% band"
+    },
+    {
+     "node": "cpi-reaccel",
+     "ledger": null,
+     "relation": "context",
+     "note": "the PCE cooling preceded the hotter September CPI"
+    }
+   ],
+   "note": "Date comes from the feed (10 outlets on 9/30); the web article confirmed the numbers but I did not confirm the release date, so confidence is held at multi-outlet.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260930-87e7d9"
+  },
+  {
+   "date": "2026-09-30",
+   "fact": "California Governor Newsom signed a package of AI workplace laws: no disciplinary or termination decisions based solely on AI, disclosure when AI causes a mass layoff, a ban on inferring emotional state from biometrics, and workplace-surveillance limits; one report puts one bill's effective date at 7/1/2027.",
+   "source": "California Governor's office / KSAT / KQED",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "ld-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "labour-supply-side regulation of AI use"
+    }
+   ],
+   "note": "The 7/1/2027 effective date is from one source and may apply to a single bill.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20260930-e300d1"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "The Rupee closed 10/1 at 96.31 per US dollar after slipping 37 paise (feed; 95.65 on 9/22 and 94.79 on 10/16); on 10/21 the RBI accepted no bids in a treasury bill auction as the 10-year bond yield rose to 7.44%.",
+   "source": "PTI / Reuters (via feed)",
+   "confidence": "feed-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "external-funding clock for emerging markets; no India node tracks the rupee or RBI auctions"
+    }
+   ],
+   "note": "Single-source feed headlines; not web-verified. Gap: India/EM funding stress has no concrete rows.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261001-10bd43"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "Four Reuters sources said major Chinese refiners were not given approval to export diesel, gasoline or jet fuel in October to markets outside Hong Kong and Macau; Singapore diesel rose about 5% in following days, and a later report (Oct 9, single source) says China will resume exports of about 3.7 million tonnes in October.",
+   "source": "Reuters (via Oman Observer, Nation Thailand); IDN Financials",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Asian product tightness"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Non-Iran supply response"
+    }
+   ],
+   "note": "Beijing first restricted fuel exports in March and eased in July, per the reports; the Oct 9 reversal is single-sourced.",
+   "theme": "geopolitics",
+   "id": "evt-20261001-39a48f"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "France presented its 2027 budget (EUR 43bn of new measures, EUR 54bn including earlier ones, aiming at a 5% deficit in 2027) as the 10-year OAT yield rose above 4.9% to near 5%, the highest since 2002, and the CAC 40 fell 1.6% to its lowest since March; the government now expects a 2026 deficit of 5.4% of GDP versus 5.1% last year, and the OAT-Bund spread peaked around 150-160bp (another source says 127-128bp).",
+   "source": "TD Economics / Euronews / Allianz Trade / roic.ai",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "france-deficit",
+     "ledger": 96,
+     "relation": "supports",
+     "note": "government's own 5.4% forecast is 90bp above the 4.5% line (row #96 and node france-deficit)"
+    },
+    {
+     "node": "italy-spread",
+     "ledger": 108,
+     "relation": "context",
+     "note": "analysts describe the stress as France-specific with little contagion; BTP-Bund not shown in sources"
+    },
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "fiscal squeeze in action"
+    },
+    {
+     "node": "eu-fiscal-rules",
+     "ledger": null,
+     "relation": "context",
+     "note": "Eurogroup/ECB asked France to pass the budget first; no rule flexibility invoked"
+    }
+   ],
+   "note": "Peak yield and spread figures vary by source and timestamp. Web also carried undated reports of Prime Minister Lecornu offering the government's resignation; I could not date it and have not recorded it. The 2027 budget debate began 10/13; outcome unknown.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261001-4c17ed"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "Freddie Mac's 30-year mortgage rate averaged 7.28% in the 10/1 weekly print (per STATE.md's FRED check), which feed headlines (19 outlets) call nearly a 3-year high.",
+   "source": "Freddie Mac PMMS via FRED; AP (feed)",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "pmms-above-65",
+     "ledger": null,
+     "relation": "supports",
+     "note": "7.28 is 78bp above the 6.50 floor"
+    },
+    {
+     "node": "hsg-lockin-gap",
+     "ledger": null,
+     "relation": "context",
+     "note": "lock-in widens as market rate rises"
+    },
+    {
+     "node": "hsg-wac-under-6",
+     "ledger": null,
+     "relation": "context",
+     "note": "outstanding coupons stay far below new-issue rates"
+    }
+   ],
+   "note": "The 7.28 figure comes from STATE.md (#62 resolution), not from my web search.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261001-57ce9a"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "President Zelensky said Ukraine used the FP-7 tactical ballistic missile (Fire Point) in combat for the first time; target, location and outcome were not given, and range estimates conflict (about 200 vs 250 km).",
+   "source": "Reuters, Defense News",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Ukrainian long-range strike capacity growing"
+    }
+   ],
+   "note": "",
+   "theme": "geopolitics",
+   "id": "evt-20261001-5cffd7"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "Russian drone strikes on Oct 1-2 closed or restricted three of Kyiv's six Dnipro road bridges (Southern Bridge shut both ways, Metro and Paton bridges restricted), BBC Ukrainian reporting these as the first strikes on the Dnipro bridges since the invasion; the Northern Bridge was hit around Oct 3 and traffic was restored by midday Oct 2. Russia's Defense Ministry said the bridges support Ukrainian troop logistics.",
+   "source": "Reuters, AP, Kyiv Independent, Euronews",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "supports",
+     "note": "Escalation of the air campaign against the capital"
+    },
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "New target set (bridges), not covered by any tree node"
+    }
+   ],
+   "note": "Reports differ on whether the Northern Bridge strike was Oct 3.",
+   "theme": "geopolitics",
+   "id": "evt-20261001-68e923"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "Feed: Trump said he regrets nominating Justices Gorsuch, Kavanaugh and Barrett; the web shows he attacked Gorsuch and Barrett without naming them at a May GOP dinner. Alito told the WSJ in August he is here for another term, and the June term-end passed with no retirement announced.",
+   "source": "Feed (5 outlets incl. USA Today, Newsmax); Washington Examiner; Reuters (April)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 41,
+     "relation": "context",
+     "note": "No vacancy opened in 2026; a 4th appointment by mid-2028 needs a 2027 or 2028 retirement."
+    }
+   ],
+   "note": "Alito 'another term' quote relayed by the Washington Examiner, not read in the original. The feed headline's exact 10/1 wording was not verified on the web.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261001-71f0f1"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "Treasuries had their worst quarter since 1994 in Q3 2026; a Reuters poll on 10/7 still saw yields lower ahead.",
+   "source": "Reuters (via 7 outlets)",
+   "confidence": "multi-outlet",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "rc-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "scale of the repricing"
+    },
+    {
+     "node": "ten-year-band-2028",
+     "ledger": null,
+     "relation": "context",
+     "note": "far inside band"
+    }
+   ],
+   "note": "",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261001-97e2ac"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "The Supreme Court agreed to hear the challenge to the administration's mandatory-detention-without-bond policy (Rhoney v. Barbosa Da Cunha); argument is expected in early 2027 with a decision by late June.",
+   "source": "CNN (via KEYT/KRDO); The Star; Daily Record",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "scotus-june-rulings",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Another major immigration case due by the end of the term."
+    },
+    {
+     "node": "labor-force-immigration",
+     "ledger": null,
+     "relation": "context",
+     "note": "Enforcement posture feeds the net-migration path."
+    }
+   ],
+   "note": "Argument date not confirmed on the Court's calendar.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261001-aea467"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "EnergyNow carried a headline that oil gained nearly 3% after an 'abrupt end to Russia-Ukraine talks'.",
+   "source": "EnergyNow (feed)",
+   "confidence": "feed-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "Consistent with no deal"
+    },
+    {
+     "node": null,
+     "ledger": 112,
+     "relation": "context",
+     "note": "No mandate in sight"
+    }
+   ],
+   "note": "NOT VERIFIED: web search found no report of talks ending on Oct 1; another report says trilateral contacts had been stalled since February with a Kremlin 'situational pause' tied to the Iran war. Possibly a misdated or minor item.",
+   "theme": "geopolitics",
+   "id": "evt-20261001-cd2f5c"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "Dallas Fed President Logan said the policy rate probably needs to rise 50bp or more from 3.75-4.00%; after her remarks fed funds futures cut the odds of an October hike to 28% from 70% earlier that week, as she noted higher term premiums could do part of the tightening.",
+   "source": "Reuters / Kitco / FXStreet",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "fomc-oct",
+     "ledger": null,
+     "relation": "supports",
+     "note": "a voting-cycle hawk wants 50bp+, consistent with a second hike by December"
+    },
+    {
+     "node": "dec-dots-2027",
+     "ledger": null,
+     "relation": "context",
+     "note": "terminal rate debate"
+    }
+   ],
+   "note": "Same week Kashkari had no strong view and Bowman saw no urgent need for more moves (Newsquawk).",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261001-ce16bb"
+  },
+  {
+   "date": "2026-10-01",
+   "fact": "A federal judge in Georgia dismissed DOJ's suit for state voter-registration data, one of a run of losses (D.C. in August, Wisconsin, New York) on the ground that the 1960 Civil Rights Act and related statutes do not let DOJ compel a voter list.",
+   "source": "Democracy Docket; Hoodline; ACLU",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "DOJ is suing states for voter files; the fight is already live."
+    },
+    {
+     "node": "election-instrument",
+     "ledger": null,
+     "relation": "context",
+     "note": "DOJ voter-file suits are the litigation arm of the instrument chain."
+    }
+   ],
+   "note": "Win-loss counts conflict across outlets (Democracy Docket 0-12 in 31 suits; Hoodline 0-26); not verified against dockets. Not in the feed candidates.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261001-dd5f7f"
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "G7 leaders agreed to release 100 million barrels of oil, diesel first (frontloaded within about 20 days), coordinated through the IEA over roughly four months; the diesel/crude split was not specified.",
+   "source": "Al Jazeera; AP (via NewsChannel 9)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "Stock release is a supply offset that leans toward the lower half of the 85-125 band."
+    },
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "Diesel front-loading narrows the ULSD crack if delivered; the node needs the crack above $25 on every weekly close."
+    }
+   ],
+   "note": "Energy theme belongs to another agent; recorded because it came from Trump pressure and fed the diesel EO.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261002-1621cd"
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "Taiwan received its first two new-build F-16 Block 70 jets (of 66 in a roughly $8 billion programme) at Chihhang air base; Reuters-sourced reports add that Washington has yet to approve a separate $14 billion arms package that Trump paused after Chinese objections.",
+   "source": "Focus Taiwan, The Aviationist, Star-Advertiser",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "taiwan-watch",
+     "ledger": null,
+     "relation": "context",
+     "note": "Deterrence hardware arriving; low-probability kinetic row unaffected"
+    },
+    {
+     "node": "taiwan-deterred",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Capability build-up"
+    },
+    {
+     "node": null,
+     "ledger": 42,
+     "relation": "context",
+     "note": "No invasion path visible"
+    }
+   ],
+   "note": "Naming differs (F-16V vs F-16C Block 70).",
+   "theme": "geopolitics",
+   "id": "evt-20261002-36d063"
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "The G7 agreed to release 100 million barrels of crude and diesel from emergency stocks over four months with a front-loaded diesel tranche within 20 days, after the US reportedly told Germany and France to draw down diesel stocks or face a possible US diesel export ban (Trump later said a ban was never on the table); the G7 also pledged not to impose energy export restrictions on each other.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "spr-refill",
+     "ledger": null,
+     "relation": "context",
+     "note": "stock draws push SPR/OECD inventories down; the SPR end-2027 level is not directly settled by this"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "Brent fell ~1% on 10/3 to ~$101; analysts called the release a political gesture"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "policy response to the supply loss"
+    }
+   ],
+   "note": "Energy Aspects called the figure a statement rather than a binding commitment.",
+   "theme": "iran_energy",
+   "id": "evt-20261002-3ed7fb"
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "The US Coast Guard said it intercepted the Cuba-bound cargo ship Grace, which it said used dark-fleet tactics and carried fuel in ballast tanks and containers; a boarding team escorted it to Mexico. On Oct 12 Reuters reported the US said it seized 90 shipments of biodiesel (about $3 million) under contracts tied to sanctioned Cuban energy trader ENETEC, which Cuba denied. Havana says it has contacts with Washington but no formal negotiations, and expects the UNGA embargo vote on Oct 27-28.",
+   "source": "Reuters (via Internazionale, Star), Good Morning America",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 5,
+     "relation": "context",
+     "note": "Interdiction at sea in the Caribbean"
+    },
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "No latam node covers it"
+    }
+   ],
+   "note": "One summary gives the stop date as Sep 5 versus the Oct 2 announcement; the vote date comes from Cuban-sourced outlets.",
+   "theme": "geopolitics",
+   "id": "evt-20261002-4060c6"
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "US employers added just 29,000 jobs in September versus roughly 84-90k expected, unemployment rose to 4.2% from 4.1%, and BLS revised July to -10,000 (from +21,000) and August to +133,000 (from +162,000); health care led gains, government shed jobs.",
+   "source": "BLS (via UPI, AP, Reuters)",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "payrolls-oct",
+     "ledger": null,
+     "relation": "context",
+     "note": "next print 11/6; low-hire baseline: 3-month average roughly 50k"
+    },
+    {
+     "node": "u3-band",
+     "ledger": 115,
+     "relation": "supports",
+     "note": "4.2% is inside 3.8-5.2%"
+    },
+    {
+     "node": "healthcare-jobs",
+     "ledger": null,
+     "relation": "supports",
+     "note": "health care led September gains"
+    },
+    {
+     "node": "fomc-oct",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "weak data cut hike odds; a Dec hike remains the market view"
+    },
+    {
+     "node": "participation-drag",
+     "ledger": null,
+     "relation": "context",
+     "note": "labour supply constrained while hiring slows"
+    }
+   ],
+   "note": "Black unemployment 'rose at its fastest pace since Covid' (feed, 11 outlets) not independently checked. Candidate headlines call it the last jobs report before the midterms.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261002-6ad0df"
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "The G7 agreed to release 100 million barrels of oil and diesel from emergency reserves over four months (per Macron, front-loaded diesel in the first 20 days), and on Oct 16 the IEA agreed to speed release of over 20 million barrels of diesel plus remaining March-release oil; an analyst called the diesel volumes an acceleration of existing commitments.",
+   "source": "AP via Star-Advertiser, Al Jazeera, Mining Weekly",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "spr-refill",
+     "ledger": null,
+     "relation": "context",
+     "note": "Emergency draws lower stock levels"
+    },
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "context",
+     "note": "Supply relief aimed at diesel, size disputed"
+    }
+   ],
+   "note": "Sources differ on how firm the European commitment was on Oct 2; the 100-million figure is a headline number.",
+   "theme": "geopolitics",
+   "id": "evt-20261002-bb37fe"
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "Trump said the South Korea trade deal includes an $8.4 billion US enhanced oil recovery project; a South Korean industry ministry official said the strategic investments are limited to those in the joint fact sheet and the oil recovery project is not among them.",
+   "source": "Reuters, Korea Times",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "jk-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "US-Korea investment friction"
+    }
+   ],
+   "note": "Feed also shows a first Korea-US finance-and-monetary '2+2' meeting on Oct 16; feed-only.",
+   "theme": "geopolitics",
+   "id": "evt-20261002-c8e0ae"
+  },
+  {
+   "date": "2026-10-03",
+   "fact": "The Houthis claimed missile and drone strikes on Saudi Aramco facilities (Abha, Najran, Jazan, and a facility in Riyadh); satellite imagery and video showed a large smoke plume at the Riyadh refinery and at least three storage tanks burning, while the Saudi-led coalition called the claims misleading. Brent rose on 10/5, briefly up 4.3% to about $109.",
+   "source": "Al Jazeera / Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "the node says an Aramco-class hit flips to flip-b via supply; damage is unconfirmed"
+    },
+    {
+     "node": "red-sea-front",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Saudi exports attacked at both ends"
+    },
+    {
+     "node": "flip-b",
+     "ledger": null,
+     "relation": "context",
+     "note": "supply-branch trigger condition appearing, not yet confirmed by output data"
+    }
+   ],
+   "note": "Damage and attribution are partly claim-based; Saudi/Aramco did not confirm the extent.",
+   "theme": "iran_energy",
+   "id": "evt-20261003-7d0a8b"
+  },
+  {
+   "date": "2026-10-03",
+   "fact": "In Latvia's Oct 3 parliamentary election Andris Kulbergs' United List won first place with about 35.8% and 41 of 100 seats; Prime Minister Silina's New Unity fell to about 6.5% and 7 seats; turnout was about 51.8%. Post-election coalition not confirmed in the results I found.",
+   "source": "Wikipedia, KAS",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Baltic pro-Ukraine government continuity question"
+    },
+    {
+     "node": "ukraine-tranche",
+     "ledger": null,
+     "relation": "context",
+     "note": "Latvian coalition stance on Ukraine aid"
+    }
+   ],
+   "note": "Feed (Oct 4, 2 outlets) says the Latvian PM is on track to lead a pro-Ukraine coalition. Figures from Wikipedia and KAS differ slightly (35.8% vs 35.3%).",
+   "theme": "geopolitics",
+   "id": "evt-20261003-8bf062"
+  },
+  {
+   "date": "2026-10-04",
+   "fact": "The seven core OPEC+ members kept November output targets unchanged at an online meeting, with Gulf producers pumping well below quota because of the war, the capacity review that sets 2027 quotas delayed, and the next meeting set for November 1; Brent was still above $100 versus about $73 before the war.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "opec-quota-unchanged",
+     "ledger": null,
+     "relation": "supports",
+     "note": "quotas are non-binding while Gulf output is war-constrained, so 'unchanged' is the default"
+    },
+    {
+     "node": "opec-nov-meeting",
+     "ledger": null,
+     "relation": "context",
+     "note": "Reuters gives the next core-seven meeting as 11/1, not 11/30; check whether the node's 11/30 is the full ministerial or a mis-date"
+    },
+    {
+     "node": "opec-defends",
+     "ledger": null,
+     "relation": "context",
+     "note": "resolved at 0.0; this hold is not a price defence"
+    }
+   ],
+   "note": "Node dates for the OPEC+ November meeting may need checking against the 11/1 date.",
+   "theme": "iran_energy",
+   "id": "evt-20261004-1e5fbd"
+  },
+  {
+   "date": "2026-10-04",
+   "fact": "A Saudi-led coalition airstrike campaign hit Houthi positions in Sanaa and Saada (Houthis claimed 106 strikes in 24 hours) and Yemen's government declared a major operation against the Houthis; the Houthis responded with attacks on Saudi airports and Aramco sites, while only a Taiz front was reported on the ground.",
+   "source": "Al Jazeera / Xinhua / CGTN",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "the proxy front is a Saudi-Houthi war"
+    },
+    {
+     "node": "us-houthi-response",
+     "ledger": null,
+     "relation": "context",
+     "note": "resolved NEITHER; the US still has not struck Yemen"
+    }
+   ],
+   "note": "Strike counts are Houthi claims; the 'major operation' is a government declaration.",
+   "theme": "iran_energy",
+   "id": "evt-20261004-32e658"
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "President Trump signed an executive order (reported as EO 14435, Emergency Tax Relief on Diesel Fuel) at a rally in Grand Island, Nebraska easing limits on tax-free red-dyed diesel for highway use and directing Treasury to defer the federal diesel excise tax through end-2026; diesel had hit a record $6.52/gal on 9/22 and was $6.37 on 10/2 (AAA).",
+   "source": "AP (via WBTV/Hawaii News Now); CNN; Holland & Knight",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "context",
+     "note": "Policy response to a wide diesel crack; it cuts tax, not supply."
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "Diesel spike follows the Iran war; the EO does not touch crude supply."
+    }
+   ],
+   "note": "On stage Trump said anyone could buy tax-free red diesel for any reason; the White House fact sheet was narrower, and fuel-industry groups say EPA/state dye rules are not waived. The feed's 'little relief' items are opinion. EO number is from one law-firm summary.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261005-2d3ef8"
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "The Supreme Court's October Term 2026 opened; first-day arguments included Suncor Energy v. Boulder County (whether localities can sue oil companies for climate damages); the Court's published sittings run Oct 5-14, Nov 2-10 and Nov 30-Dec 9.",
+   "source": "Supreme Court argument calendars; Reuters (via Express Tribune); The Hill",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "scotus-term-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "The node's event occurred; the term is open."
+    }
+   ],
+   "note": "Feed item 88 says an AR-15 case was argued on opening day; no AR-15 case was found on the Court's October calendar, so it is not recorded.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261005-72c70f"
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "Saudi Aramco's CEO said replenishing global crude and fuel stocks could take two years and that Brent could have hit $200 without the East-West pipeline.",
+   "source": "Reuters (feed)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "inventory rebuild timeline is a supply-side input"
+    },
+    {
+     "node": "spr-refill",
+     "ledger": null,
+     "relation": "context",
+     "note": "a two-year global restock horizon"
+    }
+   ],
+   "note": "Statement and opinion, not a data point.",
+   "theme": "iran_energy",
+   "id": "evt-20261005-91802f"
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "A Turkish-owned cargo ship carrying corn was hit by a drone and sank off the Romanian coast on Oct 5 (2 dead, 11 rescued); on Oct 6 drones sank a merchant ship off Bulgaria (reports differ on 11 vs 12 missing). A NATO military source told Reuters Russian drones hit two tankers.",
+   "source": "PBS/AP, Al Jazeera, Reuters (via web)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 40,
+     "relation": "context",
+     "note": "Hybrid attacks inside NATO-member waters; far from a state-of-war declaration"
+    },
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Black Sea shipping risk adds to the Europe energy squeeze"
+    }
+   ],
+   "note": "Attribution is contested (Romania's president named no origin). Feed items #58, #216 carry the Bulgaria story.",
+   "theme": "geopolitics",
+   "id": "evt-20261005-dcf353"
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "Kpler data showed Middle East crude exports above pre-war levels on 14 days in September, with the 7-day average at 18.3 mb/d on 9/30 versus about 18 mb/d pre-war, driven by Saudi loadings on both coasts, while tanker attacks kept rising and ship-to-ship transfers in the Gulf of Oman hit capacity limits.",
+   "source": "Reuters (Kpler)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "physical supply is far less short than the strait headlines imply; supports the lower half of the band"
+    },
+    {
+     "node": "hormuz-framework-only",
+     "ledger": null,
+     "relation": "context",
+     "note": "exports recovered without a reopened strait or a deal"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "the non-Iran half of the story: bypass routes and Red Sea loadings"
+    }
+   ],
+   "note": "Same week brought the highest attack count of the war, so the export recovery is exposed.",
+   "theme": "iran_energy",
+   "id": "evt-20261005-e72e5f"
+  },
+  {
+   "date": "2026-10-06",
+   "fact": "The EIA's October Short-Term Energy Outlook raised its fourth-quarter Brent forecast by about $14 to roughly $105 (from about $90.7), assuming Middle East flows stay constrained with ~4.5 mb/d shut in; it put the 2026 average near $96 and 2027 near $84, with global inventories drawing 1.9 mb/d in Q3 and a further 0.7 mb/d in Q4.",
+   "source": "EIA (via Trend, Ship & Bunker)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "supports",
+     "note": "a $105 central forecast sits inside the $85-125 band but about 16% below the ceiling"
+    },
+    {
+     "node": "brent-90",
+     "ledger": null,
+     "relation": "supports",
+     "note": "forecast keeps Brent above $90 through Q4"
+    }
+   ],
+   "note": "Figures from secondary reports of the STEO; the EIA PDF snippet did not show the table. Inputs were frozen 10/1, before the Riyadh-airport strikes and the 10/20-22 price rise.",
+   "theme": "iran_energy",
+   "id": "evt-20261006-66780e"
+  },
+  {
+   "date": "2026-10-06",
+   "fact": "Kpler counted only 7 commodity vessels crossing Hormuz on 10/6, the fewest since 7/23 (LSEG counted 8), with crude crossings down 27% week on week to about 10.1 mb/d, before a rebound to 10 on 10/7; Gulf of Oman and Red Sea exports ran at 6.7 mb/d, more than twice pre-war levels.",
+   "source": "Reuters (Kpler, LSEG)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "hormuz-framework-only",
+     "ledger": null,
+     "relation": "supports",
+     "note": "traffic is attack-sensitive and nowhere near normalised"
+    },
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "no controlled-strait resolution in the data"
+    }
+   ],
+   "note": "Excludes ships with AIS off.",
+   "theme": "iran_energy",
+   "id": "evt-20261006-7c8636"
+  },
+  {
+   "date": "2026-10-06",
+   "fact": "A Liberia-flagged Aframax tanker (reported as Aframax Rio) carrying crude caught fire off Sochi after a naval-drone strike; all 23 Indian crew were rescued and India condemned the attack. Russia's Transport Ministry said naval drones hit it; Russian officials did not name the attacker, and the Ukrainian attribution comes from the feed headlines.",
+   "source": "Gulf News, Channel 4, Militarnyi",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "ru-tanker-replacement-locked",
+     "ledger": null,
+     "relation": "context",
+     "note": "Attrition on the sanctioned-trade tanker fleet"
+    },
+    {
+     "node": "in-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "23 Indian seafarers aboard; Delhi diplomatic reaction"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Russian export-route risk"
+    }
+   ],
+   "note": "One report says the ship was on Ukraine's own sanctions list since Feb 12, 2026.",
+   "theme": "geopolitics",
+   "id": "evt-20261006-b350b9"
+  },
+  {
+   "date": "2026-10-07",
+   "fact": "An Iranian official said 'illegal routes' through Hormuz would soon be blocked and on 10/8 Iran vowed to close more routes, after attacks off Qatar and Oman on tankers using alternative paths; on 10/9 the IRGC threatened to target ships beyond Hormuz.",
+   "source": "Iranian state media via Reuters (feed)",
+   "confidence": "plan-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "Iran is asserting route control, the opposite of a US-controlled strait"
+    },
+    {
+     "node": null,
+     "ledger": 12,
+     "relation": "context",
+     "note": "assertion of control, not a published toll"
+    },
+    {
+     "node": "hormuz-framework-only",
+     "ledger": null,
+     "relation": "context",
+     "note": ""
+    }
+   ],
+   "note": "Threats and stated intent; follow-up attacks (10/8 off Qatar, multiple projectiles) are in the feed but not separately verified.",
+   "theme": "iran_energy",
+   "id": "evt-20261007-4ec037"
+  },
+  {
+   "date": "2026-10-07",
+   "fact": "Spot gold hit a two-month low near $4,096 on higher yields and a stronger dollar even as China's central bank reported its 23rd straight monthly addition to gold reserves for September; gold recovered to about $4,177 on 10/9 and feed headlines have it below $4,150 again on 10/19.",
+   "source": "Reuters / KuCoin News / Azernews",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "cn-gold-buying",
+     "ledger": 84,
+     "relation": "supports",
+     "note": "first of the 12 monthly releases in the #84 window shows higher holdings"
+    },
+    {
+     "node": "gold-level",
+     "ledger": null,
+     "relation": "context",
+     "note": "~$4,100-4,200 is far above the 2,800 floor"
+    },
+    {
+     "node": "gold-band-2027",
+     "ledger": null,
+     "relation": "context",
+     "note": "inside the 3000-5500 band; more than 10% below the August peak"
+    }
+   ],
+   "note": "The 10/19 break below 4,150 is feed-only; web search did not find a dated source.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261007-5aff12"
+  },
+  {
+   "date": "2026-10-07",
+   "fact": "At least 12 attacks on oil, LNG and LPG tankers around Hormuz were counted in the week of 9/28-10/5 by three maritime-security sources, the highest of any week since the war began on 2/28 (IMO logged 9 incidents; its previous peak week was mid-July with 8).",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "violent but sub-war stalemate"
+    },
+    {
+     "node": "pause-outlasts-oct12",
+     "ledger": null,
+     "relation": "context",
+     "note": "IRGC attacks on tankers continued throughout the 'pause' window; the node's definition does not say whether they count"
+    },
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "escorts/US control have not stopped the attacks"
+    },
+    {
+     "node": "hormuz-normalized",
+     "ledger": null,
+     "relation": "context",
+     "note": "resolved at 0.0"
+    }
+   ],
+   "note": "Later reports (Kpler, via Reuters 10/22) put the count at 18 attacks in the two weeks to 10/22.",
+   "theme": "iran_energy",
+   "id": "evt-20261007-9eb318"
+  },
+  {
+   "date": "2026-10-07",
+   "fact": "Trump said the Federal Reserve Board would like to see the country do badly.",
+   "source": "Feed (6 outlets)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [],
+   "note": "Rhetoric, no action. Tree has no node for Fed independence: a gap.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261007-a380ca"
+  },
+  {
+   "date": "2026-10-07",
+   "fact": "The S&P 500 and Nasdaq closed at records on 10/6-10/7 on a tech rally (feed headline 'tech rally lifts S&P 500, Nasdaq to records'; 10/12 'US stocks hover near their latest record'; Nasdaq also closed at a record 9/21), before the AI selloff began 10/14.",
+   "source": "Reuters / AP (via feed)",
+   "confidence": "feed-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "market-regime-q3",
+     "ledger": null,
+     "relation": "context",
+     "note": "records in early October vs the capped-grind call"
+    },
+    {
+     "node": "tech-tailwind",
+     "ledger": null,
+     "relation": "context",
+     "note": "AI/high-beta bid persisted into early October"
+    }
+   ],
+   "note": "Index levels not captured; relies on feed headlines.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261007-df8731"
+  },
+  {
+   "date": "2026-10-07",
+   "fact": "The September FOMC minutes (released 10/7) showed most officials saw another hike as likely appropriate by year-end without committing to a November or December date; some officials wanted to prepare for market stress; CME odds of an October hike were about 17% afterwards.",
+   "source": "Reuters / BabyPips / Wealth Professional / roic.ai",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "fomc-oct",
+     "ledger": null,
+     "relation": "supports",
+     "note": "hike by year-end signalled; October itself disfavoured"
+    },
+    {
+     "node": "dec-dots-2027",
+     "ledger": null,
+     "relation": "context",
+     "note": "directional signal for the December SEP"
+    },
+    {
+     "node": "fomc-dec-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "December is the likelier hike date"
+    },
+    {
+     "node": "qt-end-marker",
+     "ledger": null,
+     "relation": "context",
+     "note": "market-stress preparation language; no QT date named"
+    }
+   ],
+   "note": "Participant counts for further hikes differ between accounts; October odds range 17-25% by source.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261007-fa5e8c"
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Trump said on social media the US 'will not be attacking Iran at any time prior to the Midterm Elections', saying talks with Tehran continue; a third carrier, USS Theodore Roosevelt, could arrive by the end of October.",
+   "source": "AP (via Fox 19/WBTV/KTTC)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "flip-b",
+     "ledger": 38,
+     "relation": "context",
+     "note": "Pledge covers strikes before 11/3; a ground invasion by 12/31 would need a post-election pivot."
+    },
+    {
+     "node": null,
+     "ledger": 36,
+     "relation": "context",
+     "note": "No change to the ground-troops-or-indemnity fork."
+    }
+   ],
+   "note": "A political pledge, not a binding action; Trump also hinted at full-scale resumption. The Iran-lane agent should own any repricing.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261008-03f237"
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Freddie Mac's 30-year mortgage rate rose to 7.40% from 7.28%, the seventh weekly rise in a row and the highest since 2023-11-16 (7.44%).",
+   "source": "AP (via YourValley.net, Florida Realtors)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "pmms-above-65",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Print is about 90 bp above the 6.50% floor; about 10 weekly prints remain."
+    },
+    {
+     "node": "hsg-lockin-gap",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Wider gap between market rate and outstanding coupons."
+    }
+   ],
+   "note": "The 9/3 print was 6.71% (Freddie Mac), so rates rose about 70 bp in five weeks.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261008-28fe61"
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Trump said the US would not attack Iran before the November 3 midterms and kept the blockade in force, while saying Washington was having productive discussions with Iran; Axios reported the Pentagon had told CENTCOM to finish preparations for resuming major combat operations (large-scale strikes on energy, infrastructure and nuclear targets) and that US and Israeli forces remained on alert.",
+   "source": "Axios / Reuters",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "us-strikes-resume",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "the node's 10/12 horizon passed with a public no-strike pledge to 11/3"
+    },
+    {
+     "node": "pause-outlasts-oct12",
+     "ledger": null,
+     "relation": "supports",
+     "note": "US-side restraint through the horizon"
+    },
+    {
+     "node": "iran-pause-duration-nov",
+     "ledger": null,
+     "relation": "supports",
+     "note": "US pledge runs to 11/3, two days past the node's 11/1 test date"
+    },
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "stalemate with preparation"
+    },
+    {
+     "node": null,
+     "ledger": 35,
+     "relation": "supports",
+     "note": "no war-scale resumption before 11/3"
+    },
+    {
+     "node": null,
+     "ledger": 38,
+     "relation": "context",
+     "note": "preparations are air/energy-target focused, not ground"
+    }
+   ],
+   "note": "Trump statements are reversal-prone (16.14); the pledge is public but not binding, and it is a US-only commitment.",
+   "theme": "iran_energy",
+   "id": "evt-20261008-86b5e9"
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Hurricane Isaias shut in about 63% of US Gulf oil output by 10/8 (one later report put it at 71.5% on 10/9; platforms evacuated included 129 of 371 manned platforms) and Brent rose more than 4% that day on the combined Hormuz and hurricane worry; the storm was reported making landfall near Destin, Florida on 10/9-10 (Reuters headline: Category 3; a local outlet says Category 2).",
+   "source": "Reuters / ABC News / Maritime Executive",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "insured-loss",
+     "ledger": 107,
+     "relation": "supports",
+     "note": "a major Gulf hurricane adds to 2026 insured catastrophe loss; size unreported"
+    },
+    {
+     "node": "natgas-storage",
+     "ledger": 98,
+     "relation": "context",
+     "note": "Gulf gas shut-ins (about 57%) briefly cut supply"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "weather and war premium stacked on 10/8-9"
+    }
+   ],
+   "note": "Landfall category and exact location are not confirmed by me; shut-in percentage is. Restart/damage status not found.",
+   "theme": "iran_energy",
+   "id": "evt-20261008-8cef18"
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Houthi missile attacks on King Khalid International Airport in Riyadh killed 3 on 10/8, then at least 12 (309 wounded, one American among the dead) on 10/10, the deadliest attack in the kingdom in over a decade and the third in a week, and a further strike on 10/11 killed 1 and wounded 11; the airport reopened to limited traffic on 10/21.",
+   "source": "Al Jazeera / AP / Reuters",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "the Houthi front is now killing civilians in the Saudi capital"
+    },
+    {
+     "node": "flip-b",
+     "ledger": null,
+     "relation": "context",
+     "note": "an infrastructure-of-state target; not an oil asset"
+    },
+    {
+     "node": "aviation-insurance-war-risk",
+     "ledger": null,
+     "relation": "supports",
+     "note": "civil aviation in the Saudi capital is a war target in 2026"
+    },
+    {
+     "node": null,
+     "ledger": 16,
+     "relation": "context",
+     "note": "regional spillover raises pressure on Israel/US to act but does not itself involve Iranian territory"
+    }
+   ],
+   "note": "Count of strikes in the week differs by outlet (three vs four). Reopening on 10/21 is multi-outlet from the AP feed headline.",
+   "theme": "iran_energy",
+   "id": "evt-20261008-ade700"
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "The US Treasury (OFAC) issued General License 135 authorising the sale and import, including into the United States, of Russian-origin diesel until 2027-04-07 after Trump said Putin agreed to supply 300,000 t immediately, 500,000 t in November, 1 Mt thereafter and a further 3 Mt; US diesel averaged $6.28/gal, up 70% since the war began, and Brent rose 2.1% to $106.95 on 10/12.",
+   "source": "Ship & Bunker / AP",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "a US easing of Russia energy sanctions is not in the Russia-Ukraine anchor"
+    },
+    {
+     "node": "ru-sanctions-renewal-2027",
+     "ledger": null,
+     "relation": "context",
+     "note": "EU/UK bans and the $100 product cap remain; only the US stance moved"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "policy response to diesel scarcity"
+    }
+   ],
+   "note": "The broader US ban on Russian crude, products, LNG and coal under the March 2022 order remains. Volumes are Trump's, not the Kremlin's; Russia's ability to deliver is doubted by CFR and CSIS analysts.",
+   "theme": "iran_energy",
+   "id": "evt-20261009-39d713"
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "Bessent hired Judy Shelton, Trump's former Fed board nominee (rejected by the Senate 50-47 in 2020), as a Treasury counselor focused on currency policy and China; the post needs no Senate confirmation and she has no monetary-policy vote.",
+   "source": "Reuters / American Banker / National Mortgage News",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [],
+   "note": "Reported alongside concerns about her views on Fed independence and the gold standard. Bears on no node; low significance for the tree.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261009-3f0376"
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "Canada lost 68,000 jobs in September (after -42,000 in August) and unemployment rose to 6.5%, against expectations of a gain of about 9,000.",
+   "source": "Statistics Canada via CTV / Canadian Press",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [],
+   "note": "No Canada node exists; the Bank of Canada decision and Canadian data are a coverage gap.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261009-6e8a02"
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "After a call with Putin on Oct 9, Trump announced a deal for Russian diesel: 300,000 tonnes released immediately, 500,000 tonnes in November, 1 million after that, with a further 3 million tonnes possible; Treasury issued a general license within hours authorising sale and delivery of Russian-origin diesel including into the US through April 2027 (sources differ on 7 vs 17 April; one names GL 135). Zelensky called it a gift to Putin.",
+   "source": "BBC, ITV, Ukrainska Pravda",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "Added Russian diesel supply (if delivered) pressures cracks; Standard Chartered (feed, Oct 16) says it will not add new supply"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Non-Iran half of the oil story: Russia now a sanctioned-but-licensed diesel source"
+    },
+    {
+     "node": null,
+     "ledger": 83,
+     "relation": "context",
+     "note": "Bearish supply headline inside a band that still looks 10% from its ceiling"
+    },
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "US-Russia economic accommodation while the war continues"
+    },
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "Trump tied diesel prices to Republican midterm prospects in coverage"
+    }
+   ],
+   "note": "Analysts questioned whether Russia can deliver the volume; White House did not say who pays. License end date conflicts across sources.",
+   "theme": "geopolitics",
+   "id": "evt-20261009-855a36"
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "Judge Sooknanan (D.D.C., Common Cause v. DOJ) vacated DOJ's nationwide voter-list maintenance policy, finding DOJ exceeded its authority and violated privacy law, and barred use of state voter files incl. running them through SAVE; DOJ appealed and on 2026-10-16 moved for a stay pending appeal (DOJ argues there is no such policy).",
+   "source": "Democracy Docket; ACLU press release",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "midterms-2026",
+     "ledger": 56,
+     "relation": "supports",
+     "note": "Live DOJ-vs-states litigation weeks before the election."
+    },
+    {
+     "node": "contested-result",
+     "ledger": null,
+     "relation": "context",
+     "note": "Raises the litigation temperature; does not itself contest a result."
+    }
+   ],
+   "note": "Separate from the SAVE order of 9/25 (different case, same judge). No ruling on the stay motion found. Matches candidate 60.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261009-85fd75"
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "The US designated the entire International Criminal Court on the SDN list hours after former ICC judge Navi Pillay won the Nobel Peace Prize, with a six-month initial grace period and exemptions for telecoms, software, pensions and detainee-related transactions; the court urged its 125 member states to respond. Earlier sanctions had targeted individual officials.",
+   "source": "Reuters (via ARY, Khaleej Times), Bloomberg Law",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "ru-icc-warrants-no-expiry",
+     "ledger": null,
+     "relation": "context",
+     "note": "Warrants remain legally in force; ICC finances now under US pressure"
+    }
+   ],
+   "note": "Nobel/ICC link is as reported.",
+   "theme": "geopolitics",
+   "id": "evt-20261009-899aa4"
+  },
+  {
+   "date": "2026-10-10",
+   "fact": "Trump told reporters Zelensky 'better damn well stop' Ukrainian strikes on Russian refineries, blamed them for US diesel prices, and said Ukraine should get a new president; Zelensky said Ukraine would halt refinery strikes only as part of mutual de-escalation and offered to organise elections if Putin agrees to a 60-day ceasefire.",
+   "source": "Kyiv Independent, LBC, Fox affiliates (AP)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "supports",
+     "note": "Washington leaning on Kyiv, not Moscow; no peace framework"
+    },
+    {
+     "node": null,
+     "ledger": 112,
+     "relation": "context",
+     "note": "No monitored ceasefire mandate in sight; Zelensky's offer is conditional"
+    },
+    {
+     "node": "ukraine-tranche",
+     "ledger": null,
+     "relation": "context",
+     "note": "US-Ukraine friction bears on who funds Ukraine; the EU tranche node is the European side"
+    }
+   ],
+   "note": "Feed item #100 (Reuters, Oct 16) reports Trump calling the resumption of refinery strikes a 'disgrace'; I did not independently verify that one. Ukrainian law bars elections under martial law (liga.net).",
+   "theme": "geopolitics",
+   "id": "evt-20261010-f9ac61"
+  },
+  {
+   "date": "2026-10-11",
+   "fact": "Trump announced on Truth Social that Russia and Ukraine had agreed to an 'energy ceasefire' effective immediately; neither government confirmed terms, and on Oct 12 Zelensky said Russian drones had hit a Kharkiv power plant, a gas-production facility and a gas station after the announcement. A similar mid-September announcement was also never confirmed by either side.",
+   "source": "Al Jazeera, BNN Bloomberg, The Star",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 112,
+     "relation": "context",
+     "note": "An announced but unconfirmed truce with no mandate or monitors; row stays far from resolution"
+    },
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "supports",
+     "note": "Second unconfirmed 'ceasefire' announcement without a signed text"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Oil fell on the headline (feed: Oct 12), then reversed"
+    }
+   ],
+   "note": "Record this as an ANNOUNCEMENT, not an in-force ceasefire (lesson #72).",
+   "theme": "geopolitics",
+   "id": "evt-20261011-961ee0"
+  },
+  {
+   "date": "2026-10-12",
+   "fact": "Two tankers were attacked near Hormuz/Oman on 10/11-12 with two Indian seafarers reported missing after a drone strike off Sohar (India condemned the attacks, 'attacks must cease'), following a 10/10 drone strike on a Panama-flagged tanker off Sharjah where all 22 Indian crew were rescued.",
+   "source": "Indian Ministry statements / UKMTO via feed",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "attack tempo continues"
+    }
+   ],
+   "note": "Outcome of the missing seafarers not checked.",
+   "theme": "iran_energy",
+   "id": "evt-20261012-5c4bfd"
+  },
+  {
+   "date": "2026-10-12",
+   "fact": "EU gas storage was about 74% full on Oct 12, 14.9 percentage points below the five-year average for the date and the lowest for that date since GIE records began in 2011 (83.2% a year earlier); the Commission is reportedly prepared to lower the 90% fill target to 80% (unconfirmed). BofA (feed Oct 12) warned of a 30% Q4 gas-price rise.",
+   "source": "TASS from GIE data; S&P Global",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "eu-gas-storage",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "Weak start for the 2026-27 winter; row threshold is 25% on Apr 1 2027"
+    },
+    {
+     "node": null,
+     "ledger": 105,
+     "relation": "contradicts",
+     "note": "Same threshold"
+    },
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Fiscal-and-energy squeeze"
+    }
+   ],
+   "note": "Figures are TASS calculations from GIE data; I did not open AGSI itself.",
+   "theme": "geopolitics",
+   "id": "evt-20261012-c3e9c6"
+  },
+  {
+   "date": "2026-10-12",
+   "fact": "Elon Musk gave $276 million to Republican super PACs over three months for the midterms.",
+   "source": "Feed (6 outlets)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "divided-government",
+     "ledger": null,
+     "relation": "context",
+     "note": "Spending datapoint, no view."
+    }
+   ],
+   "note": "Figure and period from the feed headline only.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261012-c6ae73"
+  },
+  {
+   "date": "2026-10-12",
+   "fact": "China sanctioned Paraguay's Communications Minister Gustavo Villate and Belize's Foreign Minister Francis Fonseca, freezing assets in China and barring entry (including Hong Kong and Macau), over contacts with Taiwan; Beijing called it a warning to others, and Reuters called the measure largely symbolic.",
+   "source": "Al Jazeera, Reuters",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "taiwan-watch",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Coercion stays non-kinetic"
+    },
+    {
+     "node": null,
+     "ledger": 53,
+     "relation": "supports",
+     "note": "No PLA kinetic action; pressure via sanctions and diplomacy"
+    }
+   ],
+   "note": "",
+   "theme": "geopolitics",
+   "id": "evt-20261012-f5ade2"
+  },
+  {
+   "date": "2026-10-13",
+   "fact": "Fed Governor Waller said higher long-term Treasury yields are 'doing a little bit of the work' of tighter policy by restraining rate-sensitive demand, and attributed the yield surge to growth and AI investment rather than inflation.",
+   "source": "Bloomberg (via National Mortgage News / American Banker)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "fomc-oct",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "yields substituting for hikes lowers the need for an October move"
+    },
+    {
+     "node": "real-rate-band",
+     "ledger": 100,
+     "relation": "context",
+     "note": "Fed officials treating high real yields as a feature, not a problem"
+    },
+    {
+     "node": "dec-dots-2027",
+     "ledger": null,
+     "relation": "context",
+     "note": "Logan said the same on term premia"
+    }
+   ],
+   "note": "He is not signalling a pause.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261013-153081"
+  },
+  {
+   "date": "2026-10-13",
+   "fact": "On Oct 13 drones hit the Ukrainian-owned Chelsea 3 (Maltese flag) 18 nm off Bulgaria (15 crew rescued) and sank a second cargo ship; Bulgarian PM Radev said the outcome 'benefits the Russian Federation' but gave no proof of origin. On Oct 15 a drone struck the San Marino-flagged chemical tanker Wine Trader about 13 nm SE of Sulina, Romania (5 rescued, 7 missing). Romanian F-16s shot down two drones over Romanian territorial waters on a Saturday (the report is ambiguous on which).",
+   "source": "Al Jazeera, AP/PBS",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 40,
+     "relation": "context",
+     "note": "Second wave of attacks in NATO-member waters within 10 days"
+    },
+    {
+     "node": "eu-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Frames the Black Sea as a live NATO-border risk"
+    }
+   ],
+   "note": "Radev also hedged that the drones were 'either Russian or Ukrainian'. Vessel names for the second Oct 13 sinking differ by outlet (HS Dignity vs Azov Concord).",
+   "theme": "geopolitics",
+   "id": "evt-20261013-bab910"
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "CoreWeave's credit stress hit: shares fell about 13-15% on 10/14, its 5-year CDS reached a record of about 1,195bp on 10/15, yields on its 9.625% 2032 notes rose to 15.06% from 13.42% at the start of October, Oracle fell about 10% on 10/14 and Nebius and Iren each fell more than 10%; CoreWeave fell again on 10/16 (6.9% to 11%, reports differ) and its CEO called the reaction irrational, saying backlog more than covers debt.",
+   "source": "Barron's / roic.ai / KuCoin News / investingLive",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "capex-debt-funded",
+     "ledger": null,
+     "relation": "supports",
+     "note": "AI capex increasingly external-funded and the debt market is now pricing it"
+    },
+    {
+     "node": "capex-cashflow-funded",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "sibling branch"
+    },
+    {
+     "node": "ai-revenue-gap",
+     "ledger": null,
+     "relation": "context",
+     "note": "financing stress is the revenue-gap channel"
+    },
+    {
+     "node": "hy-spread-band",
+     "ledger": 106,
+     "relation": "context",
+     "note": "CoreWeave bonds trade like distressed debt but broad HY OAS 3.27 vs 5.00 limit, STATE 10/22"
+    },
+    {
+     "node": "ig-spread-band",
+     "ledger": 86,
+     "relation": "context",
+     "note": "IG OAS 0.88 vs 1.60 limit; contagion not visible in the index"
+    }
+   ],
+   "note": "Daily moves differ by source (13% vs 15% on 10/14; 6.9% vs 11.2% on 10/16).",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261014-03812f"
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "September CPI rose 0.6% m/m and 3.7% y/y versus 3.6% expected (August 3.4%); core CPI rose 0.3% m/m and 2.6% y/y versus 2.5% expected (August 2.4%); gasoline jumped 9.1% in the month and energy is up 20.4% y/y; feed also says inflation outran wages for a third straight month.",
+   "source": "BLS (via investingLive, FT Portfolios, Reuters)",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "cpi-reaccel",
+     "ledger": null,
+     "relation": "supports",
+     "note": "inflation re-accelerated on energy"
+    },
+    {
+     "node": "cpi-oct-print",
+     "ledger": null,
+     "relation": "context",
+     "note": "next print 11/12; energy base effects"
+    },
+    {
+     "node": "core-pce-band",
+     "ledger": null,
+     "relation": "supports",
+     "note": "core inflation 2.6% CPI sits inside the PCE band"
+    },
+    {
+     "node": "wage-band",
+     "ledger": null,
+     "relation": "context",
+     "note": "real earnings negative; wage level itself not captured"
+    },
+    {
+     "node": "fomc-oct",
+     "ledger": null,
+     "relation": "supports",
+     "note": "raises the December hike case"
+    }
+   ],
+   "note": "Core inflation at 2.6% y/y is far below the headline: the Fed's hawkishness is about energy second-round effects.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261014-464ad7"
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "The Singapore-flagged container ship GFS Pride sank near Hormuz after being hit by a projectile (all 21 crew evacuated), described by Reuters as the second vessel to sink since the war began on 2/28 per IMO data; the bulk carrier Cape Dao, hit 9/23 with one crew killed, was also reported sinking.",
+   "source": "Reuters / gCaptain",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "shipping losses rising, not stabilising"
+    },
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": ""
+    }
+   ],
+   "note": "Headlines differ on mine vs projectile; Reuters says projectile. Sinking count (2 vs 3) differs by report.",
+   "theme": "iran_energy",
+   "id": "evt-20261014-6d8e89"
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "Houthi airstrikes hit Saudi Aramco's headquarters complex in Dhahran overnight on 10/13-14, damaging the top three floors per the Saudi energy ministry with no casualties reported there; the Saudi-led coalition separately ordered evacuations and struck Houthi positions in Sanaa on 10/13.",
+   "source": "AP / ITV News",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Houthi targeting has moved from fields to Aramco's corporate core"
+    },
+    {
+     "node": "flip-b",
+     "ledger": null,
+     "relation": "context",
+     "note": "strike on corporate offices is not a supply loss"
+    }
+   ],
+   "note": "Casualty reports conflict slightly (debris from an intercept injured one person in Riyadh).",
+   "theme": "iran_energy",
+   "id": "evt-20261014-7a70e7"
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "AI and chip stocks sold off after the hot CPI: the S&P 500 and Nasdaq had their biggest one-day drops since July on 10/14; on 10/15 Nvidia fell 3.3%, Micron 5% and AMD 6.4%, the chip index was on track for a more-than-14% slide in seven sessions, and the Nasdaq fell a further 2.1% to a one-month low on 10/16; TSMC reported record Q3 profit (+68.7% y/y) and guided Q4 revenue of $52.3-54.3bn but its shares still fell.",
+   "source": "Reuters / Kitco / Sharecast / TSMC release",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "highbeta-derate",
+     "ledger": null,
+     "relation": "supports",
+     "note": "the derate finally arrived, about a month after the node's 9/15 date (STATE: #27 scored MISS)"
+    },
+    {
+     "node": "semis-correction",
+     "ledger": null,
+     "relation": "context",
+     "note": "SMH 521, -17.4% since 10/2 per STATE"
+    },
+    {
+     "node": "ai-capex-funding",
+     "ledger": null,
+     "relation": "context",
+     "note": "rate-hike fears hit heavily indebted AI builders first"
+    },
+    {
+     "node": "nvda-dc-band",
+     "ledger": 88,
+     "relation": "context",
+     "note": "demand print unaffected; stock reaction is financing/rates"
+    },
+    {
+     "node": "korea-exports",
+     "ledger": 97,
+     "relation": "context",
+     "note": "semis demand intact per TSMC; row #97 unaffected"
+    }
+   ],
+   "note": "One search summary reported a 'cautious TSMC 2027 outlook'; a second search found only a beat-and-raise with no 2027 caution, so that is not recorded. The macro call and the asset map can be right and wrong on timing (STATE 10/22).",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261014-b18388"
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "The US Treasury removed Jorge Rodriguez, president of Venezuela's National Assembly and brother of acting president Delcy Rodriguez, from its sanctions list without giving a reason; Delcy Rodriguez herself had been delisted in April 2026.",
+   "source": "Al Jazeera, MercoPress",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "US-Venezuela normalisation track; no latam node covers it"
+    }
+   ],
+   "note": "Feed items #40, #94, #95 are this same action (one described as the 'brother of Delcy'). Wikipedia's Cuba page says US forces ousted Maduro on 3 Jan 2026; I did not verify that beyond that page.",
+   "theme": "geopolitics",
+   "id": "evt-20261014-cc50c6"
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "The IRS announced it will not penalize on-highway use or sale of dyed diesel, retroactive to 2026-10-01 and running through 2026-12-31, suspending collection and inspection of on-road dyed fuel for that period (federal tax only).",
+   "source": "Holland & Knight; CPA Practice Advisor",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "context",
+     "note": "Relief ends 12/31 unless extended."
+    }
+   ],
+   "note": "Seen only in two secondary summaries, not the IRS notice itself.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261014-f9cdd9"
+  },
+  {
+   "date": "2026-10-15",
+   "fact": "The IEA Governing Board said the total oil stock release would exceed the 400 million barrels agreed in March, with roughly 330 million released so far and the remaining ~100 million, including over 20 million of diesel, to be accelerated and completed.",
+   "source": "IEA / Reuters",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "spr-refill",
+     "ledger": null,
+     "relation": "context",
+     "note": "OECD stock draw continues; refill timing not addressed"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "a supply cushion that is finite"
+    }
+   ],
+   "note": "Sixth collective action in IEA history per the IEA's March release.",
+   "theme": "iran_energy",
+   "id": "evt-20261015-2bfbbf"
+  },
+  {
+   "date": "2026-10-15",
+   "fact": "Reuters reported the administration is weighing easing sanctions on shadow-fleet tankers so previously sanctioned vessels could carry 'legal oil' (not sanctioned Russian or Iranian oil) with Treasury authorisation, to cut record freight rates; Energy Secretary Wright confirmed it is under consideration.",
+   "source": "Reuters (via Meduza, Pravda, investingLive)",
+   "confidence": "plan-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Freight-cost relief channel"
+    },
+    {
+     "node": "ru-tanker-replacement-locked",
+     "ledger": null,
+     "relation": "context",
+     "note": "Sanctioned tanker fleet treatment"
+    }
+   ],
+   "note": "PLAN only. Reuters could not obtain Wright's full video.",
+   "theme": "geopolitics",
+   "id": "evt-20261015-b2eaa2"
+  },
+  {
+   "date": "2026-10-16",
+   "fact": "Warsh, speaking at the IMF meetings in Bangkok after the hot CPI, declined to preview the 10/28 meeting and said inflation had not changed his assessment, taking October hike odds from 28% to below 15%; markets price about 85% for a hold in October and about 77% for a hike by December per Trading Economics, and Goldman expects a pause in October with a final hike in December; the dollar had retreated from an 18-month high on 10/15 as officials tempered hike bets.",
+   "source": "investingLive / Trading Economics / Reuters (via feed)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "fomc-oct",
+     "ledger": null,
+     "relation": "supports",
+     "note": "second hike by 12/9 priced near 77%+; the October move itself is not"
+    },
+    {
+     "node": "fomc-dec-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "December meeting carries the SEP and the hike"
+    },
+    {
+     "node": "eur-level",
+     "ledger": null,
+     "relation": "context",
+     "note": "dollar at an 18-month high / euro at multi-month lows; EURUSD level not captured"
+    }
+   ],
+   "note": "Warsh speech date is inferred from the 10/16 'Friday' references (10-year 5.12%); pricing moves daily.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261016-4ac040"
+  },
+  {
+   "date": "2026-10-16",
+   "fact": "Trump signed an executive order on Oct 16 waiving most Russia-related provisions of the Lindsey O. Graham Sanctioning Russia and Iran Act of 2026 (tariffs on Russian goods, tariffs on major buyers of Russian oil and gas, sanctions on foreign banks and other financial activity) two days before they were due to take effect on Oct 18; he certified the waiver as in the national interest, and it runs until he or the Secretary of State decides further action is warranted.",
+   "source": "AP (feed, 41 outlets); Scripps TNND wire and Swarajya (web)",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "supports",
+     "note": "Pressure on Russia's economy is eased by executive choice; a signed peace through 2028 stays unlikely"
+    },
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "The tree's Russia-Ukraine lane has no US-sanctions node; this is the main US policy action on Russia in the window"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Waiver is aimed at energy prices; bears on non-Iran oil supply"
+    },
+    {
+     "node": null,
+     "ledger": 83,
+     "relation": "context",
+     "note": "Waived Russia-buyer tariffs trim the upside supply-shock tail for Brent; Brent still ~113 on 10/22 per STATE.md"
+    },
+    {
+     "node": "diesel-crack-wide",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "More Russian product allowed to flow lowers the odds the diesel crack stays wide, but analysts doubt the volume is real"
+    },
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "Waiver is explicitly framed by reporters around fuel prices before the Nov 3 midterms"
+    }
+   ],
+   "note": "Law passed the Senate 86-11 (Aug) and the House 262-159 (per The Week, Sep 17); the AP piece says Trump signed it 'last month' but I did not find the exact signing date. Congressional reaction: Tillis 'beyond irresponsible', Schumer 'life support' for Russia; AP (Oct 19) reports no quick legislative counter in sight. Tariff rates in the waived provisions were not stated in the story I read.",
+   "theme": "geopolitics",
+   "id": "evt-20261016-5505fb"
+  },
+  {
+   "date": "2026-10-16",
+   "fact": "CENTCOM commander Adm. Brad Cooper said about 400 merchant ships transited Hormuz in the prior seven days with over 100 million barrels shipped and that the US blockade had blocked at least $25 billion of Iranian oil exports; Iran's army disputed the account and said US forces were steering ships onto a route that exposes them to damage. A Reuters exclusive the same day showed Iran still shipping some LPG and jet fuel despite the blockade.",
+   "source": "CENTCOM (via Rudaw, Shafaq); Reuters",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "context",
+     "note": "US claims partial control of traffic; no toll/escort regime formalised"
+    },
+    {
+     "node": null,
+     "ledger": 12,
+     "relation": "context",
+     "note": "no toll mentioned; row stays tracking"
+    },
+    {
+     "node": "us-endgame",
+     "ledger": null,
+     "relation": "context",
+     "note": "the blockade is the standing US enforcement lever"
+    }
+   ],
+   "note": "Figures are US military claims, not independently verified; the 400-ship count conflicts in scale with Kpler's single-digit-to-20 commodity vessels per day (different vessel classes).",
+   "theme": "iran_energy",
+   "id": "evt-20261016-aa4862"
+  },
+  {
+   "date": "2026-10-16",
+   "fact": "Oil touched $110 a barrel for the first time since May on Middle East and Russia supply fears.",
+   "source": "Reuters/AP (6 outlets in feed)",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 83,
+     "relation": "context",
+     "note": "STATE.md puts Brent at 113.2 on 10/22, about 10% under the $125 ceiling"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": null,
+     "relation": "context",
+     "note": "Same quantity as #83"
+    }
+   ],
+   "note": "Not independently verified on the web; the figure is the feed headline.",
+   "theme": "geopolitics",
+   "id": "evt-20261016-ba4738"
+  },
+  {
+   "date": "2026-10-16",
+   "fact": "Foreign investors pulled a net $8.21bn from bonds in India, Indonesia, Malaysia, South Korea and Thailand in September, the largest monthly outflow since March 2020, plus about $23.5bn from regional equities (South Korea bonds about $6.3bn), as higher US yields and renewed Fed tightening hit emerging-market debt.",
+   "source": "Reuters (via The Star, 9 outlets)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "external-funding squeeze is the node's thesis"
+    },
+    {
+     "node": "jk-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "South Korea was the largest single seller of bonds"
+    }
+   ],
+   "note": "One search summary mislabelled this as a 2023 story; the article's own details (24.5-year high of 5.36% in the 10-year, Fed 'raised last month') fit 2026.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261016-fc7855"
+  },
+  {
+   "date": "2026-10-17",
+   "fact": "Iran's IRGC said a second supertanker exploded after hitting a mine in Hormuz (after similar claims on 10/10-12 and a tanker fire on 10/15), and on 10/20 that its mines halted two tankers; CENTCOM has denied some earlier IRGC mine claims (July, September) and UKMTO did not report all of them.",
+   "source": "Reuters (IRGC statements)",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": ""
+    },
+    {
+     "node": "hormuz-normalized",
+     "ledger": null,
+     "relation": "context",
+     "note": "mine risk makes normalisation a weeks-long process"
+    }
+   ],
+   "note": "IRGC claims, not independently verified; some may be exaggerated.",
+   "theme": "iran_energy",
+   "id": "evt-20261017-2815a1"
+  },
+  {
+   "date": "2026-10-17",
+   "fact": "Kpler expects India's Russian crude imports to hold at about 1.8-1.9 million bpd in October after the sanctions waiver; the waiver also benefits other buyers such as China.",
+   "source": "Swarajya, Outlook India",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "in-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Indian energy security exposure to Russian crude"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Russian crude keeps flowing"
+    }
+   ],
+   "note": "Conflict: feed item #89 (Oct 8) says Russian oil flows to India plunged to 310,000 bpd; I could not reconcile it (different measure or period). Treat the level as uncertain.",
+   "theme": "geopolitics",
+   "id": "evt-20261017-365f74"
+  },
+  {
+   "date": "2026-10-17",
+   "fact": "Secretary of State Rubio said Trump would take up to 60 days to study the economic effects of the Russia sanctions and tariffs he had waived, citing the Iran war and Houthi attacks on Saudi Arabia as pressures on energy prices and pointing to India as a major Russian-oil buyer; no final decision had been announced.",
+   "source": "Reuters (via The Star, BusinessDay, Asharq Al-Awsat)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "A 60-day review is a soft clock, not a commitment to reimpose"
+    },
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Sets the next decision point for US Russia sanctions (about mid-December by arithmetic from Oct 17)"
+    },
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "Review window straddles the Nov 3 midterms"
+    }
+   ],
+   "note": "The 60-day figure is Rubio's characterisation; the executive order itself set no end date. 'Unclear if Trump has actually made up his mind' per the Reuters summary.",
+   "theme": "geopolitics",
+   "id": "evt-20261017-7c7e86"
+  },
+  {
+   "date": "2026-10-18",
+   "fact": "WSJ reported that Putin proposed a Trump-Putin-Xi meeting on ending the Ukraine war, raised on the Oct 9 call and floated alongside the APEC summit in Shenzhen on Nov 18-19; a senior US official said Trump has not agreed but may be receptive, and the Kremlin called the meeting hypothetical.",
+   "source": "WSJ (via The Star, Pravda, Novaya Gazeta)",
+   "confidence": "plan-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": 43,
+     "relation": "context",
+     "note": "A summit proposal is not a peace agreement; Ukraine not represented"
+    },
+    {
+     "node": "managed-bipolarity",
+     "ledger": null,
+     "relation": "context",
+     "note": "Great-power bargaining format, weak evidence for the 2030 state"
+    },
+    {
+     "node": "fragmented-blocs",
+     "ledger": null,
+     "relation": "context",
+     "note": "Moscow reportedly told Beijing it would not object"
+    }
+   ],
+   "note": "PLAN only: nothing scheduled. See new node ev-trump-putin-meeting.",
+   "theme": "geopolitics",
+   "id": "evt-20261018-869f93"
+  },
+  {
+   "date": "2026-10-19",
+   "fact": "Trump signed an executive order creating a women's health division at NIH (to be set up within 90 days) and a White House task force led by Susie Wiles and HHS Secretary Kennedy, and revoking Biden's March 2024 women's health order.",
+   "source": "Al Jazeera; Euronews; CBS News",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "nih-funding",
+     "ledger": null,
+     "relation": "context",
+     "note": "Reorganisation, no money attached."
+    }
+   ],
+   "note": "About 25 feed items (candidates 5, 7, 9, 16, 51, 79, 91, 97, 104, 133-135, 163, 238, 239) are this one event.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261019-05b309"
+  },
+  {
+   "date": "2026-10-19",
+   "fact": "The Supreme Court declined to hear former NLRB member Gwynne Wilcox's challenge to her firing, leaving the lower-court ruling that Trump's removal was valid; it follows the June decision in the Slaughter case that overturned Humphrey's Executor.",
+   "source": "Reuters (via The Daily Record); Devdiscourse",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "scotus-june-rulings",
+     "ledger": null,
+     "relation": "context",
+     "note": "Removal-power doctrine now settled for independent agencies."
+    }
+   ],
+   "note": "Candidate 33 (9 outlets).",
+   "theme": "us_politics_legal",
+   "id": "evt-20261019-465540"
+  },
+  {
+   "date": "2026-10-20",
+   "fact": "Feed items from The Times of India and BSS say the US allowed Canadian miner Sherritt to deliver fuel to Cuba.",
+   "source": "The Times of India, BSS (feed)",
+   "confidence": "feed-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "em-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "Possible carve-out in the fuel blockade"
+    }
+   ],
+   "note": "NOT VERIFIED: web searches found no report of a US permission for Sherritt. What I found instead: Sherritt cut Moa operations in Feb, suspended direct participation in its Moa and Energas joint ventures on May 7 after a May 1 US executive order expanded sanctions, and ran out of Alberta refinery feed on June 22. Whether the Oct 20 headline is a license, a one-off delivery authorisation or something else is unknown.",
+   "theme": "geopolitics",
+   "id": "evt-20261020-11621d"
+  },
+  {
+   "date": "2026-10-20",
+   "fact": "AGNC's tangible book value per share fell 16.9% in Q3 to $7.13 from $8.58, with an economic return on equity of -12.7% and leverage up to 7.9x, as mortgage bonds lagged Treasuries when rates rose.",
+   "source": "AGNC 8-K / Finviz",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "rc-anchor",
+     "ledger": null,
+     "relation": "supports",
+     "note": "rate shock now visible in levered rate-sensitive balance sheets"
+    },
+    {
+     "node": "pmms-above-65",
+     "ledger": null,
+     "relation": "context",
+     "note": "mortgage spread widening alongside high mortgage rates"
+    },
+    {
+     "node": "bank-nim-compression",
+     "ledger": null,
+     "relation": "context",
+     "note": "bank earnings next test"
+    }
+   ],
+   "note": "",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261020-6685fe"
+  },
+  {
+   "date": "2026-10-20",
+   "fact": "Brent crude hit a five-month high on Middle East tension and shipping-security fears, and Treasury Secretary Bessent said the Iran conflict would determine whether oil prices fall in 2026; the STATE.md tape has Brent at about 113 on 10/22, roughly 10% under the $125 ceiling of the Q4 band.",
+   "source": "Reuters / ABC News (feed)",
+   "confidence": "multi-outlet",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "the nearest edge is now the ceiling; a +10% move ends the row"
+    },
+    {
+     "node": "brent-90",
+     "ledger": null,
+     "relation": "supports",
+     "note": ""
+    }
+   ],
+   "note": "I could not confirm the 10/20 five-month-high wording on the web; the 10/22 price (~$110-111 early) is confirmed by Reuters/AP syndications.",
+   "theme": "iran_energy",
+   "id": "evt-20261020-a117b9"
+  },
+  {
+   "date": "2026-10-20",
+   "fact": "The IEA chief said the agency is ready to act if a further release of oil stocks is needed (Reuters, 10/20); earlier in 2026 members released about 290 million barrels from the March 11 decision, leaving more than 1 billion barrels in reserves per an August report.",
+   "source": "Reuters (via feed); roic.ai (August)",
+   "confidence": "feed-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "a release cap could trim the $125 ceiling risk; Brent settled 113.17 on 10/22"
+    },
+    {
+     "node": "spr-refill",
+     "ledger": null,
+     "relation": "context",
+     "note": "emergency stock drawdown precedent"
+    }
+   ],
+   "note": "No web source found dated 10/20; the 10/20 statement rests on four feed items. The 290 million barrel figure is an August report, not the 10/20 item.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261020-ec8fd2"
+  },
+  {
+   "date": "2026-10-21",
+   "fact": "Feed: the Supreme Court declined to let the administration enforce restrictions on gender-affirming care for transgender federal inmates, leaving the lower-court block in place.",
+   "source": "Feed (about 10 outlets across candidates 53, 92, 105)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [],
+   "note": "The web confirmed only the 9/28 emergency application (Trump v. Kingdom), not the ruling.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261021-21a4bb"
+  },
+  {
+   "date": "2026-10-21",
+   "fact": "A Brookings paper reported on 10/21 lays out a broad plan to shrink the Fed's balance sheet; it is a think-tank proposal, not Fed action.",
+   "source": "Reuters (via feed)",
+   "confidence": "plan-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "qt-taper-marker",
+     "ledger": null,
+     "relation": "context",
+     "note": "debate about balance-sheet size, no policy change"
+    },
+    {
+     "node": "qt-end-marker",
+     "ledger": null,
+     "relation": "context",
+     "note": "same"
+    },
+    {
+     "node": "qt-balance-sheet-2029",
+     "ledger": null,
+     "relation": "context",
+     "note": "same"
+    }
+   ],
+   "note": "Web search found only a March 2026 Brookings paper by Duffie on the same topic; I could not find the 10/21 item itself. PLAN, not ACTION (lesson 72).",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261021-cb0a49"
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "AI stocks tumbled and dragged global markets down while Brent rose 4% to settle at $113.17 and WTI to about $99.47: the Nasdaq fell nearly 3% per CNBC (S&P 500 -0.8% per AP, -1.4% per CNBC), Nvidia fell 4.3%, CoreWeave 9.6% on debt worries, GE Vernova and Bloom Energy more than 11%, and South Korea's Kospi 3.5%.",
+   "source": "AP / CNBC / Global News",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "highbeta-derate",
+     "ledger": null,
+     "relation": "supports",
+     "note": "derate extending; timing late vs the node window"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "supports",
+     "note": "Brent 113 is ~12 under the $125 ceiling; the ceiling leg is the live one"
+    },
+    {
+     "node": "ai-power-contracts",
+     "ledger": null,
+     "relation": "context",
+     "note": "power-for-AI names sold off sharply"
+    },
+    {
+     "node": "capex-debt-funded",
+     "ledger": null,
+     "relation": "supports",
+     "note": "financing worries are the stated driver"
+    }
+   ],
+   "note": "S&P and Nasdaq declines differ by outlet (timing within the day). STATE.md also cites a Meta non-voting-share funding plan and Nvidia CEO capital-scarcity remarks as drivers: I found no source for a non-voting-share plan; the only Meta financing reports found are June (FT: weighing a stock offering, Meta called it speculation, shares -5.5%). Not recorded as an event.",
+   "theme": "macro_markets_ai",
+   "id": "evt-20261022-1277eb"
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "The Time and Axios reports say the US and Israel are developing plans for major strikes on Iranian energy, infrastructure and nuclear targets after the US midterms, that Netanyahu planned strikes earlier in October but Trump opposed reigniting the war before the vote, and that Israel votes October 27; Washington has reportedly dropped its demand that Israel strike alone before the midterms.",
+   "source": "Time / Axios / Maariv",
+   "confidence": "plan-only",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "us-strikes-resume",
+     "ledger": null,
+     "relation": "context",
+     "note": "strike planning only; 16.14 caps such reports at 0.35"
+    },
+    {
+     "node": "war-round-2",
+     "ledger": null,
+     "relation": "supports",
+     "note": "post-midterm resumption is the modal plan"
+    },
+    {
+     "node": null,
+     "ledger": 16,
+     "relation": "context",
+     "note": "Israeli unilateral action was requested then withdrawn by Washington"
+    },
+    {
+     "node": null,
+     "ledger": 38,
+     "relation": "context",
+     "note": "energy/air campaign, not ground"
+    },
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "war timing is explicitly keyed to 11/3"
+    }
+   ],
+   "note": "A PLAN, not an ACTION (#72). No decision has been reported.",
+   "theme": "iran_energy",
+   "id": "evt-20261022-3cdd07"
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "Feed headlines say Trump signed an executive order to reduce housing costs; contemporaneous reporting the same day (Semafor, HousingWire) describes a six-section DRAFT, still unsigned, covering easier cancellation of mortgage insurance, a manufactured-housing task force, refinancing without title insurance and lower USDA/VA loan rates. Two housing orders (EO 14393 and 14394) were signed 2026-03-13.",
+   "source": "Feed (4 outlets); Semafor; HousingWire",
+   "confidence": "plan-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "hsg-lockin-gap",
+     "ledger": null,
+     "relation": "context",
+     "note": "Mortgage-cost lever, no effect on outstanding coupons."
+    },
+    {
+     "node": "pmms-above-65",
+     "ledger": null,
+     "relation": "context",
+     "note": "An order cannot lower the PMMS print directly."
+    }
+   ],
+   "note": "Signing is NOT verified; recorded as plan-only until the order text or a fact sheet is found (lesson #72).",
+   "theme": "us_politics_legal",
+   "id": "evt-20261022-572dbf"
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "The Freddie Mac 30-year average eased to 7.32% in its first pullback since late August; the prior week held at 7.4%.",
+   "source": "Feed (5 outlets)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "pmms-above-65",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Still about 80 bp above 6.50%."
+    }
+   ],
+   "note": "From feed headlines; the weekly Freddie Mac release is not in the web index yet.",
+   "theme": "us_politics_legal",
+   "id": "evt-20261022-b69837"
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "The US ordered non-essential staff and families to leave its embassy in Riyadh and a diplomatic source said similar orders covered family members at missions in the UAE, Jordan, Qatar and Bahrain; Brent rose to about $110 at 00:34 GMT, Kpler counted at least 18 shipping attacks in two weeks, and US crude stocks fell 3.06 million barrels to 412.5 million.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "context",
+     "note": "Washington is treating Saudi Arabia as a combat-exposed location"
+    },
+    {
+     "node": "war-round-2",
+     "ledger": null,
+     "relation": "context",
+     "note": "precaution consistent with an expected resumption; not itself a strike"
+    },
+    {
+     "node": null,
+     "ledger": 16,
+     "relation": "context",
+     "note": ""
+    }
+   ],
+   "note": "A March 2026 ordered departure from Saudi Arabia also exists in the web record; this is the 10/22 order. 'Ordered departure' status is a posture, not an attack.",
+   "theme": "iran_energy",
+   "id": "evt-20261022-b96a47"
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "Iran said seven oil tankers were hit in the Strait of Hormuz overnight (IRGC navy: four hit while transferring oil, three hit mines and were immobilised) and warned the US against escorting tankers; AP could not confirm and UKMTO had not reported the attacks; Brent traded above $111 on Thursday morning.",
+   "source": "AP",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "pause-outlasts-oct12",
+     "ledger": null,
+     "relation": "context",
+     "note": "if confirmed, the largest single-day vessel incident of the war"
+    },
+    {
+     "node": "iran-pause-duration-nov",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "if the IRGC claim is true, the 'fire pause' is eroding; the node's definition is the issue"
+    },
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": ""
+    }
+   ],
+   "note": "Unconfirmed Iranian claim; the fact verified is that Iran said it, not the damage. One CBS headline says Trump accused Iran of faking some of the strikes (single outlet, not verified).",
+   "theme": "iran_energy",
+   "id": "evt-20261022-f1cd9f"
+  }
+ ]
+}

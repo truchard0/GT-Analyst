@@ -365,7 +365,7 @@ N("es-anchor", "now", "Energy supply: the non-Iran half of the oil and power sto
   "iran-war cluster — hygiene rule 1, and the reason 14 of 32 open rows sat in one basket.",
   "Everything here trades independent of the strait.")
 
-N("opec-nov-meeting", "es-anchor", "OPEC+ ministerial meeting convenes", 0.96, "2026-11-30",
+N("opec-nov-meeting", "es-anchor", "OPEC+ ministerial meeting convenes", 0.96, "2026-11-01",
   "energy-supply", "scheduled", "10 weeks",
   "The group's meeting calendar is published a year ahead; meetings occur essentially without "
   "exception, occasionally by video or rescheduled by days.",
@@ -376,7 +376,7 @@ N("opec-nov-meeting", "es-anchor", "OPEC+ ministerial meeting convenes", 0.96, "
           {"target": "brent-band-q4", "p_to": 0.70, "note": "supply guidance sets the band"}])
 
 N("opec-quota-unchanged", "opec-nov-meeting", "OPEC+ leaves headline quotas unchanged at the "
-  "November meeting", 0.55, "2026-11-30", "energy-supply", "direction", "10 weeks",
+  "November meeting", 0.55, "2026-11-01", "energy-supply", "direction", "10 weeks",
   "Hard cap 0.55: this is a cartel of sovereigns exercising discretion. #29 priced exactly "
   "this shape at 0.58 on a premise that had already evaporated and scored 0.34.",
   "DIRECTION + discretionary. Capped at the ceiling and left there. The lesson from #29 is not "

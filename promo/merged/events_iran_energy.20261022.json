@@ -1,0 +1,1031 @@
+{
+ "theme": "iran_energy",
+ "events": [
+  {
+   "date": "2026-09-22",
+   "fact": "Saudi Arabia restarted the East-West oil pipeline (shut after a 9/10-9/13 drone attack on its pumping stations, which Riyadh blamed on Iraqi militias) and Yanbu loadings resumed at a low initial rate; Argus put flows near 5.5 mb/d by 10/1 against ~7 mb/d nameplate, Reuters said full resumption could take weeks.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "red-sea-front",
+     "ledger": null,
+     "relation": "context",
+     "note": "the node says the pipeline lands inside the blockaded Red Sea; Yanbu is now the main bypass and the target of Houthi/Iraqi-militia fire"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "the non-Iran half of the supply story: Saudi bypass capacity is what keeps Gulf exports near pre-war levels"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "restart helped Brent dip below $100 on 9/22 and 10/3; the re-attack risk is the upper-band tail"
+    }
+   ],
+   "note": "Shutdown date differs by source (9/11 vs 9/13). Same pipeline was hit in April per a different Reuters story (SPA, 4/9); that April story was re-surfaced in the feed on 10/16 and is NOT a new October attack."
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "France was reported to be mulling a new UN Security Council resolution on Hormuz, according to diplomats.",
+   "source": "Reuters (feed)",
+   "confidence": "plan-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": null,
+     "ledger": null,
+     "relation": "context",
+     "note": "no node tracks UNSC action on Hormuz; see new node ev-unsc-hormuz-resolution"
+    }
+   ],
+   "note": "Reported intention only; no text or vote found."
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "Reports that the US and Iran were discussing a phased deal to reopen Hormuz and end the US blockade pulled crude lower (oil down ~2% on 9/25), but nothing was agreed and Trump rejected Iran's formal proposal two days later.",
+   "source": "MarketScreener / Reuters-syndicated oil wraps",
+   "confidence": "plan-only",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "iran-six-conditions",
+     "ledger": null,
+     "relation": "context",
+     "note": "a talks headline that did not convert; the sixth-plus reopening signal with no durable reopening"
+    },
+    {
+     "node": "hormuz-framework-only",
+     "ledger": null,
+     "relation": "context",
+     "note": "announced framework is not restored traffic (16.14 corollary)"
+    }
+   ],
+   "note": "Single feed headline for the phased-deal wording; the oil move is multi-outlet."
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "The UN Security Council issued a joint statement condemning continued Houthi attacks on Saudi Arabia, including on civilian and energy infrastructure, demanding an end to the escalation and affirming Saudi Arabia's right to self-defence; a further statement citing the 10/10-11 Riyadh airport strikes was reported 10/22 (not independently confirmed).",
+   "source": "QNA / Asharq Al-Awsat",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "proxy theatre aimed at Saudi persists and is now internationally recognised"
+    },
+    {
+     "node": null,
+     "ledger": null,
+     "relation": "context",
+     "note": "press statements only; no resolution has been found"
+    }
+   ],
+   "note": "Press/presidential-style statements, not a binding resolution."
+  },
+  {
+   "date": "2026-09-26",
+   "fact": "President Trump publicly rejected an Iranian offer, relayed through Qatar, to reopen Hormuz and resume nuclear talks within seven days if the US lifted its naval blockade, waived Iranian oil sanctions and observed a ceasefire including Lebanon; the Wall Street Journal reported he privately expects to resume bombing after the November midterms. Oil rose on 9/28.",
+   "source": "AP / Wall Street Journal",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "iran-six-conditions",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "the bribe-for-cessation branch was explicitly refused on 9/26"
+    },
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "no deal, no full war: the stalemate branch"
+    },
+    {
+     "node": "us-strikes-resume",
+     "ledger": null,
+     "relation": "context",
+     "note": "WSJ: strikes expected after, not before, the midterms"
+    },
+    {
+     "node": null,
+     "ledger": 36,
+     "relation": "contradicts",
+     "note": "a compensated-cessation leg was refused; ground-troop leg not raised"
+    },
+    {
+     "node": null,
+     "ledger": 35,
+     "relation": "supports",
+     "note": "no ratified treaty while the pause continues"
+    }
+   ],
+   "note": "AP datelines are 9/26 (a Saturday); some feed headlines carry 9/27-9/28."
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "Qatar said US and Iranian officials had separately spoken to its mediators and it hoped shuttle diplomacy could produce a breakthrough, while Trump denied reports he had offered sanctions relief or frozen funds for nuclear concessions; on 9/30 Iran was reported to be reviewing a US ceasefire counterproposal as three tankers were reported hit in Hormuz.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "iran-six-conditions",
+     "ledger": null,
+     "relation": "context",
+     "note": "the Qatar channel is alive but the US publicly denies the concession it was meant to carry"
+    },
+    {
+     "node": null,
+     "ledger": 36,
+     "relation": "context",
+     "note": "Trump's denial cuts against the indemnity-style leg"
+    }
+   ],
+   "note": "The 9/30 counterproposal item is feed-only (11 outlets, no terms disclosed)."
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "Iraq began receiving US-origin gasoline by truck from Syria's Baniyas port under a three-month Iraq-Syria deal (Qatari-owned UCC buying, Syria taking transit fees), covering a shortfall of roughly 5 million litres/day against ~35 million litres/day of consumption.",
+   "source": "AP",
+   "confidence": "verified-web",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "overland bypass of Hormuz for refined products; no node tracks overland rerouting"
+    }
+   ],
+   "note": "Enab Baladi says the Syrian route for crude predates this; gasoline start date is 9/29 per AP and Rudaw."
+  },
+  {
+   "date": "2026-09-29",
+   "fact": "Three tankers were reported hit by projectiles in or near the Strait of Hormuz on Tuesday 9/29 (Marisks/UKMTO), the start of the late-September/October surge in shipping attacks; the UAE condemned the killing of tanker crew in the same days.",
+   "source": "UKMTO / Marisks via Reuters",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "kinetic activity at sea without a return to the strike-night pattern"
+    },
+    {
+     "node": "pause-outlasts-oct12",
+     "ledger": null,
+     "relation": "context",
+     "note": "whether IRGC tanker strikes count as breaking the 'fire pause' is undefined in the node"
+    }
+   ],
+   "note": "Date inferred from the feed saying 'Tuesday' with first report 9/30; confirm the exact day before using it as a trigger."
+  },
+  {
+   "date": "2026-10-02",
+   "fact": "The G7 agreed to release 100 million barrels of crude and diesel from emergency stocks over four months with a front-loaded diesel tranche within 20 days, after the US reportedly told Germany and France to draw down diesel stocks or face a possible US diesel export ban (Trump later said a ban was never on the table); the G7 also pledged not to impose energy export restrictions on each other.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "spr-refill",
+     "ledger": null,
+     "relation": "context",
+     "note": "stock draws push SPR/OECD inventories down; the SPR end-2027 level is not directly settled by this"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "Brent fell ~1% on 10/3 to ~$101; analysts called the release a political gesture"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "policy response to the supply loss"
+    }
+   ],
+   "note": "Energy Aspects called the figure a statement rather than a binding commitment."
+  },
+  {
+   "date": "2026-10-03",
+   "fact": "The Houthis claimed missile and drone strikes on Saudi Aramco facilities (Abha, Najran, Jazan, and a facility in Riyadh); satellite imagery and video showed a large smoke plume at the Riyadh refinery and at least three storage tanks burning, while the Saudi-led coalition called the claims misleading. Brent rose on 10/5, briefly up 4.3% to about $109.",
+   "source": "Al Jazeera / Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "the node says an Aramco-class hit flips to flip-b via supply; damage is unconfirmed"
+    },
+    {
+     "node": "red-sea-front",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Saudi exports attacked at both ends"
+    },
+    {
+     "node": "flip-b",
+     "ledger": null,
+     "relation": "context",
+     "note": "supply-branch trigger condition appearing, not yet confirmed by output data"
+    }
+   ],
+   "note": "Damage and attribution are partly claim-based; Saudi/Aramco did not confirm the extent."
+  },
+  {
+   "date": "2026-10-04",
+   "fact": "The seven core OPEC+ members kept November output targets unchanged at an online meeting, with Gulf producers pumping well below quota because of the war, the capacity review that sets 2027 quotas delayed, and the next meeting set for November 1; Brent was still above $100 versus about $73 before the war.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "opec-quota-unchanged",
+     "ledger": null,
+     "relation": "supports",
+     "note": "quotas are non-binding while Gulf output is war-constrained, so 'unchanged' is the default"
+    },
+    {
+     "node": "opec-nov-meeting",
+     "ledger": null,
+     "relation": "context",
+     "note": "Reuters gives the next core-seven meeting as 11/1, not 11/30; check whether the node's 11/30 is the full ministerial or a mis-date"
+    },
+    {
+     "node": "opec-defends",
+     "ledger": null,
+     "relation": "context",
+     "note": "resolved at 0.0; this hold is not a price defence"
+    }
+   ],
+   "note": "Node dates for the OPEC+ November meeting may need checking against the 11/1 date."
+  },
+  {
+   "date": "2026-10-04",
+   "fact": "A Saudi-led coalition airstrike campaign hit Houthi positions in Sanaa and Saada (Houthis claimed 106 strikes in 24 hours) and Yemen's government declared a major operation against the Houthis; the Houthis responded with attacks on Saudi airports and Aramco sites, while only a Taiz front was reported on the ground.",
+   "source": "Al Jazeera / Xinhua / CGTN",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "the proxy front is a Saudi-Houthi war"
+    },
+    {
+     "node": "us-houthi-response",
+     "ledger": null,
+     "relation": "context",
+     "note": "resolved NEITHER; the US still has not struck Yemen"
+    }
+   ],
+   "note": "Strike counts are Houthi claims; the 'major operation' is a government declaration."
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "Kpler data showed Middle East crude exports above pre-war levels on 14 days in September, with the 7-day average at 18.3 mb/d on 9/30 versus about 18 mb/d pre-war, driven by Saudi loadings on both coasts, while tanker attacks kept rising and ship-to-ship transfers in the Gulf of Oman hit capacity limits.",
+   "source": "Reuters (Kpler)",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "physical supply is far less short than the strait headlines imply; supports the lower half of the band"
+    },
+    {
+     "node": "hormuz-framework-only",
+     "ledger": null,
+     "relation": "context",
+     "note": "exports recovered without a reopened strait or a deal"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "the non-Iran half of the story: bypass routes and Red Sea loadings"
+    }
+   ],
+   "note": "Same week brought the highest attack count of the war, so the export recovery is exposed."
+  },
+  {
+   "date": "2026-10-05",
+   "fact": "Saudi Aramco's CEO said replenishing global crude and fuel stocks could take two years and that Brent could have hit $200 without the East-West pipeline.",
+   "source": "Reuters (feed)",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "inventory rebuild timeline is a supply-side input"
+    },
+    {
+     "node": "spr-refill",
+     "ledger": null,
+     "relation": "context",
+     "note": "a two-year global restock horizon"
+    }
+   ],
+   "note": "Statement and opinion, not a data point."
+  },
+  {
+   "date": "2026-10-06",
+   "fact": "The EIA's October Short-Term Energy Outlook raised its fourth-quarter Brent forecast by about $14 to roughly $105 (from about $90.7), assuming Middle East flows stay constrained with ~4.5 mb/d shut in; it put the 2026 average near $96 and 2027 near $84, with global inventories drawing 1.9 mb/d in Q3 and a further 0.7 mb/d in Q4.",
+   "source": "EIA (via Trend, Ship & Bunker)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "supports",
+     "note": "a $105 central forecast sits inside the $85-125 band but about 16% below the ceiling"
+    },
+    {
+     "node": "brent-90",
+     "ledger": null,
+     "relation": "supports",
+     "note": "forecast keeps Brent above $90 through Q4"
+    }
+   ],
+   "note": "Figures from secondary reports of the STEO; the EIA PDF snippet did not show the table. Inputs were frozen 10/1, before the Riyadh-airport strikes and the 10/20-22 price rise."
+  },
+  {
+   "date": "2026-10-06",
+   "fact": "Kpler counted only 7 commodity vessels crossing Hormuz on 10/6, the fewest since 7/23 (LSEG counted 8), with crude crossings down 27% week on week to about 10.1 mb/d, before a rebound to 10 on 10/7; Gulf of Oman and Red Sea exports ran at 6.7 mb/d, more than twice pre-war levels.",
+   "source": "Reuters (Kpler, LSEG)",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "hormuz-framework-only",
+     "ledger": null,
+     "relation": "supports",
+     "note": "traffic is attack-sensitive and nowhere near normalised"
+    },
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "no controlled-strait resolution in the data"
+    }
+   ],
+   "note": "Excludes ships with AIS off."
+  },
+  {
+   "date": "2026-10-07",
+   "fact": "At least 12 attacks on oil, LNG and LPG tankers around Hormuz were counted in the week of 9/28-10/5 by three maritime-security sources, the highest of any week since the war began on 2/28 (IMO logged 9 incidents; its previous peak week was mid-July with 8).",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "violent but sub-war stalemate"
+    },
+    {
+     "node": "pause-outlasts-oct12",
+     "ledger": null,
+     "relation": "context",
+     "note": "IRGC attacks on tankers continued throughout the 'pause' window; the node's definition does not say whether they count"
+    },
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "escorts/US control have not stopped the attacks"
+    },
+    {
+     "node": "hormuz-normalized",
+     "ledger": null,
+     "relation": "context",
+     "note": "resolved at 0.0"
+    }
+   ],
+   "note": "Later reports (Kpler, via Reuters 10/22) put the count at 18 attacks in the two weeks to 10/22."
+  },
+  {
+   "date": "2026-10-07",
+   "fact": "An Iranian official said 'illegal routes' through Hormuz would soon be blocked and on 10/8 Iran vowed to close more routes, after attacks off Qatar and Oman on tankers using alternative paths; on 10/9 the IRGC threatened to target ships beyond Hormuz.",
+   "source": "Iranian state media via Reuters (feed)",
+   "confidence": "plan-only",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "Iran is asserting route control, the opposite of a US-controlled strait"
+    },
+    {
+     "node": null,
+     "ledger": 12,
+     "relation": "context",
+     "note": "assertion of control, not a published toll"
+    },
+    {
+     "node": "hormuz-framework-only",
+     "ledger": null,
+     "relation": "context",
+     "note": ""
+    }
+   ],
+   "note": "Threats and stated intent; follow-up attacks (10/8 off Qatar, multiple projectiles) are in the feed but not separately verified."
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Trump said the US would not attack Iran before the November 3 midterms and kept the blockade in force, while saying Washington was having productive discussions with Iran; Axios reported the Pentagon had told CENTCOM to finish preparations for resuming major combat operations (large-scale strikes on energy, infrastructure and nuclear targets) and that US and Israeli forces remained on alert.",
+   "source": "Axios / Reuters",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "us-strikes-resume",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "the node's 10/12 horizon passed with a public no-strike pledge to 11/3"
+    },
+    {
+     "node": "pause-outlasts-oct12",
+     "ledger": null,
+     "relation": "supports",
+     "note": "US-side restraint through the horizon"
+    },
+    {
+     "node": "iran-pause-duration-nov",
+     "ledger": null,
+     "relation": "supports",
+     "note": "US pledge runs to 11/3, two days past the node's 11/1 test date"
+    },
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "stalemate with preparation"
+    },
+    {
+     "node": null,
+     "ledger": 35,
+     "relation": "supports",
+     "note": "no war-scale resumption before 11/3"
+    },
+    {
+     "node": null,
+     "ledger": 38,
+     "relation": "context",
+     "note": "preparations are air/energy-target focused, not ground"
+    }
+   ],
+   "note": "Trump statements are reversal-prone (16.14); the pledge is public but not binding, and it is a US-only commitment."
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Houthi missile attacks on King Khalid International Airport in Riyadh killed 3 on 10/8, then at least 12 (309 wounded, one American among the dead) on 10/10, the deadliest attack in the kingdom in over a decade and the third in a week, and a further strike on 10/11 killed 1 and wounded 11; the airport reopened to limited traffic on 10/21.",
+   "source": "Al Jazeera / AP / Reuters",
+   "confidence": "verified-web",
+   "significance": 5,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "the Houthi front is now killing civilians in the Saudi capital"
+    },
+    {
+     "node": "flip-b",
+     "ledger": null,
+     "relation": "context",
+     "note": "an infrastructure-of-state target; not an oil asset"
+    },
+    {
+     "node": "aviation-insurance-war-risk",
+     "ledger": null,
+     "relation": "supports",
+     "note": "civil aviation in the Saudi capital is a war target in 2026"
+    },
+    {
+     "node": null,
+     "ledger": 16,
+     "relation": "context",
+     "note": "regional spillover raises pressure on Israel/US to act but does not itself involve Iranian territory"
+    }
+   ],
+   "note": "Count of strikes in the week differs by outlet (three vs four). Reopening on 10/21 is multi-outlet from the AP feed headline."
+  },
+  {
+   "date": "2026-10-08",
+   "fact": "Hurricane Isaias shut in about 63% of US Gulf oil output by 10/8 (one later report put it at 71.5% on 10/9; platforms evacuated included 129 of 371 manned platforms) and Brent rose more than 4% that day on the combined Hormuz and hurricane worry; the storm was reported making landfall near Destin, Florida on 10/9-10 (Reuters headline: Category 3; a local outlet says Category 2).",
+   "source": "Reuters / ABC News / Maritime Executive",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "insured-loss",
+     "ledger": 107,
+     "relation": "supports",
+     "note": "a major Gulf hurricane adds to 2026 insured catastrophe loss; size unreported"
+    },
+    {
+     "node": "natgas-storage",
+     "ledger": 98,
+     "relation": "context",
+     "note": "Gulf gas shut-ins (about 57%) briefly cut supply"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "weather and war premium stacked on 10/8-9"
+    }
+   ],
+   "note": "Landfall category and exact location are not confirmed by me; shut-in percentage is. Restart/damage status not found."
+  },
+  {
+   "date": "2026-10-09",
+   "fact": "The US Treasury (OFAC) issued General License 135 authorising the sale and import, including into the United States, of Russian-origin diesel until 2027-04-07 after Trump said Putin agreed to supply 300,000 t immediately, 500,000 t in November, 1 Mt thereafter and a further 3 Mt; US diesel averaged $6.28/gal, up 70% since the war began, and Brent rose 2.1% to $106.95 on 10/12.",
+   "source": "Ship & Bunker / AP",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "ru-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "a US easing of Russia energy sanctions is not in the Russia-Ukraine anchor"
+    },
+    {
+     "node": "ru-sanctions-renewal-2027",
+     "ledger": null,
+     "relation": "context",
+     "note": "EU/UK bans and the $100 product cap remain; only the US stance moved"
+    },
+    {
+     "node": "es-anchor",
+     "ledger": null,
+     "relation": "context",
+     "note": "policy response to diesel scarcity"
+    }
+   ],
+   "note": "The broader US ban on Russian crude, products, LNG and coal under the March 2022 order remains. Volumes are Trump's, not the Kremlin's; Russia's ability to deliver is doubted by CFR and CSIS analysts."
+  },
+  {
+   "date": "2026-10-12",
+   "fact": "Two tankers were attacked near Hormuz/Oman on 10/11-12 with two Indian seafarers reported missing after a drone strike off Sohar (India condemned the attacks, 'attacks must cease'), following a 10/10 drone strike on a Panama-flagged tanker off Sharjah where all 22 Indian crew were rescued.",
+   "source": "Indian Ministry statements / UKMTO via feed",
+   "confidence": "multi-outlet",
+   "significance": 2,
+   "bears_on": [
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": "attack tempo continues"
+    }
+   ],
+   "note": "Outcome of the missing seafarers not checked."
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "Houthi airstrikes hit Saudi Aramco's headquarters complex in Dhahran overnight on 10/13-14, damaging the top three floors per the Saudi energy ministry with no casualties reported there; the Saudi-led coalition separately ordered evacuations and struck Houthi positions in Sanaa on 10/13.",
+   "source": "AP / ITV News",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "supports",
+     "note": "Houthi targeting has moved from fields to Aramco's corporate core"
+    },
+    {
+     "node": "flip-b",
+     "ledger": null,
+     "relation": "context",
+     "note": "strike on corporate offices is not a supply loss"
+    }
+   ],
+   "note": "Casualty reports conflict slightly (debris from an intercept injured one person in Riyadh)."
+  },
+  {
+   "date": "2026-10-14",
+   "fact": "The Singapore-flagged container ship GFS Pride sank near Hormuz after being hit by a projectile (all 21 crew evacuated), described by Reuters as the second vessel to sink since the war began on 2/28 per IMO data; the bulk carrier Cape Dao, hit 9/23 with one crew killed, was also reported sinking.",
+   "source": "Reuters / gCaptain",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "shipping losses rising, not stabilising"
+    },
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": ""
+    }
+   ],
+   "note": "Headlines differ on mine vs projectile; Reuters says projectile. Sinking count (2 vs 3) differs by report."
+  },
+  {
+   "date": "2026-10-15",
+   "fact": "The IEA Governing Board said the total oil stock release would exceed the 400 million barrels agreed in March, with roughly 330 million released so far and the remaining ~100 million, including over 20 million of diesel, to be accelerated and completed.",
+   "source": "IEA / Reuters",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "spr-refill",
+     "ledger": null,
+     "relation": "context",
+     "note": "OECD stock draw continues; refill timing not addressed"
+    },
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "a supply cushion that is finite"
+    }
+   ],
+   "note": "Sixth collective action in IEA history per the IEA's March release."
+  },
+  {
+   "date": "2026-10-16",
+   "fact": "CENTCOM commander Adm. Brad Cooper said about 400 merchant ships transited Hormuz in the prior seven days with over 100 million barrels shipped and that the US blockade had blocked at least $25 billion of Iranian oil exports; Iran's army disputed the account and said US forces were steering ships onto a route that exposes them to damage. A Reuters exclusive the same day showed Iran still shipping some LPG and jet fuel despite the blockade.",
+   "source": "CENTCOM (via Rudaw, Shafaq); Reuters",
+   "confidence": "verified-web",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "naval-escort",
+     "ledger": null,
+     "relation": "context",
+     "note": "US claims partial control of traffic; no toll/escort regime formalised"
+    },
+    {
+     "node": null,
+     "ledger": 12,
+     "relation": "context",
+     "note": "no toll mentioned; row stays tracking"
+    },
+    {
+     "node": "us-endgame",
+     "ledger": null,
+     "relation": "context",
+     "note": "the blockade is the standing US enforcement lever"
+    }
+   ],
+   "note": "Figures are US military claims, not independently verified; the 400-ship count conflicts in scale with Kpler's single-digit-to-20 commodity vessels per day (different vessel classes)."
+  },
+  {
+   "date": "2026-10-17",
+   "fact": "Iran's IRGC said a second supertanker exploded after hitting a mine in Hormuz (after similar claims on 10/10-12 and a tanker fire on 10/15), and on 10/20 that its mines halted two tankers; CENTCOM has denied some earlier IRGC mine claims (July, September) and UKMTO did not report all of them.",
+   "source": "Reuters (IRGC statements)",
+   "confidence": "multi-outlet",
+   "significance": 3,
+   "bears_on": [
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": ""
+    },
+    {
+     "node": "hormuz-normalized",
+     "ledger": null,
+     "relation": "context",
+     "note": "mine risk makes normalisation a weeks-long process"
+    }
+   ],
+   "note": "IRGC claims, not independently verified; some may be exaggerated."
+  },
+  {
+   "date": "2026-10-20",
+   "fact": "Brent crude hit a five-month high on Middle East tension and shipping-security fears, and Treasury Secretary Bessent said the Iran conflict would determine whether oil prices fall in 2026; the STATE.md tape has Brent at about 113 on 10/22, roughly 10% under the $125 ceiling of the Q4 band.",
+   "source": "Reuters / ABC News (feed)",
+   "confidence": "multi-outlet",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "brent-band-q4",
+     "ledger": 83,
+     "relation": "context",
+     "note": "the nearest edge is now the ceiling; a +10% move ends the row"
+    },
+    {
+     "node": "brent-90",
+     "ledger": null,
+     "relation": "supports",
+     "note": ""
+    }
+   ],
+   "note": "I could not confirm the 10/20 five-month-high wording on the web; the 10/22 price (~$110-111 early) is confirmed by Reuters/AP syndications."
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "The US ordered non-essential staff and families to leave its embassy in Riyadh and a diplomatic source said similar orders covered family members at missions in the UAE, Jordan, Qatar and Bahrain; Brent rose to about $110 at 00:34 GMT, Kpler counted at least 18 shipping attacks in two weeks, and US crude stocks fell 3.06 million barrels to 412.5 million.",
+   "source": "Reuters",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "houthi-saudi",
+     "ledger": null,
+     "relation": "context",
+     "note": "Washington is treating Saudi Arabia as a combat-exposed location"
+    },
+    {
+     "node": "war-round-2",
+     "ledger": null,
+     "relation": "context",
+     "note": "precaution consistent with an expected resumption; not itself a strike"
+    },
+    {
+     "node": null,
+     "ledger": 16,
+     "relation": "context",
+     "note": ""
+    }
+   ],
+   "note": "A March 2026 ordered departure from Saudi Arabia also exists in the web record; this is the 10/22 order. 'Ordered departure' status is a posture, not an attack."
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "Iran said seven oil tankers were hit in the Strait of Hormuz overnight (IRGC navy: four hit while transferring oil, three hit mines and were immobilised) and warned the US against escorting tankers; AP could not confirm and UKMTO had not reported the attacks; Brent traded above $111 on Thursday morning.",
+   "source": "AP",
+   "confidence": "verified-web",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "pause-outlasts-oct12",
+     "ledger": null,
+     "relation": "context",
+     "note": "if confirmed, the largest single-day vessel incident of the war"
+    },
+    {
+     "node": "iran-pause-duration-nov",
+     "ledger": null,
+     "relation": "contradicts",
+     "note": "if the IRGC claim is true, the 'fire pause' is eroding; the node's definition is the issue"
+    },
+    {
+     "node": "frozen-oscillation",
+     "ledger": null,
+     "relation": "supports",
+     "note": ""
+    }
+   ],
+   "note": "Unconfirmed Iranian claim; the fact verified is that Iran said it, not the damage. One CBS headline says Trump accused Iran of faking some of the strikes (single outlet, not verified)."
+  },
+  {
+   "date": "2026-10-22",
+   "fact": "The Time and Axios reports say the US and Israel are developing plans for major strikes on Iranian energy, infrastructure and nuclear targets after the US midterms, that Netanyahu planned strikes earlier in October but Trump opposed reigniting the war before the vote, and that Israel votes October 27; Washington has reportedly dropped its demand that Israel strike alone before the midterms.",
+   "source": "Time / Axios / Maariv",
+   "confidence": "plan-only",
+   "significance": 4,
+   "bears_on": [
+    {
+     "node": "us-strikes-resume",
+     "ledger": null,
+     "relation": "context",
+     "note": "strike planning only; 16.14 caps such reports at 0.35"
+    },
+    {
+     "node": "war-round-2",
+     "ledger": null,
+     "relation": "supports",
+     "note": "post-midterm resumption is the modal plan"
+    },
+    {
+     "node": null,
+     "ledger": 16,
+     "relation": "context",
+     "note": "Israeli unilateral action was requested then withdrawn by Washington"
+    },
+    {
+     "node": null,
+     "ledger": 38,
+     "relation": "context",
+     "note": "energy/air campaign, not ground"
+    },
+    {
+     "node": "midterms-2026",
+     "ledger": null,
+     "relation": "context",
+     "note": "war timing is explicitly keyed to 11/3"
+    }
+   ],
+   "note": "A PLAN, not an ACTION (#72). No decision has been reported."
+  }
+ ],
+ "new_nodes": [
+  {
+   "id": "ev-israel-knesset-vote",
+   "parent": "ge-anchor",
+   "label": "Israel holds its Knesset election on 2026-10-27 as scheduled",
+   "p": 0.92,
+   "date": "2026-10-27",
+   "lane": "global-elections",
+   "row_class": "scheduled",
+   "horizon": "5 days",
+   "basis": "Calendar: the Knesset dissolved 7/17 with the vote fixed for the 10/27 legal-deadline date; the Supreme Court has ruled on party eligibility for that date and ballot slips were already being printed and withdrawn for a party that quit (10/21).",
+   "rationale": "Scheduled by the dissolution act and already in operational preparation, so the base rate for a held vote is very high. The SOFT part: wartime escalation. Reports say the IDF chief warned a strike on Iran could lead to the vote being postponed, and the vote is entangled with Iran strike timing; a postponement would need an extraordinary Knesset decision.",
+   "market": "Israeli election outcome moves the odds that Israel acts alone on Iran (ledger #16).",
+   "evidence": [
+    {
+     "fact": "Knesset dissolved; election set for 10/27, first not called early since 1988 (Al Jazeera 7/17)",
+     "reported": "2026-07-17"
+    },
+    {
+     "fact": "Israel's supreme court says Arab parties can run in the Oct. 27 election",
+     "reported": "2026-10-05"
+    }
+   ]
+  },
+  {
+   "id": "ev-post-midterm-us-strikes",
+   "parent": "frozen-oscillation",
+   "label": "US conducts acknowledged large-scale strikes on Iranian territory between 11/4 and 12/31",
+   "p": 0.35,
+   "date": "2026-12-31",
+   "lane": "iran-energy",
+   "row_class": "direction",
+   "horizon": "10 weeks",
+   "basis": "Doctrine 16.14 caps strike-planning reports at 0.35 for a reversal-prone decider; this war's rounds 2 and 3 fired after similar signals, and its pauses have run 13-19 days, so a post-vote leg is plausible but not scheduled.",
+   "rationale": "WSJ (9/26), Axios (10/8) and Time (10/22) report preparations and a post-midterm intent while Trump has publicly ruled out strikes before 11/3 only. The SOFT parts: the midterm result, the Israeli election on 10/27, Trump's reluctance reported by his own officials, and whether a limited energy-site strike or an Israeli-only action would count as large-scale and acknowledged by the US. Capped at the direction ceiling and the doctrine cap.",
+   "market": "Brent up, SMH/QQQ beta down; the war premium that already sits in Brent at 110+ does not need a strike to persist.",
+   "evidence": [
+    {
+     "fact": "Trump rules out Iran strikes before 11/3 while CENTCOM finishes preparations (Axios)",
+     "reported": "2026-10-08"
+    },
+    {
+     "fact": "US and Israel reportedly developing major post-midterm strike plans (Time)",
+     "reported": "2026-10-22"
+    }
+   ]
+  },
+  {
+   "id": "ev-hormuz-vessel-sunk",
+   "parent": "frozen-oscillation",
+   "label": "A merchant vessel is reported sunk in or near the Strait of Hormuz between 10/23 and 12/31",
+   "p": 0.5,
+   "date": "2026-12-31",
+   "lane": "iran-energy",
+   "row_class": "marker",
+   "horizon": "10 weeks",
+   "basis": "Outside view: the IMO count is about 3 vessels sunk in ~33 weeks since 2/28 (~0.09/week, ~0.6 over 10 weeks), but two of them came within the last 4 weeks (Cape Dao after the 9/23 hit, GFS Pride on 10/14), so the base rate and the recent rate bracket the answer.",
+   "rationale": "Settleable from an IMO tally or a Reuters/gCaptain report. The SOFT parts: the count itself (sources differ between 2 and 3 sinkings), whether the October attack tempo (18 attacks in two weeks) persists or a pause/deal lowers it, and whether a later sinking is attributed to a mine or a projectile (either counts). Priced at the midpoint of the base and recent rates, not off the day's headlines.",
+   "market": "Tanker war-risk premia, freight rates, marine insurers.",
+   "evidence": [
+    {
+     "fact": "GFS Pride sank after a projectile strike; second vessel to sink since the war began per IMO",
+     "reported": "2026-10-14"
+    },
+    {
+     "fact": "At least 18 shipping attacks in two weeks per Kpler",
+     "reported": "2026-10-22"
+    }
+   ]
+  },
+  {
+   "id": "ev-riyadh-airport-restrike",
+   "parent": "houthi-saudi",
+   "label": "Saudi authorities or the coalition report another missile/drone strike on Riyadh's King Khalid Airport between 10/23 and 11/30",
+   "p": 0.55,
+   "date": "2026-11-30",
+   "lane": "iran-energy",
+   "row_class": "marker",
+   "horizon": "5 weeks",
+   "basis": "Outside view: the airport was struck at least 3-4 times in 4 days (10/8-10/11) and again in the last two weeks by intercepted debris; reopening on 10/21 was limited, and a month of continued Houthi missile fire is the default unless a Saudi-Houthi pause appears.",
+   "rationale": "Settleable from the Saudi civil aviation authority, coalition statements or AP/Reuters. The SOFT parts: interception success (an intercept with debris falling may or may not count), whether a Saudi-Houthi truce emerges, and whether the airport stays shut and so stops being a target. Not a view on Iran-US talks.",
+   "market": "Aviation war-risk premia, Gulf carrier exposure.",
+   "evidence": [
+    {
+     "fact": "Riyadh airport strike killed at least 12 and wounded 309",
+     "reported": "2026-10-10"
+    },
+    {
+     "fact": "Airport reopens to limited traffic",
+     "reported": "2026-10-21"
+    }
+   ]
+  },
+  {
+   "id": "ev-unsc-hormuz-resolution",
+   "parent": "now",
+   "label": "The UN Security Council adopts a resolution on Hormuz or freedom of navigation in the Gulf by 12/31",
+   "p": 0.08,
+   "date": "2026-12-31",
+   "lane": "iran-energy",
+   "row_class": "marker",
+   "horizon": "10 weeks",
+   "basis": "Structural: adoption needs nine votes and no permanent-member veto; on the Houthi file the Council has so far produced joint statements, not a resolution (9/25).",
+   "rationale": "France was reported on 9/22 to be mulling a resolution, which is a plan, not a text; no draft or vote has been found. The SOFT part: whether France tables a draft at all and whether Russia or China would veto or abstain. Settleable from the UN press site. Low because statements are the Council's equilibrium output in this war.",
+   "market": "Little direct market effect; a resolution would be a de-escalation headline.",
+   "evidence": [
+    {
+     "fact": "France mulls new UN Security Council resolution on Hormuz, diplomats say",
+     "reported": "2026-09-22"
+    },
+    {
+     "fact": "UNSC joint statement condemns Houthi attacks on Saudi Arabia",
+     "reported": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "id": "ev-russian-diesel-arrives",
+   "parent": "es-anchor",
+   "label": "A Reuters, Kpler or LSEG report shows Russian-origin diesel cargoes discharged at US ports by 11/30 under OFAC General License 135",
+   "p": 0.55,
+   "date": "2026-11-30",
+   "lane": "energy-supply",
+   "row_class": "marker",
+   "horizon": "5 weeks",
+   "basis": "Contract/licence: GL 135 is in force until 2027-04-07 and Trump announced 300,000 t 'immediately'; Baltic-to-US Gulf/East Coast voyages take roughly 2-3 weeks, so the arithmetic allows an arrival by 11/30 if loading started in October.",
+   "rationale": "The SOFT parts: whether Russia can actually supply anything like the announced volumes (CFR and CSIS analysts doubted it), whether shippers, insurers and banks will handle Russian cargoes despite EU/UK bans and the $100 product cap, and whether a published tracker report exists (settleable only if a named source reports an arrival). Deliberately set near a coin-flip.",
+   "market": "US diesel crack and ULSD futures.",
+   "evidence": [
+    {
+     "fact": "OFAC General License 135 authorises Russian-origin diesel imports through 2027-04-07",
+     "reported": "2026-10-09"
+    },
+    {
+     "fact": "Trump says Putin agreed 300,000 t immediately, 500,000 t in November",
+     "reported": "2026-10-09"
+    }
+   ]
+  },
+  {
+   "id": "ev-iea-new-collective-action",
+   "parent": "es-anchor",
+   "label": "The IEA announces a new collective stock action (a seventh) by 12/31",
+   "p": 0.12,
+   "date": "2026-12-31",
+   "lane": "energy-supply",
+   "row_class": "marker",
+   "horizon": "10 weeks",
+   "basis": "Structural: a collective action needs an IEA Governing Board decision; the March 2026 action was only the sixth in the agency's history and the current tranche (above 400 M barrels, ~100 M still to deliver) is still being drawn.",
+   "rationale": "Settleable from the IEA press release. The SOFT parts: whether Brent at 110+ and an attack surge push members to a fresh action before the current one is exhausted, and whether an 'expansion' of the existing action is labelled new. Low because stocks are still being released under the existing action.",
+   "market": "A signal that the physical shortfall exceeds the March sizing.",
+   "evidence": [
+    {
+     "fact": "IEA says total release will exceed 400 M barrels; ~100 M still to deliver",
+     "reported": "2026-10-15"
+    }
+   ]
+  }
+ ],
+ "suggest_reprice": [
+  {
+   "node": "us-strikes-resume",
+   "ledger": null,
+   "from": 0.35,
+   "to": 0.08,
+   "reason": "10/8: Trump publicly ruled out Iran strikes before 11/3 (Axios, Reuters); no large-scale US strike campaign found in coverage 9/20-10/22, and the node's 10/12 horizon has passed; one unconfirmed live-blog line about explosions at Sirik on 10/21 should be checked before settling NO."
+  },
+  {
+   "node": "pause-outlasts-oct12",
+   "ledger": null,
+   "from": 0.58,
+   "to": 0.7,
+   "reason": "10/8 Trump no-strike pledge to 11/3 and no confirmed US/Israeli campaign through 10/12, but IRGC tanker attacks ran at record tempo (12 attacks week of 9/28; 10/7 Reuters), so settlement depends on whether those count as breaking the 'fire pause'; define the pause before applying."
+  },
+  {
+   "node": "iran-pause-duration-nov",
+   "ledger": null,
+   "from": 0.38,
+   "to": 0.45,
+   "reason": "10/8 pledge covers 11/1 on the US side and Washington dropped its demand for an Israeli solo strike (10/21 reports), but the 10/22 IRGC claim of 7 tankers hit and the 10/22 ordered departures cut the other way; a small step only, and void if the node counts IRGC tanker attacks as breaking the pause."
+  },
+  {
+   "node": "iran-six-conditions",
+   "ledger": null,
+   "from": 0.25,
+   "to": 0.12,
+   "reason": "9/26 Trump rejected Iran's Qatar-relayed offer; 9/29 he denied offering sanctions relief or frozen funds; Salalah/Gulf-Iran talks remain postponed; only Qatari shuttle messages are alive, which is not a negotiation of the six conditions."
+  }
+ ],
+ "gaps": "Biggest unmapped storylines: (1) the state of the 'fire pause' itself - the tree defines it by US/Iranian strike nights, but IRGC tanker attacks, Houthi strikes on Riyadh and Dhahran and a claimed US strike near Sirik on 10/21 are happening inside it, so no node can say whether the pause has ended; (2) Houthi-Saudi war and Saudi bypass capacity (East-West pipeline, Yanbu) - only three nodes (houthi-saudi, red-sea-front, es-anchor) cover it and none is priced on actual Saudi output or export data; (3) US domestic fuel policy (G7/IEA releases, GL 135 Russian diesel, diesel export-ban talk, $6.28 diesel) has no home in the tree and is partly captured by new ev- nodes. Could not verify: the Brent five-month high on 10/20 (feed only; the 10/22 price is confirmed), the 10/22 Iranian tanker claims (the claim is verified, the damage is not), the Hurricane Isaias landfall category, and the 10/16 Saudi 'attacks cut output' feed item, which is an April 2026 Reuters story re-surfaced; I also found no web confirmation of Trump accusing Iran of faking ship strikes (single CBS headline). The candidate file also contained much syndication of the same tanker-attack wire stories and many Indian market wraps that I merged or dropped; Sunday-night and weekend events may be under-dated by a day."
+}

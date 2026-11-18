@@ -1,0 +1,4586 @@
+[
+{
+"id": "contained",
+"lane": "iran-energy",
+"p": 0.05,
+"date": "2026-07-25",
+"class": "-",
+"label": "Mediation off-ramp: deal/pause holds toward 8/16 window",
+"ledger": [
+15,
+19,
+28
+]
+},
+{
+"id": "flip-b",
+"lane": "iran-energy",
+"p": 0.45,
+"date": "2026-07-11",
+"class": "-",
+"label": "Window collapses: round-3 escalation",
+"ledger": [
+27,
+28,
+44,
+59,
+60,
+36,
+38
+]
+},
+{
+"id": "succession-tip",
+"lane": "iran-energy",
+"p": 0.07,
+"date": "2026-07-25",
+"class": "-",
+"label": "Succession RESOLVED (Mojtaba SL); residual IRGC-fracture risk",
+"ledger": [
+14,
+17,
+18
+]
+},
+{
+"id": "capitulation",
+"lane": "iran-energy",
+"p": 0.03,
+"date": "2026-07-25",
+"class": "-",
+"label": "Clean consolidation + proxy stand-down (deal sticks)",
+"ledger": [
+10,
+14,
+18
+]
+},
+{
+"id": "opec-defends",
+"lane": "iran-energy",
+"p": 0.0,
+"date": "2026-08-05",
+"class": "-",
+"label": "OPEC+ pauses hikes to defend price",
+"ledger": [
+29,
+23,
+11
+]
+},
+{
+"id": "dovish-fed",
+"lane": "fed-macro",
+"p": 0.75,
+"date": "2026-07-29",
+"class": "-",
+"label": "Fed 7/29: HAWKISH hold (hike tail now 25%)",
+"ledger": [
+13,
+26,
+45,
+67
+]
+},
+{
+"id": "tech-tailwind",
+"lane": "markets-ai",
+"p": 0.7,
+"date": "2026-09-10",
+"class": "-",
+"label": "High-beta/AI complex tailwind persists",
+"ledger": [
+28,
+25
+]
+},
+{
+"id": "houthi-saudi",
+"lane": "iran-energy",
+"p": 1.0,
+"date": "2026-08-15",
+"class": "-",
+"label": "Proxy theater persists — Houthi/Red Sea, now aimed at Saudi",
+"ledger": [
+15,
+20,
+58,
+37
+]
+},
+{
+"id": "naval-escort",
+"lane": "iran-energy",
+"p": 0.15,
+"date": "2026-08-10",
+"class": "-",
+"label": "US toll/escort regime — controlled-strait resolution",
+"ledger": [
+22
+]
+},
+{
+"id": "brent-90",
+"lane": "iran-energy",
+"p": 0.85,
+"date": "2026-07-21",
+"class": "-",
+"label": "Brent sustains >90 — hawkish repricing fires",
+"ledger": [
+27,
+60,
+39
+]
+},
+{
+"id": "highbeta-derate",
+"lane": "markets-ai",
+"p": 0.72,
+"date": "2026-09-15",
+"class": "-",
+"label": "High-beta/AI derates vs energy (2022 analog)",
+"ledger": [
+27
+]
+},
+{
+"id": "regime-survives",
+"lane": "iran-energy",
+"p": 0.8,
+"date": "2026-12-01",
+"class": "-",
+"label": "IRGC consolidates — militarized theocracy",
+"ledger": [
+17,
+18
+]
+},
+{
+"id": "regime-collapse",
+"lane": "iran-energy",
+"p": 0.2,
+"date": "2026-12-01",
+"class": "-",
+"label": "Cascade past θ* — regime falls",
+"ledger": [
+17
+]
+},
+{
+"id": "cpi-june-soft",
+"lane": "fed-macro",
+"p": 1.0,
+"date": "2026-07-14",
+"class": "-",
+"label": "✓ RESOLVED HIT — June CPI printed SOFT (−0.4 m/m, energy −5.7)",
+"ledger": [
+31,
+46
+]
+},
+{
+"id": "cpi-reaccel",
+"lane": "fed-macro",
+"p": 1.0,
+"date": "2026-08-12",
+"class": "-",
+"label": "CPI re-accelerates (July/Aug prints) — the inflation leg",
+"ledger": [
+32,
+26,
+27,
+62,
+69,
+71
+]
+},
+{
+"id": "frozen-conflict",
+"lane": "iran-energy",
+"p": 0.55,
+"date": "2026-10-01",
+"class": "-",
+"label": "FROZEN CONFLICT institutionalizes — neither treaty nor war",
+"ledger": [
+35,
+10,
+1
+]
+},
+{
+"id": "war-round-2",
+"lane": "iran-energy",
+"p": 0.9,
+"date": "2027-03-15",
+"class": "-",
+"label": "War Round 2 — full-scale resumption (terminal ~20%)",
+"ledger": [
+16,
+21,
+1,
+59
+]
+},
+{
+"id": "nuclear-threshold",
+"lane": "iran-energy",
+"p": 0.32,
+"date": "2027-06-01",
+"class": "-",
+"label": "Nuclear threshold/breakout — the deterrence terminal (~15%)",
+"ledger": [
+34,
+30
+]
+},
+{
+"id": "us-endgame",
+"lane": "iran-energy",
+"p": 0.55,
+"date": "2027-09-01",
+"class": "-",
+"label": "US enforcement softens into Nov 2028 (end-game unraveling)",
+"ledger": [
+8,
+12
+]
+},
+{
+"id": "nuclear-recon",
+"lane": "iran-energy",
+"p": 0.75,
+"date": "2026-07-27",
+"class": "-",
+"label": "Counter-reconstitution war (can't end the program)",
+"ledger": [
+1,
+4,
+30,
+64
+]
+},
+{
+"id": "capex-verdict",
+"lane": "markets-ai",
+"p": 0.72,
+"date": "2026-07-22",
+"class": "-",
+"label": "Hyperscaler capex: cohort holds/raises (no cut)",
+"ledger": [
+50,
+52
+]
+},
+{
+"id": "capex-raise",
+"lane": "markets-ai",
+"p": 0.62,
+"date": "2026-07-30",
+"class": "-",
+"label": ">=1 explicit RAISE (strong form)",
+"ledger": [
+52
+]
+},
+{
+"id": "capex-hold",
+"lane": "markets-ai",
+"p": 0.38,
+"date": "2026-07-30",
+"class": "-",
+"label": "all in-line HOLDs (no raise)",
+"ledger": [
+51
+]
+},
+{
+"id": "semis-correction",
+"lane": "markets-ai",
+"p": 0.58,
+"date": "2026-08-14",
+"class": "-",
+"label": "Growth selloff: SMH <550 before reclaiming 605",
+"ledger": [
+47,
+51,
+25,
+24,
+33,
+61
+]
+},
+{
+"id": "election-instrument",
+"lane": "us-politics",
+"p": 1.0,
+"date": "2026-08-16",
+"class": "-",
+"label": "Election intervention: concrete federal instrument by 8/16",
+"ledger": [
+49,
+48,
+7
+]
+},
+{
+"id": "taiwan-watch",
+"lane": "taiwan-china",
+"p": 0.07,
+"date": "2026-12-15",
+"class": "-",
+"label": "Taiwan: PLA kinetic action in 2026 (LOW)",
+"ledger": [
+53,
+42
+]
+},
+{
+"id": "war-economy-2027",
+"lane": "world-order",
+"p": 0.55,
+"date": "2027-02-01",
+"class": "-",
+"label": "War-economy buildout 2027 (~$1.5T Pentagon, draft infra)",
+"ledger": [
+2,
+3,
+40,
+5
+]
+},
+{
+"id": "ai-2027-fork",
+"lane": "markets-ai",
+"p": 1.0,
+"date": "2027-03-01",
+"class": "-",
+"label": "AI-capex 2027: digestion / sprint / winter",
+"ledger": [
+54,
+55
+]
+},
+{
+"id": "capex-digestion",
+"lane": "markets-ai",
+"p": 0.55,
+"date": "2027-07-01",
+"class": "-",
+"label": "Digestion: growth decelerates <+25%",
+"ledger": [
+54
+]
+},
+{
+"id": "capex-sprint",
+"lane": "markets-ai",
+"p": 0.25,
+"date": "2027-07-01",
+"class": "-",
+"label": "Sprint continues: another +30%+ year",
+"ledger": []
+},
+{
+"id": "ai-winter",
+"lane": "markets-ai",
+"p": 0.2,
+"date": "2027-07-01",
+"class": "-",
+"label": "AI winter: capex declines",
+"ledger": [
+55,
+33
+]
+},
+{
+"id": "midterms-2026",
+"lane": "us-politics",
+"p": 0.55,
+"date": "2026-11-03",
+"class": "-",
+"label": "Midterms: held, but >=1 federal certification fight",
+"ledger": [
+56,
+49
+]
+},
+{
+"id": "election-2028",
+"lane": "us-politics",
+"p": 1.0,
+"date": "2028-11-07",
+"class": "-",
+"label": "2028: the succession question",
+"ledger": [
+7,
+41
+]
+},
+{
+"id": "transition-normal",
+"lane": "us-politics",
+"p": 0.55,
+"date": "2029-01-20",
+"class": "-",
+"label": "Normal transition / ordinary election",
+"ledger": []
+},
+{
+"id": "third-term-attempt",
+"lane": "us-politics",
+"p": 0.3,
+"date": "2029-01-20",
+"class": "-",
+"label": "Third-term attempt / overt manipulation (#7)",
+"ledger": [
+7,
+41,
+49
+]
+},
+{
+"id": "crisis-other",
+"lane": "us-politics",
+"p": 0.15,
+"date": "2029-01-20",
+"class": "-",
+"label": "Contested/constitutional crisis (other paths)",
+"ledger": []
+},
+{
+"id": "taiwan-window",
+"lane": "taiwan-china",
+"p": 1.0,
+"date": "2028-06-01",
+"class": "-",
+"label": "Taiwan window 2028-30 (post-#42)",
+"ledger": [
+57,
+42
+]
+},
+{
+"id": "taiwan-kinetic",
+"lane": "taiwan-china",
+"p": 0.3,
+"date": "2029-06-01",
+"class": "-",
+"label": "Blockade/quarantine attempted (#57)",
+"ledger": [
+57
+]
+},
+{
+"id": "taiwan-deterred",
+"lane": "taiwan-china",
+"p": 0.7,
+"date": "2029-06-01",
+"class": "-",
+"label": "Deterrence holds through 2030",
+"ledger": [
+42
+]
+},
+{
+"id": "world-2031",
+"lane": "world-order",
+"p": 1.0,
+"date": "2030-01-01",
+"class": "-",
+"label": "World order 2029-31: terminal states",
+"ledger": [
+6,
+4,
+1,
+43
+]
+},
+{
+"id": "fragmented-blocs",
+"lane": "world-order",
+"p": 0.45,
+"date": "2030-06-01",
+"class": "-",
+"label": "Fragmented blocs: bandwagoning accelerates",
+"ledger": [
+6,
+4
+]
+},
+{
+"id": "managed-bipolarity",
+"lane": "world-order",
+"p": 0.35,
+"date": "2030-06-01",
+"class": "-",
+"label": "Managed bipolarity: contained rivalry",
+"ledger": [
+43
+]
+},
+{
+"id": "us-primacy-renewed",
+"lane": "world-order",
+"p": 0.2,
+"date": "2030-06-01",
+"class": "-",
+"label": "Renewed US primacy (AI payoff + energy)",
+"ledger": []
+},
+{
+"id": "red-sea-front",
+"lane": "iran-energy",
+"p": 1.0,
+"date": "2026-07-21",
+"class": "-",
+"label": "Red Sea front persists: Saudi exports squeezed both ends",
+"ledger": [
+58
+]
+},
+{
+"id": "us-houthi-response",
+"lane": "iran-energy",
+"p": 0.0,
+"date": "2026-07-28",
+"class": "-",
+"label": "US strikes Yemen + escort framework — NEITHER (#63 MISS, Brier 0.56)",
+"ledger": [
+63
+]
+},
+{
+"id": "market-regime-q3",
+"lane": "markets-ai",
+"p": 0.45,
+"date": "2026-08-21",
+"class": "-",
+"label": "Q3 regime: capped choppy grind (not melt-up, not crash)",
+"ledger": [
+65,
+66,
+47,
+61,
+50,
+52,
+69,
+70
+]
+},
+{
+"id": "frozen-oscillation",
+"lane": "iran-energy",
+"p": 0.4,
+"date": "2026-09-15",
+"class": "-",
+"label": "Frozen oscillation: strike-pause cycle grinds past 8/16 (no deal, no full war)",
+"ledger": [
+35,
+1,
+59
+]
+},
+{
+"id": "islamabad-window",
+"lane": "iran-energy",
+"p": 1.0,
+"date": "2026-08-16",
+"class": "-",
+"label": "Islamabad Memorandum 60-day window EXPIRES (~8/16)",
+"ledger": [
+59,
+68,
+69
+]
+},
+{
+"id": "price-map-q3",
+"lane": "markets-ai",
+"p": 0.0,
+"date": "2026-09-30",
+"class": "-",
+"label": "Price map holds: SPY 705-775 / QQQ 640-720 / SMH 480-605",
+"ledger": [
+69,
+70,
+65,
+66
+]
+},
+{
+"id": "energy-strike-weekend",
+"lane": "iran-energy",
+"p": 0.0,
+"date": "2026-08-03",
+"class": "-",
+"label": "Energy strike — DID NOT HAPPEN (#72 MISS, Brier 0.30)",
+"ledger": [
+72,
+59
+]
+},
+{
+"id": "hormuz-framework-only",
+"lane": "iran-energy",
+"p": 1.0,
+"date": "2026-08-07",
+"class": "-",
+"label": "Hormuz: framework talk, NOT normalized traffic",
+"ledger": [
+59,
+68,
+73,
+79
+]
+},
+{
+"id": "hormuz-normalized",
+"lane": "iran-energy",
+"p": 0.0,
+"date": "2026-08-07",
+"class": "-",
+"label": "Hormuz FULLY normalized this week (tail)",
+"ledger": [
+73
+]
+},
+{
+"id": "oil-premium-unwind",
+"lane": "iran-energy",
+"p": 0.0,
+"date": "2026-08-11",
+"class": "-",
+"label": "War-premium unwind: XLE outperforms USO",
+"ledger": [
+74,
+39,
+23
+]
+},
+{
+"id": "payrolls-jul",
+"lane": "fed-macro",
+"p": 1.0,
+"date": "2026-08-07",
+"class": "-",
+"label": "July payrolls — good-news-is-bad-news test",
+"ledger": [
+75,
+62,
+71
+]
+},
+{
+"id": "smh-605-cap",
+"lane": "markets-ai",
+"p": 1.0,
+"date": "2026-08-07",
+"class": "-",
+"label": "SMH stays below 605 this week",
+"ledger": [
+77,
+51,
+69,
+70,
+61
+]
+},
+{
+"id": "spy-breakout-fails",
+"lane": "markets-ai",
+"p": 1.0,
+"date": "2026-08-07",
+"class": "-",
+"label": "Record breakout does NOT hold >2% for 3 straight",
+"ledger": [
+78,
+66,
+65,
+69
+]
+},
+{
+"id": "gas-sub-4",
+"lane": "fed-macro",
+"p": 0.0,
+"date": "2026-08-25",
+"class": "-",
+"label": "Pump avg back below $4.00 — August CPI cools",
+"ledger": [
+76,
+71,
+32,
+62
+]
+},
+{
+"id": "round-3",
+"lane": "iran-energy",
+"p": 1.0,
+"date": "2026-08-31",
+"class": "-",
+"label": "✓ HAPPENED — Round 3: US strikes 8/31–9/9, Brent back above 100",
+"ledger": [
+27
+]
+},
+{
+"id": "fire-pause-sept",
+"lane": "iran-energy",
+"p": 1.0,
+"date": "2026-09-10",
+"class": "-",
+"label": "✓ HAPPENED — Fire pause from ~9/10 (day 10 on 9/19)",
+"ledger": [
+35
+]
+},
+{
+"id": "us-strikes-resume",
+"lane": "iran-energy",
+"p": 0.35,
+"date": "2026-10-05",
+"class": "-",
+"label": "Round 4: US resumes large-scale strikes within ~3 weeks",
+"ledger": []
+},
+{
+"id": "pause-outlasts-oct12",
+"lane": "iran-energy",
+"p": 0.58,
+"date": "2026-10-12",
+"class": "-",
+"label": "Duration: the September fire pause is still holding on 10/12",
+"ledger": []
+},
+{
+"id": "pause-durability-marker",
+"lane": "iran-energy",
+"p": 0.08,
+"date": "2026-10-31",
+"class": "-",
+"label": "Marker: monitors, a DMZ-equivalent or a third-party guarantee is announced by 10/31",
+"ledger": []
+},
+{
+"id": "iran-six-conditions",
+"lane": "iran-energy",
+"p": 0.25,
+"date": "2026-10-15",
+"class": "-",
+"label": "Qatar channel: Iran's six conditions become a negotiation",
+"ledger": [
+36
+]
+},
+{
+"id": "iaea-unsc-referral",
+"lane": "iran-energy",
+"p": 1.0,
+"date": "2026-09-09",
+"class": "-",
+"label": "✓ HAPPENED — IAEA Board refers Iran to the UN Security Council (9/9)",
+"ledger": [
+30,
+34
+]
+},
+{
+"id": "fomc-sept-hike",
+"lane": "fed-macro",
+"p": 1.0,
+"date": "2026-09-16",
+"class": "-",
+"label": "✓ HAPPENED — FOMC 9/16: HIKE 25bp to 3.75–4.00, 12–0 (#26 MISS)",
+"ledger": [
+26,
+62
+]
+},
+{
+"id": "fomc-oct",
+"lane": "fed-macro",
+"p": 0.6,
+"date": "2026-10-28",
+"class": "-",
+"label": "FOMC 10/27–28: second hike (by the 12/8–9 meeting at the latest)",
+"ledger": []
+},
+{
+"id": "rc-anchor",
+"lane": "rates-credit",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Rates & credit: the post-hike funding regime",
+"ledger": [
+62,
+26
+]
+},
+{
+"id": "qra-nov",
+"lane": "rates-credit",
+"p": 1.0,
+"date": "2026-11-04",
+"class": "scheduled",
+"label": "Treasury quarterly refunding announcement (early Nov)",
+"ledger": []
+},
+{
+"id": "coupon-sizes-held",
+"lane": "rates-credit",
+"p": 0.62,
+"date": "2026-11-04",
+"class": "scheduled",
+"label": "Nominal coupon auction sizes left unchanged at the Nov QRA",
+"ledger": []
+},
+{
+"id": "bill-share-high",
+"lane": "rates-credit",
+"p": 0.85,
+"date": "2026-12-31",
+"class": "invariant",
+"label": "T-bills stay above 20% of marketable debt outstanding",
+"ledger": [
+82
+]
+},
+{
+"id": "tens-above-4",
+"lane": "rates-credit",
+"p": 0.8,
+"date": "2026-12-31",
+"class": "level",
+"label": "US 10y closes above 4.00% on the last trading day of 2026",
+"ledger": [
+103
+]
+},
+{
+"id": "curve-positive",
+"lane": "rates-credit",
+"p": 0.82,
+"date": "2026-12-31",
+"class": "duration",
+"label": "2s10s stays positive every session through year-end",
+"ledger": [
+94
+]
+},
+{
+"id": "pmms-above-65",
+"lane": "rates-credit",
+"p": 0.82,
+"date": "2026-12-31",
+"class": "duration",
+"label": "Freddie PMMS 30y stays above 6.50% on every weekly print to 12/31",
+"ledger": [
+62
+]
+},
+{
+"id": "ig-spread-band",
+"lane": "rates-credit",
+"p": 0.82,
+"date": "2026-12-31",
+"class": "level",
+"label": "IG OAS holds under 160bp through year-end",
+"ledger": [
+86
+]
+},
+{
+"id": "hy-spread-band",
+"lane": "rates-credit",
+"p": 0.8,
+"date": "2026-12-31",
+"class": "level",
+"label": "HY OAS holds under 500bp through year-end",
+"ledger": [
+106
+]
+},
+{
+"id": "sloos-tightening",
+"lane": "rates-credit",
+"p": 0.58,
+"date": "2026-11-02",
+"class": "scheduled",
+"label": "Next SLOOS shows net tightening in C&I standards",
+"ledger": [
+102
+]
+},
+{
+"id": "cre-office-stress",
+"lane": "rates-credit",
+"p": 0.82,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "CMBS office delinquency stays above 10% every month to 6/2027",
+"ledger": [
+93
+]
+},
+{
+"id": "reserves-ample",
+"lane": "rates-credit",
+"p": 0.8,
+"date": "2026-12-31",
+"class": "level",
+"label": "Bank reserves stay above $2.8T through year-end",
+"ledger": []
+},
+{
+"id": "sofr-quarter-end",
+"lane": "rates-credit",
+"p": 0.66,
+"date": "2026-12-31",
+"class": "marker",
+"label": "SOFR prints at least 10bp above IORB on a year-end turn date",
+"ledger": [
+91
+]
+},
+{
+"id": "qt-end-marker",
+"lane": "rates-credit",
+"p": 0.45,
+"date": "2027-03-31",
+"class": "marker",
+"label": "The Fed names a date or condition for ending balance-sheet runoff",
+"ledger": []
+},
+{
+"id": "debt-ceiling-live",
+"lane": "rates-credit",
+"p": 0.55,
+"date": "2027-06-30",
+"class": "scheduled",
+"label": "A binding debt-limit date is back on the calendar by mid-2027",
+"ledger": []
+},
+{
+"id": "cr-dec11",
+"lane": "rates-credit",
+"p": 1.0,
+"date": "2026-12-11",
+"class": "invariant",
+"label": "Continuing resolution expiry",
+"ledger": [
+3
+]
+},
+{
+"id": "shutdown-dec",
+"lane": "rates-credit",
+"p": 0.35,
+"date": "2026-12-31",
+"class": "direction",
+"label": "A federal funding lapse of at least one full day begins by 12/31",
+"ledger": [
+114
+]
+},
+{
+"id": "tga-rebuild",
+"lane": "rates-credit",
+"p": 0.64,
+"date": "2027-03-31",
+"class": "level",
+"label": "TGA balance above $700B on any weekly H.4.1 by 3/2027",
+"ledger": []
+},
+{
+"id": "muni-supply",
+"lane": "rates-credit",
+"p": 0.72,
+"date": "2027-01-31",
+"class": "invariant",
+"label": "2026 full-year municipal issuance sets a nominal record",
+"ledger": [
+110
+]
+},
+{
+"id": "refi-wall-2027",
+"lane": "rates-credit",
+"p": 0.88,
+"date": "2027-01-31",
+"class": "invariant",
+"label": "2027 US corporate maturity wall exceeds 2026's",
+"ledger": []
+},
+{
+"id": "bank-nim-compression",
+"lane": "rates-credit",
+"p": 0.62,
+"date": "2027-04-30",
+"class": "scheduled",
+"label": "Aggregate large-bank NIM falls q/q in at least one of the next two reported quarters",
+"ledger": []
+},
+{
+"id": "es-anchor",
+"lane": "energy-supply",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Energy supply: the non-Iran half of the oil and power story",
+"ledger": []
+},
+{
+"id": "opec-nov-meeting",
+"lane": "energy-supply",
+"p": 0.96,
+"date": "2026-11-30",
+"class": "scheduled",
+"label": "OPEC+ ministerial meeting convenes",
+"ledger": []
+},
+{
+"id": "opec-quota-unchanged",
+"lane": "energy-supply",
+"p": 0.55,
+"date": "2026-11-30",
+"class": "direction",
+"label": "OPEC+ leaves headline quotas unchanged at the November meeting",
+"ledger": []
+},
+{
+"id": "brent-band-q4",
+"lane": "energy-supply",
+"p": 0.35,
+"date": "2026-12-31",
+"class": "level",
+"label": "Brent front-month trades inside $85-$125 for the whole of Q4",
+"ledger": [
+83
+]
+},
+{
+"id": "shale-rig-floor",
+"lane": "energy-supply",
+"p": 0.8,
+"date": "2027-03-31",
+"class": "duration",
+"label": "US oil rig count stays above 400 every week through Q1 2027",
+"ledger": [
+113
+]
+},
+{
+"id": "lng-capacity-2027",
+"lane": "energy-supply",
+"p": 0.86,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "At least one new large-scale LNG train reaches first cargo during 2027",
+"ledger": []
+},
+{
+"id": "refinery-closure",
+"lane": "energy-supply",
+"p": 0.8,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "A previously announced refinery closure completes on schedule",
+"ledger": []
+},
+{
+"id": "diesel-crack-wide",
+"lane": "energy-supply",
+"p": 0.7,
+"date": "2027-03-31",
+"class": "duration",
+"label": "ULSD crack stays above $25/bbl on every weekly close to 3/2027",
+"ledger": []
+},
+{
+"id": "natgas-storage",
+"lane": "energy-supply",
+"p": 0.58,
+"date": "2026-11-30",
+"class": "scheduled",
+"label": "US working gas in storage ends the injection season above the five-year average",
+"ledger": [
+98
+]
+},
+{
+"id": "power-demand-record",
+"lane": "energy-supply",
+"p": 0.78,
+"date": "2027-09-30",
+"class": "invariant",
+"label": "US summer 2027 peak load sets a record",
+"ledger": [
+99
+]
+},
+{
+"id": "pjm-capacity-auction",
+"lane": "energy-supply",
+"p": 0.92,
+"date": "2027-05-31",
+"class": "scheduled",
+"label": "PJM base residual capacity auction clears",
+"ledger": []
+},
+{
+"id": "nuclear-restart",
+"lane": "energy-supply",
+"p": 0.72,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "A US reactor restart or uprate adds capacity to the grid by end-2027",
+"ledger": []
+},
+{
+"id": "interconnect-queue",
+"lane": "energy-supply",
+"p": 0.84,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Interconnection queue wait times stay above 3 years",
+"ledger": []
+},
+{
+"id": "transformer-leadtime",
+"lane": "energy-supply",
+"p": 0.82,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Large power transformer lead times stay above 100 weeks",
+"ledger": []
+},
+{
+"id": "spr-refill",
+"lane": "energy-supply",
+"p": 0.74,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "SPR inventory ends 2027 below 500 million barrels",
+"ledger": []
+},
+{
+"id": "eia-forecast-cycle",
+"lane": "energy-supply",
+"p": 0.94,
+"date": "2027-06-30",
+"class": "scheduled",
+"label": "EIA Short-Term Energy Outlook published monthly without a gap",
+"ledger": []
+},
+{
+"id": "coal-retirement-delay",
+"lane": "energy-supply",
+"p": 0.8,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "At least one scheduled US coal retirement is deferred",
+"ledger": []
+},
+{
+"id": "cn-anchor",
+"lane": "china-macro",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "China macro: the deflation-and-transfer problem",
+"ledger": []
+},
+{
+"id": "npc-2027",
+"lane": "china-macro",
+"p": 0.97,
+"date": "2027-03-05",
+"class": "invariant",
+"label": "National People's Congress convenes",
+"ledger": []
+},
+{
+"id": "cn-growth-target",
+"lane": "china-macro",
+"p": 0.72,
+"date": "2027-03-05",
+"class": "scheduled",
+"label": "2027 growth target set at 'around 5%'",
+"ledger": []
+},
+{
+"id": "cn-fiscal-deficit",
+"lane": "china-macro",
+"p": 0.66,
+"date": "2027-03-05",
+"class": "scheduled",
+"label": "Headline budget deficit ratio set at or above 3.5%",
+"ledger": []
+},
+{
+"id": "cn-population-decline",
+"lane": "china-macro",
+"p": 0.93,
+"date": "2027-01-31",
+"class": "invariant",
+"label": "Official 2026 population figure shows another y/y decline",
+"ledger": []
+},
+{
+"id": "cn-property-starts",
+"lane": "china-macro",
+"p": 0.85,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "New residential starts stay below 60% of the 2019 level every month through 2027",
+"ledger": []
+},
+{
+"id": "cn-deflator",
+"lane": "china-macro",
+"p": 0.7,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "GDP deflator prints negative y/y in at least one quarter of 2027",
+"ledger": []
+},
+{
+"id": "pboc-rrr-cut",
+"lane": "china-macro",
+"p": 0.55,
+"date": "2027-06-30",
+"class": "direction",
+"label": "PBoC cuts the reserve requirement ratio at least once by mid-2027",
+"ledger": [
+111
+]
+},
+{
+"id": "cn-yuan-band",
+"lane": "china-macro",
+"p": 0.8,
+"date": "2027-06-30",
+"class": "level",
+"label": "USDCNY fixes inside 6.80-7.60 on every fixing through Q2 2027",
+"ledger": []
+},
+{
+"id": "cn-export-share",
+"lane": "china-macro",
+"p": 0.84,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "China's share of global goods exports stays above 13%",
+"ledger": []
+},
+{
+"id": "cn-lgsb-quota",
+"lane": "china-macro",
+"p": 0.68,
+"date": "2027-03-05",
+"class": "scheduled",
+"label": "Local government special bond quota set above CNY 4 trillion",
+"ledger": []
+},
+{
+"id": "cn-rare-earth-controls",
+"lane": "china-macro",
+"p": 0.52,
+"date": "2027-12-31",
+"class": "direction",
+"label": "Export-licence controls on at least one additional critical mineral category are announced by end-2027",
+"ledger": []
+},
+{
+"id": "cn-gold-buying",
+"lane": "china-macro",
+"p": 0.7,
+"date": "2027-09-30",
+"class": "marker",
+"label": "PBoC reports gold reserve additions in at least 8 of the next 12 monthly reports",
+"ledger": [
+84
+]
+},
+{
+"id": "cn-ai-chip-domestic",
+"lane": "china-macro",
+"p": 0.62,
+"date": "2027-12-31",
+"class": "marker",
+"label": "A domestic Chinese accelerator is credibly reported in volume deployment at a major Chinese cloud by end-2027",
+"ledger": []
+},
+{
+"id": "cn-belt-road-lending",
+"lane": "china-macro",
+"p": 0.86,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Reported annual BRI lending stays below its peak-year level",
+"ledger": []
+},
+{
+"id": "eu-anchor",
+"lane": "europe",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Europe: the fiscal-and-energy squeeze",
+"ledger": []
+},
+{
+"id": "ecb-dec-meeting",
+"lane": "europe",
+"p": 0.98,
+"date": "2026-12-17",
+"class": "invariant",
+"label": "ECB Governing Council monetary policy meeting",
+"ledger": []
+},
+{
+"id": "ecb-hold",
+"lane": "europe",
+"p": 0.55,
+"date": "2026-12-17",
+"class": "direction",
+"label": "ECB leaves the deposit rate unchanged in December",
+"ledger": []
+},
+{
+"id": "eu-defence-spending",
+"lane": "europe",
+"p": 0.8,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "At least 20 NATO members report defence spending at or above 2% of GDP for 2026",
+"ledger": [
+85
+]
+},
+{
+"id": "german-fiscal",
+"lane": "europe",
+"p": 0.82,
+"date": "2027-01-31",
+"class": "invariant",
+"label": "German federal investment spending in the 2027 budget exceeds the 2025 level in nominal terms",
+"ledger": []
+},
+{
+"id": "france-deficit",
+"lane": "europe",
+"p": 0.78,
+"date": "2027-03-31",
+"class": "scheduled",
+"label": "France's reported deficit for 2026 exceeds 4.5% of GDP",
+"ledger": [
+96
+]
+},
+{
+"id": "eu-fiscal-rules",
+"lane": "europe",
+"p": 0.62,
+"date": "2027-12-31",
+"class": "marker",
+"label": "A formal flexibility clause, escape clause or rule revision is applied to at least one large member state by end-2027",
+"ledger": []
+},
+{
+"id": "italy-spread",
+"lane": "europe",
+"p": 0.82,
+"date": "2027-06-30",
+"class": "level",
+"label": "BTP-Bund 10y spread stays under 250bp on every close to mid-2027",
+"ledger": [
+108
+]
+},
+{
+"id": "eur-level",
+"lane": "europe",
+"p": 0.84,
+"date": "2027-06-30",
+"class": "level",
+"label": "EURUSD trades inside 0.95-1.20 on every close through Q2 2027",
+"ledger": []
+},
+{
+"id": "eu-carbon-band",
+"lane": "europe",
+"p": 0.78,
+"date": "2027-12-31",
+"class": "level",
+"label": "EUA carbon price trades inside EUR 50-140 through 2027",
+"ledger": []
+},
+{
+"id": "eu-gas-storage",
+"lane": "europe",
+"p": 0.72,
+"date": "2027-04-30",
+"class": "scheduled",
+"label": "EU gas storage ends the 2026-27 withdrawal season above 25% full",
+"ledger": [
+105
+]
+},
+{
+"id": "uk-gilt-marker",
+"lane": "europe",
+"p": 0.4,
+"date": "2027-06-30",
+"class": "marker",
+"label": "UK 30y gilt yield prints above 6.00% on any close by mid-2027",
+"ledger": []
+},
+{
+"id": "eu-russia-assets",
+"lane": "europe",
+"p": 0.45,
+"date": "2027-12-31",
+"class": "direction",
+"label": "A binding EU legal instrument on immobilised Russian sovereign assets beyond windfall profits is adopted by end-2027",
+"ledger": []
+},
+{
+"id": "ukraine-tranche",
+"lane": "europe",
+"p": 0.7,
+"date": "2027-12-31",
+"class": "marker",
+"label": "A further multi-year EU financial support tranche for Ukraine is legally committed by end-2027",
+"ledger": []
+},
+{
+"id": "german-ip",
+"lane": "europe",
+"p": 0.8,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "German industrial production stays below its 2017 index level every month through 2027",
+"ledger": []
+},
+{
+"id": "cm-anchor",
+"lane": "commodities-metals",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Commodities & metals: geology as a hard constraint",
+"ledger": []
+},
+{
+"id": "gold-level",
+"lane": "commodities-metals",
+"p": 0.8,
+"date": "2027-12-31",
+"class": "level",
+"label": "Gold holds above $2,800/oz on every month-end close through 2027",
+"ledger": []
+},
+{
+"id": "copper-deficit",
+"lane": "commodities-metals",
+"p": 0.62,
+"date": "2028-03-31",
+"class": "invariant",
+"label": "Refined copper market reports a supply deficit for 2027",
+"ledger": []
+},
+{
+"id": "copper-grade",
+"lane": "commodities-metals",
+"p": 0.88,
+"date": "2028-03-31",
+"class": "invariant",
+"label": "Average head grade at the major porphyry mines declines again year-on-year",
+"ledger": []
+},
+{
+"id": "uranium-term",
+"lane": "commodities-metals",
+"p": 0.78,
+"date": "2027-12-31",
+"class": "duration",
+"label": "Uranium term-contract price stays above $70/lb through 2027",
+"ledger": []
+},
+{
+"id": "lithium-oversupply",
+"lane": "commodities-metals",
+"p": 0.9,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Lithium carbonate stays below its 2022 peak in real terms through 2027",
+"ledger": []
+},
+{
+"id": "silver-deficit-run",
+"lane": "commodities-metals",
+"p": 0.76,
+"date": "2027-05-31",
+"class": "invariant",
+"label": "Silver records another annual structural deficit for 2026",
+"ledger": [
+101
+]
+},
+{
+"id": "platinum-deficit",
+"lane": "commodities-metals",
+"p": 0.74,
+"date": "2027-05-31",
+"class": "invariant",
+"label": "Platinum records a supply deficit for 2026",
+"ledger": [
+89
+]
+},
+{
+"id": "aluminium-power",
+"lane": "commodities-metals",
+"p": 0.86,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "No net new primary aluminium smelting capacity is commissioned in Europe through 2027",
+"ledger": []
+},
+{
+"id": "tin-supply",
+"lane": "commodities-metals",
+"p": 0.84,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Refined tin supply stays concentrated with the top three producing countries above 60% of output",
+"ledger": []
+},
+{
+"id": "fertilizer-gas-link",
+"lane": "commodities-metals",
+"p": 0.78,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "European ammonia production stays below 70% of nameplate capacity through 2027",
+"ledger": []
+},
+{
+"id": "wheat-stocks",
+"lane": "commodities-metals",
+"p": 0.6,
+"date": "2027-06-30",
+"class": "scheduled",
+"label": "World wheat stocks-to-use for 2026/27 is reported below 32%",
+"ledger": []
+},
+{
+"id": "cocoa-normalisation",
+"lane": "commodities-metals",
+"p": 0.3,
+"date": "2027-12-31",
+"class": "duration",
+"label": "Cocoa trades below $6,000/t on a month-end close by end-2027",
+"ledger": []
+},
+{
+"id": "ags-enso-2027",
+"lane": "commodities-metals",
+"p": 0.68,
+"date": "2027-08-31",
+"class": "scheduled",
+"label": "NOAA declares an ENSO-neutral or La Nina state for the 2027 northern summer",
+"ledger": [
+81
+]
+},
+{
+"id": "ld-anchor",
+"lane": "labor-demo",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Labour & demographics: the supply side of the inflation problem",
+"ledger": []
+},
+{
+"id": "payrolls-oct",
+"lane": "labor-demo",
+"p": 0.95,
+"date": "2026-11-06",
+"class": "scheduled",
+"label": "October employment situation released",
+"ledger": []
+},
+{
+"id": "payrolls-dec",
+"lane": "labor-demo",
+"p": 0.95,
+"date": "2027-01-08",
+"class": "scheduled",
+"label": "December employment situation released",
+"ledger": []
+},
+{
+"id": "u3-band",
+"lane": "labor-demo",
+"p": 0.8,
+"date": "2027-06-30",
+"class": "level",
+"label": "U-3 unemployment prints inside 3.8-5.2% on every release through Q2 2027",
+"ledger": [
+115
+]
+},
+{
+"id": "participation-drag",
+"lane": "labor-demo",
+"p": 0.8,
+"date": "2027-12-31",
+"class": "duration",
+"label": "Prime-age participation stays below its cycle peak every month through 2027",
+"ledger": []
+},
+{
+"id": "labor-force-immigration",
+"lane": "labor-demo",
+"p": 0.82,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Annual net international migration reported for 2026 comes in below the 2023-24 average",
+"ledger": []
+},
+{
+"id": "boomer-retirement",
+"lane": "labor-demo",
+"p": 0.95,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "The 65+ share of the US population rises again in the 2026 vintage estimates",
+"ledger": []
+},
+{
+"id": "healthcare-jobs",
+"lane": "labor-demo",
+"p": 0.78,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "Health care and social assistance is the largest contributor to payroll growth in a majority of months through Q2 2027",
+"ledger": []
+},
+{
+"id": "jolts-openings",
+"lane": "labor-demo",
+"p": 0.76,
+"date": "2027-06-30",
+"class": "level",
+"label": "JOLTS job openings print below 8.0 million on every release through Q2 2027",
+"ledger": []
+},
+{
+"id": "wage-band",
+"lane": "labor-demo",
+"p": 0.8,
+"date": "2027-06-30",
+"class": "level",
+"label": "Average hourly earnings y/y prints inside 3.0-5.0% on every release through Q2 2027",
+"ledger": []
+},
+{
+"id": "strike-activity",
+"lane": "labor-demo",
+"p": 0.72,
+"date": "2027-12-31",
+"class": "marker",
+"label": "At least one work stoppage involving 20,000+ workers begins before end-2027",
+"ledger": []
+},
+{
+"id": "federal-workforce",
+"lane": "labor-demo",
+"p": 0.76,
+"date": "2027-10-31",
+"class": "invariant",
+"label": "Federal civilian employment ends FY2027 below its FY2025 level",
+"ledger": []
+},
+{
+"id": "productivity-band",
+"lane": "labor-demo",
+"p": 0.82,
+"date": "2027-12-31",
+"class": "level",
+"label": "Nonfarm business productivity growth prints inside 0-4% y/y on every quarterly release through 2027",
+"ledger": []
+},
+{
+"id": "sc-anchor",
+"lane": "supply-chains",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Supply chains: lead time as the binding constraint",
+"ledger": []
+},
+{
+"id": "cowos-bottleneck",
+"lane": "supply-chains",
+"p": 0.78,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Advanced packaging capacity remains the binding constraint on accelerator shipments through 2027",
+"ledger": []
+},
+{
+"id": "hbm-tight",
+"lane": "supply-chains",
+"p": 0.74,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "HBM remains sold out on a forward-year basis at the top two suppliers through 2027",
+"ledger": []
+},
+{
+"id": "euv-shipments",
+"lane": "supply-chains",
+"p": 0.72,
+"date": "2028-01-31",
+"class": "invariant",
+"label": "EUV systems shipped in 2027 exceed the 2025 total",
+"ledger": []
+},
+{
+"id": "transformer-sc",
+"lane": "supply-chains",
+"p": 0.8,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Grid equipment remains on allocation at the major OEMs through 2027",
+"ledger": []
+},
+{
+"id": "rare-earth-onshoring",
+"lane": "supply-chains",
+"p": 0.75,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "At least one non-Chinese commercial-scale NdFeB magnet facility reaches production by end-2027",
+"ledger": []
+},
+{
+"id": "panama-transits",
+"lane": "supply-chains",
+"p": 0.76,
+"date": "2027-12-31",
+"class": "duration",
+"label": "Panama Canal daily transit slots stay at or above 30 per day through 2027",
+"ledger": []
+},
+{
+"id": "red-sea-duration",
+"lane": "supply-chains",
+"p": 0.76,
+"date": "2027-06-30",
+"class": "duration",
+"label": "Majority of container capacity still routing via the Cape rather than Suez on 2027-06-30",
+"ledger": []
+},
+{
+"id": "freight-band",
+"lane": "supply-chains",
+"p": 0.7,
+"date": "2027-12-31",
+"class": "level",
+"label": "Composite container spot freight stays inside a 3x range through 2027",
+"ledger": []
+},
+{
+"id": "container-orderbook",
+"lane": "supply-chains",
+"p": 0.9,
+"date": "2028-01-31",
+"class": "invariant",
+"label": "Container fleet capacity grows again in 2027",
+"ledger": []
+},
+{
+"id": "auto-chip-inventory",
+"lane": "supply-chains",
+"p": 0.72,
+"date": "2026-12-31",
+"class": "marker",
+"label": "No automaker announces a production halt attributed to semiconductor shortage in Q4 2026",
+"ledger": []
+},
+{
+"id": "semicap-controls",
+"lane": "supply-chains",
+"p": 0.55,
+"date": "2027-12-31",
+"class": "direction",
+"label": "At least one further tightening of semiconductor equipment export controls is published by end-2027",
+"ledger": []
+},
+{
+"id": "pharma-api",
+"lane": "supply-chains",
+"p": 0.82,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "No US generic injectable shortage list falls below 50 active entries through 2027",
+"ledger": []
+},
+{
+"id": "tsmc-az",
+"lane": "supply-chains",
+"p": 0.78,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Arizona-fabricated leading-edge wafers ship in volume to a US customer by end-2027",
+"ledger": []
+},
+{
+"id": "cd-anchor",
+"lane": "crypto-digital",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Crypto & digital assets: protocol arithmetic vs policy discretion",
+"ledger": []
+},
+{
+"id": "btc-halving",
+"lane": "crypto-digital",
+"p": 0.97,
+"date": "2028-04-30",
+"class": "invariant",
+"label": "The next Bitcoin subsidy halving occurs at the scheduled block height",
+"ledger": []
+},
+{
+"id": "btc-drawdown",
+"lane": "crypto-digital",
+"p": 0.78,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Bitcoin records a peak-to-trough drawdown of at least 30% inside any 12-month window ending 2027-12-31",
+"ledger": []
+},
+{
+"id": "stablecoin-supply",
+"lane": "crypto-digital",
+"p": 0.6,
+"date": "2027-12-31",
+"class": "level",
+"label": "Aggregate stablecoin supply ends 2027 above its end-2026 level",
+"ledger": []
+},
+{
+"id": "tokenized-treasuries",
+"lane": "crypto-digital",
+"p": 0.4,
+"date": "2027-12-31",
+"class": "level",
+"label": "Tokenised Treasury products end 2027 above $10bn in aggregate",
+"ledger": []
+},
+{
+"id": "crypto-market-structure",
+"lane": "crypto-digital",
+"p": 0.38,
+"date": "2027-12-31",
+"class": "direction",
+"label": "US comprehensive crypto market-structure legislation is enacted by end-2027",
+"ledger": []
+},
+{
+"id": "cbdc-ban",
+"lane": "crypto-digital",
+"p": 0.92,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "No US retail central bank digital currency is launched before 2029",
+"ledger": []
+},
+{
+"id": "exchange-failure",
+"lane": "crypto-digital",
+"p": 0.55,
+"date": "2027-12-31",
+"class": "marker",
+"label": "At least one centralised venue with over $1bn in customer assets fails or freezes withdrawals before end-2027",
+"ledger": []
+},
+{
+"id": "eth-staking",
+"lane": "crypto-digital",
+"p": 0.84,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Ether staking ratio stays above 25% through 2027",
+"ledger": []
+},
+{
+"id": "hashprice-floor",
+"lane": "crypto-digital",
+"p": 0.8,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Network hashrate ends 2027 above its end-2026 level",
+"ledger": []
+},
+{
+"id": "hb-anchor",
+"lane": "health-bio",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Health & bio: statutory calendars and patent arithmetic",
+"ledger": []
+},
+{
+"id": "medicare-round2",
+"lane": "health-bio",
+"p": 0.88,
+"date": "2027-01-01",
+"class": "invariant",
+"label": "Second-round Medicare negotiated prices take effect on the statutory date",
+"ledger": []
+},
+{
+"id": "biosimilar-cliff",
+"lane": "health-bio",
+"p": 0.82,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Aggregate US biologic revenue exposed to loss of exclusivity in 2027 exceeds the 2026 figure",
+"ledger": []
+},
+{
+"id": "pharma-litigation",
+"lane": "health-bio",
+"p": 0.7,
+"date": "2027-12-31",
+"class": "duration",
+"label": "At least one manufacturer challenge to the negotiation programme remains live in the appellate courts on 2027-12-31",
+"ledger": []
+},
+{
+"id": "pdufa-count",
+"lane": "health-bio",
+"p": 0.68,
+"date": "2028-01-31",
+"class": "scheduled",
+"label": "At least 35 novel drug approvals are recorded for calendar 2027",
+"ledger": []
+},
+{
+"id": "glp1-supply",
+"lane": "health-bio",
+"p": 0.66,
+"date": "2027-06-30",
+"class": "marker",
+"label": "No GLP-1 product appears on the FDA drug shortage list on 2027-06-30",
+"ledger": []
+},
+{
+"id": "obesity-coverage",
+"lane": "health-bio",
+"p": 0.8,
+"date": "2027-12-31",
+"class": "duration",
+"label": "Medicare Part D coverage for obesity indications remains restricted through 2027",
+"ledger": []
+},
+{
+"id": "h5n1-marker",
+"lane": "health-bio",
+"p": 0.84,
+"date": "2028-01-31",
+"class": "marker",
+"label": "No sustained human-to-human transmission of H5N1 is confirmed by WHO before 2028",
+"ledger": []
+},
+{
+"id": "nih-funding",
+"lane": "health-bio",
+"p": 0.55,
+"date": "2027-12-31",
+"class": "direction",
+"label": "NIH enacted appropriations for FY2027 come in below the FY2025 level in nominal terms",
+"ledger": []
+},
+{
+"id": "amr-marker",
+"lane": "health-bio",
+"p": 0.42,
+"date": "2028-12-31",
+"class": "marker",
+"label": "At least one new antibiotic class receives FDA approval by end-2028",
+"ledger": []
+},
+{
+"id": "cp-anchor",
+"lane": "climate-physical",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Climate & physical risk: rule-triggered thresholds",
+"ledger": []
+},
+{
+"id": "colorado-tier",
+"lane": "climate-physical",
+"p": 0.8,
+"date": "2026-12-31",
+"class": "invariant",
+"label": "A Lower Basin shortage condition is declared for calendar 2027",
+"ledger": []
+},
+{
+"id": "reinsurance-jan1",
+"lane": "climate-physical",
+"p": 0.96,
+"date": "2027-01-01",
+"class": "scheduled",
+"label": "January 1 reinsurance renewals complete",
+"ledger": []
+},
+{
+"id": "insured-loss",
+"lane": "climate-physical",
+"p": 0.72,
+"date": "2027-04-30",
+"class": "invariant",
+"label": "Global insured natural catastrophe losses for 2026 are reported above $100bn",
+"ledger": [
+107
+]
+},
+{
+"id": "atlantic-season-2027",
+"lane": "climate-physical",
+"p": 0.72,
+"date": "2027-11-30",
+"class": "scheduled",
+"label": "The 2027 Atlantic hurricane season produces at least 12 named storms",
+"ledger": []
+},
+{
+"id": "texas-grid-alert",
+"lane": "climate-physical",
+"p": 0.82,
+"date": "2027-12-31",
+"class": "marker",
+"label": "ERCOT issues at least one conservation appeal or emergency notice before end-2027",
+"ledger": []
+},
+{
+"id": "california-water",
+"lane": "climate-physical",
+"p": 0.7,
+"date": "2027-05-31",
+"class": "scheduled",
+"label": "California statewide snowpack peaks below 110% of average in 2027",
+"ledger": []
+},
+{
+"id": "arctic-minimum",
+"lane": "climate-physical",
+"p": 0.96,
+"date": "2027-10-31",
+"class": "invariant",
+"label": "The 2027 Arctic sea-ice minimum comes in below the 1981-2010 average",
+"ledger": []
+},
+{
+"id": "european-heat-power",
+"lane": "climate-physical",
+"p": 0.82,
+"date": "2027-09-30",
+"class": "marker",
+"label": "At least one European country issues a heat-related power or water restriction in summer 2027",
+"ledger": []
+},
+{
+"id": "crop-insurance",
+"lane": "climate-physical",
+"p": 0.74,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "US crop insurance indemnities for 2026 are reported above $10bn",
+"ledger": []
+},
+{
+"id": "di-anchor",
+"lane": "defense-industrial",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Defence industrial base: backlog, not budget",
+"ledger": [
+3
+]
+},
+{
+"id": "ndaa-fy27",
+"lane": "defense-industrial",
+"p": 0.92,
+"date": "2027-03-31",
+"class": "invariant",
+"label": "An FY2027 National Defense Authorization Act is enacted",
+"ledger": []
+},
+{
+"id": "defense-backlog",
+"lane": "defense-industrial",
+"p": 0.88,
+"date": "2027-02-28",
+"class": "invariant",
+"label": "Aggregate reported backlog at the top five US primes sets a record at the next annual reporting",
+"ledger": [
+95
+]
+},
+{
+"id": "munitions-rate",
+"lane": "defense-industrial",
+"p": 0.7,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Monthly 155mm artillery production capacity exceeds 90,000 rounds by end-2027",
+"ledger": []
+},
+{
+"id": "shipbuilding-delay",
+"lane": "defense-industrial",
+"p": 0.88,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "At least one major US Navy shipbuilding programme reports a further schedule slip before end-2027",
+"ledger": []
+},
+{
+"id": "f35-deliveries",
+"lane": "defense-industrial",
+"p": 0.62,
+"date": "2028-01-31",
+"class": "scheduled",
+"label": "F-35 deliveries for 2027 exceed the 2026 total",
+"ledger": []
+},
+{
+"id": "nato-2pct-count",
+"lane": "defense-industrial",
+"p": 0.78,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "At least 24 NATO members are reported at or above 2% of GDP for 2026",
+"ledger": [
+87
+]
+},
+{
+"id": "army-recruiting",
+"lane": "defense-industrial",
+"p": 0.58,
+"date": "2027-10-31",
+"class": "scheduled",
+"label": "US Army meets or exceeds its FY2027 recruiting goal",
+"ledger": []
+},
+{
+"id": "drone-procurement",
+"lane": "defense-industrial",
+"p": 0.66,
+"date": "2027-12-31",
+"class": "marker",
+"label": "A US programme of record for attritable uncrewed aircraft awards a production contract above $500m by end-2027",
+"ledger": []
+},
+{
+"id": "golden-dome",
+"lane": "defense-industrial",
+"p": 0.52,
+"date": "2028-09-30",
+"class": "direction",
+"label": "Homeland missile-defence architecture receives appropriated funding above $10bn in a single fiscal year by FY2028",
+"ledger": []
+},
+{
+"id": "japan-defense-budget",
+"lane": "defense-industrial",
+"p": 0.84,
+"date": "2027-04-30",
+"class": "invariant",
+"label": "Japan's enacted FY2027 defence budget exceeds its FY2026 level in nominal terms",
+"ledger": [
+109
+]
+},
+{
+"id": "space-launch-cadence",
+"lane": "defense-industrial",
+"p": 0.82,
+"date": "2028-01-31",
+"class": "invariant",
+"label": "Global orbital launch attempts in 2027 exceed the 2026 total",
+"ledger": []
+},
+{
+"id": "em-anchor",
+"lane": "latam-emerging",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Latin America & emerging markets: the external-funding clock",
+"ledger": []
+},
+{
+"id": "argentina-reserves",
+"lane": "latam-emerging",
+"p": 0.78,
+"date": "2027-12-31",
+"class": "level",
+"label": "Argentina's gross international reserves stay above $20bn on every month-end through 2027",
+"ledger": []
+},
+{
+"id": "brazil-selic",
+"lane": "latam-emerging",
+"p": 0.55,
+"date": "2027-06-30",
+"class": "direction",
+"label": "Brazil's Selic rate is below its current level on 2027-06-30",
+"ledger": [
+92
+]
+},
+{
+"id": "mexico-nearshoring",
+"lane": "latam-emerging",
+"p": 0.68,
+"date": "2027-06-30",
+"class": "scheduled",
+"label": "Mexican manufacturing FDI for 2026 is reported above the 2023 level",
+"ledger": []
+},
+{
+"id": "turkey-inflation",
+"lane": "latam-emerging",
+"p": 0.76,
+"date": "2027-12-31",
+"class": "duration",
+"label": "Turkish annual CPI stays above 15% on every print through 2027",
+"ledger": []
+},
+{
+"id": "india-growth",
+"lane": "latam-emerging",
+"p": 0.74,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "India reports real GDP growth above 5.5% for FY2027",
+"ledger": []
+},
+{
+"id": "indonesia-nickel",
+"lane": "latam-emerging",
+"p": 0.88,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Indonesia remains above 50% of global refined nickel supply through 2027",
+"ledger": []
+},
+{
+"id": "em-restructuring-count",
+"lane": "latam-emerging",
+"p": 0.7,
+"date": "2027-12-31",
+"class": "marker",
+"label": "At least one additional sovereign enters or completes a debt restructuring before end-2027",
+"ledger": []
+},
+{
+"id": "jk-anchor",
+"lane": "japan-korea",
+"p": 1.0,
+"date": "2026-10-01",
+"class": "invariant",
+"label": "Japan & Korea: the last carry trade and the memory cycle",
+"ledger": []
+},
+{
+"id": "boj-dec-meeting",
+"lane": "japan-korea",
+"p": 0.98,
+"date": "2026-12-19",
+"class": "invariant",
+"label": "Bank of Japan policy meeting",
+"ledger": []
+},
+{
+"id": "boj-hike",
+"lane": "japan-korea",
+"p": 0.45,
+"date": "2026-12-19",
+"class": "direction",
+"label": "BoJ raises its policy rate at the December meeting",
+"ledger": [
+104
+]
+},
+{
+"id": "jgb-band",
+"lane": "japan-korea",
+"p": 0.84,
+"date": "2027-12-31",
+"class": "level",
+"label": "10y JGB yield stays inside 0.5-3.0% on every close through 2027",
+"ledger": []
+},
+{
+"id": "yen-band",
+"lane": "japan-korea",
+"p": 0.82,
+"date": "2027-12-31",
+"class": "level",
+"label": "USDJPY trades inside 120-185 on every close through 2027",
+"ledger": []
+},
+{
+"id": "korea-exports",
+"lane": "japan-korea",
+"p": 0.72,
+"date": "2027-06-30",
+"class": "scheduled",
+"label": "Korean semiconductor exports post y/y growth in a majority of months through Q2 2027",
+"ledger": [
+97
+]
+},
+{
+"id": "shunto-2027",
+"lane": "japan-korea",
+"p": 0.66,
+"date": "2027-03-31",
+"class": "scheduled",
+"label": "The 2027 shunto first-round tally reports average wage gains above 4%",
+"ledger": [
+90
+]
+},
+{
+"id": "korea-china-exposure",
+"lane": "japan-korea",
+"p": 0.78,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "China's share of Korean exports stays below 25% through 2027",
+"ledger": []
+},
+{
+"id": "ai-capex-funding",
+"lane": "markets-ai",
+"p": 1.0,
+"date": "2027-01-31",
+"class": "invariant",
+"label": "How the next leg of AI capex gets funded",
+"ledger": []
+},
+{
+"id": "capex-cashflow-funded",
+"lane": "markets-ai",
+"p": 0.55,
+"date": "2027-12-31",
+"class": "branch",
+"label": "Hyperscaler capex stays predominantly funded from operating cash flow through 2027",
+"ledger": []
+},
+{
+"id": "capex-debt-funded",
+"lane": "markets-ai",
+"p": 0.45,
+"date": "2027-12-31",
+"class": "branch",
+"label": "A material shift to EXTERNAL financing (debt or equity) of AI capex occurs through 2027",
+"ledger": []
+},
+{
+"id": "nvda-dc-band",
+"lane": "markets-ai",
+"p": 0.7,
+"date": "2027-09-30",
+"class": "scheduled",
+"label": "Reported quarterly datacenter revenue at the leading accelerator vendor grows sequentially in at least 3 of the next 4 quarters",
+"ledger": [
+88
+]
+},
+{
+"id": "ai-power-contracts",
+"lane": "markets-ai",
+"p": 0.8,
+"date": "2027-12-31",
+"class": "marker",
+"label": "At least five new multi-hundred-megawatt datacenter power agreements are announced before end-2027",
+"ledger": []
+},
+{
+"id": "gpu-depreciation",
+"lane": "markets-ai",
+"p": 0.55,
+"date": "2027-12-31",
+"class": "marker",
+"label": "At least one major hyperscaler extends or discloses a change to server useful-life assumptions before end-2027",
+"ledger": []
+},
+{
+"id": "ai-revenue-gap",
+"lane": "markets-ai",
+"p": 0.78,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Disclosed AI-attributable revenue across the major vendors stays below annual AI capex through 2027",
+"ledger": []
+},
+{
+"id": "semis-inventory",
+"lane": "markets-ai",
+"p": 0.72,
+"date": "2027-12-31",
+"class": "duration",
+"label": "Days of inventory at the major semiconductor distributors stays above the pre-2020 average through 2027",
+"ledger": []
+},
+{
+"id": "memory-pricing",
+"lane": "markets-ai",
+"p": 0.55,
+"date": "2027-12-31",
+"class": "direction",
+"label": "Contract DRAM pricing is higher at end-2027 than at end-2026",
+"ledger": []
+},
+{
+"id": "model-release-cadence",
+"lane": "markets-ai",
+"p": 0.84,
+"date": "2027-12-31",
+"class": "marker",
+"label": "At least four frontier-class model releases occur across the major labs before end-2027",
+"ledger": []
+},
+{
+"id": "ai-litigation",
+"lane": "markets-ai",
+"p": 0.28,
+"date": "2027-12-31",
+"class": "duration",
+"label": "A US appellate ruling materially addressing training-data fair use issues before end-2027",
+"ledger": []
+},
+{
+"id": "fomc-dec-2026",
+"lane": "fed-macro",
+"p": 0.98,
+"date": "2026-12-09",
+"class": "invariant",
+"label": "December FOMC meeting with a Summary of Economic Projections",
+"ledger": [
+26,
+62
+]
+},
+{
+"id": "dec-dots-2027",
+"lane": "fed-macro",
+"p": 0.6,
+"date": "2026-12-09",
+"class": "scheduled",
+"label": "The December SEP median shows at least one further 2027 hike",
+"ledger": []
+},
+{
+"id": "cpi-oct-print",
+"lane": "fed-macro",
+"p": 0.95,
+"date": "2026-11-12",
+"class": "scheduled",
+"label": "October CPI released",
+"ledger": [
+32
+]
+},
+{
+"id": "core-pce-band",
+"lane": "fed-macro",
+"p": 0.82,
+"date": "2027-06-30",
+"class": "level",
+"label": "Core PCE y/y prints inside 2.5-4.0% on every release through Q2 2027",
+"ledger": []
+},
+{
+"id": "real-rate-band",
+"lane": "fed-macro",
+"p": 0.76,
+"date": "2027-06-30",
+"class": "level",
+"label": "The 10y TIPS real yield stays above 1.50% on every close through Q2 2027",
+"ledger": [
+100
+]
+},
+{
+"id": "voter-rotation-2027",
+"lane": "fed-macro",
+"p": 0.96,
+"date": "2027-01-31",
+"class": "invariant",
+"label": "The 2027 FOMC voter rotation proceeds by statutory schedule",
+"ledger": []
+},
+{
+"id": "beige-book-cadence",
+"lane": "fed-macro",
+"p": 0.9,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "Eight Beige Books are published across 2027",
+"ledger": []
+},
+{
+"id": "qt-taper-marker",
+"lane": "fed-macro",
+"p": 0.5,
+"date": "2027-12-31",
+"class": "direction",
+"label": "Monthly balance-sheet runoff caps are reduced before end-2027",
+"ledger": []
+},
+{
+"id": "scotus-term-2026",
+"lane": "us-politics",
+"p": 0.99,
+"date": "2026-10-05",
+"class": "invariant",
+"label": "Supreme Court October Term 2026 opens",
+"ledger": [
+56
+]
+},
+{
+"id": "scotus-june-rulings",
+"lane": "us-politics",
+"p": 0.92,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "The major decisions of the term are issued by the end of June 2027",
+"ledger": [
+56
+]
+},
+{
+"id": "midterm-fork",
+"lane": "us-politics",
+"p": 1.0,
+"date": "2026-11-04",
+"class": "invariant",
+"label": "Post-midterm control configuration",
+"ledger": [
+56,
+49
+]
+},
+{
+"id": "divided-government",
+"lane": "us-politics",
+"p": 0.55,
+"date": "2026-11-04",
+"class": "branch",
+"label": "Divided control of Congress and the presidency after the midterms",
+"ledger": []
+},
+{
+"id": "unified-hold",
+"lane": "us-politics",
+"p": 0.3,
+"date": "2026-11-04",
+"class": "branch",
+"label": "The president's party retains unified control",
+"ledger": []
+},
+{
+"id": "contested-result",
+"lane": "us-politics",
+"p": 0.15,
+"date": "2026-11-04",
+"class": "branch",
+"label": "A federal-level result remains formally contested into December",
+"ledger": [
+49
+]
+},
+{
+"id": "senate-map-2028",
+"lane": "us-politics",
+"p": 0.99,
+"date": "2028-11-07",
+"class": "invariant",
+"label": "The 2028 Senate class up for election is the one fixed by the six-year cycle",
+"ledger": []
+},
+{
+"id": "tariff-legal-challenge",
+"lane": "us-politics",
+"p": 0.42,
+"date": "2027-12-31",
+"class": "duration",
+"label": "A federal appellate court issues a merits ruling on tariff authority before end-2027",
+"ledger": []
+},
+{
+"id": "taiwan-election-2028",
+"lane": "taiwan-china",
+"p": 0.94,
+"date": "2028-01-13",
+"class": "invariant",
+"label": "Taiwan's presidential election is held on the constitutionally scheduled date",
+"ledger": [
+53,
+42
+]
+},
+{
+"id": "taiwan-energy-reserve",
+"lane": "taiwan-china",
+"p": 0.86,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Taiwan's LNG storage days of supply stay below 20 through 2027",
+"ledger": [
+57
+]
+},
+{
+"id": "new-start-expiry",
+"lane": "world-order",
+"p": 0.86,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "No successor strategic arms limitation treaty enters into force before 2029",
+"ledger": []
+},
+{
+"id": "g7-2027",
+"lane": "world-order",
+"p": 0.94,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "A G7 leaders' summit is held during 2027",
+"ledger": []
+},
+{
+"id": "iran-pause-duration-nov",
+"lane": "iran-energy",
+"p": 0.38,
+"date": "2026-11-01",
+"class": "duration",
+"label": "The fire pause is still in effect on 2026-11-01",
+"ledger": [
+35,
+79
+]
+},
+{
+"id": "npt-notice-arithmetic",
+"lane": "iran-energy",
+"p": 0.9,
+"date": "2027-01-01",
+"class": "invariant",
+"label": "No NPT withdrawal takes legal effect before 2027-01-01",
+"ledger": [
+30,
+34,
+80
+]
+},
+{
+"id": "usf-anchor",
+"lane": "us-fiscal",
+"p": 1.0,
+"date": "2026-10-02",
+"class": "invariant",
+"label": "US fiscal: statutory calendars and cohort arithmetic",
+"ledger": []
+},
+{
+"id": "usf-no-borrow-authority",
+"lane": "us-fiscal",
+"p": 0.97,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "OASDI/HI trust funds still have no borrowing authority on 2030-01-01",
+"ledger": []
+},
+{
+"id": "usf-trustees-2027",
+"lane": "us-fiscal",
+"p": 0.95,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "A Social Security / Medicare Board of Trustees report is transmitted to Congress during 2027",
+"ledger": []
+},
+{
+"id": "usf-trustees-apr1-2028",
+"lane": "us-fiscal",
+"p": 0.3,
+"date": "2028-04-01",
+"class": "scheduled",
+"label": "The 2028 trustees report is transmitted on or before the statutory April 1 deadline",
+"ledger": []
+},
+{
+"id": "usf-ss-reform-2030",
+"lane": "us-fiscal",
+"p": 0.12,
+"date": "2030-01-01",
+"class": "marker",
+"label": "A comprehensive OASDI solvency package is enacted before 2030-01-01",
+"ledger": []
+},
+{
+"id": "usf-cola-oct-2027",
+"lane": "us-fiscal",
+"p": 0.96,
+"date": "2027-10-31",
+"class": "scheduled",
+"label": "SSA announces the OASDI cost-of-living adjustment for 2028 in October 2027",
+"ledger": []
+},
+{
+"id": "usf-cola-positive-2028",
+"lane": "us-fiscal",
+"p": 0.9,
+"date": "2027-10-31",
+"class": "invariant",
+"label": "The OASDI COLA announced for 2028 is greater than zero",
+"ledger": []
+},
+{
+"id": "usf-taxmax-rises-2028",
+"lane": "us-fiscal",
+"p": 0.9,
+"date": "2027-10-31",
+"class": "invariant",
+"label": "The OASDI taxable maximum for 2028 is higher than the 2027 figure",
+"ledger": []
+},
+{
+"id": "usf-addl-medicare-threshold",
+"lane": "us-fiscal",
+"p": 0.92,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "The $200,000 Additional Medicare Tax wage threshold is still unindexed on 2029-01-01",
+"ledger": []
+},
+{
+"id": "usf-fra-67",
+"lane": "us-fiscal",
+"p": 0.94,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "The statutory full retirement age for the 1960-and-later cohort is still 67 on 2030-01-01",
+"ledger": []
+},
+{
+"id": "usf-cbo-outlook-2028",
+"lane": "us-fiscal",
+"p": 0.94,
+"date": "2028-06-30",
+"class": "scheduled",
+"label": "CBO publishes a Budget and Economic Outlook in the first half of 2028",
+"ledger": []
+},
+{
+"id": "usf-cbo-ltbo-2028",
+"lane": "us-fiscal",
+"p": 0.88,
+"date": "2028-12-31",
+"class": "scheduled",
+"label": "CBO publishes a Long-Term Budget Outlook with a 30-year projection window during 2028",
+"ledger": []
+},
+{
+"id": "usf-presbudget-feb-2028",
+"lane": "us-fiscal",
+"p": 0.35,
+"date": "2028-02-07",
+"class": "scheduled",
+"label": "The President's FY2029 budget is transmitted on or before the statutory first-Monday-in-February date",
+"ledger": []
+},
+{
+"id": "usf-fy2028-cr",
+"lane": "us-fiscal",
+"p": 0.85,
+"date": "2027-10-01",
+"class": "scheduled",
+"label": "FY2028 begins under a continuing resolution rather than with all 12 regular bills enacted",
+"ledger": []
+},
+{
+"id": "usf-12-bills-fy2029",
+"lane": "us-fiscal",
+"p": 0.08,
+"date": "2028-10-01",
+"class": "marker",
+"label": "All 12 regular appropriations bills are enacted before FY2029 begins",
+"ledger": []
+},
+{
+"id": "usf-mts-monthly",
+"lane": "us-fiscal",
+"p": 0.93,
+"date": "2028-09-30",
+"class": "scheduled",
+"label": "Treasury publishes a Monthly Treasury Statement for every month of FY2028",
+"ledger": []
+},
+{
+"id": "usf-net-interest-nominal",
+"lane": "us-fiscal",
+"p": 0.9,
+"date": "2028-10-31",
+"class": "invariant",
+"label": "FY2028 net interest outlays exceed FY2027's in nominal dollars",
+"ledger": []
+},
+{
+"id": "usf-avg-rate-rises",
+"lane": "us-fiscal",
+"p": 0.86,
+"date": "2028-09-30",
+"class": "invariant",
+"label": "Treasury's published average interest rate on total interest-bearing debt is higher on 2028-09-30 than on 2026-09-30",
+"ledger": []
+},
+{
+"id": "usf-debt-held-grows",
+"lane": "us-fiscal",
+"p": 0.96,
+"date": "2029-09-30",
+"class": "invariant",
+"label": "Debt held by the public is higher in nominal dollars on 2029-09-30 than on 2026-09-30",
+"ledger": []
+},
+{
+"id": "usf-oasdi-cost-gap",
+"lane": "us-fiscal",
+"p": 0.93,
+"date": "2029-06-30",
+"class": "invariant",
+"label": "OASDI total cost exceeds total non-interest income in the FY2028 figures as reported",
+"ledger": []
+},
+{
+"id": "hsg-anchor",
+"lane": "housing",
+"p": 1.0,
+"date": "2026-10-02",
+"class": "invariant",
+"label": "Housing: stocks, queues and statutory caps",
+"ledger": []
+},
+{
+"id": "hsg-nrc-monthly",
+"lane": "housing",
+"p": 0.94,
+"date": "2028-12-31",
+"class": "scheduled",
+"label": "Census and HUD publish New Residential Construction for every month of 2028",
+"ledger": []
+},
+{
+"id": "hsg-completions-identity",
+"lane": "housing",
+"p": 0.98,
+"date": "2029-01-31",
+"class": "invariant",
+"label": "2028 single-family completions do not exceed end-2027 units under construction plus 2028 starts",
+"ledger": []
+},
+{
+"id": "hsg-mf-uc-falls",
+"lane": "housing",
+"p": 0.55,
+"date": "2028-12-31",
+"class": "direction",
+"label": "Census's 5+ unit units-under-construction stock is lower at end-2028 than at end-2027",
+"ledger": []
+},
+{
+"id": "hsg-ehs-monthly",
+"lane": "housing",
+"p": 0.92,
+"date": "2028-12-31",
+"class": "scheduled",
+"label": "NAR publishes Existing Home Sales for every month of 2028",
+"ledger": []
+},
+{
+"id": "hsg-mos-identity",
+"lane": "housing",
+"p": 0.96,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Published months-of-supply continues to equal inventory divided by the monthly sales pace in every 2028 release",
+"ledger": []
+},
+{
+"id": "hsg-lockin-gap",
+"lane": "housing",
+"p": 0.9,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "The outstanding first-lien mortgage weighted average coupon is still below the prevailing 30y origination rate on 2029-01-01",
+"ledger": []
+},
+{
+"id": "hsg-wac-under-6",
+"lane": "housing",
+"p": 0.8,
+"date": "2029-12-31",
+"class": "invariant",
+"label": "The outstanding first-lien mortgage weighted average coupon stays below 6% through 2029",
+"ledger": []
+},
+{
+"id": "hsg-cs-construction",
+"lane": "housing",
+"p": 0.93,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Case-Shiller remains a three-month moving average published with roughly a two-month lag in every 2028 release",
+"ledger": []
+},
+{
+"id": "hsg-fhfa-limit-nov",
+"lane": "housing",
+"p": 0.94,
+"date": "2027-11-30",
+"class": "scheduled",
+"label": "FHFA announces the 2028 baseline conforming loan limit in November 2027",
+"ledger": []
+},
+{
+"id": "hsg-fhfa-limit-rises",
+"lane": "housing",
+"p": 0.88,
+"date": "2027-11-30",
+"class": "invariant",
+"label": "The 2028 baseline conforming loan limit is higher than the 2027 limit",
+"ledger": []
+},
+{
+"id": "hsg-hvs-quarterly",
+"lane": "housing",
+"p": 0.9,
+"date": "2028-12-31",
+"class": "scheduled",
+"label": "Census publishes Housing Vacancies and Homeownership for all four quarters of 2028",
+"ledger": []
+},
+{
+"id": "hsg-cohort-alive",
+"lane": "housing",
+"p": 0.99,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "Everyone who will be in the 25-34 age band in 2030 is already alive on 2026-10-02",
+"ledger": []
+},
+{
+"id": "hsg-backlog-identity",
+"lane": "housing",
+"p": 0.97,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Public homebuilder quarterly deliveries continue to be drawn from beginning backlog plus net new orders in every 2028 filing",
+"ledger": []
+},
+{
+"id": "hsg-prop13-cap",
+"lane": "housing",
+"p": 0.93,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "California's 2% annual cap on assessed-value growth for unsold property is still in force on 2029-01-01",
+"ledger": []
+},
+{
+"id": "hsg-mid-repeal",
+"lane": "housing",
+"p": 0.06,
+"date": "2030-01-01",
+"class": "marker",
+"label": "A statutory repeal of the mortgage interest deduction is enacted before 2030-01-01",
+"ledger": []
+},
+{
+"id": "ins-anchor",
+"lane": "insurance-risk",
+"p": 1.0,
+"date": "2026-10-02",
+"class": "invariant",
+"label": "Insurance risk: the renewal calendar and the capital stack",
+"ledger": []
+},
+{
+"id": "ins-jan1-2028",
+"lane": "insurance-risk",
+"p": 0.96,
+"date": "2028-01-01",
+"class": "scheduled",
+"label": "The January 1, 2028 treaty reinsurance renewal round completes on its contractual date",
+"ledger": []
+},
+{
+"id": "ins-jun1-2028",
+"lane": "insurance-risk",
+"p": 0.95,
+"date": "2028-06-01",
+"class": "scheduled",
+"label": "The June 1, 2028 Florida-centric renewal round completes on its contractual date",
+"ledger": []
+},
+{
+"id": "ins-apr1-japan-2028",
+"lane": "insurance-risk",
+"p": 0.94,
+"date": "2028-04-01",
+"class": "scheduled",
+"label": "The April 1, 2028 Japanese treaty renewal round completes on its contractual date",
+"ledger": []
+},
+{
+"id": "ins-catbond-q2-dir",
+"lane": "insurance-risk",
+"p": 0.55,
+"date": "2028-06-30",
+"class": "direction",
+"label": "Catastrophe bond new issuance in Q2 2028 exceeds Q4 2027 issuance",
+"ledger": []
+},
+{
+"id": "ins-catbond-maturity",
+"lane": "insurance-risk",
+"p": 0.96,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "At least one catastrophe bond scheduled to mature in 2028 redeems at par on its contractual maturity date",
+"ledger": []
+},
+{
+"id": "ins-catbond-collateral",
+"lane": "insurance-risk",
+"p": 0.96,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "Catastrophe bonds outstanding on 2029-01-01 remain fully collateralised by indenture",
+"ledger": []
+},
+{
+"id": "ins-hurricane-window",
+"lane": "insurance-risk",
+"p": 0.95,
+"date": "2028-06-01",
+"class": "invariant",
+"label": "The Atlantic hurricane season window remains June 1 to November 30 in NOAA's 2028 definition",
+"ledger": []
+},
+{
+"id": "ins-combined-ratio-identity",
+"lane": "insurance-risk",
+"p": 0.97,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Combined ratios in 2028 statutory filings continue to equal the loss-and-LAE ratio plus the underwriting expense ratio",
+"ledger": []
+},
+{
+"id": "ins-naic-mar1-2028",
+"lane": "insurance-risk",
+"p": 0.93,
+"date": "2028-03-01",
+"class": "scheduled",
+"label": "Property-casualty insurers file 2027 NAIC annual statements, including Schedule P, by the March 1 statutory filing date",
+"ledger": []
+},
+{
+"id": "ins-schedulep-triangle",
+"lane": "insurance-risk",
+"p": 0.92,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Schedule P in the 2028 filings still presents a ten-year loss development triangle",
+"ledger": []
+},
+{
+"id": "ins-citizens-glidepath",
+"lane": "insurance-risk",
+"p": 0.85,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "Florida's statutory cap on annual Citizens Property Insurance rate increases is still in force on 2029-01-01",
+"ledger": []
+},
+{
+"id": "ins-fairplan-assessment",
+"lane": "insurance-risk",
+"p": 0.4,
+"date": "2030-01-01",
+"class": "marker",
+"label": "The California FAIR Plan levies a member-insurer assessment at any point before 2030-01-01",
+"ledger": []
+},
+{
+"id": "ins-withdrawal-notice",
+"lane": "insurance-risk",
+"p": 0.93,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "Statutory non-renewal notice and withdrawal-plan filing requirements still apply to admitted homeowners insurers in a majority of states on ",
+"ledger": []
+},
+{
+"id": "ins-reserve-dev-adverse",
+"lane": "insurance-risk",
+"p": 0.78,
+"date": "2028-12-31",
+"class": "marker",
+"label": "At least one top-ten US property-casualty writer reports adverse prior-year reserve development in a 2028 filing",
+"ledger": []
+},
+{
+"id": "svc-anchor",
+"lane": "sovereign-credit",
+"p": 1.0,
+"date": "2026-10-02",
+"class": "invariant",
+"label": "Sovereign credit: published review calendars and contractual amortisation",
+"ledger": []
+},
+{
+"id": "svc-cra-calendar-2028",
+"lane": "sovereign-credit",
+"p": 0.93,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "EU-registered rating agencies publish their 2028 sovereign review calendars by end-December 2027",
+"ledger": []
+},
+{
+"id": "svc-calendar-adherence",
+"lane": "sovereign-credit",
+"p": 0.88,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "At least 90% of 2028 EU sovereign rating publications fall on a pre-published calendar date",
+"ledger": []
+},
+{
+"id": "svc-afterclose",
+"lane": "sovereign-credit",
+"p": 0.92,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "EU sovereign rating actions in 2028 continue to be published after the close of EU trading venues",
+"ledger": []
+},
+{
+"id": "svc-three-per-year",
+"lane": "sovereign-credit",
+"p": 0.9,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "No EU-registered agency publishes more than three unsolicited sovereign reviews for a single sovereign in 2028",
+"ledger": []
+},
+{
+"id": "svc-ig-boundary",
+"lane": "sovereign-credit",
+"p": 0.96,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "The investment-grade boundary is still BBB-/Baa3 on 2030-01-01",
+"ledger": []
+},
+{
+"id": "svc-outlook-precedes",
+"lane": "sovereign-credit",
+"p": 0.86,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "More sovereign outlook changes than sovereign rating changes are published in 2028",
+"ledger": []
+},
+{
+"id": "svc-g7-no-hy",
+"lane": "sovereign-credit",
+"p": 0.97,
+"date": "2031-01-01",
+"class": "invariant",
+"label": "No G7 sovereign carries a sub-investment-grade rating from any major agency on 2031-01-01",
+"ledger": []
+},
+{
+"id": "svc-g7-no-imf",
+"lane": "sovereign-credit",
+"p": 0.95,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "No G7 member has an IMF financing arrangement approved before 2030-01-01",
+"ledger": []
+},
+{
+"id": "svc-weo-2028",
+"lane": "sovereign-credit",
+"p": 0.95,
+"date": "2028-10-31",
+"class": "scheduled",
+"label": "The IMF publishes a World Economic Outlook in both April and October 2028",
+"ledger": []
+},
+{
+"id": "svc-art4-12m",
+"lane": "sovereign-credit",
+"p": 0.9,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "The IMF's standard Article IV consultation cycle is still twelve months for the great majority of members in 2028",
+"ledger": []
+},
+{
+"id": "svc-review-board",
+"lane": "sovereign-credit",
+"p": 0.97,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Every 2028 disbursement under an IMF upper-credit-tranche arrangement requires Board completion of a scheduled review",
+"ledger": []
+},
+{
+"id": "svc-amort-contract",
+"lane": "sovereign-credit",
+"p": 0.97,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Every eurobond with a 2028 contractual maturity either pays at par on that date or constitutes an event of default under its own terms",
+"ledger": []
+},
+{
+"id": "svc-cf-fast",
+"lane": "sovereign-credit",
+"p": 0.25,
+"date": "2028-12-31",
+"class": "marker",
+"label": "A G20 Common Framework debt treatment is concluded within twelve months of its creditor committee being formed, for any case in 2028",
+"ledger": []
+},
+{
+"id": "ge-anchor",
+"lane": "global-elections",
+"p": 1.0,
+"date": "2026-10-02",
+"class": "invariant",
+"label": "Global elections: the fixed-date calendar out to 2030",
+"ledger": []
+},
+{
+"id": "ge-us-2028-date",
+"lane": "global-elections",
+"p": 0.97,
+"date": "2028-11-07",
+"class": "scheduled",
+"label": "US federal general election held Tuesday 2028-11-07",
+"ledger": []
+},
+{
+"id": "ge-us-ec-meet",
+"lane": "global-elections",
+"p": 0.95,
+"date": "2028-12-18",
+"class": "scheduled",
+"label": "Presidential electors meet in their states on 2028-12-18",
+"ledger": []
+},
+{
+"id": "ge-us-count-jan6",
+"lane": "global-elections",
+"p": 0.93,
+"date": "2029-01-06",
+"class": "scheduled",
+"label": "Congress convenes in joint session to count electoral votes on 2029-01-06",
+"ledger": []
+},
+{
+"id": "ge-us-inauguration",
+"lane": "global-elections",
+"p": 0.97,
+"date": "2029-01-20",
+"class": "invariant",
+"label": "A presidential term begins at noon on 2029-01-20 under the 20th Amendment",
+"ledger": []
+},
+{
+"id": "ge-mexico-2030",
+"lane": "global-elections",
+"p": 0.91,
+"date": "2030-06-02",
+"class": "scheduled",
+"label": "Mexican general election held on the first Sunday of June 2030 (2030-06-02)",
+"ledger": []
+},
+{
+"id": "ge-brazil-2030",
+"lane": "global-elections",
+"p": 0.9,
+"date": "2030-10-06",
+"class": "scheduled",
+"label": "Brazilian general election first round on the first Sunday of October 2030 (2030-10-06)",
+"ledger": []
+},
+{
+"id": "ge-philippines-2028",
+"lane": "global-elections",
+"p": 0.92,
+"date": "2028-05-08",
+"class": "scheduled",
+"label": "Philippine national election held on the second Monday of May 2028 (2028-05-08)",
+"ledger": []
+},
+{
+"id": "ge-korea-na-2028",
+"lane": "global-elections",
+"p": 0.91,
+"date": "2028-04-12",
+"class": "scheduled",
+"label": "South Korean National Assembly election on the second Wednesday of April 2028 (2028-04-12)",
+"ledger": []
+},
+{
+"id": "ge-kenya-2027",
+"lane": "global-elections",
+"p": 0.9,
+"date": "2027-08-10",
+"class": "scheduled",
+"label": "Kenyan general election on the second Tuesday of August 2027 (2027-08-10)",
+"ledger": []
+},
+{
+"id": "ge-nigeria-window-2027",
+"lane": "global-elections",
+"p": 0.88,
+"date": "2027-02-28",
+"class": "invariant",
+"label": "Nigerian presidential ballot falls inside the statutory 150-to-30-day pre-expiry window",
+"ledger": []
+},
+{
+"id": "ge-uk-deadline-2029",
+"lane": "global-elections",
+"p": 0.9,
+"date": "2029-08-31",
+"class": "invariant",
+"label": "UK general election held on or before the automatic-dissolution deadline (polling day by late summer 2029)",
+"ledger": []
+},
+{
+"id": "ge-germany-window",
+"lane": "global-elections",
+"p": 0.9,
+"date": "2029-02-28",
+"class": "invariant",
+"label": "German Bundestag election falls inside the Basic Law's 46-to-48-month window",
+"ledger": []
+},
+{
+"id": "ge-india-deadline-2029",
+"lane": "global-elections",
+"p": 0.92,
+"date": "2029-06-30",
+"class": "invariant",
+"label": "Indian Lok Sabha general election completed on or before the Article 83(2) five-year expiry",
+"ledger": []
+},
+{
+"id": "ge-sa-90day-2029",
+"lane": "global-elections",
+"p": 0.89,
+"date": "2029-08-31",
+"class": "invariant",
+"label": "South African National Assembly election held within the Constitution's 90-day post-expiry window",
+"ledger": []
+},
+{
+"id": "ge-japan-hr-ceiling",
+"lane": "global-elections",
+"p": 0.95,
+"date": "2028-10-31",
+"class": "invariant",
+"label": "Japanese House of Representatives election held on or before the four-year term ceiling",
+"ledger": []
+},
+{
+"id": "ge-france-art7-2027",
+"lane": "global-elections",
+"p": 0.91,
+"date": "2027-05-31",
+"class": "invariant",
+"label": "French presidential first round falls inside the Article 7 twenty-to-thirty-five-day pre-expiry window",
+"ledger": []
+},
+{
+"id": "ge-canada-early-writs",
+"lane": "global-elections",
+"p": 0.42,
+"date": "2029-10-15",
+"class": "marker",
+"label": "Writs for a Canadian general election are issued before the statutory fixed date",
+"ledger": []
+},
+{
+"id": "ru-anchor",
+"lane": "russia-ukraine",
+"p": 1.0,
+"date": "2026-10-02",
+"class": "invariant",
+"label": "Russia-Ukraine: the arithmetic under the war",
+"ledger": []
+},
+{
+"id": "ru-stored-stock-monotonic",
+"lane": "russia-ukraine",
+"p": 0.92,
+"date": "2028-06-30",
+"class": "invariant",
+"label": "Refurbishment of Soviet-era stored armour remains a monotonically depleting draw through mid-2028",
+"ledger": []
+},
+{
+"id": "ru-newbuild-capacity-ceiling",
+"lane": "russia-ukraine",
+"p": 0.89,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "New-build heavy-armour output stays bounded by installed plant capacity through 2028",
+"ledger": []
+},
+{
+"id": "ru-westbound-route-capacity",
+"lane": "russia-ukraine",
+"p": 0.9,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "EU-bound Russian pipeline capacity stays bounded by the operable southern route through 2028",
+"ledger": []
+},
+{
+"id": "ru-sanctions-renewal-2027",
+"lane": "russia-ukraine",
+"p": 0.93,
+"date": "2027-01-31",
+"class": "scheduled",
+"label": "EU sectoral sanctions renewal decision falls due on its six-month cycle in early 2027",
+"ledger": []
+},
+{
+"id": "ru-asset-immobilisation-clock",
+"lane": "russia-ukraine",
+"p": 0.92,
+"date": "2027-07-31",
+"class": "scheduled",
+"label": "Immobilisation of Russian central-bank assets still rests on a periodically renewed instrument at mid-2027",
+"ledger": []
+},
+{
+"id": "ru-reparations-principal-held",
+"lane": "russia-ukraine",
+"p": 0.82,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "No principal of immobilised Russian sovereign reserves is transferred outright to Ukraine before 2028-01-01",
+"ledger": []
+},
+{
+"id": "ru-windfall-profit-arithmetic",
+"lane": "russia-ukraine",
+"p": 0.93,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "The immobilised-asset contribution stream stays mechanically bounded by interest actually earned through 2027",
+"ledger": []
+},
+{
+"id": "ru-icc-warrants-no-expiry",
+"lane": "russia-ukraine",
+"p": 0.95,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "Outstanding ICC arrest warrants in the Ukraine situation remain legally in force on 2029-01-01",
+"ledger": []
+},
+{
+"id": "ru-echr-residual-jurisdiction",
+"lane": "russia-ukraine",
+"p": 0.9,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "The European Court of Human Rights still issues judgments against Russia on pre-cessation facts in 2028",
+"ledger": []
+},
+{
+"id": "ru-unsc-veto-arithmetic",
+"lane": "russia-ukraine",
+"p": 0.96,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "No Chapter VII enforcement resolution concerning Ukraine is adopted by the Security Council before 2029-01-01",
+"ledger": []
+},
+{
+"id": "ru-osce-ministerial-2027",
+"lane": "russia-ukraine",
+"p": 0.9,
+"date": "2027-12-03",
+"class": "scheduled",
+"label": "An OSCE Ministerial Council is convened on its annual December cycle in 2027",
+"ledger": []
+},
+{
+"id": "ru-ukraine-facility-term-end",
+"lane": "russia-ukraine",
+"p": 0.45,
+"date": "2027-12-31",
+"class": "marker",
+"label": "A successor or bridging instrument covering Ukraine financing past the current instrument's expiry is adopted before 2027-12-31",
+"ledger": []
+},
+{
+"id": "ru-mff-2028-rollover-rule",
+"lane": "russia-ukraine",
+"p": 0.96,
+"date": "2028-01-01",
+"class": "invariant",
+"label": "The 2028 EU budget year opens either under an adopted new framework or under the Treaty's rollover rule",
+"ledger": []
+},
+{
+"id": "ru-tanker-replacement-locked",
+"lane": "russia-ukraine",
+"p": 0.88,
+"date": "2028-06-30",
+"class": "invariant",
+"label": "The 2028 replacement rate for the sanctioned-trade tanker fleet is already fixed by today's shipyard orderbook",
+"ledger": []
+},
+{
+"id": "ru-monitoring-mandate-marker",
+"lane": "russia-ukraine",
+"p": 0.22,
+"date": "2027-06-30",
+"class": "marker",
+"label": "A formal published monitoring-mission mandate document for a Ukraine ceasefire appears before mid-2027",
+"ledger": [
+112
+]
+},
+{
+"id": "rl-anchor",
+"lane": "regulation-legal",
+"p": 1.0,
+"date": "2026-10-02",
+"class": "invariant",
+"label": "Regulation & legal: price the clock, never the verdict",
+"ledger": []
+},
+{
+"id": "rl-scotus-ot2028-opens",
+"lane": "regulation-legal",
+"p": 0.96,
+"date": "2028-10-02",
+"class": "scheduled",
+"label": "The Supreme Court's 2028 Term begins on the first Monday in October 2028 (2028-10-02)",
+"ledger": []
+},
+{
+"id": "rl-cert-clock-arithmetic",
+"lane": "regulation-legal",
+"p": 0.92,
+"date": "2028-10-01",
+"class": "invariant",
+"label": "A judgment entered after mid-2028 cannot be decided on the merits by the Supreme Court within that Term",
+"ledger": []
+},
+{
+"id": "rl-term-disposal-rule",
+"lane": "regulation-legal",
+"p": 0.91,
+"date": "2029-07-01",
+"class": "invariant",
+"label": "Every case argued in a Supreme Court Term is disposed of before that Term ends",
+"ledger": []
+},
+{
+"id": "rl-hsr-second-request-clock",
+"lane": "regulation-legal",
+"p": 0.93,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "A merger that draws a Second Request cannot lawfully close inside thirty days of certifying substantial compliance",
+"ledger": []
+},
+{
+"id": "rl-cra-60day-layover",
+"lane": "regulation-legal",
+"p": 0.94,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "A major rule published after late 2027 cannot take effect sooner than sixty days after publication",
+"ledger": []
+},
+{
+"id": "rl-cra-lookback-2029",
+"lane": "regulation-legal",
+"p": 0.88,
+"date": "2029-01-03",
+"class": "invariant",
+"label": "Rules finalised inside the end-of-session lookback window are exposed to disapproval by the Congress seated in January 2029",
+"ledger": []
+},
+{
+"id": "rl-fy2029-oct1",
+"lane": "regulation-legal",
+"p": 0.97,
+"date": "2028-10-01",
+"class": "scheduled",
+"label": "The federal fiscal year 2029 begins on 2028-10-01 and requires enacted appropriations or a continuing resolution",
+"ledger": []
+},
+{
+"id": "rl-wto-ab-consensus",
+"lane": "regulation-legal",
+"p": 0.9,
+"date": "2028-01-01",
+"class": "invariant",
+"label": "No Appellate Body division hears a WTO appeal before 2028-01-01",
+"ledger": []
+},
+{
+"id": "rl-ect-sunset-2030",
+"lane": "regulation-legal",
+"p": 0.92,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "Energy Charter Treaty sunset protection still covers pre-withdrawal investments on 2030-01-01",
+"ledger": []
+},
+{
+"id": "rl-pte-14-year-cap",
+"lane": "regulation-legal",
+"p": 0.94,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "No US patent term extension pushes effective exclusivity beyond fourteen years from drug approval",
+"ledger": []
+},
+{
+"id": "rl-appellate-median-clock",
+"lane": "regulation-legal",
+"p": 0.85,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "A federal appeal noticed in late 2027 is not decided within nine months of the notice",
+"ledger": []
+},
+{
+"id": "rl-frap41-mandate-floor",
+"lane": "regulation-legal",
+"p": 0.94,
+"date": "2028-06-30",
+"class": "invariant",
+"label": "No court of appeals mandate issues sooner than the FRAP 41 interval after judgment, absent a court order",
+"ledger": []
+},
+{
+"id": "rl-aiact-delay-marker",
+"lane": "regulation-legal",
+"p": 0.42,
+"date": "2027-08-02",
+"class": "marker",
+"label": "An amending regulation delaying the EU AI Act's staged application dates is published in the Official Journal before the next tranche applie",
+"ledger": []
+},
+{
+"id": "af-anchor",
+"lane": "africa-frontier",
+"p": 1.0,
+"date": "2026-10-02",
+"class": "invariant",
+"label": "Africa & frontier: calendars, schedules and sequences",
+"ledger": []
+},
+{
+"id": "af-imf-review-conditionality",
+"lane": "africa-frontier",
+"p": 0.93,
+"date": "2027-06-30",
+"class": "invariant",
+"label": "Disbursements under upper-credit-tranche IMF arrangements remain conditioned on board completion of a scheduled review, not on calendar time",
+"ledger": []
+},
+{
+"id": "af-article-iv-cadence",
+"lane": "africa-frontier",
+"p": 0.92,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "Article IV consultations continue on their twelve-month surveillance cycle through 2027",
+"ledger": []
+},
+{
+"id": "af-maturity-wall-fixed",
+"lane": "africa-frontier",
+"p": 0.95,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "The 2028 frontier eurobond amortisation calendar is already fixed by the existing stock of instruments",
+"ledger": []
+},
+{
+"id": "af-debt-service-2028-known",
+"lane": "africa-frontier",
+"p": 0.94,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "A frontier sovereign's 2028 external debt service from instruments already outstanding is knowable today within rounding",
+"ledger": []
+},
+{
+"id": "af-restructured-amortisation-contractual",
+"lane": "africa-frontier",
+"p": 0.9,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Post-restructuring instruments pay on their documented amortising schedules through 2028",
+"ledger": []
+},
+{
+"id": "af-common-framework-sequence",
+"lane": "africa-frontier",
+"p": 0.9,
+"date": "2027-09-30",
+"class": "invariant",
+"label": "No Common Framework bondholder exchange completes before an official-creditor understanding is in place",
+"ledger": []
+},
+{
+"id": "af-afcfta-ldc-2030",
+"lane": "africa-frontier",
+"p": 0.88,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "AfCFTA tariff phase-down for least-developed State Parties still runs on its annexed schedule into 2030",
+"ledger": []
+},
+{
+"id": "af-afcfta-roo-completion",
+"lane": "africa-frontier",
+"p": 0.35,
+"date": "2027-06-30",
+"class": "marker",
+"label": "Outstanding AfCFTA rules-of-origin annexes for the contested sectors are completed before mid-2027",
+"ledger": []
+},
+{
+"id": "af-mineral-stability-clause",
+"lane": "africa-frontier",
+"p": 0.88,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "Fiscal terms inside an unexpired mining stability-clause period are not altered without legislation or consent",
+"ledger": []
+},
+{
+"id": "af-ida-replenishment-cycle",
+"lane": "africa-frontier",
+"p": 0.88,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "The IDA replenishment cycle continues on its three-year cadence with a negotiation concluding in 2027",
+"ledger": []
+},
+{
+"id": "af-au-summit-feb-2028",
+"lane": "africa-frontier",
+"p": 0.9,
+"date": "2028-02-28",
+"class": "scheduled",
+"label": "An African Union Assembly ordinary session convenes on its annual February cycle in 2028",
+"ledger": []
+},
+{
+"id": "in-anchor",
+"lane": "india-sa",
+"p": 1.0,
+"date": "2026-10-02",
+"class": "invariant",
+"label": "India & South Asia: the fixed calendar and the committed capacity",
+"ledger": []
+},
+{
+"id": "in-budget-feb-2028",
+"lane": "india-sa",
+"p": 0.91,
+"date": "2028-02-01",
+"class": "scheduled",
+"label": "The Union Budget for FY2028-29 is presented to Parliament on or about 2028-02-01",
+"ledger": []
+},
+{
+"id": "in-rbi-mpc-calendar",
+"lane": "india-sa",
+"p": 0.94,
+"date": "2028-06-30",
+"class": "scheduled",
+"label": "The RBI publishes an advance MPC meeting calendar for 2028-29 and holds at least the statutory minimum number of meetings",
+"ledger": []
+},
+{
+"id": "in-mpc-external-terms",
+"lane": "india-sa",
+"p": 0.9,
+"date": "2028-10-31",
+"class": "invariant",
+"label": "The external MPC cohort turns over on its statutory four-year non-renewable term in 2028",
+"ledger": []
+},
+{
+"id": "in-delimitation-freeze",
+"lane": "india-sa",
+"p": 0.9,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "No reallocation of Lok Sabha seats among states takes legal effect before 2029-01-01",
+"ledger": []
+},
+{
+"id": "in-roll-revision-cycle",
+"lane": "india-sa",
+"p": 0.9,
+"date": "2027-01-01",
+"class": "scheduled",
+"label": "Electoral roll revision continues on its published cycle with the statutory qualifying dates through 2027",
+"ledger": []
+},
+{
+"id": "in-refinery-leadtime",
+"lane": "india-sa",
+"p": 0.9,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "No greenfield Indian refinery beyond those already under construction is commissioned before 2030-01-01",
+"ledger": []
+},
+{
+"id": "in-renewable-pipeline-bound",
+"lane": "india-sa",
+"p": 0.9,
+"date": "2028-03-31",
+"class": "invariant",
+"label": "FY2028 Indian renewable capacity additions come overwhelmingly from already-awarded capacity",
+"ledger": []
+},
+{
+"id": "in-gst-supermajority",
+"lane": "india-sa",
+"p": 0.95,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "No GST rate change takes effect without the Centre's concurrence under the Article 279A voting rule",
+"ledger": []
+},
+{
+"id": "in-500gw-milestone-marker",
+"lane": "india-sa",
+"p": 0.4,
+"date": "2030-12-31",
+"class": "marker",
+"label": "An official Indian statement confirming 500 GW of installed non-fossil generating capacity appears on or before 2030-12-31",
+"ledger": []
+},
+{
+"id": "so-anchor",
+"lane": "space-orbital",
+"p": 1.0,
+"date": "2026-10-15",
+"class": "invariant",
+"label": "Space & orbital: manifests, slots and certification clocks",
+"ledger": []
+},
+{
+"id": "iss-deorbit-window",
+"lane": "space-orbital",
+"p": 0.8,
+"date": "2029-06-30",
+"class": "invariant",
+"label": "The ISS is still crewed and in orbit on 2029-06-30",
+"ledger": []
+},
+{
+"id": "commercial-station-cert",
+"lane": "space-orbital",
+"p": 0.82,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "No commercial successor station is crew-rated and occupied before 2029-01-01",
+"ledger": []
+},
+{
+"id": "launch-cadence-2028",
+"lane": "space-orbital",
+"p": 0.88,
+"date": "2029-01-31",
+"class": "invariant",
+"label": "Global orbital launch attempts in 2028 exceed the 2026 total",
+"ledger": []
+},
+{
+"id": "constellation-deploy",
+"lane": "space-orbital",
+"p": 0.62,
+"date": "2029-01-01",
+"class": "marker",
+"label": "At least one additional broadband constellation passes 1,000 satellites on orbit before 2029",
+"ledger": []
+},
+{
+"id": "itu-filing-deadline",
+"lane": "space-orbital",
+"p": 0.84,
+"date": "2028-06-30",
+"class": "invariant",
+"label": "ITU bring-into-use milestones continue to force filings rather than spectrum reverting",
+"ledger": []
+},
+{
+"id": "debris-event-marker",
+"lane": "space-orbital",
+"p": 0.7,
+"date": "2029-01-01",
+"class": "marker",
+"label": "At least one debris-generating event adds 100+ tracked objects before 2029",
+"ledger": []
+},
+{
+"id": "launch-insurance-capacity",
+"lane": "space-orbital",
+"p": 0.78,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Space insurance capacity stays below its historical peak through 2028",
+"ledger": []
+},
+{
+"id": "artemis-slip",
+"lane": "space-orbital",
+"p": 0.82,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "The next crewed lunar landing attempt slips at least once more from its current published date",
+"ledger": []
+},
+{
+"id": "gps-iii-deliveries",
+"lane": "space-orbital",
+"p": 0.72,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "All contracted next-generation navigation satellites remain undelivered in full through 2028",
+"ledger": []
+},
+{
+"id": "reentry-cadence",
+"lane": "space-orbital",
+"p": 0.86,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Uncontrolled reentries of large objects continue at or above the current annual rate through 2028",
+"ledger": []
+},
+{
+"id": "space-nuclear-power",
+"lane": "space-orbital",
+"p": 0.86,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "No nuclear electric or thermal propulsion system is demonstrated in orbit before 2030",
+"ledger": []
+},
+{
+"id": "orbital-slot-dispute",
+"lane": "space-orbital",
+"p": 0.66,
+"date": "2029-01-01",
+"class": "marker",
+"label": "A formal ITU coordination dispute over orbital slots is filed before 2029",
+"ledger": []
+},
+{
+"id": "launch-site-constraint",
+"lane": "space-orbital",
+"p": 0.76,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Range capacity at the primary US launch sites remains a named constraint on cadence through 2028",
+"ledger": []
+},
+{
+"id": "earth-obs-resolution",
+"lane": "space-orbital",
+"p": 0.8,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "Commercially available optical imagery resolution limits remain regulated rather than purely technical through 2029",
+"ledger": []
+},
+{
+"id": "space-force-budget",
+"lane": "space-orbital",
+"p": 0.7,
+"date": "2028-06-30",
+"class": "scheduled",
+"label": "Space procurement grows as a share of US defence procurement in the next enacted budget",
+"ledger": []
+},
+{
+"id": "ta-anchor",
+"lane": "transport-aviation",
+"p": 1.0,
+"date": "2026-10-15",
+"class": "invariant",
+"label": "Transport & aviation: backlogs, shop visits and a statutory age",
+"ledger": []
+},
+{
+"id": "aircraft-backlog-2028",
+"lane": "transport-aviation",
+"p": 0.84,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Combined large-jet orderbook still exceeds eight years of deliveries at the end of 2028",
+"ledger": []
+},
+{
+"id": "pilot-retirement-cliff",
+"lane": "transport-aviation",
+"p": 0.78,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "The mandatory-retirement cohort continues to exceed new ATP certifications through 2028",
+"ledger": []
+},
+{
+"id": "engine-shop-visits",
+"lane": "transport-aviation",
+"p": 0.86,
+"date": "2029-12-31",
+"class": "invariant",
+"label": "Engine shop-visit volumes stay above their pre-2020 level every year through 2029",
+"ledger": []
+},
+{
+"id": "widebody-delivery-gap",
+"lane": "transport-aviation",
+"p": 0.82,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Widebody deliveries remain below their 2018 peak through 2028",
+"ledger": []
+},
+{
+"id": "saf-mandate-step",
+"lane": "transport-aviation",
+"p": 0.88,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "A scheduled sustainable-aviation-fuel blending step takes effect on its legislated date before 2030",
+"ledger": []
+},
+{
+"id": "atc-staffing-shortfall",
+"lane": "transport-aviation",
+"p": 0.84,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Controller staffing remains below the agency's own target through 2028",
+"ledger": []
+},
+{
+"id": "freighter-conversion",
+"lane": "transport-aviation",
+"p": 0.72,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Passenger-to-freighter conversion slots remain fully booked through 2028",
+"ledger": []
+},
+{
+"id": "airport-slot-constraint",
+"lane": "transport-aviation",
+"p": 0.84,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "No major slot-constrained hub adds a new independent runway before 2030",
+"ledger": []
+},
+{
+"id": "narrowbody-rate-target",
+"lane": "transport-aviation",
+"p": 0.8,
+"date": "2028-03-31",
+"class": "scheduled",
+"label": "Published narrowbody production rate targets are missed again in the next reported year",
+"ledger": []
+},
+{
+"id": "aviation-insurance-war-risk",
+"lane": "transport-aviation",
+"p": 0.8,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Aviation war-risk premia stay above their 2021 level through 2028",
+"ledger": []
+},
+{
+"id": "regional-jet-retirement",
+"lane": "transport-aviation",
+"p": 0.88,
+"date": "2029-12-31",
+"class": "invariant",
+"label": "The 50-seat regional fleet continues to shrink every year through 2029",
+"ledger": []
+},
+{
+"id": "airline-consolidation-review",
+"lane": "transport-aviation",
+"p": 0.82,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "Any major airline combination announced before 2029 draws a second-request review",
+"ledger": []
+},
+{
+"id": "hydrogen-aviation",
+"lane": "transport-aviation",
+"p": 0.94,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "No hydrogen-powered commercial passenger aircraft enters revenue service before 2030",
+"ledger": []
+},
+{
+"id": "supersonic-certification",
+"lane": "transport-aviation",
+"p": 0.9,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "No civil supersonic transport holds a type certificate before 2030",
+"ledger": []
+},
+{
+"id": "wa-anchor",
+"lane": "water-ag-infra",
+"p": 1.0,
+"date": "2026-10-15",
+"class": "invariant",
+"label": "Water & agricultural infrastructure: rights, aquifers and drafts",
+"ledger": []
+},
+{
+"id": "ogallala-depletion",
+"lane": "water-ag-infra",
+"p": 0.92,
+"date": "2028-06-30",
+"class": "invariant",
+"label": "Measured Ogallala saturated thickness declines again in the next published survey",
+"ledger": []
+},
+{
+"id": "irrigation-acreage-shift",
+"lane": "water-ag-infra",
+"p": 0.82,
+"date": "2029-12-31",
+"class": "invariant",
+"label": "Irrigated acreage in the southern High Plains falls again in the next agricultural census or survey",
+"ledger": []
+},
+{
+"id": "mississippi-draft-restriction",
+"lane": "water-ag-infra",
+"p": 0.84,
+"date": "2028-12-31",
+"class": "marker",
+"label": "At least one Mississippi barge draft restriction is issued before the end of 2028",
+"ledger": []
+},
+{
+"id": "desal-capacity-online",
+"lane": "water-ag-infra",
+"p": 0.58,
+"date": "2030-01-01",
+"class": "marker",
+"label": "New large-scale desalination capacity comes online in the US Southwest before 2030",
+"ledger": []
+},
+{
+"id": "colorado-compact-renegotiation",
+"lane": "water-ag-infra",
+"p": 0.76,
+"date": "2028-01-01",
+"class": "invariant",
+"label": "No fully ratified successor to the current Colorado River operating guidelines is in force before 2028",
+"ledger": []
+},
+{
+"id": "snowpack-storage-link",
+"lane": "water-ag-infra",
+"p": 0.78,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "Lower-basin reservoir storage stays below 50 percent of capacity on every month-end through 2028",
+"ledger": []
+},
+{
+"id": "fab-water-recycling",
+"lane": "water-ag-infra",
+"p": 0.8,
+"date": "2029-12-31",
+"class": "invariant",
+"label": "Announced US leading-edge fabs continue to report water recycling rates above 80 percent",
+"ledger": []
+},
+{
+"id": "grain-storage-capacity",
+"lane": "water-ag-infra",
+"p": 0.8,
+"date": "2028-12-31",
+"class": "invariant",
+"label": "US on-farm grain storage capacity grows again in the next published estimate",
+"ledger": []
+},
+{
+"id": "fertilizer-plant-us",
+"lane": "water-ag-infra",
+"p": 0.7,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "At least one new US nitrogen plant reaches mechanical completion before 2030",
+"ledger": []
+},
+{
+"id": "levee-condition-rating",
+"lane": "water-ag-infra",
+"p": 0.84,
+"date": "2029-01-01",
+"class": "invariant",
+"label": "The share of federally inspected levees rated less than acceptable does not fall below its current level before 2029",
+"ledger": []
+},
+{
+"id": "ag-water-rights-transfer",
+"lane": "water-ag-infra",
+"p": 0.72,
+"date": "2029-01-01",
+"class": "marker",
+"label": "At least one major agricultural-to-municipal water rights transfer is approved in the Southwest before 2029",
+"ledger": []
+},
+{
+"id": "drought-monitor-persistence",
+"lane": "water-ag-infra",
+"p": 0.8,
+"date": "2028-06-30",
+"class": "invariant",
+"label": "Some portion of the Colorado River basin remains in D2 or worse on the Drought Monitor on 2028-06-30",
+"ledger": []
+},
+{
+"id": "crop-insurance-participation",
+"lane": "water-ag-infra",
+"p": 0.86,
+"date": "2028-06-30",
+"class": "invariant",
+"label": "Federal crop insurance liability continues to exceed $150bn in the next reported year",
+"ledger": []
+},
+{
+"id": "census-2030",
+"lane": "us-politics",
+"p": 0.97,
+"date": "2030-04-01",
+"class": "invariant",
+"label": "The decennial census is conducted in 2030",
+"ledger": []
+},
+{
+"id": "reapportionment-2031",
+"lane": "us-politics",
+"p": 0.88,
+"date": "2031-01-31",
+"class": "invariant",
+"label": "House seat reapportionment takes effect from the 2030 count without a change to the apportionment method",
+"ledger": []
+},
+{
+"id": "ten-year-band-2028",
+"lane": "rates-credit",
+"p": 0.92,
+"date": "2028-12-31",
+"class": "level",
+"label": "The 10-year Treasury yield stays inside 3.0 and 8.0 percent on every close through 2028",
+"ledger": []
+},
+{
+"id": "gold-band-2027",
+"lane": "commodities-metals",
+"p": 0.62,
+"date": "2027-12-31",
+"class": "level",
+"label": "Gold stays inside 3000 and 5500 dollars on every close through 2027",
+"ledger": []
+},
+{
+"id": "wti-band-2027",
+"lane": "energy-supply",
+"p": 0.3,
+"date": "2027-12-31",
+"class": "level",
+"label": "WTI stays inside 55 and 140 dollars on every close through 2027",
+"ledger": []
+},
+{
+"id": "copper-band-2028",
+"lane": "commodities-metals",
+"p": 0.55,
+"date": "2028-12-31",
+"class": "level",
+"label": "Copper stays inside 4.50 and 9.50 dollars per pound on every close through 2028",
+"ledger": []
+},
+{
+"id": "wheat-band-2027",
+"lane": "commodities-metals",
+"p": 0.58,
+"date": "2027-12-31",
+"class": "level",
+"label": "Front-month wheat stays inside 450 and 1100 cents on every close through 2027",
+"ledger": []
+},
+{
+"id": "dry-bulk-band-2027",
+"lane": "supply-chains",
+"p": 0.9,
+"date": "2027-12-31",
+"class": "level",
+"label": "Dry-bulk shipping equities stay inside a 6-to-35 dollar band on every close through 2027",
+"ledger": []
+},
+{
+"id": "fab-completion-2028",
+"lane": "supply-chains",
+"p": 0.78,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "At least two additional leading-edge fabs reach production in the US before 2030",
+"ledger": []
+},
+{
+"id": "lng-contract-roll",
+"lane": "energy-supply",
+"p": 0.86,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "A material tranche of legacy LNG offtake contracts reaches expiry between 2028 and 2030",
+"ledger": []
+},
+{
+"id": "nuclear-licence-renewal",
+"lane": "energy-supply",
+"p": 0.8,
+"date": "2030-01-01",
+"class": "scheduled",
+"label": "At least five additional US reactor licence renewals or extensions are granted before 2030",
+"ledger": []
+},
+{
+"id": "china-16th-plan",
+"lane": "china-macro",
+"p": 0.92,
+"date": "2031-03-31",
+"class": "invariant",
+"label": "China's next five-year plan period begins on schedule in 2031",
+"ledger": []
+},
+{
+"id": "taiwan-post-election-2028",
+"lane": "taiwan-china",
+"p": 0.84,
+"date": "2029-05-20",
+"class": "invariant",
+"label": "The administration seated after the 2028 Taiwan election completes its first year without a cross-strait kinetic incident",
+"ledger": []
+},
+{
+"id": "world-cup-2030",
+"lane": "world-order",
+"p": 0.94,
+"date": "2030-07-31",
+"class": "invariant",
+"label": "The 2030 football World Cup is held",
+"ledger": []
+},
+{
+"id": "olympics-2028",
+"lane": "world-order",
+"p": 0.95,
+"date": "2028-08-31",
+"class": "invariant",
+"label": "The 2028 Summer Olympics are held in Los Angeles",
+"ledger": []
+},
+{
+"id": "new-start-successor-2030",
+"lane": "world-order",
+"p": 0.82,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "No successor strategic arms limitation treaty is in force on 2030-01-01",
+"ledger": []
+},
+{
+"id": "fed-chair-term-2030",
+"lane": "fed-macro",
+"p": 0.95,
+"date": "2030-01-31",
+"class": "invariant",
+"label": "A Federal Reserve chair term expiration falls inside the 2028-2030 window",
+"ledger": []
+},
+{
+"id": "qt-balance-sheet-2029",
+"lane": "rates-credit",
+"p": 0.7,
+"date": "2029-12-31",
+"class": "marker",
+"label": "The Fed balance sheet is smaller at the end of 2029 than at the end of 2026",
+"ledger": []
+},
+{
+"id": "clean-sheet-narrowbody",
+"lane": "transport-aviation",
+"p": 0.32,
+"date": "2030-01-01",
+"class": "marker",
+"label": "A clean-sheet single-aisle programme is formally launched by a major airframer before 2030",
+"ledger": []
+},
+{
+"id": "new-crewed-operator",
+"lane": "space-orbital",
+"p": 0.22,
+"date": "2030-01-01",
+"class": "marker",
+"label": "A crewed orbital flight is conducted by an operator outside the US, China and Russia before 2030",
+"ledger": []
+},
+{
+"id": "usf-no-depletion-pre-2030",
+"lane": "us-fiscal",
+"p": 0.97,
+"date": "2030-01-01",
+"class": "invariant",
+"label": "No OASI trust fund reserve depletion actually occurs before 2030-01-01",
+"ledger": []
+},
+{
+"id": "usf-oasi-not-later-2032",
+"lane": "us-fiscal",
+"p": 0.84,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "The next Trustees Report does not move the OASI depletion date later than the fourth quarter of 2032",
+"ledger": []
+},
+{
+"id": "usf-hi-not-later-2033",
+"lane": "us-fiscal",
+"p": 0.8,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "The next Trustees Report does not move the HI depletion date later than the second quarter of 2033",
+"ledger": []
+},
+{
+"id": "usf-oasi-before-hi",
+"lane": "us-fiscal",
+"p": 0.86,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "OASI remains projected to deplete before HI in the next Trustees Report",
+"ledger": []
+},
+{
+"id": "usf-oasi-payable-band",
+"lane": "us-fiscal",
+"p": 0.88,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "The payable share of scheduled OASI benefits at depletion stays between 70 and 85 percent in the next Trustees Report",
+"ledger": []
+},
+{
+"id": "usf-smi-adequately-financed",
+"lane": "us-fiscal",
+"p": 0.96,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "SMI is again reported as adequately financed into the indefinite future in the next Trustees Report",
+"ledger": []
+},
+{
+"id": "usf-di-solvent-projection",
+"lane": "us-fiscal",
+"p": 0.88,
+"date": "2027-12-31",
+"class": "scheduled",
+"label": "DI remains projected solvent through the end of the projection period in the next Trustees Report",
+"ledger": []
+},
+{
+"id": "usf-tfr-not-raised",
+"lane": "us-fiscal",
+"p": 0.9,
+"date": "2027-12-31",
+"class": "invariant",
+"label": "The ultimate total fertility rate assumption is not raised above 1.90 in the next Trustees Report",
+"ledger": []
+}
+]

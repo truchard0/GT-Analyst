@@ -1,0 +1,18 @@
+{
+  "_note": "price-defined ledger rows checked by tools/tripwire.py against adjusted CLOSES/settles. yfinance-backed only; FRED-backed rows (#86 #100 #103 #106 #115) need a FRED tap and are checked by hand.",
+  "83": {
+    "type": "stay_inside",
+    "ticker": "BZ=F",
+    "lo": 85.0,
+    "hi": 125.0,
+    "start": "2026-10-05",
+    "end": "2026-12-31",
+    "front_months": [
+      {
+        "ticker": "BZZ26.NYM",
+        "until": "2026-10-30"
+      }
+    ],
+    "front_note": "10/25: BZ=F rolled to January Brent on 10/23 (111.70) while December, the ICE front month to its 10/30 expiry, settled 116.72. #83 resolves on the FRONT month, so December's closes are used to 10/30."
+  }
+}

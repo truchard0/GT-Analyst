@@ -1,0 +1,161 @@
+{
+  "_note": "World-state and conflict-level labels for ledger rows, written 2026-10-23 from each row's OWN text only (not from outcomes). `states` = the interval of a world state the row's event requires (pipeline/conflict.py STATES); `level` = the iran-war conflict-level interval; `inferred` lists states the text implies rather than states outright - findings that rest on them are reported separately. Rows that make no claim about a state are left out on purpose: a conditional row asserts its consequent, not its condition.",
+  "labels": {
+    "22": {
+      "states": {
+        "hormuz": "0-1"
+      },
+      "level": null,
+      "quote": "Hormuz does not fully normalize within 60 days"
+    },
+    "73": {
+      "states": {
+        "hormuz": "0-1"
+      },
+      "level": null,
+      "quote": "Hormuz does NOT reach normalized commercial transit by Friday 8/7"
+    },
+    "79": {
+      "states": {
+        "hormuz": "0-1"
+      },
+      "level": null,
+      "quote": "weekly laden-tanker transits stay below 50 percent of the pre-war weekly average"
+    },
+    "28": {
+      "states": {
+        "hormuz": "1-2",
+        "brent_peak": "0-1"
+      },
+      "level": null,
+      "quote": "stays on the oil-DOWN branch for 30 days (no Hormuz re-closure)"
+    },
+    "68": {
+      "states": {
+        "hormuz": "1-2"
+      },
+      "level": "0-3",
+      "quote": "mediation off-ramp ... Hormuz functionally open ... no sustained resumption of daily US strikes"
+    },
+    "29": {
+      "states": {
+        "hormuz": "2"
+      },
+      "inferred": [
+        "hormuz"
+      ],
+      "level": null,
+      "quote": "rather than continuing the full scheduled hikes into a normalizing-Hormuz glut"
+    },
+    "23": {
+      "states": {
+        "brent_peak": "0"
+      },
+      "level": null,
+      "quote": "Brent does not sustain above 80 within 60 days"
+    },
+    "60": {
+      "states": {
+        "brent_peak": "3"
+      },
+      "level": null,
+      "quote": "Brent touches 100+ at least intraday before 2026-09-01"
+    },
+    "39": {
+      "states": {
+        "brent_peak": "3"
+      },
+      "level": null,
+      "quote": "oil spikes sharply (Brent >100) AND food-shortage/inflation emergency"
+    },
+    "31": {
+      "states": {
+        "cpi_jun": "0"
+      },
+      "level": null,
+      "quote": "June CPI shows energy component NEGATIVE m/m and headline at or below core"
+    },
+    "71": {
+      "states": {
+        "cpi_jul": "0"
+      },
+      "level": null,
+      "quote": "July CPI comes in BENIGN, not the hot print"
+    },
+    "76": {
+      "states": {
+        "cpi_aug": "0-1"
+      },
+      "inferred": [
+        "cpi_aug"
+      ],
+      "level": null,
+      "quote": "the AUGUST CPI hot-print thesis WEAKENS: gasoline falls below $4.00"
+    },
+    "19": {
+      "states": {},
+      "level": "0-3",
+      "quote": "No return to war-scale interstate conflict within 60 days"
+    },
+    "15": {
+      "states": {},
+      "level": "2-4",
+      "quote": "At least one further significant maritime/proxy attack despite the ceasefire"
+    },
+    "20": {
+      "states": {},
+      "level": "2-4",
+      "quote": "Iran conducts or credibly claims at least one retaliatory action framed as vengeance"
+    },
+    "21": {
+      "states": {},
+      "level": "2-3",
+      "quote": "Israel conducts at least one attributed kinetic or covert action ... below the full-war threshold"
+    },
+    "16": {
+      "states": {},
+      "level": "3-4",
+      "quote": "Israel conducts an attributed unilateral kinetic or major covert action against Iranian territory"
+    },
+    "59": {
+      "states": {},
+      "level": "3-4",
+      "quote": "The 10-day ceasefire attempt FAILS: no 10 consecutive strike-free days"
+    },
+    "64": {
+      "states": {},
+      "level": "3-4",
+      "quote": "US strikes at least one more Iran nuclear-associated site this week"
+    },
+    "72": {
+      "states": {},
+      "level": "3-4",
+      "quote": "US/Israel strike Iranian ENERGY infrastructure before Monday 2026-08-03"
+    },
+    "38": {
+      "states": {},
+      "level": "4",
+      "quote": "US launches a ground invasion of Iran by 2026-12-31"
+    },
+    "35": {
+      "states": {},
+      "level": "0-3",
+      "quote": "no war-scale resumption sustained beyond 30 consecutive days"
+    }
+  },
+  "premise_dead": {
+    "19": {
+      "date": "2026-07-09",
+      "why": "premise 'the ceasefire holds at state level' was dead: Iran hit three vessels 7/7 and the ceasefire was declared over 7/8-9 (ledger lesson #19)"
+    },
+    "28": {
+      "date": "2026-07-09",
+      "why": "premise 'no Hormuz re-closure, oil-down branch' was dead: Hormuz re-closed from 7/7-9, transits 49 -> 25/day by 7/9 (ledger lesson #28)"
+    },
+    "23": {
+      "date": "2026-07-09",
+      "why": "its own carve-out 'absent a Hormuz re-closure' had tripped: Hormuz re-closed from 7/7-9 (ledger void reason, row voided)"
+    }
+  },
+  "_premise_note": "premise_dead = the date a row's own premise had already failed on facts public that day, taken from the ledger lessons; used only by tools/retro_conflicts.py policy B."
+}

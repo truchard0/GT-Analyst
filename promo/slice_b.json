@@ -1,0 +1,370 @@
+[
+ {
+  "id": "af-imf-review-conditionality",
+  "label": "Disbursements under upper-credit-tranche IMF arrangements remain conditioned on board completion of a scheduled review, not on calendar time",
+  "p": 0.93,
+  "date": "2027-06-30",
+  "lane": "africa-frontier",
+  "row_class": "invariant",
+  "basis": "PROGRAM-DOCUMENT STRUCTURE: every extended or credit-facility arrangement is approved with a schedule of reviews, each tied to performance criteria assessed at a named test date, and the associated tranche becomes available only when the Executive Board completes that review. The conditionality architecture is institutional, written into the arrangement itself, and identical in form across countries.",
+  "rationale": "An institutional invariant about the MECHANISM, which is why it can be stated without naming a country or a date — and that is deliberate, because naming a specific review board date I was not certain of would be inventing a fact. Its value is as the correction for the commonest frontier error: treating a program as a funding stream when it is a sequence of conditional gates. SOFT part: waivers of non-observance, rephasings and augmentations are all available and routinely granted, so a missed target is not a stopped program.",
+  "no_view": null,
+  "market": "Program money is gated, not scheduled; frontier curves that price it as an annuity are wrong."
+ },
+ {
+  "id": "auto-chip-inventory",
+  "label": "No automaker announces a production halt attributed to semiconductor shortage in Q4 2026",
+  "p": 0.72,
+  "date": "2026-12-31",
+  "lane": "supply-chains",
+  "row_class": "marker",
+  "basis": "Marker framed as a NON-event, which makes it falsifiable by a single headline. Mature-node capacity is in surplus, which is the mechanism.",
+  "rationale": "A negative marker: one contrary headline falsifies it. Rows that are easy to falsify are worth more than rows that are hard to check - #30 is still 'AMBIGUOUS, leaning HIT' and needs a human to agree a reading before its horizon.",
+  "no_view": null,
+  "market": "Mature-node surplus is the forgotten half of the semiconductor story."
+ },
+ {
+  "id": "brazil-selic",
+  "label": "Brazil's Selic rate is below its current level on 2027-06-30",
+  "p": 0.55,
+  "date": "2027-06-30",
+  "lane": "latam-emerging",
+  "row_class": "direction",
+  "basis": "Central-bank discretion - capped at 0.55 regardless of how strong the disinflation case looks. The #26 class.",
+  "rationale": "DIRECTION + committee discretion, capped. Included as a second live test of the cap on a committee that is far more rules-driven than the Fed - if these systematically HIT at 0.55, that is evidence to relax R13 for inflation-targeting EM central banks specifically.",
+  "no_view": null,
+  "market": "The Selic path is the EM carry trade's engine."
+ },
+ {
+  "id": "cn-fiscal-deficit",
+  "label": "Headline budget deficit ratio set at or above 3.5%",
+  "p": 0.66,
+  "date": "2027-03-05",
+  "lane": "china-macro",
+  "row_class": "scheduled",
+  "basis": "Base rate off the recent trajectory of widening headline ratios; still a discretionary budget decision, so capped.",
+  "rationale": "Scheduled-print class for a discretionary number. The engine's edge is in knowing WHEN it lands, not what it will be - which is why the date is near-certain and the value is capped. The LGSB quota row below is the better read on the actual impulse and the two are one view.",
+  "no_view": null,
+  "market": "The headline ratio understates the real impulse; the LGSB quota row below matters more."
+ },
+ {
+  "id": "cn-yuan-band",
+  "label": "USDCNY fixes inside 6.80-7.60 on every fixing through Q2 2027",
+  "p": 0.8,
+  "date": "2027-06-30",
+  "lane": "china-macro",
+  "row_class": "level",
+  "basis": "The fix is a managed, published daily number with a demonstrated tolerance band. This is closer to an institutional invariant than a market level.",
+  "rationale": "Level row on a MANAGED price — which makes it institutional rather than discretionary. The distinction matters: the band is defended by policy, so the constraint is real.",
+  "no_view": {
+   "tool": "range_odds",
+   "command": "python tools/range_odds.py --spot 7.15 --lo 6.80 --hi 7.60 --days 192 --vol 0.15",
+   "odds": 0.98,
+   "note": "ASSUMED spot fix 7.15 and 0.15%/day FIX vol (~2.4% annualised). The row is about the PBoC's daily FIX, which is managed and far less volatile than spot; 192 sessions to 6/30/27."
+  },
+  "market": "A break of the band is the single loudest signal China has stopped defending stability."
+ },
+ {
+  "id": "colorado-tier",
+  "label": "A Lower Basin shortage condition is declared for calendar 2027",
+  "p": 0.8,
+  "date": "2026-12-31",
+  "lane": "climate-physical",
+  "row_class": "invariant",
+  "basis": "RULE-TRIGGERED: the shortage tier is set by a published projection of Lake Mead elevation on a fixed date under an existing operating agreement. Given current elevations, the trigger is close to arithmetic.",
+  "rationale": "The best example in this buildout of a hidden invariant: this looks like a hydrology forecast and is actually a threshold rule applied to a measurement. Find more of these.",
+  "no_view": null,
+  "market": "Water allocation is a hard input to agriculture and to southwestern power."
+ },
+ {
+  "id": "cre-office-stress",
+  "label": "CMBS office delinquency stays above 10% every month to 6/2027",
+  "p": 0.82,
+  "date": "2027-06-30",
+  "lane": "rates-credit",
+  "row_class": "invariant",
+  "basis": "Close to arithmetic: office loans maturing into a 6.5%+ rate with structurally lower occupancy cannot cure at the pace needed to pull the rate under 10% in three quarters. The maturity schedule is known in advance.",
+  "rationale": "Invariant-adjacent: a delinquency rate is a stock of loans with known maturity dates, not a sentiment. This is the physical-constraint shape the book is 8-for-8 on.",
+  "no_view": null,
+  "market": "Office CRE is the one credit pocket where the damage is already contracted."
+ },
+ {
+  "id": "crop-insurance",
+  "label": "US crop insurance indemnities for 2026 are reported above $10bn",
+  "p": 0.74,
+  "date": "2027-06-30",
+  "lane": "climate-physical",
+  "row_class": "invariant",
+  "basis": "Retrospective arithmetic: the crop year is essentially complete, so this is a reporting-lag row rather than a forecast.",
+  "rationale": "Retrospective-arithmetic class, same as the insured-loss row. Rows about facts that have already happened but have not yet been published are systematically under-used.",
+  "no_view": null,
+  "market": "Indemnities are the fiscal transmission of physical risk into the farm economy."
+ },
+ {
+  "id": "curve-positive",
+  "label": "2s10s stays positive every session through year-end",
+  "p": 0.82,
+  "date": "2026-12-31",
+  "lane": "rates-credit",
+  "row_class": "duration",
+  "basis": "Duration framing per 16.18: the state persists, the direction does not. Reference class: once a curve has disinverted after a hiking cycle, re-inversion inside one quarter is uncommon; but a hike into a supply shock is exactly the flattener case, so not priced high.",
+  "rationale": "[9/22 CORRECTION] cycle_odds.py puts the no-view survival band at 0.90-0.90 and this row was logged at 0.72, more than 0.10 outside it with no dated catalyst in the basis; re-priced 0.72 -> 0.82 into the band. Duration class. This is the 16.18 re-expression of what would otherwise be a curve DIRECTION call — the kind of row that went 0-for-8 in the oil tape.",
+  "no_view": {
+   "tool": "cycle_odds",
+   "command": "python tools/cycle_odds.py --current 180 --days 100 --prior-median 720",
+   "ends_lo": 0.1,
+   "ends_hi": 0.1,
+   "phase_ends": false,
+   "note": "No completed spells are fed in because inventing dated spell lengths would be inventing facts; the prior does the work. ASSUMED: the positive-2s10s spell is ~180d old and the reference-class median length of a positive-curve spell after a hiking cycle is ~720d (curves are positive most of the time)."
+  },
+  "market": "A re-inversion would be the market calling the 9/16 hike a policy error."
+ },
+ {
+  "id": "dec-dots-2027",
+  "label": "The December SEP median shows at least one further 2027 hike",
+  "p": 0.6,
+  "date": "2026-12-09",
+  "lane": "fed-macro",
+  "row_class": "scheduled",
+  "basis": "Scheduled publication of a committee median - a discretionary aggregate. STATE.md already carries a 0.60 on a second hike by 12/9; this row is the SEP expression of the same view and is therefore NOT independent of it.",
+  "rationale": "Scheduled-print class for a discretionary value, capped. Critically: this row and STATE.md's 'fomc-oct second hike 0.60' are ONE view, and saying so is the lesson-7 discipline the book has never enforced. Two rows on one view is a hedge, not two insights.",
+  "no_view": null,
+  "market": "The dot path, not the meeting, is what the curve actually prices."
+ },
+ {
+  "id": "defense-backlog",
+  "label": "Aggregate reported backlog at the top five US primes sets a record at the next annual reporting",
+  "p": 0.88,
+  "date": "2027-02-28",
+  "lane": "defense-industrial",
+  "row_class": "invariant",
+  "basis": "Arithmetic on signed contracts: backlog rises when bookings exceed revenue, and the book-to-bill has been above one on a war footing with European budgets enacted.",
+  "rationale": "INVARIANT - backlog is an audited number about contracts already signed. This is the correct replacement for the #3 style of defence row.",
+  "no_view": null,
+  "market": "Record backlog with flat deliveries is the throughput problem, not a demand problem."
+ },
+ {
+  "id": "diesel-crack-wide",
+  "label": "ULSD crack stays above $25/bbl on every weekly close to 3/2027",
+  "p": 0.7,
+  "date": "2027-03-31",
+  "lane": "energy-supply",
+  "row_class": "duration",
+  "basis": "Duration. Distillate is structurally short on closed conversion capacity plus a rerouting premium; the floor holds unless demand breaks.",
+  "rationale": "Duration + a physical capacity constraint. Note this is the SAME view as the refinery row and is therefore not independent evidence for it — flagged here so the book does not count one thesis twice (the #70/#27 error).",
+  "no_view": {
+   "tool": "cycle_odds",
+   "command": "python tools/cycle_odds.py --current 200 --days 190 --prior-median 400",
+   "ends_lo": 0.2,
+   "ends_hi": 0.26,
+   "phase_ends": false,
+   "note": "ASSUMED: the >$25 ULSD crack regime is ~200d old; median length of a wide-distillate-crack regime ~400d (crack regimes are shorter-lived than rig-count regimes)."
+  },
+  "market": "Diesel is the industrial read and the pass-through channel into core goods."
+ },
+ {
+  "id": "eur-level",
+  "label": "EURUSD trades inside 0.95-1.20 on every close through Q2 2027",
+  "p": 0.84,
+  "date": "2027-06-30",
+  "lane": "europe",
+  "row_class": "level",
+  "basis": "Wide band, no-view odds. A 25-figure range on the most liquid cross over three quarters is a high-probability containment claim, not a view.",
+  "rationale": "Deliberately a BAND and deliberately wide — the anti-#69 construction. One asset, two bounds, wide enough that it is a genuine claim about volatility rather than direction.",
+  "no_view": {
+   "tool": "range_odds",
+   "command": "python tools/range_odds.py --spot 1.08 --lo 0.95 --hi 1.20 --days 192 --vol 0.50",
+   "odds": 0.83,
+   "note": "ASSUMED spot 1.08 and 0.50%/day (~8% annualised, EURUSD's usual range). 192 sessions to 6/30/27."
+  },
+  "market": "The cross is where Fed-ECB divergence actually prints."
+ },
+ {
+  "id": "france-deficit",
+  "label": "France's reported deficit for 2026 exceeds 4.5% of GDP",
+  "p": 0.78,
+  "date": "2027-03-31",
+  "lane": "europe",
+  "row_class": "scheduled",
+  "basis": "Fiscal outturns are largely determined by the time three quarters have elapsed; the reporting date is a fixed Eurostat cycle.",
+  "rationale": "Scheduled with an arithmetic core — most of the year is already spent. This is the 'scheduled print backed by arithmetic' class at 12-for-14.",
+  "no_view": null,
+  "market": "The French deficit is the OAT spread and therefore the EU fiscal-rules fight."
+ },
+ {
+  "id": "ge-kenya-2027",
+  "label": "Kenyan general election on the second Tuesday of August 2027 (2027-08-10)",
+  "p": 0.9,
+  "date": "2027-08-10",
+  "lane": "global-elections",
+  "row_class": "scheduled",
+  "basis": "CONSTITUTIONAL TEXT: the 2010 Constitution fixes the general election for the second Tuesday in August in every fifth year. Applying the formula to August 2027 gives the 10th (computed). The date is in the constitution, not in an electoral statute, so moving it needs a constitutional amendment rather than a commission decision.",
+  "rationale": "A constitution that literally names a weekday-of-month is the best possible basis for an election-date row. SOFT part: Kenya's courts have twice had to order reruns or extend timetables, so the general election DAY has held while the resolution of the contest has slipped past it; a node dated on the first ballot must not be read as a node on the final declaration. No view on the contest.",
+  "no_view": null,
+  "market": "The August date frames Kenyan eurobond and shilling risk a full year ahead."
+ },
+ {
+  "id": "in-roll-revision-cycle",
+  "label": "Electoral roll revision continues on its published cycle with the statutory qualifying dates through 2027",
+  "p": 0.9,
+  "date": "2027-01-01",
+  "lane": "india-sa",
+  "row_class": "scheduled",
+  "basis": "STATUTORY CYCLE: the Representation of the People Act, as amended, provides multiple qualifying dates per year for enrolment rather than a single January 1 cut-off, and the Election Commission conducts a special summary revision on a published schedule with draft publication, a claims-and-objections window and final publication. Each stage has a notified date; the cycle is a statutory administrative process.",
+  "rationale": "Scheduled class on an administrative calendar, included because roll revision is the upstream constraint on every electoral timetable in the lane — a commission cannot notify a poll against a roll that has not been finally published. SOFT part: intensive or special revisions ordered ahead of a state election run on bespoke schedules that override the annual cycle, and those are discretionary; so the node is about the ORDINARY annual process.",
+  "no_view": null,
+  "market": "Roll publication dates are the real leading indicator of state election timing, well before any announcement."
+ },
+ {
+  "id": "jolts-openings",
+  "label": "JOLTS job openings print below 8.0 million on every release through Q2 2027",
+  "p": 0.76,
+  "date": "2027-06-30",
+  "lane": "labor-demo",
+  "row_class": "level",
+  "basis": "No-view odds off the distance to the threshold on a published monthly series already well below it; a breach requires a reacceleration outside the recent distribution. The series has known response-rate quality problems, stated rather than discovered at resolution.",
+  "rationale": "Level row with an explicit data-quality caveat. Naming the measurement weakness up front is how you avoid the #24 shape (confident number, wrong number).",
+  "no_view": {
+   "tool": "range_odds",
+   "command": "python tools/range_odds.py --spot 7.2 --hi 8.0 --days 9 --vol 3.5",
+   "odds": 0.76,
+   "note": "Units millions. ASSUMED spot 7.2m openings and 3.5%/MONTH vol. One period = one monthly release; 9 releases to Q2 2027."
+  },
+  "market": "Openings-to-unemployed is the tightness measure the Fed actually watches."
+ },
+ {
+  "id": "korea-exports",
+  "label": "Korean semiconductor exports post y/y growth in a majority of months through Q2 2027",
+  "p": 0.72,
+  "date": "2027-06-30",
+  "lane": "japan-korea",
+  "row_class": "scheduled",
+  "basis": "Twice-monthly published series with a very short lag. Growth is supported by contracted HBM demand; the base effect is the offsetting arithmetic.",
+  "rationale": "Scheduled, high-frequency, short-lag, and cross-checkable against the supply-chain lane. The 20-day series is the closest thing this engine has to a real-time semiconductor read.",
+  "no_view": null,
+  "market": "Korean exports lead reported semiconductor revenue by roughly a quarter."
+ },
+ {
+  "id": "natgas-storage",
+  "label": "US working gas in storage ends the injection season above the five-year average",
+  "p": 0.58,
+  "date": "2026-11-30",
+  "lane": "energy-supply",
+  "row_class": "scheduled",
+  "basis": "Weekly EIA series with a hard seasonal endpoint. Priced near even: LNG export pull against record production is genuinely balanced, and pretending otherwise is false precision.",
+  "rationale": "A deliberately near-even row. The book's measured resolution is ~0.00 partly because everything was stated between 0.40 and 0.88 — a row that is honestly 0.58 should be logged at 0.58 and not talked up into a story.",
+  "no_view": null,
+  "market": "Storage is the winter risk premium in one number."
+ },
+ {
+  "id": "power-demand-record",
+  "label": "US summer 2027 peak load sets a record",
+  "p": 0.78,
+  "date": "2027-09-30",
+  "lane": "energy-supply",
+  "row_class": "invariant",
+  "basis": "Near-arithmetic on the demand side: datacenter load additions are contracted years ahead and electrification is monotonic. The residual risk is weather, not demand.",
+  "rationale": "Invariant-adjacent: contracted load is capital-committed. The only real uncertainty is a cool summer, which is a stated, bounded risk rather than a narrative.",
+  "no_view": null,
+  "market": "Load growth is the physical fact under every AI-power trade in the markets-ai lane."
+ },
+ {
+  "id": "qt-end-marker",
+  "label": "The Fed names a date or condition for ending balance-sheet runoff",
+  "p": 0.45,
+  "date": "2027-03-31",
+  "lane": "rates-credit",
+  "row_class": "marker",
+  "basis": "Discretionary committee action — capped well under 0.70 per R13 and the #26 lesson. Prior only: no fresh primary datapoint.",
+  "rationale": "This is the row the engine would historically have priced at 0.70 off a mechanism story. It is a COMMITTEE CHOICE. #26 was exactly this shape at 0.80 and scored 0.64.",
+  "no_view": null,
+  "market": "Announcing the end of QT while hiking would be the explicit split of the two tools."
+ },
+ {
+  "id": "real-rate-band",
+  "label": "The 10y TIPS real yield stays above 1.50% on every close through Q2 2027",
+  "p": 0.76,
+  "date": "2027-06-30",
+  "lane": "fed-macro",
+  "row_class": "level",
+  "basis": "No-view odds off the distance to the threshold on a published daily series. With the policy rate raised and breakevens contained, a fall through 1.50 requires either a growth scare or a dovish turn - both identifiable in advance and both named as the falsifiers.",
+  "rationale": "Level with the two falsifying mechanisms named up front. A row that says what would break it is a pre-registered falsifier, which is lesson 1.",
+  "no_view": {
+   "tool": "range_odds",
+   "command": "python tools/range_odds.py --spot 2.30 --lo 1.50 --days 192 --vol 1.5",
+   "odds": 0.96,
+   "note": "ASSUMED spot 10y TIPS real yield 2.30% and 1.5%/day relative vol. 192 sessions to 6/30/27."
+  },
+  "market": "The real rate is the actual discount rate under every equity row in this tree."
+ },
+ {
+  "id": "reserves-ample",
+  "label": "Bank reserves stay above $2.8T through year-end",
+  "p": 0.8,
+  "date": "2026-12-31",
+  "lane": "rates-credit",
+  "row_class": "level",
+  "basis": "Reserves fall only via QT runoff, TGA rebuild or RRP dynamics — all observable weekly on H.4.1. Priced off the known runoff pace, which is arithmetic.",
+  "rationale": "[9/22 CORRECTION] range_odds.py puts the no-view odds at 0.98 and this row was logged at 0.70, -0.28 off it with no dated catalyst in the basis; re-priced 0.70 -> 0.80 toward the arithmetic. Level row on a weekly-published series. The mechanism (runoff pace) is arithmetic; only the TGA path is discretionary, which is why this is 0.70 and not higher.",
+  "no_view": {
+   "tool": "range_odds",
+   "command": "python tools/range_odds.py --spot 3100 --lo 2800 --days 14 --vol 1.2",
+   "odds": 0.98,
+   "note": "Units $bn. ASSUMED spot $3.10T reserves and 1.2%/WEEK vol; the row resolves on the WEEKLY H.4.1, so one period = one week and days=14 is the 14 weekly prints left in 2026."
+  },
+  "market": "Reserve scarcity is the thing that ends QT, regardless of what anyone says about it."
+ },
+ {
+  "id": "rl-aiact-delay-marker",
+  "label": "An amending regulation delaying the EU AI Act's staged application dates is published in the Official Journal before the next tranche applies",
+  "p": 0.42,
+  "date": "2027-08-02",
+  "lane": "regulation-legal",
+  "row_class": "marker",
+  "basis": "The Act's application dates are fixed in its own final article as offsets from entry into force — six, twelve, twenty-four and thirty-six months — so they are self-executing and no agency can defer them. Moving one requires an amending regulation through the ordinary legislative procedure: Commission proposal, European Parliament and Council. The reference class is 'OLP files completed inside a year', which is a minority of files.",
+  "rationale": "A MARKER on the appearance of a published amending act, priced below even money. The structural asymmetry is real — the deadlines bind automatically and the only override is a slow procedure — but the EU has demonstrably fast-tracked targeted amendments when industry pressure and a deadline coincided, so this is not a row to hold at 0.20 either. SOFT part: everything about the legislative appetite. Note the premise discipline: a Commission announcement of intent to simplify is NOT a published amending regulation, which is the #72 plan-is-not-an-action distinction and the thing a headline reader would get wrong.",
+  "no_view": null,
+  "market": "Whether the compliance deadline is real decides a year of European enterprise software spend."
+ },
+ {
+  "id": "silver-deficit-run",
+  "label": "Silver records another annual structural deficit for 2026",
+  "p": 0.76,
+  "date": "2027-05-31",
+  "lane": "commodities-metals",
+  "row_class": "invariant",
+  "basis": "Industrial demand (solar, electronics) is contracted and growing while mine supply is byproduct-constrained - silver supply cannot respond to price because it is mined as a byproduct of copper, lead and zinc.",
+  "rationale": "Invariant with a genuinely elegant mechanism: byproduct supply is price-INELASTIC by construction. That is a physical constraint, not a market view.",
+  "no_view": null,
+  "market": "The byproduct constraint is why silver behaves like an industrial metal with a monetary tail."
+ },
+ {
+  "id": "sloos-tightening",
+  "label": "Next SLOOS shows net tightening in C&I standards",
+  "p": 0.58,
+  "date": "2026-11-02",
+  "lane": "rates-credit",
+  "row_class": "scheduled",
+  "basis": "Scheduled quarterly survey. Direction after a hike leans tightening, but this is a survey of bank officers' judgment — a discretionary aggregate, so capped below 0.70 per R13.",
+  "rationale": "Scheduled-print class for the EVENT; the direction is capped because respondents are humans exercising judgment, not a physical constraint.",
+  "no_view": null,
+  "market": "Bank lending standards are the slow transmission channel the hike actually runs through."
+ },
+ {
+  "id": "tens-above-4",
+  "label": "US 10y closes above 4.00% on the last trading day of 2026",
+  "p": 0.8,
+  "date": "2026-12-31",
+  "lane": "rates-credit",
+  "row_class": "level",
+  "basis": "No-view odds: with the policy rate at 3.75-4.00 after a hike and the 10y already described as the highest since 2007, a close below 4.00 requires a ~100bp+ rally in a quarter. Reference class: quarterly 10y moves; a move that size is a tail.",
+  "rationale": "Level row, ONE asset, band on one side only — the #69 lesson (a three-asset compound band died in two sessions). Priced off the distance to the threshold, not off a story.",
+  "no_view": {
+   "tool": "range_odds",
+   "command": "python tools/range_odds.py --spot 4.90 --lo 4.00 --days 1 --vol 10.5",
+   "odds": 0.97,
+   "note": "ASSUMED spot 4.90% (no live feed in the repo; STATE.md 9/19 records only '10y highest since 2007'). ONE period = the whole quarter, because the claim is about ONE date (the last trading day of 2026), not about every close; vol 10.5% is ~70 sessions at ~1.3%/day."
+  },
+  "market": "Above 4 keeps the discount-rate leg of the equity derate alive."
+ }
+]

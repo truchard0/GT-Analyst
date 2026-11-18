@@ -4,6 +4,7 @@ Runs against a throwaway database - never the real ledger."""
 import argparse
 import contextlib
 import io
+import json
 import pathlib
 import sys
 import tempfile
@@ -20,7 +21,9 @@ def ns(**kw):
     base = dict(event="e", prediction="Brent closes above 100 on 2026-10-30", prob=0.6, horizon="2026-10-30",
                 falsifier="Brent settles at or below 100 on 2026-10-30", sensitivity="s", conviction=0.5,
                 sectors="", tickers="", direction="", source="manual", cluster="", lean="neutral", ts=None,
-                dry_run=False, base_rate=None, base_class="", market=None, market_src="", diverge="")
+                dry_run=False, base_rate=None, base_class="", market=None, market_src="", diverge="",
+                level=None, hedge="", state=None,
+                act="", claims="", window="", trigger="")
     base.update(kw)
     return argparse.Namespace(**base)
 
@@ -141,6 +144,125 @@ class LedgerScoring(unittest.TestCase):
         self.assertEqual(c.execute("SELECT COUNT(*) FROM revisions").fetchone()[0], 1)
         ledger.db()                                   # idempotent
         self.assertEqual(c.execute("SELECT COUNT(*) FROM revisions").fetchone()[0], 1)
+
+
+class ConflictGate(unittest.TestCase):
+    """R28's conflict-level half at the door: `ledger.py add --level` is checked against the open rows that declared one."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
+        ledger.DB = pathlib.Path(self.tmp.name) / "ledger.db"
+        quiet(ledger.add, ns(cluster="iran-war", prob=0.95, horizon="2026-12-31", level="3-4",
+                             act="il_strike_iran", claims="occurs", window="us-release-postvote",
+                             prediction="Israel strikes Iranian territory by 2026-12-31"))
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def second(self, **kw):
+        return ns(cluster="iran-war", prob=0.90, horizon="2026-12-31", level="0-3",
+                  act="us_strike_iran", claims="does_not_occur", window="us-release-postvote",
+                  prediction="No war-scale campaign on Iranian territory by 2026-12-31", **kw)
+
+    def test_a_row_that_cannot_hold_with_an_open_one_is_refused(self):
+        with self.assertRaises(SystemExit) as cm:
+            quiet(ledger.add, self.second())
+        self.assertIn("conflict level", str(cm.exception))
+        self.assertEqual(ledger.db().execute("SELECT COUNT(*) FROM predictions").fetchone()[0], 1)
+
+    def test_a_hedge_reason_lets_it_in_and_the_level_is_stored(self):
+        out = quiet(ledger.add, self.second(hedge="a strike on Iranian soil need not become a campaign; #1 is the stronger view"))
+        self.assertIn("HEDGE ACCEPTED", out)
+        self.assertEqual(ledger.db().execute("SELECT level_lo,level_hi FROM predictions WHERE id=2").fetchone(), (0, 3))
+
+    def test_a_compatible_row_is_logged_without_ceremony(self):
+        quiet(ledger.add, ns(cluster="iran-war", prob=0.40, horizon="2026-12-31", level="0-3",
+                             act="us_strike_iran", claims="does_not_occur", window="us-release-postvote",
+                             prediction="No war-scale campaign on Iranian territory by 2026-12-31 (alt)"))
+        self.assertEqual(ledger.db().execute("SELECT COUNT(*) FROM predictions").fetchone()[0], 2)
+
+    def test_a_conflict_cluster_row_with_no_level_is_warned_and_none_is_silent(self):
+        warned = quiet(ledger.add, ns(cluster="iran-war", level=None))
+        self.assertIn("declare --level", warned)
+        silent = quiet(ledger.add, ns(cluster="iran-war", level="none", prediction="No Hormuz toll by 2027-01-04"))
+        self.assertNotIn("declare --level", silent)
+
+    def test_a_level_needs_a_cluster_with_a_scale(self):
+        with self.assertRaises(SystemExit):
+            quiet(ledger.add, ns(cluster="fed-path", level="2"))
+
+
+class StateGate(unittest.TestCase):
+    """`ledger.py add --state`: a row in ANY cluster is checked against open rows that declared the same world state."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
+        ledger.DB = pathlib.Path(self.tmp.name) / "ledger.db"
+        quiet(ledger.add, ns(cluster="iran-war", prob=0.68, horizon="2026-09-06", state=["hormuz=0-1"], level="none",
+                             prediction="Hormuz does not fully normalize within 60 days", ts="2026-07-08T12:00:00Z"))
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def opec(self, **kw):
+        return ns(cluster="opec-policy", prob=0.58, horizon="2026-09-15", state=["hormuz=2"],
+                  prediction="OPEC+ trims its hikes into a normalizing-Hormuz glut", ts="2026-07-11T12:00:00Z", **kw)
+
+    def test_a_row_in_another_cluster_that_needs_the_opposite_state_is_refused(self):
+        with self.assertRaises(SystemExit) as cm:
+            quiet(ledger.add, self.opec())
+        self.assertIn("world state", str(cm.exception))
+
+    def test_a_hedge_lets_it_in_and_stores_the_state(self):
+        out = quiet(ledger.add, self.opec(hedge="a glut can come from demand loss without Hormuz fully reopening; #1 is the stronger view"))
+        self.assertIn("HEDGE ACCEPTED", out)
+        raw = ledger.db().execute("SELECT states FROM predictions WHERE id=2").fetchone()[0]
+        self.assertEqual(json.loads(raw), {"hormuz": [2, 2]})
+
+    def test_a_compatible_state_is_logged(self):
+        quiet(ledger.add, ns(cluster="opec-policy", prob=0.55, horizon="2026-09-15", state=["hormuz=1-2"],
+                             prediction="OPEC+ holds quotas while Hormuz partly reopens", ts="2026-07-11T12:00:00Z"))
+        self.assertEqual(ledger.db().execute("SELECT COUNT(*) FROM predictions").fetchone()[0], 2)
+
+    def test_an_unknown_state_is_rejected(self):
+        with self.assertRaises(SystemExit):
+            quiet(ledger.add, ns(cluster="x", state=["nonsense=1"]))
+
+
+class IncentiveGate(unittest.TestCase):
+    """R37 at the door: a --level row must read the deciders' calendar."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
+        ledger.DB = pathlib.Path(self.tmp.name) / "ledger.db"
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def row(self, **kw):
+        base = dict(cluster="iran-war", prob=0.30, horizon="2026-11-03", level="3-4", ts="2026-10-23T12:00:00Z",
+                    prediction="The US strikes Iranian territory before the 2026-11-03 midterms")
+        base.update(kw)
+        return ns(**base)
+
+    def test_a_conflict_row_with_no_window_is_refused(self):
+        with self.assertRaises(SystemExit) as cm:
+            quiet(ledger.add, self.row())
+        self.assertIn("R37", str(cm.exception))
+
+    def test_a_strike_call_inside_a_stated_pledge_window_is_refused_above_half(self):
+        with self.assertRaises(SystemExit):
+            quiet(ledger.add, self.row(prob=0.60, act="us_strike_iran", claims="occurs", window="us-pledge-midterms"))
+
+    def test_a_properly_declared_row_is_logged_with_its_incentive(self):
+        quiet(ledger.add, self.row(act="us_strike_iran", claims="occurs", window="us-pledge-midterms",
+                                   trigger="an Iranian attack that kills US personnel"))
+        r = ledger.db().execute("SELECT act,claims,window_id,trigger_text FROM predictions").fetchone()
+        self.assertEqual(r, ("us_strike_iran", "occurs", "us-pledge-midterms", "an Iranian attack that kills US personnel"))
+
+    def test_an_unknown_window_is_refused(self):
+        with self.assertRaises(SystemExit):
+            quiet(ledger.add, self.row(act="us_strike_iran", claims="occurs", window="no-such-window"))
 
 
 if __name__ == "__main__":

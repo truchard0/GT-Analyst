@@ -279,15 +279,43 @@ def build_context(batch_items: list[dict[str, Any]]) -> schema.Context:
     c = sqlite3.connect(f"file:{ledger.DB}?mode=ro", uri=True) if ledger.DB.exists() else None
     open_by_cluster: dict[str, int] = {}
     open_ids: set[int] = set()
+    open_rows: dict[int, schema.OpenRow] = {}
+    capped_total = 0
+    hits = scored = 0
     existing: set[str] = set()
     if c is not None:
-        for pid, status, cluster, pred in c.execute("SELECT id,status,cluster,prediction FROM predictions"):
+        have = {r[1] for r in c.execute("PRAGMA table_info(predictions)")}
+        lvl_cols = "level_lo,level_hi" if "level_lo" in have else "NULL,NULL"   # pre-migration DBs have neither
+        st_col = "states" if "states" in have else "NULL"
+        for (pid, status, cluster, pred, source, prob, direction, tickers, horizon,
+             outcome, lvl_lo, lvl_hi, st_raw) in c.execute("SELECT id,status,cluster,prediction,source,prob,direction,tickers,"
+                                                    f"horizon,outcome,{lvl_cols},{st_col} FROM predictions"):
             existing.add(re.sub(r"\W+", " ", (pred or "").lower()).strip())
+            is_tree = str(source or "").startswith("tree")
             if status == "open":
                 open_ids.add(pid)
-                if cluster:
-                    open_by_cluster[cluster] = open_by_cluster.get(cluster, 0) + 1
+                # R28/R31/R34 compare a new row against the LIVE book. Until 2026-10-03 this was never
+                # populated, so the cross-book half of those rules (the #26-vs-#32 case) silently no-op'd
+                # in production and only the within-batch half worked.
+                open_rows[pid] = schema.OpenRow(
+                    id=pid, prediction=pred or "", prob=float(prob or 0.0), direction=direction or "",
+                    tickers=tuple(t.strip().upper() for t in (tickers or "").split(",") if t.strip()),
+                    cluster=cluster or "", horizon=horizon or "", level_lo=lvl_lo, level_hi=lvl_hi,
+                    states=tuple((k, v[0], v[1]) for k, v in (json.loads(st_raw).items() if st_raw else ())))
+                # The 35pct concentration cap (hygiene rule 1) is about ANALYST rows. Tree-promoted rows
+                # are scored scaffolding; counting them would dilute iran-war under the cap without a
+                # single thing having changed.
+                if not is_tree:
+                    capped_total += 1
+                    if cluster:
+                        open_by_cluster[cluster] = open_by_cluster.get(cluster, 0) + 1
+            elif status == "resolved" and outcome is not None and not is_tree:
+                scored += 1
+                hits += int(outcome)
         c.close()
+    # the book's own hit rate drives R33 ("a flat forecast would score the same"). It was a hard-coded
+    # 0.745; it is now measured, over analyst rows only (near-certain tree rows would inflate it).
+    base = hits / scored if scored >= 20 else 0.745
     return schema.Context(
         item_ids={it["id"] for it in batch_items},
         item_sources={it["id"]: it["source"] for it in batch_items},
@@ -295,8 +323,9 @@ def build_context(batch_items: list[dict[str, Any]]) -> schema.Context:
         sector_keys={k for k in (load_json(ROOT / "data" / "sector_map.json", {}) or {}) if not k.startswith("_")},
         node_ids={n["id"] for n in nodes} | {"now"},
         lanes={n.get("lane", "") for n in nodes} - {""},
-        open_by_cluster=open_by_cluster, open_total=len(open_ids),
-        open_ledger_ids=open_ids, existing_predictions=existing)
+        open_by_cluster=open_by_cluster, open_total=capped_total,
+        open_ledger_ids=open_ids, existing_predictions=existing,
+        open_rows=open_rows, book_base_rate=base)
 
 
 def validate_file(path: pathlib.Path) -> tuple[Optional[schema.BatchAnalysis], list[schema.Finding], list[str]]:

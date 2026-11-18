@@ -1,0 +1,328 @@
+{
+ "theme": "mystery",
+ "events": [
+  {
+   "date": "2026-09-23",
+   "fact": "'White House preparing plan for 90-day diesel exports ban'",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'US diesel export ban debate' (policy, 12 headlines; lanes energy-supply). Model's reason: Potential energy policy shift; risk-off sentiment."
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "Oil Groups Join Chris Wright to Oppose Diesel Export Ban, Urge Trump Not to Weaken US Influence: Warn it Could Raise Fuel Costs, Hurt American Refiners",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'US diesel export ban debate' (policy, 12 headlines; lanes energy-supply). Model's reason: Diesel export ban could impact oil prices and refiners: risk-off."
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "Energy Secretary Chris Wright Urges Oil Industry To Voluntarily Cut Diesel Exports As Prices Stay Near Record High: ‘You Gotta Put Americans First’",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "es-anchor",
+     "shared_words": [
+      "energy",
+      "oil"
+     ],
+     "idf_sum": 11.0
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'US diesel export ban debate' (policy, 12 headlines; lanes energy-supply). Model's reason: Diesel prices near record highs may trigger risk-off sentiment."
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "NY Fed's Perli Says Fed's Reserve Management Purchases Are Not On Pre-Set Course; Central Clearing Of Fed Repo Operations Would Have Benefits; Monetary Policy T",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market +0; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed commentary on reserve management: market-neutral."
+  },
+  {
+   "date": "2026-09-23",
+   "fact": "Fed's Barr Says Further Rate Hikes Likely Needed To Ensure Timely Return To 2% Inflation",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed official signals more hikes; inflation focus drags indexes."
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "NY Fed President Williams, Speaking At Even At Oxford, Said Persistent Supply Shocks Can't Be Ignored; US Labor Market Not A Source Of Inflationary Pressure",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market +0; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed official comments on supply shocks and inflation."
+  },
+  {
+   "date": "2026-09-26",
+   "fact": "Gold Is Up 17%, But the Fed Just Changed the Game for GLD and IAU",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed hawkishness pressures gold ETFs amid rate sensitivity."
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Scott Bessent Says Kevin Warsh Is 'Well Aware' of AI Productivity Gains: Fed Should Keep an 'Open Mind' on Interest Rates",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market +0; story 'Fed reserve supply comments' (fed, 19 headlines; lanes fed-macro). Model's reason: Fed commentary on rates and AI; potential policy impact."
+  },
+  {
+   "date": "2026-09-22",
+   "fact": "Ukraine's Zelenskiy Says He Asked Trump For Winter Package Of Patriot Missiles; Says Ukraine Needs Patriot Licenses And Security Guarantees",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ru-anchor",
+     "shared_words": [
+      "russia",
+      "ukraine",
+      "war"
+     ],
+     "idf_sum": 15.8
+    },
+    {
+     "node": "ru-unsc-veto-arithmetic",
+     "shared_words": [
+      "security",
+      "ukraine"
+     ],
+     "idf_sum": 10.8
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'Russia-Ukraine war' (macro_other, 11 headlines; lanes russia-ukraine). Model's reason: Escalation in Russia-Ukraine war raises geopolitical risk."
+  },
+  {
+   "date": "2026-09-23",
+   "fact": "Zelenskyy Urges Trump to Bring Putin to Trilateral Peace Talks — Says Ukraine Is Ready ‘Anytime’ as Kremlin Calls Summit a ‘Waste of Time’",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ru-anchor",
+     "shared_words": [
+      "russia",
+      "ukraine",
+      "war"
+     ],
+     "idf_sum": 15.8
+    },
+    {
+     "node": "ev-trump-putin-meeting",
+     "shared_words": [
+      "putin",
+      "trump"
+     ],
+     "idf_sum": 12.7
+    }
+   ],
+   "note": "AI importance 0.70, market +0; story 'Russia-Ukraine war' (macro_other, 11 headlines; lanes russia-ukraine). Model's reason: Peace talks discussion; no immediate market impact."
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "Zelenskyy Warns Russia of Retaliation This Winter if Energy Truce Fails: ‘We Will Have No Choice but to Make It Painful’",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ru-anchor",
+     "shared_words": [
+      "russia",
+      "ukraine",
+      "war"
+     ],
+     "idf_sum": 15.8
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'Russia-Ukraine war' (macro_other, 11 headlines; lanes russia-ukraine). Model's reason: War escalation risk; energy truce uncertainty impacts risk-on sentiment."
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "US-China Trade Truce Gets a Boost: Trump Trade Chief Greer Says Reached Deal on Farm Goods, Medical Devices: 'Lot More Details' on Monday",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ev-busan-truce-rolled",
+     "shared_words": [
+      "china",
+      "deal",
+      "trade",
+      "truce"
+     ],
+     "idf_sum": 23.1
+    },
+    {
+     "node": "cn-export-share",
+     "shared_words": [
+      "china",
+      "goods"
+     ],
+     "idf_sum": 11.7
+    }
+   ],
+   "note": "AI importance 0.70, market +1; story 'US-China trade relations' (policy, 37 headlines; lanes china-macro, rates-credit). Model's reason: Positive trade development boosts risk-on sentiment."
+  },
+  {
+   "date": "2026-09-27",
+   "fact": "Trump, Xi Jinping Agree to $30 Billion Tariff Deal, Back ‘More Favorable Tariff Treatment’ for US-China Goods",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ev-busan-truce-rolled",
+     "shared_words": [
+      "china",
+      "deal",
+      "trade"
+     ],
+     "idf_sum": 16.6
+    },
+    {
+     "node": "cn-export-share",
+     "shared_words": [
+      "china",
+      "goods"
+     ],
+     "idf_sum": 11.7
+    }
+   ],
+   "note": "AI importance 0.70, market +1; story 'US-China trade relations' (policy, 37 headlines; lanes china-macro, rates-credit). Model's reason: Tariff deal reduces trade tensions; risk-on sentiment."
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "ASML Has a China Warning for Trump: Too Much Pressure Could Create a Competitor",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "ev-busan-truce-rolled",
+     "shared_words": [
+      "china",
+      "trade"
+     ],
+     "idf_sum": 11.0
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'US-China trade relations' (policy, 37 headlines; lanes china-macro, rates-credit). Model's reason: US-China trade tensions risk accelerating chip competition."
+  },
+  {
+   "date": "2026-09-24",
+   "fact": "Trump’s Midterm Losses Could Be Wall Street’s Gain: Billionaire Kenneth Fisher Calls Gridlock a ‘Powerful Positive’, Sees a Potential 19.8% Rally",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market +1; story 'US midterm election impact' (policy, 3 headlines; lanes us-politics). Model's reason: Political gridlock seen as positive for markets; potential rally."
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "Fed's Hammack Says The Biggest Risk With Inflation Is The Formation Of An Inflationary Mindset; Public Has Been Dealing With Above Target Inflation For Extended",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed inflation and policy challenges' (fed, 16 headlines; lanes fed-macro). Model's reason: Fed official warns on inflation expectations: risk-off."
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Fiscal Watchdog Warns US Is ‘Entering a Debt Spiral’ as Treasury Rates Hit 5% — Ed Yardeni Flags Bond Vigilante Risk If Fed 'Fails to Subdue Inflation'",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed inflation and policy challenges' (fed, 16 headlines; lanes fed-macro). Model's reason: Debt spiral warning raises inflation and Fed policy concerns."
+  },
+  {
+   "date": "2026-09-25",
+   "fact": "Bond Market Warning Grows; Pay Attention To Japan; Oil Hopium Fades",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Bond market warning' (macro_other, 1 headlines; lanes energy-supply, rates-credit, japan-korea). Model's reason: Bond market concerns and oil worries signal risk-off."
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Bitcoin Falls to $83,000 as Gold Plunges 3% on Fresh Oil Price Surge",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Oil price surge and market risk-off' (oil, 2 headlines; lanes energy-supply). Model's reason: Oil surge triggers risk-off; impacts crypto and gold."
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Fed’s New Financial Vulnerability Gauge Flashes Warning at 65th Percentile — Expert Says Risks Are ‘Notable’ But ‘Not Yet Elevated’",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [],
+   "note": "AI importance 0.70, market -1; story 'Fed financial vulnerability index' (fed, 1 headlines; lanes fed-macro). Model's reason: Fed signals financial risks: risk-off sentiment."
+  },
+  {
+   "date": "2026-09-28",
+   "fact": "Fed Hike Bets Hit 70%: Gold Just Lost The Argument to a 5.2% Treasury",
+   "source": "Mystery Machine (qwen3:14b, AI-rated)",
+   "confidence": "mystery-ai",
+   "significance": 4,
+   "bears_on": [],
+   "candidate_nodes": [
+    {
+     "node": "dovish-fed",
+     "shared_words": [
+      "fed",
+      "hike"
+     ],
+     "idf_sum": 11.3
+    }
+   ],
+   "note": "AI importance 0.70, market -1; story 'Fed rate hike bets surge' (fed, 1 headlines; lanes fed-macro, rates-credit). Model's reason: Rising rate odds pressure gold and bonds: risk-off."
+  }
+ ],
+ "new_nodes": [],
+ "suggest_reprice": [],
+ "gaps": "Mystery Machine stories only; their month backfill was still running when this was generated. Node matches are CANDIDATES, not evidence."
+}

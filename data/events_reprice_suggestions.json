@@ -1,0 +1,164 @@
+{
+ "note": "SUGGESTIONS ONLY. Apply through ledger.py revise (rows) or a reviewed node edit. 'status' records what was decided; absent = undecided.",
+ "suggestions": [
+  {
+   "node": "eu-gas-storage",
+   "ledger": null,
+   "from": 0.72,
+   "to": 0.62,
+   "reason": "2026-10-12: EU storage ~74% full, 14.9 pp below the 5-year average and the lowest for the date since 2011 (TASS from GIE data, AGSI not opened); Commission reportedly mulling a lower fill target; row threshold is >25% on Apr 1 2027, so a record-low start raises end-of-winter risk. Moderate confidence on the size of the move.",
+   "theme": "geopolitics",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": null,
+   "ledger": 105,
+   "from": 0.72,
+   "to": 0.62,
+   "reason": "Same as eu-gas-storage: record-low autumn fill (74% on Oct 12, -14.9 pp vs 5-yr avg) and a Hormuz-disrupted LNG market make Apr-1 >25% less safe than priced on 10/03.",
+   "theme": "geopolitics",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": "us-strikes-resume",
+   "ledger": null,
+   "from": 0.35,
+   "to": 0.08,
+   "reason": "10/8: Trump publicly ruled out Iran strikes before 11/3 (Axios, Reuters); no large-scale US strike campaign found in coverage 9/20-10/22, and the node's 10/12 horizon has passed; one unconfirmed live-blog line about explosions at Sirik on 10/21 should be checked before settling NO.",
+   "theme": "iran_energy",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": "pause-outlasts-oct12",
+   "ledger": null,
+   "from": 0.58,
+   "to": 0.7,
+   "reason": "10/8 Trump no-strike pledge to 11/3 and no confirmed US/Israeli campaign through 10/12, but IRGC tanker attacks ran at record tempo (12 attacks week of 9/28; 10/7 Reuters), so settlement depends on whether those count as breaking the 'fire pause'; define the pause before applying.",
+   "theme": "iran_energy",
+   "status": "declined: the Iran 'fire pause' is undefined - do IRGC tanker attacks / Houthi strikes on Riyadh break it?"
+  },
+  {
+   "node": "iran-pause-duration-nov",
+   "ledger": null,
+   "from": 0.38,
+   "to": 0.45,
+   "reason": "10/8 pledge covers 11/1 on the US side and Washington dropped its demand for an Israeli solo strike (10/21 reports), but the 10/22 IRGC claim of 7 tankers hit and the 10/22 ordered departures cut the other way; a small step only, and void if the node counts IRGC tanker attacks as breaking the pause.",
+   "theme": "iran_energy",
+   "status": "declined: same undefined-pause problem, and 0.45 would sit above the cycle_odds survival band (0.21-0.43)"
+  },
+  {
+   "node": "iran-six-conditions",
+   "ledger": null,
+   "from": 0.25,
+   "to": 0.12,
+   "reason": "9/26 Trump rejected Iran's Qatar-relayed offer; 9/29 he denied offering sanctions relief or frozen funds; Salalah/Gulf-Iran talks remain postponed; only Qatari shuttle messages are alive, which is not a negotiation of the six conditions.",
+   "theme": "iran_energy",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": "fomc-oct",
+   "ledger": null,
+   "from": 0.6,
+   "to": 0.72,
+   "reason": "10/16: Trading Economics prices about 85% hold on 10/28 but about 77% hike by December and Goldman expects a December hike, so 'second hike by the 12/8-9 meeting' is nearer 0.75; trimmed for the 29k payroll print and Waller/Logan saying long yields do part of the work. Label also mixes the 10/28 date with a by-December definition: fix the label before scoring.",
+   "theme": "macro_markets_ai",
+   "status": "applied 2026-10-22 (modified: 0.72)"
+  },
+  {
+   "node": "france-deficit",
+   "ledger": null,
+   "from": 0.78,
+   "to": 0.9,
+   "reason": "10/1-10/8: the French government's own 2026 deficit forecast is 5.4% of GDP (5.1% in 2025), 90bp above the 4.5% line; first INSEE print due late March 2027 normally lands within a few tenths of the plan.",
+   "theme": "macro_markets_ai",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": null,
+   "ledger": 96,
+   "from": 0.78,
+   "to": 0.9,
+   "reason": "Same as france-deficit: government expects 5.4% for 2026 vs the 4.5% threshold (TD Economics, early October).",
+   "theme": "macro_markets_ai",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": "tens-above-4",
+   "ledger": null,
+   "from": 0.8,
+   "to": 0.9,
+   "reason": "10/22: 10y about 4.95% (STATE.md) leaves 95bp of cushion over 4.00 for 12/31; at roughly 8bp/day over 50 sessions that is a bit under 2 standard deviations (assumed vol, re-derive from the tape before applying).",
+   "theme": "macro_markets_ai",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": null,
+   "ledger": 103,
+   "from": 0.8,
+   "to": 0.9,
+   "reason": "Same row as tens-above-4 (DGS10 above 4.00 on 12/31): 95bp cushion at 10/22.",
+   "theme": "macro_markets_ai",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": "capex-debt-funded",
+   "ledger": null,
+   "from": 0.45,
+   "to": 0.55,
+   "reason": "10/14-10/22: CoreWeave 5y CDS record about 1,195bp and notes at 15%, Oracle -10% on 10/14, and Alphabet's reported ~$85bn equity plan and Meta's $27bn bond already show external financing at scale; move sibling capex-cashflow-funded 0.55 -> 0.45 so the fork sums to 1. Branch definition ('material shift') may already be met.",
+   "theme": "macro_markets_ai",
+   "status": "declined: strong claims (Alphabet equity plan, Meta bond) appear only in the reason text, not in verified events; branch already moved 0.38->0.45 the same day"
+  },
+  {
+   "node": "brent-band-q4",
+   "ledger": null,
+   "from": 0.35,
+   "to": 0.25,
+   "reason": "10/22: Brent settled $113.17, about $12 under the $125 ceiling on a ~4%/day tape; node (0.35) and row #83 (0.25) state the same claim and disagree (lesson 7).",
+   "theme": "macro_markets_ai",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": "shutdown-dec",
+   "ledger": 114,
+   "from": 0.35,
+   "to": 0.25,
+   "reason": "2026-09-02: CR passed 90-6 / 370-48; the node's own basis cites a base rate of roughly a fifth of CR deadlines and prices above it with no dated datapoint. Counter-weight: Senate had no topline as of 2026-09-18. Hand estimate, not a tool run.",
+   "theme": "us_politics_legal",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": null,
+   "ledger": 56,
+   "from": 0.9,
+   "to": 0.97,
+   "reason": "2026-09-20 tracking already logged HIT; since then DOJ lost 10/9 vacatur fight, appealed 10/16, dismissals in GA 10/1 and elsewhere, SCOTUS SAVE order 9/25 and ~1,000 monitors planned: the row's 'DOJ/DHS involvement' test is already met.",
+   "theme": "us_politics_legal",
+   "status": "applied 2026-10-22"
+  },
+  {
+   "node": "midterms-2026",
+   "ledger": null,
+   "from": 0.55,
+   "to": 0.8,
+   "reason": "The node's own rationale defines the fight as #56's 'state-level federal intervention or certification fight', which is priced 0.9 in the ledger and already tracked as HIT; the two rows disagree by 0.35. If the label is read strictly (a post-election certification fight only), keep 0.55 and fix the label instead.",
+   "theme": "us_politics_legal",
+   "status": "declined: a STRICTER claim than ledger #56 (a federal certification fight, impossible before 11/3), so 0.55 vs 0.94 is not an inconsistency"
+  },
+  {
+   "node": "pmms-above-65",
+   "ledger": null,
+   "from": 0.82,
+   "to": 0.92,
+   "reason": "2026-10-08 Freddie Mac 7.40% and 2026-10-22 7.32% (feed): about 80-90 bp above the 6.50% floor with about 10 weekly prints left; a sub-6.50 print needs a fall larger than any weekly-print path seen since the 7-week rise began. Hand estimate; the Iran/Hormuz tail (a deal) is the risk.",
+   "theme": "us_politics_legal",
+   "status": "applied 2026-10-22"
+  }
+ ],
+ "gaps": {
+  "geopolitics": "No node in the tree covers US sanctions policy on Russia, the Cuba fuel blockade, Venezuela normalisation, Black Sea attacks on NATO-member waters, Greenland or the Canada tariffs, so most events here map only as context to anchors (ru-anchor, em-anchor, eu-anchor, es-anchor); the candidate list is also about 70% oil-price rewrites of the same Russia-waiver and diesel stories. Not verified: the Oct 1 'end of Russia-Ukraine talks' headline, the Oct 20 Sherritt fuel permission (no web trace; I could not tell whether it is a license), the Oct 8 'US and Russia discuss reviving Russian gas sales to Europe' item (the headline matches a May 2025 Reuters story, so it may be a mis-dated re-crawl), the EU 22nd sanctions package outcome (ambassadors were to try on Oct 7) and the Oct 8 India Russian-flows 310k bpd figure that conflicts with Kpler's 1.8-1.9M bpd. Asia coverage is thin: Japan/India/Korea candidates were mostly equity-flow and jobs stories, and I found no verified China property, deflation or export-control event in the 240.",
+  "iran_energy": "Biggest unmapped storylines: (1) the state of the 'fire pause' itself - the tree defines it by US/Iranian strike nights, but IRGC tanker attacks, Houthi strikes on Riyadh and Dhahran and a claimed US strike near Sirik on 10/21 are happening inside it, so no node can say whether the pause has ended; (2) Houthi-Saudi war and Saudi bypass capacity (East-West pipeline, Yanbu) - only three nodes (houthi-saudi, red-sea-front, es-anchor) cover it and none is priced on actual Saudi output or export data; (3) US domestic fuel policy (G7/IEA releases, GL 135 Russian diesel, diesel export-ban talk, $6.28 diesel) has no home in the tree and is partly captured by new ev- nodes. Could not verify: the Brent five-month high on 10/20 (feed only; the 10/22 price is confirmed), the 10/22 Iranian tanker claims (the claim is verified, the damage is not), the Hurricane Isaias landfall category, and the 10/16 Saudi 'attacks cut output' feed item, which is an April 2026 Reuters story re-surfaced; I also found no web confirmation of Trump accusing Iran of faking ship strikes (single CBS headline). The candidate file also contained much syndication of the same tanker-attack wire stories and many Indian market wraps that I merged or dropped; Sunday-night and weekend events may be under-dated by a day.",
+  "macro_markets_ai": "Biggest unmapped storylines: (1) France's budget fight and government stability after 10/13 (undated reports of a Lecornu resignation offer, budget vote, the OAT-Bund spread path) have no node beyond france-deficit and italy-spread, and I could not date or confirm the political reports; (2) emerging-market and Asia funding stress (rupee near 96, record Asian bond outflows, RBI no-bid T-bill auction, Kospi -3.5%) and non-US central banks (RBA, BoC, BoE, BoJ, which are hiking or debating hikes) have only anchor nodes. I could not verify STATE.md's cited Meta non-voting-share AI-funding plan or Nvidia CEO capital-scarcity remarks (the only Meta financing reports I found are from June), and several feed items (IEA 10/20, Brookings 10/21, gold below $4,150 on 10/19, the 10/6-10/7 records) rest on feed headlines only. The candidate list is dominated by jobs and yield syndication, so Q3 earnings season, bank results, the Treasury refunding (11/4) and US-China summit follow-through are under-represented.",
+  "us_politics_legal": "The tree has no node for Supreme Court emergency-docket litigation, immigration enforcement (third-country removals, mandatory detention, birthright citizenship), the Voting Rights Act/redistricting landscape (Callais, new maps in 9-10 states), Fed independence (Cook, Slaughter) or ACA coverage removals; those events map to context at best. Tariff authority is the biggest unverified storyline: I confirmed the 2026-02-20 IEEPA ruling, the CIT and Federal Circuit steps on Section 122 and the 7/24 switch to Section 301, but not the current Federal Circuit status or any challenge to the new 301 tariffs, so tariff-legal-challenge (0.42) may be mispriced and I did not suggest a change. The 2026-10-22 housing executive order is unverified (the feed says signed; same-day Semafor/HousingWire say draft), and several feed items are re-runs of older events (birthright 6/30, Callais 4/29, pharma tariff 4/2, vaccine EO 8/10, Watson 6/29), so first-seen dates mislead; the feed also carries about 81 NCAA/Ohio items plus mosquito and AI-renaming orders that matter to nothing in the tree. Midterm outcomes (control, certification) are deliberately unpriced beyond the clock rows, and I could not find October Senate appropriations or Federal Circuit docket news because the web index lags."
+ }
+}
