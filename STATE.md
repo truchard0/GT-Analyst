@@ -411,6 +411,14 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
    clusters 36% (over the 35% line: no more AI rows without a higher bar). New checkpoint `orcl-fq2`. Score them with
    `python tools/ai_prints_forward.py --score` after filling `actual`, then `ledger.py resolve` + `lesson`.
    Windows note: Python's `write_text` writes CRLF here; repo files are LF, so scripts now pass `newline="\n"`.
+3. **Red-team of #127 and #135: DONE, no probability changed** (`reports/20261118_redteam-tsmc-smh.md`).
+   - **#127 TSMC Q4 ≥ $53.3bn (0.90): real problem found.** October was 37.1% (2024) and 36.6% (2025) of the Q4 guide
+     midpoint, and Nov-Dec then ran 8-12% below October; this year October is 34.6%. Repeating either shape gives Q4
+     $50.5-51.8bn. **Recommended to the user: 0.90 → ~0.65, or wait for November revenue (~10 Dec; below ~NT$560bn
+     confirms).** The new range row #139 (53.59-55.60) is the same bet on the downside.
+   - **#135 SMH below 671.83 on 6/30/27 (0.90): holds.** From-peak reading of the 7 SOX drawdowns gives 86-88%.
+     Recommended: trim to ~0.87 (skill rule: tail calls at the base rate). Data flag: `prices.csv` max SMH close is 668.91.
+   - Awaiting the user's decision on both; evidence appended to `tsmc-q4` and `ai-trade-h1-2027`.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all

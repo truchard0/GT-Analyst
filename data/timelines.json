@@ -2604,6 +2604,10 @@
         {
           "fact": "BofA November survey: tech overweight cut from 37% to 12% (largest drop since 2006); 52% expect a hyperscaler capex cut within six months",
           "reported": "2026-11-12"
+        },
+        {
+          "fact": "Red-team of #135: from-peak reading of the 7 SOX drawdowns gives 86-88% that SMH is still below its high 12.3 months after the peak (0 of 6 episodes still falling at month 5 regained it in time); from-trough reading 43% only if the trough is already in. Recommendation to the user: 0.90 -> ~0.87. Data flag: prices.csv max SMH close 668.91 (22 Jun) vs the 671.83 threshold.",
+          "reported": "2026-11-18"
         }
       ],
       "market": "SMH close on 30 Jun 2027 (scenario odds only)",
@@ -2823,7 +2827,12 @@
           "note": "a flat capex guide would be the supplier reading its customers' financing limits"
         }
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "fact": "Red-team of #127 (reports/20261118_redteam-tsmc-smh.md): October 2026 revenue is 34.6% of the Q4 guide midpoint vs 37.1% (2024) and 36.6% (2025), years in which Nov-Dec ran 8-12% below October; repeating either shape gives Q4 US$50.5-51.8bn, below the 53.3 midpoint. Desk recommendation to the user: #127 0.90 -> ~0.65; November revenue (~10 Dec) below ~NT$560bn would confirm. Not re-marked: user decides.",
+          "reported": "2026-11-18"
+        }
+      ],
       "lane": "markets-ai",
       "confluence": [],
       "market": "no price call (prints and plans only)"
