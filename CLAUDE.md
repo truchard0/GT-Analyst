@@ -52,6 +52,10 @@ The scheduled task runs `python pipeline/ingest.py` every 5 minutes (dedup vs `l
 - **On the server (since 2026-11-18):** `python3 tools/server_loop.py` is the whole bot as one supervised process.
   It runs ingest every 5 minutes and one daily cycle: pull, tape data, `pipeline/learn.py nightly`, due calls, scoring,
   gates, commit and push. The Printer fork's watchdog keeps it alive (runner `gtanalyst`).
+- **Practice questions (`pipeline/drills.py`, since 2026-11-18):** the server loop asks and scores short-horizon
+  questions every tick (intraday rounds every `GT_DRILL_EVERY_MIN` minutes, default 30; a daily round; weekly Hormuz
+  transits). They are practice only: never ledger them, never wire them into the timeline, never publish them as
+  calls. Read `data/drills/report.md` for the analyst's calibration against the baselines.
 - **Nothing is scheduled in Claude cloud.** Do not create scheduled tasks for this repo unless the user asks. Manual loop: **"analyze inbox/latest.md"** → log → resolve due predictions → calibration report (`python pipeline/ledger.py report`).
 
 ## RULE: TIMELINE-WEB SYNC (mandatory, every cycle)

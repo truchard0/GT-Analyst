@@ -1,5 +1,5 @@
 # GT-Analyst — LIVE STATE (handoff doc)
-**Last updated: 2026-11-18 (cloud runs off; server loop + learning loop built, §7i and §9; tape note: Gulf tit-for-tat, Brent 93, December hike priced, Nvidia after Huang; new calls #86, #87, §7h; war-driven price calls banned).** Read this first after any context reset. It records what
+**Last updated: 2026-11-18 (practice questions built, intraday rounds, §7j; cloud runs off; server loop + learning loop built, §7i and §9; tape note: Gulf tit-for-tat, Brent 93, December hike priced, Nvidia after Huang; new calls #86, #87, §7h; war-driven price calls banned).** Read this first after any context reset. It records what
 the engine IS, what it has LEARNED, and what is currently STAKED. Everything here can be rebuilt from
 `ledger/ledger.db` and `data/timelines.json`; this is the summary.
 
@@ -239,6 +239,50 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
 
 ---
 
+## 7j. PRACTICE QUESTIONS (11/18): `pipeline/drills.py`
+User request: "a daily set of practice questions that resolve within a week and are checked automatically … have it
+be things intraday as well, how granular can we make it?"
+- **What it is:** many small forecasts on things data can check, asked and scored by the server loop with no one
+  watching. They are practice. They never enter the ledger, the timeline or any report as calls.
+- **Rounds:**
+  - intraday: every `GT_DRILL_EVERY_MIN` minutes of the US cash session (default 30; any multiple of 5 from 5 to
+    120). Per instrument, `up?` and `big?` (move larger than its usual size) to the next round and to the close;
+  - daily, after the close: `up?` and `big?` by the next close, `up?` over five sessions;
+  - weekly, Mondays: Hormuz ship transits over the next 7 days (IMF PortWatch): 10 a day or more? above last week?
+- **Instruments:** SPY, QQQ, VIX, the 10-year yield, 2-year Treasury futures. Oil, energy and defense are excluded
+  in code (the 11/18 ban).
+- **Who answers:** coin (0.50), base rate, pattern (base rate given the last interval), and the analyst (one headless
+  Claude call per round, given the baselines, recent headlines and its own calibration record). A level only counts
+  if it beats the one before it. `GT_DRILL_ANALYST=0` runs the baselines alone at no usage.
+- **No look-ahead:** every level and outcome is the last 5-minute bar that started before the timestamp. Daily
+  questions use the same 5-minute prices; daily bars supply history only.
+- **Files:** open questions `logs/drills_open.json`; scored answers `data/drills/scored/<date>.csv`; scoreboard
+  `data/drills/report.md` and `summary.json` (rebuilt daily and committed). Commands: `tick`, `report`, `replay`.
+- **How granular (replay of 13 past sessions, baselines only, Brier; a coin is 0.250):**
+
+  | Round length | Answers a day | Claude calls a day | Pattern on `big?` next round | Pattern on `up?` next round |
+  |---|---|---|---|---|
+  | 5 min | about 1,500 | 78 | 0.245 | 0.244 |
+  | 10 min | about 740 | 39 | 0.244 | 0.248 |
+  | 15 min | about 490 | 26 | 0.246 | 0.251 |
+  | 30 min (default) | about 240 | 13 | 0.245 | 0.251 |
+  | 60 min | about 110 | 7 | 0.246 | 0.255 |
+
+  - The floor is 5 minutes: the price source and the loop both step in 5-minute bars.
+  - Finer rounds buy volume, not predictability. Every intraday question type sits within 0.007 of a coin at every
+    round length. `big?` is slightly predictable (volatility clusters). The small `up?` edge at 5 minutes is mostly
+    unchanged prices counting as "no".
+  - Answers within a day are correlated, so the count of independent days matters more than the count of answers.
+  - Storage: scored answers are committed, about 7 MB a year at 30 minutes and about 40 MB a year at 5 minutes.
+- **Live test (3 rounds, 40 scored answers, real Claude):** analyst 0.241, pattern 0.239, coin 0.250. Too few to
+  rank them. Usage: about 4,000 input tokens and about $0.07 at list price per round, so about $1 a day at 30
+  minutes and about $6 a day at 5 minutes.
+- **Not yet seen running during market hours.** Every test replayed past sessions. An instrument whose price feed
+  is delayed more than 10 minutes is left out of that round, and the status line names it ("no fresh price for …").
+- **What it can and cannot teach:** it trains calibration and gives daily feedback. It does not test judgment about
+  wars or policy; only the slow ledger calls do that. The weekly Hormuz questions are the one bridge between them.
+- **Not live:** it starts when the server loop starts (§9).
+
 ## 7i. THE LEARNING LOOP (11/18)
 - **Diagnosis on the 56 scored calls:**
   - the stated probabilities could not tell hits from misses (AUC 0.47; misses were stated at 0.664 on average,
@@ -262,8 +306,7 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
   it loses by 0.01.
 - **`ledger.py add` now prints the trained prior** for the call's type next to the stated probability. It never
   blocks.
-- **Not built (needs a decision, costs Claude usage):** a daily set of short-horizon, auto-resolving practice
-  questions. More and faster scored calls is the main thing the record lacks.
+- **Practice questions: built 11/18, see §7j.** More and faster scored answers is the main thing the record lacked.
 - **Stock-call forward test closed** with 0 scored calls: no evidence either way; v2 retired
   (`reports/backtests/forward_v2_scorecard.md`).
 
@@ -412,22 +455,23 @@ running here either").**
   cohort and final scoring). The runner session `session_01AwChvHXzuPFbFQLR4ELyXC` is idle. Do not re-enable them
   without the user asking.
 - **Server: `tools/server_loop.py`**, one supervised process (stdlib, Python 3.11+):
-  - every 5 minutes: `pipeline/ingest.py`;
-  - once a day (13:17 UTC): git pull, tape data, `pipeline/learn.py nightly`, due calls, scoring, the three gates,
-    then commit and push;
+  - every 5 minutes, on the clock: practice questions (`pipeline/drills.py tick`, §7j), then `pipeline/ingest.py`;
+  - once a day (13:17 UTC): git pull, tape data, `pipeline/learn.py nightly`, the practice scoreboard, due calls,
+    scoring, the three gates, then commit and push;
   - scoring runs only when calls are due AND the `claude` CLI is installed on the server (one headless run, capped at
     45 minutes). Without it, due calls are listed as `needs_scoring` in the status file and the sweep gate fails;
   - status and heartbeat: `logs/server_status.json` (or `GT_HEARTBEAT`), rewritten before every step, with `push_ok`,
     `unpushed`, `needs_scoring`, gate results and the last error. A refused push is retried every tick;
   - watchlist triggers stay dry-run unless a `config.json` on that machine turns them on.
-- **Supervisor: the Printer fork's watchdog** (`Sampatel00/Printer`, branch `claude/gt-analyst-runner`, commit
-  `d81b674`, NOT merged). Runner `gtanalyst` = `tradingview/gt_analyst_runner.py`, non-critical (`storm=False`),
+- **Supervisor: the Printer fork's watchdog** (`Sampatel00/Printer`, commit `d81b674`, merged into the fork's `main`
+  on 11/18 by fast-forward). Runner `gtanalyst` = `tradingview/gt_analyst_runner.py`, non-critical (`storm=False`),
   heartbeat `_gt_analyst_alive.json`. With no GT-Analyst checkout on the machine it idles; it never crash-loops.
 - **NOT LIVE YET. The owner still has to, on the server:**
-  1. merge `claude/gt-analyst-runner` into the fork's main and pull it;
+  1. `git pull` the fork's `main` (the merge is done);
   2. clone `truchard0/GT-Analyst` next to the Printer checkout (or set `GT_ANALYST_HOME`), on branch
      `claude/gracious-lamport-6wef9u`, with git credentials that can push;
-  3. install and log in the `claude` CLI there, if due calls are to be scored automatically;
+  3. install and log in the `claude` CLI there, if due calls are to be scored and practice questions answered
+     automatically (without it the baselines still run);
   4. restart the watchdog, then check `python3 tools/server_loop.py --status` for `push_ok: true`.
 - **Until then nothing scores predictions.** The next call due is #80 (Brent, 11/30). An interactive session can score
   it by hand.

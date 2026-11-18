@@ -8,14 +8,18 @@ Printer fork's watchdog (through its gt_analyst_runner.py), systemd, or a termin
     python3 tools/server_loop.py --once     # one ingest and one daily cycle now, then exit (exit 1 if a gate fails)
     python3 tools/server_loop.py --status   # print the status file
 
-EVERY TICK (GT_TICK_S, default 300 s)
-    pipeline/ingest.py. Watchlist triggers stay dry-run unless config.json turns them on, so ingest alone
-    never spends Claude usage.
+EVERY TICK (GT_TICK_S, default 300 s, aligned to the wall clock: :00:20, :05:20, ...)
+    1 pipeline/drills.py tick   practice questions: resolve what is due, ask the round that is due. Intraday
+                                rounds every GT_DRILL_EVERY_MIN minutes (default 30, down to 5) of the US session,
+                                a daily round after the close. One small Claude call per round when the CLI is
+                                installed (GT_DRILL_ANALYST=0 turns the calls off; baselines are still scored).
+    2 pipeline/ingest.py        news. Watchlist triggers stay dry-run unless config.json turns them on, so
+                                ingest alone never spends Claude usage.
 ONCE A DAY (after GT_DAILY_UTC, default 13:17 UTC)
     1 git pull            merge only. A conflict aborts the merge and is reported; it is never settled by picking
                           a side (ledger.db cannot be merged). The cycle is retried an hour later.
     2 tape data           precursor log, AI-financing index
-    3 learning loop       pipeline/learn.py nightly (train, validate, shadow, scoreboard)
+    3 learning loop       pipeline/learn.py nightly (train, validate, shadow, scoreboard); drills.py report
     4 due calls           pipeline/ledger.py due
     5 scoring             only when calls are due AND the `claude` CLI is installed: one headless run that
                           researches each outcome, resolves it and records the lesson. GT_CLAUDE_SCORING=0 turns
@@ -47,7 +51,7 @@ STATE = ROOT / "logs" / "server_state.json"            # survives restarts; logs
 INBOX = ROOT / "inbox" / "latest.md"
 INBOX_ROTATE_BYTES = 2 * 1024 * 1024
 SCORING_TIMEOUT_S = 45 * 60
-COMMIT_PATHS = ["data/ai_stress", "data/ceasefire/precursor_log.csv", "data/learn", "data/timelines.json",
+COMMIT_PATHS = ["data/ai_stress", "data/ceasefire/precursor_log.csv", "data/learn", "data/drills", "data/timelines.json",
                 "ledger/ledger.db", "STATE.md", "reports", ".claude/skills"]
 FALLBACK_IDENT = ["-c", "user.name=GT-Analyst server", "-c", "user.email=gt-analyst-server@users.noreply.github.com"]
 
@@ -191,6 +195,11 @@ def ingest():
         say(f"inbox rotation failed: {e}")
 
 
+def drills():
+    rc, tail = run([PY, "pipeline/drills.py", "tick"], 420, "drills")
+    beat(last_drills=(tail.splitlines()[-1][:200] if tail else f"rc={rc}"))
+
+
 def commit_and_push(message):
     paths = [p for p in COMMIT_PATHS if (ROOT / p).exists()]
     git("add", "--", *paths, label="git add")
@@ -226,6 +235,7 @@ def daily_cycle():
     if run([PY, "tools/ai_stress_index.py", "fetch", "--from", since], 900, "ai-stress fetch")[0] == 0:
         run([PY, "tools/ai_stress_index.py", "build"], 180, "ai-stress build")
     run([PY, "pipeline/learn.py", "nightly"], 180, "learning loop")
+    run([PY, "pipeline/drills.py", "report"], 180, "drills report")
 
     due = due_ids()
     scored_with = None
@@ -292,6 +302,9 @@ def main():
             "Fix the git credentials on this machine.")
     st = load_state()
     while not STOP:
+        drills()                                           # first: its rounds are tied to the clock
+        if STOP:
+            break
         ingest()
         if STOP:
             break
@@ -307,9 +320,9 @@ def main():
         if once:
             g = status.get("gates") or {}
             return 0 if g and all(g.values()) else 1
-        end = time.time() + TICK_S
-        while not STOP and time.time() < end:
-            time.sleep(5)
+        nxt = (int(time.time()) // TICK_S + 1) * TICK_S + 20     # the next wall-clock boundary, plus 20 s for data
+        while not STOP and time.time() < nxt:
+            time.sleep(2)
     beat(state="stopped")
     say("server loop stopped")
     return 0
