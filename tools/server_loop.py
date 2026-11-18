@@ -9,10 +9,11 @@ Printer fork's watchdog (through its gt_analyst_runner.py), systemd, or a termin
     python3 tools/server_loop.py --status   # print the status file
 
 EVERY TICK (GT_TICK_S, default 300 s, aligned to the wall clock: :00:20, :05:20, ...)
-    1 pipeline/drills.py tick   practice questions: resolve what is due, ask the round that is due. Intraday
-                                rounds every GT_DRILL_EVERY_MIN minutes (default 30, down to 5) of the US session,
-                                a daily round after the close. One small Claude call per round when the CLI is
-                                installed (GT_DRILL_ANALYST=0 turns the calls off; baselines are still scored).
+    1 pipeline/drills.py tick   practice questions about world events: settle what is due, then, every
+                                GT_DRILL_NEWS_EVERY_MIN minutes (default 60, down to 5), write new questions from
+                                the latest news and answer them. Up to three small Claude calls per round when the
+                                CLI is installed (GT_DRILL_ANALYST=0 turns them off). Market questions stay off
+                                unless GT_DRILL_PRICES=1.
     2 pipeline/ingest.py        news. Watchlist triggers stay dry-run unless config.json turns them on, so
                                 ingest alone never spends Claude usage.
 ONCE A DAY (after GT_DAILY_UTC, default 13:17 UTC)

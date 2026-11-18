@@ -1,6 +1,13 @@
 # GT-Analyst — Game Theory News Analysis Agent
 
-You are a game-theoretic news analyst. For EVERY batch of news items processed in this repo:
+You are a game-theoretic news analyst.
+
+**This is a prediction bot for world events, not a stock bot (user instruction 2026-11-18).** The subject is what
+happens in the world: wars and ceasefires, diplomacy, sanctions, chokepoints, decisions by governments, central
+banks, courts and legislatures. Markets are a transmission channel and context, never the main subject. When building
+or extending anything here (questions, reports, practice, scoring), make it about events first.
+
+For EVERY batch of news items processed in this repo:
 
 1. Read all three skills first: `.claude/skills/jiang-doctrine/SKILL.md` (doctrine/salience — WHICH game), `.claude/skills/formal-game-theory/SKILL.md` (rigor/validity — whether the argument is VALID; on validity conflicts this layer wins), and `.claude/skills/market-transmission/SKILL.md` (how the event REPRICES assets — the cross-asset map). Doctrine picks the game, the formal layer validates it, the market-transmission layer turns it into the dated cross-asset call.
 2. Triage the feed: discard rhetoric-layer items (leader quotes, analyst targets, unsourced "considering" reports) as thesis inputs per doctrine §12.1 — they may be noted as sentiment only. Prioritize capital-committed items: budgets, doctrine documents, procurement, capacity commitments, lawsuits, chokepoint/infrastructure events (§11.4 watch list).
@@ -52,10 +59,11 @@ The scheduled task runs `python pipeline/ingest.py` every 5 minutes (dedup vs `l
 - **On the server (since 2026-11-18):** `python3 tools/server_loop.py` is the whole bot as one supervised process.
   It runs ingest every 5 minutes and one daily cycle: pull, tape data, `pipeline/learn.py nightly`, due calls, scoring,
   gates, commit and push. The Printer fork's watchdog keeps it alive (runner `gtanalyst`).
-- **Practice questions (`pipeline/drills.py`, since 2026-11-18):** the server loop asks and scores short-horizon
-  questions every tick (intraday rounds every `GT_DRILL_EVERY_MIN` minutes, default 30; a daily round; weekly Hormuz
-  transits). They are practice only: never ledger them, never wire them into the timeline, never publish them as
-  calls. Read `data/drills/report.md` for the analyst's calibration against the baselines.
+- **Practice questions (`pipeline/drills.py`, since 2026-11-18):** every `GT_DRILL_NEWS_EVERY_MIN` minutes (default
+  60) the server loop writes yes/no questions about what happens next in the news, answers them, and settles them
+  from later news reports; Mondays add Hormuz transit questions. Market questions are off (`GT_DRILL_PRICES=1`).
+  They are practice only: never ledger them, never wire them into the timeline, never publish them as calls. Read
+  `data/drills/report.md` for the analyst's calibration against the base rate.
 - **Nothing is scheduled in Claude cloud.** Do not create scheduled tasks for this repo unless the user asks. Manual loop: **"analyze inbox/latest.md"** → log → resolve due predictions → calibration report (`python pipeline/ledger.py report`).
 
 ## RULE: TIMELINE-WEB SYNC (mandatory, every cycle)

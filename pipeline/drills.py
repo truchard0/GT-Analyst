@@ -1,36 +1,47 @@
 #!/usr/bin/env python3
-"""Practice questions ("drills"): many small forecasts that resolve fast and are checked automatically.
+"""Practice questions ("drills"): many small forecasts about WORLD EVENTS that settle fast and are checked
+automatically.
 
-WHY. 56 scored calls in four months, 38 of them scored in one batch, is too little feedback to learn from. Drills
-put dozens of short questions a day to the same forecaster about things that data can check, and score every
-answer against simple baselines. They are practice. They never enter the ledger and are never published as calls.
-Oil, energy and defense prices are excluded (war-driven price calls were banned on 2026-11-18).
+WHY. 56 scored calls in four months, 38 of them scored in one batch, is too little feedback to learn from. This is
+a prediction bot for world events, not a stock bot, so the practice is on world events too: several times a day
+it writes yes/no questions about what happens next in the news, answers them, and settles them from later news.
+They are practice. They never enter the ledger and are never published as calls.
 
 ROUNDS
-  intraday  every GT_DRILL_EVERY_MIN minutes (default 30; any multiple of 5 from 5 to 120) of the US cash session.
-            Per instrument:  up?   the price is higher at the horizon than at the round time
-                             big?  the absolute move to the horizon is larger than its usual (median) size
-            Horizons: the next round, and the close.
-  daily     once after the close. Per instrument: up? and big? by the next session's close, up? over 5 sessions.
-  weekly    Mondays, with the daily round: Hormuz ship transits (IMF PortWatch) over the coming 7 days.
-            10 a day or more? More than the latest published week?
+  news      every GT_DRILL_NEWS_EVERY_MIN minutes (default 60; any multiple of 5 from 5 to 720), around the clock,
+            whenever at least 3 new reports have arrived since the last round:
+              1 settle   a judge reads the reports published inside each due question's window and answers yes,
+                         no or unclear (unclear voids the question). A yes must cite the report that settles it.
+              2 write    a writer reads the last 6 hours of reports and writes GT_DRILL_NEWS_QUESTIONS (default 6)
+                         questions about what happens next: a strike, a statement or decision by a named official,
+                         a vote, a ruling, a sanction, a published figure. Deadlines from 30 minutes to 7 days,
+                         at least half within 8 hours. Never a market price.
+              3 answer   the analyst gives a probability for each.
+            A question means: "will a report saying X be published by the deadline?". So an event that happens
+            but is not reported in this bot's feed by then counts as NO. That is the honest limit of the method.
+  weekly    Mondays after 16:20 ET: Hormuz ship transits (IMF PortWatch) over the coming 7 days. Settled by data.
+  markets   OFF unless GT_DRILL_PRICES=1. Index and rates moves every GT_DRILL_EVERY_MIN minutes of the US cash
+            session and after the close. Replays showed these are coin flips; they only exercise calibration.
+            Oil, energy and defense prices are excluded either way (the 2026-11-18 ban).
 
-FORECASTERS (levels, simplest first; a level is only worth anything if it beats the one before it)
+FORECASTERS (a level is only worth anything if it beats the one before it)
   coin     0.50
-  base     how often it happened over the trailing history
-  pattern  the same, given what the last interval did (momentum for up?, volatility clustering for big?)
-  analyst  Claude, one small headless call per round (GT_DRILL_ANALYST=0 turns it off; GT_DRILL_MODEL picks the
-           model). It sees prices as of the round time, the base and pattern numbers, recent headlines and ITS OWN
-           calibration record so far. That record in the prompt is the training: the model's weights do not
-           change, its feedback does.
+  base     how often past questions of the same kind came true (for news questions: same deadline class)
+  pattern  market and Hormuz questions only: base, given what the last interval did
+  analyst  Claude. It sees the reports published before the round time and ITS OWN record so far: its score
+           against the base rate, its calibration table and its last settled questions. That record in the prompt
+           is the training: the model's weights do not change, its feedback does.
+
+Claude runs headless with no tools, one call per step, so a news round costs up to three small calls. Without the
+`claude` CLI (or with GT_DRILL_ANALYST=0) no news questions are written; GT_DRILL_MODEL picks the model.
 
 COMMANDS
-  tick [--now ISO]    resolve what is due, then ask the round that is due (the server loop calls this every tick)
+  tick [--now ISO]    settle what is due, then ask the round that is due (the server loop calls this every tick)
   report              score everything in data/drills/scored/ -> data/drills/report.md
-  replay [--days N]   baselines only, over past sessions, with no look-ahead: a question at time T uses bars before T
+  replay [--days N]   market questions only, baselines only, over past sessions, with no look-ahead
 
-The independence unit is the DAY: answers within a day overlap heavily, so the bootstrap resamples whole days.
-Stdlib only. Parses on Python 3.11.
+The independence unit is the DAY: questions asked on the same day overlap heavily, so the bootstrap resamples whole
+days. Stdlib only. Parses on Python 3.11.
 """
 import bisect
 import csv
@@ -44,6 +55,7 @@ import shutil
 import statistics
 import subprocess
 import sys
+import time
 import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
@@ -63,15 +75,30 @@ STATE = ROOT / "logs" / "drills_state.json"
 INBOX = ROOT / "inbox" / "latest.md"
 
 EVERY = int(os.environ.get("GT_DRILL_EVERY_MIN", "30"))
+NEWS_EVERY = int(os.environ.get("GT_DRILL_NEWS_EVERY_MIN", "60"))
+NEWS_N = max(1, min(12, int(os.environ.get("GT_DRILL_NEWS_QUESTIONS", "6"))))
+PRICES = os.environ.get("GT_DRILL_PRICES", "0") == "1"
+DEADLINES = {30: "30m", 60: "60m", 120: "2h", 240: "4h", 480: "8h", 1440: "1d", 4320: "3d", 10080: "7d"}
+GRACE = 30 * 60                                    # wait this long after a deadline for the feed to catch up
+MAX_OPEN_NEWS = 200
+LANES = ("iran-gulf", "fed-macro", "ai-chips", "us-politics", "taiwan-china", "world-order", "other")
+MARKET_Q = re.compile(                             # a news question must never be a market-price question
+    r"\$\s?\d|\b(brent|wti|crude|oil prices?|tanker rates?|share price|shares|stocks?|equit(y|ies)|s&p|nasdaq|dow jones|"
+    r"bitcoin|gold|yields?|futures|the dollar)\b.*\b(close[sd]?|settle[sd]?|trade[sd]?|rise[sn]?|fall(s|en)?|gain(s|ed)?|"
+    r"drop(s|ped)?|above|below|higher|lower|rall(y|ies)|sell-?off|hit|reach(es)?|top)\b", re.I)
 INSTRUMENTS = [("SPY", "S&P 500 ETF (SPY)"), ("QQQ", "Nasdaq 100 ETF (QQQ)"), ("^VIX", "VIX volatility index"),
                ("^TNX", "10-year Treasury yield (percent)"), ("ZT=F", "2-year Treasury note futures price")]
 BANNED = re.compile(r"brent|wti|crude|\boil\b|CL=F|BZ=F|XLE|USO|BNO|OIH|XOP|ITA|XAR|PPA", re.I)
 COLS = ["qid", "round", "asked_utc", "resolved_utc", "template", "instrument", "horizon", "ref", "thr",
-        "outcome_px", "outcome", "base", "pattern", "analyst", "live"]
+        "outcome_px", "outcome", "base", "pattern", "analyst", "live", "text", "evidence"]
 FORECASTERS = ("coin", "base", "pattern", "analyst")
 ITEM = re.compile(r"^- \*\*(.*)\*\* \((.*?) \| reported (\S+)")
-ANALYST_SYSTEM = ("You are a careful probabilistic forecaster answering practice questions. Use no tools. "
-                  "Reply with one JSON object and nothing else.")
+ANALYST_SYSTEM = ("You are a careful probabilistic forecaster of world events answering practice questions. "
+                  "Use no tools. Reply with one JSON object and nothing else.")
+WRITER_SYSTEM = ("You write forecasting practice questions about world events. Use no tools. "
+                 "Reply with one JSON object and nothing else.")
+JUDGE_SYSTEM = ("You settle forecasting practice questions from news reports. Be strict and literal. Use no tools. "
+                "Reply with one JSON object and nothing else.")
 _CACHE = {}
 STALE = []                                         # instruments left out of this round for want of a fresh price
 
@@ -353,28 +380,60 @@ def ask_weekly(day, live):
 
 
 # ── the analyst ──────────────────────────────────────────────────────────────────────────────────────────────
-def claude_bin():
-    if os.environ.get("GT_DRILL_ANALYST", "1") == "0":
+def as_int(v):
+    try:
+        return int(v)
+    except (TypeError, ValueError):
         return None
-    return os.environ.get("CLAUDE_BIN") or shutil.which("claude")
 
 
-def headlines(now_t, hours=6, limit=30):
-    if not INBOX.exists():
-        return []
-    out = []
-    for line in INBOX.read_text(encoding="utf-8", errors="replace").splitlines():
-        m = ITEM.match(line)
-        if not m or m.group(2).strip() == "trump-truth":
+def utc(t, f="%m-%d %H:%M"):
+    return dt.datetime.fromtimestamp(t, UTC).strftime(f)
+
+
+def parse_iso(sv):
+    return ep(dt.datetime.strptime(sv, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=UTC))
+
+
+def feed_items():
+    """News reports the ingest has stored, oldest first: (reported epoch, source, headline, first line of the body).
+    Read from inbox/latest.md and the inbox/processed files of the last 9 days. Reports with no report time are
+    left out."""
+    if "items" in _CACHE:
+        return _CACHE["items"]
+    paths = [INBOX]
+    proc = ROOT / "inbox" / "processed"
+    if proc.exists():
+        paths += [q for q in proc.glob("*.md") if q.stat().st_mtime >= time.time() - 9 * 86400]
+    seen = {}
+    for path in paths:
+        if not path.exists():
             continue
-        rep = m.group(3).rstrip(",")
-        try:
-            t = ep(dt.datetime.strptime(rep[:16], "%Y-%m-%dT%H:%M").replace(tzinfo=UTC))
-        except ValueError:
-            continue
-        if now_t - hours * 3600 <= t <= now_t:
-            out.append((t, m.group(1)[:120]))
-    return [f"{et(t).strftime('%H:%M')} {title}" for t, title in sorted(out, reverse=True)[:limit]]
+        with open(path, "rb") as f:                        # the newest reports are at the end of the file
+            f.seek(0, 2)
+            f.seek(max(0, f.tell() - 12_000_000))
+            lines = f.read().decode("utf-8", "replace").splitlines()
+        for i, line in enumerate(lines):
+            m = ITEM.match(line)
+            if not m:
+                continue
+            try:
+                t = ep(dt.datetime.strptime(m.group(3).rstrip(",")[:16], "%Y-%m-%dT%H:%M").replace(tzinfo=UTC))
+            except ValueError:
+                continue
+            nxt = lines[i + 1].strip() if i + 1 < len(lines) and lines[i + 1].startswith("  ") else ""
+            title = m.group(1).strip()
+            if title.lower() not in seen or t < seen[title.lower()][0]:
+                seen[title.lower()] = (t, m.group(2).strip(), title, "" if nxt.startswith("http") else nxt)
+    _CACHE["items"] = sorted(seen.values())
+    return _CACHE["items"]
+
+
+def headlines(T0, hours=6, limit=70):
+    """The newest reports published in the `hours` before T0, newest first. Nothing after T0. Truth Social posts
+    are left out here (rhetoric, not events); the judge still sees them, because a post can settle a question."""
+    its = [it for it in feed_items() if T0 - hours * 3600 <= it[0] <= T0 and it[1] != "trump-truth"][-limit:]
+    return [f"  {utc(t)} ({src}) {title[:140]}" for t, src, title, _ in reversed(its)]
 
 
 def load_scored(live_only=False):
@@ -388,65 +447,244 @@ def load_scored(live_only=False):
     return rows
 
 
+def is_news(r):
+    return r["round"] == "news"
+
+
+def deadline_class(label):
+    return "hours" if label in ("30m", "60m", "2h", "4h", "8h") else "days"
+
+
+def event_base(rows, label):
+    """How often past news questions of the same deadline class came true, shrunk toward 0.30 while the record
+    is short. Returns (rate, number of past questions)."""
+    same = [int(r["outcome"]) for r in rows if is_news(r) and deadline_class(r["horizon"]) == deadline_class(label)]
+    return shrink(sum(same), len(same), 0.30, 8), len(same)
+
+
+def calibration(pairs):
+    out = []
+    for lo in (0.0, 0.2, 0.4, 0.6, 0.8):
+        sub = [o for p, o in pairs if lo <= p < lo + 0.2 or (lo == 0.8 and p == 1.0)]
+        if sub:
+            out.append((f"{int(lo * 100)}-{int(lo * 100) + 20}%", sum(sub) / len(sub), len(sub)))
+    return out
+
+
 def feedback(rows):
     """The analyst's own record, as text for its next prompt."""
-    mine = [(float(r["analyst"]), int(r["outcome"]), float(r["pattern"])) for r in rows if r["analyst"] not in ("", None)]
+    mine = [r for r in rows if r["analyst"] not in ("", None)]
     if len(mine) < 10:
-        return "No scored answers yet. Start from the base and pattern numbers and move away only with a reason."
+        return "No scored answers yet. Start from the base rate and move away from it only with a reason."
+    sq = lambda r, who: (float(r[who]) - int(r["outcome"])) ** 2
     L = [f"Your record on {len(mine)} scored practice answers (Brier, lower is better): you "
-         f"{sum((p - o) ** 2 for p, o, _ in mine) / len(mine):.3f}, pattern baseline "
-         f"{sum((b - o) ** 2 for _, o, b in mine) / len(mine):.3f}, coin 0.250.",
+         f"{sum(sq(r, 'analyst') for r in mine) / len(mine):.3f}, the base rate "
+         f"{sum(sq(r, 'base') for r in mine) / len(mine):.3f}, a coin 0.250.",
          "When you said | how often it came true | answers"]
-    for lo in (0.0, 0.2, 0.4, 0.6, 0.8):
-        sub = [(p, o) for p, o, _ in mine if lo <= p < lo + 0.2 or (lo == 0.8 and p == 1.0)]
-        if sub:
-            L.append(f"  {int(lo * 100)}-{int(lo * 100) + 20}% | {sum(o for _, o in sub) / len(sub):.0%} | {len(sub)}")
+    L += [f"  {band} | {rate:.0%} | {n}" for band, rate, n in
+          calibration([(float(r["analyst"]), int(r["outcome"])) for r in mine])]
     L.append("Correct for any gap between what you said and what happened.")
+    last = [r for r in mine if is_news(r)][-10:]
+    if last:
+        L.append("Your last settled news questions (what you said -> what happened):")
+        L += [f"  {float(r['analyst']):.2f} -> {'YES' if r['outcome'] == '1' else 'NO'}: {r['text'][:150]}" for r in last]
     return "\n".join(L)
 
 
-def ask_analyst(qs, T0):
-    """One headless call. Returns {qid: probability}; an empty dict when Claude is unavailable or the reply is unusable."""
+def claude_bin():
+    if os.environ.get("GT_DRILL_ANALYST", "1") == "0":
+        return None
+    return os.environ.get("CLAUDE_BIN") or shutil.which("claude")
+
+
+def claude_json(prompt, system, tag):
+    """One headless Claude call with no tools that must answer with a JSON object. The prompt goes in on standard
+    input. Returns (object or None, usage or None)."""
     cb = claude_bin()
-    if not cb or not qs:
-        return {}, None
-    news = headlines(T0)                                   # nothing reported after the round time
-    lines = [f"Time now: {et(T0).strftime('%A %Y-%m-%d %H:%M')} ET. These are practice questions that data will check.",
-             "For each question give the probability that the answer is YES.",
-             "'base' is how often it happened in the trailing history. 'pattern' adjusts base for what the last "
-             "interval did. They are a starting point, not an answer.", "",
-             feedback(load_scored(live_only=True)), "",
-             "Recent headlines (ET):" if news else "No recent headlines are available."]
-    lines += ["  " + h for h in news]
-    lines += ["", "Questions:"]
-    for i, q in enumerate(qs, 1):
-        lines.append(f"  q{i}: {q['text']} [base {q['base']:.2f}, pattern {q['pattern']:.2f}]")
-    lines += ["", 'Reply with one JSON object mapping each question id to a probability between 0.02 and 0.98, '
-              'like {"q1": 0.55, "q2": 0.31}. No other text.']
-    cmd = [cb, "-p", "\n".join(lines), "--output-format", "json", "--max-turns", "1", "--system-prompt", ANALYST_SYSTEM]
+    if not cb:
+        return None, None
+    cmd = [cb, "-p", "--output-format", "json", "--max-turns", "1", "--system-prompt", system]
     if os.environ.get("GT_DRILL_MODEL"):
         cmd += ["--model", os.environ["GT_DRILL_MODEL"]]
     cmd += ["--tools", ""]
     cwd = ROOT / "logs" / "drills_cwd"                     # an empty folder: the repo's CLAUDE.md is not loaded
     cwd.mkdir(parents=True, exist_ok=True)
     try:
-        r = subprocess.run(cmd, capture_output=True, text=True, timeout=240, stdin=subprocess.DEVNULL, cwd=cwd)
+        r = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=120, cwd=cwd, encoding="utf-8")
         env = json.loads(r.stdout)
         m = re.search(r"\{.*\}", env.get("result") or "", flags=re.S)
-        raw = json.loads(m.group(0)) if m else {}
+        obj = json.loads(m.group(0)) if m else None
     except Exception as e:
-        print(f"analyst call failed: {e}")
+        print(f"{tag} call failed: {e}")
+        return None, None
+    u = env.get("usage") or {}
+    return obj, {"calls": 1, "input": u.get("input_tokens", 0) + u.get("cache_creation_input_tokens", 0)
+                 + u.get("cache_read_input_tokens", 0), "output": u.get("output_tokens", 0),
+                 "cost_usd": env.get("total_cost_usd") or 0.0}
+
+
+def spend(st, now_t, usage):
+    if usage:
+        days = st.setdefault("usage", {})
+        u = days.setdefault(utc(now_t, "%Y-%m-%d"), {"calls": 0, "input": 0, "output": 0, "cost_usd": 0.0})
+        for k, v in usage.items():
+            u[k] = u[k] + v
+        for old in sorted(days)[:-30]:                     # keep a month
+            del days[old]
+
+
+# ── news questions: write, answer, settle ────────────────────────────────────────────────────────────────────
+def write_events(T0, open_q, rows):
+    """One call: the writer reads the reports of the last 6 hours and writes questions about what happens next."""
+    heads = headlines(T0)
+    if len(heads) < 5:
+        return [], None
+    still = [q["text"] for q in open_q if q["round"] == "news"]
+    past = [int(r["outcome"]) for r in rows if is_news(r)]
+    L = [f"Time now: {utc(T0, '%A %Y-%m-%d %H:%M')} UTC ({et(T0).strftime('%H:%M')} in New York).",
+         "You write practice forecasting questions for a desk that forecasts world events: wars and ceasefires, "
+         "diplomacy, sanctions, shipping chokepoints, decisions by central banks, governments, courts and "
+         "legislatures, elections, export controls. It is not a markets desk.", "",
+         "News reports from the last 6 hours, newest first (time UTC, source, headline):"] + heads
+    L += ["", "Questions still open (do not repeat or closely paraphrase them):"] + ["  " + t for t in still[-40:]] if still else []
+    if len(past) >= 12:
+        L += ["", f"Of the last {len(past[-60:])} questions you wrote, {sum(past[-60:]) / len(past[-60:]):.0%} came true. "
+              "Aim for between 30% and 60%."]
+    L += ["", f"Write {NEWS_N} new yes/no questions about what happens NEXT in the stories above.", "Rules:",
+          "1. Each question is about an event in the world: an attack, a statement or decision by a named official "
+          "or body, a vote, a ruling, a meeting or its outcome, a deployment, a sanction, a published figure. "
+          "Never about a market price, a share price, a yield or an index.",
+          "2. It is settled by news reports alone: YES if a report published after now and by the deadline says "
+          "the event happened, NO if no such report appears by then. Write that rule in one sentence in 'settle', "
+          "naming what a report must say.",
+          "3. The event must not already be reported as having happened.",
+          f"4. 'minutes' is the deadline in minutes from now, one of {', '.join(str(m) for m in DEADLINES)}. "
+          "At least half of the questions must use 480 or less.",
+          "5. Aim for real doubt. Skip anything nearly certain either way. Mix questions you think are more "
+          "likely than not with questions you think are less likely than not.",
+          "6. Spread the questions over different stories, and prefer stories that are moving right now.",
+          "7. 'keywords': 3 to 8 lower-case words or short phrases. Any report that settles the question YES "
+          "would contain at least one of them.",
+          f"8. 'lane' is one of: {', '.join(LANES)}.",
+          "9. A reader must be able to settle it from a headline. Avoid questions that turn on fine wording, on "
+          "what counts as 'addressing' or 'signalling' something, or on details a headline would not carry.", "",
+          'Reply with one JSON object and no other text: {"questions": [{"text": "...?", "settle": "...", '
+          '"minutes": 120, "keywords": ["..."], "lane": "..."}]}']
+    obj, usage = claude_json("\n".join(L), WRITER_SYSTEM, "writer")
+    qs, have = [], {re.sub(r"\W+", " ", t.lower()).strip() for t in still}
+    for raw in (obj or {}).get("questions") or []:
+        try:
+            text, settle = str(raw["text"]).strip(), str(raw["settle"]).strip()
+            minutes = int(raw["minutes"])
+            kws = [str(k).lower().strip() for k in raw["keywords"] if str(k).strip()][:8]
+        except (KeyError, TypeError, ValueError):
+            continue
+        norm = re.sub(r"\W+", " ", text.lower()).strip()
+        if (minutes not in DEADLINES or not 20 <= len(text) <= 320 or not settle or len(kws) < 2 or norm in have
+                or MARKET_Q.search(text)):
+            continue
+        have.add(norm)
+        label = DEADLINES[minutes]
+        base, n = event_base(rows, label)
+        lane = raw.get("lane") if raw.get("lane") in LANES else "other"
+        qs.append({"qid": f"{utc(T0, '%Y%m%d-%H%M')}Z-ev{len(qs) + 1}", "round": "news", "asked_utc": iso(T0),
+                   "resolves_utc": iso(T0 + minutes * 60), "template": "event", "instrument": lane, "name": lane,
+                   "horizon": label, "ref": None, "thr": None, "base": round(base, 4), "base_n": n, "pattern": None,
+                   "analyst": None, "text": text, "settle": settle[:400], "keywords": kws, "live": 1})
+        if len(qs) == NEWS_N:
+            break
+    return qs, usage
+
+
+def ask_analyst(qs, T0, rows):
+    """One call. Returns ({qid: probability}, usage); an empty dict when Claude is unavailable or the reply is unusable."""
+    if not qs or not claude_bin():
         return {}, None
+    news = headlines(T0)                                   # nothing reported after the round time
+    L = [f"Time now: {utc(T0, '%A %Y-%m-%d %H:%M')} UTC ({et(T0).strftime('%H:%M')} in New York).",
+         "These are practice questions that will be checked. For each one give the probability that the answer is YES.",
+         "A news question is YES only if a news report published after now and by its deadline says the event "
+         "happened. If nothing is reported by then it is NO, so short deadlines usually deserve low numbers.",
+         "'base' is how often past questions of the same kind came true. It is a starting point, not an answer.", "",
+         feedback(rows), "",
+         "News reports from the last 6 hours, newest first (time UTC, source, headline):" if news
+         else "No recent news reports are available."] + news + ["", "Questions:"]
+    for i, q in enumerate(qs, 1):
+        if q["round"] == "news":
+            base = f"base {q['base']:.2f} from {q['base_n']} past questions" if q.get("base_n") else "no base rate yet"
+            L.append(f"  q{i}: {q['text']} Deadline {utc(parse_iso(q['resolves_utc']), '%a %H:%M')} UTC "
+                     f"({q['horizon']} from now). Settles YES if: {q['settle']} [{base}]")
+        else:
+            L.append(f"  q{i}: {q['text']} [base {q['base']:.2f}, pattern {q['pattern']:.2f}]")
+    L += ["", 'Reply with one JSON object mapping each question id to a probability between 0.02 and 0.98, '
+          'like {"q1": 0.55, "q2": 0.31}. No other text.']
+    raw, usage = claude_json("\n".join(L), ANALYST_SYSTEM, "analyst")
     ans = {}
     for i, q in enumerate(qs, 1):
-        v = raw.get(f"q{i}")
-        if isinstance(v, (int, float)) and 0 <= v <= 1:
+        v = (raw or {}).get(f"q{i}")
+        if isinstance(v, (int, float)) and not isinstance(v, bool) and 0 <= v <= 1:
             ans[q["qid"]] = min(0.98, max(0.02, float(v)))
-    u = env.get("usage") or {}
-    usage = {"calls": 1, "input": u.get("input_tokens", 0) + u.get("cache_creation_input_tokens", 0)
-             + u.get("cache_read_input_tokens", 0), "output": u.get("output_tokens", 0),
-             "cost_usd": env.get("total_cost_usd") or 0.0}
     return ans, usage
+
+
+def judge_events(due, st, now_t):
+    """Settle news questions whose deadline has passed, from the reports published inside each question's window.
+    Returns {qid: (outcome, evidence)} or {qid: "void"}; a question that cannot be settled yet is left out."""
+    items = feed_items()
+    newest = items[-1][0] if items else 0
+    out, todo = {}, []
+    for q in due:
+        A, H = parse_iso(q["asked_utc"]), parse_iso(q["resolves_utc"])
+        if newest < H:                                     # the feed has not caught up past the deadline (outage?)
+            continue
+        win = [it for it in items if A < it[0] <= H]
+        hits = [it for it in win if any(k in (it[2] + " " + it[3]).lower() for k in q["keywords"])]
+        cand = win if len(win) <= 120 else hits[-80:]
+        if cand:
+            todo.append((q, cand))
+        else:
+            out[q["qid"]] = (0, "no report in the window matched")
+    while todo:
+        batch, reports = [], []
+        while todo and len(batch) < 10 and len(set(reports) | set(todo[0][1])) <= 260:
+            batch.append(todo.pop(0))
+            reports = sorted(set(reports) | set(batch[-1][1]))
+        if not batch:                                      # one question alone is over the limit: trim it
+            q, cand = todo.pop(0)
+            batch, reports = [(q, cand[-260:])], sorted(cand[-260:])
+        num = {it: i for i, it in enumerate(reports, 1)}
+        L = ["Reports (number, time UTC, source, headline, first line):"]
+        L += [f"  {i}. {utc(it[0])} ({it[1]}) {it[2][:160]}" + (f" | {it[3][:140]}" if it[3] else "") for it, i in num.items()]
+        L += ["", "Questions:"]
+        for j, (q, cand) in enumerate(batch, 1):
+            L += [f"  e{j} (asked {utc(parse_iso(q['asked_utc']))} UTC, deadline {utc(parse_iso(q['resolves_utc']))} UTC): {q['text']}",
+                  f"      Rule: {q['settle']}",
+                  f"      Reports published inside its window: {', '.join(str(num[it]) for it in cand)}"]
+        L += ["", 'For each question answer "yes" only if one of the reports listed for it says that the event '
+              "happened after the question was asked, and give that report's number.",
+              "A report that only repeats what was already known before the question was asked does not count. "
+              "A report of a plan, a threat, a possibility, a call for action or an expectation is not the event.",
+              'Answer "no" if none of its reports says so. Answer "unclear" only if its reports contradict each '
+              "other or the rule cannot be applied.", "",
+              'Reply with one JSON object and no other text, like {"e1": {"outcome": "yes", "report": 12}, '
+              '"e2": {"outcome": "no"}}']
+        obj, usage = claude_json("\n".join(L), JUDGE_SYSTEM, "judge")
+        spend(st, now_t, usage)
+        if obj is None:
+            st["judge_retry_after"] = now_t + 30 * 60
+            break
+        back = {i: it for it, i in num.items()}
+        for j, (q, cand) in enumerate(batch, 1):
+            v = obj.get(f"e{j}") if isinstance(obj.get(f"e{j}"), dict) else {}
+            verdict = str(v.get("outcome", "")).lower()
+            if verdict == "no":
+                out[q["qid"]] = (0, "")
+            elif verdict == "yes" and back.get(as_int(v.get("report"))) in cand:
+                it = back[as_int(v["report"])]
+                out[q["qid"]] = (1, f"{utc(it[0])} ({it[1]}) {it[2][:200]}")
+            elif verdict in ("yes", "unclear"):            # a yes with no valid report behind it does not count
+                out[q["qid"]] = "void"
+    return out
 
 
 # ── resolving and scoring ────────────────────────────────────────────────────────────────────────────────────
@@ -491,12 +729,16 @@ def outcome(q, now_t, pw_ok=True):
     return (1 if abs(px / q["ref"] - 1) > q["thr"] else 0), px
 
 
-def row_of(q, res, now_t):
+def row_of(q, res, now_t, evidence=""):
+    news = q["round"] == "news"
     return {"qid": q["qid"], "round": q["round"], "asked_utc": q["asked_utc"], "resolved_utc": iso(now_t),
-            "template": q["template"], "instrument": q["instrument"], "horizon": q["horizon"], "ref": round(q["ref"], 4),
-            "thr": "" if q["thr"] is None else f"{q['thr']:.6f}", "outcome_px": f"{res[1]:.4f}", "outcome": res[0],
-            "base": q["base"], "pattern": q["pattern"], "analyst": "" if q.get("analyst") is None else q["analyst"],
-            "live": q["live"]}
+            "template": q["template"], "instrument": q["instrument"], "horizon": q["horizon"],
+            "ref": "" if q["ref"] is None else round(q["ref"], 4),
+            "thr": "" if q["thr"] is None else f"{q['thr']:.6f}",
+            "outcome_px": "" if res[1] is None else f"{res[1]:.4f}", "outcome": res[0],
+            "base": q["base"], "pattern": "" if q.get("pattern") is None else q["pattern"],
+            "analyst": "" if q.get("analyst") is None else q["analyst"], "live": q["live"],
+            "text": q["text"] if news or q["round"] == "weekly" else "", "evidence": evidence}
 
 
 def write_rows(rows):
@@ -526,13 +768,31 @@ def save_json(p, obj):
     p.write_text(json.dumps(obj, indent=1, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def resolve(now_t, st):
+def resolve(now_t, st, judge):
+    """Score every open question the data or the news can settle now. News questions are settled only when
+    `judge` is set (once per news round), so their judge calls are batched."""
     open_q = load_json(OPEN, [])
     keep, done, void = [], [], 0
     pw_ok = now_t - st.get("pw_checked", 0) >= 6 * 3600    # poll PortWatch at most every 6 hours
     if pw_ok and any(q["round"] == "weekly" for q in open_q):
         st["pw_checked"] = now_t
+    verdicts = {}
+    if judge and now_t >= st.get("judge_retry_after", 0):
+        due = [q for q in open_q if q["round"] == "news" and now_t >= parse_iso(q["resolves_utc"]) + GRACE]
+        verdicts = judge_events(due, st, now_t) if due else {}
     for q in open_q:
+        if q["round"] == "news":
+            v = verdicts.get(q["qid"])
+            if v is None:                                  # not due, not judged yet, or the feed has not caught up
+                if now_t > parse_iso(q["resolves_utc"]) + 3 * 86400:
+                    void += 1
+                else:
+                    keep.append(q)
+            elif v == "void":
+                void += 1
+            else:
+                done.append(row_of(q, (v[0], None), now_t, v[1]))
+            continue
         res = outcome(q, now_t, pw_ok)
         if res is None:
             keep.append(q)
@@ -547,40 +807,58 @@ def resolve(now_t, st):
 
 
 def tick(now_t, every):
-    """Resolve what is due, then ask the intraday, daily and weekly rounds that are due at `now_t`."""
-    live = True
+    """Settle what is due, then ask the rounds that are due at `now_t`."""
     st = load_json(STATE, {})
-    done, void = resolve(now_t, st)
     now_et = et(now_t)
     day = now_et.date()
-    asked = []
-    if now_et.weekday() < 5:
+    # the news round: its slot starts on the UTC clock; settling and writing both happen once per slot
+    n_slot = now_t // (NEWS_EVERY * 60)
+    Tn = n_slot * NEWS_EVERY * 60
+    news_due = (claude_bin() is not None and st.get("news_slot") != f"{NEWS_EVERY}:{n_slot}"
+                and now_t - Tn <= min(NEWS_EVERY * 60 - 60, 600))
+    done, void = resolve(now_t, st, news_due)
+    rows = load_scored(live_only=True)
+    asked, note = [], ""
+    if news_due:
+        st["news_slot"] = f"{NEWS_EVERY}:{n_slot}"
+        open_q = load_json(OPEN, [])
+        fresh = [it for it in feed_items() if st.get("news_seen", 0) < it[0] <= Tn]
+        if len(fresh) >= 3 and sum(q["round"] == "news" for q in open_q) < MAX_OPEN_NEWS:
+            evs, usage = write_events(Tn, open_q, rows)
+            spend(st, now_t, usage)
+            if evs:
+                st["news_seen"] = Tn
+            asked += evs
+            note += f", wrote {len(evs)} news question(s)"
+        else:
+            note += ", no fresh news"
+    # the weekly measured-state round: Hormuz transits, Mondays after 16:20 ET
+    if now_et.weekday() == 0 and now_et.time() >= dt.time(16, 20) and st.get("weekly") != day.isoformat():
+        st["weekly"] = day.isoformat()
+        asked += ask_weekly(day, True)
+    # market rounds: off unless GT_DRILL_PRICES=1
+    if PRICES and now_et.weekday() < 5:
         o, c = session(day)
         slot = (now_t - o) // (every * 60)
         T0 = o + slot * every * 60
         key = f"{day.isoformat()}:{every}:{slot}"
         if slot >= 1 and T0 < c and now_t - T0 <= min(every * 60 - 60, 600) and st.get("slot") != key:
-            asked = ask_intraday(T0, every, live)
+            asked += ask_intraday(T0, every, True)
             st["slot"] = key
         elif now_et.time() >= dt.time(16, 20) and now_t - c <= 4 * 3600 and st.get("daily") != day.isoformat():
             if bars5("SPY").at(c) and bars5("SPY").at(c)[0] >= c - 900:      # the session really traded today
-                T0 = c
-                asked = ask_daily(day, live) + (ask_weekly(day, live) if now_et.weekday() == 0 else [])
+                asked += ask_daily(day, True)
             st["daily"] = day.isoformat()
-    note = ""
     if asked:
-        ans, usage = ask_analyst(asked, T0)
+        ans, usage = ask_analyst(asked, min(parse_iso(q["asked_utc"]) for q in asked), rows)
+        spend(st, now_t, usage)
         for q in asked:
             q["analyst"] = ans.get(q["qid"])
         save_json(OPEN, load_json(OPEN, []) + asked)
-        note = f", analyst answered {len(ans)}" if ans else ", no analyst"
-        if usage:
-            u = st.setdefault("usage", {}).setdefault(day.isoformat(), {"calls": 0, "input": 0, "output": 0, "cost_usd": 0.0})
-            for k, v in usage.items():
-                u[k] = u[k] + v
+        note += f", analyst answered {len(ans)}" if ans else ", no analyst"
     save_json(STATE, st)
     stale = f", no fresh price for {' '.join(STALE)}" if STALE else ""
-    print(f"drills: resolved {done}" + (f", void {void}" if void else "") + f", asked {len(asked)}{note}{stale}, "
+    print(f"drills: settled {done}" + (f", void {void}" if void else "") + f", asked {len(asked)}{note}{stale}, "
           f"open {len(load_json(OPEN, []))}")
 
 
@@ -634,39 +912,56 @@ def table(summary):
     return L
 
 
+def section(title, rows, rival):
+    """One block of the report: the score table, the analyst against its rival baseline, its calibration."""
+    s = summarize(rows)
+    s["analyst_beats_" + rival] = day_boot(rows, rival, "analyst")
+    L = ["", f"## {title}: {s['n']} scored answers over {s['days']} day(s)", ""] + table(s)
+    if s["analyst_beats_" + rival] is not None:
+        L += ["", f"The analyst beats the {rival} baseline in {s['analyst_beats_' + rival]:.0%} of day-resamples."]
+    else:
+        L += ["", f"Too few days yet to say whether the analyst beats the {rival} baseline (needs 5)."]
+    cal = calibration([(float(r["analyst"]), int(r["outcome"])) for r in rows if r["analyst"] not in ("", None)])
+    if cal:
+        L += ["", "| Analyst said | Came true | Answers |", "|---|---|---|"]
+        L += [f"| {band} | {rate:.0%} | {n} |" for band, rate, n in cal]
+    return s, L
+
+
 def report():
     rows = load_scored(live_only=True)
     st = load_json(STATE, {})
+    world = [r for r in rows if r["round"] in ("news", "weekly")]
+    market = [r for r in rows if r["round"] in ("intraday", "daily")]
     L = ["# Practice questions report", "",
          "Brier score, lower is better; 0.250 is a coin. Practice only: nothing here is a published call."]
-    if rows:
-        s = summarize(rows)
-        s["analyst_beats_pattern"] = day_boot(rows, "pattern", "analyst")
-        s["pattern_beats_coin"] = day_boot(rows, "coin", "pattern")
-        save_json(SUMMARY, s)
-        L += ["", f"## Live record: {s['n']} scored answers over {s['days']} day(s)", ""] + table(s)
-        if s["analyst_beats_pattern"] is not None:
-            L += ["", f"The analyst beats the pattern baseline in {s['analyst_beats_pattern']:.0%} of day-resamples."]
-        else:
-            L += ["", "Too few days yet to say whether the analyst beats the pattern baseline (needs 5)."]
-        mine = [(float(r["analyst"]), int(r["outcome"])) for r in rows if r["analyst"] not in ("", None)]
-        if mine:
-            L += ["", "### Analyst calibration", "", "| Said | Came true | Answers |", "|---|---|---|"]
-            for lo in (0.0, 0.2, 0.4, 0.6, 0.8):
-                sub = [o for p, o in mine if lo <= p < lo + 0.2 or (lo == 0.8 and p == 1.0)]
-                if sub:
-                    L.append(f"| {int(lo * 100)}-{int(lo * 100) + 20}% | {sum(sub) / len(sub):.0%} | {len(sub)} |")
+    summary = {}
+    if world:
+        summary["world"], block = section("World-event questions", world, "base")
+        L += block
+        last = [r for r in world if is_news(r)][-15:]
+        if last:
+            L += ["", "### Last settled news questions", "", "| Asked (UTC) | Deadline | Question | Analyst | Outcome | Settled by |",
+                  "|---|---|---|---|---|---|"]
+            clean = lambda t: t.replace("|", "/").replace("\n", " ")
+            L += [f"| {r['asked_utc'][5:16].replace('T', ' ')} | {r['horizon']} | {clean(r['text'])} | "
+                  f"{r['analyst'] or '-'} | {'YES' if r['outcome'] == '1' else 'NO'} | {clean(r['evidence']) or '-'} |"
+                  for r in reversed(last)]
     else:
-        L += ["", "## Live record", "", "No live answers scored yet."]
+        L += ["", "## World-event questions", "", "No answers scored yet."]
+    if market:
+        summary["market"], block = section("Market questions", market, "pattern")
+        L += block
+    if summary:
+        save_json(SUMMARY, summary)
     use = st.get("usage") or {}
     if use:
-        last = sorted(use)[-1]
-        u = use[last]
-        L += ["", "## Claude usage", "", f"{last}: {u['calls']} call(s), {u['input']:,} input and {u['output']:,} "
-              f"output tokens, about ${u['cost_usd']:.2f} at list prices."]
+        L += ["", "## Claude usage", "", "| Day (UTC) | Calls | Input tokens | Output tokens | Cost at list prices |", "|---|---|---|---|---|"]
+        L += [f"| {d} | {use[d]['calls']} | {use[d]['input']:,} | {use[d]['output']:,} | ${use[d]['cost_usd']:.2f} |"
+              for d in sorted(use)[-7:]]
     rp = load_json(REPLAY_SUMMARY, None)
     if rp:
-        L += ["", f"## Baselines replayed over {rp['days']} past session(s), {rp['n']} answers "
+        L += ["", f"## Market baselines replayed over {rp['days']} past session(s), {rp['n']} answers "
               f"(rounds every {rp['every']} minutes, no analyst)", ""] + table(rp)
         if rp.get("pattern_beats_coin") is not None:
             L += ["", f"The pattern baseline beats a coin in {rp['pattern_beats_coin']:.0%} of day-resamples."]
@@ -711,6 +1006,8 @@ def replay(n_days, every):
 def main():
     if EVERY % 5 or not 5 <= EVERY <= 120:
         sys.exit("GT_DRILL_EVERY_MIN must be a multiple of 5 between 5 and 120")
+    if NEWS_EVERY % 5 or not 5 <= NEWS_EVERY <= 720:
+        sys.exit("GT_DRILL_NEWS_EVERY_MIN must be a multiple of 5 between 5 and 720")
     assert not any(BANNED.search(s + " " + n) for s, n in INSTRUMENTS), "oil, energy and defense prices are banned"
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     arg = lambda flag, default: sys.argv[sys.argv.index(flag) + 1] if flag in sys.argv else default

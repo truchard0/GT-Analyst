@@ -1,5 +1,5 @@
 # GT-Analyst — LIVE STATE (handoff doc)
-**Last updated: 2026-11-18 (practice questions built, intraday rounds, §7j; cloud runs off; server loop + learning loop built, §7i and §9; tape note: Gulf tit-for-tat, Brent 93, December hike priced, Nvidia after Huang; new calls #86, #87, §7h; war-driven price calls banned).** Read this first after any context reset. It records what
+**Last updated: 2026-11-18 (practice questions on world events, written from the news and settled by the news, §7j; cloud runs off; server loop + learning loop built, §7i and §9; tape note: Gulf tit-for-tat, Brent 93, December hike priced, Nvidia after Huang; new calls #86, #87, §7h; war-driven price calls banned).** Read this first after any context reset. It records what
 the engine IS, what it has LEARNED, and what is currently STAKED. Everything here can be rebuilt from
 `ledger/ledger.db` and `data/timelines.json`; this is the summary.
 
@@ -239,49 +239,58 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
 
 ---
 
-## 7j. PRACTICE QUESTIONS (11/18): `pipeline/drills.py`
-User request: "a daily set of practice questions that resolve within a week and are checked automatically … have it
-be things intraday as well, how granular can we make it?"
-- **What it is:** many small forecasts on things data can check, asked and scored by the server loop with no one
-  watching. They are practice. They never enter the ledger, the timeline or any report as calls.
-- **Rounds:**
-  - intraday: every `GT_DRILL_EVERY_MIN` minutes of the US cash session (default 30; any multiple of 5 from 5 to
-    120). Per instrument, `up?` and `big?` (move larger than its usual size) to the next round and to the close;
-  - daily, after the close: `up?` and `big?` by the next close, `up?` over five sessions;
-  - weekly, Mondays: Hormuz ship transits over the next 7 days (IMF PortWatch): 10 a day or more? above last week?
-- **Instruments:** SPY, QQQ, VIX, the 10-year yield, 2-year Treasury futures. Oil, energy and defense are excluded
-  in code (the 11/18 ban).
-- **Who answers:** coin (0.50), base rate, pattern (base rate given the last interval), and the analyst (one headless
-  Claude call per round, given the baselines, recent headlines and its own calibration record). A level only counts
-  if it beats the one before it. `GT_DRILL_ANALYST=0` runs the baselines alone at no usage.
-- **No look-ahead:** every level and outcome is the last 5-minute bar that started before the timestamp. Daily
-  questions use the same 5-minute prices; daily bars supply history only.
-- **Files:** open questions `logs/drills_open.json`; scored answers `data/drills/scored/<date>.csv`; scoreboard
-  `data/drills/report.md` and `summary.json` (rebuilt daily and committed). Commands: `tick`, `report`, `replay`.
-- **How granular (replay of 13 past sessions, baselines only, Brier; a coin is 0.250):**
+## 7j. PRACTICE QUESTIONS ON WORLD EVENTS (11/18): `pipeline/drills.py`
+User instructions, 11/18: "a daily set of practice questions that resolve within a week and are checked
+automatically"; "not just for indexes but things that may happen intraday based on the news"; "this is not a stock
+bot, it is a prediction bot for world events, remember that".
+- **What it is:** several times a day the bot writes yes/no questions about what happens next in the news, answers
+  them, and settles them from later news, with no one watching. They are practice. They never enter the ledger, the
+  timeline or any report as calls.
+- **A news round** (every `GT_DRILL_NEWS_EVERY_MIN` minutes, default 60, any multiple of 5 from 5 to 720, around the
+  clock, only when 3 or more new reports have arrived):
+  1. **settle:** a judge reads the reports published inside each due question's window and answers yes, no or
+     unclear (unclear voids it). A yes must cite the report that settles it; the report is stored with the score;
+  2. **write:** a writer reads the last 6 hours of reports and writes `GT_DRILL_NEWS_QUESTIONS` (default 6)
+     questions: an attack, a statement or decision by a named official, a vote, a ruling, a sanction, a published
+     figure. Deadlines 30 minutes to 7 days, at least half within 8 hours. Market-price questions are refused in code;
+  3. **answer:** the analyst gives a probability for each, seeing only reports published before the round time,
+     plus its own record: score against the base rate, calibration table, last 10 settled questions.
+- **Baselines:** a coin, and the base rate (how often past questions with a deadline of hours, or of days, came
+  true). The analyst only counts if it beats the base rate.
+- **Weekly, Mondays:** Hormuz ship transits over the next 7 days (IMF PortWatch), settled by data.
+- **Market questions are OFF** (`GT_DRILL_PRICES=1` turns them on). Replayed over 13 sessions at round lengths from
+  5 to 60 minutes, every intraday index and rates question sat within 0.007 Brier of a coin, so they exercise
+  calibration only. Oil, energy and defense prices are excluded either way.
+- **Files:** open questions `logs/drills_open.json`; scored answers `data/drills/scored/<date>.csv` (with the
+  question and the settling report); scoreboard `data/drills/report.md` and `summary.json`, rebuilt daily and
+  committed. Commands: `tick`, `report`, `replay`.
+- **Live test on 11/17-11/18 headlines (test copy, real Claude):** 4 rounds wrote 24 questions, for example "Will
+  Iran launch a new missile or drone attack on US forces or a Gulf Arab state's territory within the next 24
+  hours?" (analyst 0.60). Two reached their deadline and were settled; I checked both against the reports in their
+  windows, and gave the judge a third question with a known answer:
+  - Bahrain reports damage or casualties within 4 hours: NO. Correct; reports carried sirens and an alert only.
+  - Trump remarks on the Qeshm strike within 4 hours: NO. Debatable; a WSJ headline said "Trump Signals Restraint
+    on Iran". The judge is strict, so vague questions lean NO. The writer is now told to avoid them.
+  - Known answer (Kuwait reports drone attacks within 4 hours): YES, citing the Al Jazeera report. Correct.
+- **Limits:**
+  - a question means "will a report saying X reach this bot's feed by the deadline". An event that happens but is
+    not reported in the feed in time counts as NO;
+  - the judge reads headlines and first lines, not full articles, and can be wrong;
+  - on the first rounds the writer chose many long shots (analyst answers mostly 0.04 to 0.45). It is shown its
+    hit rate each round and told to aim for 30% to 60%; whether that works is not yet seen;
+  - nothing has been scored over more than a few hours. There is no evidence yet that the analyst beats the base rate.
+- **Usage, measured:** about 6,000 input tokens and $0.12 at list price per call, on the model the CLI defaulted
+  to here. A round is 2 calls plus 1 judge call when something is due:
 
-  | Round length | Answers a day | Claude calls a day | Pattern on `big?` next round | Pattern on `up?` next round |
+  | Round every | Rounds a day, at most | Questions a day, at most | Calls a day, at most | List price a day, at most |
   |---|---|---|---|---|
-  | 5 min | about 1,500 | 78 | 0.245 | 0.244 |
-  | 10 min | about 740 | 39 | 0.244 | 0.248 |
-  | 15 min | about 490 | 26 | 0.246 | 0.251 |
-  | 30 min (default) | about 240 | 13 | 0.245 | 0.251 |
-  | 60 min | about 110 | 7 | 0.246 | 0.255 |
+  | 15 min | 96 | 576 | 288 | about $35 |
+  | 30 min | 48 | 288 | 144 | about $17 |
+  | 60 min (default) | 24 | 144 | 72 | about $9 |
+  | 120 min | 12 | 72 | 36 | about $4 |
 
-  - The floor is 5 minutes: the price source and the loop both step in 5-minute bars.
-  - Finer rounds buy volume, not predictability. Every intraday question type sits within 0.007 of a coin at every
-    round length. `big?` is slightly predictable (volatility clusters). The small `up?` edge at 5 minutes is mostly
-    unchanged prices counting as "no".
-  - Answers within a day are correlated, so the count of independent days matters more than the count of answers.
-  - Storage: scored answers are committed, about 7 MB a year at 30 minutes and about 40 MB a year at 5 minutes.
-- **Live test (3 rounds, 40 scored answers, real Claude):** analyst 0.241, pattern 0.239, coin 0.250. Too few to
-  rank them. Usage: about 4,000 input tokens and about $0.07 at list price per round, so about $1 a day at 30
-  minutes and about $6 a day at 5 minutes.
-- **Not yet seen running during market hours.** Every test replayed past sessions. An instrument whose price feed
-  is delayed more than 10 minutes is left out of that round, and the status line names it ("no fresh price for …").
-- **What it can and cannot teach:** it trains calibration and gives daily feedback. It does not test judgment about
-  wars or policy; only the slow ledger calls do that. The weekly Hormuz questions are the one bridge between them.
-- **Not live:** it starts when the server loop starts (§9).
+  `GT_DRILL_MODEL` picks a cheaper model. Quiet hours cost nothing: a round with fewer than 3 new reports is skipped.
+- **Not live:** it starts when the server loop starts (§9), and needs the `claude` CLI there.
 
 ## 7i. THE LEARNING LOOP (11/18)
 - **Diagnosis on the 56 scored calls:**
@@ -306,7 +315,8 @@ be things intraday as well, how granular can we make it?"
   it loses by 0.01.
 - **`ledger.py add` now prints the trained prior** for the call's type next to the stated probability. It never
   blocks.
-- **Practice questions: built 11/18, see §7j.** More and faster scored answers is the main thing the record lacked.
+- **Practice questions on world events: built 11/18, see §7j.** More and faster scored answers is the main thing the
+  record lacked.
 - **Stock-call forward test closed** with 0 scored calls: no evidence either way; v2 retired
   (`reports/backtests/forward_v2_scorecard.md`).
 
