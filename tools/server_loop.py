@@ -7,6 +7,7 @@ Printer fork's watchdog (through its gt_analyst_runner.py), systemd, or a termin
     python3 tools/server_loop.py            # run forever
     python3 tools/server_loop.py --once     # one ingest and one daily cycle now, then exit (exit 1 if a gate fails)
     python3 tools/server_loop.py --status   # print the status file
+    python3 tools/server_loop.py --backup   # write the weekly server-only backup archive now
 
 EVERY TICK (GT_TICK_S, default 300 s, aligned to the wall clock: :00:20, :05:20, ...)
     1 pipeline/drills.py tick   practice questions about world events: settle what is due, then, every
@@ -27,6 +28,17 @@ ONCE A DAY (after GT_DAILY_UTC, default 13:17 UTC)
                           it off. Without Claude the due calls are listed in the status file as needs_scoring.
     6 gates               ledger.py sweep, tools/web_coverage.py, tools/debug_all.py
     7 commit and push     only the bot's own paths. A refused push is shown in the status and retried every tick.
+
+DASHBOARD (GT_DASHBOARD=0 turns it off). The loop keeps pipeline/dashboard.py running on GT_DASH_PORT (default
+    8787), restarts it if it dies and after a pull changes its code. It binds to loopback only, so reach it from
+    another machine through an SSH tunnel:  ssh -L 8787:127.0.0.1:8787 <user>@<server>  then open
+    http://localhost:8787. GT_LAN=1 binds all interfaces instead: the dashboard has no login and its buttons
+    spend Claude usage, so use that only on a private network.
+SELF-UPDATE. When a pull changes this file, the loop re-executes itself on the new code (same PID), so the
+    supervisor does not need to restart it.
+ONCE A WEEK (GT_BACKUP_WEEKDAY, default 6 = Sunday, after the daily cycle)
+    backups/gt_server_only_<date>.tar.gz: the files git does not carry (.env, config.json, ledger/seen.db, the
+    loop's own state). The PC's weekly download (tools/pc_weekly_backup.ps1) fetches it together with the repo.
 
 STATUS. GT_HEARTBEAT (default logs/server_status.json) is rewritten before every step: state, due calls,
 needs_scoring, gate results, push_ok, unpushed commits, last error. A stale file means the loop is wedged.
@@ -73,8 +85,22 @@ SCORING_TOOLS = ("Read,Glob,Grep,Edit,Write,WebSearch,WebFetch,"
                  "Bash(python3 tools/web_coverage.py*),Bash(python3 tools/debug_all.py*)")
 
 status = {"pid": os.getpid(), "started_utc": None, "state": "starting"}
+DASH_ON = os.environ.get("GT_DASHBOARD", "1") != "0"
+DASH_PORT = os.environ.get("GT_DASH_PORT", "8787")
+DASH_SRC = ROOT / "pipeline" / "dashboard.py"
+DASH_LOG = ROOT / "logs" / "dashboard.log"
+BACKUP_DIR = ROOT / "backups"                          # git-ignored
+BACKUP_WEEKDAY = int(os.environ.get("GT_BACKUP_WEEKDAY", "6"))   # Monday = 0 ... Sunday = 6
+BACKUP_KEEP = 4
+BACKUP_PATHS = [".env", "config.json", "ledger/seen.db", "logs/server_state.json", "logs/server_status.json"]
+
 STOP = False
 CHILD = None
+DASH = None                                            # the dashboard child (long-lived, not time-capped)
+DASH_MTIME = 0.0
+DASH_RESTARTS = 0
+SELF = pathlib.Path(__file__).resolve()
+SELF_MTIME = SELF.stat().st_mtime
 
 
 def now():
@@ -265,6 +291,106 @@ def daily_cycle():
     return True
 
 
+def dashboard_stop():
+    global DASH
+    if DASH is not None and DASH.poll() is None:
+        try:
+            DASH.terminate()
+            DASH.wait(timeout=10)
+        except Exception:
+            try:
+                DASH.kill()
+            except Exception:
+                pass
+    DASH = None
+
+
+def dashboard_keepalive():
+    """Keep the dashboard up. Start it, restart it if it died, and restart it when its code changed (a pull)."""
+    global DASH, DASH_MTIME, DASH_RESTARTS
+    if not DASH_ON:
+        return
+    try:
+        mtime = DASH_SRC.stat().st_mtime
+    except OSError:
+        beat(dashboard={"up": False, "error": "pipeline/dashboard.py not found"})
+        return
+    alive = DASH is not None and DASH.poll() is None
+    if alive and mtime == DASH_MTIME:
+        return
+    why = "code changed" if alive else ("exited" if DASH is not None else "start")
+    dashboard_stop()
+    try:
+        DASH_LOG.parent.mkdir(parents=True, exist_ok=True)
+        log = open(DASH_LOG, "ab")
+        DASH = subprocess.Popen([PY, str(DASH_SRC), DASH_PORT], cwd=ROOT, stdout=log, stderr=subprocess.STDOUT,
+                                stdin=subprocess.DEVNULL)
+        log.close()
+    except Exception as e:
+        say(f"dashboard: could not start ({e})")
+        beat(dashboard={"up": False, "error": str(e)})
+        return
+    DASH_MTIME = mtime
+    if why != "start":
+        DASH_RESTARTS += 1
+    time.sleep(1.5)                                        # a port already in use shows up as an instant exit
+    up = DASH.poll() is None
+    bind = "all interfaces (GT_LAN=1)" if os.environ.get("GT_LAN") == "1" else "loopback only (use an SSH tunnel)"
+    say(f"dashboard {why}: {'up' if up else 'FAILED, see logs/dashboard.log'} on port {DASH_PORT}, {bind}")
+    beat(dashboard={"up": up, "pid": DASH.pid if up else None, "port": DASH_PORT, "bind": bind,
+                    "restarts": DASH_RESTARTS, "started_utc": iso(),
+                    "error": None if up else f"exited at once with code {DASH.returncode}; see logs/dashboard.log"})
+
+
+def reexec_if_updated():
+    """A pull may bring a newer version of this file. Replace the running loop with it, keeping the same PID."""
+    try:
+        changed = SELF.stat().st_mtime != SELF_MTIME
+    except OSError:
+        return
+    if not changed or STOP:
+        return
+    say("server_loop.py changed on disk: restarting the loop on the new code")
+    dashboard_stop()
+    beat(state="restarting on new code")
+    sys.stdout.flush()
+    os.execv(PY, [PY, str(SELF)] + sys.argv[1:])
+
+
+def backup_due(st):
+    return now().weekday() == BACKUP_WEEKDAY and st.get("last_backup_date") != now().strftime("%Y-%m-%d")
+
+
+def weekly_backup(st):
+    """Tar the files git does not carry, for the PC's weekly download. Keeps the newest BACKUP_KEEP archives."""
+    import tarfile
+    day = now().strftime("%Y%m%d")
+    try:
+        BACKUP_DIR.mkdir(parents=True, exist_ok=True)
+        out = BACKUP_DIR / f"gt_server_only_{day}.tar.gz"
+        tmp = out.with_name(out.name + ".tmp")
+        got = []
+        with tarfile.open(tmp, "w:gz") as tf:
+            for rel in BACKUP_PATHS:
+                fp = ROOT / rel
+                if fp.exists():
+                    tf.add(fp, arcname=rel)
+                    got.append(rel)
+        os.chmod(tmp, 0o600)                               # it holds .env and config.json
+        os.replace(tmp, out)
+        for old in sorted(BACKUP_DIR.glob("gt_server_only_*.tar.gz"))[:-BACKUP_KEEP]:
+            old.unlink()
+        st["last_backup_date"] = now().strftime("%Y-%m-%d")
+        save_state(st)
+        beat(backup={"file": f"backups/{out.name}", "utc": iso(), "bytes": out.stat().st_size, "holds": got})
+        say(f"weekly backup written: {out.name} ({', '.join(got) or 'nothing to add'})")
+        return True
+    except Exception as e:
+        say(f"weekly backup failed: {e}")
+        beat(backup={"error": str(e), "utc": iso()})
+        return False
+
+
 def cycle_due(st):
     """True once per UTC day, at or after DAILY_UTC, and not before a retry backoff expires."""
     t = now()
@@ -284,9 +410,13 @@ def stop(signum, frame):
             CHILD.terminate()
         except Exception:
             pass
+    dashboard_stop()
 
 
 def main():
+    if "--backup" in sys.argv:
+        os.chdir(ROOT)
+        return 0 if weekly_backup(load_state()) else 1
     if "--status" in sys.argv:
         print(STATUS.read_text(encoding="utf-8") if STATUS.exists() else "no status file yet")
         return 0
@@ -303,6 +433,8 @@ def main():
             "Fix the git credentials on this machine.")
     st = load_state()
     while not STOP:
+        if not once:
+            dashboard_keepalive()
         drills()                                           # first: its rounds are tied to the clock
         if STOP:
             break
@@ -317,6 +449,11 @@ def main():
             save_state(st)
         elif status.get("unpushed"):
             push()
+        if not once:
+            dashboard_keepalive()                          # a pull in the daily cycle may have changed its code
+            if backup_due(st):
+                weekly_backup(st)
+            reexec_if_updated()
         beat(state="idle", head=git_out("rev-parse", "--short", "HEAD"))
         if once:
             g = status.get("gates") or {}
@@ -324,6 +461,7 @@ def main():
         nxt = (int(time.time()) // TICK_S + 1) * TICK_S + 20     # the next wall-clock boundary, plus 20 s for data
         while not STOP and time.time() < nxt:
             time.sleep(2)
+    dashboard_stop()
     beat(state="stopped")
     say("server loop stopped")
     return 0

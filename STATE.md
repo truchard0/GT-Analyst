@@ -516,6 +516,22 @@ running here either").**
   - status and heartbeat: `logs/server_status.json` (or `GT_HEARTBEAT`), rewritten before every step, with `push_ok`,
     `unpushed`, `needs_scoring`, gate results and the last error. A refused push is retried every tick;
   - watchlist triggers stay dry-run unless a `config.json` on that machine turns them on.
+- **The server also serves the dashboard (11/18, user instruction: "none of it on this PC, all on the server, with a
+  once-a-week download to ensure it's backed up").** `server_loop.py` keeps `pipeline/dashboard.py` running on port 8787,
+  restarts it if it dies and after a pull changes its code. It binds to loopback only; open it from the PC through an
+  SSH tunnel (`ssh -L 8787:127.0.0.1:8787 <user>@<server>`, then http://localhost:8787). `GT_LAN=1` binds all
+  interfaces instead: the dashboard has no login and its buttons spend Claude usage, so only on a private network.
+  `GT_DASHBOARD=0` turns it off. The loop also re-executes itself when a pull changes `server_loop.py`.
+- **Weekly backup.** On Sundays the loop writes `backups/gt_server_only_<date>.tar.gz` (git-ignored, mode 600):
+  `.env`, `config.json`, `ledger/seen.db` and the loop's state. The PC runs nothing except a weekly scheduled download,
+  `tools/pc_weekly_backup.ps1`: a full git mirror from GitHub, a dated zip of the branch (8 kept), and with `-Server`
+  the server-only archive by scp. One-time PC setup: `tools/pc_register_backup.ps1` (removes the old ingest task, stops
+  local processes, registers the Sunday 10:00 task, runs and verifies the first backup). It does not delete the PC
+  checkout; the owner does that after "Backup verified".
+- **Tested 11/18 in the cloud container:** dashboard start, restart after death, restart after a code change, a port
+  clash reported as an error, clean stop; the archive; the self-restart; the mirror, verify and zip steps of the backup
+  with git on Linux. **Not tested: the two PowerShell scripts on Windows, and scp against the real server.**
+- **To go live the server needs one manual restart of the loop** (the running copy predates the self-update code).
 - **Supervisor: the Printer fork's watchdog** (`Sampatel00/Printer`, commit `d81b674`, merged into the fork's `main`
   on 11/18 by fast-forward). Runner `gtanalyst` = `tradingview/gt_analyst_runner.py`, non-critical (`storm=False`),
   heartbeat `_gt_analyst_alive.json`. With no GT-Analyst checkout on the machine it idles; it never crash-loops.

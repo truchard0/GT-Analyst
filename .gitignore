@@ -24,3 +24,6 @@ __pycache__/
 # ceasefire-timing raw downloads (~45MB; rebuilt by tools/build_ceasefire_data.py)
 data/ceasefire/raw/
 data/gt_backtest/live/
+
+# weekly server-only backup archives (they hold .env and config.json)
+backups/
