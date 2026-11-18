@@ -98,7 +98,7 @@ Nvidia Q3 FY27 release, 17 Nov 2026; consensus per LSEG as reported by Reuters a
 
 - **The scandal.** Huang resigned on 12 November after reports of a relationship with a woman believed to be a Chinese agent, linked to the Megaspeed export investigation. Chief financial officer Colette Kress is interim chief executive, and the chair says the board will not rehire Huang (Reuters, reported 17 Nov, 23:28 UTC).
 
-- **The risk to watch is financing, not demand.** Nvidia carries about $530bn of financial guarantees to customers (Tom's Hardware, 16 Nov), three customers made up 36% of the quarter's revenue, and Reuters reports the financing machine may run with "less risk appetite" without Huang. With the 10-year above 5%, vendor finance is the channel through which a governance shock could become an order shock.
+- **The risk to watch is financing, not demand.** Nvidia carries about $108.5bn of financial guarantees (10-Q for the quarter to 26 July; about $118bn in October per press), inside about $530bn of total commitments plus guarantees (Tom's Hardware, 16 Nov), three customers made up 36% of the quarter's revenue, and Reuters reports the financing machine may run with "less risk appetite" without Huang. With the 10-year above 5%, vendor finance is the channel through which a governance shock could become an order shock.
 
 - **Policy.** A US curb on Chinese access to data centers is advancing despite lobbying by Amazon, Google and Meta (Reuters, 17 Nov), and Nvidia has warned buyers of legal exposure for serving Chinese clients.
 
@@ -125,6 +125,8 @@ Four developments would move these calls:
 - **Nvidia or a large customer pulling back on guarantees or financing.** That turns an intact demand story into order risk and would end our no-call on the AI complex.
 
 This note states direction and mechanism only. It is analysis, not investment advice, and it gives no position sizes.
+
+*Correction, 17 Nov 2026 (PT): an earlier version of this note said Nvidia carries about $530bn of financial guarantees. That figure is total commitments plus guarantees. Guarantees alone were $108.5bn in the 10-Q for the quarter to 26 July 2026 ([Nvidia 10-Q](https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000075/nvda-20260726.htm)). No call in this note changes.*
 
 
 ---
@@ -181,7 +183,7 @@ Batch: `inbox/latest.md`, 2,012 items across four ingests (11/15 13:18Z, 11/16 1
 **Market translation:** real-rate shock (Branch-B cross-asset map without the oil leg): TLT down, gold down, USD up, long-duration equity derated. Priced-in: high; the call adds no edge on direction, it repairs a stale node (0.55 while the market was at 95%). #84 desk 0.82 -> 0.90.
 
 ## A5. Event E4: Nvidia after Huang
-Formal: PASS-WITH-FLAGS (key-person shock is a one-shot; financing chain claim rests on one trade-press figure for the $530B guarantees). Conviction for any directional AI call: capped at P 0.55 (market-transmission 5.2); stress gate OFF (z -1.25 on 11/17) so no underperform call is permitted. NOT LEDGERED. Timeline re-weights: capex-digestion 0.55 -> 0.42, capex-sprint 0.25 -> 0.40, ai-winter 0.20 -> 0.18.
+Formal: PASS-WITH-FLAGS (key-person shock is a one-shot; financing chain claim rested on one trade-press figure, "$530B guarantees"; corrected 17 Nov PT: $530B is commitments plus guarantees, guarantees alone $108.5B per the July 10-Q). Conviction for any directional AI call: capped at P 0.55 (market-transmission 5.2); stress gate OFF (z -1.25 on 11/17) so no underperform call is permitted. NOT LEDGERED. Timeline re-weights: capex-digestion 0.55 -> 0.42, capex-sprint 0.25 -> 0.40, ai-winter 0.20 -> 0.18.
 
 ## A6. Other re-marks
 - #3 (Pentagon ~$1.5T; falsifier enacted topline < $1.3T): Senate bill at $1.1T -> AT RISK, desk 0.30. `war-economy-2027` 0.25 -> 0.20.

@@ -395,6 +395,15 @@ bot, it is a prediction bot for world events, remember that".
   The AI clusters share one demand bet: read them together when a miss comes from demand.
 - **Forward test:** the skill's §8 sets the kill criteria per layer once 10 calls in a layer have resolved.
 
+## 7m. PC SESSION, 17 Nov 2026 PT (18 Nov UTC): the five items the cloud session left open
+Everything now runs from `main`. This PC session is the only writer of `ledger/ledger.db`.
+1. **Tape-note correction: DONE.** Checked against the Nvidia 10-Q for the quarter to 26 July 2026 itself (Note on
+   commitments): maximum exposure under guarantees is $108.5bn ($105.0bn SB Energy + $3.5bn land, power and shell);
+   $366bn commitments + $56bn additional commitments + $108.5bn guarantees is the "$530bn". Fixed: the Claude Doc, the
+   markdown copy (body, appendix A5, dated correction line), both exports (docx still embeds 6 charts) and two history
+   lines in `data/timelines.json`. No call changed. New helper: `tools/save_doc_export.py` decodes a Docs export
+   result into the .docx/.pdf and counts the pictures.
+
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all
 background runs have finished and their files are committed. It is safe to archive. The list below is what it left
