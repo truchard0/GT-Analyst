@@ -249,6 +249,9 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
   - CPI energy components stay allowed under `rates`.
   - Reports show oil and sector moves only as context, never as a call.
   - The rule is written into CLAUDE.md, the market-transmission skill banner and contrarian-red-team C.2.
+  - The stock-call forward test is stopped. Its v2 rules are war-driven sector calls (defense, energy, the
+    Hormuz flag), so the 11/20 cohort task is disabled. The 11/27 final-scoring task still runs and closes the
+    test on the two registered cohorts (10/30 and 11/13, both 0 calls). No v2 calls are made from now on.
   - The two open Brent calls (#80, #83) stay on the book to be scored honestly. They are not withdrawn and will
     not appear as calls in future reports.
 - **Grandfathered open calls outside the new band:** #16 (0.74), #38 (0.70), #80 (0.70), #83 (0.70). Read them as
