@@ -395,6 +395,50 @@ bot, it is a prediction bot for world events, remember that".
   The AI clusters share one demand bet: read them together when a miss comes from demand.
 - **Forward test:** the skill's §8 sets the kill criteria per layer once 10 calls in a layer have resolved.
 
+## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
+**CLOUD STATUS: NOT DONE YET. Data-gathering runs are still writing files. This line changes to "CLOUD SESSION DONE"
+in the last commit; do not archive the cloud session before then.**
+
+The cloud session (`session_01AwChvHXzuPFbFQLR4ELyXC`) was told to finish its step, push everything and stop. It no
+longer writes `ledger/ledger.db`. Unfinished work, in the order to pick it up:
+
+1. **AI prints backtest v2 (numeric point-and-range forecasts).** User request: "predict these numbers (in a tight
+   range), not just booleans."
+   - Rules and pass lines: `data/ai_prints_backtest/PREREG.md` (V1 boolean rules, then V2 numeric), committed before
+     any window data was read (`99c0181`, `06329b7`). Scorers: `tools/ai_prints_numeric.py` (V2) and
+     `tools/ai_prints_backtest.py` (V1). Both were self-tested on synthetic data only. **No real score has been run.**
+   - Data files in `data/ai_prints_backtest/` (status is in the last commit message of this section):
+     `prices.csv` (daily closes, 17 tickers), `prints_suppliers.csv` (window, 11 suppliers), `prints_buyers.csv`
+     (window: AMZN, META, ORCL), `capex.csv` (window capex guide changes), `prints_history_a.csv` and
+     `prints_history_b.csv` (the four reports before the window, feeds the model), `capex_history.csv` (quarterly capex
+     and annual guides, 2025-2026), `consensus.csv` (sell-side consensus before each report, the benchmark).
+   - To resume: when the files are present run `python3 tools/ai_prints_numeric.py --rows` and
+     `python3 tools/ai_prints_backtest.py`, and report the first-run numbers against the PREREG pass lines (accuracy
+     vs the naive guide and vs consensus, 80% range coverage, tightness). Check the `*_notes.md` files for rows the
+     data runs could not verify before trusting a number. V1's `capex.csv` scoring needs the column `change`.
+   - Then the forward numbers: `python3 tools/ai_prints_numeric.py --forward --scale <scale_for_80pct_coverage from the
+     backtest>` gives a point and range for each company's next revenue print, next guide and next quarterly capex.
+     Log them as range calls **from a PC session** (the cloud must not write the ledger). The 13 AI calls already
+     logged (#123-#135) are yes/no thresholds, which is what the user said is not enough.
+2. **The AI-trade report is not delivered.** The research synthesis is `reports/AI trade forecasting framework.md`
+   if present (written by a background run from the notes in `research_notes/AI trade forecasting framework/` and the
+   desk brief `desk_framework_and_calls.md`). Not built: the Claude Doc with charts, its `.docx`/`.pdf` exports and
+   the markdown copy, with the backtest result folded in.
+3. **Tape note correction not applied.** The 11/18 tape note
+   (https://claude.ai/artifact/TtZJa6WZu9Ce2YWtd6EvXF, `reports/20261118_tape-note-gulf-oil-fed.md`, both exports)
+   says Nvidia carries "about $530bn of financial guarantees". Correct figure: $108.5bn of guarantees (July 10-Q),
+   about $118bn in October per press; $530bn is total commitments plus guarantees. Fix the doc, re-export, re-commit.
+4. **Server and PC move.** `tools/server_loop.py` now supervises the dashboard, writes the weekly server-only archive
+   and re-executes itself after a pull; the running loop needs one manual restart to pick that up.
+   `tools/pc_weekly_backup.ps1` and `tools/pc_register_backup.ps1` have never been run on Windows, and the `scp` step
+   has not been run against the real server.
+5. **Gates at last check (11/18 ~03:00 UTC):** `web_coverage.py` failed on one dead-end catalyst from the PC line
+   (`opec-ministerial-nov29`) and `ledger.py sweep` on #109 (PC import, 16 days overdue). Neither came from the cloud
+   session; both were left for the PC/server side.
+6. **Instruction tension to settle:** `CLAUDE.md` now says this is a prediction bot for world events, not a stock bot.
+   The AI-trade framework, its 13 calls and the prints backtest are markets work the user asked for directly in the
+   cloud session. Decide whether they stay.
+
 ## 7h. TAPE NOTE (11/18): Gulf fire, falling oil, a hiking Fed
 - **Report:** [Tape Note: Gulf Fire, Falling Oil, a Hiking Fed](https://claude.ai/artifact/TtZJa6WZu9Ce2YWtd6EvXF) (Claude Doc, 6 charts).
   - Markdown copy with the desk-records appendix: `reports/20261118_tape-note-gulf-oil-fed.md`.
