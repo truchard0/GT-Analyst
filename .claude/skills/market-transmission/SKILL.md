@@ -5,6 +5,12 @@ description: Market-transmission layer for geopolitical news analysis — turns 
 
 # MARKET TRANSMISSION — how geopolitics reprices assets
 
+> **NO WAR-DRIVEN PRICE CALLS (user instruction, 2026-11-18).** Use this skill to explain how the war reprices
+> assets: the channel, the branch and the 2-year sign. Never turn that into a ledgered or published price call on
+> oil, energy or defense sectors, or tanker rates. These calls went 1 of 6 (Brier 0.385, worse than a coin) and are
+> banned in code (`pipeline/ledger.py`, contrarian-red-team Part C.2). Rates calls (Fed, CPI, yields) and
+> measured-state calls (flows, tolls) are still allowed.
+
 Built from a verified deep-research pass (2026; primary sources: Fed IFDP 1222 / Caldara-Iacoviello AER 2022, Kilian & Park 2009 / Kilian RBA 2009, ECB WP2472 & Economic Bulletin 2026, IMF GFSR 2025, SSGA 2026). Sources in §14. This layer answers "so what does it DO to the tape," and it replaces the naive reflexes ("war = oil up, gold up, stocks down") with a branching, mechanism-based map. Doctrine §14 still binds: **direction and mechanism, never position sizing.**
 
 ---
