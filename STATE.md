@@ -420,6 +420,21 @@ longer writes `ledger/ledger.db`. Unfinished work, in the order to pick it up:
      backtest>` gives a point and range for each company's next revenue print, next guide and next quarterly capex.
      Log them as range calls **from a PC session** (the cloud must not write the ledger). The 13 AI calls already
      logged (#123-#135) are yes/no thresholds, which is what the user said is not enough.
+   - **Next design step, asked by the user on 11/18 ("could it not just look at all the news surrounding a company and
+     use that to make a more informed prediction"): a news-informed forecast, tested blind.** The mechanical model
+     only knows the company's own guide and its past beats, so it will miss the quarters that matter most: in the
+     window Micron reported 41.456 against a 33.5 guide midpoint (+24%) and Dell 43.842 against 35.2 (+25%), both
+     visible beforehand in DRAM contract prices and AI-server backlog news. Protocol to build:
+     1. for each window report, assemble a point-in-time packet: only items published BEFORE the report date
+        (`inbox/processed/` archives, the `data/ai_stress/headlines.csv` cache, TSMC monthly revenue, TrendForce
+        contract prices, peers and customers that reported earlier in the same season, 8-K pre-announcements);
+     2. a fresh analyst run that sees only the packet plus the company's guide and history gives a point and an 80%
+        range for revenue and for the next guide, and states which items moved it off the mechanical number;
+     3. score four forecasts side by side on the same rows: naive guide, mechanical, mechanical + news, consensus.
+        The bar is consensus, which already contains the news; "news helps" means beating the mechanical model and
+        getting within reach of consensus, most of all on the large-beat quarters.
+     Leakage rule: reports published before July 2026 may be inside the model's training data, so score July-November
+     separately and treat that subset as the clean one. Pre-register the packet rules before running it.
 2. **The AI-trade report is not delivered.** The research synthesis is `reports/AI trade forecasting framework.md`
    if present (written by a background run from the notes in `research_notes/AI trade forecasting framework/` and the
    desk brief `desk_framework_and_calls.md`). Not built: the Claude Doc with charts, its `.docx`/`.pdf` exports and
