@@ -1,5 +1,5 @@
 # GT-Analyst — LIVE STATE (handoff doc)
-**Last updated: 2026-11-14 (prediction rankings; #79 MISS, #56 HIT, #10 HIT early).** Read this first after any context reset. It records what
+**Last updated: 2026-11-18 (tape note: Gulf tit-for-tat, Brent 93, December hike priced, Nvidia after Huang; new calls #86, #87; see §7h).** Read this first after any context reset. It records what
 the engine IS, what it has LEARNED, and what is currently STAKED. Everything here can be rebuilt from
 `ledger/ledger.db` and `data/timelines.json`; this is the summary.
 
@@ -26,7 +26,7 @@ bookkeeping machine over expert estimates, not a solver.
   flip). Nine misses logged at 70% or more carry 37% of total error.
 - Before that: **53 resolved: 35 HIT / 18 MISS = 66.0%, mean Brier 0.234** (#81 FOMC hold HIT on 10/28). On 10/25 it was 52 resolved / 0.238. On 8/4 it was 0.169 on 14 resolved.
   The old number was a maturity artifact, exactly as the 8/1 note warned.
-- **Projected, counting the at-risk #80, #38, #16 and #36 as failing (outcome 0): 37/60 = 61.7% / Brier 0.249.**
+- **Projected, counting the at-risk #80, #38, #16 and #36 as failing (outcome 0): 37/60 = 61.7% / Brier 0.249.** Adding #3 (Pentagon $1.5T, at risk since the 11/17 Senate bill at $1.1T): 37/61 = 60.7% / Brier 0.250.
 - **Murphy decomposition:**
 
   | Term | Value | Read |
@@ -48,7 +48,7 @@ bookkeeping machine over expert estimates, not a solver.
   - MU then closed above the invalidation on 9/21 (first close ≥1035).
   - The real exit is unknown. Record it with `ledger.py trade-close 2 --exit <real price> --reason ...`, and
     never at a hindsight price.
-- **PORTFOLIO PROBLEM persists:** iran-war is **11 of 28 open = 39%**, over the ~35% cap. New iran-war calls
+- **PORTFOLIO PROBLEM persists (11/18):** iran-war is **12 of 30 open = 40%** (was 11 of 28 = 39% on 11/14), over the ~35% cap. New iran-war calls
   need the red-team gate and a materially higher bar.
 
 ---
@@ -125,7 +125,19 @@ bookkeeping machine over expert estimates, not a solver.
 - GOOGL fell 12% after holding capex flat with negative free cash flow: a capex *plateau*, the first AI-referee signal.
 - `iran-fork-oct` is now campaign 0.35 (held at the cap) / deal 0.10 / frozen tanker war 0.55.
 
-**Next catalysts:**
+**11/18 update** (`reports/20261118_tape-note-gulf-oil-fed.md`, §7h):
+- **New calls:** #86 Fed raises on 12/9 (upper bound ≥ 4.25%), P 0.92, rates. #87 at least one more US strike on Iranian
+  territory 11/18–11/30, P 0.72, base-rate (forward test of jiang 16.14a).
+- **Desk re-marks:** #80 0.35 → **0.10** (Brent 93.14 on 11/17); #83 0.62 → **0.50, no call**; #84 0.82 → 0.90; #3 → 0.30 (at risk);
+  #82 held 0.78 with a meter warning (AIS transits ~1% of normal vs barrels 48–82%).
+- `iran-fork-oct` held: campaign 0.10 / deal 0.05 / frozen 0.85. `fed-dec-hike` 0.55 → 0.93. AI 2027 fork: digestion 0.42 /
+  sprint 0.40 / winter 0.18 after Nvidia's beat and raised FY28 outlook.
+
+**Next catalysts (rebuilt 11/18):** FOMC minutes 11/18 · **Xi–Trump–Putin trilateral, Shenzhen 11/19** · Anthropic IPO (ANT)
+11/19 · **OPEC+ 2027 quotas 11/29** · **11/30: Brent settle (#80), Iran fork, #87** · payrolls 12/4 · **FOMC 12/9 (#86)** ·
+November CPI 12/10.
+
+**Older catalyst list (10/29):**
 - **AMZN earnings 10/29 (after the close):** the second half of the AI-capex referee.
 - OPEC+ 11/1 · **US midterms 11/3** (#79 horizon) · jobs 11/6 · **October CPI 11/10** (decides December) ·
   FOMC Dec 8–9.
@@ -246,6 +258,22 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
 - **Grandfathered open calls outside the new band:** #16 (0.74), #38 (0.70), #80 (0.70), #83 (0.70). Read them as
   capped.
 - **Operational failure:** the scheduled tasks could not push for two weeks. The cause and fix are in §9.
+
+## 7h. TAPE NOTE (11/18): Gulf fire, falling oil, a hiking Fed
+- **Report:** [Tape Note: Gulf Fire, Falling Oil, a Hiking Fed](https://claude.ai/artifact/TtZJa6WZu9Ce2YWtd6EvXF) (Claude Doc, 6 charts).
+  - Markdown copy with the desk-records appendix: `reports/20261118_tape-note-gulf-oil-fed.md`.
+  - Exports: `reports/exports/20261118_tape-note-gulf-oil-fed.{docx,pdf}` (docx embeds all 6 charts).
+- **Batch:** 2,012 items (11/15–11/18 00:40Z), moved to `inbox/processed/`. The three triggered batches of 11/15–11/17 and the
+  11/18 one were covered by this note (Nvidia, AI names); no separate auto reports written.
+- **The model change:** the strait STATE and the oil PRICE have decoupled. Barrels leave by pipeline, ship-to-ship and dark
+  or escorted transits (IEA: Gulf exports 74% of pre-war in October; Kpler 48% through/around the strait), while AIS-visible
+  traffic reads ~1%. The timeline now carries them as separate nodes (`brent-100-nov30`, `brent-85-q1`).
+- **PENDING DOCTRINE PATCH (file when #80 resolves on 11/30):** market-transmission §7.1a — the physical-flow gate must meter
+  BARRELS (Kpler/IEA mb/d, including pipeline and ship-to-ship), not AIS transits. When the two differ by more than 2x,
+  barrels govern price calls; transits govern only transit-defined state calls. #82 then carries a hit-wrong-reason risk.
+- **The other stale node:** `fed-dec-hike` sat at 0.55 while futures went to ~95%. The driver moved from oil to core CPI and
+  the engine was still reading the Fed through Brent. Lesson to log with #86's resolution.
+- **New checkpoints on the map:** `shenzhen-trilateral` (11/19) and `opec-nov29` (11/29), both with shift edges.
 
 ## 7f. PREDICTION RANKINGS (11/14)
 - **Report:** [Prediction Rankings: 14 November 2026](https://claude.ai/artifact/HaEZSeaML46AmZjCveQwSc) (Claude Doc).
