@@ -419,6 +419,10 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
    - **#135 SMH below 671.83 on 6/30/27 (0.90): holds.** From-peak reading of the 7 SOX drawdowns gives 86-88%.
      Recommended: trim to ~0.87 (skill rule: tail calls at the base rate). Data flag: `prices.csv` max SMH close is 668.91.
    - Awaiting the user's decision on both; evidence appended to `tsmc-q4` and `ai-trade-h1-2027`.
+4. **Finished AI report: DONE.** [Call the AI Prints, Not the Price](https://claude.ai/artifact/FsPaAuVGz1DamyVJjPSUcS)
+   (Claude Doc, 7 visuals each naming its data file); exports `reports/exports/20261118_ai-trade-call-the-prints.{docx,pdf}`
+   (docx holds all 7); markdown copy `reports/20261118_ai-trade-call-the-prints.md` with desk records. Folds in the
+   backtest, the 19 forward ranges, the Nvidia correction and the TSMC flag.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all
