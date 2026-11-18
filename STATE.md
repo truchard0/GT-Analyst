@@ -435,7 +435,15 @@ longer writes `ledger/ledger.db`. Unfinished work, in the order to pick it up:
         getting within reach of consensus, most of all on the large-beat quarters.
      Leakage rule: reports published before July 2026 may be inside the model's training data, so score July-November
      separately and treat that subset as the clean one. Pre-register the packet rules before running it.
-2. **The AI-trade report is not delivered.** The research synthesis is `reports/AI trade forecasting framework.md`
+2. **The AI-trade report is half delivered.** The research synthesis IS written:
+   `reports/AI trade forecasting framework.md` (about 7,500 words, 150 citations, key-calls table first; sent to the
+   user as markdown). Its writer flagged four things to fix or confirm before the calls are relied on: (a) the TSMC
+   revenue call (#127, 0.90) needs about NT$554bn a month in November-December to reach the guide midpoint, and a
+   fall back to the August-September level would miss even the low end; (b) the SMH call (#135, 0.90) is the one most
+   exposed to its own reference class: four of seven past drawdowns regained their high within 5.4 months of the
+   trough; (c) the 0.88 "no guide below 2026" is about first guides and the 0.20 "outright decline" about how 2027
+   turns out; (d) negative free cash flow is trailing-twelve-month only for Amazon, single-quarter for Alphabet, Meta
+   and Oracle. It was written by a background run from the notes
    if present (written by a background run from the notes in `research_notes/AI trade forecasting framework/` and the
    desk brief `desk_framework_and_calls.md`). Not built: the Claude Doc with charts, its `.docx`/`.pdf` exports and
    the markdown copy, with the backtest result folded in.
