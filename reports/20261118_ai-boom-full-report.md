@@ -10,8 +10,6 @@ Everyone watched the second story. The first is the kind that now decides the tr
 
 ## How we got here: denial, then deals, then the bill
 
-The AI trade has been shaped as much by governments as by engineers. Its history comes in three acts.
-
 **Denial, 2022 to 2024.** Washington cut China off from the best chips in three rounds. First went the chips, then the cut-down versions built to slip under the first rule, then the memory and machines China needed to make its own. At home, the CHIPS Act paid about $53bn to bring chipmaking back. None of this limited demand. It decided who could buy and where the chips went.
 
 **Deals, 2025.** The rules became bargaining chips. A plan to ration chips country by country lasted four months. Gulf states bought their way into the build.† China put its rare earths under licence, and the Busan truce of 30 October traded lower tariffs for a pause in China's mineral curbs. Every gate leaked: one broker alone bought about $4.8bn of Nvidia chips over two years, by one press account, and is now under criminal investigation, which it says is unfounded.
@@ -48,13 +46,13 @@ Nvidia reported on the 17th. Revenue doubled to $115.8bn, 7% above its own forec
 
 The difference was not demand. Both companies are selling everything they can deliver. The difference is who pays for the building. Nvidia's customers are among the richest companies on earth. Nebius has to borrow, or persuade its customers to pay up front.
 
-So far the customers are paying. Prepayments covered more than all of Nebius's new spending on its third-quarter deals, which is the most reassuring number in either report. It is also why we watch three tripwires more closely than any earnings beat.
+So far the customers are paying. Prepayments covered more than all of Nebius's new spending on its third-quarter deals.
 
 ![Buyers now fund the build: prepayments covered all of Nebius's new capex](charts/20261118_ai/01_funding_loop.png)
 
 ## Nvidia without Huang: a smaller lender, not a smaller order book
 
-Jensen Huang resigned as Nvidia's chief executive on 12 November. Colette Kress, the finance chief, is running the company in the meantime. The chair says the board does not intend to reinstate him, though Huang said on 17 November he would be honoured to return, and two large investors have urged the board to keep that door open. Nvidia's filing gives no reason; reports say the board found conduct inconsistent with its code.
+Jensen Huang resigned as Nvidia's chief executive on 12 November. Colette Kress, the finance chief, is running the company in the meantime. Nvidia's filing gives no reason; reports say the board found conduct inconsistent with its code.
 
 The exit changes less than the share price suggests. Customers are not buying less. Vera Rubin, the next chip, is shipping, the current-quarter guide is $130bn, and next year's growth outlook went up to about 75%. Our $137.3bn number stands.
 
@@ -67,11 +65,11 @@ What changes is how much of its balance sheet Nvidia will lend. By 25 October it
 | Washington and Beijing | Compliance first; closed House hearings 1-2 Dec, Senate date not set | December; new Congress in January |
 | Who leads | A permanent chief from the search; GTC on 15-18 Mar is the first without him | By March |
 
-The shares already price a large change: they closed on 18 November about 37% below the October record. If the annual report shows the guarantees still growing, the board has kept Huang's lending policy and the risk to the chip renters falls. If a successor cuts existing commitments, which no one has suggested, the risk moves from Nvidia's revenue to its customers', and our 2027 base case weakens.
+If the annual report shows the guarantees still growing, the board has kept Huang's lending policy and the risk to the chip renters falls. If a successor cuts existing commitments, which no one has suggested, the risk moves from Nvidia's revenue to its customers', and our 2027 base case weakens.
 
 ### The next six weeks: succession risk moves the shares, not the orders
 
-The market has already shown how it weighs this. Nvidia's shares rose as much as 5% after its results, then gave it all back and closed down 3% at $150.86 on 18 November: the strongest numbers in its history, outweighed by the question of who runs the company.
+The market has already shown how it weighs this: the strongest numbers in Nvidia's history were outweighed by the question of who runs it.
 
 Three paths are open, and we make no call between them yet.
 
@@ -82,8 +80,6 @@ Three paths are open, and we make no call between them yet.
 The dated tests come fast: closed House hearings with Huang on 1 December and the general counsel on 2 December, a Senate Banking appearance before Christmas with no date set, and the criminal case against the chip broker. Each can move the shares for a day, and with dealers short gamma at the price into Friday's expiry, those moves can run further than usual. None of it changes what customers ordered for this quarter, which is why our $137.3bn number stands. The lasting risk is the one above: a more cautious lender.
 
 ## What we see ahead: about 41% on a slower 2027, 10% on the tail that breaks it
-
-In the next twelve months geopolitics is more likely to slow the AI build than to break it.
 
 Our base case, at about 41%, needs four things to hold. The Gulf stays calm. The Fed raises rates on 9 December and does not cut in the first half. The truce rolls past 10 January. And nothing happens over Taiwan.
 
@@ -121,8 +117,6 @@ Options dealers, the banks on the other side of most options trades, hedge as pr
 
 ![Both indices sit in long gamma; 59% of the AI-stock maps expire on Friday](charts/20261118_ai/05_heatmap_board.png)
 
-Five things stand out.
-
 **Nvidia has lost its cushion.** After its report, dealers are short gamma at Nvidia's price, and the largest position on its map is a short strike at $150, just under the $150.86 close. That is the setup in which hedging adds to moves rather than damping them, in either direction, until Friday's expiry takes 45% of the map with it.
 
 **The indices are better cushioned than the stocks.** Dealers are long gamma near the price on both the S&P 500 and the Nasdaq-100. The S&P's largest position, at 7,450, is long and sits 1.7% above the close in Friday's expiry, with a short strike at 7,475 just beyond it. On the Nasdaq-100 the largest position is long, at 650 on the QQQ, 1.4% below the price, with a short strike the same distance above.
@@ -144,8 +138,6 @@ Anthropic prices its listing tonight and starts trading on Nasdaq tomorrow under
 The filing shows why the market cares. Revenue reached $17.0bn in the third quarter, about twelve times a year earlier, and the run-rate hit about $81bn at the end of October. The operating loss has almost closed. Against that, Anthropic has signed about $900bn of commitments, nearly all for compute, with $452bn due by 2030.
 
 ![Anthropic has signed about $900bn of commitments, nearly all of it for compute](charts/20261118_ai/09_anthropic_commitments.png)
-
-The listing touches the AI trade through four channels.
 
 **It puts a price on the financing question.** The weak link in this cycle is money for the builders. A deal this size clearing at or above its range says money for AI is still there at scale. A cut, or a price below the range, would be the clearest sign yet that the financing chain is tiring. That is the test to watch tonight.
 
@@ -197,8 +189,6 @@ We keep the misses too. The war-driven price calls we used to make went 1 for 6,
 
 The AI build is not short of buyers. It is short of permits, power, cheap money and peace between the two countries that make and mine what it runs on. That is why the next year is more likely to bring a slower build than a broken one. Each of those limits delays sites rather than cancelling demand, and the parts in shortest supply are sold out years ahead.
 
-Two things would change the picture. A truce lapse tied to Iran sanctions would raise the cost of everything below the chip just as the smaller builders need new money. And Taiwan, a 10% tail, is the one event that would break every revenue number at once.
-
 For this winter, expect six of the seven companies to clear their own guidance and two or three to reach our numbers. Micron and TSMC lean below.
 
 For anyone thinking in years rather than weeks, the shape of the risk is the encouraging part, though it is no reason to relax. The near-term risks are real: credit for the smaller builders is close to our tripwire, and the Gulf flared again on 17 November.
@@ -242,3 +232,4 @@ Anthropic IPO: [S-1/A Amendment No. 3](https://www.sec.gov/Archives/edgar/data/2
 - **Revision 7, 18 Nov PT (user: reorganize for flow; header shows only the title and @alostquant).** New order: key calls, how we got here, where we are, the money (was 'Start here', now opens 'Of the three ways into 2027, credit opens first'), Nvidia without Huang, what we see ahead, what the market is pricing (with the positioning map), the revenue record, signposts, conclusion. Title 'The Path of the AI Boom' (tab renamed; the doc's own title in the claude.ai gallery can only be renamed by hand on the web), byline @alostquant, date chip and name removed. No numbers changed. 15 pages, 8 pictures; the board alone on page 11.
 - **Revision 8, 18 Nov PT (user: move the key calls somewhere else).** The key-calls table moved from the top to just before the revenue record, under 'Our calls: six of seven companies should clear their own guidance'; its note now says the scenario odds above are context, and the dagger line was dropped (Sources still explains it). This departs from the CLAUDE.md REPORT STYLE default (key calls first) at the user's request for this report.
 - **Revision 9, 18 Nov PT, at the close (user: make every claim current; heatmaps current; honest positive ending; Anthropic IPO page; short-term succession risk; update at the close).** Two research agents fact-checked every claim against news to 18 Nov 21:00 UTC; corrections: remote-access rule effective 19 Nov and worldwide (five-country prong separate); Gulf lull ended 17 Nov (Bahrain, Qeshm, Hormuz tankers; no US campaign announced; odds unchanged, the frozen-tanker-war node already allows reactive exchanges); Nvidia guarantees ~$118bn at 25 Oct (was $108.5bn, July); Huang 'would be honoured' to return; House hearings 1-2 Dec, Senate undated; Megaspeed $12bn unsupported (now $4.8bn of purchases, one account); CoreWeave 7-7.5% loans unsupported (last term loan ~SOFR+5.5); chip rents ~60% not 58%; Alphabet capex not flat (FCF negative); truce extension 23 Sep; PJM 22 Dec date unverified. Prices: official 17 Nov closes replaced interpolated rows in prices_5y.csv (AVGO 333.40 -> 341.60 etc.) and 18 Nov closes added; stack rebuilt. Maps: 18 Nov 16:00 ET close maps copied read-only from the server (/home/kronos/tbot-work/tradingview/_skylit) into a scratch mirror; NVDA now included (post-report). New: succession subsection, Anthropic IPO section and chart 09 (S-1/A No. 3). No probability changed. 18 pages, 9 pictures.
+- **Revision 10, 18 Nov PT (user: remove any unneeded fluff).** Cut five filler paragraphs and four repeats (the Nvidia share move told twice, Huang's return wish told twice, the 37%-off line, the tripwire aside). No facts or numbers changed.
