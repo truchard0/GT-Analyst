@@ -459,6 +459,13 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
      map's 0.40/0.40/0.20; resolved `capex-verdict` still carries p 0.72, so the dashboard compound understates the fork;
      the `hormuz-impaired-q1 -> fed-h1-no-cuts` edge (0.85) sits below that node's 0.90; `war-round-2` 0.90 conflicts
      with the frozen-tanker-war branch 0.85; US-China truce nodes still have no edges into the AI lane.
+   - **New engine layer from the Substack archive (user, 17 Nov PT; the writers are for learning only, never named or
+     imitated in reports).** Seven readers distilled about 1.3M words from `Trading Bot/knowledge/{substack,geopolitics}`
+     (notes in the shared side-session folder `substack_engine/`). Built `.claude/skills/mechanism-library/` (35 rules,
+     23 ADOPT, 12 SHADOW; checklist items 31-35; PROVENANCE.md internal) and `.claude/skills/report-writing/` (14
+     techniques); CLAUDE.md step 9 and REPORT STYLE now point to them. Sweep on the AI trade:
+     `reports/desk/20261118_mechanism-sweep-ai.md`, proposals P1-P12, **none applied to the map or ledger (user
+     decides)**. The full AI report was rewritten in the new voice on the sweep's reads (14 pages, 7 visuals).
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all
