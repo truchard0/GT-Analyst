@@ -8,20 +8,6 @@ On 17 November two things happened within hours of each other. Nvidia reported $
 
 Everyone watched the first story. The second is the kind that now decides the trade.
 
-## Key calls
-
-| Company, quarter | Reports | Company guide | **Our number** | Desk view | Chance it clears its guide |
-| --- | --- | --- | --- | --- | --- |
-| Broadcom FQ4 2026 | 9 Dec | $34.8bn | **$35.3bn** | about $35.1bn | 94% |
-| Oracle FQ2 2027 | 9-14 Dec | $21.2bn | **$21.3bn** | about $21.2bn | 62% |
-| Micron FQ1 2027 | 15-23 Dec (unconfirmed) | $61.5bn | **$72.1bn** | about $64.5bn | 88% |
-| TSMC Q4 2026 | 14 or 21 Jan | $53.3bn | **$54.6bn** | about $53.5bn | 65% |
-| Meta Q4 2026 | about 27 Jan | $74.5bn | **$76.8bn** | $76.8bn | 93% |
-| Amazon Q4 2026 | about 4 Feb | $243.5bn | **$248.6bn** | about $248.0bn | 95% |
-| Nvidia FQ4 2027 | 24 Feb-3 Mar | $130.0bn | **$137.3bn** | $137.3bn | 90% |
-
-Our number is the company's guidance plus its average beat over its last four reports, fixed on 18 November and scored as it stands. The desk view is where the full analysis lands. These are revenue calls, not share-price calls; the scenario odds later in the report are context. A † marks a figure that rests on secondary sources.
-
 ## How we got here: denial, then deals, then the bill
 
 The AI trade has been shaped as much by governments as by engineers. Its history comes in three acts.
@@ -139,6 +125,20 @@ A caution that our own testing demands. Over 55 days of intraday index maps, the
 
 Nvidia is left off because its map predates its report, and Oracle and TSMC have no maps in our data. Oracle's options price a move of about 12.6% on its December report.
 
+## Our calls: six of seven companies should clear their own guidance
+
+| Company, quarter | Reports | Company guide | **Our number** | Desk view | Chance it clears its guide |
+| --- | --- | --- | --- | --- | --- |
+| Broadcom FQ4 2026 | 9 Dec | $34.8bn | **$35.3bn** | about $35.1bn | 94% |
+| Oracle FQ2 2027 | 9-14 Dec | $21.2bn | **$21.3bn** | about $21.2bn | 62% |
+| Micron FQ1 2027 | 15-23 Dec (unconfirmed) | $61.5bn | **$72.1bn** | about $64.5bn | 88% |
+| TSMC Q4 2026 | 14 or 21 Jan | $53.3bn | **$54.6bn** | about $53.5bn | 65% |
+| Meta Q4 2026 | about 27 Jan | $74.5bn | **$76.8bn** | $76.8bn | 93% |
+| Amazon Q4 2026 | about 4 Feb | $243.5bn | **$248.6bn** | about $248.0bn | 95% |
+| Nvidia FQ4 2027 | 24 Feb-3 Mar | $130.0bn | **$137.3bn** | $137.3bn | 90% |
+
+Our number is the company's guidance plus its average beat over its last four reports, fixed on 18 November and scored as it stands. The desk view is where the full analysis lands. These are revenue calls, not share-price calls; the scenario odds above are context, not calls.
+
 ## The revenue numbers: a 1.5% median miss over five years
 
 We publish revenue calls because revenue is the part of this trade that can be forecast. Across five years and 117 reports from six companies, our number missed by a median 1.5%, against 2.4% for the companies' own guidance and 2.0% for analysts' consensus.
@@ -200,3 +200,4 @@ Every chart names its data file. Repo data: `data/ai_prints_backtest/`, `data/ai
 
 - **Revision 6, 18 Nov PT (user: rebuild the charts in the dark house style with our own flair; more depth on the heatmaps; condense; heatmaps all on one page, major indices included; the prose must read like a professional long-form writer).** All ten Claude widgets replaced by eight house-style PNGs from `tools/ai_report_charts.py` (signal stripe, headline badge, mono numerals added to `tools/market_update/chartstyle.py`). The three heatmap widgets became one page: S&P 500 (SPXW) and Nasdaq-100 (QQQ) from the 17 Nov 17:30 ET overnight map plus MU, META, AMZN, SMH, AVGO, CRWV from the 17 Nov close (AVGO 09:30); per-name reads in `data/ai_technical/heatmap_reads_20261117.json` (front-expiry share, net gamma within 2% and 5%, largest cell, largest long rows above/below, largest short row). Cut the Nvidia-Nebius table, the Huang table to four rows, and the positioning table (the RS chart and the board carry it). Corrections: the chip-index rise from the war low is 85% on closes (was 87%); the revenue chart title now says consensus was beaten in 3 of 5 years (the old widget said 'the last 4'; Y3 was 2.12% vs 2.07%); channel odds updated to the applied map (Gulf frozen 80%, financing 82%). No probability changed. Writing: `.claude/skills/report-writing/SKILL.md` gains Part B (prose craft) and a self-edit pass. Exports: 15 pages, 8 pictures; the board sits alone on page 9.
 - **Revision 7, 18 Nov PT (user: reorganize for flow; header shows only the title and @alostquant).** New order: key calls, how we got here, where we are, the money (was 'Start here', now opens 'Of the three ways into 2027, credit opens first'), Nvidia without Huang, what we see ahead, what the market is pricing (with the positioning map), the revenue record, signposts, conclusion. Title 'The Path of the AI Boom' (tab renamed; the doc's own title in the claude.ai gallery can only be renamed by hand on the web), byline @alostquant, date chip and name removed. No numbers changed. 15 pages, 8 pictures; the board alone on page 11.
+- **Revision 8, 18 Nov PT (user: move the key calls somewhere else).** The key-calls table moved from the top to just before the revenue record, under 'Our calls: six of seven companies should clear their own guidance'; its note now says the scenario odds above are context, and the dagger line was dropped (Sources still explains it). This departs from the CLAUDE.md REPORT STYLE default (key calls first) at the user's request for this report.
