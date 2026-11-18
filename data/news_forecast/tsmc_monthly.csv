@@ -1,0 +1,5 @@
+month,revenue_ntd_bn,released,quality,source
+2026-07,467.58,2026-08-10,derived,Q3 2026 revenue NT$1494.24bn (6-K 15 Oct) less August and September; July release itself not read; release date assumed the 10th
+2026-08,514.80,2026-09-10,secondary,research_notes/AI trade forecasting framework/demand_capex_state.md (previous 2026 high cited in the October release coverage); release date assumed the 10th
+2026-09,511.86,2026-10-10,secondary,research_notes/AI trade forecasting framework/demand_capex_state.md; release date assumed the 10th
+2026-10,586.89,2026-11-10,primary,TSMC Form 6-K 10 Nov 2026 https://www.sec.gov/Archives/edgar/data/0001046179/000104617926000796/tsm-revenue20261110.htm
