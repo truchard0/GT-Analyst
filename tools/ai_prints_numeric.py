@@ -279,7 +279,7 @@ def main():
            "N4_annual_capex_guide": card(n4, "N4"),
            "N1_primary_only": card([r for r in rows if r["quality"] == "primary"], "N1"),
            "rows": rows, "capex_rows": n3, "capex_guide_rows": n4}
-    (D / "results_numeric.json").write_text(json.dumps(res, indent=1) + "\n", encoding="utf-8")
+    (D / "results_numeric.json").write_text(json.dumps(res, indent=1) + "\n", encoding="utf-8", newline="\n")
     if "--json" in sys.argv:
         print(json.dumps(res, indent=1)); return
     for k in ("N1_revenue", "N2_next_guide", "N3_quarter_capex", "N4_annual_capex_guide", "N1_primary_only"):

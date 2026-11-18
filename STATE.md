@@ -403,6 +403,14 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
    markdown copy (body, appendix A5, dated correction line), both exports (docx still embeds 6 charts) and two history
    lines in `data/timelines.json`. No call changed. New helper: `tools/save_doc_export.py` decodes a Docs export
    result into the .docx/.pdf and counts the pictures.
+2. **Forward numbers with ranges: DONE, 19 calls #136-#154** (`reports/20261118_ai-prints-forward-ranges.md`).
+   Revenue, next-quarter guide and quarterly capex for Broadcom, Oracle, Micron, TSMC, Meta, Amazon, Nvidia (+ capex for
+   Microsoft and Alphabet), each "actual inside the 80% range" at P 0.80. Registered first in
+   `data/ai_prints_backtest/forward_20261118.json` (`tools/ai_prints_forward.py`; range refit x1.73 / x1.69, leave-one-out
+   coverage 79%). New cluster `ai-prints-range` (19 of 95 open); with `ai-prints` + `ai-capex` 33% of open, all AI
+   clusters 36% (over the 35% line: no more AI rows without a higher bar). New checkpoint `orcl-fq2`. Score them with
+   `python tools/ai_prints_forward.py --score` after filling `actual`, then `ledger.py resolve` + `lesson`.
+   Windows note: Python's `write_text` writes CRLF here; repo files are LF, so scripts now pass `newline="\n"`.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all

@@ -127,5 +127,5 @@ if __name__ == "__main__":
         res = build()
         if OUT.exists() and "--overwrite" not in sys.argv:
             sys.exit(f"{OUT.name} already exists: it is the registration. Use --overwrite only before any of these reports is out.")
-        OUT.write_text(json.dumps(res, indent=1) + "\n", encoding="utf-8")
+        OUT.write_text(json.dumps(res, indent=1) + "\n", encoding="utf-8", newline="\n")
         print(json.dumps(res, indent=1))

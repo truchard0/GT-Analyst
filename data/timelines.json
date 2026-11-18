@@ -2732,7 +2732,9 @@
       "horizon": "scheduled",
       "p": 1.0,
       "ledger": [
-        123
+        123,
+        136,
+        143
       ],
       "label": "Broadcom fiscal Q4 report (9 Dec, same day as the FOMC): AI semiconductor guide",
       "rationale": "Confirmed date. Bar: AI semiconductor revenue ~$21.7B for the quarter and a fiscal Q1 guide above it (0.82). The custom-chip read on hyperscaler 2027 plans, three weeks before any hyperscaler speaks.",
@@ -2766,7 +2768,9 @@
       "ledger": [
         124,
         125,
-        126
+        126,
+        138,
+        145
       ],
       "label": "Micron fiscal Q1 report (~15 Dec) and 1Q27 DRAM contract pricing: the memory-cycle test",
       "rationale": "Memory equities have already fallen 31-55% from their peaks, and equities lead memory fundamentals by one to two quarters. The print should still be strong (revenue at or above $61.5B, 0.86); the test is the guide (sequential growth, 0.72) and 1Q27 contract prices (still rising, 0.72).",
@@ -2799,7 +2803,9 @@
       "p": 1.0,
       "ledger": [
         127,
-        128
+        128,
+        139,
+        146
       ],
       "label": "TSMC Q4 2026 results and first 2027 capex guide (14 or 21 Jan)",
       "rationale": "Revenue at or above the $53.3B guide midpoint is close to settled by monthly data (0.90). The forward item is 2027 capex: midpoint at or above $68B (0.70) against $60-64B in 2026 and equipment makers guiding 2027 wafer-fab spending up 30% or more.",
@@ -2833,7 +2839,15 @@
       "ledger": [
         129,
         130,
-        131
+        131,
+        140,
+        141,
+        147,
+        148,
+        151,
+        152,
+        153,
+        154
       ],
       "label": "Hyperscaler Q4 2026 reports (late Jan - early Feb): the first 2027 capex guides",
       "rationale": "The catalyst the whole trade waits on. None has given a 2027 number; the four are guiding ~$730B for 2026 (+77%). Calls: none guides 2027 below 2026 (0.88, against a fund-manager survey in which 52% expect a cut within six months); Alphabet midpoint at or above $240B (0.70); Microsoft December-quarter capex above $50B (0.87).",
@@ -2882,7 +2896,9 @@
       "horizon": "scheduled",
       "p": 1.0,
       "ledger": [
-        132
+        132,
+        142,
+        149
       ],
       "label": "Nvidia fiscal Q4 2027 report (late Feb - early Mar, unannounced): first full quarter without Huang",
       "rationale": "Revenue at or above the $130.0B guide midpoint (0.90). The item to read is not the revenue: it is the customer-support lines in the 10-Q (guarantees ~$108.5B in July, ~$118B in October per press). Flat or lower means Nvidia is withdrawing as guarantor.",
@@ -14328,6 +14344,40 @@
         }
       ],
       "same_event_as": "opec-nov29"
+    },
+    {
+      "id": "orcl-fq2",
+      "parent": "now",
+      "kind": "event",
+      "checkpoint": true,
+      "date": "2026-12-10",
+      "horizon": "scheduled",
+      "p": 1.0,
+      "ledger": [
+        137,
+        144,
+        150
+      ],
+      "lane": "markets-ai",
+      "label": "Oracle fiscal Q2 2027 report (9-14 Dec, unconfirmed): revenue, capex, RPO",
+      "rationale": "Added 11/18 for the mechanical range calls on Oracle's revenue, next guide and quarterly capex. Oracle is the most debt-funded of the five buyers (S&P BBB-, ~$638B backlog about half OpenAI), so its capex and its financing are read together.",
+      "shifts": [
+        {
+          "target": "ai-financing-chain",
+          "p_to": 0.72,
+          "date_delta": 0,
+          "note": "a capex step-up with no new funding, or a cut to the FY27 capex range, raises the rating risk on #134"
+        },
+        {
+          "target": "capex-digestion",
+          "p_to": 0.46,
+          "date_delta": 0,
+          "note": "an Oracle capex cut would be the first buyer to trim on financing rather than supply timing"
+        }
+      ],
+      "evidence": [],
+      "confluence": [],
+      "market": "no price call (prints and plans only)"
     }
   ],
   "week_ahead": {
