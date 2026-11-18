@@ -34,15 +34,11 @@ Two reports five days apart show the whole cycle: demand still accelerating at t
 | Funding | $108.5bn of guarantees in July, about $118bn in October per press | Customer prepayments covered over 100% of capex on Q3 deals; $3.5bn secured facility; converts near 70 cents |
 | Stock | Last after-hours trade +0.9% | About -22% premarket the next day† |
 
-**Nvidia** beat consensus by $6.7bn, but Q4 has 14 weeks (the weekly pace rises only about 4%), margins step down to 71-72%, three customers are 36% of revenue, and the interim chief executive now counts "customers' access to capital" in guidance ([release](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027); [CNBC](https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html)). **Nebius** has more demand than it can deliver: third-party capacity is slipping into 2027 (Microsoft's reason for its own capex trim), $325m of the quarter was one-off, and customer prepayments now fund more than all the capex on new deals ([6-K letter](https://www.sec.gov/Archives/edgar/data/0001513845/000110465926126008/tm2629571d1_ex99-2.htm)).
-
 &#91;embedded content: Nebius Q3 2026 shareholder letter (6-K, 12 Nov); Nvidia Q3 FY27 release and 10-Q (17 Nov, 26 Aug); CNBC 17 Nov; research\_notes/AI trade forecasting framework/financing\_chain.md\]
 
 The buyers at the top now carry the funding, so their access to capital, and the first 2027 capex guides in late January, are the next links. A pullback in Nvidia's support lines would reach Nvidia's own orders.
 
 ## How we got here: denial, then deals, then the bill
-
-Think of the AI build as a factory with one front door. From 2022 to 2024 Washington decided who could walk through it; in 2025 it started trading tickets; in 2026 the bills arrived. The analogy has a limit: the door is now in several countries at once, which is why the rules keep chasing the chips.
 
 **2022-2024: denial.** Three rounds of US export rules (October 2022, October 2023, December 2024) shut China out of the best chips, then the cut-down chips built to slip under the first round, then the memory and tools it needed to make its own. The CHIPS Act paid about $53bn to pull chipmaking home. Demand was never the limit. The chain ran: rule → who may buy → where the chips go.
 
@@ -52,44 +48,20 @@ Think of the AI build as a factory with one front door. From 2022 to 2024 Washin
 
 &#91;embedded content: Geopolitical milestones for the AI trade, 2022 to 16 Nov 2026 · research\_notes/AI trade forecasting framework/constraints\_policy.md, research\_notes/Stock market geopolitical game/us\_china\_tech\_taiwan.md, STATE.md, data/timelines.json; 2022-2025 export rounds from the US Commerce Department (BIS) rules\]
 
-Read the chart from top to bottom and the weight shifts: policy decided who could buy until 2025; in 2026 the war reached AI only through the price of money, and politics began to decide where the sites can go.
-
 ## Where we are: short of permits and credit, not buyers
 
 &#91;embedded content: Channel-by-layer map, 17 Nov 2026 · data/timelines.json odds; reports/20261118\_tape-note-gulf-oil-fed.md; constraints\_policy.md\]
 
 The striking thing about November is how little of the geopolitics touches this winter's revenue, and how much of it touches 2027. Each force below works on one of three things: what the build costs, when sites switch on, and who can fund them.
 
-- **Credit: read the contracts, not the headline.** Insuring CoreWeave's debt against default costs about 11% a year (1,113bp), which sounds like distress. The contracts say otherwise: its new secured loans price at 7-7.5%, Nebius's customers prepaid more than all the capex on its new deals, and renting an H100 costs about 58% more than a year ago†. Tripwires: new AI loans above 10%, prepayments below half of capex, or chip rents more than 15% below their highs.
-- **Export controls tax the middlemen.** The 16 November rule requires a licence for any data centre that gives China-headquartered firms more than 12 million TPP of compute (about 750 H100s) in Indonesia, Malaysia, Singapore, Thailand or Brazil; existing sites get 90 days, to mid-February. Nvidia's guide already excludes China, so the cost lands on Southeast Asian neoclouds' orders and loans. Judge the rule by its enforcement (fines, warning letters, indictments) by mid-May, not by its text.
-- **China's levers sit one layer below the chip.** Its pause on gallium, germanium and antimony curbs lapses on 27 November; the rare-earth pause, the US affiliates-rule pause and the port fees all run to 9-10 January. It makes about two-thirds of the world's optical transceivers. Its squeezes show up in customs data before they show up in rules.
-- **The truce and Iran are one game, not two.** China buys most of Iran's shipped oil, so a US sanction on a big Chinese refiner or bank would land on the truce. We put a lapse on 10 January at 34%: about 60% if Washington designates one first, 31% if it does not.
-- **Permits are now a supply shock.** PJM's capacity auction cleared at its cap and 6.8 GW short; Texas froze approvals on a 474 GW queue and its governor-elect will keep the freeze; New York has a statewide moratorium. For a builder, a year of delay with idle chips costs more than 10 points of return; power 50% dearer costs less than one. Delay, not price, is the enemy.
-- **The bottleneck parts are sold out.** Memory, optics and substrate makers on long contracts are protected for about two quarters even if spending is cut. Their prices are not, which is why Micron still leans below our number.
-- **The Gulf is calm on the surface.** The tanker war is frozen and Brent was $93.14 on 17 November, 21% below its 30 October high. But a US strike on 2 November, an Iranian drone strike on a US base in Bahrain on 15 November and a third carrier group make the weeks to 3 January the riskiest left. Its route into AI is the Fed and Taiwan's energy imports (Taiwan holds 10-11 days of gas), not revenue.
-- **The Fed is hiking into the build.** The policy rate has been 3.75-4.00% since 16 September; we put a December hike at 93%; the 10-year has closed above 5% for 27 sessions and the dollar is at a 19-month high. The driver is core inflation, not oil. The premium in long bonds looks fiscal, so an AI slowdown would not bring much 10-year relief.
-- **Taiwan is the single point of failure.** No kinetic action yet, but the largest exercise since December 2025 and a 2026 high of 49 aircraft on 2 November. Our 10% by mid-2027 is mostly pressure short of war: a quarantine or blockade 4.5%, limited gray-zone fire 4%, invasion 1.5%.
-- **Nvidia after its founder.** The interim chief executive now counts customers' access to capital in guidance. Watch whether the credit-support lines in the annual report (late February) stop growing. We put that at 35%; it would mean the vendor has stopped financing its customers.
-
-## History's two laws put financing ahead of demand
-
-Revenue can keep rising while the shares fall, and history says that is normal late in a boom. In every past boom with usable dates (UK railways 1845, Cisco 2000, Nvidia 2018, the chip index 2022) equities peaked before spending did†, and the depth of the eventual cut scaled with outside funding: debt-funded telecom carriers cut about 60% from 2000 to 2002, cash-funded hyperscalers 2% in 2019 ([Doms, FRBSF](https://www.frbsf.org/wp-content/uploads/er19-34bk.pdf)). Our own five years show the same order:
-
-&#91;embedded content: data/ai\_prints\_backtest/5y/capex\_hyperscalers.csv and capex\_history.csv (company filings) · data/ai\_prints\_backtest/5y/prices\_5y.csv; capex grouped by the calendar quarter of spend\]
-
-So a falling SMH does not mean the next revenue prints will miss, and rising revenue does not mark a price floor. Vendor finance is the classic late-cycle tell: Lucent's customer financing reached about 24% of revenue and unwound in roughly 15 months†; Nvidia now carries $108.5bn of guarantees (July 10-Q), about $118bn in October per press, and an 8.3% stake in Nebius.
-
-## The marginal builder reads five of five on the debt-funded side
-
-| Test | Cash-funded reading | Debt-funded reading | Reading on 18 Nov 2026 |
-| --- | --- | --- | --- |
-| Hyperscaler free cash flow | Positive | Negative | Negative at Alphabet and Meta in the September quarter, at Oracle in its August quarter and at Amazon over twelve months; Microsoft positive |
-| Bond issuance against forecast | At or below | Above | $296bn year to date against Goldman's $250bn full-year forecast |
-| Off-balance-sheet vehicles | Rare | Pricing wider each deal | 6.58% (2025) to above 7% (July 2026); QTS placed about $300m of $800m |
-| The weakest borrower's access | Open | Shut | No high-yield data-center deal since late September; CoreWeave five-year CDS about 1,113bp; Nebius pulled a bond |
-| The vendor as guarantor | No | Yes | Nvidia guarantees of $108.5bn (July) to about $118bn (October, press) |
-
-The four big buyers still have balance sheets; the neoclouds and single-tenant vehicles do not. For revenue this matters through one channel: when the weakest buyers lose access to credit, their orders slip first, and those orders sit inside Nvidia's, Micron's and Oracle's numbers. No trigger has fired yet: no AI borrower has missed a payment, and prepayments from the big buyers are filling the gap.
+- **Credit: read the contracts, not the headline.** Insuring CoreWeave's debt costs about 11% a year, but its new secured loans price at 7-7.5% and Nebius's customers prepaid more than all its new capex. Tripwires: new AI loans above 10%, prepayments below half of capex, or chip rents more than 15% off their highs.
+- **Export controls tax the middlemen.** The 16 November rule needs a licence for any data centre giving China-headquartered firms more than about 750 H100s of compute in Indonesia, Malaysia, Singapore, Thailand or Brazil; existing sites have until mid-February. Nvidia's guide already excludes China, so the cost lands on Southeast Asian neoclouds.
+- **China's levers sit below the chip.** Its pause on gallium, germanium and antimony curbs lapses on 27 November; rare earths and the rest of the truce run to 10 January. It makes about two-thirds of the world's optical transceivers.
+- **The truce and Iran are one game.** China buys most of Iran's shipped oil. We put a truce lapse at 34%, rising to about 60% if Washington first sanctions a big Chinese refiner or bank.
+- **Permits are a supply shock.** PJM's auction cleared 6.8 GW short, Texas froze a 474 GW queue and New York has a moratorium. A year's delay costs a builder more than 10 points of return; power 50% dearer costs less than one.
+- **The Gulf reaches AI only through the Fed.** The tanker war is frozen and Brent is about $93, but strikes on 2 and 15 November make the weeks to 3 January the riskiest left. We expect a Fed hike on 9 December (93%), with the 10-year above 5%.
+- **Taiwan is the single point of failure.** No kinetic action, but the largest exercise since December 2025. Our 10% by mid-2027 is mostly a quarantine (4.5%) or gray-zone fire (4%), not an invasion (1.5%).
+- **Nvidia after its founder.** Watch whether its customer-guarantee lines stop growing in the late-February annual report (35%).
 
 ## What we see ahead: about 41% on a slower 2027, 10% on the tail that breaks it
 
@@ -107,8 +79,6 @@ The four big buyers still have balance sheets; the neoclouds and single-tenant v
 | Gulf flare-up | 18% to 3 Jan | Rates and Taiwan's energy bill, not revenue | Core inflation re-accelerates with oil | Carrier moves; 9 Dec Fed |
 | Taiwan action | 10% to 30 Jun 2027 | 2027 capex-decline odds rise to 30-85% | Drills turn into boarding or turning back ships | December drills; Taipower review |
 
-For context only, since price direction is a no-call: the map holds the chip index on 30 June 2027 at 35% above 520, 40% between 400 and 520, and 25% below 400.
-
 **The strongest case against us.** Rents for top chips are up about 58% in a year, a large memory maker says it is sold out through 2029, and the leading foundry sees no slowdown. On that evidence 2027 could be another 30%+ year, and our slowdown call would be the miss. We keep our own score too: the war-driven price calls we used to make went 1 for 6, which is why we stopped making them; our revenue numbers have beaten consensus over five years (1.5% median miss against 2.0%), but consensus has beaten us on next-quarter guides every year.
 
 ## The revenue numbers: a 1.5% median miss over five years
@@ -124,8 +94,6 @@ We name only revenue because it is the layer that can be named. Over five years 
 ## Conclusion
 
 The AI build is not short of buyers. It is short of permits, power, cheap money and peace between the two countries that make and mine what it runs on. That is why the next year is more likely to bring a slower build than a broken one: each constraint delays sites rather than cancelling demand, and the parts in shortest supply are sold out years ahead. Two things would change the picture. A truce lapse tied to Iran sanctions would raise the cost of everything below the chip just as the smaller builders need fresh credit. And Taiwan, a 10% tail, is the one event that breaks every print at once. For this winter, expect about six of seven companies to clear their own guide and two or three to reach our numbers; Micron and TSMC lean below.
-
-What to watch, in date order: the Shenzhen summit (19 November); gallium, germanium and antimony (27 November); the Nvidia hearings (1-10 December); the Fed and Broadcom (9 December); TSMC's November revenue (about 10 December); the Texas freeze and Micron's contract language (mid-December); any US strike campaign in Iran (to 3 January); any US sanction on a big Chinese refiner or bank (before 10 January); the truce cliff (10 January); a large AI lab's December revenue run-rate (mid-January); the first 2027 capex guides (late January); the end of the remote-access wind-down (mid-February); and Nvidia's annual-report support lines (late February).
 
 This report states direction and mechanism only. It is analysis, not investment advice, and it gives no position sizes.
 
@@ -151,3 +119,5 @@ Geopolitics: US Commerce Department (BIS) export rules of 7 Oct 2022, 17 Oct 202
 - **Revision, 17 Nov PT (user: "a full breakdown of where we are, how we got here geopolitically and what the engine sees for the future of the AI trade"; "only like 2 pages of it should be this revenue stuff").** Added three sections (how we got here, where we are now, what we see ahead) with four new charts; the revenue material is now the key-calls table and one section with the backtest chart (about 2 of 13 pages). Scenario odds are timeline-map conditionals, not ledger calls: base 0.85 x 0.93 x 0.93 x 0.66 x 0.90 = 0.44 (across lanes assumed independent); truce lapse 1 - 0.66; Gulf flare-up 0.10 by 30 Nov, 0.45 x 0.28 = 0.126 by 31 Dec; strait reopening 1 - 0.78; Taiwan `taiwan-h1-2027` 0.10. Map change: `taiwan-watch` and `taiwan-h1-2027` had no shift edges into the AI lane (a wiring gap under the time-lane rule); added edges to `ai-winter` 0.55, `ai-h1-second-leg` 0.70 and `nvda-dc-band` 0.30. No node probability changed. Research brief: shared notes `ai_geopolitics_brief.md`. Repo gap: the 2022-2024 export rounds and the Jan 2025 diffusion rule were not in the repo; dated from the public BIS record. Exports: 13 pages, 7 pictures.
 
 - **Revision 2, 17 Nov PT (user: build a full engine from the Substack archive, then rewrite the report as clearly as those posts; the writers are for learning only).** Engine: `.claude/skills/mechanism-library/SKILL.md` (35 rules, 23 ADOPT, 12 SHADOW; provenance in `PROVENANCE.md`) and `.claude/skills/report-writing/SKILL.md` (14 techniques). Sweep: `reports/desk/20261118_mechanism-sweep-ai.md`. The report now uses the sweep's reads, all PROPOSED for the map and not yet applied: base 0.80 x 0.93 x 0.93 x 0.66 x 0.90 = 0.41 (Gulf frozen 0.85 -> 0.80, P7); truce lapse 60%/31% with/without a Chinese-buyer designation, total 34% (P5); Gulf flare-up to 3 Jan 18%, ends by purchase 20% (P7); Taiwan 10% split 4.5/4/1.5 with capex-decline impacts 65/30/85% (P6); financing chain 82% (P1); 2027 slowdown about one in two with the hike edge plus permitting (P3); Nvidia support lines flat or lower 35% (P2). No writer is named, quoted or imitated in the body.
+
+- **Revision 3, 18 Nov PT (user: "get rid of any non important information").** Cut the history-laws section and its chart, the five-test builder table, the Nvidia/Nebius detail paragraph, the price-context and watch-list paragraphs (the signposts chart carries the dates) and two filler lines; the where-we-are list cut to eight short bullets. No numbers changed. 12 pages, 6 visuals. Older wording is in git (commit e1c8cc9).
