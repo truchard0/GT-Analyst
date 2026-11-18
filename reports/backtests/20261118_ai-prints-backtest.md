@@ -1,7 +1,7 @@
 # AI prints backtest: six months of reports, forecast blind (first run, 18 Nov 2026)
 
-**Status: revenue and next-guide results are final for the first run, including the comparison with Wall Street
-consensus. Capex forecasts are pending one data file (see the end).** Rules, pass lines and scorers were committed before the window data was
+**Status: complete for the first run.** Revenue, next-quarter guide and capex forecasts are all scored, with the
+consensus comparison. Rules, pass lines and scorers were committed before the window data was
 read (`data/ai_prints_backtest/PREREG.md`, commits `99c0181` and `06329b7`). Numbers below are the first run, unedited.
 
 Sample: 29 reports published 18 May to 17 Nov 2026 by Nvidia (3), Broadcom, Micron, TSMC, AMD, Marvell, ASML, Applied
@@ -52,6 +52,24 @@ Against the pass lines set in advance:
 - **Without Micron and Dell** (25 reports): revenue median miss 0.96%, mean 1.15%, average range ±1.4%. Four reports
   from two companies account for most of the error and most of the range width.
 
+## Capex numbers (five hyperscalers; added when the capex history landed)
+| Target | Forecasts | Our median miss | Naive median miss | Consensus median miss | Within 5% | Actual inside the 80% range | Average range |
+|---|---|---|---|---|---|---|---|
+| Quarterly capex | 10 | **9.5%** | 19.5% (last quarter repeated) | 9.7% (6 reports with a consensus; ours 9.75% on the same 6) | 30% | 90% | **±24%** |
+| New annual capex guide | 9 | **5.4%** | **1.8%** (prior guide unchanged) | n/a | 33% | 89% | ±15% |
+
+- **Quarterly capex: about as good as consensus, twice as good as repeating last quarter, and nowhere near tight.**
+  Misses ran from 3% to 25% (Amazon's October quarter came in at 77.3 against a 61.3 forecast; Oracle's September
+  quarter at 28.5 against 21.4). A ±24% range is not a forecast anyone can use. Fails the ±8% tightness line.
+- **Annual capex guide: the model lost to doing nothing.** It assumed each company would keep revising up at its
+  recent pace and ran 7% high on average; in the window guides were mostly held and Microsoft's was cut twice
+  (190 to 175 to 170). "The guide stays where it is" was closer on 7 of 9. The correct reading: a capex guide is
+  sticky inside its year, and the forecastable event is the first guide for the next year, which this sample does
+  not contain.
+- Definitions differ by company (Microsoft and Meta include finance leases; Amazon guides on cash capex but reports
+  gross), and Microsoft's July figure fell because of a lease reclassification, so the quarterly series is not fully
+  like-for-like. Ten forecasts is a small sample.
+
 ## Where it broke
 | Report | Guide midpoint | Forecast | Actual | Miss |
 |---|---|---|---|---|
@@ -86,9 +104,14 @@ tested on.
 - The model design was written after its author had seen a few of these outcomes, so only the row-by-row forecasts are
   blind. The clean test is forward.
 
-## Pending
-- `capex_history.csv` (quarterly capex and annual guides): needed for the capex number forecasts.
-- Re-run `python3 tools/ai_prints_numeric.py --rows` when it is present. `consensus.csv` holds a capex consensus for
-  6 of the 10 hyperscaler reports.
+## Verdict by target
+| Target | Can it be named in a tight range from the company's own history? |
+|---|---|
+| Reported revenue | Mostly: about ±1% on a normal quarter, better than consensus; fails on surprise quarters |
+| Next-quarter guide | No: 5.6% median miss, and consensus is better |
+| Quarterly capex | No: about 10% median miss, same as consensus |
+| Annual capex guide inside its year | Assume no change; the model added nothing |
+
+## Not done
 - Forward numbers with ranges for the next prints (`--forward --scale 1.73` for revenue, `1.69` for guides, the
   factors that would have given 80% coverage here) have not been produced or logged.

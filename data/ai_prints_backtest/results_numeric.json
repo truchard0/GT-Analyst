@@ -77,10 +77,65 @@
   }
  },
  "N3_quarter_capex": {
-  "n": 0
+  "n": 10,
+  "median_abs_err_pct": 9.51,
+  "mean_abs_err_pct": 10.88,
+  "mean_signed_err_pct": 0.19,
+  "within": {
+   "1%": 0.0,
+   "2%": 0.0,
+   "3%": 0.1,
+   "5%": 0.3
+  },
+  "coverage_80": 0.9,
+  "mean_half_width_pct": 24.44,
+  "tight_line_pct": 8.0,
+  "scale_for_80pct_coverage": 0.74,
+  "b0": {
+   "n": 10,
+   "median_abs_err_pct": 19.52,
+   "model_median_on_same_rows_pct": 9.51,
+   "model_closer_on": 9,
+   "of": 10
+  },
+  "b1": {
+   "n": 6,
+   "median_abs_err_pct": 9.69,
+   "model_median_on_same_rows_pct": 9.75,
+   "model_closer_on": 3,
+   "of": 6
+  },
+  "pass": {
+   "calibration_65_95": true,
+   "tightness": false
+  }
  },
  "N4_annual_capex_guide": {
-  "n": 0
+  "n": 9,
+  "median_abs_err_pct": 5.44,
+  "mean_abs_err_pct": 7.86,
+  "mean_signed_err_pct": 7.13,
+  "within": {
+   "1%": 0.111,
+   "2%": 0.111,
+   "3%": 0.111,
+   "5%": 0.333
+  },
+  "coverage_80": 0.889,
+  "mean_half_width_pct": 14.79,
+  "tight_line_pct": 5.0,
+  "scale_for_80pct_coverage": 0.98,
+  "b0": {
+   "n": 9,
+   "median_abs_err_pct": 1.82,
+   "model_median_on_same_rows_pct": 5.44,
+   "model_closer_on": 2,
+   "of": 9
+  },
+  "pass": {
+   "calibration_65_95": null,
+   "tightness": false
+  }
  },
  "N1_primary_only": {
   "n": 29,
@@ -670,6 +725,218 @@
    "N2_b1": 125.25
   }
  ],
- "capex_rows": [],
- "capex_guide_rows": []
+ "capex_rows": [
+  {
+   "ticker": "AMZN",
+   "date": "2026-07-30",
+   "quality": "primary",
+   "N3_point": 51.501182321956264,
+   "N3_half": 0.11348565092474065,
+   "N3_actual": 54.208,
+   "N3_b0": 44.203,
+   "N3_b1": null,
+   "momentum": 51.0700313105792,
+   "implied": 51.93233333333333
+  },
+  {
+   "ticker": "AMZN",
+   "date": "2026-10-29",
+   "quality": "primary",
+   "N3_point": 61.30535293872438,
+   "N3_half": 0.07595361509452019,
+   "N3_actual": 77.259,
+   "N3_b0": 54.208,
+   "N3_b1": 58.7,
+   "momentum": 61.81620587744877,
+   "implied": 60.7945
+  },
+  {
+   "ticker": "GOOGL",
+   "date": "2026-07-22",
+   "quality": "primary",
+   "N3_point": 46.36336786340247,
+   "N3_half": 0.14136607031217735,
+   "N3_actual": 44.924,
+   "N3_b0": 35.674,
+   "N3_b1": 44.8,
+   "momentum": 42.951402393471625,
+   "implied": 49.77533333333333
+  },
+  {
+   "ticker": "GOOGL",
+   "date": "2026-10-28",
+   "quality": "primary",
+   "N3_point": 56.636740091028585,
+   "N3_half": 0.12557692846211593,
+   "N3_actual": 51.355,
+   "N3_b0": 44.924,
+   "N3_b1": 55.09,
+   "momentum": 53.57248018205716,
+   "implied": 59.701
+  },
+  {
+   "ticker": "META",
+   "date": "2026-07-29",
+   "quality": "primary",
+   "N3_point": 30.15586326824899,
+   "N3_half": 0.18859238318977423,
+   "N3_actual": 31.08,
+   "N3_b0": 19.84,
+   "N3_b1": null,
+   "momentum": 21.925059869831315,
+   "implied": 38.38666666666666
+  },
+  {
+   "ticker": "META",
+   "date": "2026-10-21",
+   "quality": "primary",
+   "N3_point": 40.07697243346176,
+   "N3_half": 0.3566583485119799,
+   "N3_actual": 34.91,
+   "N3_b0": 31.08,
+   "N3_b1": 41.68,
+   "momentum": 36.86394486692352,
+   "implied": 43.29
+  },
+  {
+   "ticker": "MSFT",
+   "date": "2026-07-29",
+   "quality": "primary",
+   "N3_point": 44.28639352436341,
+   "N3_half": 0.3121606382140521,
+   "N3_actual": 41.0,
+   "N3_b0": 31.9,
+   "N3_b1": 42.37,
+   "momentum": 35.87278704872683,
+   "implied": 52.699999999999996
+  },
+  {
+   "ticker": "MSFT",
+   "date": "2026-10-28",
+   "quality": "primary",
+   "N3_point": 49.36947481656529,
+   "N3_half": 0.32905183467834465,
+   "N3_actual": 45.2,
+   "N3_b0": 41.0,
+   "N3_b1": 50.67,
+   "momentum": 47.68894963313058,
+   "implied": 51.05
+  },
+  {
+   "ticker": "ORCL",
+   "date": "2026-06-10",
+   "quality": "primary",
+   "N3_point": 18.10840475086523,
+   "N3_half": 0.37231671225297225,
+   "N3_actual": 16.493,
+   "N3_b0": 18.635,
+   "N3_b1": null,
+   "momentum": 25.38680950173046,
+   "implied": 10.829999999999998
+  },
+  {
+   "ticker": "ORCL",
+   "date": "2026-09-10",
+   "quality": "primary",
+   "N3_point": 21.42813949349611,
+   "N3_half": 0.42873566077046293,
+   "N3_actual": 28.499,
+   "N3_b0": 16.493,
+   "N3_b1": null,
+   "momentum": 19.731278986992223,
+   "implied": 23.125
+  }
+ ],
+ "capex_guide_rows": [
+  {
+   "ticker": "AMZN",
+   "date": "2026-07-30",
+   "quality": "primary",
+   "N4_point": 212.91970145195535,
+   "N4_half": 0.15017032792108923,
+   "N4_actual": 220.0,
+   "N4_b0": 200.0,
+   "N4_b1": null
+  },
+  {
+   "ticker": "AMZN",
+   "date": "2026-10-29",
+   "quality": "primary",
+   "N4_point": 231.0,
+   "N4_half": 0.09050966799187818,
+   "N4_actual": 220.0,
+   "N4_b0": 220.0,
+   "N4_b1": null
+  },
+  {
+   "ticker": "GOOGL",
+   "date": "2026-07-22",
+   "quality": "primary",
+   "N4_point": 199.86267918498098,
+   "N4_half": 0.1584346956655535,
+   "N4_actual": 200.0,
+   "N4_b0": 185.0,
+   "N4_b1": null
+  },
+  {
+   "ticker": "GOOGL",
+   "date": "2026-10-28",
+   "quality": "primary",
+   "N4_point": 210.88588588588587,
+   "N4_half": 0.04824464284852375,
+   "N4_actual": 200.0,
+   "N4_b0": 200.0,
+   "N4_b1": null
+  },
+  {
+   "ticker": "META",
+   "date": "2026-07-29",
+   "quality": "primary",
+   "N4_point": 145.85408945481834,
+   "N4_half": 0.1510618041466314,
+   "N4_actual": 137.5,
+   "N4_b0": 135.0,
+   "N4_b1": null
+  },
+  {
+   "ticker": "META",
+   "date": "2026-10-21",
+   "quality": "primary",
+   "N4_point": 144.27314814814815,
+   "N4_half": 0.05564668476537689,
+   "N4_actual": 140.0,
+   "N4_b0": 137.5,
+   "N4_b1": null
+  },
+  {
+   "ticker": "MSFT",
+   "date": "2026-07-29",
+   "quality": "primary",
+   "N4_point": 205.27612589937397,
+   "N4_half": 0.1510618041466314,
+   "N4_actual": 175.0,
+   "N4_b0": 190.0,
+   "N4_b1": null
+  },
+  {
+   "ticker": "MSFT",
+   "date": "2026-10-28",
+   "quality": "primary",
+   "N4_point": 185.52636240989833,
+   "N4_half": 0.13807468938089898,
+   "N4_actual": 170.0,
+   "N4_b0": 175.0,
+   "N4_b1": null
+  },
+  {
+   "ticker": "ORCL",
+   "date": "2026-09-10",
+   "quality": "primary",
+   "N4_point": 112.32142857142858,
+   "N4_half": 0.387898577108049,
+   "N4_actual": 92.5,
+   "N4_b0": 92.5,
+   "N4_b1": null
+  }
+ ]
 }

@@ -396,8 +396,9 @@ bot, it is a prediction bot for world events, remember that".
 - **Forward test:** the skill's §8 sets the kill criteria per layer once 10 calls in a layer have resolved.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
-**CLOUD STATUS: NOT DONE YET. Data-gathering runs are still writing files. This line changes to "CLOUD SESSION DONE"
-in the last commit; do not archive the cloud session before then.**
+**CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all
+background runs have finished and their files are committed. It is safe to archive. The list below is what it left
+unfinished.**
 
 The cloud session (`session_01AwChvHXzuPFbFQLR4ELyXC`) was told to finish its step, push everything and stop. It no
 longer writes `ledger/ledger.db`. Unfinished work, in the order to pick it up:
@@ -406,13 +407,13 @@ longer writes `ledger/ledger.db`. Unfinished work, in the order to pick it up:
    range), not just booleans."
    - Rules and pass lines: `data/ai_prints_backtest/PREREG.md` (V1 boolean rules, then V2 numeric), committed before
      any window data was read (`99c0181`, `06329b7`). Scorers: `tools/ai_prints_numeric.py` (V2) and
-     `tools/ai_prints_backtest.py` (V1). Both were self-tested on synthetic data only. **First real run done 11/18 for revenue and the next guide: `reports/backtests/20261118_ai-prints-backtest.md`** (29 reports: revenue median miss 1.02% against 2.14% for the naive guide, but only 62% inside the 80% range and ranges wider than the ±2% line; next-quarter guide median miss 5.6%, biased 4.8% low, ranges ±11%: not tight. Yes/no rules: 29 of 29 beat their guide; the stock rose the next session after only 11 of 28 beats). Against consensus on the same 29 reports: revenue median miss 1.02% vs 1.91% for consensus (model closer on 20 of 29); next guide 5.60% vs 3.69% (consensus closer on 21 of 29); consensus also missed Micron's June and Dell's May reports by 14% and 19%. Capex forecasts are not yet run (waiting on `capex_history.csv`).
-   - Data files in `data/ai_prints_backtest/` (status is in the last commit message of this section):
+     `tools/ai_prints_backtest.py` (V1). Both were self-tested on synthetic data only. **First real run done 11/18 for revenue and the next guide: `reports/backtests/20261118_ai-prints-backtest.md`** (29 reports: revenue median miss 1.02% against 2.14% for the naive guide, but only 62% inside the 80% range and ranges wider than the ±2% line; next-quarter guide median miss 5.6%, biased 4.8% low, ranges ±11%: not tight. Yes/no rules: 29 of 29 beat their guide; the stock rose the next session after only 11 of 28 beats). Against consensus on the same 29 reports: revenue median miss 1.02% vs 1.91% for consensus (model closer on 20 of 29); next guide 5.60% vs 3.69% (consensus closer on 21 of 29); consensus also missed Micron's June and Dell's May reports by 14% and 19%. Capex (10 and 9 forecasts): quarterly capex median miss 9.5% (naive 19.5%, consensus 9.7%) with ±24% ranges; the annual-guide model LOST to "guide unchanged" (5.4% vs 1.8%). All seven data files are present and every score has been run once.
+   - Data files in `data/ai_prints_backtest/` (all present; outputs in `results_numeric.json`):
      `prices.csv` (daily closes, 17 tickers), `prints_suppliers.csv` (window, 11 suppliers), `prints_buyers.csv`
      (window: AMZN, META, ORCL), `capex.csv` (window capex guide changes), `prints_history_a.csv` and
      `prints_history_b.csv` (the four reports before the window, feeds the model), `capex_history.csv` (quarterly capex
      and annual guides, 2025-2026), `consensus.csv` (sell-side consensus before each report, the benchmark).
-   - To resume: when the files are present run `python3 tools/ai_prints_numeric.py --rows` and
+   - To re-run: `python3 tools/ai_prints_numeric.py --rows` and
      `python3 tools/ai_prints_backtest.py`, and report the first-run numbers against the PREREG pass lines (accuracy
      vs the naive guide and vs consensus, 80% range coverage, tightness). Check the `*_notes.md` files for rows the
      data runs could not verify before trusting a number. V1's `capex.csv` scoring needs the column `change`.
