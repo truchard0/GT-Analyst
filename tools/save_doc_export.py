@@ -13,6 +13,9 @@ import base64, json, pathlib, sys, zipfile
 def main():
     src, out = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
     obj = json.loads(src.read_text(encoding="utf-8"))
+    if isinstance(obj, list):  # some clients save the tool result as [{type, text}] with the JSON inside `text`
+        obj = json.loads(max((b.get("text", "") for b in obj if isinstance(b, dict)), key=len))
+    obj = obj.get("value", obj) if isinstance(obj.get("value"), dict) else obj
     data = obj.get("data", obj)
     key = max((k for k, v in data.items() if isinstance(v, str)), key=lambda k: len(data[k]))
     raw = base64.b64decode(data[key], validate=True)
