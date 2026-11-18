@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-17",
+  "note": "Curated world-event lead lines for the market update. Facts taken from our own processed tape (reports/20261118_tape-note-gulf-oil-fed.md and its inbox items). reported_utc = the feed's report time; known_from_et = the earliest edition time an item without an exact time may appear in. Market sections follow the events; oil and war items are context only, never a call.",
+  "items": [
+    {
+      "kind": "lead",
+      "topic": "Fed",
+      "text": "Two Fed policymakers leaned further toward tightening: Governor Waller said a half-point move should be considered if inflation stays hot, and St. Louis Fed president Musalem said up to four more hikes may be needed by spring. Futures put about 95% on a quarter-point hike on 9 December.",
+      "source": "speeches as reported on the wires",
+      "reported_utc": null,
+      "known_from_et": "2026-11-17T09:30"
+    },
+    {
+      "kind": "lead",
+      "topic": "Gulf",
+      "text": "US aircraft struck a Revolutionary Guards missile launch site on Qeshm Island, which a US official called self-defense; Iran reports little damage. It is the third US strike day on Iranian territory this month.",
+      "source": "Bloomberg via gCaptain",
+      "reported_utc": "2026-11-17T20:14:00Z"
+    },
+    {
+      "kind": "lead",
+      "topic": "AI",
+      "text": "Nvidia reports its fiscal third quarter after the close, five days after its chief executive resigned.",
+      "source": "company calendar",
+      "reported_utc": null,
+      "known_from_et": "2026-11-17T09:30",
+      "until_et": "2026-11-17T16:00"
+    },
+    {
+      "kind": "lead",
+      "topic": "AI",
+      "text": "Nvidia reported fiscal third-quarter revenue of $115.8bn against $109.1bn expected and raised next year's growth outlook to 75%.",
+      "source": "company release; consensus per LSEG as reported by Reuters and CNBC",
+      "reported_utc": null,
+      "known_from_et": "2026-11-17T16:30"
+    },
+    {
+      "kind": "watch",
+      "topic": "Fed",
+      "text": "Minutes of the October FOMC meeting",
+      "when_et": "2026-11-18T14:00",
+      "known_from_et": "2026-11-17T09:30"
+    },
+    {
+      "kind": "watch",
+      "topic": "AI",
+      "text": "First cash session after Nvidia's report",
+      "when_et": "2026-11-18T09:30",
+      "known_from_et": "2026-11-17T16:30"
+    },
+    {
+      "kind": "watch",
+      "topic": "Gulf",
+      "text": "Shenzhen talks involving China, Russia and Iran (dates per China's foreign ministry)",
+      "when_et": "2026-11-19T00:00",
+      "known_from_et": "2026-11-17T09:30"
+    },
+    {
+      "kind": "watch",
+      "topic": "Options",
+      "text": "Monthly options expiry (index and single names)",
+      "when_et": "2026-11-20T16:00",
+      "known_from_et": "2026-11-17T09:30"
+    }
+  ]
+}
