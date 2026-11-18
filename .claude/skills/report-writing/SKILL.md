@@ -16,7 +16,8 @@ someone's "lens". State mechanisms in our own words and cite primary sources (fi
 - **What:** the opening paragraph gives the call, its odds and its date. Everything after supports it.
 - **Why:** readers stop early, and one paragraph should still give them the answer. It also makes the writer find
   the answer before writing.
-- **How:** sit the bottom line right under the key-calls table. Open every section with its own one-line conclusion
+- **How:** the opening paragraph IS the bottom line; never label it "Bottom line:" (the user finds the label
+  cheesy, 18 Nov 2026), and never label section openers either. Open every section with its own one-line conclusion
   and close it with what that means for the call.
 - **Example:** "We expect a slower 2027 for AI building, not a break. The chance that total 2027 capex falls is 20%,
   and the first test is the big buyers' capex guides in late January."

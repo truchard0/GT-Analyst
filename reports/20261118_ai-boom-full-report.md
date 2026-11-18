@@ -2,7 +2,7 @@
 
 *@alostquant*
 
-**Bottom line:** the AI build isn't running out of buyers. It is running into limits: permits, power, the price of money, and the uneasy peace between Washington and Beijing. Demand at the top is still accelerating, so this winter's revenue reports should mostly land. The danger sits in 2027. It has three ways in: credit for the smaller builders, the US-China truce that expires on 10 January, and a small chance of trouble over Taiwan. Our base case, at about 41%, is a slower 2027, not a broken one.
+The AI build isn't running out of buyers. It is running into limits: permits, power, the price of money, and the uneasy peace between Washington and Beijing. Demand at the top is still accelerating, so this winter's revenue reports should mostly land. The danger sits in 2027. It has three ways in: credit for the smaller builders, the US-China truce that expires on 10 January, and a small chance of trouble over Taiwan. Our base case, at about 41%, is a slower 2027, not a broken one.
 
 Within a day of each other, two things happened. On 16 November Washington announced a rule that, from 19 November, requires a licence before any data centre, anywhere, rents Chinese-headquartered firms more than about 750 top-end chips' worth of computing. The next evening Nvidia reported $115.8bn of revenue for a single quarter, nearly twice what it sold in the whole of fiscal 2024.
 
