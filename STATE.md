@@ -423,6 +423,12 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
    (Claude Doc, 7 visuals each naming its data file); exports `reports/exports/20261118_ai-trade-call-the-prints.{docx,pdf}`
    (docx holds all 7); markdown copy `reports/20261118_ai-trade-call-the-prints.md` with desk records. Folds in the
    backtest, the 19 forward ranges, the Nvidia correction and the TSMC flag.
+5. **News-informed forecast: DONE, first run** (`reports/backtests/20261118_news-informed-forecast.md`; rules
+   `data/news_forecast/PREREG.md`, committed before any forecast). 17 blind forecasts (1 Aug-17 Nov 2026), one subagent
+   per point-in-time packet. Next-guide median miss: news 3.9% vs mechanical 7.5% vs consensus 3.7%; all three pass
+   lines PASS. Caveats: about half the gain is a bias fix learned on the same reports; little comes from headlines;
+   consensus still better on the mean (4.1% vs 5.4%) and on Micron/AMD/ASML; no gain on revenue; 80% ranges held 71%.
+   Not wired into anything. Next: run it forward before the December reports.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all

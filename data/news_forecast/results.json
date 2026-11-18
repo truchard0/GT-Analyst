@@ -1,0 +1,798 @@
+{
+ "N2": {
+  "card": {
+   "test": {
+    "n": 8,
+    "naive_median_mean": [
+     17.09,
+     16.9
+    ],
+    "mech_median_mean": [
+     11.48,
+     11.34
+    ],
+    "news_median_mean": [
+     4.3,
+     7.07
+    ],
+    "cons_median_mean": [
+     5.82,
+     5.89
+    ],
+    "news_closer_than_mech": 7,
+    "news_closer_than_cons": 3,
+    "news_cover80": 5,
+    "mech_cover80_refit": 7
+   },
+   "control": {
+    "n": 9,
+    "naive_median_mean": [
+     14.29,
+     12.73
+    ],
+    "mech_median_mean": [
+     4.23,
+     4.07
+    ],
+    "news_median_mean": [
+     2.31,
+     3.85
+    ],
+    "cons_median_mean": [
+     3.53,
+     2.49
+    ],
+    "news_closer_than_mech": 5,
+    "news_closer_than_cons": 3,
+    "news_cover80": 7,
+    "mech_cover80_refit": 7
+   },
+   "A": {
+    "n": 4,
+    "naive_median_mean": [
+     13.94,
+     13.94
+    ],
+    "mech_median_mean": [
+     7.61,
+     9.39
+    ],
+    "news_median_mean": [
+     3.64,
+     6.85
+    ],
+    "cons_median_mean": [
+     7.6,
+     9.4
+    ],
+    "news_closer_than_mech": 3,
+    "news_closer_than_cons": 3,
+    "news_cover80": 4,
+    "mech_cover80_refit": 4
+   },
+   "B": {
+    "n": 5,
+    "naive_median_mean": [
+     18.7,
+     19.63
+    ],
+    "mech_median_mean": [
+     14.87,
+     14.72
+    ],
+    "news_median_mean": [
+     9.52,
+     9.24
+    ],
+    "cons_median_mean": [
+     3.4,
+     3.37
+    ],
+    "news_closer_than_mech": 5,
+    "news_closer_than_cons": 0,
+    "news_cover80": 2,
+    "mech_cover80_refit": 4
+   },
+   "all": {
+    "n": 17,
+    "naive_median_mean": [
+     15.2,
+     14.69
+    ],
+    "mech_median_mean": [
+     7.5,
+     7.49
+    ],
+    "news_median_mean": [
+     3.9,
+     5.36
+    ],
+    "cons_median_mean": [
+     3.65,
+     4.09
+    ],
+    "news_closer_than_mech": 12,
+    "news_closer_than_cons": 6,
+    "news_cover80": 12,
+    "mech_cover80_refit": 14
+   },
+   "pass": {
+    "1_news_helps": true,
+    "2_no_harm": true,
+    "3_near_consensus": true
+   }
+  },
+  "rows": [
+   {
+    "key": "2026-08-04_AMD",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 13.0,
+    "naive": 13.846153846153852,
+    "mech": 4.239241483459121,
+    "news": 0.7692307692307665,
+    "cons": 3.6923076923076947,
+    "news_point": 12.9,
+    "mech_point": 12.448898607150314,
+    "cons_point": 12.52,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-08-13_AMAT",
+    "set": "test",
+    "A": true,
+    "B": false,
+    "actual": 10.25,
+    "naive": 12.682926829268304,
+    "mech": 7.502845348461773,
+    "news": 3.9024390243902474,
+    "cons": 6.926829268292689,
+    "news_point": 9.85,
+    "mech_point": 9.480958351782668,
+    "cons_point": 9.54,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-08-26_NVDA",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 108.0,
+    "naive": 15.740740740740744,
+    "mech": 0.48910246547679836,
+    "news": 2.314814814814814,
+    "cons": 3.5277777777777852,
+    "news_point": 110.5,
+    "mech_point": 108.52823066271495,
+    "cons_point": 104.19,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-08-27_MRVL",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 3.15,
+    "naive": 14.28571428571428,
+    "mech": 7.564421586697367,
+    "news": 4.761904761904756,
+    "cons": 3.809523809523818,
+    "news_point": 3.0,
+    "mech_point": 2.9117207200190327,
+    "cons_point": 3.03,
+    "news_in": true,
+    "mech_in": false
+   },
+   {
+    "key": "2026-09-01_DELL",
+    "set": "test",
+    "A": true,
+    "B": false,
+    "actual": 49.0,
+    "naive": 9.183673469387754,
+    "mech": 1.8674429665849424,
+    "news": 3.0612244897959107,
+    "cons": 15.469387755102037,
+    "news_point": 50.5,
+    "mech_point": 49.91504705362662,
+    "cons_point": 41.42,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-09-02_AVGO",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 34.8,
+    "naive": 15.517241379310342,
+    "mech": 0.9485317501128132,
+    "news": 2.298850574712663,
+    "cons": 0.6609195402298873,
+    "news_point": 35.6,
+    "mech_point": 34.46991095096074,
+    "cons_point": 35.03,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-09-10_ORCL",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 21.197,
+    "naive": 9.869321130348629,
+    "mech": 4.228317272894088,
+    "news": 1.8729065433787717,
+    "cons": 0.01415294617161944,
+    "news_point": 20.8,
+    "mech_point": 20.30072358766464,
+    "cons_point": 21.2,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-09-30_MU",
+    "set": "test",
+    "A": true,
+    "B": true,
+    "actual": 61.5,
+    "naive": 18.699186991869922,
+    "mech": 20.479828105936893,
+    "news": 17.07317073170731,
+    "cons": 7.317073170731703,
+    "news_point": 72.0,
+    "mech_point": 74.09509428515119,
+    "cons_point": 57.0,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-10-14_ASML",
+    "set": "test",
+    "A": false,
+    "B": true,
+    "actual": 14.7,
+    "naive": 21.76870748299319,
+    "mech": 12.351654861533579,
+    "news": 9.523809523809511,
+    "cons": 3.401360544217691,
+    "news_point": 13.3,
+    "mech_point": 12.884306735354564,
+    "cons_point": 14.2,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-10-15_TSM",
+    "set": "test",
+    "A": true,
+    "B": false,
+    "actual": 53.3,
+    "naive": 15.196998123827388,
+    "mech": 7.723245733956608,
+    "news": 3.3771106941838602,
+    "cons": 7.879924953095674,
+    "news_point": 51.5,
+    "mech_point": 49.18351002380113,
+    "cons_point": 49.1,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-10-21_LRCX",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 8.6,
+    "naive": 5.813953488372093,
+    "mech": 5.535254224751096,
+    "news": 8.139534883720945,
+    "cons": 0.7209302325581368,
+    "news_point": 9.3,
+    "mech_point": 9.076031863328593,
+    "cons_point": 8.538,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-10-21_META",
+    "set": "test",
+    "A": false,
+    "B": true,
+    "actual": 74.5,
+    "naive": 16.10738255033557,
+    "mech": 10.607394838877882,
+    "news": 4.697986577181212,
+    "cons": 1.0335570469798605,
+    "news_point": 71.0,
+    "mech_point": 66.59749084503598,
+    "cons_point": 73.73,
+    "news_in": false,
+    "mech_in": true
+   },
+   {
+    "key": "2026-10-28_KLAC",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 4.7,
+    "naive": 14.893617021276595,
+    "mech": 9.606943355986752,
+    "news": 7.87234042553192,
+    "cons": 4.468085106382979,
+    "news_point": 4.33,
+    "mech_point": 4.248473662268623,
+    "cons_point": 4.49,
+    "news_in": false,
+    "mech_in": false
+   },
+   {
+    "key": "2026-10-29_AMZN",
+    "set": "test",
+    "A": false,
+    "B": true,
+    "actual": 243.5,
+    "naive": 18.069815195071868,
+    "mech": 14.870156292671865,
+    "news": 2.258726899383978,
+    "cons": 0.4106776180698102,
+    "news_point": 238.0,
+    "mech_point": 207.29116942734402,
+    "cons_point": 244.5,
+    "news_in": false,
+    "mech_in": true
+   },
+   {
+    "key": "2026-11-03_AMD",
+    "set": "test",
+    "A": false,
+    "B": true,
+    "actual": 17.0,
+    "naive": 23.529411764705888,
+    "mech": 15.277819066090714,
+    "news": 12.647058823529411,
+    "cons": 4.705882352941182,
+    "news_point": 14.85,
+    "mech_point": 14.402770758764579,
+    "cons_point": 16.2,
+    "news_in": false,
+    "mech_in": false
+   },
+   {
+    "key": "2026-11-12_AMAT",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 11.1,
+    "naive": 7.657657657657657,
+    "mech": 2.8092933072842996,
+    "news": 5.855855855855863,
+    "cons": 1.8918918918918837,
+    "news_point": 11.75,
+    "mech_point": 11.411831557108558,
+    "cons_point": 10.89,
+    "news_in": false,
+    "mech_in": true
+   },
+   {
+    "key": "2026-11-17_NVDA",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 130.0,
+    "naive": 16.92307692307692,
+    "mech": 1.1974525751276333,
+    "news": 0.7692307692307665,
+    "cons": 3.653846153846152,
+    "news_point": 129.0,
+    "mech_point": 128.44331165233407,
+    "cons_point": 125.25,
+    "news_in": true,
+    "mech_in": true
+   }
+  ]
+ },
+ "N1": {
+  "card": {
+   "test": {
+    "n": 8,
+    "naive_median_mean": [
+     3.04,
+     3.35
+    ],
+    "mech_median_mean": [
+     1.17,
+     2.0
+    ],
+    "news_median_mean": [
+     1.04,
+     1.42
+    ],
+    "cons_median_mean": [
+     2.03,
+     2.52
+    ],
+    "news_closer_than_mech": 3,
+    "news_closer_than_cons": 6,
+    "news_cover80": 7,
+    "mech_cover80_refit": 7
+   },
+   "control": {
+    "n": 9,
+    "naive_median_mean": [
+     1.53,
+     2.74
+    ],
+    "mech_median_mean": [
+     0.96,
+     1.22
+    ],
+    "news_median_mean": [
+     1.1,
+     1.19
+    ],
+    "cons_median_mean": [
+     1.09,
+     2.18
+    ],
+    "news_closer_than_mech": 6,
+    "news_closer_than_cons": 7,
+    "news_cover80": 9,
+    "mech_cover80_refit": 6
+   },
+   "A": {
+    "n": 4,
+    "naive_median_mean": [
+     4.26,
+     4.53
+    ],
+    "mech_median_mean": [
+     1.9,
+     2.9
+    ],
+    "news_median_mean": [
+     1.08,
+     1.83
+    ],
+    "cons_median_mean": [
+     4.13,
+     3.86
+    ],
+    "news_closer_than_mech": 2,
+    "news_closer_than_cons": 4,
+    "news_cover80": 4,
+    "mech_cover80_refit": 3
+   },
+   "B": {
+    "n": 5,
+    "naive_median_mean": [
+     2.82,
+     3.29
+    ],
+    "mech_median_mean": [
+     1.15,
+     2.38
+    ],
+    "news_median_mean": [
+     1.17,
+     1.83
+    ],
+    "cons_median_mean": [
+     1.91,
+     2.11
+    ],
+    "news_closer_than_mech": 2,
+    "news_closer_than_cons": 3,
+    "news_cover80": 4,
+    "mech_cover80_refit": 5
+   },
+   "all": {
+    "n": 17,
+    "naive_median_mean": [
+     2.82,
+     3.03
+    ],
+    "mech_median_mean": [
+     1.12,
+     1.59
+    ],
+    "news_median_mean": [
+     1.1,
+     1.3
+    ],
+    "cons_median_mean": [
+     1.91,
+     2.34
+    ],
+    "news_closer_than_mech": 9,
+    "news_closer_than_cons": 13,
+    "news_cover80": 16,
+    "mech_cover80_refit": 13
+   },
+   "pass": {
+    "1_news_helps": false,
+    "2_no_harm": true,
+    "3_near_consensus": true
+   }
+  },
+  "rows": [
+   {
+    "key": "2026-08-04_AMD",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 11.536,
+    "naive": 2.9126213592232997,
+    "mech": 2.3613662782949962,
+    "news": 2.115117891816909,
+    "cons": 2.219140083217752,
+    "news_point": 11.78,
+    "mech_point": 11.80840721386411,
+    "cons_point": 11.28,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-08-13_AMAT",
+    "set": "test",
+    "A": true,
+    "B": false,
+    "actual": 9.115,
+    "naive": 1.810202962150309,
+    "mech": 0.3187630179141365,
+    "news": 0.4936917169500843,
+    "cons": 1.371365880416897,
+    "news_point": 9.16,
+    "mech_point": 9.144055249082873,
+    "cons_point": 8.99,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-08-26_NVDA",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 96.221,
+    "naive": 5.426050446368258,
+    "mech": 0.9608869165774858,
+    "news": 0.6453892601407274,
+    "cons": 4.210099666392997,
+    "news_point": 95.6,
+    "mech_point": 95.29642499999999,
+    "cons_point": 92.17,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-08-27_MRVL",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 2.7393,
+    "naive": 1.4346730916657502,
+    "mech": 0.7938628995643793,
+    "news": 0.7045595590114195,
+    "cons": 1.069616325338596,
+    "news_point": 2.72,
+    "mech_point": 2.717553713592233,
+    "cons_point": 2.71,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-09-01_DELL",
+    "set": "test",
+    "A": true,
+    "B": false,
+    "actual": 46.971,
+    "naive": 5.26069276787805,
+    "mech": 2.605179451528006,
+    "news": 0.061740222690609414,
+    "cons": 4.366524025462503,
+    "news_point": 47.0,
+    "mech_point": 48.19467884017721,
+    "cons_point": 44.92,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-09-02_AVGO",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 29.591,
+    "naive": 0.6454665269845616,
+    "mech": 0.9569283856464494,
+    "news": 1.2132067182589301,
+    "cons": 0.7806427630022705,
+    "news_point": 29.95,
+    "mech_point": 29.874164678596642,
+    "cons_point": 29.36,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-09-10_ORCL",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 19.345,
+    "naive": 1.2406306539157308,
+    "mech": 1.1207599368507015,
+    "news": 1.0080124063065354,
+    "cons": 1.0597053502196863,
+    "news_point": 19.15,
+    "mech_point": 19.12818899021623,
+    "cons_point": 19.14,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-09-30_MU",
+    "set": "test",
+    "A": true,
+    "B": true,
+    "actual": 54.229,
+    "naive": 7.79841044459606,
+    "mech": 7.46890505321085,
+    "news": 5.109812093160482,
+    "cons": 5.825296428110416,
+    "news_point": 57.0,
+    "mech_point": 58.27931252130571,
+    "cons_point": 51.07,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-10-14_ASML",
+    "set": "test",
+    "A": false,
+    "B": true,
+    "actual": 11.662,
+    "naive": 1.3891270794031962,
+    "mech": 1.1457016527830932,
+    "news": 1.1833304750471507,
+    "cons": 0.49734179386040633,
+    "news_point": 11.8,
+    "mech_point": 11.795611726747566,
+    "cons_point": 11.72,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-10-15_TSM",
+    "set": "test",
+    "A": true,
+    "B": false,
+    "actual": 46.72,
+    "naive": 3.253424657534243,
+    "mech": 1.197645175009443,
+    "news": 1.6695205479452024,
+    "cons": 3.8955479452054798,
+    "news_point": 47.5,
+    "mech_point": 46.16046017423559,
+    "cons_point": 44.9,
+    "news_in": true,
+    "mech_in": false
+   },
+   {
+    "key": "2026-10-21_LRCX",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 8.219418,
+    "naive": 1.4528765905323149,
+    "mech": 0.8892734626081644,
+    "news": 1.1020488311946242,
+    "cons": 1.0878872445713172,
+    "news_point": 8.31,
+    "mech_point": 8.292511103054839,
+    "cons_point": 8.13,
+    "news_in": true,
+    "mech_in": false
+   },
+   {
+    "key": "2026-10-21_META",
+    "set": "test",
+    "A": false,
+    "B": true,
+    "actual": 64.601,
+    "naive": 3.252271636661974,
+    "mech": 0.03361008343486516,
+    "news": 0.7755297905605252,
+    "cons": 1.905543257844311,
+    "news_point": 64.1,
+    "mech_point": 64.57928755000025,
+    "cons_point": 63.37,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-10-28_KLAC",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 4.136015,
+    "naive": 3.28855190322086,
+    "mech": 1.2614601278381987,
+    "news": 1.2334336311643046,
+    "cons": 2.32143742225307,
+    "news_point": 4.085,
+    "mech_point": 4.083840819893593,
+    "cons_point": 4.04,
+    "news_in": true,
+    "mech_in": false
+   },
+   {
+    "key": "2026-10-29_AMZN",
+    "set": "test",
+    "A": false,
+    "B": true,
+    "actual": 201.944,
+    "naive": 1.2102365012082505,
+    "mech": 1.016145441496974,
+    "news": 1.1666600641762281,
+    "cons": 0.18123836311056962,
+    "news_point": 204.3,
+    "mech_point": 203.99604475037663,
+    "cons_point": 202.31,
+    "news_in": false,
+    "mech_in": true
+   },
+   {
+    "key": "2026-11-03_AMD",
+    "set": "test",
+    "A": false,
+    "B": true,
+    "actual": 13.377,
+    "naive": 2.818270165208947,
+    "mech": 2.2540033321729824,
+    "news": 0.9194886745907072,
+    "cons": 2.1454735740450093,
+    "news_point": 13.5,
+    "mech_point": 13.678518025744781,
+    "cons_point": 13.09,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-11-12_AMAT",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 10.409,
+    "naive": 1.527524257853785,
+    "mech": 0.7126677088811872,
+    "news": 0.6821020270919353,
+    "cons": 1.0471707176481937,
+    "news_point": 10.48,
+    "mech_point": 10.483181581817444,
+    "cons_point": 10.3,
+    "news_in": true,
+    "mech_in": true
+   },
+   {
+    "key": "2026-11-17_NVDA",
+    "set": "control",
+    "A": false,
+    "B": false,
+    "actual": 115.844,
+    "naive": 6.771175028486576,
+    "mech": 1.935066332100266,
+    "news": 2.0234107938261747,
+    "cons": 5.812989882946029,
+    "news_point": 113.5,
+    "mech_point": 113.60234175824176,
+    "cons_point": 109.11,
+    "news_in": true,
+    "mech_in": false
+   }
+  ]
+ }
+}
