@@ -92,15 +92,36 @@ def in_hedge_zone(p):
 # so they are CAPPED: P must stay inside CAP_BAND unless a capital-committed execution signal is
 # cited (16.14), which widens the band to SIGNAL_BAND.
 KINDS = ("state", "rates", "markets", "decision", "war-price", "macro", "base-rate")
-CAPPED_KINDS = {"decision", "war-price"}
+CAPPED_KINDS = {"decision"}
 CAP_BAND = (0.35, 0.65)
 SIGNAL_BAND = (0.20, 0.80)
 KIND_RULE_DATE = "2026-11-14"
 ZERO_EVENT = re.compile(r"\b(no|not|never)\b[^.]{0,80}\b(any|of any size|at all)\b", re.I)
 
+# BANNED (user instruction 2026-11-18): no more war-driven oil or sector price calls, at any probability
+# and with any evidence. The 1-of-6 / Brier 0.385 record (worse than a coin) is the reason. The kind stays
+# in KINDS only so that the historical rows keep their tag. A call that names an oil price, an energy or
+# defense ETF, or tanker rates is treated as war-driven and refused unless --not-war-driven says why it is
+# not (e.g. a CPI energy-component print, which belongs to `rates`).
+BANNED_KINDS = {"war-price"}
+OIL_SECTOR = re.compile(r"\b(brent|wti|crude|oil price|oil prices|gasoline price|heating oil|tanker rates?|"
+                        r"XLE|USO|BNO|OIH|XOP|ITA|XAR|PPA|energy (stocks|sector|equities)|"
+                        r"defen[cs]e (stocks|sector|names))\b", re.I)
+
 
 def kind_guard(args):
-    """Refuse decision/war-price calls outside the cap band; lint zero-event contracts (16.14a)."""
+    """Refuse banned war-price calls and decision calls outside the cap band; lint zero-event contracts."""
+    if args.kind in BANNED_KINDS:
+        sys.exit("BANNED (user instruction 2026-11-18): no war-driven oil or sector price calls. Describe the "
+                 "transmission channel in the analysis instead. Not logged.")
+    if OIL_SECTOR.search(" ".join([args.prediction, args.tickers or "", args.sectors or ""])) \
+            and args.kind != "rates" and not args.not_war_driven:
+        sys.exit("BANNED (user instruction 2026-11-18): this call names an oil price, an energy or defense "
+                 "sector, or tanker rates, so it counts as a war-driven price call. If it is genuinely not "
+                 "war-driven, say why with --not-war-driven \"<reason>\". Not logged.")
+    if args.not_war_driven:
+        args.sensitivity = (args.sensitivity + " | " if args.sensitivity else "") + \
+            f"NOT WAR-DRIVEN: {args.not_war_driven}"
     if args.kind in CAPPED_KINDS:
         lo, hi = SIGNAL_BAND if args.execution_signal else CAP_BAND
         if not (lo <= args.prob <= hi):
@@ -347,7 +368,7 @@ def report():
         print(line)
 
     # ── calibration by call type (contrarian Part C.2, 2026-11-14) ─────────────
-    print("\n-- Calibration by call type (Part C.2 caps decision and war-price calls) --")
+    print("\n-- Calibration by call type (Part C.2: decision calls capped, war-price calls banned) --")
     rows = c.execute("SELECT COALESCE(NULLIF(kind,''),'untagged'), prob, outcome FROM predictions "
                      "WHERE status='resolved' AND outcome IS NOT NULL").fetchall()
     by = {}
@@ -362,9 +383,10 @@ def report():
         print(f"  {k:10s} {n:3d} {sum(o for _, o in v):5d} {sum(p for p, _ in v) / n:6.2f} "
               f"{sum(o for _, o in v) / n:5.2f} {brier:6.3f} {best / 100:6.2f}")
     open_capped = c.execute("SELECT id, kind, prob FROM predictions WHERE status!='resolved' AND kind IN "
-                            "('decision','war-price') AND (prob < ? OR prob > ?)", CAP_BAND).fetchall()
+                            "('decision','war-price') AND (kind = 'war-price' OR prob < ? OR prob > ?)", CAP_BAND).fetchall()
     if open_capped:
-        print("  open calls logged outside today's cap band (grandfathered, read with care): "
+        print("  open calls made before today's rules (a war-price call is banned now; a decision call is outside "
+              "the cap band). They stay on the book to be scored: "
               + ", ".join(f"#{i} {k} {p:.2f}" for i, k, p in open_capped))
 
 
@@ -443,8 +465,11 @@ def main():
                    "effective bet in the independence-weighted report.")
     a.add_argument("--ts", default=None, help="override timestamp (seeding)")
     a.add_argument("--kind", required=True, choices=KINDS,
-                   help="call type (contrarian Part C.2): decision and war-price calls are capped at "
-                        f"{CAP_BAND[0]}-{CAP_BAND[1]} unless --execution-signal is given")
+                   help="call type (contrarian Part C.2): war-price calls are banned (2026-11-18); decision "
+                        f"calls are capped at {CAP_BAND[0]}-{CAP_BAND[1]} unless --execution-signal is given")
+    a.add_argument("--not-war-driven", default="",
+                   help="reason a call that names oil, an energy/defense sector or tanker rates is NOT a "
+                        "war-driven price call (war-driven price calls are banned, 2026-11-18)")
     a.add_argument("--execution-signal", default="",
                    help="capital-committed execution evidence (aircraft launched, NOTAMs, signed order, "
                         f"physical flow change) that widens the cap to {SIGNAL_BAND[0]}-{SIGNAL_BAND[1]}")

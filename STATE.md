@@ -243,6 +243,14 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
     evidence, which allows up to 0.20-0.80.
   - Zero-event decision contracts get a 16.14a lint.
   - `ledger.py report` prints calibration by type every cycle.
+- **11/18 (user instruction): war-driven oil and sector price calls are BANNED, not capped.**
+  - `ledger.py add` refuses kind `war-price`, and refuses any call that names an oil price, an energy or defense
+    sector, or tanker rates unless `--not-war-driven` gives a reason.
+  - CPI energy components stay allowed under `rates`.
+  - Reports show oil and sector moves only as context, never as a call.
+  - The rule is written into CLAUDE.md, the market-transmission skill banner and contrarian-red-team C.2.
+  - The two open Brent calls (#80, #83) stay on the book to be scored honestly. They are not withdrawn and will
+    not appear as calls in future reports.
 - **Grandfathered open calls outside the new band:** #16 (0.74), #38 (0.70), #80 (0.70), #83 (0.70). Read them as
   capped.
 - **Operational failure:** the scheduled tasks could not push for two weeks. The cause and fix are in §9.
