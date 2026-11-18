@@ -1096,10 +1096,10 @@
    "id": "capex-digestion",
    "parent": "ai-2027-fork",
    "kind": "branch",
-   "p": 0.42,
+   "p": 0.4,
    "label": "Digestion: growth decelerates <+25%",
    "horizon": "2027",
-   "rationale": "RE-WEIGHTED 0.55 -> 0.42 (11/18): Nvidia guided Q4 revenue to $130B (consensus ~$125B) and RAISED its FY28 growth outlook from 70% to 75% five days after Huang resigned. A supplier guiding +75% for the year to January 2028 is hard to square with customer capex growing under 25%. || #54 base case. Spend still GROWS - but the hypergrowth premium compresses; ROI discipline language spreads (the 2026 hold-world extended).",
+   "rationale": "RE-WEIGHTED 0.42 -> 0.40 (11/18, research pass): 2027 consensus for five companies is ~$1.1T against ~$820B in 2026 (+34%), and every supplier that reported since September guided up. Digestion now needs a financing constraint, not a demand one. || RE-WEIGHTED 0.55 -> 0.42 (11/18): Nvidia guided Q4 revenue to $130B (consensus ~$125B) and RAISED its FY28 growth outlook from 70% to 75% five days after Huang resigned. A supplier guiding +75% for the year to January 2028 is hard to square with customer capex growing under 25%. || #54 base case. Spend still GROWS - but the hypergrowth premium compresses; ROI discipline language spreads (the 2026 hold-world extended).",
    "ledger": [
     54
    ],
@@ -1116,7 +1116,7 @@
    "p": 0.4,
    "label": "Sprint continues: another +30%+ year",
    "horizon": "2027",
-   "rationale": "RE-WEIGHTED 0.25 -> 0.40 (11/18): Nvidia Q3 FY27 revenue $115.8B (+103% y/y; data center $107.6B), Q4 guide $130B, FY28 growth outlook raised to 75%, with no China data-center compute assumed. The sprint branch now has the supplier's own guidance behind it. Fragility: $530B of Nvidia financial guarantees to customers is vendor financing, and Reuters reports less risk appetite post-Huang. || AI revenue inflects (agent monetization) and re-arms the spend. Physical constraints (power, HBM, packaging) become the binding scarcity.",
+   "rationale": "HELD 0.40 (11/18, research pass). CORRECTION: the \"$530B\" is Nvidia's total commitments plus guarantees (10-Q, quarter to 26 Jul); guarantees alone were $108.5B (about $118B on 25 Oct per press), mostly a lease guarantee on an OpenAI-leased campus. || RE-WEIGHTED 0.25 -> 0.40 (11/18): Nvidia Q3 FY27 revenue $115.8B (+103% y/y; data center $107.6B), Q4 guide $130B, FY28 growth outlook raised to 75%, with no China data-center compute assumed. The sprint branch now has the supplier's own guidance behind it. Fragility: $530B of Nvidia financial guarantees to customers is vendor financing, and Reuters reports less risk appetite post-Huang. || AI revenue inflects (agent monetization) and re-arms the spend. Physical constraints (power, HBM, packaging) become the binding scarcity.",
    "ledger": [],
    "market": "Bottleneck owners win: grid/power, memory, advanced packaging, ASML. The 13 scarcity premium migrates upstream.",
    "confluence": [],
@@ -1133,10 +1133,10 @@
    "id": "ai-winter",
    "parent": "ai-2027-fork",
    "kind": "branch",
-   "p": 0.18,
+   "p": 0.2,
    "label": "AI winter: capex declines",
    "horizon": "2027-28",
-   "rationale": "RE-WEIGHTED 0.20 -> 0.18 (11/18): the demand print pushes the winter out, but the financing chain is the live risk: Nvidia backstops customers with ~$530B of guarantees, the 10y is above 5%, and the Fed is priced for three hikes. || #55: the capex-to-revenue gap closes from the spend side. Overbuild writedowns; the 2026 funding-chain tape (SK Hynix, Oracle debt) was the tremor.",
+   "rationale": "RE-WEIGHTED 0.18 -> 0.20 (11/18, research pass): the marginal builder is now debt-funded (hyperscaler free cash flow negative, $296B of 2026 bond issuance, no high-yield data-center deal since late September). In past booms debt-funded builders cut 50-80%. CORRECTION: Nvidia's guarantees are $108.5-118B, not $530B. || RE-WEIGHTED 0.20 -> 0.18 (11/18): the demand print pushes the winter out, but the financing chain is the live risk: Nvidia backstops customers with ~$530B of guarantees, the 10y is above 5%, and the Fed is priced for three hikes. || #55: the capex-to-revenue gap closes from the spend side. Overbuild writedowns; the 2026 funding-chain tape (SK Hynix, Oracle debt) was the tremor.",
    "ledger": [
     55,
     33
@@ -1145,7 +1145,7 @@
    "confluence": [],
    "evidence": [
     {
-     "fact": "Nvidia has amassed ~$530B in financial guarantees to customers (Tom's Hardware); Reuters: the financing machine may survive Huang \"with less risk appetite\"",
+     "fact": "Nvidia: ~$530B of total commitments plus guarantees, of which guarantees $108.5B (10-Q to 26 Jul; headline figure via Tom's Hardware was mislabelled); Reuters: the financing machine may survive Huang \"with less risk appetite\"",
      "reported": "2026-11-16T12:06Z"
     }
    ],
@@ -2576,6 +2576,333 @@
      "note": "rates channel only: higher 2027 quotas into a forecast surplus ease headline inflation and marginally lower the odds of no cuts by June"
     }
    ]
+  },
+  {
+   "id": "ai-trade-h1-2027",
+   "parent": "now",
+   "kind": "event",
+   "date": "2027-06-30",
+   "horizon": "7.5 months",
+   "p": 1.0,
+   "ledger": [
+    100
+   ],
+   "label": "AI trade to mid-2027: repair / range / second leg (SMH close on 30 Jun 2027)",
+   "rationale": "Built 11/18 from the ai-trade framework. SMH closed 460.10 on 11/17, 31.5% below its 22 June high, five months into a drawdown already at the median depth of past semis drawdowns (seven of 20%+ since 2004: median -35%, 9 months to trough, 5 months trough to new high). Past booms say equities peak before capex, so rising guides do not mark a floor. Direction inside the range is a no-call; the branches are moved by the financing gauges (CoreWeave and Oracle CDS, the high-yield data-center primary market, 2027 capex guides). Only ledgered call: no new high by 30 June (0.90).",
+   "confluence": [
+    "base rates: SOX drawdown shape",
+    "capital-cycle history: equities peak before capex",
+    "financing gauges stressed but no default",
+    "valuation: semis 14.7x forward, Nvidia ~12x"
+   ],
+   "evidence": [
+    {
+     "fact": "SMH 460.10, -31.5% from the 22 June 2026 high of 671.83; NVDA 155.46, -36% from 6 Oct; SOX about -34% (market data feed)",
+     "reported": "2026-11-17"
+    },
+    {
+     "fact": "BofA November survey: tech overweight cut from 37% to 12% (largest drop since 2006); 52% expect a hyperscaler capex cut within six months",
+     "reported": "2026-11-12"
+    }
+   ],
+   "market": "SMH close on 30 Jun 2027 (scenario odds only)",
+   "shifts": [
+    {
+     "target": "ai-winter",
+     "p_to": 0.3,
+     "date_delta": 0,
+     "note": "a second leg in equities has preceded capex cuts in every dated boom"
+    },
+    {
+     "target": "capex-sprint",
+     "p_to": 0.5,
+     "date_delta": 0,
+     "note": "a repair to 520+ needs guides to hold and credit to reopen, which is the sprint path"
+    }
+   ],
+   "lane": "markets-ai"
+  },
+  {
+   "id": "ai-h1-repair",
+   "parent": "ai-trade-h1-2027",
+   "kind": "branch",
+   "date": "2027-06-30",
+   "horizon": "7.5 months",
+   "p": 0.35,
+   "ledger": [],
+   "label": "Repair: SMH at or above 520 on 30 Jun 2027",
+   "rationale": "Needs the 2027 capex guides to hold, the high-yield data-center primary market to reopen and CoreWeave CDS below 700bp. Valuation is not the obstacle (semis 14.7x forward against 33x a year ago).",
+   "lane": "markets-ai",
+   "confluence": [],
+   "evidence": [],
+   "market": "no price call (prints and plans only)"
+  },
+  {
+   "id": "ai-h1-range",
+   "parent": "ai-trade-h1-2027",
+   "kind": "branch",
+   "date": "2027-06-30",
+   "horizon": "7.5 months",
+   "p": 0.4,
+   "ledger": [],
+   "label": "Range: SMH 400-520 on 30 Jun 2027",
+   "rationale": "Prints hold, financing stays selective (big four fund, the weakest borrowers do not), and the Fed keeps hiking. The modal path while no gauge has triggered on either side.",
+   "lane": "markets-ai",
+   "confluence": [],
+   "evidence": [],
+   "market": "no price call (prints and plans only)"
+  },
+  {
+   "id": "ai-h1-second-leg",
+   "parent": "ai-trade-h1-2027",
+   "kind": "branch",
+   "date": "2027-06-30",
+   "horizon": "7.5 months",
+   "p": 0.25,
+   "ledger": [],
+   "label": "Second leg: SMH below 400 on 30 Jun 2027",
+   "rationale": "Needs a financing accident (a neocloud restructuring, a junk rating for Oracle, Nvidia withdrawing customer support) or a hyperscaler guiding 2027 capex down. Debt-funded builders in past booms cut 50-80%.",
+   "lane": "markets-ai",
+   "confluence": [],
+   "evidence": [],
+   "market": "no price call (prints and plans only)"
+  },
+  {
+   "id": "ai-financing-chain",
+   "parent": "now",
+   "kind": "event",
+   "date": "2027-03-31",
+   "horizon": "4.5 months",
+   "p": 0.8,
+   "ledger": [
+    98,
+    99
+   ],
+   "label": "AI financing chain holds to 31 Mar 2027 (no CoreWeave default, Oracle stays investment grade)",
+   "rationale": "The framework treats financing, not demand, as the first failure point: capex-cut depth in past booms scaled with external funding. Stressed but functioning: CoreWeave CDS ~1,113bp with funding moved to secured loans and prepayments; Oracle at BBB-/Baa2(neg)/BBB after selling $10B of stock; no high-yield data-center deal since late September; Nvidia guarantees ~$108.5-118B with the CEO who built that role gone. p is the joint odds of both ledgered calls (0.92 x 0.85, positively correlated).",
+   "confluence": [
+    "CDS-implied default odds",
+    "rating-agency actions after the equity raise",
+    "secured funding still open"
+   ],
+   "evidence": [
+    {
+     "fact": "CoreWeave Q3: debt ~$47B, Q4 interest guided $1.05-1.15B, no unsecured issuance at current yields; 5y CDS ~1,113bp (peak 1,289bp on 5 Nov)",
+     "reported": "2026-11-17"
+    },
+    {
+     "fact": "Oracle: Moody's Baa2 negative and Fitch BBB stable affirmed; $10B bond plus $10B stock at an 11.2% discount; CDS ~300bp",
+     "reported": "2026-11-06"
+    },
+    {
+     "fact": "Apollo's Rowan: neocloud capital access \"is going to disappear\" if Nvidia stops acting as guarantor",
+     "reported": "2026-11-17"
+    }
+   ],
+   "market": "credit gauges, not equity calls",
+   "shifts": [
+    {
+     "target": "ai-h1-second-leg",
+     "p_to": 0.6,
+     "date_delta": 0,
+     "note": "a default or a junk rating is the trigger the second-leg branch needs"
+    },
+    {
+     "target": "ai-winter",
+     "p_to": 0.35,
+     "date_delta": -90,
+     "note": "a financing accident pulls the capex decline forward"
+    },
+    {
+     "target": "capex-digestion",
+     "p_to": 0.5,
+     "date_delta": 0,
+     "note": "tighter credit turns the 2027 sprint into digestion"
+    }
+   ],
+   "lane": "markets-ai"
+  },
+  {
+   "id": "avgo-fq4",
+   "parent": "now",
+   "kind": "event",
+   "checkpoint": true,
+   "date": "2026-12-09",
+   "horizon": "scheduled",
+   "p": 1.0,
+   "ledger": [
+    88
+   ],
+   "label": "Broadcom fiscal Q4 report (9 Dec, same day as the FOMC): AI semiconductor guide",
+   "rationale": "Confirmed date. Bar: AI semiconductor revenue ~$21.7B for the quarter and a fiscal Q1 guide above it (0.82). The custom-chip read on hyperscaler 2027 plans, three weeks before any hyperscaler speaks.",
+   "shifts": [
+    {
+     "target": "capex-sprint",
+     "p_to": 0.46,
+     "date_delta": 0,
+     "note": "a sequentially higher AI guide supports another 30%+ capex year"
+    },
+    {
+     "target": "ai-h1-second-leg",
+     "p_to": 0.32,
+     "date_delta": 0,
+     "note": "a flat or withheld AI guide would be the first supplier crack"
+    }
+   ],
+   "evidence": [],
+   "lane": "markets-ai",
+   "confluence": [],
+   "market": "no price call (prints and plans only)"
+  },
+  {
+   "id": "memory-prints",
+   "parent": "now",
+   "kind": "event",
+   "checkpoint": true,
+   "date": "2026-12-15",
+   "horizon": "scheduled",
+   "p": 1.0,
+   "ledger": [
+    89,
+    90,
+    91
+   ],
+   "label": "Micron fiscal Q1 report (~15 Dec) and 1Q27 DRAM contract pricing: the memory-cycle test",
+   "rationale": "Memory equities have already fallen 31-55% from their peaks, and equities lead memory fundamentals by one to two quarters. The print should still be strong (revenue at or above $61.5B, 0.86); the test is the guide (sequential growth, 0.72) and 1Q27 contract prices (still rising, 0.72).",
+   "shifts": [
+    {
+     "target": "ai-winter",
+     "p_to": 0.24,
+     "date_delta": 0,
+     "note": "a flat or down guide is the first fundamental confirmation of a memory peak (#33 pattern)"
+    },
+    {
+     "target": "ai-h1-range",
+     "p_to": 0.45,
+     "date_delta": 0,
+     "note": "a strong guide with equities unmoved keeps the range path"
+    }
+   ],
+   "evidence": [],
+   "lane": "markets-ai",
+   "confluence": [],
+   "market": "no price call (prints and plans only)"
+  },
+  {
+   "id": "tsmc-q4",
+   "parent": "now",
+   "kind": "event",
+   "checkpoint": true,
+   "date": "2027-01-21",
+   "horizon": "scheduled",
+   "p": 1.0,
+   "ledger": [
+    92,
+    93
+   ],
+   "label": "TSMC Q4 2026 results and first 2027 capex guide (14 or 21 Jan)",
+   "rationale": "Revenue at or above the $53.3B guide midpoint is close to settled by monthly data (0.90). The forward item is 2027 capex: midpoint at or above $68B (0.70) against $60-64B in 2026 and equipment makers guiding 2027 wafer-fab spending up 30% or more.",
+   "shifts": [
+    {
+     "target": "capex-sprint",
+     "p_to": 0.47,
+     "date_delta": 0,
+     "note": "a capex guide of $68B+ is the foundry voting for another sprint year"
+    },
+    {
+     "target": "capex-digestion",
+     "p_to": 0.48,
+     "date_delta": 0,
+     "note": "a flat capex guide would be the supplier reading its customers' financing limits"
+    }
+   ],
+   "evidence": [],
+   "lane": "markets-ai",
+   "confluence": [],
+   "market": "no price call (prints and plans only)"
+  },
+  {
+   "id": "hyperscaler-q4-guides",
+   "parent": "now",
+   "kind": "event",
+   "checkpoint": true,
+   "date": "2027-02-04",
+   "horizon": "scheduled",
+   "p": 1.0,
+   "ledger": [
+    94,
+    95,
+    96
+   ],
+   "label": "Hyperscaler Q4 2026 reports (late Jan - early Feb): the first 2027 capex guides",
+   "rationale": "The catalyst the whole trade waits on. None has given a 2027 number; the four are guiding ~$730B for 2026 (+77%). Calls: none guides 2027 below 2026 (0.88, against a fund-manager survey in which 52% expect a cut within six months); Alphabet midpoint at or above $240B (0.70); Microsoft December-quarter capex above $50B (0.87).",
+   "shifts": [
+    {
+     "target": "capex-digestion",
+     "p_to": 0.6,
+     "date_delta": 0,
+     "note": "any of the four guiding 2027 below 2026 makes digestion the base case"
+    },
+    {
+     "target": "capex-sprint",
+     "p_to": 0.52,
+     "date_delta": 0,
+     "note": "all four up, with numbers above 20% growth, confirms the sprint"
+    },
+    {
+     "target": "ai-h1-second-leg",
+     "p_to": 0.45,
+     "date_delta": 0,
+     "note": "a guided cut is one of the two triggers for a second leg"
+    },
+    {
+     "target": "ai-h1-repair",
+     "p_to": 0.45,
+     "date_delta": 0,
+     "note": "firm guides with credit reopening is the repair path"
+    }
+   ],
+   "evidence": [
+    {
+     "fact": "2026 guides: Amazon ~$220B, Alphabet $195-205B, Microsoft ~$170B (cut from ~$175B+), Meta $135-145B; latest-quarter capex for five companies $237.3B (+95% y/y); free cash flow negative at Alphabet, Meta, Oracle and Amazon (TTM)",
+     "reported": "2026-10-29"
+    }
+   ],
+   "lane": "markets-ai",
+   "confluence": [],
+   "market": "no price call (prints and plans only)"
+  },
+  {
+   "id": "nvda-fq4",
+   "parent": "now",
+   "kind": "event",
+   "checkpoint": true,
+   "date": "2027-02-26",
+   "horizon": "scheduled",
+   "p": 1.0,
+   "ledger": [
+    97
+   ],
+   "label": "Nvidia fiscal Q4 2027 report (late Feb - early Mar, unannounced): first full quarter without Huang",
+   "rationale": "Revenue at or above the $130.0B guide midpoint (0.90). The item to read is not the revenue: it is the customer-support lines in the 10-Q (guarantees ~$108.5B in July, ~$118B in October per press). Flat or lower means Nvidia is withdrawing as guarantor.",
+   "shifts": [
+    {
+     "target": "ai-financing-chain",
+     "p_to": 0.65,
+     "date_delta": 0,
+     "note": "shrinking guarantee lines remove the neoclouds' backstop"
+    },
+    {
+     "target": "capex-sprint",
+     "p_to": 0.45,
+     "date_delta": 0,
+     "note": "a fiscal Q1 guide that holds the 75% FY28 growth path supports the sprint"
+    }
+   ],
+   "evidence": [],
+   "lane": "markets-ai",
+   "confluence": [],
+   "market": "no price call (prints and plans only)"
   }
  ],
  "week_ahead": {
@@ -2748,6 +3075,56 @@
     "consensus": "TBD",
     "actual": "",
     "note": "Base-effect identity check before quoting any y/y."
+   },
+   {
+    "event": "Broadcom fiscal Q4 (AI semiconductor guide)",
+    "when": "Wed 12/9 AMC",
+    "status": "pending",
+    "ledger": 88,
+    "estimate": "fiscal Q1 AI semiconductor guide above the Q4 actual (0.82)",
+    "consensus": "guide: revenue ~$34.8B, AI semis ~$21.7B",
+    "actual": "",
+    "note": "Prints, not price: no reaction call."
+   },
+   {
+    "event": "Micron fiscal Q1 (memory-cycle test)",
+    "when": "~Tue 12/15 (expected)",
+    "status": "pending",
+    "ledger": 89,
+    "estimate": "revenue >= $61.5B (0.86); fiscal Q2 guide above Q1 (0.72)",
+    "consensus": "guide $61.5B +/- $1.5B",
+    "actual": "",
+    "note": "A flat guide would be the first fundamental confirmation of the equity rollover."
+   },
+   {
+    "event": "TSMC Q4 2026 + 2027 capex guide",
+    "when": "Thu 1/14 or 1/21 (expected)",
+    "status": "pending",
+    "ledger": 92,
+    "estimate": "revenue >= $53.3B (0.90); 2027 capex midpoint >= $68B (0.70)",
+    "consensus": "guide $52.3-54.3B; 2026 capex $60-64B",
+    "actual": "",
+    "note": ""
+   },
+   {
+    "event": "Hyperscaler Q4 reports: first 2027 capex guides",
+    "when": "late Jan - early Feb 2027",
+    "status": "pending",
+    "ledger": 95,
+    "estimate": "none of the four guides below 2026 (0.88); Alphabet midpoint >= $240B (0.70); Microsoft Dec-quarter capex > $50B (0.87)",
+    "consensus": "five-company 2027 ~$1.1T (stale four-company figure $934.5B from Aug)",
+    "actual": "",
+    "note": "The catalyst the trade waits on."
+   },
+   {
+    "event": "Nvidia fiscal Q4 2027",
+    "when": "late Feb - early Mar 2027 (unannounced)",
+    "status": "pending",
+    "ledger": 97,
+    "estimate": "revenue >= $130.0B (0.90); read the guarantee lines in the 10-Q",
+    "consensus": "guide $130.0B +/- 3%",
+    "actual": "",
+    "note": "First full quarter without Huang."
    }
   ]
  },

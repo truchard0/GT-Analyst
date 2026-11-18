@@ -356,6 +356,45 @@ bot, it is a prediction bot for world events, remember that".
   capped.
 - **Operational failure:** the scheduled tasks could not push for two weeks. The cause and fix are in §9.
 
+## 7k. THE AI-TRADE FRAMEWORK (11/18, user request: "predict everything possible about the AI trade")
+- **New skill: `.claude/skills/ai-trade/SKILL.md`.** Five layers with different predictability: L1 prints (high), L2 capex
+  plans, L3 financing (the first failure point), L4 constraints and policy, L5 price (no call). Master rule: never infer
+  price from a print. It replaces the blanket 0.55 cap on AI calls (market-transmission §5.2b) with a rule per layer.
+- **Research behind it:** six strands in `research_notes/AI trade forecasting framework/` (history and base rates, demand
+  and capex, financing chain, constraints and policy, valuation and positioning, catalyst calendar). Source quality is
+  mixed; laws marked [S] in the skill rest on secondary sources and get half weight until checked.
+- **Thirteen calls logged (#88–#100), all wired:**
+
+  | # | Call | P | Horizon |
+  |---|---|---|---|
+  | 88 | Broadcom guides fiscal Q1 AI semiconductor revenue above its Q4 actual | 0.82 | 12/11 |
+  | 89 | Micron fiscal Q1 revenue ≥ $61.5B | 0.86 | 12/22 |
+  | 90 | Micron fiscal Q2 guide midpoint above Q1 actual | 0.72 | 12/22 |
+  | 91 | TrendForce 1Q27 DRAM contract prices up q/q | 0.72 | 1/31/27 |
+  | 92 | TSMC Q4 revenue ≥ $53.3B | 0.90 | 1/22/27 |
+  | 93 | TSMC 2027 capex guide midpoint ≥ $68B | 0.70 | 1/22/27 |
+  | 94 | Microsoft December-quarter capex > $50B | 0.87 | 2/5/27 |
+  | 95 | None of the four hyperscalers guides 2027 capex below 2026 | 0.88 | 2/12/27 |
+  | 96 | Alphabet 2027 capex guide midpoint ≥ $240B | 0.70 | 2/12/27 |
+  | 97 | Nvidia fiscal Q4 revenue ≥ $130.0B | 0.90 | 3/10/27 |
+  | 98 | CoreWeave: no missed payment, distressed exchange or bankruptcy | 0.92 | 3/31/27 |
+  | 99 | Oracle not rated junk by any of the three agencies | 0.85 | 3/31/27 |
+  | 100 | SMH closes below 671.83 (its 2026 high) on 6/30/27 | 0.90 | 6/30/27 |
+
+  Report dates for #89, #92–#97 are pattern estimates: each row carries a void rule (extend the horizon, never score early).
+- **Not ledgered, on the map as scenario odds:** `ai-trade-h1-2027` on the SMH close of 30 June 2027: repair (≥ 520) 0.35,
+  range (400–520) 0.40, second leg (< 400) 0.25. Moved by the indicator board in the skill's §4.
+- **No call, by rule:** AI price direction; the Anthropic listing (the analyst is an Anthropic model); government
+  decisions on chip exports (decision kind, capped); the PJM capacity auction (2029/30 rules exclude new large loads,
+  so "clears at the cap" is no longer a base rate).
+- **2027 capex fork re-marked:** digestion 0.40 / sprint 0.40 / winter 0.20.
+- **Correction carried into the records:** Nvidia's "$530B" is total commitments plus guarantees; guarantees alone are
+  $108.5B (July 10-Q), about $118B in October per press. The 11/18 tape note said "$530bn of guarantees"; fix its doc and
+  exports with the AI-trade report.
+- **Portfolio after logging:** 43 open; iran-war 12 (28%, back under the cap), ai-prints 6, ai-capex 6, ai-financing 2.
+  The AI clusters share one demand bet: read them together when a miss comes from demand.
+- **Forward test:** the skill's §8 sets the kill criteria per layer once 10 calls in a layer have resolved.
+
 ## 7h. TAPE NOTE (11/18): Gulf fire, falling oil, a hiking Fed
 - **Report:** [Tape Note: Gulf Fire, Falling Oil, a Hiking Fed](https://claude.ai/artifact/TtZJa6WZu9Ce2YWtd6EvXF) (Claude Doc, 6 charts).
   - Markdown copy with the desk-records appendix: `reports/20261118_tape-note-gulf-oil-fed.md`.
