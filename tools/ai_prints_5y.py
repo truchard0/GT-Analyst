@@ -27,6 +27,8 @@ def read(name):
     rows = _read(name) + [r for x in EXTRA.get(name, []) for r in _read(x)]
     if name == "capex_history.csv":
         rows = [r for r in rows if r.get("ticker", "").upper() in CAPEX_NAMES]
+    if name == "consensus.csv":   # TSMC consensus is quoted in NT dollars; the actuals are US dollars, so it cannot be compared
+        rows = [r for r in rows if "TWD" not in (r.get("currency_unit") or "").upper()]
     return rows
 
 

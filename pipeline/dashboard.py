@@ -2316,6 +2316,11 @@ def build_page(s):
         outs = [_res[i] for i in nd.get("ledger", []) if i in _res]
         if outs:
             node_state[nd["id"]] = "hit" if all(outs) else ("miss" if not any(outs) else "mixed")
+        # nodes with no resolved ledger row still carry their own record of what happened (11/17: before this,
+        # past events without a ledger call kept drawing as open forecasts behind the "today" line)
+        rec = nd.get("resolved")
+        if nd["id"] not in node_state and isinstance(rec, dict) and isinstance(rec.get("happened"), bool):
+            node_state[nd["id"]] = "hit" if rec["happened"] else "miss"
     nstate_json = json.dumps(node_state)
     return (PAGE.replace("__NAV__", nav).replace("__SECTIONS__", sections)
             .replace("__TLDATA__", tl_json)

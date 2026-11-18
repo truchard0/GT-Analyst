@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18",
+  "updated": "2026-11-17",
   "note": "Time-lane DAG. Edges are temporal implication (IF x THEN y), all forward in time. Updated 10/25 after the relaunch sweep: 38 resolutions (24 HIT / 14 MISS of the matured backlog + 3 early), the 8/1 fork resolved to frozen oscillation, the Oct deal-or-strike fork added (#79/#80), FOMC 10/28 checkpoint (#81).",
   "root": {
     "id": "now",
@@ -75,7 +75,15 @@
           "p_to": 0.8,
           "note": "dovish window opens"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the Islamabad mediation off-ramp did not happen by 2026-07-25 (#68 MISS).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "flip-b",
@@ -166,7 +174,15 @@
           "date_delta": -180,
           "note": "China blockade-proofing accelerates"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the full round-3 air war did not fire by 2026-07-11; escalation came as a chokepoint/tanker war.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "succession-tip",
@@ -202,7 +218,15 @@
       "market": "Vol spike everything-Iran; crude up hard; defense (ITA) bid; the under-priced coordination tail",
       "kind": "event",
       "lane": "iran-energy",
-      "date": "2026-07-25"
+      "date": "2026-07-25",
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: succession resolved: Mojtaba Supreme Leader since 2026-03-09, with the IRGC holding operational control.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "capitulation",
@@ -228,7 +252,15 @@
       "market": "Full normalization: tankers bearish (#22 false), crude glut deepens, defense premium bleeds",
       "kind": "branch",
       "lane": "iran-energy",
-      "date": "2026-07-25"
+      "date": "2026-07-25",
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: no clean consolidation plus proxy stand-down by 2026-07-25.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "opec-defends",
@@ -259,7 +291,15 @@
       "market": "Brent floor ~70; XLE stabilizes; keeps disinflation mild rather than deflationary",
       "kind": "event",
       "lane": "iran-energy",
-      "date": "2026-08-05"
+      "date": "2026-08-05",
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: OPEC+ kept hiking on 2026-08-02 (#29 MISS); it paused only on 2026-09-06, into a squeeze, not a glut.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "dovish-fed",
@@ -311,7 +351,15 @@
           "p_to": 0.85,
           "note": "the Fed naming oil-inflation risk validates the reaccel path"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the Fed held on 2026-07-29 as a HAWKISH hold with 3 hike dissents (#67 HIT), then hiked on 2026-09-16 (#26 MISS); the node id says 'dovish' but the relabelled outcome recorded is the hawkish hold.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "tech-tailwind",
@@ -338,7 +386,15 @@
       "market": "SMH relative winner; TSM earnings (mid-Aug) the next test (#24/#25)",
       "kind": "event",
       "lane": "markets-ai",
-      "date": "2026-09-10"
+      "date": "2026-09-10",
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the AI complex outperformed by 2026-09-10, but through a Fed hike (capex-driven), not the dovish branch: it happened for the wrong reason.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "houthi-saudi",
@@ -383,7 +439,15 @@
       "market": "War-risk insurance stays bid (Red Sea + now Saudi facilities); an Aramco-class hit = instant Branch-B flip via supply, watch tanker rates and Saudi CDS as tells",
       "kind": "event",
       "lane": "iran-energy",
-      "date": "2026-10-10"
+      "date": "2026-10-10",
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the proxy theatre turned on Saudi Arabia (Riyadh airport strike; Mecca-area barrage on 2026-10-25).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "naval-escort",
@@ -413,7 +477,15 @@
       "market": "The middle path markets misprice BOTH ways: crude caps ~$85 (fade the >$100 panic) but war-risk premia and naval-presence costs persist (defense ITA bid, tankers two-sided); CPI gets the partial pass-through, not the full re-acceleration",
       "kind": "branch",
       "lane": "iran-energy",
-      "date": "2026-09-01"
+      "date": "2026-09-01",
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: an escort regime was attempted (US claimed 40 escorted transits on 2026-09-01) but did not resolve the strait.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "brent-90",
@@ -440,7 +512,15 @@
       "market": "2y yield UP is the confirmation; energy over everything; drop gold/bond haven assumption (§6)",
       "kind": "branch",
       "lane": "iran-energy",
-      "date": "2026-09-09"
+      "date": "2026-09-09",
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: Brent sustained above $90 (above $100 from 2026-09-09; 116.72 on 2026-10-23).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "highbeta-derate",
@@ -465,7 +545,15 @@
       "market": "SMH underperforms XLE; ITA up; VIXY up; the semis watchlist flips from tailwind to casualty list",
       "kind": "event",
       "lane": "markets-ai",
-      "date": "2026-09-15"
+      "date": "2026-09-15",
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: high-beta/AI did not derate vs energy by 2026-09-15 (#27 MISS).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "regime-survives",
@@ -548,7 +636,15 @@
       "kind": "event",
       "lane": "fed-macro",
       "date": "2026-07-14",
-      "checkpoint": true
+      "checkpoint": true,
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: June 2026 CPI printed soft (-0.4% m/m, energy -5.7%), released 2026-07-14 (#31/#46 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "cpi-reaccel",
@@ -604,7 +700,15 @@
           "p_to": 0.75,
           "note": "rate-derate reasserts; the 555 retest reactivates"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: CPI re-accelerated in the August print (+0.4% m/m, energy +2.1%), then September +0.6%.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "frozen-conflict",
@@ -781,7 +885,15 @@
           "p_to": 0.6,
           "note": "counter-reconstitution = open-ended munitions demand"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the counter-reconstitution path happened: IAEA referral to the UNSC on 2026-09-09 (#30 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "capex-verdict",
@@ -829,7 +941,15 @@
           "p_to": 0.15,
           "note": "capital-committed demand kills the overbuild-bust tail"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.72,
+        "asof": "2026-11-17",
+        "basis": "No top-4 hyperscaler cut 2026 capex in the Q2 prints of 2026-07-22 to 07-30; the cohort raised (GOOGL $195-205B, AMZN ~$220B, META $130-145B); ledger #50 resolved HIT on 2026-07-31.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\ledger\\ledger.db (predictions/lessons #50)"
+      }
     },
     {
       "id": "capex-raise",
@@ -880,7 +1000,15 @@
           "p_to": 0.35,
           "note": "a RAISE uncaps the semis leg -> capped-grind gives way toward melt-up (war still the index cap)"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.62,
+        "asof": "2026-11-17",
+        "basis": "GOOGL explicitly raised 2026 capex guidance to $195-205B from $180-190B in its Q2 print of 2026-07-22; ledger #52 resolved HIT on 2026-07-28.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\ledger\\ledger.db (lessons #52)"
+      }
     },
     {
       "id": "capex-hold",
@@ -916,7 +1044,15 @@
           "p_to": 0.55,
           "note": "an in-line hold keeps the capped grind the base case; a CUT (the 28pct complement) is the crash-first trigger"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": false,
+        "verdict": "HIT",
+        "called": 0.38,
+        "asof": "2026-11-17",
+        "basis": "Not all four held in line: GOOGL raised 2026 capex in its 2026-07-22 print (#52 HIT), so the all-HOLD branch did not occur.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\ledger\\ledger.db (lessons #50, #52)"
+      }
     },
     {
       "id": "semis-correction",
@@ -959,7 +1095,15 @@
       ],
       "market": "Buy checklist gates the entry: capex confirm + no Branch-B rate confirm + flush + equipment split healing. NVDA add-zone 191-196 (invalidation <188). MU: fade bounces (#33, <800 target). RTX #44 the branch-robust long throughout.",
       "lane": "markets-ai",
-      "date": "2026-08-14"
+      "date": "2026-08-14",
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: SMH fell below 550 (504.22 on 2026-07-29) before reclaiming 605 in late September (#47 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "election-instrument",
@@ -996,7 +1140,15 @@
       "market": "Slow-burn midterm-vol builder (VIXY, prediction markets), not an overnight mover. Re-rate seed #7 UP materially if the instrument lands.",
       "lane": "us-politics",
       "date": "2026-08-16",
-      "checkpoint": true
+      "checkpoint": true,
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: concrete federal election instruments followed within 30 days, by 2026-08-16 (#49 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "taiwan-watch",
@@ -1195,7 +1347,15 @@
       "lane": "us-politics",
       "date": "2026-11-03",
       "checkpoint": true,
-      "status": "resolved"
+      "status": "resolved",
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the midterms were held on 2026-11-03 with a federal fight (DOJ suit to pause Alaska's Senate election) (#56 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "election-2028",
@@ -1442,7 +1602,15 @@
           "p_to": 0.85,
           "note": "Aug/Sep pass-through hardens"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the Houthis seized Perim/Bab el-Mandeb around 2026-09-11 and Saudi exports were squeezed.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "us-houthi-response",
@@ -1484,7 +1652,15 @@
           "p_to": 0.65,
           "note": "three-front PGM burn accelerates the procurement supercycle"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": false,
+        "verdict": "HIT",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: neither US strikes on Yemen nor an escort framework by early August 2026 (#63 MISS, Brier 0.56).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "market-regime-q3",
@@ -1541,7 +1717,15 @@
           "date_delta": 0,
           "note": "Aug-12 print is the regime referee"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: a capped grind with no crash through 2026-08-21 (#65, #66 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "frozen-oscillation",
@@ -1567,7 +1751,15 @@
           "reported": "2026-10-25"
         }
       ],
-      "market": "Persistent (not spiking) oil premium; defense structural; the war-hedge basket a permanent low-grade hold."
+      "market": "Persistent (not spiking) oil premium; defense structural; the war-hedge basket a permanent low-grade hold.",
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: frozen oscillation: no deal, a pause 7/30-8/29, then a tanker war, with no full war.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "islamabad-window",
@@ -1621,7 +1813,15 @@
           "p_to": 0.55,
           "note": "oil relief eases the Aug/Sep pass-through"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the Islamabad window expired on 2026-08-16/17 with no deal and no extension.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "price-map-q3",
@@ -1662,7 +1862,15 @@
           "date_delta": -5,
           "note": "a hot CPI breaks the range low first"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the price map broke to the upside: QQQ above 720 on 2026-08-04, SPY above 775 on 2026-08-13 (#69, #70 MISS).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "energy-strike-weekend",
@@ -1727,7 +1935,15 @@
           "p_to": 0.88,
           "note": "sustained oil strength feeds the Aug/Sep prints"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": false,
+        "verdict": "HIT",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: no US or Israeli strike on Iranian energy by 2026-08-03 (#72 MISS).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "hormuz-framework-only",
@@ -1784,7 +2000,15 @@
           "p_to": 0.85,
           "note": "framework holds -> the war premium keeps bleeding"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: Hormuz saw framework talk, not normalized traffic, through 2026-08-07 (#73 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "hormuz-normalized",
@@ -1815,7 +2039,15 @@
           "p_to": 0.95,
           "note": "full normalization"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: Hormuz traffic was not normalized by 2026-08-07 (#73).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "oil-premium-unwind",
@@ -1858,7 +2090,15 @@
           "date_delta": 0,
           "note": "sustained crude unwind feeds the pump with a 2-3 week lag"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: no war-premium unwind by 2026-08-11: USO +10.2% vs XLE +4.1% (#74 MISS).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "payrolls-jul",
@@ -1905,7 +2145,15 @@
           "p_to": 0.85,
           "note": "hot print caps the breakout"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: July payrolls printed -23k on 2026-08-07 and SPY closed green at a record (#75 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "smh-605-cap",
@@ -1953,7 +2201,15 @@
           "p_to": 0.35,
           "note": "a 605 reclaim would end the correction thesis early"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: SMH stayed below 605 in the week to 2026-08-07 (#77 HIT); 605 broke only in late September.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "spy-breakout-fails",
@@ -2000,7 +2256,15 @@
           "p_to": 0.3,
           "note": "a held breakout breaks the capped-grind regime"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the SPY breakout above 774.80 did not hold through 2026-08-07 (#78, #66 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "gas-sub-4",
@@ -2047,7 +2311,15 @@
           "p_to": 0.5,
           "note": "the energy leg of the reacceleration case weakens"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": false,
+        "verdict": "RECORDED",
+        "called": 0.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the US pump average stayed above $4.00 every day of August 2026 (#76 MISS).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "iran-fork-oct",
@@ -2294,7 +2566,15 @@
           "date_delta": 0,
           "note": "a surprise hike five days before the vote sharpens the affordability fight"
         }
-      ]
+      ],
+      "resolved": {
+        "happened": true,
+        "verdict": "RECORDED",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Label states the outcome: the FOMC held 3.75-4.00% on 2026-10-28, vote 10-2 with Cook and Hammack dissenting for a hike (#81 HIT).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\timelines.json"
+      }
     },
     {
       "id": "fed-dec-hike",
@@ -3175,7 +3455,15 @@
           "note": "same mechanism"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": false,
+        "verdict": "HIT",
+        "called": 0.08,
+        "asof": "2026-11-17",
+        "basis": "No monitors, DMZ-equivalent or third-party guarantee was announced by 2026-10-31: Tehran rejected the Qatari draft (10/29), the Doha talks had no breakthrough by 11/1, and the talks stalled with the blockade in place into mid-November.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261029_scorecard-update.md; C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261102_outlook-h1-2027.md; C:\\Users\\hudso\\Downloads\\GT-Analyst\\STATE.md (section 7f)"
+      }
     },
     {
       "id": "iran-six-conditions",
@@ -3414,7 +3702,15 @@
           "note": "supply guidance moves the long end"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "Treasury announced its November quarterly refunding ($125bn) on Wednesday 2026-11-04.",
+        "source": "https://home.treasury.gov/system/files/221/TBACRecommendedFinancingTableByRefundingQuarter-11042026.pdf; https://primerates.com/?p=14054"
+      }
     },
     {
       "id": "coupon-sizes-held",
@@ -3433,7 +3729,15 @@
       "row_class": "scheduled",
       "basis": "Base rate: Treasury's own standing guidance has been 'at least the next several quarters' after each size-increase cycle; unchanged is the modal QRA outcome. Reference class: post-increase-cycle QRAs. No fresh primary datapoint — prior only.",
       "source": "buildout-2026-09-21",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.62,
+        "asof": "2026-11-17",
+        "basis": "The 2026-11-04 QRA kept nominal coupon and FRN auction sizes unchanged (guidance: maintain sizes 'for the next several quarters', dropping 'at least').",
+        "source": "https://home.treasury.gov/news/press-releases/sb0678; https://primerates.com/?p=14054"
+      }
     },
     {
       "id": "bill-share-high",
@@ -3689,7 +3993,15 @@
         "on": "2026-10-03",
         "source": "tree:scheduled"
       },
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.58,
+        "asof": "2026-11-17",
+        "basis": "The October 2026 SLOOS (released 2026-11-02) showed net tightening of C&I standards for large and middle-market firms of +1.7 (FRED DRTSCILM; prior 0.0); ledger #109 resolved HIT.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\ledger\\ledger.db (predictions/lessons #109); https://fred.stlouisfed.org/series/DRTSCILM"
+      }
     },
     {
       "id": "cre-office-stress",
@@ -4079,7 +4391,15 @@
           "note": "supply guidance sets the band"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.96,
+        "asof": "2026-11-17",
+        "basis": "The seven core OPEC+ members met online on 2026-11-01 and set December output targets.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261102_outlook-h1-2027.md; https://engineeringnews.co.za/article/opec-keeps-december-oil-output-targets-steady-ahead-of-tougher-call-for-2027-2026-11-02"
+      }
     },
     {
       "id": "opec-quota-unchanged",
@@ -4103,7 +4423,15 @@
       "row_class": "direction",
       "basis": "Hard cap 0.55: this is a cartel of sovereigns exercising discretion. #29 priced exactly this shape at 0.58 on a premise that had already evaporated and scored 0.34.",
       "source": "buildout-2026-09-21",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.7,
+        "asof": "2026-11-17",
+        "basis": "At the 2026-11-01 meeting OPEC+ kept December output targets unchanged (flat since October), leaving changes to the 11/29 ministerial.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261102_outlook-h1-2027.md; https://www.staradvertiser.com/2026/11/01/breaking-news/opec-keeps-december-oil-output-targets-steady-as-iran-war-disrupt-flows/"
+      }
     },
     {
       "id": "brent-band-q4",
@@ -5718,7 +6046,15 @@
           "note": "AHE prints here"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.95,
+        "asof": "2026-11-17",
+        "basis": "BLS released the October Employment Situation on 2026-11-06: payrolls +165k, unemployment 4.1%.",
+        "source": "https://www.bls.gov/news.release/empsit.nr0.htm; https://www.foxbusiness.com/economy/us-jobs-report-october-2026"
+      }
     },
     {
       "id": "payrolls-dec",
@@ -8086,7 +8422,7 @@
       "market": "CPI is the print that adjudicates the whole supply-shock story.",
       "kind": "checkpoint",
       "lane": "fed-macro",
-      "date": "2026-11-12",
+      "date": "2026-11-10",
       "row_class": "scheduled",
       "basis": "Fixed BLS release calendar; certain absent a funding lapse, which is a separate node.",
       "source": "buildout-2026-09-21",
@@ -8097,7 +8433,15 @@
           "note": "CPI inputs map to PCE"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.95,
+        "asof": "2026-11-17",
+        "basis": "BLS released October 2026 CPI on 2026-11-10 (headline +0.4% m/m, core +0.3%; no 12-month rate was published because October 2025 data were never collected).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261118_tape-note-gulf-oil-fed.md; https://stockanalysis.com/news/us-cpi-rises-october-2026/"
+      }
     },
     {
       "id": "core-pce-band",
@@ -8347,7 +8691,15 @@
           "note": "the lame-duck session inherits the result"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 1.0,
+        "asof": "2026-11-17",
+        "basis": "The 2026-11-03 election produced a configuration: Democrats won the House and Senate under a Republican president (divided government).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\STATE.md; https://www.opb.org/article/2026/11/04/2026-midterms-democrats-win-the-senate/"
+      }
     },
     {
       "id": "divided-government",
@@ -8386,7 +8738,15 @@
           "note": "gridlock raises lapse risk"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.8,
+        "asof": "2026-11-17",
+        "basis": "Democrats won control of both the House and the Senate on 2026-11-03 under President Trump: divided government.",
+        "source": "https://www.opb.org/article/2026/11/04/2026-midterms-democrats-win-the-senate/; C:\\Users\\hudso\\Downloads\\GT-Analyst\\STATE.md"
+      }
     },
     {
       "id": "unified-hold",
@@ -8405,7 +8765,15 @@
       "row_class": "branch",
       "basis": "Branch. Against the historical base rate but not rare; thin margins cut both ways and redistricting has changed the map.",
       "source": "buildout-2026-09-21",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": false,
+        "verdict": "HIT",
+        "called": 0.12,
+        "asof": "2026-11-17",
+        "basis": "Republicans lost both chambers on 2026-11-03, so the president's party did not keep unified control.",
+        "source": "https://www.opb.org/article/2026/11/04/2026-midterms-democrats-win-the-senate/"
+      }
     },
     {
       "id": "contested-result",
@@ -8426,12 +8794,16 @@
         {
           "fact": "DOJ Civil Rights chief Harmeet Dhillon said DOJ plans about 1,000 monitors at polling sites for the 2026-11-03 midterms (reportedly 289 in 2022 and 714 in 2024); plaintiffs including the NAACP sued for records on legal authority, training and locations, and DOJ had not published the jurisdiction list. [context; Bloomberg interview (via Democracy Docket; NOTUS); verified-web]",
           "reported": "2026-08-17"
+        },
+        {
+          "fact": "Still open on 17 Nov: Not yet resolvable: the branch asks whether a federal result is still formally contested into December. DOJ's bid to pause Alaska's Senate race was rejected on 11/1 with an appeal vowed, and the Alaska and Mississippi Senate counts were still open on 11/4. It settles on 2026-12-01.",
+          "reported": "2026-11-17"
         }
       ],
       "market": "A contested result is a volatility event with no clean hedge.",
       "kind": "branch",
       "lane": "us-politics",
-      "date": "2026-11-04",
+      "date": "2026-12-01",
       "row_class": "branch",
       "basis": "Branch. Base rate of a genuinely unresolved federal race extending past the month is low but non-trivial, and the live federal-intervention fight raises it above the historical rate.",
       "source": "buildout-2026-09-21",
@@ -8632,7 +9004,15 @@
         "phase_ends": false,
         "note": "The pause dates from ~9/10 (STATE.md), so it is ~12d old on 9/22 and the horizon 2026-11-01 is 40d out. Completed pause lengths 14/13/19 days are the cycle's own realised pauses; STATE.md records 'legs last ~2-5 weeks', which those three are inside. Prior median left at the tool's default 65d."
       },
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "MISS",
+        "called": 0.38,
+        "asof": "2026-11-17",
+        "basis": "On the node's own strike-range definition the ~9/10 pause was still in effect on 2026-11-01: there was no US or coalition strike on Iranian territory from 9/10 until the Qeshm strike of 2026-11-02 (the repo says tit-for-tat resumed 'after a two-month lull'). Caveat: IRGC mining of and attacks on tankers at sea continued through October, and the node tags one 10/22 tanker item 'contradicts'.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261118_tape-note-gulf-oil-fed.md; C:\\Users\\hudso\\Downloads\\GT-Analyst\\data\\war_timeline.json; https://aa.com.tr/en/us-israel-iran-war/factbox-why-is-iran-s-qeshm-island-a-us-target/4111536"
+      }
     },
     {
       "id": "npt-notice-arithmetic",
@@ -13267,7 +13647,15 @@
       "row_class": "scheduled",
       "basis": "Published UNGA agenda: the item is taken up every year and the Cuban foreign minister said the vote is set for Oct 27-28; last year's vote had 165 states in favour.",
       "source": "events-2026-10-22",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": false,
+        "verdict": "MISS",
+        "called": 0.78,
+        "asof": "2026-11-17",
+        "basis": "The UNGA adopted the Cuba embargo resolution on 2026-10-28 with only 130 in favour, 17 against and 25 abstentions, below the 150 threshold (165 in 2025).",
+        "source": "https://news.cgtn.com/news/2026-10-29/UN-votes-overwhelmingly-against-US-embargo-on-Cuba-1RCXAlCesfu/p.html; https://www.euronews.com/2026/10/28/support-for-un-vote-to-end-us-embargo-on-cuba-falls-to-30-year-low"
+      }
     },
     {
       "id": "ev-black-sea-vessel-strike",
@@ -13323,7 +13711,15 @@
       "row_class": "scheduled",
       "basis": "Arithmetic: storage rose from about 71.5% on Sep 29 to about 74% on Oct 12 (about 0.2 pp/day, decelerating seasonally); reaching 80% by Nov 1 needs about 0.3 pp/day for 20 days.",
       "source": "events-2026-10-22",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.8,
+        "asof": "2026-11-17",
+        "basis": "EU aggregate storage peaked for 2026 at 74.96% on gas day 2026-10-27 (AGSI+ via OilPriceAPI) and was reported at about 74.56% on 1 November, well below 80%.",
+        "source": "https://www.oilpriceapi.com/blog/europe-gas-storage-record-low-fact-check-november-2026; https://oenergetice.cz/en/natural-gas/low-gas-storage-levels-could-lead-to-higher-prices-germany-entered-the-heating-season-with-a-significant-shortfall"
+      }
     },
     {
       "id": "ev-venezuela-delisting",
@@ -13451,7 +13847,15 @@
       "row_class": "scheduled",
       "basis": "Calendar: the Knesset dissolved 7/17 with the vote fixed for the 10/27 legal-deadline date; the Supreme Court has ruled on party eligibility for that date and ballot slips were already being printed and withdrawn for a party that quit (10/21).",
       "source": "events-2026-10-22",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.95,
+        "asof": "2026-11-17",
+        "basis": "Israel held its Knesset election on 2026-10-27 as scheduled; the final count was published on 2026-10-30.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261029_scorecard-update.md; https://aljazeera.com/news/2026/11/4/israel-vote-results-confirmed-as-election-commission-rejects-fraud-claims"
+      }
     },
     {
       "id": "ev-post-midterm-us-strikes",
@@ -13647,7 +14051,15 @@
       "row_class": "direction",
       "basis": "Outside view = market pricing: CME FedWatch about 17% on 10/7-10/8, and hike odds fell from 28% to under 15% after Warsh's 10/16 remarks (Trading Economics: about 85% hold); no Fed meeting since 1990 has hiked against 85% futures pricing seven days out without prior guidance.",
       "source": "events-2026-10-22",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": false,
+        "verdict": "HIT",
+        "called": 0.15,
+        "asof": "2026-11-17",
+        "basis": "The FOMC held the target range at 3.75-4.00% on 2026-10-28 (10-2, two dissents for a hike); there was no hike.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261029_scorecard-update.md; ledger #81"
+      }
     },
     {
       "id": "ev-ecb-oct29-hike",
@@ -13679,7 +14091,15 @@
       "row_class": "direction",
       "basis": "Outside view = futures pricing after the 9/10 hike: roughly 28-29% for another 25bp on 10/29 (a 9/24 snapshot said 60%), with Standard Chartered on 10/2 seeing limited October hike odds and Lagarde on 9/28 urging a measured pace.",
       "source": "events-2026-10-22",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": false,
+        "verdict": "HIT",
+        "called": 0.05,
+        "asof": "2026-11-17",
+        "basis": "The ECB held on 2026-10-29: the deposit facility rate stayed at 2.50% (MRO 2.65%, MLF 2.90%).",
+        "source": "https://ecb.europa.eu/press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html; https://www.newsquawk.com/headlines/european-deposit-facility-rate-250-vs-exp-25-prev-250"
+      }
     },
     {
       "id": "ev-busan-truce-rolled",
@@ -13806,7 +14226,15 @@
           "note": "the no-strike pledge covers only the period to 11/3"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.99,
+        "asof": "2026-11-17",
+        "basis": "The 2026 federal general election was held on Tuesday 2026-11-03; Democrats won both chambers.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\STATE.md; https://www.opb.org/article/2026/11/04/2026-midterms-democrats-win-the-senate/"
+      }
     },
     {
       "id": "ev-dvd-argued-dec9",
@@ -13890,7 +14318,15 @@
       "row_class": "marker",
       "basis": "Outside view: DOJ's Civil Rights Division sent monitors in the 2022 (about 289) and 2024 (about 714) cycles per reporting, which makes a public list the usual practice; this DOJ called the 2026 plan its largest ever and as of mid-August had published no list, and a records suit is seeking one.",
       "source": "events-2026-10-22",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.65,
+        "asof": "2026-11-17",
+        "basis": "A DOJ press release dated 2026-11-03 named the jurisdictions (e.g. Maricopa and Pima AZ, Fulton and DeKalb GA, Cook/Chicago IL) for its ~1,000 monitors in all 50 states; it was published on Election Day morning, i.e. on the deadline.",
+        "source": "https://justice.gov/opa/pr/doj-monitor-elections-all-50-states-first-time"
+      }
     },
     {
       "id": "ev-doj-scotus-voterlist-app",
@@ -13909,6 +14345,10 @@
         {
           "fact": "DOJ moved for a stay pending appeal",
           "reported": "2026-10-16"
+        },
+        {
+          "fact": "Outcome not confirmed on 17 Nov: Unknown: no report or docket entry was found of a DOJ Supreme Court emergency application in Common Cause v. DOJ (D.D.C. 1:26-cv-01352) by 2026-11-03. The last confirmed step is DOJ's 2026-10-16 district-court stay motion, and the SCOTUS application found (26A308, LWV v. DHS, the SAVE case) is a different case. Probably did not happen, but this was not verified against the docket.",
+          "reported": "2026-11-17"
         }
       ],
       "market": "Midterm-vol builder; election-litigation headline risk.",
@@ -14024,7 +14464,15 @@
           "note": "the president's clock starts at publication"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.9,
+        "asof": "2026-11-17",
+        "basis": "The Central Elections Committee published final results on 2026-10-30, certified them, and presented the official results to President Herzog on 2026-11-04.",
+        "source": "https://aljazeera.com/news/2026/11/4/israel-vote-results-confirmed-as-election-commission-rejects-fraud-claims; https://www.jns.org/news/israel-news/elections-chief-presents-official-results-to-herzog-amid-foreign-interference-probe"
+      }
     },
     {
       "id": "ev-il-president-tasks",
@@ -14138,7 +14586,15 @@
       "row_class": "marker",
       "basis": "PUBLISHED POLL distribution, read 2026-10-22: seven polls in the past week average both blocs at 51 of 120, ten short of 61 (a Channel 13 poll in late September had 51 and 52). Only the Channel 14 poll, a pro-Netanyahu outlet, shows a coalition majority. A ten-seat polling miss is the arithmetic the row rests on; A miss that large would be well outside the usual poll error for a bloc (my recollection is a few seats; verify).",
       "source": "buildout-2026-10-22-elections",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.84,
+        "asof": "2026-11-17",
+        "basis": "Final results (published 2026-10-30, certified 2026-11-04): Netanyahu bloc 53, Eisenkot-led opposition bloc 48, Arab parties 19, so neither bloc reached 61.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261029_scorecard-update.md; https://aa.com.tr/en/middle-east/israel-completes-vote-count-netanyahu-bloc-retains-53-seats/4105279"
+      }
     },
     {
       "id": "ev-il-pardon-by-dec31",
@@ -14183,7 +14639,15 @@
           "note": "the lame duck owns the next funding vote"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.96,
+        "asof": "2026-11-17",
+        "basis": "No appropriations bill or CR was found enacted between 2026-10-22 and 2026-11-03; agencies stayed on the September CR (to 2026-12-11), with FY27 decisions left to the lame duck.",
+        "source": "https://ofr.harvard.edu/news/2026/09/congress-extends-government-funding-through-december-11"
+      }
     },
     {
       "id": "ev-us-congress-convenes-jan3",
@@ -14221,7 +14685,15 @@
       "row_class": "scheduled",
       "basis": "PUBLISHED CALENDAR: the Federal Reserve's 2026 meeting schedule has the meeting on October 27-28 (the tree's own fomc nodes carry the same dates); meetings are held on the published dates essentially without exception, including through the war.",
       "source": "buildout-2026-10-22-elections",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": true,
+        "verdict": "HIT",
+        "called": 0.98,
+        "asof": "2026-11-17",
+        "basis": "The FOMC concluded its meeting and released its decision statement on 2026-10-28 (hold, 10-2).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261029_scorecard-update.md"
+      }
     },
     {
       "id": "ev-iran-us-no-strike-pre-vote",
@@ -14245,7 +14717,15 @@
       "row_class": "marker",
       "basis": "COMMITTED public pledge, with a dated source: 'we will not be attacking Iran at any time prior to the midterm elections' (President, 10/8; White House, repeated 10/22). Pledges by this decider have been reversed, and Iran is hitting tankers (twelve in the week to 10/5, seven reported on 10/22), so it is capped under 0.85.",
       "source": "buildout-2026-10-22-elections",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": false,
+        "verdict": "MISS",
+        "called": 0.84,
+        "asof": "2026-11-17",
+        "basis": "US aircraft struck IRGC radar and launchers on Qeshm Island on Monday 2026-11-02, inside the 10/22-11/3 window (ledger #79 resolved MISS).",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\ledger\\ledger.db (#79); C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261114_prediction-rankings.md; https://aa.com.tr/en/us-israel-iran-war/factbox-why-is-iran-s-qeshm-island-a-us-target/4111536"
+      }
     },
     {
       "id": "ev-iran-israel-strike-pre-vote",
@@ -14269,7 +14749,15 @@
       "row_class": "marker",
       "basis": "BASE RATE for the window and the dated reports: the Financial Times reported the Israeli military was ready to strike on the weekend of 10/10 and the President did not approve it; Netanyahu then said a strike before the vote was 'not convenient for us'; an Israeli security chief reportedly warned a strike could postpone the election. Restraint has been the pattern for the whole window.",
       "source": "buildout-2026-10-22-elections",
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": false,
+        "verdict": "HIT",
+        "called": 0.07,
+        "asof": "2026-11-17",
+        "basis": "No Israeli strike on Iranian territory from 2026-10-22 to 11/3: the 10/29 scorecard records no Israeli first strike around the 10/27 vote, and STATE (11/14) records no Israeli strike on Iran proper since 6/8.",
+        "source": "C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261029_scorecard-update.md; C:\\Users\\hudso\\Downloads\\GT-Analyst\\STATE.md (#16 row)"
+      }
     },
     {
       "id": "ev-iran-energy-infra-strike-dec31",
@@ -14319,7 +14807,15 @@
           "note": "an explicit extension lowers the window"
         }
       ],
-      "imported_from_pc": "2026-11-17"
+      "imported_from_pc": "2026-11-17",
+      "resolved": {
+        "happened": false,
+        "verdict": "HIT",
+        "called": 0.12,
+        "asof": "2026-11-17",
+        "basis": "No public extension of the no-strike pledge by 2026-11-10. Trump said 'no' to post-midterm strikes (11/2), 'no immediate plans' (11/4) and that renewed attacks were 'highly unlikely' if talks progressed (CNN, 11/8); all were hedged rather than a pledge, and the US struck Qeshm on 11/2 and 11/6. Whether these count as 'extending' is a judgment call.",
+        "source": "https://www.coloradopolitics.com/2026/11/09/trump-says-return-to-full-scale-war-with-iran-highly-unlikely/; https://aa.com.tr/en/world/trump-downplays-renewed-us-strikes-on-iran-after-midterm-elections/4109187; C:\\Users\\hudso\\Downloads\\GT-Analyst\\reports\\20261114_prediction-rankings.md"
+      }
     },
     {
       "id": "opec-ministerial-nov29",
