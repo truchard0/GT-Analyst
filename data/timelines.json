@@ -2102,12 +2102,6 @@
      "p_to": 0.95,
      "date_delta": -100,
      "note": "a post-midterm campaign pulls round 2 forward"
-    },
-    {
-     "target": "brent-85-q1",
-     "p_to": 0.25,
-     "date_delta": 0,
-     "note": "a deal confirmed by both sides takes Brent toward the 70s"
     }
    ]
   },
@@ -2127,7 +2121,7 @@
     "DNI memo: Iran in 'advanced stages' of attack planning (CNBC 10/24)"
    ],
    "ledger": [],
-   "market": "Brent >130 tail; ITA up; SMH down",
+   "market": "2y Treasury sign is the branch tell (no sector or price call)",
    "evidence": [
     {
      "fact": "On The Brink Of Epic Fury Round Two? (TWZ)",
@@ -2170,7 +2164,7 @@
     "Iran FM spox: messages still exchanged"
    ],
    "ledger": [],
-   "market": "Brent -15-25% on confirmation; #80 breaker",
+   "market": "2y Treasury lower on confirmation (rates channel; no price call)",
    "evidence": [
     {
      "fact": "Qatar mediators visit Tehran (Al Jazeera liveblog)",
@@ -2212,7 +2206,7 @@
    "ledger": [
     87
    ],
-   "market": "BNO/USO up; tanker equities bid; SPR draws continue",
+   "market": "no sector or price call; measured state only",
    "evidence": [
     {
      "fact": "Hormuz near standstill; ~500 vessels delayed; new tanker attack (Gulf News/UKMTO)",
@@ -2375,7 +2369,7 @@
    "ledger": [
     82
    ],
-   "market": "tanker war-risk premia (7-9% of hull); price leg split to brent-85-q1",
+   "market": "measured state: PortWatch transits, war-risk premia (7-9% of hull)",
    "evidence": [
     {
      "fact": "PortWatch weekly mean 3.3-4.1 transits/day through 10/25",
@@ -2467,8 +2461,8 @@
    "date": "2026-11-30",
    "horizon": "12 days",
    "p": 0.1,
-   "label": "Brent front month settles >= $100 on 11/30 (#80)",
-   "rationale": "Split out of frozen-tanker-war on 11/18: the strait state and the oil price have decoupled. Brent 93.14 (11/17) needs +7.4% in nine sessions. Barrels are moving around the closure (IEA: Gulf exports 18.4 mb/d in October, 26% below pre-war; Kpler ~8.3 mb/d through/around Hormuz in the week to 11/11; East-West pipeline ~5.8 mb/d), the market is pricing a 2027 surplus (Goldman: 2 mb/d, Brent avg $88), tanker rates have collapsed and the Fed is tightening. Path to >=100: a planned campaign (0.10 x ~0.6) plus a flare inside the frozen state (~0.04). Desk 0.10 against 0.70 logged: the physical-flow gate read AIS transits, which go dark, not barrels.",
+   "label": "Legacy call #80: Brent front month settles >= $100 on 11/30 (scored at settlement; no new oil-price calls)",
+   "rationale": "LEGACY ROW, carried for honest scoring only (war-driven oil-price calls banned by user instruction 2026-11-18). Split out of frozen-tanker-war on 11/18 because the strait state and the oil price decoupled: Brent 93.14 on 11/17 with AIS-visible traffic near zero, while barrels move by pipeline, ship-to-ship and dark or escorted transits (IEA: Gulf exports 74% of pre-war in October; Kpler ~48% through/around the strait). Logged at 0.70 on the physical-flow gate, which read AIS transits, not barrels. p here is the last desk mark; it is not a published call.",
    "confluence": [
     "measured barrels (IEA/Kpler) vs AIS transits (PortWatch)",
     "sell-side 2027 surplus forecasts (Goldman, IEA)",
@@ -2477,7 +2471,7 @@
    "ledger": [
     80
    ],
-   "market": "BNO/USO; XLE vs SPY",
+   "market": "",
    "evidence": [
     {
      "fact": "Brent front month: 117.64 (10/30) -> 91.49 (11/10) -> 95.84 (11/13) -> 93.14 (11/17)",
@@ -2497,8 +2491,8 @@
    "date": "2027-03-31",
    "horizon": "4.5 months",
    "p": 0.5,
-   "label": "Brent front month settles >= $85 on 3/31/2027 (#83) - no call",
-   "rationale": "Split out of hormuz-impaired-q1 on 11/18 and RE-WEIGHTED 0.62 -> 0.50 (no call). Brent is 93 with the strait still shut on the AIS meter; Goldman sees a 2 mb/d surplus and an $88 average for 2027, declining through the year; the Fed is priced for three hikes; OPEC+ sets 2027 quotas on 11/29. Frozen state -> 85-95; deal -> 70s; campaign -> 100+. An oil-level call on the war narrative is the type with the worst record (1 of 6), so the desk abstains.",
+   "label": "Legacy call #83: Brent front month settles >= $85 on 3/31/2027 (scored at settlement; no new oil-price calls)",
+   "rationale": "LEGACY ROW, carried for honest scoring only (war-driven oil-price calls banned by user instruction 2026-11-18). Split out of hormuz-impaired-q1 on 11/18 so the measured strait state (#82) and the price (#83) are separate nodes. p is an unweighted placeholder (0.50), not a call.",
    "confluence": [
     "Goldman/IEA surplus forecasts",
     "frozen-state scenario tree"
@@ -2506,7 +2500,7 @@
    "ledger": [
     83
    ],
-   "market": "BNO; XLE",
+   "market": "",
    "evidence": [
     {
      "fact": "Goldman Sachs: supply to exceed demand by 2 mb/d in 2027, Brent to average $88 (OilPrice.com)",
@@ -2530,7 +2524,7 @@
     "Trump Manila remarks 11/17"
    ],
    "ledger": [],
-   "market": "Brent gap risk on any Iran language; SMH on chip-control language",
+   "market": "2y Treasury on any Iran language (rates channel); SMH on chip-control language",
    "evidence": [
     {
      "fact": "China confirms first Xi-Trump-Putin summit on 11/19 in Shenzhen (China MFA; CNBC 11/16)",
@@ -2549,12 +2543,6 @@
      "p_to": 0.04,
      "date_delta": 0,
      "note": "a working trilateral lowers near-term cross-strait risk"
-    },
-    {
-     "target": "brent-85-q1",
-     "p_to": 0.35,
-     "date_delta": 0,
-     "note": "credible Iran de-escalation language pulls the Q1 oil path down"
     }
    ]
   },
@@ -2568,12 +2556,12 @@
    "horizon": "11 days",
    "p": 1.0,
    "label": "OPEC+ full ministerial (11/29): 2027 quotas",
-   "rationale": "All 21 members meet to set 2027 baselines after the capacity review completed 11/17. With Goldman and the IEA calling a 2027 surplus and Brent at 93, the choice is between defending price (hold or cut) and reclaiming share once Gulf barrels are freed. No call on the outcome.",
+   "rationale": "All 21 members meet to set 2027 baselines after the capacity review completed 11/17, with Goldman and the IEA calling a 2027 surplus. Carried as context for the inflation and rates path; no call on the outcome or on price.",
    "confluence": [
     "OPEC release: next meeting 29 November 2026"
    ],
    "ledger": [],
-   "market": "Brent; XLE",
+   "market": "context for the inflation path; no price call",
    "evidence": [
     {
      "fact": "OPEC completes review of output levels for 2027 baselines (Quantum Commodity Intelligence); full group meets 11/29",
@@ -2582,16 +2570,10 @@
    ],
    "shifts": [
     {
-     "target": "brent-100-nov30",
-     "p_to": 0.05,
+     "target": "fed-h1-no-cuts",
+     "p_to": 0.88,
      "date_delta": 0,
-     "note": "a quota increase the day before the 11/30 settle removes the last non-war path to $100"
-    },
-    {
-     "target": "brent-85-q1",
-     "p_to": 0.4,
-     "date_delta": 0,
-     "note": "higher 2027 baselines into a forecast surplus lower the Q1 price path"
+     "note": "rates channel only: higher 2027 quotas into a forecast surplus ease headline inflation and marginally lower the odds of no cuts by June"
     }
    ]
   }
@@ -2721,21 +2703,21 @@
     "event": "OPEC+ full ministerial: 2027 quotas",
     "when": "Sun 11/29",
     "status": "pending",
-    "ledger": 80,
+    "ledger": null,
     "estimate": "no call",
     "consensus": "-",
     "actual": "",
-    "note": "A raise the day before the 11/30 settle closes the last non-war path to $100."
+    "note": "Context for the inflation and rates path. No price call (banned 11/18)."
    },
    {
-    "event": "Brent 11/30 settle; Iran fork deadline",
+    "event": "Iran fork deadline; legacy #80 scored at the Brent settle",
     "when": "Mon 11/30",
     "status": "pending",
     "ledger": 80,
-    "estimate": "Brent < $100 (0.90); frozen state holds (0.85); a further US reactive strike by then (0.72, #87)",
+    "estimate": "frozen state holds (0.85); a further US reactive strike by then (0.72, #87); no planned campaign (0.90)",
     "consensus": "-",
     "actual": "",
-    "note": "#80 logged at 0.70 for >= $100: expected miss."
+    "note": "#80 (logged 0.70 for >= $100) is scored at settlement; no oil-price call is published."
    },
    {
     "event": "November jobs report",

@@ -8,31 +8,29 @@ The Gulf got hotter this week and oil fell anyway: Brent settled at $93.14 on 17
 
 ## Key calls
 
-| Call                                                                                   | Probability   | Resolves    | What flips it                                                                                            |
-|----------------------------------------------------------------------------------------|---------------|-------------|----------------------------------------------------------------------------------------------------------|
-| The Fed raises rates on 9 December (upper bound 4.25% or higher)                       | 92%           | 9 Dec 2026  | A disorderly equity or Treasury-market break before the meeting; a collapse in November payrolls (4 Dec) |
-| Brent settles below $100 on 30 November                                               | 90%           | 30 Nov 2026 | A planned US strike campaign, or an Iranian hit that kills Americans                                     |
-| No US–Iran deal confirmed by both governments by 30 November                           | 95%           | 30 Nov 2026 | A China- or Russia-guaranteed framework out of Shenzhen (19 Nov) that Tehran endorses                    |
-| No planned US strike campaign on Iran (3+ strike days) by 30 November                  | 90%           | 30 Nov 2026 | US casualties in Bahrain or Kuwait                                                                       |
-| At least one more US strike on Iranian territory by 30 November (reactive, like Qeshm) | 72%           | 30 Nov 2026 | Iran pauses attacks on US assets around the 19 November summit                                           |
-| No net Fed easing by mid-2027 (upper bound 4.00% or higher on 30 June)                 | 90%           | 30 Jun 2027 | A growth shock that forces two cuts after December                                                       |
-| Ship-tracked Hormuz traffic still below half of pre-war on 31 March 2027               | 78%           | 31 Mar 2027 | A two-sided deal by mid-January plus mine clearance                                                      |
-| Brent at or above $85 on 31 March 2027                                                | No call (50%) | 31 Mar 2027 | n/a                                                                                                      |
-| Direction of the AI complex after Nvidia                                               | No call       | n/a         | n/a                                                                                                      |
+| Call                                                                                   | Probability | Resolves    | What flips it                                                                                            |
+|----------------------------------------------------------------------------------------|-------------|-------------|----------------------------------------------------------------------------------------------------------|
+| The Fed raises rates on 9 December (upper bound 4.25% or higher)                       | 92%         | 9 Dec 2026  | A disorderly equity or Treasury-market break before the meeting; a collapse in November payrolls (4 Dec) |
+| No US–Iran deal confirmed by both governments by 30 November                           | 95%         | 30 Nov 2026 | A China- or Russia-guaranteed framework out of Shenzhen (19 Nov) that Tehran endorses                    |
+| No planned US strike campaign on Iran (3+ strike days) by 30 November                  | 90%         | 30 Nov 2026 | US casualties in Bahrain or Kuwait                                                                       |
+| At least one more US strike on Iranian territory by 30 November (reactive, like Qeshm) | 72%         | 30 Nov 2026 | Iran pauses attacks on US assets around the 19 November summit                                           |
+| No net Fed easing by mid-2027 (upper bound 4.00% or higher on 30 June)                 | 90%         | 30 Jun 2027 | A growth shock that forces two cuts after December                                                       |
+| Ship-tracked Hormuz traffic still below half of pre-war on 31 March 2027               | 78%         | 31 Mar 2027 | A two-sided deal by mid-January plus mine clearance                                                      |
+| Direction of the AI complex after Nvidia                                               | No call     | n/a         | n/a                                                                                                      |
 
-Two of these reverse earlier desk positions. We had 70% on Brent holding $100 at month-end; that call is now a likely miss. We had the December hike as a coin flip while the market moved to about 95%.
+One of these corrects a stale position: we had the December hike as a coin flip while the market moved to about 95%. Oil appears below as context only. We no longer publish calls on oil prices or on energy and defense sectors, because our earlier war-driven ones were right one time in six.
 
 ## Oil: the strait is shut and crude is falling anyway
 
 Brent has lost its war premium because barrels are leaving the Gulf by routes that ship tracking cannot see, and the market is now trading a 2027 surplus instead of the closure.
 
-> **Chart 1.** Front-month Brent settlements, 23 Oct to 17 Nov 2026 (10 Nov is the low reported by Kpler); wire reports *(drawn in the Claude Doc and in `reports/exports/20261118_tape-note-gulf-oil-fed.{docx,pdf}`)*
+> **Chart 1.** Front-month Brent settlements, 23 Oct to 17 Nov 2026 (10 Nov is the low reported by Kpler); wire reports *(drawn in the Claude Doc and in the docx/pdf exports)*
 
 Front-month Brent settlements, 23 Oct to 17 Nov 2026 (10 Nov is the low reported by Kpler); wire reports
 
 The week brought more attacks, not fewer. Iran's Guards claim six tankers mined since 15 November, UKMTO confirmed projectile strikes, and an LPG carrier was hit twice off Khasab and abandoned with one seafarer missing (reported 17 Nov, 15:00 UTC). Brent still settled at $93.14 that evening (reported 17 Nov, 22:36 UTC).
 
-> **Chart 2.** IMF PortWatch, Kpler and IEA figures as compiled by hormuz.now, 13 to 15 Nov 2026 *(drawn in the Claude Doc and in `reports/exports/20261118_tape-note-gulf-oil-fed.{docx,pdf}`)*
+> **Chart 2.** IMF PortWatch, Kpler and IEA figures as compiled by hormuz.now, 13 to 15 Nov 2026 *(drawn in the Claude Doc and in the docx/pdf exports)*
 
 IMF PortWatch, Kpler and IEA figures as compiled by hormuz.now, 13 to 15 Nov 2026
 
@@ -42,13 +40,13 @@ Three further weights sit on the price. Goldman Sachs forecasts a 2 mb/d surplus
 
 One caution against extrapolating: Tankertrackers reports fewer empty tankers heading into the Gulf (17 Nov), which would cap the export revival if it continues.
 
-**Read-across.** In price terms this has stopped behaving like an oil-supply shock. Crude is falling while bond yields rise, so the inflation impulse now comes from core prices and the Fed, not from the barrel. We make no call on the oil level beyond month-end: of our six earlier oil-level calls tied to the war, one was right.
+**Read-across.** In price terms this has stopped behaving like an oil-supply shock. Crude is falling while bond yields rise, so the inflation impulse now comes from core prices and the Fed, not from the barrel. That channel is what feeds the rates calls in this note; the oil price itself is context, not a call.
 
 ## Iran: tit-for-tat, not a campaign
 
 Fire resumed after a two-month lull, but nothing on the tape shows a decision to launch a planned campaign, so the frozen conflict stays the 85% path through 30 November.
 
-> **Chart 3.** Scenario tree to 30 November 2026 · 3 branches, desk probabilities *(drawn in the Claude Doc and in `reports/exports/20261118_tape-note-gulf-oil-fed.{docx,pdf}`)*
+> **Chart 3.** Scenario tree to 30 November 2026 · 3 branches, desk probabilities *(drawn in the Claude Doc and in the docx/pdf exports)*
 
 Scenario tree to 30 November 2026 · 3 branches, desk probabilities
 
@@ -74,7 +72,7 @@ Two items we note without a call. The Houthis have retaken Bab el-Mandeb and are
 
 Futures put about 95% on a quarter-point hike on 9 December and we agree at 92%. What moved it was core inflation, not oil.
 
-> **Chart 4.** CME FedWatch via CNBC (December, 17 Nov 2026) and TheStreet (January, March) *(drawn in the Claude Doc and in `reports/exports/20261118_tape-note-gulf-oil-fed.{docx,pdf}`)*
+> **Chart 4.** CME FedWatch via CNBC (December, 17 Nov 2026) and TheStreet (January, March) *(drawn in the Claude Doc and in the docx/pdf exports)*
 
 CME FedWatch via CNBC (December, 17 Nov 2026) and TheStreet (January, March)
 
@@ -92,7 +90,7 @@ What would flip it is funding stress, not data: a Fed official called this week 
 
 Nvidia reported $115.8bn of revenue against $109.1bn expected and raised next year's growth outlook to 75%, five days after Jensen Huang resigned. Demand is intact, so the 25% fall in the shares over the past month was about governance, export control and rates.
 
-> **Chart 5.** Nvidia Q3 FY27 release, 17 Nov 2026; consensus per LSEG as reported by Reuters and CNBC *(drawn in the Claude Doc and in `reports/exports/20261118_tape-note-gulf-oil-fed.{docx,pdf}`)*
+> **Chart 5.** Nvidia Q3 FY27 release, 17 Nov 2026; consensus per LSEG as reported by Reuters and CNBC *(drawn in the Claude Doc and in the docx/pdf exports)*
 
 Nvidia Q3 FY27 release, 17 Nov 2026; consensus per LSEG as reported by Reuters and CNBC
 
@@ -110,17 +108,17 @@ We make no directional call on the AI complex. Our news-based gauge of AI financ
 
 ## Catalysts and what would change the view
 
-The next three weeks are front-loaded: the Shenzhen summit tomorrow, then a month-end cluster in oil, then the Fed.
+The next three weeks are front-loaded: the Shenzhen summit tomorrow, then OPEC+ and the Iran deadline at month-end, then the Fed.
 
-> **Chart 6.** Scheduled catalysts, 18 Nov to 10 Dec 2026 · dates per China's foreign ministry, OPEC, BLS and the Fed calendar *(drawn in the Claude Doc and in `reports/exports/20261118_tape-note-gulf-oil-fed.{docx,pdf}`)*
+> **Chart 6.** Scheduled catalysts, 18 Nov to 10 Dec 2026 · dates per China's foreign ministry, OPEC, BLS and the Fed calendar *(drawn in the Claude Doc and in the docx/pdf exports)*
 
 Scheduled catalysts, 18 Nov to 10 Dec 2026 · dates per China's foreign ministry, OPEC, BLS and the Fed calendar
 
 Four developments would move these calls:
 
-- **An Iranian strike that kills Americans.** The campaign path goes from 10% toward even odds and Brent's route back above $100 reopens.
+- **An Iranian strike that kills Americans.** The campaign path goes from 10% toward even odds.
 
-- **A framework at Shenzhen that Tehran endorses.** Deal odds rise to about 20% and the first-quarter oil path shifts lower.
+- **A framework at Shenzhen that Tehran endorses.** Deal odds rise to about 20%.
 
 - **A disorderly break in Treasuries or equities.** This is the one live threat to the December hike call.
 
@@ -159,13 +157,14 @@ Batch: `inbox/latest.md`, 2,012 items across four ingests (11/15 13:18Z, 11/16 1
 
 **Prediction #87** (kind base-rate, cluster iran-war, lean escalation): >=1 further US kinetic strike on Iranian sovereign territory 11/18-11/30, P 0.72. Falsifier = NOT(prediction). Sensitivity: Iran pauses around 11/19 summit; Oman pause; stand-down order.
 **Red-team gate (#87):** (1) assumptions: Iran keeps attacking US assets; ROE unchanged; attribution visible. (2) ACH: rival "summit pause" and rival "planned campaign" - the reactive pattern (strike only after Iranian fire, 3 of 3) is diagnostic against the campaign rival. (3) premortem: Xi/Putin broker a 2-week quiet - listed. (4) cascade: evidence is event counts, not commentary. (5) reference class: zero-event calls in a live contact zone (16.14a) - base 0.93, shrunk. (6) no extremizing (lenses share evidence). VERDICT: pass at 0.70.
-**Market translation:** GENERIC shock in price terms (oil down on the day's attacks; no 2y confirmation of Branch B). Defense (ITA) neutral: reactive fire is priced. No oil call (C.2 cap; anti-skill type).
+**Market translation:** GENERIC shock in price terms (crude fell on the days of the attacks; no 2y confirmation of Branch B). No sector or price call (banned 11/18); the row carries no sector or ticker.
 
-## A3. Event E2: Brent 93 with the strait "shut"
-**Master gate:** was SUPPLY/exogenous; the price leg now behaves as CORRIDOR + surplus. The 7.1 physical-flow gate fails to hold on its own terms: barrels 48% (Kpler) to 74-82% (IEA) of pre-war, war-risk premia still ~30x. The gate's meter (AIS transits) went blind when ships went dark.
-**Pending doctrine patch (to file when #80 resolves 11/30):** market-transmission 7.1a - meter BARRELS (Kpler/IEA mb/d incl. pipeline and STS), not AIS transits; when the two diverge by more than 2x, barrels govern price calls and transits govern only transit-defined state calls. #82 carries a hit-wrong-reason risk under this patch.
-**Desk re-marks (no new rows; cluster over cap, war-price type capped):** #80 0.70 -> 0.10; #83 0.70 -> 0.50 (no call); #82 0.78 held.
-Conviction for an oil-level call: source 0.10, capital 0.20, formal 0.10, lens 0.05, preconditions 0.07 = 0.52 -> low; not ledgered (C.2: war-price anti-skill).
+## A3. Event E2: Brent 93 with the strait "shut" (context only: no price call)
+**User instruction 2026-11-18 (landed on the branch during this cycle): war-driven oil and sector price calls are BANNED.** This event is analysed for its transmission channel only. Nothing here is a call, and the user-facing note carries oil as context.
+**Master gate:** was SUPPLY/exogenous; the price now behaves as CORRIDOR + surplus. Barrels run at 48% (Kpler) to 74-82% (IEA) of pre-war while AIS-visible traffic reads ~1%; war-risk premia are still ~30x pre-war.
+**Channel that matters for permitted calls:** falling crude with rising yields moves the Fed's reaction function from the barrel to core prices, which is the input to #86 and #84.
+**Pending doctrine patch (to file when #80 resolves 11/30):** market-transmission 7.1a - the physical-flow gate must meter BARRELS (Kpler/IEA mb/d incl. pipeline and ship-to-ship), not AIS transits. It now governs measured-state calls only, since price calls are banned. #82 carries a hit-wrong-reason risk (its meter is AIS transits).
+**Legacy rows:** #80 and #83 stay on the book to be scored honestly at their horizons; they are not re-marked or published as calls.
 
 ## A4. Event E3: December FOMC
 | Component | Score | Note |
@@ -189,7 +188,7 @@ Formal: PASS-WITH-FLAGS (key-person shock is a one-shot; financing chain claim r
 - `taiwan-watch` 0.07 -> 0.06 (Shenzhen trilateral 11/19).
 
 ## A7. Timeline web
-Updated 2026-11-18: 9 nodes re-weighted or re-labelled; new nodes `brent-100-nov30` (#80), `brent-85-q1` (#83) (price split from state), checkpoints `shenzhen-trilateral` and `opec-nov29` with shift edges; `fed-dec-hike` wired to #86, `frozen-tanker-war` to #87; catalyst board rebuilt through 12/10. Gates: `web_coverage.py` OK (86/86 wired, 0 dead catalysts), `ledger.py sweep` clean, `debug_all.py` ALL CLEAR.
+Updated 2026-11-18: 9 nodes re-weighted or re-labelled; legacy rows #80 and #83 moved to their own nodes `brent-100-nov30` and `brent-85-q1` (price split from state; carried for scoring only, no shift edges), checkpoints `shenzhen-trilateral` and `opec-nov29` with shift edges; `fed-dec-hike` wired to #86, `frozen-tanker-war` to #87; catalyst board rebuilt through 12/10. Gates: `web_coverage.py` OK (86/86 wired, 0 dead catalysts), `ledger.py sweep` clean, `debug_all.py` ALL CLEAR.
 
 ## A8. Portfolio hygiene
 - Open rows 30; iran-war 12 = 40% (cap ~35%): the one new iran row is short-dated (resolves 11/30) and is a doctrine forward test; no other iran rows added.

@@ -128,13 +128,14 @@ bookkeeping machine over expert estimates, not a solver.
 **11/18 update** (`reports/20261118_tape-note-gulf-oil-fed.md`, §7h):
 - **New calls:** #86 Fed raises on 12/9 (upper bound ≥ 4.25%), P 0.92, rates. #87 at least one more US strike on Iranian
   territory 11/18–11/30, P 0.72, base-rate (forward test of jiang 16.14a).
-- **Desk re-marks:** #80 0.35 → **0.10** (Brent 93.14 on 11/17); #83 0.62 → **0.50, no call**; #84 0.82 → 0.90; #3 → 0.30 (at risk);
-  #82 held 0.78 with a meter warning (AIS transits ~1% of normal vs barrels 48–82%).
+- **Desk re-marks:** #84 0.82 → 0.90; #3 → 0.30 (at risk); #82 held 0.78 with a meter warning (AIS transits ~1% of normal
+  vs barrels 48–82%). **#80 and #83 are legacy rows under the 11/18 ban:** carried for scoring only, not re-marked or
+  published (Brent settled 93.14 on 11/17, so #80 is on course to miss).
 - `iran-fork-oct` held: campaign 0.10 / deal 0.05 / frozen 0.85. `fed-dec-hike` 0.55 → 0.93. AI 2027 fork: digestion 0.42 /
   sprint 0.40 / winter 0.18 after Nvidia's beat and raised FY28 outlook.
 
 **Next catalysts (rebuilt 11/18):** FOMC minutes 11/18 · **Xi–Trump–Putin trilateral, Shenzhen 11/19** · Anthropic IPO (ANT)
-11/19 · **OPEC+ 2027 quotas 11/29** · **11/30: Brent settle (#80), Iran fork, #87** · payrolls 12/4 · **FOMC 12/9 (#86)** ·
+11/19 · **OPEC+ 2027 quotas 11/29** · **11/30: Iran fork, #87, legacy #80 scored** · payrolls 12/4 · **FOMC 12/9 (#86)** ·
 November CPI 12/10.
 
 **Older catalyst list (10/29):**
@@ -278,10 +279,14 @@ python tools/debug_all.py       # full system debug (syntax/db/json/coherence/ro
   11/18 one were covered by this note (Nvidia, AI names); no separate auto reports written.
 - **The model change:** the strait STATE and the oil PRICE have decoupled. Barrels leave by pipeline, ship-to-ship and dark
   or escorted transits (IEA: Gulf exports 74% of pre-war in October; Kpler 48% through/around the strait), while AIS-visible
-  traffic reads ~1%. The timeline now carries them as separate nodes (`brent-100-nov30`, `brent-85-q1`).
+  traffic reads ~1%. The timeline now carries the legacy price rows on their own nodes (`brent-100-nov30`,
+  `brent-85-q1`), for scoring only and with no shift edges.
+- **Ban applied mid-cycle:** the 11/18 instruction (no war-driven oil or sector price calls) landed on the branch while this
+  note was being written. The note, its exports, the catalyst board and #87 (sector and ticker blanked) were corrected
+  before the push; oil appears as context only.
 - **PENDING DOCTRINE PATCH (file when #80 resolves on 11/30):** market-transmission §7.1a — the physical-flow gate must meter
   BARRELS (Kpler/IEA mb/d, including pipeline and ship-to-ship), not AIS transits. When the two differ by more than 2x,
-  barrels govern price calls; transits govern only transit-defined state calls. #82 then carries a hit-wrong-reason risk.
+  barrels govern the channel analysis and any barrel-defined state call; transits govern only transit-defined state calls. #82 then carries a hit-wrong-reason risk.
 - **The other stale node:** `fed-dec-hike` sat at 0.55 while futures went to ~95%. The driver moved from oil to core CPI and
   the engine was still reading the Fed through Brent. Lesson to log with #86's resolution.
 - **New checkpoints on the map:** `shenzhen-trilateral` (11/19) and `opec-nov29` (11/29), both with shift edges.
