@@ -1,0 +1,300 @@
+[
+ {
+  "node_id": "af-common-framework-sequence",
+  "skip": "Vacuous and undefined: the claim is trivially true if no Common Framework bondholder exchange completes by 2027-09-30, and 'official-creditor understanding' (MoU, agreement in principle, financing assurances?) has no definitional anchor in the node; also near-calendar scaffolding."
+ },
+ {
+  "node_id": "boj-hike",
+  "skip": null,
+  "prediction": "At the conclusion of its 17-18 December 2026 Monetary Policy Meeting, the Bank of Japan sets its uncollateralized overnight call rate target higher than the level in effect immediately before that meeting.",
+  "falsifier": "Falsified if the BoJ Statement on Monetary Policy for the December 2026 meeting, published by 2026-12-19, leaves the target unchanged or lowers it relative to the level in effect immediately before the meeting; a hike at an earlier meeting does not count.",
+  "resolution_source": {
+   "publisher": "Bank of Japan",
+   "series": "Statement on Monetary Policy, December 2026 Monetary Policy Meeting (boj.or.jp)",
+   "convention": "Target level announced on the decision day (2026-12-18) compared with the level in effect before the meeting; announced decision, not effective date."
+  },
+  "base_rate": 0.29,
+  "base_class": "BoJ policy meetings since exit from negative rates: 6 hikes in 21 meetings (Mar 2024 to Sep 2026: Mar24, Jul24, Jan25, Dec25, one in H1 2026, 2026-09-18 to 1.25%) = 0.29; hike count reconstructed from BoJ announcements, verify.",
+  "diverge": "BoJ hiked 1.00% to 1.25% on 2026-09-18 by a 7-2 vote with a mildly hawkish statement, and market pricing on 2026-09-30 implied about 39% for a hike at the 2026-12-18 meeting (aggregator figure, verify).",
+  "direction": "up",
+  "sectors": [
+   "fx",
+   "financials"
+  ]
+ },
+ {
+  "node_id": "boomer-retirement",
+  "skip": "No allowed sector fits: the rising 65+ population share is demography, and sector_map has no demography key, so an empty sectors list cannot be promoted without inventing one.",
+  "prediction": "The 65-and-over share of the US resident population on 1 July 2026 in the Census Bureau's Vintage 2026 national estimates is higher than the 65-and-over share on 1 July 2025 in that same Vintage 2026 series.",
+  "falsifier": "Falsified if the Vintage 2026 national age-by-sex estimates published by 2027-06-30 show the 2026 65-and-over share at or below the 2025 share; resolves N/A (void) if Census has not published them by 2027-06-30.",
+  "resolution_source": {
+   "publisher": "US Census Bureau, Population Estimates Program",
+   "series": "Vintage 2026 national resident population by single year of age and sex",
+   "convention": "Compare shares inside the same vintage (never across vintages); compute 65+ population divided by total from the published counts so rounding ties are resolved."
+  },
+  "base_rate": 0.95,
+  "base_class": "Census annual 65+ share rose in every year-over-year step of the 2010-2025 estimates series (structural: 1946-64 baby-boom cohorts keep entering age 65 through 2029 and outnumber the cohorts they replace); rule of succession on 15 steps = 0.94.",
+  "direction": "neutral",
+  "sectors": []
+ },
+ {
+  "node_id": "cn-growth-target",
+  "skip": "The node's reference class (several NPCs at 'around 5%') is stale: China's 2026 target was a 4.5-5% range, so an 'around 5%' 2027 claim at p=0.72 cannot be given an honest outside view or a dated divergence without choosing p myself."
+ },
+ {
+  "node_id": "coupon-sizes-held",
+  "skip": "Outside view is ~11/11 QRAs since Feb 2024 with unchanged coupon sizes (Aug 2026 statement kept sizes and 'at least the next several quarters' guidance; dealers reportedly expect change in early 2027), so p=0.62 sits 0.30 below it with no dated datapoint to justify the gap; promoting would force a fake divergence or a re-price."
+ },
+ {
+  "node_id": "debt-ceiling-live",
+  "skip": "'Binding debt-limit date' has no named source or numeric definition (the limit is now a dollar amount, not a statutory reinstatement date); a stranger could not settle it without choosing an X-date estimator."
+ },
+ {
+  "node_id": "ecb-hold",
+  "skip": "p=0.55 is stale against the world: the ECB raised the deposit rate to 2.50% on 2026-09-10 and market pricing (aggregator, ~2026-10-03) implied only ~12% for an unchanged rate on 2026-12-17; no dated datapoint supports a hold at 0.55, so the row should be re-priced rather than promoted."
+ },
+ {
+  "node_id": "eu-gas-storage",
+  "skip": null,
+  "prediction": "The EU aggregate gas storage fill reported by GIE AGSI+ for gas day 2027-04-01 is above 25.0 percent of working gas volume.",
+  "falsifier": "Falsified if the AGSI+ EU aggregate 'full' value for gas day 2027-04-01, as shown on 2027-04-30, is 25.0 percent or lower; the horizon is 2027-04-30.",
+  "resolution_source": {
+   "publisher": "Gas Infrastructure Europe (GIE)",
+   "series": "AGSI+ EU aggregate storage, percent full",
+   "convention": "Value for gas day 2027-04-01 (the end-of-winter marker used here; the node's 'ends the season' is not date-specific) as displayed on 2027-04-30, including any revision made by then."
+  },
+  "base_rate": 0.86,
+  "base_class": "AGSI+ EU fill on 1 April, five winters 2022-2026: about 26%, 56%, 58%, 34% and 28% (2026 per ACER) = 5 of 5 above 25%; rule of succession 6/7 = 0.86; earlier years from memory, verify.",
+  "diverge": "EU storage was 71.5% on 2026-10-02 against a 92.0% five-year norm (20.5pp deficit) after winter 2025-26 ended at 28% on 2026-04-01, so the cushion over 25% is thinner than in any reference winter.",
+  "direction": "neutral",
+  "sectors": [
+   "energy"
+  ]
+ },
+ {
+  "node_id": "european-heat-power",
+  "skip": "Disjunction with a near-certain easy leg: 'power OR water restriction' somewhere in Europe each summer is close to certain (water restrictions), while the node's mechanism (nuclear cooling curtailment) is a different, unpriced leg; no leg-specific probability is stated."
+ },
+ {
+  "node_id": "ge-nigeria-window-2027",
+  "skip": "Effectively settled and mis-premised: INEC has fixed the presidential election for 2027-01-16 under the Electoral Act 2026 (moved from 2027-02-20), so the 'I do not know the polling date' premise is stale, the window arithmetic rests on a repealed Act, and the row is scaffolding rather than a forecast at 0.88."
+ },
+ {
+  "node_id": "hy-spread-band",
+  "skip": null,
+  "prediction": "The ICE BofA US High Yield Index option-adjusted spread stays below 5.00 percentage points on every daily observation dated 2026-10-05 through 2026-12-31.",
+  "falsifier": "Falsified if any daily FRED BAMLH0A0HYM2 observation dated 2026-10-05 through 2026-12-31 (horizon 2026-12-31) is 5.00 percent or higher.",
+  "resolution_source": {
+   "publisher": "ICE Data Indices via FRED (St. Louis Fed)",
+   "series": "BAMLH0A0HYM2, ICE BofA US High Yield Index OAS, percent",
+   "convention": "Every daily observation as first shown on FRED, closing values, 'every' not 'any'; days without a print are skipped."
+  },
+  "base_rate": 0.98,
+  "base_class": "Recorded no-view odds from the node: python tools/range_odds.py --spot 340 --hi 500 --days 70 --vol 2.0 gives 0.98 (ASSUMED spot 340bp, 2.0%/day relative vol, 70 sessions).",
+  "diverge": "HY OAS widened from 2.68% on 2026-09-18 to 3.12% on 2026-09-30 (+44bp in 8 sessions, FRED-derived aggregator readings, verify), a regime move the 2%/day lognormal underweights; the model's assumed spot was 340bp.",
+  "direction": "neutral",
+  "sectors": [
+   "financials"
+  ]
+ },
+ {
+  "node_id": "insured-loss",
+  "skip": null,
+  "prediction": "Swiss Re Institute's estimate of global insured losses from natural catastrophes in calendar year 2026 is above USD 100 billion.",
+  "falsifier": "Falsified if the latest full-year 2026 estimate Swiss Re Institute has published on or before 2027-04-30 is USD 100 billion or lower; resolves N/A (void) if it has published no full-year 2026 estimate by 2027-04-30.",
+  "resolution_source": {
+   "publisher": "Swiss Re Institute",
+   "series": "sigma preliminary and full-year estimates of insured natural catastrophe losses (swissre.com/institute)",
+   "convention": "Nominal USD, natural catastrophes only (man-made excluded), latest estimate published by the horizon date, later revisions ignored. The node did not name a source; Swiss Re is chosen here."
+  },
+  "base_rate": 0.71,
+  "base_class": "Swiss Re Institute full-year insured nat-cat losses, 2019-2025: above USD 100bn in 5 of 7 years (2021-2025 each above, 2025 at USD 107bn; 2019 and 2020 below) = 0.71.",
+  "direction": "neutral",
+  "sectors": [
+   "financials"
+  ]
+ },
+ {
+  "node_id": "italy-spread",
+  "skip": null,
+  "prediction": "The 10-year BTP-Bund yield spread closes below 250 basis points on every trading day from 2026-10-05 through 2027-06-30.",
+  "falsifier": "Falsified if the 10-year BTP-Bund spread closes at 250 basis points or higher on any trading day from 2026-10-05 through 2027-06-30 (horizon 2027-06-30), per the daily close reports.",
+  "resolution_source": {
+   "publisher": "ANSA (daily 'BTP-Bund spread closes at' report), cross-checked with Il Sole 24 ORE",
+   "series": "10-year BTP minus 10-year Bund yield, basis points, at the close",
+   "convention": "Official daily close, 'every' close not intraday; a sub-5bp gap between the two outlets is ignored, a larger gap defers to ANSA."
+  },
+  "base_rate": 0.99,
+  "base_class": "Recorded no-view odds from the node: python tools/range_odds.py --spot 105 --hi 250 --days 192 --vol 2.5 gives 0.99 (ASSUMED spot 105bp, 2.5%/day relative vol, 192 sessions).",
+  "diverge": "Spread rose from 86bp on 2026-09-17 to 102.9bp at the 2026-09-30 close (ANSA), highest since spring 2025, with the 10y BTP yield at 4.61%, a 3.5-year high, amid the Iran-war energy shock; the ECB backstop is untested.",
+  "direction": "neutral",
+  "sectors": [
+   "financials"
+  ]
+ },
+ {
+  "node_id": "japan-defense-budget",
+  "skip": null,
+  "prediction": "Japan's FY2027 initial budget for the Ministry of Defense is enacted by 2027-04-30 with a headline total above the FY2026 initial Ministry of Defense headline total in nominal yen.",
+  "falsifier": "Falsified if the FY2027 initial budget is not enacted by the Diet by 2027-04-30, or if the enacted Ministry of Defense headline total is at or below the FY2026 initial headline total on the same basis (horizon 2027-04-30).",
+  "resolution_source": {
+   "publisher": "Japan Ministry of Finance and Ministry of Defense",
+   "series": "FY2027 and FY2026 initial (general account) budget, Ministry of Defense headline total",
+   "convention": "Initial enacted budget only, supplementary budgets excluded; compare the headline figures MOD publishes for each year on the same basis (the node did not say whether US-force realignment costs are in or out)."
+  },
+  "base_rate": 0.94,
+  "base_class": "Japan MOD annual budget has risen for 15 consecutive years to FY2026 (per Aug 2026 reporting on the FY2027 request); rule of succession 16/17 = 0.94.",
+  "diverge": "FY2027 request filed 2026-08-31 is JPY 8.9trn with about 160 unpriced item requests and the cabinet decision is due late December 2026; enactment by 2027-04-30 is a separate timing risk. Gap is about 0.10, shown for transparency.",
+  "direction": "up",
+  "sectors": [
+   "defense"
+  ]
+ },
+ {
+  "node_id": "medicare-round2",
+  "skip": "No allowed sector fits: CMS negotiated drug prices taking effect is health policy, and sector_map has no health key, so an empty sectors list cannot be promoted without inventing one.",
+  "prediction": "The CMS-negotiated maximum fair prices for the drugs on the published initial price applicability year 2027 selected-drug list take effect on 2027-01-01 with no court order, statute or CMS action delaying them.",
+  "falsifier": "Falsified if on or before 2027-01-01 a federal court injunction, an Act of Congress or a CMS announcement postpones application of the negotiated prices for the selected drugs generally; a single drug dropping off the list under the statute's generic or biosimilar rule does not falsify. Horizon 2027-01-01.",
+  "resolution_source": {
+   "publisher": "CMS Medicare Drug Price Negotiation Program (cms.gov)",
+   "series": "IPAY 2027 negotiated prices fact sheet, with Federal Register notices and court dockets",
+   "convention": "Status on 2027-01-01; the published MFPs applying from that date count as taking effect."
+  },
+  "base_rate": 0.92,
+  "base_class": "IPAY 2026 prices for the first 10 drugs took effect on schedule on 2026-01-01 (1 of 1 prior cycles) and manufacturer legal challenges to date have failed (Health Affairs review); the date is fixed in statute.",
+  "direction": "neutral",
+  "sectors": []
+ },
+ {
+  "node_id": "muni-supply",
+  "skip": null,
+  "prediction": "Full-year 2026 US municipal bond issuance reported by The Bond Buyer from LSEG data exceeds the full-year total of every earlier calendar year in that series.",
+  "falsifier": "Falsified if the Bond Buyer/LSEG year-end 2026 issuance total published by 2027-01-31 is at or below the highest earlier calendar-year total (2025 is the prior record year); resolves N/A (void) if no year-end total is published by 2027-01-31.",
+  "resolution_source": {
+   "publisher": "The Bond Buyer (LSEG Data & Analytics new-issue data)",
+   "series": "US municipal new-issue volume, calendar-year total, nominal USD",
+   "convention": "Year-end total as first published in the Bond Buyer's annual recap, later revisions ignored; compare against the same source's earlier annual totals."
+  },
+  "base_rate": 0.5,
+  "base_class": "Bond Buyer/LSEG record-setting years 2020-2025: 3 of 6 (2020, 2024, 2025) set a nominal annual record; years 2021-2023 did not; counts from memory, verify.",
+  "diverge": "Bond Buyer: issuance just shy of USD 400bn through 2026-09-01, +4.1% vs the 2025 pace; H1 2026 USD 294.9bn vs the prior-record H1 of 278.7bn; September 2026 USD 55.5bn, +13.7% y/y; consensus about USD 600bn for a third straight record year.",
+  "direction": "up",
+  "sectors": [
+   "financials"
+  ]
+ },
+ {
+  "node_id": "mexico-nearshoring",
+  "skip": "No citable reference class with a count, and the comparator 'the 2023 level' has an unspecified revision vintage; also p=0.68 looks stale since H1-2026 manufacturing FDI (USD 13.48bn) is already about 75% of 2023's roughly USD 18.0bn, so a clean row would need re-pricing."
+ },
+ {
+  "node_id": "opec-quota-unchanged",
+  "skip": "Ambiguous object: 'headline quotas' and 'the November meeting' do not identify a meeting or table (monthly eight-country meetings vs the full ministerial on or near 2026-11-30, whose date is unconfirmed); delegates already signal quotas steady for the rest of 2026, so the wording as given is unsettleable without inventing a meeting."
+ },
+ {
+  "node_id": "pboc-rrr-cut",
+  "skip": null,
+  "prediction": "The People's Bank of China announces a cut to the general required reserve ratio for commercial banks at least once between 2026-10-05 and 2027-06-30.",
+  "falsifier": "Falsified if the PBoC announces no general (across-banks) RRR cut from 2026-10-05 through 2027-06-30 (horizon 2027-06-30); FX-risk reserve ratio changes, structural relending rate cuts and RRR cuts aimed only at specific institution categories do not count.",
+  "resolution_source": {
+   "publisher": "People's Bank of China (pbc.gov.cn) and State Council Information Office briefings",
+   "series": "Announcements of changes to the required reserve ratio",
+   "convention": "Announcement date counts, not the effective date; a cut of any size to the general RRR qualifies."
+  },
+  "base_rate": 0.85,
+  "base_class": "PBoC announced at least one general RRR cut in each of 8 of 8 calendar years 2018-2025; a nine-month window is shorter than a year, so shaded from the rule-of-succession 0.90 to 0.85; reconstructed from announcement history, verify.",
+  "diverge": "The PBoC pledged in January 2026 to cut the RRR in 2026, yet the RRR still stood at 6.2% in June 2026, with no general cut since 2025-05-15 (a 13-month-plus drought by then), unlike the 2018-2025 cadence. Verify July-September 2026 for any cut.",
+  "direction": "down",
+  "sectors": [
+   "financials",
+   "fx"
+  ]
+ },
+ {
+  "node_id": "red-sea-duration",
+  "skip": "No public series measures 'share of container capacity routed via the Cape'; the available proxies (IMF PortWatch transit counts, carrier-network data) change the claim materially, and the no_view inputs (Cape majority for about 1000 days) are unverified."
+ },
+ {
+  "node_id": "ru-monitoring-mandate-marker",
+  "skip": null,
+  "prediction": "A formal mandating instrument (UN Security Council resolution, OSCE Permanent Council decision, treaty annex) establishing a mission to monitor a Russia-Ukraine ceasefire is published between 2026-10-05 and 2027-06-30.",
+  "falsifier": "Falsified if no such instrument is published between 2026-10-05 and 2027-06-30 (horizon 2027-06-30); declarations of intent, coalition or bilateral communiques and official statements are not mandating instruments and do not count.",
+  "resolution_source": {
+   "publisher": "UN Security Council (un.org), OSCE (osce.org), or the signed agreement text",
+   "series": "Security Council resolutions, OSCE Permanent Council decisions, treaty annexes",
+   "convention": "Publication date of the instrument; it must itself create or authorise a ceasefire-monitoring mission for Russia and Ukraine."
+  },
+  "base_rate": 0.125,
+  "base_class": "Rule of succession on 6 non-overlapping nine-month windows since the Feb 2022 full-scale invasion with no such instrument: (0+1)/(6+2) = 0.125; zero-instrument count to date is from searches, verify.",
+  "diverge": "Trilateral talks in Geneva on 2026-02-17/18 reportedly discussed ceasefire monitoring modalities and a US oversight role, but a UN high-level briefing on 2026-09-23 still called for a full ceasefire, so none is in force. Gap is below 0.10, shown for transparency.",
+  "direction": "neutral",
+  "sectors": [
+   "defense"
+  ]
+ },
+ {
+  "node_id": "shale-rig-floor",
+  "skip": null,
+  "prediction": "The Baker Hughes weekly US oil rig count is above 400 on every weekly release dated 2026-10-09 through 2027-03-31.",
+  "falsifier": "Falsified if any Baker Hughes North America Rotary Rig Count release dated 2026-10-09 through 2027-03-31 (horizon 2027-03-31) reports 400 or fewer US oil rigs.",
+  "resolution_source": {
+   "publisher": "Baker Hughes",
+   "series": "North America Rotary Rig Count, US oil rigs",
+   "convention": "Weekly first print (Friday, Thursday before holidays); 'every' release; the oil-rig column, not total rigs."
+  },
+  "base_rate": 0.88,
+  "base_class": "Recorded cycle_odds survival band 0.87-0.89, midpoint: python tools/cycle_odds.py --current 400 --days 190 --prior-median 900 (ASSUMED above-400 spell about 400d, median spell about 900d).",
+  "direction": "up",
+  "sectors": [
+   "energy"
+  ]
+ },
+ {
+  "node_id": "shutdown-dec",
+  "skip": null,
+  "prediction": "A lapse in federal appropriations affecting at least one federal agency begins on a date from 2026-10-05 through 2026-12-31 and lasts at least 24 consecutive hours.",
+  "falsifier": "Falsified if no appropriations lapse lasting 24 consecutive hours or more has begun by 2026-12-31; a lapse starting 2026-12-30 or 2026-12-31 is judged on whether it reaches 24 hours.",
+  "resolution_source": {
+   "publisher": "OMB shutdown notices, Congress.gov and CRS funding-gap history",
+   "series": "Federal appropriations lapses (funding gaps)",
+   "convention": "Any agency-level lapse of appropriations counts, partial shutdowns included; clock time from lapse start to enactment of funding."
+  },
+  "base_rate": 0.14,
+  "base_class": "Fiscal years FY1991-FY2026: 5 of 36 had a lapse of a day or more beginning Oct-Dec (Oct 1990, Nov and Dec 1995, Oct 2013, Dec 2018, Oct 2025) = 0.14; the node's own 'roughly a fifth' of CR deadlines is a different class.",
+  "diverge": "The FY2027 CR signed 2026-09-02 funds government only through 2026-12-11 at FY2026 levels, a hard deadline inside the window, and the prior cycle's lapse began 2025-10-01 and ran 43 days. Note the node says it is priced AT the base rate yet 0.35 is not roughly one fifth.",
+  "direction": "vol",
+  "sectors": [
+   "financials"
+  ]
+ },
+ {
+  "node_id": "tga-rebuild",
+  "skip": "Premise falsified by data: the node assumed a USD 500bn TGA, but the TGA was about USD 984bn on 2026-09-30 and the H.4.1 weekly average USD 977bn on 2026-09-24, so 'above USD 700bn on any weekly H.4.1' is effectively already true and p=0.64 is mis-priced; a promoted row would be near-certain scaffolding."
+ },
+ {
+  "node_id": "u3-band",
+  "skip": null,
+  "prediction": "The BLS headline seasonally adjusted U-3 unemployment rate is between 3.8 and 5.2 percent inclusive on every monthly Employment Situation release published from 2026-10-05 through 2027-06-30.",
+  "falsifier": "Falsified if any Employment Situation release published from 2026-10-05 through 2027-06-30 (horizon 2027-06-30) prints a U-3 rate below 3.8 or above 5.2 percent.",
+  "resolution_source": {
+   "publisher": "US Bureau of Labor Statistics",
+   "series": "Employment Situation, Table A-1, seasonally adjusted civilian unemployment rate (U-3)",
+   "convention": "First print on each release day; later revisions and annual benchmark changes ignored; 'every' release in the window."
+  },
+  "base_rate": 0.95,
+  "base_class": "Recorded no-view odds from the node: python tools/range_odds.py --spot 4.4 --lo 3.8 --hi 5.2 --days 9 --vol 2.5 gives 0.95 (ASSUMED spot 4.4%, 2.5%/month relative vol, 9 releases).",
+  "diverge": "The August 2026 U-3 was 4.1% (BLS release 2026-09-04), only 0.3pp above the 3.8 floor rather than the 4.4% spot the no-view assumed, so the lower edge is nearer and the model overstates containment.",
+  "direction": "neutral",
+  "sectors": [
+   "financials"
+  ]
+ },
+ {
+  "node_id": "voter-rotation-2027",
+  "skip": "Scaffolding: the 2027 voter rotation is fixed by the Fed's own bylaws and schedule at p=0.96, with no genuine way for it to be false."
+ },
+ {
+  "node_id": "wheat-stocks",
+  "skip": "No honest outside view without pulling USDA PSD history; also p=0.60 looks stale since the Sept 2026 WASDE projects 2026/27 world wheat ending stocks of 276 MMT on use of 827 MMT (about 33.4%), so 'below 32%' needs a roughly 1.4pp cut by June 2027."
+ }
+]

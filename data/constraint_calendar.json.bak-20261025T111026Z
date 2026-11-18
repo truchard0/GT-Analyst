@@ -1,0 +1,53 @@
+{
+  "_note": "Dated windows in which a DECIDER's political or economic incentives suppress or permit an action in the Iran war, each with the public fact behind it. Written 2026-10-23 from the English Wikipedia 'Timeline of the 2026 Iran war' (read through 22 Oct) and the engine's own events log. `known_from` is the first date the fact was public: a rule may only use a window on or after that date. `strength`: stated = the decider or an official said it; inferred = a pattern read from behaviour. Nothing here is a probability. A window that lapses RAISES the hazard of the act, it does not fire it.",
+  "acts": {
+    "us_strike_iran": "US acknowledged strike on Iranian territory (land targets, islands, launchers)",
+    "il_strike_iran": "Israeli acknowledged or credibly attributed strike on Iranian territory",
+    "ir_attack_us_forces": "Iranian attack that hits US forces or bases",
+    "ir_ship_attack": "Iranian attack on merchant shipping in or near Hormuz"
+  },
+  "windows": [
+    {"id": "us-ceasefire-apr", "decider": "US", "acts": ["us_strike_iran"], "effect": "suppresses", "start": "2026-04-08", "end": "2026-06-01", "known_from": "2026-04-07", "strength": "stated",
+     "fact": "Trump agrees a two-week ceasefire in exchange for reopening Hormuz (4/7); extends it at Pakistan's request (4/21); 5/6 pauses Project Freedom citing 'great progress'; CENTCOM 5/25 says the ceasefire remains",
+     "trigger": "Iranian attacks on US ships or forces (US destroyers 5/4-5/7) bring limited 'self-defense' strikes, not a campaign", "ended_by": "Iran ended talks 6/1; skirmishes 6/7-6/10"},
+    {"id": "us-mou-jun", "decider": "US", "acts": ["us_strike_iran"], "effect": "suppresses", "start": "2026-06-17", "end": "2026-07-07", "known_from": "2026-06-17", "strength": "stated",
+     "fact": "Islamabad Memorandum signed 6/17; 6/28 the US and Iran agree to halt exchanges",
+     "trigger": "Iranian attacks on commercial vessels", "ended_by": "7/7 Iranian missiles hit commercial vessels incl. Qatar's Al Rekayyat; Trump declares the MOU over 7/8"},
+    {"id": "us-pause-jul25", "decider": "US", "acts": ["us_strike_iran"], "effect": "suppresses", "start": "2026-07-25", "end": "2026-07-28", "known_from": "2026-07-25", "strength": "stated",
+     "fact": "Pause in strikes after 13 nights; Waltz: it allowed room for diplomacy; Iran says it will halt if the US does",
+     "trigger": "an Iranian attack on US forces", "ended_by": "7/29 retaliatory strikes after a foiled attack on Jordan"},
+    {"id": "us-standdown-aug", "decider": "US", "acts": ["us_strike_iran"], "effect": "suppresses", "start": "2026-08-02", "end": "2026-08-29", "known_from": "2026-08-02", "strength": "stated",
+     "fact": "Trump says he and Israel called off a planned attack at Iran's request (8/2); Rubio 8/25: major combat not expected 'for the time being'; Gulf states and the Oman framework (8/6) back a diplomatic track",
+     "trigger": "an Iranian attack on US troops", "ended_by": "8/30 Larak launchers struck, 8/31 Iranian attack on US soldiers in Jordan; round 3"},
+    {"id": "us-pause-sep", "decider": "US", "acts": ["us_strike_iran"], "effect": "suppresses", "start": "2026-09-10", "end": "2026-10-07", "known_from": "2026-09-14", "strength": "inferred",
+     "fact": "No US strikes on Iranian land after round 3 ended 9/9; Trump willing to negotiate (9/14), expects talks (9/27), 'always open' (10/5); Iran gave mediators conditions 9/19",
+     "trigger": "an Iranian attack that kills US personnel", "ended_by": "superseded by the stated pledge 10/8"},
+    {"id": "us-pledge-midterms", "decider": "US", "acts": ["us_strike_iran"], "effect": "suppresses", "start": "2026-10-08", "end": "2026-11-03", "known_from": "2026-10-08", "strength": "stated",
+     "fact": "Trump: the US 'will not be attacking Iran at any time prior to the Midterm Elections' (10/8); a White House official repeats it 10/22; Iranian officials say they are prolonging talks to hurt Trump before the vote (Reuters 10/14, 10/20)",
+     "trigger": "an Iranian attack that kills US personnel or hits US bases; a reversal of the pledge", "released_after": "2026-11-03"},
+    {"id": "us-energy-price-oct", "decider": "US", "acts": ["us_strike_iran"], "effect": "suppresses", "start": "2026-10-22", "end": "2026-11-03", "known_from": "2026-10-22", "strength": "stated",
+     "fact": "Trump temporarily postpones major combat operations to prevent domestic fallout from rising energy prices (10/22, NewsNation) with Brent above 110",
+     "trigger": "a sharp fall in prices or an Iranian attack that makes the political cost of inaction higher", "released_after": "2026-11-03"},
+    {"id": "il-campaign-oct", "decider": "Israel", "acts": ["il_strike_iran"], "effect": "suppresses", "start": "2026-10-10", "end": "2026-10-27", "known_from": "2026-10-21", "strength": "stated",
+     "fact": "FT 10/21: Netanyahu planned a multi-day offensive for the weekend of 10/10 before Israel's 10/27 election and Trump opposed escalation before the midterms; Netanyahu then said a strike before the vote was 'not convenient for us'; an Israeli security chief warned a strike could postpone the election",
+     "trigger": "an Iranian attack on Israel", "released_after": "2026-10-27"},
+    {"id": "us-release-postvote", "decider": "US", "acts": ["us_strike_iran", "il_strike_iran"], "effect": "permits", "start": "2026-11-04", "end": "2026-12-31", "known_from": "2026-10-21", "strength": "stated",
+     "fact": "NYT 10/21: US and Israeli plans for post-midterm strikes on energy, nuclear and missile sites, 'slim chance' of action in October; 10/22: forces have finalized plans for a possible three-day strike on nuclear facilities and Trump hints at post-election escalation",
+     "trigger": "none needed: a lapsed window raises the hazard, it does not fire it"},
+    {"id": "ir-pressure-prevote", "decider": "Iran", "acts": ["ir_ship_attack"], "effect": "permits", "start": "2026-09-29", "end": "2026-11-03", "known_from": "2026-10-14", "strength": "inferred",
+     "fact": "Iranian officials tell Reuters (10/14, 10/20) the tanker strikes aim to keep energy prices high and pressure Trump before the midterms; 12 tanker attacks in the week to 10/5 (the war's highest) and 15+ vessels targeted in October",
+     "trigger": "none: Iran escalates at sea and stays below the line (US casualties) that would end US restraint"}
+  ],
+  "triggers": [
+    ["2026-05-07", "Iranian attacks on US destroyers"],
+    ["2026-06-09", "US Apache lost to a Shahed collision; US retaliates"],
+    ["2026-06-10", "Iranian strikes on US bases"],
+    ["2026-06-11", "Iran declares Hormuz closed and fires at US sites in Kuwait, Bahrain, Jordan"],
+    ["2026-06-28", "Iran fires at Ali Al Salem and the Fifth Fleet HQ"],
+    ["2026-07-07", "Iranian missiles hit commercial vessels; MOU over 7/8"],
+    ["2026-07-17", "Iranian missiles on Muwaffaq Salti; two US soldiers killed 7/17-18"],
+    ["2026-07-29", "foiled Iranian attack on Jordan"],
+    ["2026-08-31", "Iranian attack on US soldiers in Jordan"],
+    ["2026-09-09", "Iranian ballistic missiles at US sites in Jordan"]
+  ]
+}
