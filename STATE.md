@@ -440,6 +440,12 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
      11.9% vs 12.7% naive. Down-cycle (27 reports): own-midpoint beat rate 74% (97% up-cycle) and consensus far better.
      Forward range refit held 85-86% out of sample. **Proposed, not applied (user decides):** cap print calls at 0.75 when
      the company guided the current quarter below the prior actual.
+   - **Revenue only (user, 17 Nov PT: "lets only predict this for now and update all reports so it only includes
+     revenue predictions").** Both AI reports now publish only the seven next-revenue numbers and the three revenue
+     threshold calls (#124 Micron, #127 TSMC under review, #132 Nvidia). Guide, capex, credit and SMH rows stay open in
+     the ledger and are scored, not published. Full report cut to 10 pages (5 visuals) and rebuilt on a full engine pass
+     (`reports/desk/20261118_engine-read-revenue.md`): desk views below the registered numbers for Micron (~$64.5bn vs
+     $72.1bn), TSMC (~$53.5bn), Broadcom, Oracle, Amazon; Meta and Nvidia balanced. Registered numbers unchanged.
    - **Timeline map brought to the present:** 61 past-dated nodes resolved with basis and source
      (`data/timeline_resolutions_20261117.json`), 1 re-dated to 1 Dec, 1 unknown; dashboard now honours a node's own
      `resolved.happened` when no ledger row has resolved. Report catalyst timelines start 12 Nov.

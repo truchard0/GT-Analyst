@@ -29,7 +29,12 @@ if a company has not reported by the ledger horizon, the horizon moves and the c
 | Amazon Q4 2026 | ~4 Feb | 243.50 | 248.56 | 244.18 - 252.93 | 80% |
 | Nvidia FQ4 2027 | 24 Feb - 3 Mar | 130.00 | 137.29 | 133.64 - 140.95 | 80% |
 
-## Next-quarter revenue guide midpoint (US$ bn)
+> **Revenue only from 17 Nov PT (user instruction: "lets only predict this for now and update all reports so it only
+> includes revenue predictions").** The two tables below are no longer published in any report. Their ledger rows
+> (#143-#154) stay open and will be scored honestly at their horizons, like the legacy oil rows; the user can ask to
+> void them.
+
+## Next-quarter revenue guide midpoint (US$ bn) — not published from 17 Nov PT
 | Company, guide given with | Our number | 80% range | P |
 |---|---|---|---|
 | Broadcom FQ4 2026 | 41.52 | 31.48 - 51.57 | 80% |
@@ -40,7 +45,7 @@ if a company has not reported by the ledger horizon, the horizon moves and the c
 | Amazon Q4 2026 | 255.24 | 166.68 - 343.80 | 80% |
 | Nvidia FQ4 2027 | 154.61 | 148.69 - 160.53 | 80% |
 
-## Quarterly capex (US$ bn, each company's own definition)
+## Quarterly capex (US$ bn, each company's own definition) — not published from 17 Nov PT
 | Company, quarter | Last quarter | Our number | 80% range | P |
 |---|---|---|---|---|
 | Oracle FQ2 2027 | 28.50 | 30.53 | 16.35 - 44.71 | 80% |
