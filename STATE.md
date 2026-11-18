@@ -472,6 +472,13 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
      ~1,354 posts read) and `tools/technical_stack.py`. Registry record: largest-strike pin null, gamma sign no next-day
      edge (324 sessions), vanna at chance, single names over weeks untested. Open: Micron report date (15 vs 23 Dec);
      proposed checklist items 36-38 not yet in CLAUDE.md.
+   - **Sweep applied to the map (user, 18 Nov PT: "apply engine odds to map"; `tools/apply_sweep_20261118.py`).**
+     Re-marked: ai-financing-chain 0.80->0.82; capex-sprint 0.40->0.37, capex-digestion 0.40->0.43; frozen-tanker-war
+     0.85->0.80, postmidterm-campaign 0.10->0.15. New edge ai-winter -> fed-h1-no-cuts 0.70. New nodes:
+     nvda-support-lines 0.35, dc-permitting-states 0.75, us-designates-cn-iran-buyer 0.12 (truce rollover 0.40 if it
+     happens), Taiwan split under taiwan-h1-2027 (quarantine 0.45 / gray-zone 0.40 / invasion 0.15 conditional, i.e.
+     4.5 / 4 / 1.5%) + taiwan-2028 0.15, us-iran-campaign-jan3 0.18 (ground op 0.22 of it), iran-ends-by-purchase 0.20,
+     lab-dec-runrate checkpoint (mid-Jan), cn-retaliation-remote-rule 0.15. No ledger rows added. Gates all clear.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all
