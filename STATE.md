@@ -466,6 +466,12 @@ Everything now runs from `main`. This PC session is the only writer of `ledger/l
      techniques); CLAUDE.md step 9 and REPORT STYLE now point to them. Sweep on the AI trade:
      `reports/desk/20261118_mechanism-sweep-ai.md`, proposals P1-P12, **none applied to the map or ledger (user
      decides)**. The full AI report was rewritten in the new voice on the sweep's reads (14 pages, 7 visuals).
+   - **18 Nov PT:** report trimmed to essentials, then a technical layer added from our Skylit dealer-gamma maps and
+     prices (`data/ai_technical/levels_20261118.csv`, `stack_20261118.csv`). New skill `.claude/skills/technical-stack/`
+     (the full practitioner stack rebuilt on our data; every layer ADOPT for description only, SHADOW as a forecast;
+     ~1,354 posts read) and `tools/technical_stack.py`. Registry record: largest-strike pin null, gamma sign no next-day
+     edge (324 sessions), vanna at chance, single names over weeks untested. Open: Micron report date (15 vs 23 Dec);
+     proposed checklist items 36-38 not yet in CLAUDE.md.
 
 ## 7l. CLOUD SESSION WIND-DOWN (11/18): what is unfinished and how to resume it
 **CLOUD SESSION DONE (18 Nov 2026). Everything it produced is pushed to `claude/gracious-lamport-6wef9u`; all

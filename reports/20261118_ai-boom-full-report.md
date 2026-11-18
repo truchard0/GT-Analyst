@@ -14,7 +14,7 @@ The only calls we publish are revenue numbers; the scenario odds are context. Fi
 | --- | --- | --- | --- | --- | --- |
 | Broadcom FQ4 2026 | 9 Dec | $34.8bn | **$35.3bn** | about $35.1bn | 94% |
 | Oracle FQ2 2027 | 9-14 Dec | $21.2bn | **$21.3bn** | about $21.2bn | 62% |
-| Micron FQ1 2027 | about 15 Dec | $61.5bn | **$72.1bn** | about $64.5bn | 88% |
+| Micron FQ1 2027 | 15-23 Dec (unconfirmed) | $61.5bn | **$72.1bn** | about $64.5bn | 88% |
 | TSMC Q4 2026 | 14 or 21 Jan | $53.3bn | **$54.6bn** | about $53.5bn | 65% |
 | Meta Q4 2026 | about 27 Jan | $74.5bn | **$76.8bn** | $76.8bn | 93% |
 | Amazon Q4 2026 | about 4 Feb | $243.5bn | **$248.6bn** | about $248.0bn | 95% |
@@ -62,6 +62,25 @@ The striking thing about November is how little of the geopolitics touches this 
 - **The Gulf reaches AI only through the Fed.** The tanker war is frozen and Brent is about $93, but strikes on 2 and 15 November make the weeks to 3 January the riskiest left. We expect a Fed hike on 9 December (93%), with the 10-year above 5%.
 - **Taiwan is the single point of failure.** No kinetic action, but the largest exercise since December 2025. Our 10% by mid-2027 is mostly a quarantine (4.5%) or gray-zone fire (4%), not an invasion (1.5%).
 - **Nvidia after its founder.** Watch whether its customer-guarantee lines stop growing in the late-February annual report (35%).
+
+## Where the stocks sit: Nvidia 35% off its high, Meta 39 points ahead
+
+The geopolitics shows up in prices before it shows up in revenue. At the 17 November close the chip index sat 31% below its high and 12% under its 200-day average. Nvidia was the weakest of the group, 35% off its high and 24% under its 200-day; Amazon was the only name above both its 50-day and 200-day averages. Over three months the market paid for the users of AI and for the custom-chip and foundry suppliers, and marked down Nvidia and Micron.
+
+&#91;embedded content: Relative strength vs SMH, 3 months to 17 Nov 2026 close · data/ai\_technical/stack\_20261118.csv (tools/technical\_stack.py on data/ai\_prints\_backtest/5y/prices\_5y.csv)\]
+
+| Name | Close, 17 Nov | vs 200-day | Off 52-week high | Dealer gamma | Main hedging strikes | Largest strike | Move priced into next report |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Nvidia | $155.46 | -24% | -35% | Flat (map taken before its report) | 152.5 / 170 | 170 | About 11% on 17 Nov (just passed) |
+| Broadcom | $333.40 | -9% | -31% | Long | 335 / 340 | 335 | About 8.9% (9 Dec) |
+| Oracle | n/a | n/a | n/a | No map | n/a | n/a | About 12.6% (14 Dec) |
+| Micron | $719.02 | -6% | -41% | Long near the price, short at 750 | 650 / 727.5 | 750 | Date unconfirmed |
+| TSMC | $373.45 | -7% | -23% | No map | n/a | n/a | Beyond our options data |
+| Meta | $626.41 | -1% | -19% | Long | 615 / 625 | 635 | Beyond our options data |
+| Amazon | $257.75 | +5% | -9% | Long | 250 / 260 | 260 | Beyond our options data |
+| Chip index (SMH) | $461.90 | -12% | -31% | Long | 460 / 500 | 500 | n/a |
+
+**How to read the table: a map, not a forecast.** The strikes show where options dealers' hedging was concentrated at the 17 November close. When dealers are long gamma, their hedging tends to damp moves near those strikes; when they are short, it can extend them. Our own tests of these levels are sobering. Over 55 days of intraday maps the largest strike did not pull prices toward it; big strikes reversed price 70-73% of the time, no more often than any strike (72-76%); and the sign of dealer gamma did not predict next-day direction across 324 sessions. Single names over weeks have never been tested. So these numbers describe where hedging sits and what the options market prices into each report. They are not targets, and price direction stays a no-call.
 
 ## What we see ahead: about 41% on a slower 2027, 10% on the tail that breaks it
 
@@ -121,3 +140,5 @@ Geopolitics: US Commerce Department (BIS) export rules of 7 Oct 2022, 17 Oct 202
 - **Revision 2, 17 Nov PT (user: build a full engine from the Substack archive, then rewrite the report as clearly as those posts; the writers are for learning only).** Engine: `.claude/skills/mechanism-library/SKILL.md` (35 rules, 23 ADOPT, 12 SHADOW; provenance in `PROVENANCE.md`) and `.claude/skills/report-writing/SKILL.md` (14 techniques). Sweep: `reports/desk/20261118_mechanism-sweep-ai.md`. The report now uses the sweep's reads, all PROPOSED for the map and not yet applied: base 0.80 x 0.93 x 0.93 x 0.66 x 0.90 = 0.41 (Gulf frozen 0.85 -> 0.80, P7); truce lapse 60%/31% with/without a Chinese-buyer designation, total 34% (P5); Gulf flare-up to 3 Jan 18%, ends by purchase 20% (P7); Taiwan 10% split 4.5/4/1.5 with capex-decline impacts 65/30/85% (P6); financing chain 82% (P1); 2027 slowdown about one in two with the hike edge plus permitting (P3); Nvidia support lines flat or lower 35% (P2). No writer is named, quoted or imitated in the body.
 
 - **Revision 3, 18 Nov PT (user: "get rid of any non important information").** Cut the history-laws section and its chart, the five-test builder table, the Nvidia/Nebius detail paragraph, the price-context and watch-list paragraphs (the signposts chart carries the dates) and two filler lines; the where-we-are list cut to eight short bullets. No numbers changed. 12 pages, 6 visuals. Older wording is in git (commit e1c8cc9).
+
+- **Revision 4, 18 Nov PT (user: add the technical layer, powered by our heatmaps and Skylit data).** New section "Where the stocks sit": relative-strength chart and a positioning table from `data/ai_technical/levels_20261118.csv` (Skylit dealer-gamma maps at the 17 Nov 16:00 ET close; AVGO 09:30 map; no maps for ORCL or TSM; NVDA map predates its report) and `data/ai_technical/stack_20261118.csv` (`tools/technical_stack.py`). No Unusual Whales data. Walls are approximations (largest positive dealer-gamma strike below/above spot). Measured record stated in the body: largest-strike pin null (55 days), big-strike reversal 70-73% vs 72-76% any strike, lockbox 0/9, gamma sign no next-day separation (324 sessions), vanna 12/42 vs 12.6 chance; single names over weeks untested. Micron's report date now 15-23 Dec (unconfirmed; a screener shows 23 Dec). Skill: `.claude/skills/technical-stack/`.
