@@ -149,6 +149,7 @@ def main():
     ap.add_argument("--date", required=True)
     ap.add_argument("--out", default="")
     ap.add_argument("--roll", default="2026-11-20", help="monthly expiry that rolls off (inclusive)")
+    ap.add_argument("--universe", default="", help="Skylit universe folder holding eod_vanna_* batches")
     a = ap.parse_args()
     cs.apply("dark")
     reads = load(a.date, a.roll)
@@ -159,6 +160,14 @@ def main():
                                                      encoding="utf-8"), indent=1)
     chart_calendar(reads, out / "w1_calendar.png", a.date)
     flips = chart_roll(reads, out / "w2_roll.png", a.date)
+    if a.universe:
+        van = load_vanna(a.date, a.universe)
+        chart_vanna(van, reads, out / "w3_vanna.png", a.date)
+        data = json.load(open(ROOT / ("data/ai_technical/gamma_weeks_%s.json" % tag), encoding="utf-8"))
+        data["vanna"] = van
+        json.dump(data, open(ROOT / ("data/ai_technical/gamma_weeks_%s.json" % tag), "w", encoding="utf-8"), indent=1)
+        for n, v in van.items():
+            print("VANNA %-5s now %+6.1f%% after %+6.1f%% king %s %s %+.0f %+.1f%% shares %s" % (n, v["net_pm5_now_pct"], v["net_pm5_after_roll_pct"], v["king"]["strike"], v["king"]["expiry"][5:], v["king"]["value"], v["king"]["pct_from_spot"], [round(x) for x in v["share_by_expiry_pct"]]))
     for s, r in reads.items():
         kn, kr, kl = r["king_now"], r["king_after_roll"], r["king_last_expiry"]
         print("%-5s %8.2f front %3.0f%% | now %-5s %+5.1f%% | after %-5s %+5.1f%% | king %s %s %+.1fM %+.1f%% | post %s %s %+.1fM %+.1f%% | last %s %+.1fM %+.1f%%"
@@ -167,6 +176,72 @@ def main():
                  kr["strike"], kr["expiry"][5:], kr["value"] / 1e6, kr["pct_from_spot"], kl["strike"], kl["value"] / 1e6,
                  kl["pct_from_spot"]))
     print("regime changes after roll:", flips)
+
+
+
+# ---------------------------------------------------------------- vanna (VEX) read
+def load_vanna(date, universe, names=("NVDA", "MU", "META", "AMZN", "SMH", "CRWV"), last="2026-12-18", win=0.10):
+    """Net dealer vanna per name from the Skylit end-of-day vanna batch (eod_vanna_*). Sign convention unaudited."""
+    import gzip, os
+    d = pathlib.Path(universe) / date
+    out = {}
+    for f in sorted(os.listdir(d)):
+        if not f.startswith("eod_vanna_"):
+            continue
+        j = json.load(gzip.open(d / f))
+        hm = j.get("heatmap", j.get("body", j))
+        for s in hm.get("data", {}).get("symbols", []):
+            if s["symbol"] not in names or s["symbol"] in out:
+                continue
+            exps = list(s.get("expirations", []))
+            keep = [i for i, e in enumerate(exps) if date < e <= last]
+            k = np.array([float(r["strike"]) for r in s.get("strikes", [])])
+            m = np.array(s.get("matrix") or [], float)
+            spot = float(s["spot"])
+            w = np.abs(k / spot - 1) <= win
+            g = m[w][:, keep]
+            kk = k[w]
+            ex = [exps[i] for i in keep]
+            tot = np.abs(g).sum() or 1.0
+            near = np.abs(kk / spot - 1) <= 0.05
+            post = [i for i, e in enumerate(ex) if e > "2026-11-20"]
+            r0, c0 = np.unravel_index(np.argmax(np.abs(g)), g.shape)
+            out[s["symbol"]] = {"spot": spot, "expiries": ex, "file": f,
+                                "share_by_expiry_pct": [float(np.abs(g[:, i]).sum() / tot * 100) for i in range(len(ex))],
+                                "net_pm5_now_pct": float(g[near].sum() / tot * 100),
+                                "net_pm5_after_roll_pct": float(g[near][:, post].sum() / (np.abs(g[:, post]).sum() or 1) * 100),
+                                "king": {"strike": float(kk[r0]), "expiry": ex[c0], "value": float(g[r0, c0]),
+                                         "pct_from_spot": float((kk[r0] / spot - 1) * 100)}}
+    return out
+
+
+def chart_vanna(van, reads, path, date):
+    order = [s for s in ("NVDA", "MU", "META", "AMZN", "SMH", "CRWV") if s in van]
+    fig, rects = cs.frame(
+        "After Friday, CoreWeave has the most negative vanna near the price (-52%), Nvidia the most positive (+15%)",
+        "Net vanna within 5% of the price as a share of each map, now and after Fri 20 Nov, expiries to 18 Dec. "
+        "Label = gamma state / vanna sign. Vanna sign convention not yet audited against the vendor.",
+        tags=[("VANNA  (VEX)", "purple")],
+        footer_right="data/ai_technical/gamma_weeks_%s.json (tools/gamma_weeks.py, Skylit eod_vanna)" % date.replace("-", ""),
+        snapshot="%s 16:00 ET" % dt.date.fromisoformat(date).strftime("%d %b %Y").lstrip("0"))
+    ax = cs.panel_axes(fig, rects[0], pad=(2.6, 0.5, 2.6, 1.0))
+    for i, s in enumerate(order):
+        a, b = van[s]["net_pm5_now_pct"], van[s]["net_pm5_after_roll_pct"]
+        ax.plot([a, b], [i, i], color=P["zero"], lw=2.2, zorder=1)
+        ax.plot(a, i, "o", ms=11, color=P["subtitle"], zorder=2)
+        ax.plot(b, i, "o", ms=13, color=P["purple"] if b < 0 else P["cyan"], zorder=3)
+        gs = reads.get(s, {}).get("regime_after_roll", "?")
+        ax.text(1.02, i, "gamma %s / vanna %s" % (gs, "+" if b > 0 else "-"), transform=ax.get_yaxis_transform(),
+                va="center", fontsize=11.5, family=cs.MONO, color=P["text"])
+    ax.axvline(0, color=P["zero"], lw=1.2)
+    ax.set_yticks(range(len(order)))
+    ax.set_yticklabels([NAMES[s] for s in order], fontsize=13, color=P["title"])
+    ax.invert_yaxis()
+    ax.xaxis.set_major_formatter(lambda v, _: "%+d%%" % v)
+    for x0, col, lab in ((0.0, P["subtitle"], "now"), (0.12, P["cyan"], "after Friday: positive"),
+                         (0.42, P["purple"], "after Friday: negative")):
+        ax.text(x0, 1.03, "● " + lab, transform=ax.transAxes, color=col, fontsize=11.5, fontweight="bold")
+    cs.save(fig, path)
 
 
 if __name__ == "__main__":

@@ -82,6 +82,47 @@ and that the map is positioning, not a forecast.
 
 ---
 
+## 1b. Vanna (Skylit "VEX") - how to read it, and how much to trust it
+
+**What it is.** Vanna = dDelta/dSigma: how much a dealer's option delta moves when *implied volatility* moves, with
+price unchanged. Gamma answers "what do dealers do if price moves?"; vanna answers "what do dealers do if volatility
+moves?". It matters most after volatility shocks, into and out of earnings (IV crush), around OPEX and in year-end
+vol drift.
+
+**Hedge-flow logic (conditional on the sign convention, which is UNAUDITED for Skylit):**
+- Dealer vanna **positive** near the price: implied vol falls -> dealer option delta falls -> they **buy** the
+  underlying to re-hedge; implied vol rises -> they **sell**.
+- Dealer vanna **negative**: the reverse (vol down -> sell; vol up -> buy).
+- The practitioner "vanna rally" is the first case: dealers short OTM puts, vol collapses after a scare, put deltas
+  shrink, dealers buy back hedges. So vanna turns a **volatility path** into a hedging flow; it says nothing on its
+  own. Always pair it with the expected IV path (earnings date, VIX level, OPEX) and say both directions.
+
+**Skylit's teaching** (A §4.5): GEX for 0-5 days, VEX for 2-4-week swings; VEX nodes "seem completely out of right
+field"; "I don't have a clear explanation of why it works"; above VIX ~20-25 VEX takes control, gamma back near
+17-19; irrelevant for 0DTE 80-90% of the time. GEX+VEX is a **sign-agreement read, never a sum** (scales ~1e8 vs
+~1e4). The four states taught: +G/+V fade extremes; -G/-V momentum; +G/-V "calm fades fail"; -G/+V "panic low,
+violent bounce".
+
+**Our record** (B table B): the vanna family is **null** (12 of 42 splits pass vs 12.6 by chance); the four states do
+**not** separate next-day direction (305 sessions); vanna **adds nothing** inside a gamma cell; the old daily vanna
+proxy agreed with real vanna only 49% (invalid). Two **non-directional leads** survive permutation (SPY 0DTE
+vanna-King sign; QQQ top-5 pull) and neither transfers across books. Single-name vanna: **untested**. Our vanna math
+matches Black-Scholes to ~1% on one cell, but the dealer sign has **not** been audited against Skylit's files (open test 8).
+
+**Literature** (C §1.5): no peer-reviewed test of vanna flows; the best figure is a single-episode press estimate
+(~$1bn of buying after a VIX move 28 -> 38, grade C). Vanna is model-dependent (it needs a volatility model).
+
+**How to read a VEX map (use only these):**
+1. Net vanna within +-5% of the price as a share of the map (wider than gamma's +-2%: vol moves act across strikes),
+   now and after the next roll-off; its sign; the largest vanna cell and its expiry.
+2. Pair it with the gamma state into a two-letter label (e.g. "gamma short / vanna +") - a description, never the
+   taught four-state forecast.
+3. State the hedge flow **both ways**: "if implied vol falls, dealers' re-hedging leans to buying; if it rises, to
+   selling" (flip for negative vanna), then the IV event that could move vol (earnings, OPEX, VIX).
+4. Label it: sign convention unaudited, family null on our data, single names untested. Never a direction call.
+
+---
+
 ## 2. Anatomy of our Skylit maps
 
 - **Grid.** Rows are strikes, columns are expiries, nearest first. Our extract (`tools/heatmap_extract.py`) keeps five
@@ -130,6 +171,9 @@ and that the map is positioning, not a forecast.
    between spot and the King, air pockets. Describe distances in %; distance, not size, governs whether price reaches the
    nearest node (503,816 states: reach ~65-72% within 60 minutes regardless of size or sign).
 5. **Dynamics.** Velocity, rolls, slip-ins, washed-off nodes. Say plainly that changes follow price.
+5b. **Vanna.** If a VEX map exists (`eod_vanna_*` batch), read it per §1b: net vanna within +-5%, sign, largest cell,
+   paired with the gamma state, hedge flow stated both ways against the expected IV path. Tool:
+   `python tools/gamma_weeks.py --date <d> --universe <Skylit universe folder>` (writes the `vanna` block and chart w3).
 6. **Cross-checks.** S&P books (SPX, SPY) are ~0.999 correlated, so agreement between them is not independent evidence.
    Trinity agreement tested null. For a single name, note the index regime and the sector ETF map.
 7. **What options price.** Put the implied move beside the base rates: the S&P closed inside its priced 1-day move 73% of
