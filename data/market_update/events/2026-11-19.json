@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-19",
+  "note": "Curated world-event lead lines for the market update, checked against the wires at the close. reported_utc = the item's report time where the wire gave one; known_from_et = the earliest edition time an item without an exact time may appear in. Market sections follow the events; no war-driven price calls.",
+  "items": [
+    {
+      "kind": "lead",
+      "topic": "Market",
+      "text": "The S&P 500 fell 2.0% to 7,176, its sixth straight loss; the Nasdaq fell 2.25% and the Dow about 1,100 points, under 50,000. The wires tied the late slide to renewed rate-hike talk and to money rotating toward the Anthropic debut.",
+      "source": "Yahoo Finance live blog; Motley Fool; 24/7 Wall St.",
+      "reported_utc": "2026-11-19T21:10:00Z"
+    },
+    {
+      "kind": "lead",
+      "topic": "AI",
+      "text": "Anthropic began trading at 08:50 PT, opening about 34% above its $83 offer price and closing about 17% above it. Alphabet and CoreWeave fell as holders re-priced stakes and took profits.",
+      "source": "Yahoo Finance; Motley Fool",
+      "reported_utc": "2026-11-19T16:50:00Z"
+    },
+    {
+      "kind": "lead",
+      "topic": "Chips",
+      "text": "AMD fell about 8% after a short seller disclosed a position; Nvidia slid again as investors weighed its chief executive's departure against a quarter that doubled revenue and profit. Chips turned red at 09:24 PT.",
+      "source": "CNBC; Yahoo Finance; Motley Fool",
+      "reported_utc": "2026-11-19T16:04:00Z"
+    },
+    {
+      "kind": "lead",
+      "topic": "China",
+      "text": "The Trump-Xi meetings ended with little change on chips, rare earths or tariffs.",
+      "source": "Yahoo Finance",
+      "reported_utc": "2026-11-19T13:27:00Z"
+    },
+    {
+      "kind": "watch",
+      "topic": "Opex",
+      "text": "Friday 20 Nov is the monthly options expiry: the S&P monthly settles at the 06:30 PT open; the rest expires at 13:00 PT.",
+      "source": "exchange calendar",
+      "when_et": "2026-11-20T09:30"
+    },
+    {
+      "kind": "watch",
+      "topic": "Earnings",
+      "text": "Keysight, Elastic, Gap and Webull report after Thursday's close; their reaction session is Friday.",
+      "source": "Skylit moves list, 19 Nov 16:25 ET",
+      "when_et": "2026-11-19T16:05"
+    },
+    {
+      "kind": "watch",
+      "topic": "Holiday",
+      "text": "Thanksgiving week: US markets are closed Thursday 26 Nov and close early Friday 27 Nov.",
+      "source": "exchange calendar",
+      "when_et": "2026-11-26T09:30"
+    }
+  ]
+}
