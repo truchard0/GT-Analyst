@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-18T21:07:05+00:00",
+ "generated": "2026-11-19T01:32:29+00:00",
  "source": "data/ai_technical/heatmaps_20261118.json",
- "index_source": "close map 16:00 ET",
+ "index_source": "overnight map 17:30 ET",
  "note": "shares are of total |gamma| on the map shown; vendor units, compare within a ticker only",
  "reads": {
   "NVDA": {
@@ -253,70 +253,72 @@
  "index_reads": {
   "SPX": {
    "ticker": "SPX",
-   "spot": 7322.28,
-   "snapshot": "18 Nov 2026 16:00 ET",
-   "batch": "Skylit close map 16:00 ET (SPXW)",
+   "spot": 7323.63,
+   "snapshot": "18 Nov 2026 17:30 ET",
+   "batch": "Skylit overnight map 17:30 ET (SPXW)",
    "expiries": [
     "2026-11-19",
     "2026-11-20",
     "2026-11-23",
-    "2026-11-24"
+    "2026-11-24",
+    "2026-11-25"
    ],
-   "front_share_pct": 29.349076523682715,
-   "net_pm2_share_pct": 6.820504818737849,
-   "net_pm5_share_pct": -7.811753782721992,
+   "front_share_pct": 29.434423950227796,
+   "net_pm2_share_pct": 8.351424214750379,
+   "net_pm5_share_pct": -1.2020479129630313,
    "regime_pm2": "long",
    "king": {
     "strike": 7450.0,
     "expiry": "2026-11-20",
-    "value": 4840311.611263804,
-    "pct_from_spot": 1.7442654473743158
+    "value": 4885193.425788313,
+    "pct_from_spot": 1.725510436764277
    },
    "largest_long_row_above": [
     7450.0,
-    4218803.802455843
+    6009230.3652872
    ],
    "largest_long_row_below": [
     7300.0,
-    6507448.727006576
+    7895936.430383613
    ],
    "largest_short_row": [
     7475.0,
-    -5237226.011748191
+    -6241725.124459852
    ]
   },
   "QQQ": {
    "ticker": "QQQ",
-   "spot": 659.3199999999999,
-   "snapshot": "18 Nov 2026 16:00 ET",
-   "batch": "Skylit close map 16:00 ET (QQQ)",
+   "spot": 659.15,
+   "snapshot": "18 Nov 2026 17:30 ET",
+   "batch": "Skylit overnight map 17:30 ET (QQQ)",
    "expiries": [
     "2026-11-19",
     "2026-11-20",
     "2026-11-23",
-    "2026-11-24"
+    "2026-11-24",
+    "2026-11-25"
    ],
-   "front_share_pct": 17.982225818186794,
-   "net_pm2_share_pct": 21.380166506248855,
-   "net_pm5_share_pct": 34.08063435867945,
+   "front_share_pct": 18.9600343414395,
+   "net_pm2_share_pct": 22.6000296593286,
+   "net_pm5_share_pct": 29.857089003340477,
    "regime_pm2": "long",
    "king": {
     "strike": 650.0,
     "expiry": "2026-11-20",
-    "value": 28231606.15459808,
-    "pct_from_spot": -1.4135776254322496
+    "value": 28890036.151892453,
+    "pct_from_spot": -1.3881514071152234
    },
    "largest_long_row_above": [
-    679.0,
-    15465705.348705864
+    678.0,
+    13977756.43119891
    ],
    "largest_long_row_below": [
     650.0,
-    27050651.110491514
+    27965845.59977033
    ],
    "largest_short_row": [
     670.0,
-    -16361128.485189825
+    -14849836.561430212
    ]
   }
  }

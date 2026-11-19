@@ -89,7 +89,7 @@ def chart_calendar(reads, path, date):
         "Share of each map's dealer gamma by expiry, %s close (index maps: the evening map, which covers about one "
         "week). The front segment rolls off first; what is left is the map for the weeks after." % dt.date.fromisoformat(date).strftime("%d %b %Y").lstrip("0"),
         tags=[("WHAT EXPIRES WHEN", "cyan")], badge=("%d%%" % round(front), "expires Fri 20 Nov"),
-        footer_right="data/ai_technical/gamma_weeks_%s.json (tools/gamma_weeks.py)" % date.replace("-", ""),
+        footer_right="via data/ai_technical/gamma_weeks_%s.json" % date.replace("-", ""),
         snapshot="%s 16:00-17:30 ET" % dt.date.fromisoformat(date).strftime("%d %b %Y").lstrip("0"))
     ax = cs.panel_axes(fig, rects[0], pad=(2.6, 0.5, 0.5, 1.0))
     cols = [P["cyan"], P["purple"], P["yellow"], P["orange"], "#7a7a7a"]
@@ -119,7 +119,7 @@ def chart_roll(reads, path, date):
         "Net dealer gamma within 2% of the price as a share of the map, now and with every expiry through Fri 20 Nov removed. "
         "Long = hedging tends to damp moves; short = it can extend them; flat = under 3% of the map.",
         tags=[("NOW  VS  AFTER  THE  ROLL", "purple")],
-        footer_right="data/ai_technical/gamma_weeks_%s.json (tools/gamma_weeks.py)" % date.replace("-", ""),
+        footer_right="via data/ai_technical/gamma_weeks_%s.json" % date.replace("-", ""),
         snapshot="%s 16:00-17:30 ET" % dt.date.fromisoformat(date).strftime("%d %b %Y").lstrip("0"))
     ax = cs.panel_axes(fig, rects[0], pad=(2.6, 0.5, 2.2, 1.0))
     for i, s in enumerate(order):
@@ -222,8 +222,8 @@ def chart_vanna(van, reads, path, date):
         "Net vanna within 5% of the price as a share of each map, now and after Fri 20 Nov, expiries to 18 Dec. "
         "Label = gamma state / vanna sign. Vanna sign convention not yet audited against the vendor.",
         tags=[("VANNA  (VEX)", "purple")],
-        footer_right="data/ai_technical/gamma_weeks_%s.json (tools/gamma_weeks.py, Skylit eod_vanna)" % date.replace("-", ""),
-        snapshot="%s 16:00 ET" % dt.date.fromisoformat(date).strftime("%d %b %Y").lstrip("0"))
+        footer_right="via data/ai_technical/gamma_weeks_%s.json" % date.replace("-", ""),
+        snapshot="vanna, %s 16:00 ET" % dt.date.fromisoformat(date).strftime("%d %b %Y").lstrip("0"))
     ax = cs.panel_axes(fig, rects[0], pad=(2.6, 0.5, 2.6, 1.0))
     for i, s in enumerate(order):
         a, b = van[s]["net_pm5_now_pct"], van[s]["net_pm5_after_roll_pct"]

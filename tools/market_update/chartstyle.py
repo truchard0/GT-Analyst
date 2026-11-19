@@ -335,9 +335,15 @@ def callout_box(fig, text, L=None):
 
 def footer(fig, snapshot, right, L=None):
     L = L or fig._gt_layout
-    left = "G T · A N A L Y S T   ·   data: Skylit maps %s · not investment advice" % snapshot if snapshot else \
-        "G T · A N A L Y S T   ·   not investment advice"
-    fig.text(L.mx, L.footer_y, left, fontsize=SIZES["footer"], color=P["muted"], ha="left", va="bottom")
+    if snapshot:  # every chart built on Skylit maps says so, plainly (user, 18 Nov 2026)
+        t = fig.text(L.mx, L.footer_y, "Data: Skylit dealer-positioning maps, %s" % snapshot, fontsize=SIZES["footer"] + 1,
+                     color=P["subtitle"], fontweight="bold", ha="left", va="bottom")
+        w = t.get_window_extent(renderer=fig.canvas.get_renderer()).width / fig.dpi / fig.get_size_inches()[0]
+        fig.text(L.mx + w, L.footer_y, "   ·   G T · A N A L Y S T", fontsize=SIZES["footer"],
+                 color=P["muted"], ha="left", va="bottom")
+    else:
+        fig.text(L.mx, L.footer_y, "G T · A N A L Y S T   ·   not investment advice", fontsize=SIZES["footer"],
+                 color=P["muted"], ha="left", va="bottom")
     if right:
         fig.text(1 - L.mx, L.footer_y, right, fontsize=SIZES["footer"], color=P["muted"], ha="right", va="bottom")
 

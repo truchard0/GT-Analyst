@@ -378,7 +378,7 @@ def heatmap_board(out, reads_out, date="2026-11-17"):
         panels=1, size=size, tags=None, badge=("%d%%" % round(med_front), "expires %s" % fri_lab),
         callout="Our record: the largest strike did not pull price (55 days, n=165)  ·  big strikes reversed price no more than any strike  ·  "
                 "gamma sign: no next-day edge (324 sessions)",
-        footer_right=hm_path,
+        footer_right="Skylit maps via " + hm_path,
         snapshot="%s 16:00 ET" % day)
     fw, fh = fig.get_size_inches()
     x0, y0, W, H = rects[0]
