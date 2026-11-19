@@ -1,0 +1,196 @@
+{
+ "generated": "2026-11-19T21:04:54Z",
+ "source": "Skylit single-name universe maps (Trading Bot tradingview/_skylit/universe/2026-11-19), read-only",
+ "units": "Skylit per-cell dealer gamma ('matrix' value): net dealer gamma for one strike and one expiry. Positive = dealers long gamma, negative = short gamma. The vendor does not publish the normalization; compare within a ticker only, never across tickers.",
+ "king_definition": "largest |cell| within the strikes and expiries shown",
+ "excluded": "No Unusual Whales data and no cached option-chain files of unclear source were read.",
+ "tickers": [
+  {
+   "ticker": "SMH",
+   "snapshot_ts": "2026-11-19T21:01:20Z",
+   "source_file": "C:/Users/hudso/AppData/Local/Temp/claude/0afdcb596f6f2e7a/6f5de071-c4db-49cc-8459-f168d2e5112f/scratchpad/skylit_mirror/universe\\2026-11-19\\eod_160124_SMH.json.gz",
+   "source_batch": "16:00 ET end-of-day batch",
+   "metric": "gamma",
+   "spot": 446.89,
+   "expiries": [
+    "2026-11-27",
+    "2026-12-04",
+    "2026-12-11",
+    "2026-12-18"
+   ],
+   "strikes": [
+    395,
+    400,
+    405,
+    410,
+    415,
+    420,
+    425,
+    430,
+    435,
+    440,
+    445,
+    450,
+    455,
+    460,
+    465,
+    470,
+    475,
+    480,
+    485,
+    490,
+    495,
+    500
+   ],
+   "gamma": [
+    [
+     -60226.2,
+     -105781.7,
+     -9439.2,
+     59106.6
+    ],
+    [
+     -189587.1,
+     -22589.6,
+     -12790.5,
+     449388.0
+    ],
+    [
+     -31631.9,
+     -266983.2,
+     -5478.3,
+     167773.7
+    ],
+    [
+     -269241.1,
+     -58478.4,
+     -195768.9,
+     -15792.4
+    ],
+    [
+     -115218.0,
+     -13568.7,
+     -4710.9,
+     -47680.0
+    ],
+    [
+     42516.6,
+     -27764.5,
+     -23109.7,
+     213825.1
+    ],
+    [
+     90009.3,
+     -203712.3,
+     14044.9,
+     -147278.4
+    ],
+    [
+     -160.7,
+     -263853.8,
+     18048.8,
+     11474.9
+    ],
+    [
+     89852.0,
+     -88429.7,
+     -68957.3,
+     -386256.4
+    ],
+    [
+     -101441.0,
+     -35483.5,
+     -39096.3,
+     -310781.2
+    ],
+    [
+     21491.8,
+     8837.7,
+     -29820.3,
+     32243.2
+    ],
+    [
+     123411.8,
+     70948.3,
+     34047.1,
+     -2793914.7
+    ],
+    [
+     250600.0,
+     -158066.1,
+     -39005.8,
+     -142995.9
+    ],
+    [
+     185428.1,
+     145609.0,
+     -45648.2,
+     863736.3
+    ],
+    [
+     -108680.8,
+     2860.5,
+     24672.9,
+     -180859.4
+    ],
+    [
+     89417.9,
+     52062.8,
+     -5696.2,
+     50391.2
+    ],
+    [
+     -20950.1,
+     -28413.3,
+     -14998.7,
+     -31424.7
+    ],
+    [
+     17978.2,
+     -28097.9,
+     -201240.4,
+     162229.5
+    ],
+    [
+     -131062.6,
+     17106.8,
+     -4281.6,
+     72311.9
+    ],
+    [
+     -76494.0,
+     25647.9,
+     -5805.1,
+     59474.7
+    ],
+    [
+     161180.1,
+     7602.3,
+     -48922.0,
+     80684.4
+    ],
+    [
+     33485.0,
+     475032.2,
+     18459.8,
+     -425610.9
+    ]
+   ],
+   "king": {
+    "strike": 450,
+    "expiry": "2026-12-18",
+    "value": -2793914.7
+   },
+   "regime_pm2pct": "negative",
+   "event_stale": false,
+   "notes": [
+    "Map: eod_160124_SMH.json.gz, 16:00 ET end-of-day batch (asOf 2026-11-19T21:01:20Z). 4 of 20 expiries shown; they carry 38% of the |gamma| in the strike span across every expiry to 2026-12-18 (the omitted next-session and Monday/Wednesday expiries hold the rest).",
+    "Rows: 22 strikes 395-500 (-11.6% to +11.9% of spot), every 5; the strikes left out carry 19.9% of the |gamma| in that span.",
+    "The 2026-11-20 expiry (the session after the snapshot) is left out: it lapses at that close. It held 34% of the span's |gamma| including it.",
+    "Largest shown cell 450 / 2026-12-18 (-2793915). Summed over the expiries to 2026-12-18 the largest strike is 460 (+3775929).",
+    "Net gamma within +-2% of spot over the shown expiries: -3088016 (negative)."
+   ]
+  }
+ ],
+ "errors": []
+}

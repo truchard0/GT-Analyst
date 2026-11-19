@@ -663,7 +663,7 @@ def chart_range(snap, X, R, out, src):
     pm = X.get("priced_move_next")
     fn = snap["fib_next"]
     nd = _day(fn["day"])
-    title = "%s: ATR-5 expects an %.0f-point range (%.2f%%); options price a %.0f-point move" % (
+    title = "%s: ATR-5 expects a %.0f-point range (%.2f%%); options price a %.0f-point move" % (
         dt.date.fromisoformat(fn["day"]).strftime("%A"), a5["pts"], a5["pct"], pm["em_pts"])
     sub = ("S&P 500 around the %s close of %s. Each column is one model's band for %s (Fibonacci uses the close as the open).\n"
            "In 2016-2026 the next day's range was %.2fx ATR-5 at the median; the whole next day stayed "
@@ -673,7 +673,7 @@ def chart_range(snap, X, R, out, src):
     call = ("Our record: Fibonacci levels from the open failed (held 51% of 793 touches vs 55% at shuffled distances). "
             "These are model bands, not targets or stops.")
     fig, rects = cs.frame(title, sub, panels=1, tags=[("RANGE MODELS AND LEVELS", "white")], callout=call,
-                          footer_right=src)
+                          footer_right=src, snapshot="Skylit implied-vol file, %s close" % _day(snap["date"]))
     ax = cs.panel_axes(fig, rects[0], pad=(1.25, 0.35, 0.35, 0.75))
     b3 = e["bands"][2]
     lo_y = min(b3["low"], pm["low"], fn["levels"][-1]["s"]) - 18
@@ -959,7 +959,7 @@ def main():
         print(chart_selloff(snap, R, out, "daily_SPX.csv + daily_VIX.csv (Yahoo), 2016 to %s" % dd))
         g = snap["dealer_gamma"]
         print(chart_vol(snap, X, R, out, "daily_VIX.csv; vol/daily/%s.json; gamma_weeks_%s.json" % (
-            dd, dd.replace("-", "")), "%s, 14:30 PT" % _day(dd) if g else ""))
+            dd, dd.replace("-", "")), "%s, 13:00 PT close" % _day(dd) if g and "16:00" in str(g.get("snapshot")) else ("%s, 14:30 PT" % _day(dd) if g else "")))
         print(chart_moves(snap, R, out, src_spx))
     t, ex, e, pr = snap["today"], snap["exhaustion"], snap["expected"], snap["probability"]
     print("today", json.dumps(t))

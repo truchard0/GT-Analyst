@@ -15,10 +15,10 @@ import json
 import pathlib
 import sys
 
-import numpy as np
-
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
+import market_update  # noqa: E402,F401  (adds the user site-packages back for numpy under python -I)
+import numpy as np  # noqa: E402
 from market_update import chartstyle as cs  # noqa: E402
 
 P = cs.P

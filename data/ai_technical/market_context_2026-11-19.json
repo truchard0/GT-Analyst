@@ -1,0 +1,1121 @@
+{
+ "date": "2026-11-19",
+ "built": "2026-11-19T13:30:29",
+ "session_note": "Latest completed session; the Yahoo cache (daily_SPX.csv / daily_VIX.csv) was written after the close.",
+ "sources": {
+  "spx_daily": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\succession\\daily_SPX.csv",
+  "vix_daily": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\succession\\daily_VIX.csv",
+  "vol_daily": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\vol\\daily\\2026-11-19.json",
+  "earnings": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\moves\\2026-11-20.json",
+  "dealer_gamma": "data/ai_technical/gamma_weeks_20261119.json"
+ },
+ "definitions": {
+  "data": "Trading Bot/tradingview/algo_succession.py:56-84 (Yahoo ^GSPC / ^VIX daily since 2016, cached in _skylit/succession/daily_*.csv)",
+  "successions": "Trading Bot/tradingview/algo_succession.py:87-90 (range % = (high - low) / prior close x 100; 0 below 0.60%, else 1 + floor((range - 0.60) / 0.50))",
+  "table": "Trading Bot/tradingview/algo_succession.py:104-116 (range, return vs prior close, move = close vs open, true range)",
+  "move_class": "Trading Bot/tradingview/algo_succession.py:110-111 (|close/open - 1|: >= 0.618 extreme extension, >= 0.382 extension, >= 0.114 OP trend, else '0.114 trend' = inside)",
+  "monthly": "Trading Bot/tradingview/algo_succession.py:121-126 and :395-399 (BEAR if month successions > 20, or pace x 21 > 20 once 3+ days; MoM vs prior month avg +-10%)",
+  "exhaustion": "Trading Bot/tradingview/algo_succession.py:219-264 (11 price factors + 3 VIX factors; LOW < 4, MODERATE < 7, ELEVATED < 10, else HIGH; ELEVATED projects -5 to -7%, HIGH -7 to -10%, 20-25 trading days, validation = the day's high)",
+  "expected_range": "Trading Bot/tradingview/algo_succession.py:267-286 (ATR-n = mean true range of n sessions; high/low = close +- ATR/2; k-sigma bands of the 20-day range %, ddof 0; day-of-week averages)",
+  "vol_regime": "Trading Bot/tradingview/algo_succession.py:289-293 (ATR-5 / ATR-20: > 1.30 expanding, < 0.70 contracting)",
+  "vix_block": "Trading Bot/tradingview/algo_succession.py:296-312 (close, change, 5-day change, 5/20/60-day means, 20-day range, 1-year percentile; <15 low, <20 normal, <30 elevated, else fear)",
+  "probability": "Trading Bot/tradingview/algo_succession.py:315-364 (200-session base of 0/1/2/3+; score from VIX level, VIX 5d, VIX - RV20, ATR5/ATR20, next day-of-week, last 5 days; each +0.5 moves 5 points from the low bins to the high bins, capped +-20)",
+  "fib": "Trading Bot/tradingview/algo_succession.py:13-15, :137-141, :385-388, :401-403 (level = open x (1 +- fib/100); stop +-0.7071%; next day uses the close as the estimated open)",
+  "dist30": "Trading Bot/tradingview/algo_succession.py:408 (move classes of the last 30 sessions)",
+  "dashboard": "Trading Bot/tradingview/gamma_dash_live.js:1286-1345 (render); gamma_dash.py:1476-1489 (endpoint)"
+ },
+ "record_sources": {
+  "report_B_D_E": "Trading Bot/tradingview/_research/succession_20261108/REPORT.md (sections B, D, E)",
+  "report2": "Trading Bot/tradingview/_research/succession_20261108/REPORT2.md",
+  "registry": "Trading Bot/knowledge/TEST_REGISTRY.jsonl:43 (ALGO-SUCCESSION-STATIC)",
+  "trend_day": "Trading Bot/knowledge/RULES_REGISTRY.md:212 (trend-day predictors, AUC 0.44-0.61, 881 sessions)",
+  "gt_record": "research_notes/gamma_maps/B_measured_record.md:87, :198"
+ },
+ "status": {
+  "today": {
+   "status": "descriptive; volatility persistence validated, direction failed",
+   "why": "The count is arithmetic on the day's range. Big-range days are followed by big-range days (2016-2026); the monthly BEARISH / VOL label does not predict lower returns, and as a filter for the prior day it failed."
+  },
+  "selloff": {
+   "status": "failed (as a selloff forecast)",
+   "why": "HIGH readings raise the odds of a 5% drawdown but the average 25-session return after them is positive: volatility, not direction (TEST_REGISTRY ALGO-SUCCESSION-STATIC). The -7% to -10% projection is the dashboard model's claim, not ours."
+  },
+  "expected_range": {
+   "status": "validated as a size gauge; not as levels",
+   "why": "ATR-5 tracks the next day's range; the close +- ATR/2 'high/low' does not contain the next day's whole range most of the time."
+  },
+  "probability": {
+   "status": "untested before today; our first check below",
+   "why": "Base rates are descriptive; the hand-set adjustment is scored against the 200-session base."
+  },
+  "vol_regime": {
+   "status": "descriptive; ATR ratio checked below; gamma-volatility link a lead",
+   "why": "Literature supports a small damping effect of dealer long gamma on index volatility; our intraday tests are inconsistent across books."
+  },
+  "move_distribution": {
+   "status": "descriptive (no forecast claim)",
+   "why": "Counts of what happened; trend-day predictors failed out of sample (AUC 0.44-0.61, 881 sessions)."
+  },
+  "fib": {
+   "status": "failed",
+   "why": "Levels from the open held 51% of 793 touches vs 55% at shuffled non-Fibonacci distances (139 days of SPY 1-minute bars)."
+  }
+ },
+ "panels": {
+  "today": {
+   "open": 7389.26,
+   "high": 7415.64,
+   "low": 7173.63,
+   "close": 7175.83,
+   "prev_close": 7323.63,
+   "ret_pct": -2.02,
+   "move_pct": -2.888,
+   "range_pts": 242.01,
+   "range_pct": 3.305,
+   "succ": 6,
+   "band": "crisis / black swan",
+   "ext": "extreme extension",
+   "mtd_succ": 38,
+   "mtd_days": 14,
+   "mtd_avg": 2.71,
+   "rolling20": 43,
+   "avg_day": 2.15,
+   "nosucc20": 2
+  },
+  "signal": {
+   "monthly": "BEAR",
+   "label": "BEARISH / VOL",
+   "month": "2026-11",
+   "month_succ": 38,
+   "month_days": 14,
+   "month_pace": 57.0,
+   "prev_month": "2026-10",
+   "prev_succ": 19,
+   "prev_days": 22,
+   "prev_avg": 0.86,
+   "mom": "INCREASING"
+  },
+  "exhaustion": {
+   "rolling20": 43,
+   "avg_day": 2.15,
+   "accel5": 1.78,
+   "nosucc5": 0,
+   "ext_share": 65,
+   "max_drop": -4.36,
+   "week5": 16,
+   "risk": "HIGH",
+   "n": 13,
+   "of": 14,
+   "factors": [
+    {
+     "name": "rolling 20d > 30",
+     "on": true,
+     "value": "43"
+    },
+    {
+     "name": "avg / day > 1.5",
+     "on": true,
+     "value": "2.15"
+    },
+    {
+     "name": "5d acceleration > 1.2x",
+     "on": true,
+     "value": "1.78x"
+    },
+    {
+     "name": "sudden no-succession day (5d) with 20d > 25",
+     "on": false,
+     "value": "0 / 43"
+    },
+    {
+     "name": "extensions >= 40% of the 20d moves",
+     "on": true,
+     "value": "65%"
+    },
+    {
+     "name": "max daily drop (20d) <= -1.5%",
+     "on": true,
+     "value": "-4.36%"
+    },
+    {
+     "name": "weekly successions (5d) > 10",
+     "on": true,
+     "value": "16"
+    },
+    {
+     "name": "3+ succession days (20d) >= 3",
+     "on": true,
+     "value": "6"
+    },
+    {
+     "name": "a 5+ (crisis) day in the 20d",
+     "on": true,
+     "value": "2"
+    },
+    {
+     "name": "month pace > 20 / month",
+     "on": true,
+     "value": "57"
+    },
+    {
+     "name": "close below the 20d mean",
+     "on": true,
+     "value": "7176 vs 7535"
+    },
+    {
+     "name": "VIX > 20",
+     "on": true,
+     "value": "28.32"
+    },
+    {
+     "name": "VIX up over 5d",
+     "on": true,
+     "value": "+9.62"
+    },
+    {
+     "name": "VIX above its 20d mean",
+     "on": true,
+     "value": "28.3 vs 20.9"
+    }
+   ],
+   "projected": {
+    "pct": [
+     -7,
+     -10
+    ],
+    "bottom_zone": [
+     6458.25,
+     6673.52
+    ],
+    "days": "20-25 trading days",
+    "validation": 7415.64,
+    "note": "invalidated on a close above the validation level; fulfilled when price reaches the bottom zone"
+   }
+  },
+  "expected": {
+   "next_day": "2026-11-20",
+   "dow": "Fri",
+   "close": 7175.83,
+   "atr": {
+    "atr5": {
+     "pts": 147.22,
+     "pct": 2.052,
+     "high": 7249.44,
+     "low": 7102.22
+    },
+    "atr10": {
+     "pts": 133.48,
+     "pct": 1.86,
+     "high": 7242.57,
+     "low": 7109.09
+    },
+    "atr20": {
+     "pts": 123.55,
+     "pct": 1.722,
+     "high": 7237.6,
+     "low": 7114.06
+    },
+    "atr60": {
+     "pts": 87.49,
+     "pct": 1.219,
+     "high": 7219.57,
+     "low": 7132.09
+    }
+   },
+   "expected": {
+    "pts": 147.22,
+    "pct": 2.052,
+    "high": 7249.44,
+    "low": 7102.22
+   },
+   "bands": [
+    {
+     "k": 1,
+     "lo": 0.483,
+     "hi": 2.32,
+     "share_in_window": 90,
+     "high": 7259.07,
+     "low": 7092.59
+    },
+    {
+     "k": 2,
+     "lo": 0.0,
+     "hi": 3.238,
+     "share_in_window": 90,
+     "high": 7292.02,
+     "low": 7059.64
+    },
+    {
+     "k": 3,
+     "lo": 0.0,
+     "hi": 4.157,
+     "share_in_window": 95,
+     "high": 7324.98,
+     "low": 7026.68
+    }
+   ],
+   "stats": {
+    "mean": 1.401,
+    "median": 1.085,
+    "std": 0.919,
+    "p25": 0.807,
+    "p75": 1.614
+   },
+   "dow_avg_range": 1.114,
+   "dow_avg_succ": 1.52,
+   "dow_n": 549
+  },
+  "probability": {
+   "label": "HIGHER",
+   "score": 2.0,
+   "expected": 1.4,
+   "base_expected": 1.2,
+   "adjusted": [
+    20,
+    40,
+    25,
+    16
+   ],
+   "base200": [
+    24,
+    46,
+    19,
+    12
+   ],
+   "n200": 200,
+   "base_all": [
+    27,
+    37,
+    18,
+    17
+   ],
+   "n_all": 2736,
+   "factors": [
+    {
+     "name": "VIX level",
+     "value": "28.32 (elevated, 99th pct 1y)",
+     "s": 1
+    },
+    {
+     "name": "VIX momentum (5d)",
+     "value": "+9.62",
+     "s": 0.5
+    },
+    {
+     "name": "implied vs realized (20d)",
+     "value": "VIX 28.3 vs RV 22.7 (+5.6: IV rich)",
+     "s": -0.5,
+     "rv20": 22.74
+    },
+    {
+     "name": "realized compression (ATR5 / ATR20)",
+     "value": "1.19x",
+     "s": 0.5
+    },
+    {
+     "name": "day of week (Fri)",
+     "value": "1.52 succ / day vs 1.49 all",
+     "s": 0
+    },
+    {
+     "name": "last 5 days",
+     "value": "3.20 succ / day",
+     "s": 0.5
+    }
+   ]
+  },
+  "regime": {
+   "ratio": 1.192,
+   "regime": "NORMAL",
+   "atr5": 147.22,
+   "atr20": 123.55
+  },
+  "vix": {
+   "day": "2026-11-19",
+   "close": 28.32,
+   "chg": 3.76,
+   "chg_pct": 15.3,
+   "chg5": 9.62,
+   "m5": 24.11,
+   "m20": 20.87,
+   "m60": 17.61,
+   "lo20": 16.61,
+   "hi20": 28.32,
+   "regime": "ELEVATED",
+   "trend": "RISING",
+   "pct_rank_1y": 99.0
+  },
+  "dealer_gamma": {
+   "regime": "short",
+   "net_pm2_pct": -3.5,
+   "regime_after_roll": "short",
+   "net_pm2_after_roll_pct": -30.3,
+   "roll": "2026-11-20",
+   "snapshot": "19 Nov 2026 16:00 ET",
+   "file": "data/ai_technical/gamma_weeks_20261119.json"
+  },
+  "dist30": {
+   "extreme extension": 12,
+   "extension": 6,
+   "OP trend": 8,
+   "0.114 trend": 4
+  },
+  "fib": {
+   "op": 7389.26,
+   "high": 7415.64,
+   "low": 7173.63,
+   "stop": [
+    7441.51,
+    7337.01
+   ],
+   "levels": [
+    {
+     "f": 0.114,
+     "r": 7397.68,
+     "s": 7380.84,
+     "role": "trigger",
+     "hit_r": true,
+     "hit_s": true
+    },
+    {
+     "f": 0.236,
+     "r": 7406.7,
+     "s": 7371.82,
+     "role": "trigger",
+     "hit_r": true,
+     "hit_s": true
+    },
+    {
+     "f": 0.382,
+     "r": 7417.49,
+     "s": 7361.03,
+     "role": "trigger",
+     "hit_r": false,
+     "hit_s": true
+    },
+    {
+     "f": 0.5,
+     "r": 7426.21,
+     "s": 7352.31,
+     "role": "trigger",
+     "hit_r": false,
+     "hit_s": true
+    },
+    {
+     "f": 0.618,
+     "r": 7434.93,
+     "s": 7343.59,
+     "role": "golden reversal",
+     "hit_r": false,
+     "hit_s": true
+    },
+    {
+     "f": 0.786,
+     "r": 7447.34,
+     "s": 7331.18,
+     "role": "pullback",
+     "hit_r": false,
+     "hit_s": true
+    },
+    {
+     "f": 0.886,
+     "r": 7454.73,
+     "s": 7323.79,
+     "role": "pullback",
+     "hit_r": false,
+     "hit_s": true
+    },
+    {
+     "f": 1.0,
+     "r": 7463.15,
+     "s": 7315.37,
+     "role": "measured move",
+     "hit_r": false,
+     "hit_s": true
+    },
+    {
+     "f": 1.132,
+     "r": 7472.91,
+     "s": 7305.61,
+     "role": "measured move",
+     "hit_r": false,
+     "hit_s": true
+    },
+    {
+     "f": 1.272,
+     "r": 7483.25,
+     "s": 7295.27,
+     "role": "measured move",
+     "hit_r": false,
+     "hit_s": true
+    }
+   ],
+   "hits_up": 2,
+   "hits_dn": 10
+  },
+  "fib_next": {
+   "day": "2026-11-20",
+   "est_op": 7175.83,
+   "stop": [
+    7226.57,
+    7125.09
+   ],
+   "levels": [
+    {
+     "f": 0.114,
+     "r": 7184.01,
+     "s": 7167.65,
+     "role": "trigger"
+    },
+    {
+     "f": 0.236,
+     "r": 7192.77,
+     "s": 7158.9,
+     "role": "trigger"
+    },
+    {
+     "f": 0.382,
+     "r": 7203.24,
+     "s": 7148.42,
+     "role": "trigger"
+    },
+    {
+     "f": 0.5,
+     "r": 7211.71,
+     "s": 7139.95,
+     "role": "trigger"
+    },
+    {
+     "f": 0.618,
+     "r": 7220.18,
+     "s": 7131.48,
+     "role": "golden reversal"
+    },
+    {
+     "f": 0.786,
+     "r": 7232.23,
+     "s": 7119.43,
+     "role": "pullback"
+    },
+    {
+     "f": 0.886,
+     "r": 7239.41,
+     "s": 7112.25,
+     "role": "pullback"
+    },
+    {
+     "f": 1.0,
+     "r": 7247.59,
+     "s": 7104.07,
+     "role": "measured move"
+    },
+    {
+     "f": 1.132,
+     "r": 7257.06,
+     "s": 7094.6,
+     "role": "measured move"
+    },
+    {
+     "f": 1.272,
+     "r": 7267.11,
+     "s": 7084.55,
+     "role": "measured move"
+    }
+   ]
+  },
+  "weeks": [
+   {
+    "week": "2026-W23",
+    "succ": 7
+   },
+   {
+    "week": "2026-W24",
+    "succ": 16
+   },
+   {
+    "week": "2026-W25",
+    "succ": 5
+   },
+   {
+    "week": "2026-W26",
+    "succ": 8
+   },
+   {
+    "week": "2026-W27",
+    "succ": 6
+   },
+   {
+    "week": "2026-W28",
+    "succ": 5
+   },
+   {
+    "week": "2026-W29",
+    "succ": 4
+   },
+   {
+    "week": "2026-W30",
+    "succ": 4
+   },
+   {
+    "week": "2026-W31",
+    "succ": 9
+   },
+   {
+    "week": "2026-W32",
+    "succ": 6
+   },
+   {
+    "week": "2026-W33",
+    "succ": 2
+   },
+   {
+    "week": "2026-W34",
+    "succ": 1
+   },
+   {
+    "week": "2026-W35",
+    "succ": 2
+   },
+   {
+    "week": "2026-W36",
+    "succ": 3
+   },
+   {
+    "week": "2026-W37",
+    "succ": 1
+   },
+   {
+    "week": "2026-W38",
+    "succ": 4
+   },
+   {
+    "week": "2026-W39",
+    "succ": 5
+   },
+   {
+    "week": "2026-W40",
+    "succ": 4
+   },
+   {
+    "week": "2026-W41",
+    "succ": 2
+   },
+   {
+    "week": "2026-W42",
+    "succ": 6
+   },
+   {
+    "week": "2026-W43",
+    "succ": 5
+   },
+   {
+    "week": "2026-W44",
+    "succ": 4
+   },
+   {
+    "week": "2026-W45",
+    "succ": 14
+   },
+   {
+    "week": "2026-W46",
+    "succ": 11
+   },
+   {
+    "week": "2026-W47",
+    "succ": 13
+   }
+  ]
+ },
+ "records": {
+  "clustering": {
+   "0": {
+    "days": 749,
+    "p_next_ge2": 9,
+    "next_range_median": 0.568
+   },
+   "1": {
+    "days": 1011,
+    "p_next_ge2": 28,
+    "next_range_median": 0.804
+   },
+   "2": {
+    "days": 499,
+    "p_next_ge2": 47,
+    "next_range_median": 1.064
+   },
+   "3+": {
+    "days": 476,
+    "p_next_ge2": 82,
+    "next_range_median": 1.701
+   },
+   "all": {
+    "days": 2735,
+    "p_next_ge2": 36,
+    "next_range_median": 0.873
+   }
+  },
+  "selloff": {
+   "window": "2016-04-01 to 2026-10-15 (days with 25 sessions after them)",
+   "by_risk": {
+    "ELEVATED": {
+     "days": 555,
+     "worst25_median_pct": -2.48,
+     "p_worst_le_5": 25,
+     "p_worst_le_7": 16,
+     "p_worst_le_10": 9,
+     "ret25_mean_pct": 1.61,
+     "p_ret25_up": 71
+    },
+    "HIGH": {
+     "days": 473,
+     "worst25_median_pct": -3.8,
+     "p_worst_le_5": 41,
+     "p_worst_le_7": 28,
+     "p_worst_le_10": 14,
+     "ret25_mean_pct": 2.6,
+     "p_ret25_up": 68
+    },
+    "LOW": {
+     "days": 1072,
+     "worst25_median_pct": -1.7,
+     "p_worst_le_5": 14,
+     "p_worst_le_7": 5,
+     "p_worst_le_10": 3,
+     "ret25_mean_pct": 0.71,
+     "p_ret25_up": 67
+    },
+    "MODERATE": {
+     "days": 551,
+     "worst25_median_pct": -1.77,
+     "p_worst_le_5": 18,
+     "p_worst_le_7": 12,
+     "p_worst_le_10": 6,
+     "ret25_mean_pct": 1.25,
+     "p_ret25_up": 71
+    },
+    "all": {
+     "days": 2651,
+     "worst25_median_pct": -2.1,
+     "p_worst_le_5": 22,
+     "p_worst_le_7": 13,
+     "p_worst_le_10": 7,
+     "ret25_mean_pct": 1.35,
+     "p_ret25_up": 69
+    }
+   },
+   "projection": {
+    "HIGH (-7%)": {
+     "n": 473,
+     "fulfilled": 14,
+     "invalidated_first": 84,
+     "neither": 2
+    },
+    "ELEVATED (-5%)": {
+     "n": 555,
+     "fulfilled": 13,
+     "invalidated_first": 86,
+     "neither": 1
+    }
+   },
+   "projection_base_all_days": {
+    "-7%": {
+     "n": 2651,
+     "fulfilled": 6,
+     "invalidated_first": 89,
+     "neither": 5
+    },
+    "-5%": {
+     "n": 2651,
+     "fulfilled": 10,
+     "invalidated_first": 87,
+     "neither": 3
+    }
+   },
+   "high_episodes": {
+    "n": 17,
+    "reached_minus7_within_25": 3,
+    "first_days": [
+     "2018-02-05",
+     "2018-10-12",
+     "2019-08-05",
+     "2019-10-08",
+     "2020-02-25",
+     "2020-09-04",
+     "2021-01-27",
+     "2021-09-30",
+     "2021-12-01",
+     "2022-08-26",
+     "2023-10-23",
+     "2024-08-01",
+     "2025-01-07",
+     "2025-02-27",
+     "2025-10-14",
+     "2026-02-13",
+     "2026-06-10"
+    ]
+   },
+   "note": "Overlapping 25-session windows; HIGH days cluster in episodes, so the episode count is the honest n."
+  },
+  "expected_range": {
+   "n": 2675,
+   "window": "2016-04-04 to 2026-11-19",
+   "next_range_over_atr5_median": 0.82,
+   "p_next_range_le_atr5": 66,
+   "corr_atr5pct_vs_next_range": 0.73,
+   "p_whole_next_day_inside_close_pm_half_atr5": 22,
+   "p_next_close_inside_close_pm_half_atr5": 52,
+   "sigma_band_coverage_next_day": {
+    "1": 65,
+    "2": 92,
+    "3": 96
+   },
+   "normal_reference": {
+    "1": 68,
+    "2": 95,
+    "3": 99.7
+   }
+  },
+  "probability": {
+   "n": 2535,
+   "brier_adjusted": 0.6797,
+   "brier_base200": 0.6964,
+   "brier_base_all": 0.726,
+   "adj_minus_base200": -0.0167,
+   "adj_minus_base200_se": 0.0009,
+   "skill_vs_base200_pct": 2.4,
+   "by_label": {
+    "HIGHER": {
+     "days": 568,
+     "next_succ_mean": 3.15,
+     "p_next_ge2": 79
+    },
+    "NEUTRAL": {
+     "days": 1109,
+     "next_succ_mean": 1.33,
+     "p_next_ge2": 34
+    },
+    "LOWER": {
+     "days": 858,
+     "next_succ_mean": 0.63,
+     "p_next_ge2": 10
+    }
+   },
+   "note": "The rule's weights were set by hand (no fitting), so 2016-2026 is a fair test of the fixed rule; overlapping days, simple standard error."
+  },
+  "vol_regime": {
+   "EXPANDING": {
+    "days": 381,
+    "next_range_median": 1.25,
+    "p_next_ge2": 57
+   },
+   "NORMAL": {
+    "days": 2020,
+    "next_range_median": 0.839,
+    "p_next_ge2": 33
+   },
+   "CONTRACTING": {
+    "days": 274,
+    "next_range_median": 0.698,
+    "p_next_ge2": 21
+   }
+  },
+  "monthly": {
+   "BULL": {
+    "months": 57,
+    "next_ret_mean_pct": 0.61,
+    "next_green": 65,
+    "next_succ_mean": 20.7
+   },
+   "BEAR": {
+    "months": 72,
+    "next_ret_mean_pct": 1.64,
+    "next_green": 69,
+    "next_succ_mean": 38.7
+   }
+  },
+  "move_classes_all": {
+   "extreme extension": 34.2,
+   "extension": 17.5,
+   "OP trend": 30.6,
+   "0.114 trend": 17.7
+  },
+  "move_classes_n": 2736,
+  "move_classes_ytd": {
+   "extreme extension": 28.7,
+   "extension": 21.5,
+   "OP trend": 30.0,
+   "0.114 trend": 19.7
+  },
+  "move_classes_ytd_n": 223
+ },
+ "extras": {
+  "key_levels": {
+   "sma20": {
+    "level": 7534.9,
+    "close_vs_pct": -4.77
+   },
+   "sma50": {
+    "level": 7640.19,
+    "close_vs_pct": -6.08
+   },
+   "sma200": {
+    "level": 7348.02,
+    "close_vs_pct": -2.34
+   },
+   "high_52w": {
+    "level": 7844.52,
+    "date": "2026-10-06",
+    "close_vs_pct": -8.52
+   },
+   "low_52w": {
+    "level": 6316.91,
+    "close_vs_pct": 13.6
+   }
+  },
+  "implied_curve": {
+   "file": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\vol\\daily\\2026-11-19.json",
+   "published": "2026-11-19T16:07:58.717915-05:00",
+   "curves": {
+    "SPXW": {
+     "svx1d_adj": 32.2397,
+     "svx9": 28.5641,
+     "svx30": 28.4184,
+     "svx3m": 26.2014,
+     "svx6m": 25.1948,
+     "atm_iv_front": 37.97,
+     "atm_iv_30": 23.03,
+     "term_slope": 0.1456,
+     "rr25_30": 8.6706,
+     "skew_s30": -3.7078,
+     "close": 7178.75
+    },
+    "QQQ": {
+     "svx1d_adj": 49.9599,
+     "svx9": 38.0975,
+     "svx30": 36.7028,
+     "svx3m": 32.1523,
+     "svx6m": 31.1532,
+     "atm_iv_front": 58.84,
+     "atm_iv_30": 32.48,
+     "term_slope": 1.3948,
+     "rr25_30": 9.4288,
+     "skew_s30": -2.3079,
+     "close": 645.35
+    }
+   },
+   "note": "svx = Skylit VIX-style implied vol at 1 day (event-adjusted), 9 days, 30 days, 3 and 6 months"
+  },
+  "priced_move_next": {
+   "for_session": "2026-11-20",
+   "em_pts": 142.7064,
+   "em_pct": 1.9879,
+   "low": 7036.0436,
+   "high": 7321.4564,
+   "close": 7178.75,
+   "file": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\vol\\daily\\2026-11-19.json"
+  },
+  "priced_vs_realised_today": {
+   "session": "2026-11-19",
+   "priced_pct": 1.4752,
+   "priced_pts": 108.014,
+   "realised_pct": -1.959,
+   "inside": false,
+   "file": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\vol\\daily\\2026-11-18.json"
+  },
+  "priced_move_record": {
+   "all": {
+    "n": 389,
+    "up": 13.367609254498715,
+    "down": 12.853470437017995,
+    "inside": 73.7789203084833,
+    "n_up": 52,
+    "n_down": 50,
+    "first": "2025-03-17",
+    "last": "2026-11-18",
+    "abs_med": 0.4760907556946248
+   },
+   "cond": {
+    "n": 17,
+    "up": 17.647058823529413,
+    "down": 23.529411764705884,
+    "inside": 58.8235294117647,
+    "n_up": 3,
+    "n_down": 4,
+    "first": "2025-04-03",
+    "last": "2026-04-07",
+    "abs_med": 1.1313870244617608
+   },
+   "cond_band": [
+    25.9184,
+    30.9184
+   ],
+   "k_em_over_svx1d": 0.06166270267558948,
+   "source": "Skylit vol/history_* + vol/daily/* via tools/market_update/stats.route_rates"
+  },
+  "priced_move_last20": {
+   "n": 20,
+   "inside": 14
+  },
+  "earnings": {
+   "session": "2026-11-20",
+   "file": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\moves\\2026-11-20.json",
+   "rows": [
+    {
+     "sym": "KEYS",
+     "name": "Keysight Technologies Inc.",
+     "when": "tonight after the close",
+     "report_day": "2026-11-19",
+     "past_moves": [
+      12.8,
+      13.4,
+      4.1,
+      3.1
+     ],
+     "past_median": 8.4,
+     "gap_chance": 0.12
+    },
+    {
+     "sym": "ESTC",
+     "name": "Elastic N.V.",
+     "when": "tonight after the close",
+     "report_day": "2026-11-19",
+     "past_moves": [
+      11.6,
+      10.5,
+      6.4,
+      24.1
+     ],
+     "past_median": 11.1,
+     "gap_chance": 0.12
+    },
+    {
+     "sym": "GAP",
+     "name": "Gap, Inc. (The)",
+     "when": "tonight after the close",
+     "report_day": "2026-11-19",
+     "past_moves": [
+      5.6,
+      11.4,
+      14.6,
+      18.7
+     ],
+     "past_median": 13.0,
+     "gap_chance": 0.12
+    },
+    {
+     "sym": "BULL",
+     "name": "Webull Corporation",
+     "when": "tonight after the close",
+     "report_day": "2026-11-19",
+     "past_moves": [
+      4.0,
+      4.4,
+      1.7,
+      15.0
+     ],
+     "past_median": 4.2,
+     "gap_chance": 0.12
+    },
+    {
+     "sym": "INTU",
+     "name": "Intuit Inc.",
+     "when": "tonight after the close",
+     "report_day": "2026-11-19",
+     "past_moves": [
+      5.0,
+      2.5,
+      18.7,
+      9.5
+     ],
+     "past_median": 7.2,
+     "gap_chance": 0.07
+    },
+    {
+     "sym": "ROST",
+     "name": "Ross Stores, Inc.",
+     "when": "tonight after the close",
+     "report_day": "2026-11-19",
+     "past_moves": [
+      3.9,
+      8.7,
+      5.4,
+      6.5
+     ],
+     "past_median": 6.0,
+     "gap_chance": 0.07
+    },
+    {
+     "sym": "GLOB",
+     "name": "Globant S.A.",
+     "when": "tonight after the close",
+     "report_day": "2026-11-19",
+     "past_moves": [
+      3.0,
+      2.1,
+      9.9,
+      6.8
+     ],
+     "past_median": 4.9,
+     "gap_chance": 0.07
+    },
+    {
+     "sym": "BSP",
+     "name": "Bending Spoons S.p.A.",
+     "when": "tomorrow before the open",
+     "report_day": "2026-11-20",
+     "past_moves": [
+      4.4
+     ],
+     "past_median": 4.4,
+     "gap_chance": 0.07
+    },
+    {
+     "sym": "BJ",
+     "name": "BJ's Wholesale Club Holdings, Inc.",
+     "when": "tomorrow before the open",
+     "report_day": "2026-11-20",
+     "past_moves": [
+      1.1,
+      6.9,
+      4.9,
+      2.9
+     ],
+     "past_median": 3.9,
+     "gap_chance": 0.07
+    },
+    {
+     "sym": "FRO",
+     "name": "Frontline Plc",
+     "when": "tomorrow before the open",
+     "report_day": "2026-11-20",
+     "past_moves": [
+      2.8,
+      5.1,
+      1.9,
+      1.5
+     ],
+     "past_median": 2.3,
+     "gap_chance": 0.07
+    }
+   ],
+   "base": {
+    "any_day": 0.0034,
+    "earnings": 0.07
+   },
+   "implied": "none of these names is in the Skylit vol file, so no implied move is shown",
+   "base_rate": "across 2,901 earnings events the median realised gap was 0.61x the implied move and 27% went beyond it (gamma-maps skill, section 3 step 7)"
+  },
+  "skipped": [
+   "Market breadth (advance/decline, % above averages): no breadth series in our data.",
+   "Dollar, 10y/30y yields, metals panels: no DXY, yield or metal price series wired (FRED folder holds events only).",
+   "Index vanna and charm by strike, dealer net contracts: not in our Skylit maps.",
+   "Overnight night-turn clock: 55 nights of ES/NQ bars, far short of the years it needs.",
+   "VIX bracket to index range past cases: not built yet; would need n stated per bracket."
+  ]
+ },
+ "differences_from_dashboard": [
+  "Day-of-week and all-history averages use sessions up to the date only (the dashboard uses the whole cached table; identical for the latest day).",
+  "The dashboard's 4-states block is not reproduced: its vanna sign is unaudited and the family tested null; our positioning read covers gamma."
+ ],
+ "rules": "Descriptive only. No targets, entries, stops or sizes; price direction is a no-call."
+}
