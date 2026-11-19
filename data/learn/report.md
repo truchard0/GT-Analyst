@@ -1,6 +1,6 @@
 # Learning loop report
 
-Updated 2026-11-18T13:20:39Z. Model `n58-69e83ddc`, status **shadow**.
+Updated 2026-11-19T13:20:37Z. Model `n58-69e83ddc`, status **shadow**.
 
 - Trained on 58 resolved calls (39 right) in 16 clusters.
 - The stated probabilities separate hits from misses with AUC 0.47 (0.50 means no separation).
@@ -27,6 +27,6 @@ Reading: the type model wins when it has already seen calls on the same topic an
 
 ## Forward scoreboard
 
-0 of 20 forward calls resolved so far. 95 new shadow rows logged this run.
+0 of 20 forward calls resolved so far. 0 new shadow rows logged this run.
 
 Promotion rule: after 20 forward calls, promote if the model beats the stated probabilities by 0.01 Brier, retire if it loses by 0.01, otherwise keep shadowing.
