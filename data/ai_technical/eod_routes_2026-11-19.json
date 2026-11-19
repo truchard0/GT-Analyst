@@ -1,0 +1,192 @@
+{
+ "date": "2026-11-19",
+ "close": 7175.830078125,
+ "risk_today": "HIGH",
+ "horizon_sessions": 5,
+ "labels": [
+  "Thu 19",
+  "Fri open",
+  "Fri 20",
+  "Mon 23",
+  "Tue 24",
+  "Wed 25",
+  "Fri 27"
+ ],
+ "reference": {
+  "days": 478,
+  "episodes": 45,
+  "window": "2016-04-01 to 2026-11-12",
+  "definition": "selloff checklist HIGH (tools/market_context.exhaustion)"
+ },
+ "routes": {
+  "reclaim": {
+   "days": 162,
+   "share": 34,
+   "episodes": 17,
+   "episode_share": 38,
+   "median_path": [
+    0.0,
+    0.34,
+    1.054,
+    1.582,
+    2.252,
+    2.997,
+    3.7
+   ],
+   "median_end_pct": 3.7
+  },
+  "chop": {
+   "days": 196,
+   "share": 41,
+   "episodes": 20,
+   "episode_share": 44,
+   "median_path": [
+    0.0,
+    0.015,
+    0.025,
+    0.31,
+    0.431,
+    0.317,
+    0.274
+   ],
+   "median_end_pct": 0.27
+  },
+  "diprip": {
+   "days": 11,
+   "share": 2,
+   "episodes": 1,
+   "episode_share": 2,
+   "median_path": [
+    0.0,
+    -0.455,
+    -3.067,
+    -3.587,
+    -0.957,
+    0.481,
+    1.41
+   ],
+   "median_end_pct": 1.41
+  },
+  "lower": {
+   "days": 109,
+   "share": 23,
+   "episodes": 7,
+   "episode_share": 16,
+   "median_path": [
+    0.0,
+    -0.256,
+    -0.605,
+    -1.876,
+    -2.672,
+    -3.527,
+    -3.675
+   ],
+   "median_end_pct": -3.67
+  }
+ },
+ "horizons": {
+  "tonight": {
+   "high": {
+    "n": 478,
+    "p_up": 54,
+    "median": 0.05,
+    "p10": -0.96,
+    "p25": -0.41,
+    "p75": 0.47,
+    "p90": 0.87
+   },
+   "all": {
+    "n": 2671,
+    "p_up": 57,
+    "median": 0.05,
+    "p10": -0.46,
+    "p25": -0.17,
+    "p75": 0.26,
+    "p90": 0.51
+   }
+  },
+  "friday": {
+   "high": {
+    "n": 478,
+    "p_up": 54,
+    "median": 0.14,
+    "p10": -2.11,
+    "p25": -0.81,
+    "p75": 1.12,
+    "p90": 1.93
+   },
+   "all": {
+    "n": 2671,
+    "p_up": 54,
+    "median": 0.07,
+    "p10": -1.07,
+    "p25": -0.37,
+    "p75": 0.58,
+    "p90": 1.14
+   }
+  },
+  "next_week": {
+   "high": {
+    "n": 478,
+    "p_up": 60,
+    "median": 0.69,
+    "p10": -3.93,
+    "p25": -1.79,
+    "p75": 2.76,
+    "p90": 4.5
+   },
+   "all": {
+    "n": 2671,
+    "p_up": 61,
+    "median": 0.41,
+    "p10": -2.26,
+    "p25": -0.72,
+    "p75": 1.46,
+    "p90": 2.56
+   }
+  }
+ },
+ "fan": {
+  "10": [
+   0.0,
+   -0.959,
+   -2.114,
+   -2.755,
+   -3.541,
+   -3.77,
+   -3.928
+  ],
+  "25": [
+   0.0,
+   -0.405,
+   -0.811,
+   -1.362,
+   -1.245,
+   -1.377,
+   -1.788
+  ],
+  "75": [
+   0.0,
+   0.469,
+   1.117,
+   1.613,
+   1.941,
+   2.433,
+   2.765
+  ],
+  "90": [
+   0.0,
+   0.875,
+   1.929,
+   2.664,
+   3.522,
+   4.014,
+   4.504
+  ]
+ },
+ "sources": {
+  "spx": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\succession\\daily_SPX.csv",
+  "vix": "C:\\Users\\hudso\\AppData\\Local\\Temp\\claude\\0afdcb596f6f2e7a\\6f5de071-c4db-49cc-8459-f168d2e5112f\\scratchpad\\skylit_mirror\\succession\\daily_VIX.csv"
+ },
+ "rules": "Base rates from past HIGH-checklist days, not forecasts. No targets, entries, stops or sizes."
+}
