@@ -1,6 +1,6 @@
 # Learning loop report
 
-Updated 2026-11-21T13:20:36Z. Model `n58-69e83ddc`, status **shadow**.
+Updated 2026-11-22T13:20:36Z. Model `n58-69e83ddc`, status **shadow**.
 
 - Trained on 58 resolved calls (39 right) in 16 clusters.
 - The stated probabilities separate hits from misses with AUC 0.47 (0.50 means no separation).
