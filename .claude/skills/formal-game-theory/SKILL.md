@@ -30,6 +30,7 @@ War is ex-post inefficient — a bargain both sides prefer exists *ex ante*. The
 - A **signal** is informative only if it is *costly* — sinking costs (mobilization spending, capacity construction) or tying hands (public commitments a leader can't cheaply abandon). Costless statements are cheap talk and carry zero evidentiary weight for resolve — exactly doctrine §12.1's rhetoric filter, formalized.
 - **Audience costs:** leaders who back down from *public* threats pay domestic punishment, so public threats by leaders facing real domestic accountability are partially credible; private or deniable threats are not. Weight threats by the political cost of retreating from them, not by their volume.
 - **Cheap-talk exception:** costless communication can still coordinate (focal-point selection) when interests already align. Distinguish coordination talk from resolve talk.
+- **Leverage-backed statements (added 23 Nov 2026):** a public demand aimed at a specific body by a player who controls that body's payoffs is not resolve talk about the speaker. It ties the speaker's hands (audience costs), re-prices the target's options and gives a split target a focal point. Test it with the three conditions in `leverage-campaigns` §3 before discarding it, and read it coarsely (§12.4): what is wanted and what is held over the target, never a date.
 
 ## 4. REPEATED GAMES & REPUTATION
 

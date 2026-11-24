@@ -125,6 +125,13 @@ someone's "lens". State mechanisms in our own words and cite primary sources (fi
 - **Example:** "9 Dec, Fed: we expect a hike (93%); holding would ease funding for the debt-funded builders. Late
   January, capex guides: any of the four guiding below 2026 raises our decline odds."
 
+### 15. Say who can reverse each shock
+- **What:** for every shock the report names, one or two sentences on who could undo it, what they hold over the decider and the first sign that they are trying.
+- **Why:** a shock caused by a decision can be reversed by a decision. A report that lists shocks without their reversal odds gives the reader half the tree.
+- **How:** take it from the leverage map (`leverage-campaigns` §2 and §4). Give the reversal its own odds and its own "breaks if". State documented actions with source and time, and
+  write motives as inference.
+- **Example:** "The board refused on security grounds, and the security finding is the government's to give. A statement of cover from the official who owns the export rules would be
+  the first sign. We put a reversal by year-end at 30%."
 ## Part B: prose craft - how it reads like professional long-form writing
 
 The techniques above make a report correct and checkable. They do not make it read well. The first drafts of the

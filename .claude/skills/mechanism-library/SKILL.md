@@ -10,7 +10,7 @@ never cited. A rule is judged on its mechanism, indicator and record, not its or
 
 ## 1. RUNNING THE SWEEP (checklist items 31-35)
 
-31. **Tag** the item's ai-trade layer (L1-L5) and its domains below (A, S, X, W, R, M, G).
+31. **Tag** the item's ai-trade layer (L1-L5) and its domains below (A, S, X, W, R, M, G). Domain P (pressure on decision bodies, added 23 Nov 2026) is tagged whenever leverage-campaigns runs.
 32. **Bite list:** every rule in those domains, plus any rule whose *Applies* line names the item's company, catalyst
     or date. A rule bites when a current reading of its indicator moves it.
 33. **Read the indicators with dates.** Anything older than about 48h is standing context, not tape.
@@ -337,13 +337,30 @@ mechanism in plain words, never rule IDs.
 **MX-G2 Common target, no common command** - ADOPT
 - When several camps push one way, model converging independent incentives, not a plot: a plot predicts coordinated
   timing, institutions keep their own calendars. *Record:* the Nvidia sequence (news report 29 Oct, committee letter
-  4 Nov, resignation 12-13 Nov) followed each body's own process. A Tier C guard.
+  4 Nov, resignation 12-13 Nov) followed each body's own process. A Tier C guard. An overt principal with named levers is not a plot and is not excluded by this rule: run leverage-campaigns.
 
 **MX-G3 Calm erodes the premium; rule changes are not dips** - SHADOW
 - After long quiet, markets under-price a costly, explicit statement of intent; events that change the system's
   rules (trade access, export or currency regimes) bring long volatility and a discount on long-dated capex.
   *Check:* tail-hedge cost against house odds. *Falsifier:* volatility normalises within a month and long-dated
   capex guides hold. *Record:* one 2025 tariff episode consistent.
+
+### P. Pressure on decision bodies (added 23 Nov 2026; procedure in `leverage-campaigns`)
+
+**MX-P1 Who owns the reason owns the decision** - SHADOW
+- *Mechanism:* a body that refuses on a ground another player determines (a security finding, a licence, a legal exposure) holds its position only while that player lets it.
+  *Check:* the body's stated reason; who rules on it; whether that player has stated a preferred outcome. *Falsifier:* the owner of the reason gives public cover and the body still
+  holds its position for 30 days. *Record:* n=1, in-sample (a chipmaker's board, Nov 2026: refused on security grounds on the 18th, reversed on the 23rd "citing no national security risk").
+
+**MX-P2 A refusal before the principal commits is not final** - SHADOW
+- *Mechanism:* a body's first "no" is given before it knows what holding out will cost. The informative refusal is the one issued after an official with a lever has given cover or made
+  the threat concrete. *Check:* the date of the refusal against the date of the first such statement. *Falsifier:* two cases where an early refusal held through later cover or threat.
+  *Record:* n=1, in-sample (door "shut" 18 Nov, cover 22 Nov, reversal 23 Nov).
+
+**MX-P3 Reversals come with a structure and leave residue** - SHADOW
+- *Mechanism:* a body reverses when it has a story it can tell, so a committee, a review or a set of conditions appears before or with the reversal, and the players with voice but no veto
+  keep the issue alive afterwards. *Check:* whether the defensible structure exists yet; who has voice. *Falsifier:* a reversal with no structure attached, or no follow-on action by any
+  voice player within 60 days. *Record:* n=1, in-sample (oversight committee formed 17 Nov; lawmakers and a state attorney general objected on the 23rd).
 
 ## 3. CONFLICTS WITH EXISTING SKILLS (who wins)
 
