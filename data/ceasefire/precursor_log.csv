@@ -343,6 +343,7 @@ reported_utc,kind,source,title
 2026-11-24T10:11Z,mediator,chokepoint-gnews,US-Israel-Iran War Latest Live News: Tehran Sets 7 Conditions for US Talks Amid Two Oil Tankers Hit Mines in Strait of Hormuz - The Sunday Guardian
 2026-11-24T10:34Z,mediator,chokepoint-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - 95.5 WSB"
 2026-11-24T10:34Z,mediator,maritime-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - ClickOnDetroit | WDIV Local 4"
+2026-11-24T10:34Z,mediator,maritime-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - News4JAX"
 2026-11-24T10:38Z,mediator,maritime-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - CityNews Toronto"
 2026-11-24T10:42Z,mediator,chokepoint-gnews,Iran orders Hormuz shut 'further' as Qatar seeks to revive peace talks - Euronews.com
 2026-11-24T10:49Z,mediator,chokepoint-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - CityNews Winnipeg"
@@ -353,9 +354,64 @@ reported_utc,kind,source,title
 2026-11-24T11:18Z,mediator,chokepoint-gnews,Iran insists no talks with US until its 7 conditions are met - DT Next
 2026-11-24T11:19Z,force_posture,chokepoint-gnews,Iran Says It Will Use All Available Means Against U.S. Blockade as Tankers Hit Mines: 7 outlets compared - NewsCord
 2026-11-24T11:25Z,mediator,maritime-gnews,"Iran Rules Out US Talks Until Conditions Met, Says 3 Tankers Hit Mines - Deccan Chronicle"
+2026-11-24T11:26Z,mediator,crude-gnews,ExxonMobil Sinks 14% and Chevron 12% in a Month as Trump Says Iran Wants “to Make a Deal” - TIKR.com
 2026-11-24T11:32Z,force_posture,chokepoint-gnews,"Iran says three tankers hit mines in Hormuz despite U.S. escort, as Treasury widens sanctions - Forex Factory"
 2026-11-24T11:37Z,force_posture,chokepoint-gnews,LNG carrier damaged in Strait of Hormuz attack heads for the auction block - TradeWinds News
+2026-11-24T12:00Z,force_posture,maritime-gnews,Iran Offers To Reopen Strait Of Hormuz In 2 Days If US Lifts Naval Blockade - Marine Insight
 2026-11-24T12:07Z,mediator,crude-gnews,Oil prices fall as traders weigh hopes of Iran talks against shipping risks - City AM
+2026-11-24T12:27Z,mediator,maritime-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - myMotherLode.com"
+2026-11-24T12:31Z,mediator,chokepoint-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - The Mercury News"
+2026-11-24T12:31Z,mediator,chokepoint-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - New York Daily News"
 2026-11-24T12:37Z,mediator,chokepoint-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - San Diego Union-Tribune"
+2026-11-24T12:38Z,mediator,maritime-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - Hartford Courant"
 2026-11-24T12:39Z,mediator,chokepoint-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - Boston Herald"
 2026-11-24T12:40Z,mediator,chokepoint-gnews,"Iran insists no talks with the US until its 7 conditions are met, and other Mideast news - Baltimore Sun"
+2026-11-24T12:58Z,mediator,crude-gnews,Oil Prices Fall as Market Awaits Possible US-Iran Ceasefire Deal - EnergyNow
+2026-11-24T13:17Z,mediator,maritime-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - The Morning Call"
+2026-11-24T13:19Z,force_posture,chokepoint-gnews,"Iran says three tankers hit mines in Hormuz despite U.S. escort, as Treasury widens sanctions - Inside Politic"
+2026-11-24T13:21Z,force_posture,maritime-gnews,Iran Threatens Blockade Response as Tankers Hit Hormuz Mines - cwibc.co.id
+2026-11-24T13:21Z,mediator,chokepoint-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - Orlando Sentinel"
+2026-11-24T13:30Z,mediator,chokepoint-gnews,"Iran rules out talks with U.S. until its 7 conditions are met, and other Mideast news - The Tribune-Democrat"
+2026-11-24T13:30Z,mediator,chokepoint-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - Daily Freeman"
+2026-11-24T13:30Z,mediator,chokepoint-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - Dayton Daily News"
+2026-11-24T13:30Z,mediator,maritime-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - Newsday"
+2026-11-24T13:49Z,mediator,chokepoint-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - Sun Sentinel"
+2026-11-24T14:10Z,force_posture,chokepoint-gnews,Trump threatens blockade-running Iranian ships amid reports of ‘fake line-breaker’ - TradeWinds News
+2026-11-24T14:44Z,mediator,maritime-gnews,"Iran insists no talks with US until its 7 conditions are met, and other Mideast news - Eastern Mirror"
+2026-11-24T15:08Z,force_posture,maritime-gnews,U.S.- Iran Blockade & Cyberattacks: Latest Peace Talks and How the Maritime Crisis Can Be Resolved - News Talk Florida
+2026-11-24T15:08Z,mediator,maritime-gnews,U.S.- Iran Blockade & Cyberattacks: Latest Peace Talks and How the Maritime Crisis Can Be Resolved - News Talk Florida
+2026-11-24T15:39Z,mediator,chokepoint-gnews,Iran rules out US talks until seven conditions are met - United News of Bangladesh
+2026-11-24T16:01Z,mediator,maritime-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - WRAL"
+2026-11-24T16:11Z,mediator,aljazeera,Qatar urges restraint and dialogue amid US-Iran tensions
+2026-11-24T16:14Z,force_posture,chokepoint-gnews,IRGC Claims Three Oil Tankers Hit Naval Mines and Caught Fire Under U.S. Escort in Strait of Hormuz - OODA Loop
+2026-11-24T16:16Z,mediator,chokepoint-gnews,"Japanese, French and Omani Vessels Cross the Strait of Hormuz - EnergyNow.com"
+2026-11-24T16:52Z,force_posture,maritime-gnews,Could an Iranian tanker convoy break the US blockade? - thecradle.co
+2026-11-24T17:03Z,mediator,chokepoint-gnews,"Iran rules out talks with US until its 7 conditions are met, and other Mideast news - Daily Bulletin"
+2026-11-24T17:36Z,mediator,maritime-gnews,Iran rules out talks with U.S. until its seven conditions are met - The Hindu
+2026-11-24T17:38Z,force_posture,chokepoint-gnews,Iran’s Revolutionary Guards say three tankers hit mines in Hormuz under US air escort - The Insight International
+2026-11-24T18:00Z,mediator,maritime-gnews,Iran rules out talks until conditions met - www.daily-sun.com
+2026-11-24T18:06Z,mediator,chokepoint-gnews,Iran claims container ship struck off Oman’s Khasab near Strait of Hormuz: IRIB - Business Upturn
+2026-11-24T18:22Z,mediator,maritime-gnews,Iran insists no talks with US until its 7 conditions are met - MillenniumPost
+2026-11-24T18:29Z,mediator,chokepoint-gnews,Hormuz to the Baltic: Ex-Russian envoy confirms Trump's energy war is hitting both Russia & China? - Hindustan Times
+2026-11-24T18:33Z,mediator,chokepoint-gnews,"Container vessel struck while transiting Strait of Hormuz near Oman, IRGC says - AOL.com"
+2026-11-24T18:47Z,mediator,chokepoint-gnews,"Container vessel struck while transiting Strait of Hormuz near Oman, IRGC says - Daily Express US"
+2026-11-24T18:50Z,force_posture,maritime-gnews,Iran’s Oil Blockade: The Tanker Convoy Crisis - Gulf Energy Security and the Risk of Regional War - https://debuglies.com
+2026-11-24T19:06Z,force_posture,isw-gnews,Will Iran Try to Break Out of the Blockade? - National Review
+2026-11-24T20:49Z,force_posture,chokepoint-gnews,Iran says 3 oil tankers hit underwater mines despite US naval escort - The Hill
+2026-11-24T21:25Z,force_posture,maritime-gnews,Iran says 3 oil tankers hit underwater mines despite US naval escort - AOL.co.uk
+2026-11-24T21:25Z,force_posture,maritime-gnews,Iran says 3 oil tankers hit underwater mines despite US naval escort - AOL.com
+2026-11-24T22:22Z,force_posture,chokepoint-gnews,Iran Says 3 Tankers Struck Mines in Hormuz Despite US Escort - Newsmax
+2026-11-25T01:00Z,mediator,maritime-gnews,Iran sets conditions for talks - The Rising Nepal
+2026-11-25T01:38Z,mediator,chokepoint-gnews,Qatari prime minister warns Middle East can’t afford another US-Iran escalation - NewsCord
+2026-11-25T07:34Z,force_posture,chokepoint-gnews,Debate rages in Iran over whether to push tankers through US blockade - The National
+2026-11-25T07:47Z,mediator,crude-gnews,Oil Traders Double Down on Iran Deal Bet as Odds Worsen: Bousso - EnergyNow
+2026-11-25T08:09Z,force_posture,reuters-via-gnews,"Iran says it is prepared to withstand US blockade, seeks to curb price rises - Reuters"
+2026-11-25T09:30Z,force_posture,chokepoint-gnews,"Iran says it is prepared to withstand US blockade, seeks to curb price rises - The Standard (HK)"
+2026-11-25T10:01Z,force_posture,aljazeera,"Iran rations electricity: How deeply are US sanctions, blockade biting?"
+2026-11-25T10:09Z,deadline,chokepoint-gnews,"US-Israel-Iran War Latest Live Updates: Trump Reveals January Funding Window For Military Campaign As Iran Refuses Hormuz Talks, Oil Tankers Hit Naval Mines And US Blockade Continues - The Sunday Guardian"
+2026-11-25T10:09Z,force_posture,chokepoint-gnews,"US-Israel-Iran War Latest Live Updates: Trump Reveals January Funding Window For Military Campaign As Iran Refuses Hormuz Talks, Oil Tankers Hit Naval Mines And US Blockade Continues - The Sunday Guardian"
+2026-11-25T10:09Z,mediator,chokepoint-gnews,"US-Israel-Iran War Latest Live Updates: Trump Reveals January Funding Window For Military Campaign As Iran Refuses Hormuz Talks, Oil Tankers Hit Naval Mines And US Blockade Continues - The Sunday Guardian"
+2026-11-25T10:11Z,mediator,chokepoint-gnews,"Tankers hit by explosions in Hormuz, says Tehran - Qatar Tribune"
+2026-11-25T10:40Z,force_posture,chokepoint-gnews,"The battle for Hormuz: America has the blockade, Iran has the geography - Firstpost"
+2026-11-25T10:41Z,mediator,chokepoint-gnews,"Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Oman Observer"
+2026-11-25T11:45Z,force_posture,isw-gnews,Iran developing new missiles as regime weighs military action to break US blockade - World Israel News
