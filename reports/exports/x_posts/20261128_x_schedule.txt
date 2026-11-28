@@ -1,0 +1,265 @@
+# Weekend X schedule, Nov 28-29 (PT). 20 posts: 10 topic + 10 brag. Nothing posted until the user says so.
+
+## Sat 7:00 AM PT · weekend · The turn · image: Fig 3 (SPX paths)
+
+Seven days ago the S&P was 10% under its record and the mood was a funeral.
+
+Then it ran 5.6% in four sessions, its best week since April 2025, and closed Friday at 7,297.
+
+Today and tomorrow: how it happened, what the dealers hold now, and what decides the next leg.
+
+(267 chars)
+
+---
+
+## Sat 8:30 AM PT · brag · SPX double bottom on 7,000 · image: 20261125_x_read_hit.png
+
+Wednesday 2:35 AM PT, Nasdaq futures down 2.5% on the tariff report, I wrote up the map: SPX 7,000 is the line for the week, 6,975 the trapdoor.
+
+Low: 6,970.11 at 6:45 AM PT. Retest: 6,989 at 8:15.
+
+A double bottom on the line.
+
+(227 chars)
+
+---
+
+## Sat 10:00 AM PT · weekend · Rally into tightening · image: none
+
+This was a rally into tightening.
+
+Core PCE is running at 3.3%. The Fed is about to hike on Dec 9 (futures had it at 94%). The 10-year closed the week at 4.94%.
+
+Sprinting uphill into a headwind. Impressive, but tiring. [1 of 2]
+
+(228 chars)
+
+It isn't just the Fed. The ECB is ~93% priced to hike on Dec 17 and the BoJ is expected to go to 1.50% the next day.
+
+Every major central bank is tightening into Christmas. That's why the 10-year sits near 4.9% while stocks celebrate. [2 of 2]
+
+(243 chars)
+
+---
+
+## Sat 11:30 AM PT · brag · SPX magnet 7,200 · image: 20261125_x_read_hit.png
+
+Same note: SPX magnet at 7,200.
+
+High of the day: 7,199.31. One point.
+
+The low and the high of a 229-point day were both on the map before the open, and it never traded under 7,000 again.
+
+(188 chars)
+
+---
+
+## Sat 1:00 PM PT · weekend · Everyone waits · image: Fig 1 (event map)
+
+This week everyone with a lever has a reason to sit on their hands.
+
+The Fed is in blackout. The tariffs can't bite until January. Washington and Tehran both gain more squeezing at sea than escalating on land.
+
+So the calendar takes the wheel. Friday 8:30 ET: payrolls.
+
+(269 chars)
+
+---
+
+## Sat 2:30 PM PT · brag · QQQ both ends · image: none
+
+QQQ, Wednesday. Our note: lose 619 and there's little until 605. Magnet at 635.
+
+It lost 619 at the open, bottomed at 607.74, then ran to 634.89.
+
+11 cents under the magnet.
+
+(173 chars)
+
+---
+
+## Sat 4:00 PM PT · weekend · Iran · image: none
+
+Iran is the only headline that can move the whole board.
+
+Our odds to Dec 6:
+Another ship hit near Hormuz: 85%
+Talks with a date: 20%
+Deal or ceasefire both sides sign: 10%
+US strike on Iranian soil: 20%
+Brent above $100: 12% [1 of 2]
+
+(234 chars)
+
+Why so little on a deal: the blockade has gutted Iran's oil income and pushed inflation toward 90%. Raising the cost at sea is more tempting than conceding.
+
+The one move that matters for markets is a US strike: +$5-10 on Brent, VIX back above 28. [2 of 2]
+
+(256 chars)
+
+---
+
+## Sat 5:30 PM PT · brag · The week's shape · image: none
+
+Sunday Nov 22 we said: a pop, one more leg back under Friday's close, then up. After a 4% drop and an extended gap up, QQQ had traded back to the prior close within 5 sessions 84% of the time.
+
+QQQ: 657 Monday, under 608.45 Wednesday, then the turn up.
+
+(252 chars)
+
+---
+
+## Sat 7:00 PM PT · brag · Fear premium · image: none
+
+Nov 22: the VIX closed 35.9, 9 points over realized vol, 91st percentile since 1990. Fear that rich has meant QQQ higher a week later 61-80% of the time.
+
+A week later: QQQ +7.0%, VIX 23.81.
+
+(190 chars)
+
+---
+
+## Sun 7:30 AM PT · brag · Friday's scenario · image: none
+
+Wednesday night: the break-up case for Friday was SPY ~727 and SOXX ~134, and the chance SPY closes Friday above Wednesday's 716.70 was ~77%.
+
+Friday's closes: SPY 728.32, SOXX 134.07.
+
+(184 chars)
+
+---
+
+## Sun 8:00 AM PT · weekend · Chips, Taiwan, OPEC+ · image: none
+
+Chips have three weekend-to-Monday risks:
+
+Large named PLA drills after Taiwan's vote: 12%, landing on Monday's open, SPX's heaviest expiry.
+A formal new US chip restriction on China this week: 15%.
+OPEC+ raising baseline output Sunday: 50%.
+
+(241 chars)
+
+---
+
+## Sun 9:00 AM PT · brag · QQQ ceiling · image: none
+
+Friday read: "650 is the Friday ceiling."
+
+QQQ high 651.34. Close 650.99.
+
+It pinned to the level into the close.
+
+(113 chars)
+
+---
+
+## Sun 10:00 AM PT · weekend · The dealer map · image: Fig 2 (gamma + vanna)
+
+The dealer map for SPX this week:
+
+Monday: sticky, pinned near 7,300-7,335, bull target 7,400.
+Tue-Thu: light books, price goes where the data sends it.
+Friday: a 7,500 magnet with $7.7B of positive vanna above, and a floor at 7,000-6,950. [1 of 2]
+
+(248 chars)
+
+Two things follow.
+
+No long-gamma floor anywhere under 7,500: a break of 7,250 meets ~12,000 futures of selling per 1%.
+
+And 7,500 is where the rules change. Above it dealers sell rallies and buy dips, so rallies park there. [2 of 2]
+
+(233 chars)
+
+---
+
+## Sun 11:15 AM PT · brag · SPY 730 · image: none
+
+Friday's SPY map: 730 the upper positive level, $72M.
+
+SPY high Friday: 729.15.
+
+Dealers sat on it all session.
+
+(111 chars)
+
+---
+
+## Sun 12:30 PM PT · weekend · Four paths · image: Fig 3 (SPX paths)
+
+Four paths for SPX to Friday:
+
+Megabull 7,600: soft payrolls, calm Gulf, strong AI guidance.
+Bull 7,500: momentum, in-line jobs, parks on the magnet.
+Base 7,150-7,450: nothing breaks, 7,400 caps rallies.
+Bear 7,000: hot data or a strike on Iran. [1 of 2]
+
+(254 chars)
+
+Why the bear path is faster than the bull path: the same 1% move dealers soften above 7,500, they amplify below 7,300.
+
+A close under 7,250 opens 7,150. Under 6,800, our projected bottom zone is 6,567-6,786. [2 of 2]
+
+(216 chars)
+
+---
+
+## Sun 1:45 PM PT · brag · SPX held 7,200 · image: none
+
+Wednesday night: SPX "above 7,200 and leaning on it."
+
+Friday's low: 7,211.46.
+
+The floor held all day.
+
+(103 chars)
+
+---
+
+## Sun 3:00 PM PT · weekend · Payrolls · image: none
+
+Friday's jobs report, four outcomes:
+
+150k+ or unemployment 4.0% or lower: 15%. Half-point talk, 10-yr over 5%, SPX -1-2%.
+100-150k: 25%. Hike confirmed, flat.
+50-100k: 40%. Relief, +0.5-1%.
+Under 50k: 20%. Yields down, stocks up, growth fears later.
+
+(250 chars)
+
+---
+
+## Sun 4:00 PM PT · brag · Laggards led · image: none
+
+Nov 22 sector piece: after drops like this, the laggards lead. Not staples, not health care.
+
+The week since: chips +8.6%, tech +7.5%. Health care +3.9%, staples +2.5%, utilities +2.4%.
+
+It takes a quarter. Week one went our way.
+
+(229 chars)
+
+---
+
+## Sun 5:00 PM PT · weekend · The week's exams · image: none
+
+Tuesday is the first test: not the headline ISM, the prices factories pay. Hot prices plus Eurozone CPI above 4% = a bigger Fed.
+
+Then AI's report card: Marvell and Credo Tue, Salesforce and Snowflake Wed. Broadcom waits for Dec 9, Fed day.
+
+(240 chars)
+
+---
+
+## Sun 7:00 PM PT · weekend · Two numbers + sign-off · image: Fig 4 (QQQ paths)
+
+Two numbers tell you which path we're on:
+
+10-year under 4.85%: the market thinks this hike is the last. Over 5%: it doesn't believe a word.
+VIX under 20: the vote of confidence this rally still lacks.
+
+Full piece on my Substack, link in bio. Happy holidays.
+
+(258 chars)
+
+---

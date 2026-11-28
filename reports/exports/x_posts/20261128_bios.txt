@@ -1,0 +1,23 @@
+## Scooby's engine · short
+
+A 0DTE options engine that trades SPY and QQQ off the dealer map: it arms at the strikes dealers must defend and exits at the target or when the thesis breaks.
+
+(159 chars)
+
+## Scooby's engine · long
+
+Scooby is our intraday options engine. Every minute it reads where dealers hold the most gamma, strike by strike and expiry by expiry, across the SPX, SPY, NDX and QQQ books. It finds the King, the level that outweighs the rest, and sets resting orders at the levels strong enough to turn price. It buys same-day SPY and QQQ options when price reaches one, and gets out at its target or the moment the map stops backing the trade. No overnight holds. A rule goes live only after it beats the current system on six months of minute-by-minute replays. It trades on paper; the record is every fill, win or lose.
+
+(608 chars)
+
+## A Lost Quant · short
+
+Dealer maps, replayed futures and event odds before the open. Every number is a count, and every call gets checked against the tape. Not advice.
+
+(144 chars)
+
+## A Lost Quant · long
+
+A Lost Quant reads the market the way dealers have to trade it. Before the open we map where options hedging pins price, where it speeds a move up and where the big levels sit, then run the day through 4,000 futures replayed from real market history at today's volatility. Geopolitics and data get their own odds, built from base rates and the incentives of the people involved. Every percentage in a report is a count you could redo, and every call is checked against what price actually did, hits and misses alike. Method, not tips. Not investment advice.
+
+(557 chars)
